@@ -1,0 +1,13 @@
+<mvc:View controllerName="my.app.controller.Main" 
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page title="3D Objects">
+        <VBox>
+            <List id="objlist" items="{/objects}">
+                <StandardListItem title="name" description="{id}" type="Active" press="onItemPress"/>
+            </List>
+            <Panel id="viewerPanel" visible="false">
+                <VBox id="viewportContainer"/>
+            </Panel>
+        </VBox>
+    </Page>
+</mvc:View>
