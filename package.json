@@ -1,0 +1,21 @@
+{
+  "name": "fiori---tranning-3d-view",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrogiuberti/Fiori---Tranning-3D-View.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leandrogiuberti/Fiori---Tranning-3D-View/issues"
+  },
+  "homepage": "https://github.com/leandrogiuberti/Fiori---Tranning-3D-View#readme"
+}
