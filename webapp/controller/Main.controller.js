@@ -5,7 +5,7 @@ sap.ui.define([
 ],function(Controller, JSONModel, Viewport) {
     "use strict";
 
-    return Controller.extend("my.app.controller.Main", {
+    return Controller.extend("leandrogiuberti.FioriTranning3DView.controller.Main", {
 
         onInit: function () {
             const oData = {
