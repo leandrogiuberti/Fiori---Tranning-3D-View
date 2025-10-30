@@ -1,4 +1,4 @@
-<mvc:View controllerName="my.app.controller.Main" 
+<mvc:View controllerName="leandrogiuberti.FioriTranning3DView.controller.Main" 
     xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
     <Page title="3D Objects">
         <VBox>
