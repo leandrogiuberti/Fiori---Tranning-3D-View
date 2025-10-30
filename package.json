@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ui5 serve",
+    "start": "ui5 serve --open index.html",
     "build": "ui5 build --all"
   },
   "repository": {

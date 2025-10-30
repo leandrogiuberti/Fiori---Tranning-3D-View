@@ -1,4 +1,8 @@
-specVersion: "4.0"
+specVersion: "2.6"
 metadata:
   name: fiori---tranning-3d-view
 type: application
+resources:
+  configuration:
+    paths:
+      webapp: webapp
