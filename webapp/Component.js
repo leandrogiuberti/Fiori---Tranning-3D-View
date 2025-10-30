@@ -1,8 +1,7 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
-  "sap/ui/Device",
-  "leandrogiuberti/FioriTranning3DView/model/models"
-], function (UIComponent, Device, models) {
+  "sap/ui/model/json/JSONModel" // Dependencia declarada
+], function (UIComponent, JSONModel) {
   "use strict";
 
   return UIComponent.extend("leandrogiuberti.FioriTranning3DView.Component", {
@@ -10,5 +9,12 @@ sap.ui.define([
       manifest: "json"
     },
 
+    init: function () {
+      UIComponent.prototype.init.apply(this, arguments);
+      var sUrl = sap.ui.require.toUrl("webapp\model\models.js");
+      var oModel = new JSONModel(sUrl);
+      this.setModel(oModel);
+    }
   });
 });
+
