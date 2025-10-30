@@ -1,7 +1,7 @@
 {
   "_version": "1.41.0",
   "sap.app": {
-    "id": "my.app",
+    "id": "leandrogiuberti.FioriTranning3DView",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -19,11 +19,14 @@
       "desktop": true,
       "tablet": true,
       "phone": true
-    }
+    },
+    "supportedThemes": [
+      "sap_fiori_3"
+    ]
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "my.app.view.MainView",
+      "viewName": "leandrogiuberti.FioriTranning3DView.view.MainView",
       "type": "XML",
       "async": true,
       "id": "MainView"
@@ -50,7 +53,7 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "viewPath": "my.app.view",
+        "viewPath": "leandrogiuberti.FioriTranning3DView.view",
         "controlId": "app",
         "controlAggregation": "pages",
         "bypassed": {
