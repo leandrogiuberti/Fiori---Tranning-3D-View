@@ -1,0 +1,578 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/shell/ShellBar/Component.js",
+			"size": 8153,
+			"isDebug": true,
+			"required": [
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/ShellBar/view/ShellBar.view.xml",
+				"sap/ushell/renderer/ShellLayout.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "sap/ushell/components/shell/ShellBar/Component-preload.js",
+			"size": 32952,
+			"merged": true,
+			"required": [
+				"sap/m/Image.js",
+				"sap/m/Input.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/api/NewExperience.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarItem.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarSpacer.js",
+				"sap/ushell/gen/ui5/webcomponents/dist/Button.js",
+				"sap/ushell/renderer/ShellLayout.js",
+				"sap/ushell/state/BindingHelper.js",
+				"sap/ushell/state/ShellModel.js",
+				"sap/ushell/state/modules/BackNavigation.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons-business-suite/AllIcons.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons-tnt/AllIcons.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons/AllIcons.js",
+				"sap/ushell/ui/shell/ShellAppTitle.js",
+				"sap/ushell/utils.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/ShellBar/Component.js",
+				"sap/ushell/components/shell/ShellBar/controller/ShellBar.controller.js",
+				"sap/ushell/components/shell/ShellBar/manifest.json",
+				"sap/ushell/components/shell/ShellBar/resources/resources.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ar.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_bg.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ca.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_cnr.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_cs.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_cy.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_da.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_de.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_el.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_en.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_en_GB.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_en_US_saprigi.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_es.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_es_MX.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_et.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_fi.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_fr.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_fr_CA.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_hi.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_hr.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_hu.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_id.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_it.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_iw.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ja.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_kk.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ko.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_lt.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_lv.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_mk.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ms.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_nl.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_no.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_pl.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_pt.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_pt_PT.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ro.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_ru.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_sh.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_sk.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_sl.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_sr.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_sv.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_th.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_tr.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_uk.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_vi.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_zh_CN.properties",
+				"sap/ushell/components/shell/ShellBar/resources/resources_zh_TW.properties",
+				"sap/ushell/components/shell/ShellBar/view/ShellBar.view.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js.map",
+			"size": 11061,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/shell/ShellBar/Component.js",
+			"size": 3846,
+			"required": [
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/ShellBar/view/ShellBar.view.xml",
+				"sap/ushell/renderer/ShellLayout.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 4805,
+			"isDebug": true
+		},
+		{
+			"name": "controller/ShellBar-dbg.controller.js",
+			"module": "sap/ushell/components/shell/ShellBar/controller/ShellBar.controller.js",
+			"size": 11841,
+			"isDebug": true,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/api/NewExperience.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarItem.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarSpacer.js",
+				"sap/ushell/gen/ui5/webcomponents/dist/Button.js",
+				"sap/ushell/state/BindingHelper.js",
+				"sap/ushell/state/ShellModel.js",
+				"sap/ushell/state/modules/BackNavigation.js",
+				"sap/ushell/ui/shell/ShellAppTitle.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "controller/ShellBar.controller.js",
+			"module": "sap/ushell/components/shell/ShellBar/controller/ShellBar.controller.js",
+			"size": 5314,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/api/NewExperience.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarItem.js",
+				"sap/ushell/gen/ui5/webcomponents-fiori/dist/ShellBarSpacer.js",
+				"sap/ushell/gen/ui5/webcomponents/dist/Button.js",
+				"sap/ushell/state/BindingHelper.js",
+				"sap/ushell/state/ShellModel.js",
+				"sap/ushell/state/modules/BackNavigation.js",
+				"sap/ushell/ui/shell/ShellAppTitle.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "controller/ShellBar.controller.js.map",
+			"size": 5922,
+			"isDebug": true
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ushell/components/shell/ShellBar/manifest.json",
+			"size": 2008
+		},
+		{
+			"name": "resources.json",
+			"size": 20776
+		},
+		{
+			"name": "resources/resources.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources.properties",
+			"size": 445,
+			"locale": "",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ar.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ar.properties",
+			"size": 440,
+			"locale": "ar",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_bg.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_bg.properties",
+			"size": 481,
+			"locale": "bg",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ca.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ca.properties",
+			"size": 180,
+			"locale": "ca",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_cnr.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_cnr.properties",
+			"size": 167
+		},
+		{
+			"name": "resources/resources_cs.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_cs.properties",
+			"size": 209,
+			"locale": "cs",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_cy.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_cy.properties",
+			"size": 158,
+			"locale": "cy",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_da.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_da.properties",
+			"size": 147,
+			"locale": "da",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_de.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_de.properties",
+			"size": 160,
+			"locale": "de",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_el.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_el.properties",
+			"size": 578,
+			"locale": "el",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_en.properties",
+			"size": 138,
+			"locale": "en",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en_GB.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_en_GB.properties",
+			"size": 138,
+			"locale": "en_GB",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en_US_saprigi.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_en_US_saprigi.properties",
+			"size": 1230,
+			"locale": "en_US_saprigi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_es.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_es.properties",
+			"size": 189,
+			"locale": "es",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_es_MX.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_es_MX.properties",
+			"size": 171,
+			"locale": "es_MX",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_et.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_et.properties",
+			"size": 153,
+			"locale": "et",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fi.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_fi.properties",
+			"size": 154,
+			"locale": "fi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fr.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_fr.properties",
+			"size": 196,
+			"locale": "fr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fr_CA.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_fr_CA.properties",
+			"size": 185,
+			"locale": "fr_CA",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hi.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_hi.properties",
+			"size": 453,
+			"locale": "hi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hr.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_hr.properties",
+			"size": 173,
+			"locale": "hr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hu.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_hu.properties",
+			"size": 184,
+			"locale": "hu",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_id.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_id.properties",
+			"size": 168,
+			"locale": "id",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_it.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_it.properties",
+			"size": 154,
+			"locale": "it",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_iw.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_iw.properties",
+			"size": 330,
+			"locale": "iw",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ja.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ja.properties",
+			"size": 258,
+			"locale": "ja",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_kk.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_kk.properties",
+			"size": 426,
+			"locale": "kk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ko.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ko.properties",
+			"size": 221,
+			"locale": "ko",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_lt.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_lt.properties",
+			"size": 207,
+			"locale": "lt",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_lv.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_lv.properties",
+			"size": 181,
+			"locale": "lv",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_mk.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_mk.properties",
+			"size": 532,
+			"locale": "mk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ms.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ms.properties",
+			"size": 160,
+			"locale": "ms",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_nl.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_nl.properties",
+			"size": 157,
+			"locale": "nl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_no.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_no.properties",
+			"size": 151,
+			"locale": "no",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pl.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_pl.properties",
+			"size": 172,
+			"locale": "pl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pt.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_pt.properties",
+			"size": 187,
+			"locale": "pt",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pt_PT.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_pt_PT.properties",
+			"size": 199,
+			"locale": "pt_PT",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ro.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ro.properties",
+			"size": 186,
+			"locale": "ro",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ru.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_ru.properties",
+			"size": 578,
+			"locale": "ru",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sh.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_sh.properties",
+			"size": 164,
+			"locale": "sh",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sk.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_sk.properties",
+			"size": 199,
+			"locale": "sk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sl.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_sl.properties",
+			"size": 160,
+			"locale": "sl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sr.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_sr.properties",
+			"size": 498,
+			"locale": "sr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sv.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_sv.properties",
+			"size": 164,
+			"locale": "sv",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_th.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_th.properties",
+			"size": 498,
+			"locale": "th",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_tr.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_tr.properties",
+			"size": 149,
+			"locale": "tr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_uk.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_uk.properties",
+			"size": 560,
+			"locale": "uk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_vi.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_vi.properties",
+			"size": 336,
+			"locale": "vi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_zh_CN.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_zh_CN.properties",
+			"size": 204,
+			"locale": "zh_CN",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_zh_TW.properties",
+			"module": "sap/ushell/components/shell/ShellBar/resources/resources_zh_TW.properties",
+			"size": 204,
+			"locale": "zh_TW",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "view/ShellBar.view.xml",
+			"module": "sap/ushell/components/shell/ShellBar/view/ShellBar.view.xml",
+			"size": 3867,
+			"required": [
+				"sap/m/Image.js",
+				"sap/m/Input.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ushell/components/shell/ShellBar/controller/ShellBar.controller.js",
+				"sap/ushell/state/BindingHelper.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons-business-suite/AllIcons.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons-tnt/AllIcons.js",
+				"sap/ushell/thirdparty/ui5/webcomponents-icons/AllIcons.js"
+			]
+		}
+	]
+}

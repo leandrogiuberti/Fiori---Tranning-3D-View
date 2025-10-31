@@ -1,0 +1,5 @@
+/*!
+ * Copyright (c) 2009-2014 SAP SE, All Rights Reserved
+ */
+sap.ui.define(["sap/ovp/cards/generic/base/table/BaseTable.controller","sap/ovp/filter/FilterUtils","sap/ui/core/EventBus","sap/base/util/isEmptyObject"],function(t,e,a,n){"use strict";return t.extend("sap.ovp.cards.table.Table",{onInit:function(){t.prototype.onInit.apply(this,arguments);var n=this;this.eventhandler=function(t,a,i){e.applyFiltersToV2Card(i,n)};this.GloabalEventBus=a.getInstance();if(this.oMainComponent&&this.oMainComponent.isMacroFilterBar){this.GloabalEventBus.subscribe("OVPGlobalfilter","OVPGlobalFilterSeacrhfired",n.eventhandler)}},onAfterRendering:function(){t.prototype.onAfterRendering.apply(this,arguments)},onDataReceived:function(t){this.bdataLoadedToEnableAddToInsight=true;var e=this.byId("ovpTable");e&&e.setBusy(false);var a=this.getCardContentContainer();if(!a){return}var i=t.getParameter("data");if(!i||n(i)||!i.results||!i.results.length){var r=this.getOwnerComponent().getComponentData().cardId;if(r&&this.oMainComponent.aErrorCards.indexOf(r)===-1){this.oMainComponent.createNoDataCard(r)}}}})});
+//# sourceMappingURL=Table.controller.js.map

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/m/Button","sap/m/ButtonRenderer","sap/m/library"],(e,t,s)=>{"use strict";const r=s.ButtonType;const n=e.extend("sap.ushell.ui.launchpad.ActionItem",{metadata:{library:"sap.ushell",properties:{actionType:{type:"string",group:"Appearance",defaultValue:"standard"}},events:{press:{},afterRendering:{}}},renderer:t});n.prototype.setActionType=function(e){if(!this.sOrigType){this.sOrigType=this.getType()}this.setType(e==="action"?r.Unstyled:this.sOrigType||r.Standard);this.setProperty("actionType",e,true)};return n});
+//# sourceMappingURL=ActionItem.js.map

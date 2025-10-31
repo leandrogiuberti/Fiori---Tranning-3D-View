@@ -1,0 +1,457 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/factsheet/Component.js",
+			"size": 2039,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/factsheet/Component.js",
+			"size": 1039,
+			"required": [
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 1112,
+			"isDebug": true
+		},
+		{
+			"name": "annotation/Mapping-dbg.js",
+			"module": "sap/ushell/components/factsheet/annotation/Mapping.js",
+			"size": 32892,
+			"isDebug": true,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "annotation/Mapping.js",
+			"module": "sap/ushell/components/factsheet/annotation/Mapping.js",
+			"size": 9505,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "annotation/Mapping.js.map",
+			"size": 17270,
+			"isDebug": true
+		},
+		{
+			"name": "controls/PictureTile-dbg.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureTile.js",
+			"size": 5637,
+			"isDebug": true,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CustomTile.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ushell/components/factsheet/controls/PictureTileRenderer.js",
+				"sap/ushell/library.js"
+			]
+		},
+		{
+			"name": "controls/PictureTile.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureTile.js",
+			"size": 1929,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CustomTile.js",
+				"sap/m/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ushell/components/factsheet/controls/PictureTileRenderer.js",
+				"sap/ushell/library.js"
+			]
+		},
+		{
+			"name": "controls/PictureTile.js.map",
+			"size": 2364,
+			"isDebug": true
+		},
+		{
+			"name": "controls/PictureTileRenderer-dbg.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureTileRenderer.js",
+			"size": 1563,
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/CustomTileRenderer.js",
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "controls/PictureTileRenderer.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureTileRenderer.js",
+			"size": 743,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/CustomTileRenderer.js",
+				"sap/ui/core/Renderer.js"
+			]
+		},
+		{
+			"name": "controls/PictureTileRenderer.js.map",
+			"size": 925,
+			"isDebug": true
+		},
+		{
+			"name": "controls/PictureViewer-dbg.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewer.js",
+			"size": 17649,
+			"isDebug": true,
+			"required": [
+				"sap/m/TileContainer.js",
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ushell/components/factsheet/controls/PictureTile.js",
+				"sap/ushell/components/factsheet/controls/PictureViewerRenderer.js",
+				"sap/ushell/library.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewer.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewer.js",
+			"size": 6129,
+			"required": [
+				"sap/m/TileContainer.js",
+				"sap/ui/Device.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ushell/components/factsheet/controls/PictureTile.js",
+				"sap/ushell/components/factsheet/controls/PictureViewerRenderer.js",
+				"sap/ushell/library.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewer.js.map",
+			"size": 7959,
+			"isDebug": true
+		},
+		{
+			"name": "controls/PictureViewerItem-dbg.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewerItem.js",
+			"size": 3029,
+			"isDebug": true,
+			"required": [
+				"sap/m/Image.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewerItem.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewerItem.js",
+			"size": 648,
+			"required": [
+				"sap/m/Image.js",
+				"sap/ui/core/Control.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewerItem.js.map",
+			"size": 910,
+			"isDebug": true
+		},
+		{
+			"name": "controls/PictureViewerRenderer-dbg.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewerRenderer.js",
+			"size": 1039,
+			"isDebug": true,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/TileContainerRenderer.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewerRenderer.js",
+			"module": "sap/ushell/components/factsheet/controls/PictureViewerRenderer.js",
+			"size": 390,
+			"required": [
+				"jquery.sap.global.js",
+				"sap/m/TileContainerRenderer.js"
+			]
+		},
+		{
+			"name": "controls/PictureViewerRenderer.js.map",
+			"size": 469,
+			"isDebug": true
+		},
+		{
+			"name": "css/custom.css",
+			"size": 5266
+		},
+		{
+			"name": "factory/ThingInspector-dbg.js",
+			"module": "sap/ushell/components/factsheet/factory/ThingInspector.js",
+			"size": 191101,
+			"isDebug": true,
+			"required": [
+				"sap/m/ActionSheet.js",
+				"sap/m/Button.js",
+				"sap/m/Carousel.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/DateTimeInput.js",
+				"sap/m/Image.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/List.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/ViewSettingsCustomItem.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/m/ViewSettingsItem.js",
+				"sap/m/library.js",
+				"sap/suite/ui/commons/FacetOverview.js",
+				"sap/suite/ui/commons/KpiTile.js",
+				"sap/suite/ui/commons/LinkActionSheet.js",
+				"sap/suite/ui/commons/UnifiedThingGroup.js",
+				"sap/suite/ui/commons/UnifiedThingInspector.js",
+				"sap/suite/ui/commons/library.js",
+				"sap/ui/core/Configuration.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/library.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/ODataModel.js",
+				"sap/ui/model/type/Date.js",
+				"sap/ui/model/type/DateTime.js",
+				"sap/ui/model/type/Float.js",
+				"sap/ui/model/type/Integer.js",
+				"sap/ui/model/type/Time.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ui/ux3/ThingGroup.js",
+				"sap/ui/vbm/VBI.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/services/AppConfiguration.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js",
+				"sap/ushell/ui/footerbar/JamDiscussButton.js",
+				"sap/ushell/ui/footerbar/JamShareButton.js",
+				"sap/viz/ui5/Area.js",
+				"sap/viz/ui5/Bar.js",
+				"sap/viz/ui5/Bubble.js",
+				"sap/viz/ui5/Column.js",
+				"sap/viz/ui5/Donut.js",
+				"sap/viz/ui5/Heatmap.js",
+				"sap/viz/ui5/HorizontalArea.js",
+				"sap/viz/ui5/Line.js",
+				"sap/viz/ui5/Pie.js",
+				"sap/viz/ui5/Scatter.js",
+				"sap/viz/ui5/StackedColumn.js",
+				"sap/viz/ui5/StackedColumn100.js",
+				"sap/viz/ui5/Treemap.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/types/Title.js"
+			]
+		},
+		{
+			"name": "factory/ThingInspector.js",
+			"module": "sap/ushell/components/factsheet/factory/ThingInspector.js",
+			"size": 65334,
+			"required": [
+				"sap/m/ActionSheet.js",
+				"sap/m/Button.js",
+				"sap/m/Carousel.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/DateTimeInput.js",
+				"sap/m/Image.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/Link.js",
+				"sap/m/List.js",
+				"sap/m/Page.js",
+				"sap/m/StandardListItem.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/ViewSettingsCustomItem.js",
+				"sap/m/ViewSettingsDialog.js",
+				"sap/m/ViewSettingsItem.js",
+				"sap/m/library.js",
+				"sap/suite/ui/commons/FacetOverview.js",
+				"sap/suite/ui/commons/KpiTile.js",
+				"sap/suite/ui/commons/LinkActionSheet.js",
+				"sap/suite/ui/commons/UnifiedThingGroup.js",
+				"sap/suite/ui/commons/UnifiedThingInspector.js",
+				"sap/suite/ui/commons/library.js",
+				"sap/ui/core/Configuration.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Core.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/IconPool.js",
+				"sap/ui/core/Locale.js",
+				"sap/ui/core/format/NumberFormat.js",
+				"sap/ui/core/library.js",
+				"sap/ui/layout/Grid.js",
+				"sap/ui/layout/HorizontalLayout.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/ODataModel.js",
+				"sap/ui/model/type/Date.js",
+				"sap/ui/model/type/DateTime.js",
+				"sap/ui/model/type/Float.js",
+				"sap/ui/model/type/Integer.js",
+				"sap/ui/model/type/Time.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ui/ux3/ThingGroup.js",
+				"sap/ui/vbm/VBI.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/services/AppConfiguration.js",
+				"sap/ushell/ui/footerbar/AddBookmarkButton.js",
+				"sap/ushell/ui/footerbar/JamDiscussButton.js",
+				"sap/ushell/ui/footerbar/JamShareButton.js",
+				"sap/viz/ui5/Area.js",
+				"sap/viz/ui5/Bar.js",
+				"sap/viz/ui5/Bubble.js",
+				"sap/viz/ui5/Column.js",
+				"sap/viz/ui5/Donut.js",
+				"sap/viz/ui5/Heatmap.js",
+				"sap/viz/ui5/HorizontalArea.js",
+				"sap/viz/ui5/Line.js",
+				"sap/viz/ui5/Pie.js",
+				"sap/viz/ui5/Scatter.js",
+				"sap/viz/ui5/StackedColumn.js",
+				"sap/viz/ui5/StackedColumn100.js",
+				"sap/viz/ui5/Treemap.js",
+				"sap/viz/ui5/data/FlattenedDataset.js",
+				"sap/viz/ui5/types/Title.js"
+			]
+		},
+		{
+			"name": "factory/ThingInspector.js.map",
+			"size": 93243,
+			"isDebug": true
+		},
+		{
+			"name": "resources.json",
+			"size": 12329
+		},
+		{
+			"name": "tools/ODataUrlTemplating-dbg.js",
+			"module": "sap/ushell/components/factsheet/tools/ODataUrlTemplating.js",
+			"size": 1885,
+			"isDebug": true,
+			"required": [
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "tools/ODataUrlTemplating.js",
+			"module": "sap/ushell/components/factsheet/tools/ODataUrlTemplating.js",
+			"size": 799,
+			"required": [
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "tools/ODataUrlTemplating.js.map",
+			"size": 1188,
+			"isDebug": true
+		},
+		{
+			"name": "views/ThingViewer-dbg.controller.js",
+			"module": "sap/ushell/components/factsheet/views/ThingViewer.controller.js",
+			"size": 433,
+			"isDebug": true,
+			"required": [
+				"sap/ui/model/odata/ODataModel.js"
+			]
+		},
+		{
+			"name": "views/ThingViewer-dbg.view.js",
+			"module": "sap/ushell/components/factsheet/views/ThingViewer.view.js",
+			"size": 4512,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Component.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ushell/components/factsheet/factory/ThingInspector.js",
+				"sap/ushell/components/factsheet/tools/ODataUrlTemplating.js"
+			]
+		},
+		{
+			"name": "views/ThingViewer.controller.js",
+			"module": "sap/ushell/components/factsheet/views/ThingViewer.controller.js",
+			"size": 304,
+			"required": [
+				"sap/ui/model/odata/ODataModel.js"
+			]
+		},
+		{
+			"name": "views/ThingViewer.controller.js.map",
+			"size": 356,
+			"isDebug": true
+		},
+		{
+			"name": "views/ThingViewer.view.js",
+			"module": "sap/ushell/components/factsheet/views/ThingViewer.view.js",
+			"size": 1457,
+			"required": [
+				"sap/ui/core/Component.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ushell/components/factsheet/factory/ThingInspector.js",
+				"sap/ushell/components/factsheet/tools/ODataUrlTemplating.js"
+			]
+		},
+		{
+			"name": "views/ThingViewer.view.js.map",
+			"size": 1962,
+			"isDebug": true
+		},
+		{
+			"name": "vocabularies/Common.xml",
+			"size": 12750
+		},
+		{
+			"name": "vocabularies/Communication.xml",
+			"size": 8398
+		},
+		{
+			"name": "vocabularies/UI.xml",
+			"size": 17259
+		}
+	]
+}

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/EventHub","sap/ui/core/Component"],(e,n)=>{"use strict";const t={loadComponentByEvent:function(n){e.emit(n.eventName,n.eventData)},loadComponentByComponentCreate:function(e){return n.create(e.oData).then(()=>e.sStepName)},loadComponentByRequire:function(e){return new Promise((n,t)=>{sap.ui.require([e],e=>{n(e)})})},waitInMs:function(n){setTimeout(()=>{e.emit("StepDone",n.sStepName)},n.iWaitingTime)},directLoading:function(){}};return t},false);
+//# sourceMappingURL=FLPLoader.js.map

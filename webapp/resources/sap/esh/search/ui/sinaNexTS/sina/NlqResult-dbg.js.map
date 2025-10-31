@@ -1,0 +1,1 @@
+{"version":3,"file":"NlqResult-dbg.js","names":[],"sources":["NlqResult.ts"],"sourcesContent":["/*!\n * SAPUI5\n * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.\n * \n */\nexport interface NlqResult {\n    success: boolean;\n    filterDescription: string;\n}\n"],"mappings":"","ignoreList":[]}

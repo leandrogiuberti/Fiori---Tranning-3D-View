@@ -1,0 +1,163 @@
+{
+  "_version": "1.68.0",
+  "sap.app": {
+    "id": "sap.ushell.components.shell.SideNavigation",
+    "applicationVersion": {
+      "version": "1.141.1"
+    },
+    "i18n": {
+      "bundleUrl": "./resources/resources.properties",
+      "fallbackLocale": "en",
+      "supportedLocales": [
+        "",
+        "ar",
+        "bg",
+        "ca",
+        "cnr",
+        "cs",
+        "cy",
+        "da",
+        "de",
+        "el",
+        "en",
+        "en-GB",
+        "en-US-x-saprigi",
+        "es",
+        "es-MX",
+        "et",
+        "fi",
+        "fr",
+        "fr-CA",
+        "hi",
+        "hr",
+        "hu",
+        "id",
+        "it",
+        "iw",
+        "ja",
+        "kk",
+        "ko",
+        "lt",
+        "lv",
+        "mk",
+        "ms",
+        "nl",
+        "no",
+        "pl",
+        "pt",
+        "pt-PT",
+        "ro",
+        "ru",
+        "sh",
+        "sk",
+        "sl",
+        "sr",
+        "sv",
+        "th",
+        "tr",
+        "uk",
+        "vi",
+        "zh-CN",
+        "zh-TW"
+      ]
+    },
+    "type": "component",
+    "ach": "CA-FLP-FE-COR",
+    "title": "",
+    "resources": "resources.json"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "phone": true,
+      "tablet": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.132",
+      "libs": {
+        "sap.m": {},
+        "sap.tnt": {},
+        "sap.ui.core": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "rootView": {
+      "viewName": "sap.ushell.components.shell.SideNavigation.view.Main",
+      "type": "XML"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ushell.components.shell.SideNavigation.resources.resources",
+          "async": true,
+          "supportedLocales": [
+            "",
+            "ar",
+            "bg",
+            "ca",
+            "cnr",
+            "cs",
+            "cy",
+            "da",
+            "de",
+            "el",
+            "en",
+            "en-GB",
+            "en-US-x-saprigi",
+            "es",
+            "es-MX",
+            "et",
+            "fi",
+            "fr",
+            "fr-CA",
+            "hi",
+            "hr",
+            "hu",
+            "id",
+            "it",
+            "iw",
+            "ja",
+            "kk",
+            "ko",
+            "lt",
+            "lv",
+            "mk",
+            "ms",
+            "nl",
+            "no",
+            "pl",
+            "pt",
+            "pt-PT",
+            "ro",
+            "ru",
+            "sh",
+            "sk",
+            "sl",
+            "sr",
+            "sv",
+            "th",
+            "tr",
+            "uk",
+            "vi",
+            "zh-CN",
+            "zh-TW"
+          ]
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  }
+}

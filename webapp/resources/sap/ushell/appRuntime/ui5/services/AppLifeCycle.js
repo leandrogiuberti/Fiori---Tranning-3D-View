@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/Log","sap/ushell/appRuntime/ui5/AppCommunicationMgr","sap/ushell/services/AppLifeCycle"],(e,p,r)=>{"use strict";function s(s,a,t){r.call(this,s,a,t);this.reloadCurrentApp=async function(){try{await p.postMessageToFLP("sap.ushell.services.AppLifeCycle.reloadCurrentApp",{})}catch(p){e.error("reloadCurrentApp failed: ",p)}}}s.prototype=r.prototype;s.hasNoAdapter=r.hasNoAdapter;return s});
+//# sourceMappingURL=AppLifeCycle.js.map

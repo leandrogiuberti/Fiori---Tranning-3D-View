@@ -1,0 +1,196 @@
+<!--
+  SAP UI development toolkit for HTML5 (SAPUI5)
+   * (c) Copyright 2009-2025 SAP SE. All rights reserved
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:fesr="http://schemas.sap.com/sapui5/extension/sap.ui.core.FESR/1">
+	<VBox id="container" height="100%" renderType="Bare">
+		<!-- HEADER CONTENT -->
+		<VBox id="headerContent" class="headerContent" backgroundDesign="Solid">
+			<Text id="appsAdditionDescription" text="{i18n>addAppsSearchDescription}" />
+			<HBox id="searchContainer" class="sapUiTinyMarginTop" renderType="Bare" justifyContent="SpaceBetween" gap="0.5rem">
+				<TextArea
+					id="searchTextArea"
+					rows="2"
+					width="100%"
+					maxLength="500"
+					valueLiveUpdate="true"
+					showExceededText="true"
+					liveChange=".onSearchTextAreaLiveChange"
+					placeholder="{i18n>searchPlaceholder}"
+					enabled="{= ${/searchStatus} !== 'searching' }"
+					value="{ path: '/query', mode: 'TwoWay' }"
+				/>
+				<Button
+					id="goBtn"
+					text="{i18n>goButton}"
+					enabled="{= ${/searchStatus} !== 'searching' &amp;&amp; !${/invalidQuery} }"
+					press=".onPressGo"
+					fesr:press="myh:apps:go"
+				/>
+				<Button
+					id="clearAllBtn"
+					text="{i18n>clearAllButton}"
+					enabled="{= ${/searchStatus} !== 'searching' &amp;&amp; ${/query/length} &gt; 0 }"
+					press=".resetPanel"
+					fesr:press="myh:apps:clearAll"
+					type="Transparent"
+				/>
+			</HBox>
+			<VBox id="sampleQueriesContainer" renderType="Bare" visible="{= ${/searchStatus} === 'idle' }" class="sapUiTinyMarginBottom">
+				<HBox id="sampleQueriesHeader" alignItems="Center" renderType="Bare">
+					<core:Icon src="sap-icon://sys-help" color="Neutral" size="0.875rem" class="sapUiTinyMarginEnd" />
+					<Label id="sampleQueries" text="{i18n>sampleQueries}" />
+				</HBox>
+				<VBox
+					id="sampleQueriesList"
+					renderType="Bare"
+					items="{/sampleQueries}"
+					justifyContent="SpaceBetween"
+					class="sapUiTinyMarginTop"
+				>
+					<HBox id="sampleQuery" renderType="Bare">
+						<FormattedText
+							id="number"
+							htmlText="&lt;em style='color:var(--sapContent_LabelColor)'&gt;{index}.&lt;/em&gt;"
+							class="sapUiTinyMarginTop sapUiTinyMarginEnd"
+						/>
+						<FormattedText
+							id="query"
+							htmlText="&lt;em style='color:var(--sapContent_LabelColor)'&gt;{query}&lt;/em&gt;"
+							class="sapUiTinyMarginTop"
+						/>
+					</HBox>
+				</VBox>
+			</VBox>
+		</VBox>
+
+		<!-- CONTENT AREA -->
+		<VBox id="resultContent" renderType="Bare">
+			<!-- RESULT AREA HEADER -->
+			<VBox id="resultHeader" renderType="Bare" class="sapUiSmallMarginBeginEnd sapUiSmallMarginBottom">
+				<HBox renderType="Bare" alignItems="Center" justifyContent="SpaceBetween" width="100%">
+					<Title
+						id="resultTitle"
+						text="{= ${/suggestedAppsCount} > 0 ? ${i18n>resultTitle} + ' (' + ${/suggestedAppsCount} + ')' : ${i18n>resultTitle} }"
+						titleStyle="H6"
+					/>
+					<HBox
+						id="footer"
+						renderType="Bare"
+						class="footer"
+						alignItems="Center"
+						visible="{= !${/hasError} &amp;&amp; ${/searchStatus} === 'complete' }"
+					>
+						<Label id="createdwithAI" text="{/aiPolicyText}" class="sapUiTinyMarginEnd" />
+						<ToggleButton
+							id="thumbsUp"
+							icon="sap-icon://thumb-up"
+							type="Transparent"
+							tooltip="{i18n>thumbsUpButton}"
+							pressed="{= ${/feedback/thumbsUp} }"
+							press=".sendFeedback('thumbsUp')"
+							fesr:press="myh:apps:thumbsUp"
+						/>
+						<ToggleButton
+							id="thumbsDown"
+							icon="sap-icon://thumb-down"
+							type="Transparent"
+							tooltip="{i18n>thumbsDownButton}"
+							pressed="{= ${/feedback/thumbsDown} }"
+							press=".sendFeedback('thumbsDown')"
+							fesr:press="myh:apps:thumbsDown"
+							class="sapUiTinyMarginBegin"
+						/>
+					</HBox>
+				</HBox>
+				<Text
+					id="resultDescription"
+					text="{i18n>resultDescription}"
+					visible="{= !${/hasError} &amp;&amp; ${/searchStatus} === 'complete' }"
+				/>
+				<MessageStrip
+					id="searchingMessage"
+					type="Information"
+					showIcon="true"
+					class="sapUiTinyMarginTop"
+					text="{i18n>searchingMessage}"
+					visible="{= ${/searchStatus} === 'searching' }"
+				/>
+			</VBox>
+
+			<!-- SUGGESTION LIST CONTAINER -->
+			<ScrollContainer id="resultsContainer" vertical="true" class="suggestionListContainer">
+				<!-- SEARCHING ANIMATION -->
+				<VBox
+					id="lodingAnimationContainer"
+					renderType="Bare"
+					gap="1rem"
+					class="sapUiSmallMarginBeginEnd"
+					items="{/loadingAnimations}"
+					visible="{= ${/searchStatus} === 'searching' }"
+				>
+					<VBox id="animationItem" renderType="Bare" backgroundDesign="Solid" class="loadingAnimation">
+						<core:HTML id="searchingAnimation" content="{}" />
+					</VBox>
+				</VBox>
+
+				<!-- SEARCH RESULT LIST -->
+				<List
+					id="appsList"
+					mode="MultiSelect"
+					visible="{= !${/hasError} &amp;&amp; ${/searchStatus} === 'complete' }"
+					selectionChange=".onListSelectionChange"
+					class="appSuggestionList"
+				/>
+			</ScrollContainer>
+
+			<!-- SEARCH ILLUSTRATION CONTAINER -->
+			<VBox
+				id="beforeSearchContainer"
+				renderType="Bare"
+				height="23.3125rem"
+				justifyContent="Center"
+				class="illustratedMessageContainer"
+				visible="{= ${/searchStatus} === 'idle' }"
+			>
+				<!-- BEFORE SEARCH ILLUSTRATION -->
+				<IllustratedMessage
+					id="beforeSearch"
+					illustrationSize="Medium"
+					src="sap-illustration://SimpleMagnifier"
+					description="{i18n>beforeSearchDescription}"
+					visible="{= ${/searchStatus} === 'idle' }"
+				/>
+			</VBox>
+
+			<!-- GENERIC ERROR CONTAINER -->
+			<VBox
+				id="errorContainer"
+				renderType="Bare"
+				height="29.3125rem"
+				class="illustratedMessageContainer"
+				visible="{/hasError}"
+				justifyContent="Center"
+			>
+				<!-- NO RESULTS FOUND -->
+				<IllustratedMessage
+					id="noResultsFound"
+					illustrationSize="Medium"
+					title="{i18n>validationErrorTitle}"
+					description="{/errorDescription}"
+					src="sap-illustration://SimpleNotFoundMagnifier"
+					visible="{= ${/errorType} === 'noResultsFound' }"
+				/>
+				<!-- SERVICE INTERRUPTED -->
+				<IllustratedMessage
+					id="serviceError"
+					illustrationSize="Medium"
+					title="{i18n>serviceErrorTitle}"
+					description="{/errorDescription}"
+					illustrationType="sapIllus-SimpleConnection"
+					visible="{= ${/errorType} === 'serviceError' }"
+				/>
+			</VBox>
+		</VBox>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,5 @@
+/*!
+ * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+ */
+sap.ui.define(["sap/ushell/gen/ui5/webcomponents/dist/ListItemBase","sap/ushell/gen/ui5/webcomponents-fiori","sap/ushell/thirdparty/NotificationListItem"],function(e){"use strict";const t=e.extend("sap.ushell.gen.ui5.webcomponents-fiori.dist.NotificationListItemBase",{metadata:{namespace:"sap/ushell/gen/ui5/webcomponents-fiori",qualifiedNamespace:"sap.ushell.gen.ui5.webcomponents-fiori",interfaces:[],properties:{titleText:{type:"string",mapping:"property"},read:{type:"boolean",mapping:"property",defaultValue:false},loading:{type:"boolean",mapping:"property",defaultValue:false},loadingDelay:{type:"float",mapping:"property",defaultValue:1e3}},aggregations:{},associations:{},events:{},getters:[],methods:[],designtime:"sap/ushell/gen/ui5/webcomponents-fiori/designtime/NotificationListItemBase.designtime"}});return t});
+//# sourceMappingURL=NotificationListItemBase.js.map

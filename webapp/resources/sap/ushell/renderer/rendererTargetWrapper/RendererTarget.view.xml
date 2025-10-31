@@ -1,0 +1,12 @@
+<mvc:View
+    xmlns="sap.ushell.renderer"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="sap.ushell.renderer.rendererTargetWrapper.RendererTarget"
+    height="100%">
+    <RendererAppContainer
+        id="appContainer"
+        childId="{/componentId}"
+        name="{/name}"
+        url="{/url}"
+        childDestroyed=".onChildDestroy" />
+</mvc:View>

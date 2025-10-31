@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/services/LaunchPage","sap/ushell/appRuntime/ui5/AppCommunicationMgr"],(e,s)=>{"use strict";function o(e,o,r){this.getGroupsForBookmarks=function(){return s.sendMessageToOuterShell("sap.ushell.services.LaunchPage.getGroupsForBookmarks")}}o.prototype=e.prototype;o.hasNoAdapter=e.hasNoAdapter;return o});
+//# sourceMappingURL=LaunchPage.js.map

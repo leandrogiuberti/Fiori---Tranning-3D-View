@@ -1,0 +1,135 @@
+{
+  "_version": "1.21.0",
+  "sap.app": {
+    "id": "sap.cux.home",
+    "type": "library",
+    "embeds": [],
+    "applicationVersion": {
+      "version": "1.141.0"
+    },
+    "title": "UI5 library: sap.cux.home",
+    "description": "UI5 library: sap.cux.home",
+    "ach": "CA-UI5-CUX",
+    "resources": "resources.json",
+    "offline": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "supportedThemes": [
+      "base",
+      "sap_fiori_3",
+      "sap_fiori_3_dark",
+      "sap_fiori_3_hcb",
+      "sap_fiori_3_hcw",
+      "sap_horizon",
+      "sap_horizon_dark",
+      "sap_horizon_hcb",
+      "sap_horizon_hcw"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.141",
+      "libs": {
+        "sap.ui.core": {
+          "minVersion": "1.141.0"
+        },
+        "sap.m": {
+          "minVersion": "1.141.0"
+        },
+        "sap.ui.integration": {
+          "minVersion": "1.141.0"
+        },
+        "sap.insights": {
+          "minVersion": "1.141.0"
+        }
+      }
+    },
+    "library": {
+      "i18n": {
+        "bundleUrl": "i18n/messagebundle.properties",
+        "supportedLocales": [
+          "",
+          "ar",
+          "bg",
+          "ca",
+          "cnr",
+          "cs",
+          "cy",
+          "da",
+          "de",
+          "el",
+          "en",
+          "en-GB",
+          "en-US-sappsd",
+          "en-US-saprigi",
+          "en-US-saptrc",
+          "es",
+          "es-MX",
+          "et",
+          "fi",
+          "fr",
+          "fr-CA",
+          "hi",
+          "hr",
+          "hu",
+          "id",
+          "it",
+          "iw",
+          "ja",
+          "kk",
+          "ko",
+          "lt",
+          "lv",
+          "mk",
+          "ms",
+          "nl",
+          "no",
+          "pl",
+          "pt",
+          "pt-PT",
+          "ro",
+          "ru",
+          "sh",
+          "sk",
+          "sl",
+          "sr",
+          "sv",
+          "th",
+          "tr",
+          "uk",
+          "vi",
+          "zh-CN",
+          "zh-TW"
+        ]
+      },
+      "content": {
+        "controls": [
+          "sap.cux.home.Layout",
+          "sap.cux.home.ToDosContainer",
+          "sap.cux.home.NewsAndPagesContainer",
+          "sap.cux.home.AppsContainer",
+          "sap.cux.home.InsightsContainer"
+        ],
+        "elements": [
+          "sap.cux.home.MenuItem",
+          "sap.cux.home.TaskPanel",
+          "sap.cux.home.SituationPanel",
+          "sap.cux.home.PagePanel",
+          "sap.cux.home.NewsPanel",
+          "sap.cux.home.FavAppPanel",
+          "sap.cux.home.FrequentAppPanel",
+          "sap.cux.home.RecentAppPanel",
+          "sap.cux.home.RecommendedAppPanel",
+          "sap.cux.home.TilesPanel",
+          "sap.cux.home.CardsPanel"
+        ],
+        "types": [
+          "sap.cux.home.OrientationType",
+          "sap.cux.home.NewsType"
+        ],
+        "interfaces": []
+      }
+    }
+  }
+}

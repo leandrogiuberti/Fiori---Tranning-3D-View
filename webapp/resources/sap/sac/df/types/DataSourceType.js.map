@@ -1,0 +1,1 @@
+{"version":3,"file":"DataSourceType.js","names":["sap","ui","define","DataSourceType","Query","View","InAModel","Cube","CDSProjectionView","Insight"],"sources":["DataSourceType-dbg.js"],"mappings":";;;;;AAMAA,IAAIC,GAAGC,OACL,kCACA,GACA,WASE,IAAIC,EAAiB,CAKnBC,MAAO,QAKPC,KAAM,OAKNC,SAAU,WAKVC,KAAM,OAKNC,kBAAmB,oBAKnBC,QAAS,WAEX,OAAON,CACT,EAAiB","ignoreList":[]}

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/mvc/View","sap/ui/core/mvc/ViewType","sap/ui/core/UIComponent"],(e,n,t)=>{"use strict";return t.extend("sap.ushell.components.contentFinderStandalone.Component",{metadata:{manifest:"json",library:"sap.ushell",interfaces:["sap.ui.core.IAsyncContentCreation"]},createContent:async function(){this._oResourceBundle=await this.getModel("i18n").getResourceBundle();return this.runAsOwner(()=>e.create({viewName:"sap.ushell.components.contentFinderStandalone.view.ContentFinderStandalone",id:"contentFinderAppSearchView",type:n.XML}))},getResourceBundle:function(){return this._oResourceBundle}})});
+//# sourceMappingURL=Component.js.map

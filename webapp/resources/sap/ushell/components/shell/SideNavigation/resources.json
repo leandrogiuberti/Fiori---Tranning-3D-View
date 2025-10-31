@@ -1,0 +1,996 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/Component.js",
+			"size": 10200,
+			"isDebug": true,
+			"required": [
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/SideNavigation/view/Main.view.xml",
+				"sap/ushell/state/ShellModel.js"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "sap/ushell/components/shell/SideNavigation/Component-preload.js",
+			"size": 90252,
+			"merged": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/base/i18n/Localization.js",
+				"sap/base/util/ObjectPath.js",
+				"sap/m/Button.js",
+				"sap/m/GenericTile.js",
+				"sap/m/NavContainer.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/ScrollContainer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/tnt/NavigationList.js",
+				"sap/tnt/NavigationListGroup.js",
+				"sap/tnt/NavigationListItem.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/api/performance/Extension.js",
+				"sap/ushell/api/performance/NavigationSource.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js",
+				"sap/ushell/modules/NavigationMenu/ListProviderAPI.js",
+				"sap/ushell/modules/NavigationMenu/NavContainer.js",
+				"sap/ushell/services/AppConfiguration.js",
+				"sap/ushell/state/ShellModel.js",
+				"sap/ushell/utils.js",
+				"sap/ushell/utils/UrlParsing.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/SideNavigation/Component.js",
+				"sap/ushell/components/shell/SideNavigation/controller/SideNavigation.controller.js",
+				"sap/ushell/components/shell/SideNavigation/interface/ListProviderAPI.js",
+				"sap/ushell/components/shell/SideNavigation/interface/NavContainer.js",
+				"sap/ushell/components/shell/SideNavigation/modules/AllSpaces.js",
+				"sap/ushell/components/shell/SideNavigation/modules/AppFinder.js",
+				"sap/ushell/components/shell/SideNavigation/modules/Favorites.js",
+				"sap/ushell/components/shell/SideNavigation/modules/GenericFixedNavigationListProvider.js",
+				"sap/ushell/components/shell/SideNavigation/modules/GenericNavigationListProvider.js",
+				"sap/ushell/components/shell/SideNavigation/modules/MyHome.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+				"sap/ushell/components/shell/SideNavigation/modules/RecentActivity.js",
+				"sap/ushell/components/shell/SideNavigation/modules/Spaces.js",
+				"sap/ushell/components/shell/SideNavigation/modules/SpacesNavigationListProvider.js",
+				"sap/ushell/components/shell/SideNavigation/fragment/AllSpaces.fragment.xml",
+				"sap/ushell/components/shell/SideNavigation/fragment/Popover.fragment.xml",
+				"sap/ushell/components/shell/SideNavigation/manifest.json",
+				"sap/ushell/components/shell/SideNavigation/resources/resources.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ar.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_bg.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ca.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_cnr.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_cs.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_cy.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_da.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_de.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_el.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_en.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_en_GB.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_en_US_saprigi.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_es.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_es_MX.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_et.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_fi.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_fr.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_fr_CA.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_hi.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_hr.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_hu.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_id.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_it.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_iw.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ja.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_kk.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ko.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_lt.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_lv.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_mk.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ms.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_nl.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_no.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_pl.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_pt.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_pt_PT.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ro.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_ru.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_sh.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_sk.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_sl.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_sr.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_sv.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_th.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_tr.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_uk.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_vi.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_zh_CN.properties",
+				"sap/ushell/components/shell/SideNavigation/resources/resources_zh_TW.properties",
+				"sap/ushell/components/shell/SideNavigation/view/Main.view.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js.map",
+			"size": 33510,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/shell/SideNavigation/Component.js",
+			"size": 4336,
+			"required": [
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/SideNavigation/view/Main.view.xml",
+				"sap/ushell/state/ShellModel.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 4421,
+			"isDebug": true
+		},
+		{
+			"name": "controller/SideNavigation-dbg.controller.js",
+			"module": "sap/ushell/components/shell/SideNavigation/controller/SideNavigation.controller.js",
+			"size": 8404,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/SideNavigation/interface/ListProviderAPI.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "controller/SideNavigation.controller.js",
+			"module": "sap/ushell/components/shell/SideNavigation/controller/SideNavigation.controller.js",
+			"size": 2897,
+			"required": [
+				"sap/base/Log.js",
+				"sap/ui/core/EventBus.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/SideNavigation/interface/ListProviderAPI.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "controller/SideNavigation.controller.js.map",
+			"size": 3300,
+			"isDebug": true
+		},
+		{
+			"name": "css/style.css",
+			"size": 159
+		},
+		{
+			"name": "fragment/AllSpaces.fragment.xml",
+			"module": "sap/ushell/components/shell/SideNavigation/fragment/AllSpaces.fragment.xml",
+			"size": 791,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ScrollContainer.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/ui/core/ComponentContainer.js"
+			]
+		},
+		{
+			"name": "fragment/Popover.fragment.xml",
+			"module": "sap/ushell/components/shell/SideNavigation/fragment/Popover.fragment.xml",
+			"size": 542,
+			"required": [
+				"sap/m/ResponsivePopover.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/InvisibleText.js"
+			]
+		},
+		{
+			"name": "interface/ListProviderAPI-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/interface/ListProviderAPI.js",
+			"size": 4680,
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/ushell/components/shell/SideNavigation/interface/NavContainer.js",
+				"sap/ushell/modules/NavigationMenu/ListProviderAPI.js"
+			]
+		},
+		{
+			"name": "interface/ListProviderAPI.js",
+			"module": "sap/ushell/components/shell/SideNavigation/interface/ListProviderAPI.js",
+			"size": 783,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/ushell/components/shell/SideNavigation/interface/NavContainer.js",
+				"sap/ushell/modules/NavigationMenu/ListProviderAPI.js"
+			]
+		},
+		{
+			"name": "interface/ListProviderAPI.js.map",
+			"size": 1170,
+			"isDebug": true
+		},
+		{
+			"name": "interface/NavContainer-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/interface/NavContainer.js",
+			"size": 2364,
+			"isDebug": true,
+			"required": [
+				"sap/ushell/modules/NavigationMenu/NavContainer.js"
+			]
+		},
+		{
+			"name": "interface/NavContainer.js",
+			"module": "sap/ushell/components/shell/SideNavigation/interface/NavContainer.js",
+			"size": 334,
+			"required": [
+				"sap/ushell/modules/NavigationMenu/NavContainer.js"
+			]
+		},
+		{
+			"name": "interface/NavContainer.js.map",
+			"size": 580,
+			"isDebug": true
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ushell/components/shell/SideNavigation/manifest.json",
+			"size": 2967
+		},
+		{
+			"name": "modules/AllSpaces-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/AllSpaces.js",
+			"size": 3691,
+			"isDebug": true,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ushell/Container.js"
+			]
+		},
+		{
+			"name": "modules/AllSpaces.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/AllSpaces.js",
+			"size": 1305,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ushell/Container.js"
+			]
+		},
+		{
+			"name": "modules/AllSpaces.js.map",
+			"size": 1571,
+			"isDebug": true
+		},
+		{
+			"name": "modules/AppFinder-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/AppFinder.js",
+			"size": 1362,
+			"isDebug": true,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "modules/AppFinder.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/AppFinder.js",
+			"size": 522,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js"
+			]
+		},
+		{
+			"name": "modules/AppFinder.js.map",
+			"size": 566,
+			"isDebug": true
+		},
+		{
+			"name": "modules/Favorites-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/Favorites.js",
+			"size": 16353,
+			"isDebug": true,
+			"required": [
+				"sap/base/i18n/Localization.js",
+				"sap/m/GenericTile.js",
+				"sap/tnt/NavigationListGroup.js",
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js"
+			]
+		},
+		{
+			"name": "modules/Favorites.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/Favorites.js",
+			"size": 4530,
+			"required": [
+				"sap/base/i18n/Localization.js",
+				"sap/m/GenericTile.js",
+				"sap/tnt/NavigationListGroup.js",
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js"
+			]
+		},
+		{
+			"name": "modules/Favorites.js.map",
+			"size": 6197,
+			"isDebug": true
+		},
+		{
+			"name": "modules/GenericFixedNavigationListProvider-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/GenericFixedNavigationListProvider.js",
+			"size": 6039,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/tnt/NavigationList.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "modules/GenericFixedNavigationListProvider.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/GenericFixedNavigationListProvider.js",
+			"size": 1699,
+			"required": [
+				"sap/base/Log.js",
+				"sap/tnt/NavigationList.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "modules/GenericFixedNavigationListProvider.js.map",
+			"size": 2154,
+			"isDebug": true
+		},
+		{
+			"name": "modules/GenericNavigationListProvider-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/GenericNavigationListProvider.js",
+			"size": 7313,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/tnt/NavigationList.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "modules/GenericNavigationListProvider.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/GenericNavigationListProvider.js",
+			"size": 2193,
+			"required": [
+				"sap/base/Log.js",
+				"sap/tnt/NavigationList.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js",
+				"sap/ushell/utils.js"
+			]
+		},
+		{
+			"name": "modules/GenericNavigationListProvider.js.map",
+			"size": 2450,
+			"isDebug": true
+		},
+		{
+			"name": "modules/MyHome-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/MyHome.js",
+			"size": 2939,
+			"isDebug": true,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+				"sap/ushell/utils/UrlParsing.js"
+			]
+		},
+		{
+			"name": "modules/MyHome.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/MyHome.js",
+			"size": 993,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+				"sap/ushell/utils/UrlParsing.js"
+			]
+		},
+		{
+			"name": "modules/MyHome.js.map",
+			"size": 1135,
+			"isDebug": true
+		},
+		{
+			"name": "modules/NavigationHelper-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+			"size": 3255,
+			"isDebug": true,
+			"required": [
+				"sap/ushell/Container.js",
+				"sap/ushell/api/performance/Extension.js",
+				"sap/ushell/api/performance/NavigationSource.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "modules/NavigationHelper.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+			"size": 782,
+			"required": [
+				"sap/ushell/Container.js",
+				"sap/ushell/api/performance/Extension.js",
+				"sap/ushell/api/performance/NavigationSource.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "modules/NavigationHelper.js.map",
+			"size": 1223,
+			"isDebug": true
+		},
+		{
+			"name": "modules/RecentActivity-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/RecentActivity.js",
+			"size": 5232,
+			"isDebug": true,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js"
+			]
+		},
+		{
+			"name": "modules/RecentActivity.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/RecentActivity.js",
+			"size": 1658,
+			"required": [
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js"
+			]
+		},
+		{
+			"name": "modules/RecentActivity.js.map",
+			"size": 1915,
+			"isDebug": true
+		},
+		{
+			"name": "modules/Spaces-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/Spaces.js",
+			"size": 13257,
+			"isDebug": true,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/tnt/NavigationListGroup.js",
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+				"sap/ushell/services/AppConfiguration.js",
+				"sap/ushell/utils/UrlParsing.js"
+			]
+		},
+		{
+			"name": "modules/Spaces.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/Spaces.js",
+			"size": 3642,
+			"required": [
+				"sap/base/util/ObjectPath.js",
+				"sap/tnt/NavigationListGroup.js",
+				"sap/tnt/NavigationListItem.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/hasher.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/components/shell/SideNavigation/modules/NavigationHelper.js",
+				"sap/ushell/services/AppConfiguration.js",
+				"sap/ushell/utils/UrlParsing.js"
+			]
+		},
+		{
+			"name": "modules/Spaces.js.map",
+			"size": 4923,
+			"isDebug": true
+		},
+		{
+			"name": "modules/SpacesNavigationListProvider-dbg.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/SpacesNavigationListProvider.js",
+			"size": 3421,
+			"isDebug": true,
+			"required": [
+				"sap/tnt/NavigationList.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ushell/components/shell/SideNavigation/modules/Spaces.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js"
+			]
+		},
+		{
+			"name": "modules/SpacesNavigationListProvider.js",
+			"module": "sap/ushell/components/shell/SideNavigation/modules/SpacesNavigationListProvider.js",
+			"size": 838,
+			"required": [
+				"sap/tnt/NavigationList.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ushell/components/shell/SideNavigation/modules/Spaces.js",
+				"sap/ushell/modules/NavigationMenu/ListProvider.js"
+			]
+		},
+		{
+			"name": "modules/SpacesNavigationListProvider.js.map",
+			"size": 1090,
+			"isDebug": true
+		},
+		{
+			"name": "resources.json",
+			"size": 33758
+		},
+		{
+			"name": "resources/resources.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources.properties",
+			"size": 883,
+			"locale": "",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ar.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ar.properties",
+			"size": 1559,
+			"locale": "ar",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_bg.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_bg.properties",
+			"size": 2009,
+			"locale": "bg",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ca.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ca.properties",
+			"size": 752,
+			"locale": "ca",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_cnr.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_cnr.properties",
+			"size": 730
+		},
+		{
+			"name": "resources/resources_cs.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_cs.properties",
+			"size": 797,
+			"locale": "cs",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_cy.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_cy.properties",
+			"size": 663,
+			"locale": "cy",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_da.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_da.properties",
+			"size": 668,
+			"locale": "da",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_de.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_de.properties",
+			"size": 700,
+			"locale": "de",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_el.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_el.properties",
+			"size": 1729,
+			"locale": "el",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_en.properties",
+			"size": 628,
+			"locale": "en",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en_GB.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_en_GB.properties",
+			"size": 629,
+			"locale": "en_GB",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_en_US_saprigi.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_en_US_saprigi.properties",
+			"size": 3940,
+			"locale": "en_US_saprigi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_es.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_es.properties",
+			"size": 758,
+			"locale": "es",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_es_MX.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_es_MX.properties",
+			"size": 755,
+			"locale": "es_MX",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_et.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_et.properties",
+			"size": 715,
+			"locale": "et",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fi.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_fi.properties",
+			"size": 708,
+			"locale": "fi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fr.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_fr.properties",
+			"size": 748,
+			"locale": "fr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_fr_CA.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_fr_CA.properties",
+			"size": 767,
+			"locale": "fr_CA",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hi.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_hi.properties",
+			"size": 1549,
+			"locale": "hi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hr.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_hr.properties",
+			"size": 743,
+			"locale": "hr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_hu.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_hu.properties",
+			"size": 837,
+			"locale": "hu",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_id.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_id.properties",
+			"size": 672,
+			"locale": "id",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_it.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_it.properties",
+			"size": 680,
+			"locale": "it",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_iw.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_iw.properties",
+			"size": 1337,
+			"locale": "iw",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ja.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ja.properties",
+			"size": 1023,
+			"locale": "ja",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_kk.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_kk.properties",
+			"size": 1752,
+			"locale": "kk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ko.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ko.properties",
+			"size": 832,
+			"locale": "ko",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_lt.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_lt.properties",
+			"size": 821,
+			"locale": "lt",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_lv.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_lv.properties",
+			"size": 794,
+			"locale": "lv",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_mk.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_mk.properties",
+			"size": 1747,
+			"locale": "mk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ms.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ms.properties",
+			"size": 674,
+			"locale": "ms",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_nl.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_nl.properties",
+			"size": 658,
+			"locale": "nl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_no.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_no.properties",
+			"size": 667,
+			"locale": "no",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pl.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_pl.properties",
+			"size": 741,
+			"locale": "pl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pt.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_pt.properties",
+			"size": 714,
+			"locale": "pt",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_pt_PT.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_pt_PT.properties",
+			"size": 748,
+			"locale": "pt_PT",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ro.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ro.properties",
+			"size": 789,
+			"locale": "ro",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_ru.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_ru.properties",
+			"size": 1702,
+			"locale": "ru",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sh.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_sh.properties",
+			"size": 729,
+			"locale": "sh",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sk.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_sk.properties",
+			"size": 811,
+			"locale": "sk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sl.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_sl.properties",
+			"size": 720,
+			"locale": "sl",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sr.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_sr.properties",
+			"size": 1637,
+			"locale": "sr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_sv.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_sv.properties",
+			"size": 680,
+			"locale": "sv",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_th.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_th.properties",
+			"size": 1348,
+			"locale": "th",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_tr.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_tr.properties",
+			"size": 729,
+			"locale": "tr",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_uk.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_uk.properties",
+			"size": 1716,
+			"locale": "uk",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_vi.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_vi.properties",
+			"size": 1013,
+			"locale": "vi",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_zh_CN.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_zh_CN.properties",
+			"size": 876,
+			"locale": "zh_CN",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "resources/resources_zh_TW.properties",
+			"module": "sap/ushell/components/shell/SideNavigation/resources/resources_zh_TW.properties",
+			"size": 894,
+			"locale": "zh_TW",
+			"raw": "resources/resources.properties"
+		},
+		{
+			"name": "view/Main.view.xml",
+			"module": "sap/ushell/components/shell/SideNavigation/view/Main.view.xml",
+			"size": 1232,
+			"required": [
+				"sap/m/NavContainer.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ushell/components/shell/SideNavigation/controller/SideNavigation.controller.js"
+			]
+		}
+	]
+}

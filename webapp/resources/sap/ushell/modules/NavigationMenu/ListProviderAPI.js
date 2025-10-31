@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";class e{getConfigValue(e){if(false){return undefined}throw new Error("Method not implemented.")}getNavContainerFacade(){if(false){return undefined}throw new Error("Method not implemented.")}async updateSelectedKey(){throw new Error("Method not implemented.")}openSideNavigation(){throw new Error("Method not implemented.")}closeSideNavigation(){throw new Error("Method not implemented.")}expandSideNavigation(){throw new Error("Method not implemented.")}collapseSideNavigation(){throw new Error("Method not implemented.")}}return e});
+//# sourceMappingURL=ListProviderAPI.js.map

@@ -1,0 +1,5 @@
+/*!
+ * Copyright (c) 2009-2014 SAP SE, All Rights Reserved
+ */
+sap.ui.define(["sap/ovp/cards/generic/base/linklist/BaseLinklist.controller","sap/ovp/cards/OVPCardAsAPIUtils","sap/ovp/cards/Filterhelper","sap/ovp/cards/generic/base/analytical/Utils"],function(t,e,i,n){"use strict";return t.extend("sap.ovp.cards.v4.linklist.LinkList",{onInit:function(){t.prototype.onInit.apply(this,arguments)},onAfterRendering:function(){t.prototype.onAfterRendering.apply(this,arguments);if(!e.checkIfAPIIsUsed(this)){var n=this.getCardPropertiesModel();var a=this.getOwnerComponent().getModel("ui").getData().cards;this.selectionVaraintFilter=i.getSelectionVariantFilters(a,n,this.getEntityType())}},onDataReceived:function(t){if(n.isDataSetEmpty(t)){var e=this.getOwnerComponent().getComponentData().cardId;if(e&&this.oMainComponent.aErrorCards.indexOf(e)===-1){this.oMainComponent.createNoDataCard(e)}}}})});
+//# sourceMappingURL=LinkList.controller.js.map

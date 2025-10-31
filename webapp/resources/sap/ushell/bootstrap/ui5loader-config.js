@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+(function(){"use strict";const o=window.sap&&window.sap.ui&&window.sap.ui.loader;if(!o){throw new Error("FLP bootstrap: ui5loader is needed, but could not be found")}const i={};const s=document.getElementById("sap-ui-bootstrap");const t=s&&s.getAttribute("src");const n=/^((?:.*\/)?resources\/~\d{14}~\/)/;let e;if(t&&n.test(t)){e=n.exec(t)[1];window["sap-ui-config"]=window["sap-ui-config"]||{};window["sap-ui-config"].resourceRoots=window["sap-ui-config"].resourceRoots||{};window["sap-ui-config"].resourceRoots[""]=e}o.config(i)})();
+//# sourceMappingURL=ui5loader-config.js.map

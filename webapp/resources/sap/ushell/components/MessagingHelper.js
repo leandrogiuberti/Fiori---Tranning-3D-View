@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/resources","sap/ushell/Container"],(e,n)=>{"use strict";function r(n,r){const s=Array.isArray(r)?r:[r];return e.i18n.getText(n,s)}function s(e,s){n.getServiceAsync("MessageInternal").then(n=>{n.show(n.Type.ERROR,r(e,s),s)})}function t(e,n){return function(){s(e,n)}}function o(e,s,t){n.getServiceAsync("MessageInternal").then(n=>{n.show(t||n.Type.INFO,r(e,s),s)})}return{getLocalizedText:r,showLocalizedError:s,showLocalizedErrorHelper:t,showLocalizedMessage:o}});
+//# sourceMappingURL=MessagingHelper.js.map

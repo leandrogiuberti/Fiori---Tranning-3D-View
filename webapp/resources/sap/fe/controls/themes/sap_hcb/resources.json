@@ -1,0 +1,78 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 116,
+			"theme": "base"
+		},
+		{
+			"name": "EasyFill.less",
+			"size": 248,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "EasyFilter.less",
+			"size": 1618,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "InlineEditIndicator.less",
+			"size": 885,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "QuickView.less",
+			"size": 43,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "Token.less",
+			"size": 1155,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "UnitCurrencyHbox.less",
+			"size": 52,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 4010,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/fe/controls/themes/base/library-parameters.json",
+			"size": 2,
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"size": 4006,
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"size": 4689,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"size": 291,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "resources.json",
+			"size": 1243
+		}
+	]
+}

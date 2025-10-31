@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["./cdm.constants","../common/common.configure.ui5","../common/common.configure.ushell","../common/common.override.registermodulepath","../common/common.configure.ui5.extractLibs","../common/common.load.bootstrapExtension","./cdm.boot.task"],(o,m,n,e,c,r,t)=>{"use strict";if(performance&&performance.mark){performance.mark("FLP first paint!")}const i=n({defaultUshellConfig:o.defaultConfig});m({ushellConfig:i,libs:c(i),platform:"cdm",bootTask:t});e();r(i)});
+//# sourceMappingURL=cdm-def-dev.js.map

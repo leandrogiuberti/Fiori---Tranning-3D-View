@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/state/StateManager","sap/ushell/utils"],(t,a)=>{"use strict";const i=t.LaunchpadState;class e{static#t=null;static#a=null;#i=null;#e=null;#s=null;#o=null;constructor(t,a,i,e){this.#i=t;this.#e=a;this.#s=i;this.#o=e}static init(t,a){this.#a=t;this.#t=a}async navTo(t){const s=this.#s.getId();e.#t.navTo(s);e.#a.switchViewState(t?i.Home:i.App,this.#i,this.#e.applicationType,this.#e.explicitNavMode);await a.awaitTimeout(0)}getNavigationRedirectHash(){return this.#o}}return e});
+//# sourceMappingURL=ApplicationHandle.js.map

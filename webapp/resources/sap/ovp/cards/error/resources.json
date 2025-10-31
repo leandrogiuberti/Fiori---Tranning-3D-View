@@ -1,0 +1,53 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ovp/cards/error/Component.js",
+			"size": 764,
+			"isDebug": true,
+			"required": [
+				"sap/ovp/cards/generic/base/error/Component.js"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ovp/cards/error/Component.js",
+			"size": 459,
+			"required": [
+				"sap/ovp/cards/generic/base/error/Component.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 469,
+			"isDebug": true
+		},
+		{
+			"name": "Error-dbg.controller.js",
+			"module": "sap/ovp/cards/error/Error.controller.js",
+			"size": 725,
+			"isDebug": true,
+			"required": [
+				"sap/ovp/cards/generic/base/error/BaseError.controller.js"
+			]
+		},
+		{
+			"name": "Error.controller.js",
+			"module": "sap/ovp/cards/error/Error.controller.js",
+			"size": 394,
+			"required": [
+				"sap/ovp/cards/generic/base/error/BaseError.controller.js"
+			]
+		},
+		{
+			"name": "Error.controller.js.map",
+			"size": 434,
+			"isDebug": true
+		},
+		{
+			"name": "resources.json",
+			"size": 1052
+		}
+	]
+}

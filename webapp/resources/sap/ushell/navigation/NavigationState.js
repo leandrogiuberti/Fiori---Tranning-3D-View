@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/base/EventProvider"],n=>{"use strict";class i{#n=false;#i=new n;startNavigation(){if(this.#n){return}this.#n=true;this.#i.fireEvent("navigationStateChanged",{isNavigationRunning:this.#n})}endNavigation(){if(!this.#n){return}this.#n=false;this.#i.fireEvent("navigationStateChanged",{isNavigationRunning:this.#n})}isNavigationRunning(){return this.#n}attachNavigationStateChanged(...n){this.#i.attachEvent("navigationStateChanged",...n)}detachNavigationStateChanged(...n){this.#i.detachEvent("navigationStateChanged",...n)}reset(){this.destroy();this.#i=new n;this.#n=false}destroy(){this.#i.destroy()}}return new i});
+//# sourceMappingURL=NavigationState.js.map

@@ -1,0 +1,48 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 116,
+			"theme": "base"
+		},
+		{
+			"name": "RichTextEditor.less",
+			"size": 2791,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 2613,
+			"theme": "base"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/ui/richtexteditor/themes/base/library-parameters.json",
+			"size": 2,
+			"theme": "base"
+		},
+		{
+			"name": "library.css",
+			"size": 2615,
+			"theme": "base"
+		},
+		{
+			"name": "library.less",
+			"size": 3244,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "library.source.less",
+			"size": 224,
+			"designtime": true,
+			"theme": "base"
+		},
+		{
+			"name": "resources.json",
+			"size": 761
+		}
+	]
+}

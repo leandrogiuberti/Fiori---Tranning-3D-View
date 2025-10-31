@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";class n{#n;#t;#e=new Map;#l=[];constructor(n){this.#n=n}setClientConnectionCallback(n){this.#t=n}subscribe(n,t){this.#e.set(n,t)}unsubscribe(n){this.#e.delete(n)}getMessageCallback(n){return this.#e.get(n)}callClientConnectionCallback(...n){if(!this.#t){this.#l.push(n);return}this.#t(...n)}applyPreviousConnectionCalls(){if(!this.#t){return}this.#l.forEach(n=>{this.#t(...n)});this.#l=[]}}return n});
+//# sourceMappingURL=Client.js.map

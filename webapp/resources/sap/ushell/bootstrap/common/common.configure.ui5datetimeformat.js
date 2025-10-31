@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/i18n/Formatting","sap/base/Log","sap/base/util/ObjectPath"],(t,e,o)=>{"use strict";function r(r){const a=o.get("services.Container.adapter.config.userProfile.defaults",r);const s="Date Format is incorrectly set for the User";const c="Time Format is incorrectly set for the User";try{const e=a&&a.sapDateFormat;t.setABAPDateFormat(e)}catch(t){e.error(s,t,"sap/ushell/bootstrap/common/common.configure.ui5datetimeformat")}try{const e=a&&a.sapTimeFormat;t.setABAPTimeFormat(e)}catch(t){e.error(c,t,"sap/ushell/bootstrap/common/common.configure.ui5datetimeformat")}}return r},false);
+//# sourceMappingURL=common.configure.ui5datetimeformat.js.map

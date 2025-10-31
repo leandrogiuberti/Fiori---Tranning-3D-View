@@ -1,0 +1,82 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/fe/ariba/ObjectPage/Component.js",
+			"size": 1974,
+			"isDebug": true,
+			"required": [
+				"sap/fe/base/ClassSupport.js",
+				"sap/fe/templates/ObjectPage/Component.js",
+				"sap/m/library.js"
+			]
+		},
+		{
+			"name": "Component-dbg.js.map",
+			"size": 2090,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/fe/ariba/ObjectPage/Component.js",
+			"size": 1046,
+			"required": [
+				"sap/fe/base/ClassSupport.js",
+				"sap/fe/templates/ObjectPage/Component.js",
+				"sap/m/library.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 1784,
+			"isDebug": true
+		},
+		{
+			"name": "Component.ts",
+			"size": 871
+		},
+		{
+			"name": "ObjectPageController-dbg.controller.js",
+			"module": "sap/fe/ariba/ObjectPage/ObjectPageController.controller.js",
+			"size": 1494,
+			"isDebug": true,
+			"required": [
+				"sap/fe/base/ClassSupport.js",
+				"sap/fe/templates/ObjectPage/ObjectPageController.controller.js"
+			]
+		},
+		{
+			"name": "ObjectPageController-dbg.controller.js.map",
+			"size": 1308,
+			"isDebug": true
+		},
+		{
+			"name": "ObjectPageController.controller.js",
+			"module": "sap/fe/ariba/ObjectPage/ObjectPageController.controller.js",
+			"size": 775,
+			"required": [
+				"sap/fe/base/ClassSupport.js",
+				"sap/fe/templates/ObjectPage/ObjectPageController.controller.js"
+			]
+		},
+		{
+			"name": "ObjectPageController.controller.js.map",
+			"size": 1150,
+			"isDebug": true
+		},
+		{
+			"name": "ObjectPageController.controller.ts",
+			"size": 531
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/fe/ariba/ObjectPage/manifest.json",
+			"size": 385
+		},
+		{
+			"name": "resources.json",
+			"size": 1750
+		}
+	]
+}

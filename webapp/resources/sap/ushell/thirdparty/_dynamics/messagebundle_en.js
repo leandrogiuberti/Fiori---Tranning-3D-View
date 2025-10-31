@@ -1,0 +1,2 @@
+sap.ui.define(["exports"],function(e){"use strict";var t="{0} items";var T={DRAG_DROP_MULTIPLE_TEXT:t};e.DRAG_DROP_MULTIPLE_TEXT=t;e.default=T});
+//# sourceMappingURL=messagebundle_en.js.map

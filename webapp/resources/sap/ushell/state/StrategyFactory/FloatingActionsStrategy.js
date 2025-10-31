@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/Log","sap/ui/core/Element"],(i,e)=>{"use strict";class n{add(n,t){if(!e.getElementById(t)){i.warning(`Failed to find control with id '${t}'`);return}if(n.includes(t)){this.#i(n,t)}this.#e(n,t)}#i(i,e){const n=i.indexOf(e);if(n===-1){return}i.splice(n,1)}#e(i,e){i.push(e)}}return new n});
+//# sourceMappingURL=FloatingActionsStrategy.js.map

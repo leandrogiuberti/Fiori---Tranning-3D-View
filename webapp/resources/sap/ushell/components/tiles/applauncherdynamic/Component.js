@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/mvc/View","sap/ui/core/UIComponent"],(e,n)=>{"use strict";return n.extend("sap.ushell.components.tiles.applauncherdynamic",{metadata:{interfaces:["sap.ui.core.IAsyncContentCreation"]},createContent:function(){const n=this.getComponentData();return e.create({viewName:"module:sap/ushell/components/tiles/applauncherdynamic/DynamicTile.view",viewData:n})}})});
+//# sourceMappingURL=Component.js.map

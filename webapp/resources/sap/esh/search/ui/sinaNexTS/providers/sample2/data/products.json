@@ -1,0 +1,546 @@
+{
+    "type": "BusinessObject",
+    "id": "products",
+    "label": "Product (EPM-CDS)",
+    "labelPlural": "Products (EPM-CDS)",
+    "defaultNavigationTarget": {
+        "text": "Show Detail",
+        "targetUrl": "#mandant={MANDT}&id={PRODUCT_ID}",
+        "target": "_blank"
+    },
+    "attributes": [
+        {
+            "id": "TYPE_CODE",
+            "label": "Type Code",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "TAX_TARIF_CODE",
+            "label": "Tax Tariff Code",
+            "type": "Integer",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "NODE_KEY",
+            "label": "Node Key",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "MANDT",
+            "label": "Client",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": true,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "WEIGHT_MEASURE",
+            "label": "Weight",
+            "type": "Double",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "PRODUCT_ID",
+            "label": "Product ID",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": true,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "PRICE",
+            "label": "Product Unit Price",
+            "type": "Double",
+            "isSortable": true,
+            "usage": { "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "PRODUCT_DESC",
+            "label": "Product Description",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 4 } },
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "PRODUCT_NAME",
+            "label": "Description",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "MAIN_CATEGORY",
+            "label": "Main Category",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 5 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CATEGORY",
+            "label": "Category",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 6 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CREATOR_FIRST_NAME",
+            "label": "Created by - First Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "PRODUCT_PIC_URL",
+            "label": "Image",
+            "type": "ImageUrl",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 8 } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CREATED_AT",
+            "label": "Created At",
+            "type": "Timestamp",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 9 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "DIM_UNIT",
+            "label": "Dimension Unit",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CHANGER_FIRST_NAME",
+            "label": "Changed by - First Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CHANGED_AT",
+            "label": "Changed At",
+            "type": "Timestamp",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 12 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CHANGER_LAST_NAME",
+            "label": "Changed by - Last Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CREATOR_LAST_NAME",
+            "label": "Created by - Last Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CURRENCY_CODE",
+            "label": "Currency Code",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "DEPTH",
+            "label": "Depth",
+            "type": "Double",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "DIM_UNIT_TEXT",
+            "label": "Dimension Unit Text",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "HEIGHT",
+            "label": "Height",
+            "type": "Double",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "TITLE_URL",
+            "label": "TITLE_URL",
+            "type": "String",
+            "isSortable": false,
+            "usage": { "Navigation": { "mainNavigation": true } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "WEIGHT_UNIT",
+            "label": "Weight Unit",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "WEIGHT_UNIT_TEXT",
+            "label": "Weight Unit Text",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "WIDTH",
+            "label": "Width",
+            "type": "Double",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "WEIGHT_UNIT____Description",
+            "label": "Weight Unit",
+            "type": "Group",
+            "isSortable": false,
+            "usage": {},
+            "groups": [],
+            "template": "{WEIGHT_UNIT_TEXT}",
+            "attributes": [
+                {
+                    "attribute": { "id": "WEIGHT_UNIT" },
+                    "group": { "id": "WEIGHT_UNIT____Description" },
+                    "nameInGroup": "WEIGHT_UNIT"
+                },
+                {
+                    "attribute": { "id": "WEIGHT_UNIT_TEXT" },
+                    "group": { "id": "WEIGHT_UNIT____Description" },
+                    "nameInGroup": "WEIGHT_UNIT_TEXT"
+                }
+            ],
+            "displayAttributes": ["WEIGHT_UNIT_TEXT"]
+        },
+        {
+            "id": "WEIGHT_MEASURE____UnitOfMeasureGroup",
+            "label": "Weight",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 1 } },
+            "groups": [],
+            "template": "{WEIGHT_MEASURE} {WEIGHT_UNIT}",
+            "attributes": [
+                {
+                    "attribute": { "id": "WEIGHT_MEASURE" },
+                    "group": { "id": "WEIGHT_MEASURE____UnitOfMeasureGroup" },
+                    "nameInGroup": "WEIGHT_MEASURE"
+                },
+                {
+                    "attribute": { "id": "WEIGHT_UNIT" },
+                    "group": { "id": "WEIGHT_MEASURE____UnitOfMeasureGroup" },
+                    "nameInGroup": "WEIGHT_UNIT"
+                }
+            ],
+            "displayAttributes": ["WEIGHT_MEASURE", "WEIGHT_UNIT"]
+        },
+        {
+            "id": "PRODUCT_ID____Description",
+            "label": "Product ID",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Title": { "displayOrder": 1 } },
+            "groups": [],
+            "template": "{PRODUCT_ID} ({PRODUCT_NAME})",
+            "attributes": [
+                {
+                    "attribute": { "id": "PRODUCT_ID" },
+                    "group": { "id": "PRODUCT_ID____Description" },
+                    "nameInGroup": "PRODUCT_ID"
+                },
+                {
+                    "attribute": { "id": "PRODUCT_NAME" },
+                    "group": { "id": "PRODUCT_ID____Description" },
+                    "nameInGroup": "PRODUCT_NAME"
+                }
+            ],
+            "displayAttributes": ["PRODUCT_ID", "PRODUCT_NAME"]
+        },
+        {
+            "id": "PRICE____CurrencyGroup",
+            "label": "Product Unit Price",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 3 } },
+            "groups": [],
+            "template": "{PRICE} {CURRENCY_CODE}",
+            "attributes": [
+                {
+                    "attribute": { "id": "PRICE" },
+                    "group": { "id": "PRICE____CurrencyGroup" },
+                    "nameInGroup": "PRICE"
+                },
+                {
+                    "attribute": { "id": "CURRENCY_CODE" },
+                    "group": { "id": "PRICE____CurrencyGroup" },
+                    "nameInGroup": "CURRENCY_CODE"
+                }
+            ],
+            "displayAttributes": ["PRICE", "CURRENCY_CODE"]
+        },
+        {
+            "id": "grp_desc",
+            "label": "Main Category",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "TitleDescription": { "displayOrder": 1 } },
+            "groups": [],
+            "template": "{main_category} - {category}",
+            "attributes": [
+                {
+                    "attribute": { "id": "MAIN_CATEGORY" },
+                    "group": { "id": "grp_desc" },
+                    "nameInGroup": "main_category"
+                },
+                {
+                    "attribute": { "id": "CATEGORY" },
+                    "group": { "id": "grp_desc" },
+                    "nameInGroup": "category"
+                }
+            ],
+            "displayAttributes": []
+        },
+        {
+            "id": "grp_created_by",
+            "label": "Created By",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 7 } },
+            "groups": [],
+            "template": "{creator_first_name} {creator_last_name}",
+            "attributes": [
+                {
+                    "attribute": { "id": "CREATOR_FIRST_NAME" },
+                    "group": { "id": "grp_created_by" },
+                    "nameInGroup": "creator_first_name"
+                },
+                {
+                    "attribute": { "id": "CREATOR_LAST_NAME" },
+                    "group": { "id": "grp_created_by" },
+                    "nameInGroup": "creator_last_name"
+                }
+            ],
+            "displayAttributes": []
+        },
+        {
+            "id": "grp_dimension",
+            "label": "Dimensions",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 10 } },
+            "groups": [],
+            "template": "{width} x {depth} x {height}",
+            "attributes": [
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "grp_dimension" },
+                    "nameInGroup": "dimension"
+                },
+                {
+                    "attribute": { "id": "DEPTH____UnitOfMeasureGroup" },
+                    "group": { "id": "grp_dimension" },
+                    "nameInGroup": "depth"
+                },
+                {
+                    "attribute": { "id": "HEIGHT____UnitOfMeasureGroup" },
+                    "group": { "id": "grp_dimension" },
+                    "nameInGroup": "height"
+                },
+                {
+                    "attribute": { "id": "WIDTH____UnitOfMeasureGroup" },
+                    "group": { "id": "grp_dimension" },
+                    "nameInGroup": "width"
+                }
+            ],
+            "displayAttributes": []
+        },
+        {
+            "id": "DIM_UNIT____Description",
+            "label": "Dimension Unit",
+            "type": "Group",
+            "isSortable": false,
+            "usage": {},
+            "groups": [
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "DEPTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "HEIGHT____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "WIDTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                }
+            ],
+            "template": "{DIM_UNIT_TEXT}",
+            "attributes": [
+                {
+                    "attribute": { "id": "DIM_UNIT" },
+                    "group": { "id": "DIM_UNIT____Description" },
+                    "nameInGroup": "DIM_UNIT"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT_TEXT" },
+                    "group": { "id": "DIM_UNIT____Description" },
+                    "nameInGroup": "DIM_UNIT_TEXT"
+                }
+            ],
+            "displayAttributes": ["DIM_UNIT_TEXT"]
+        },
+        {
+            "id": "grp_changed_by",
+            "label": "Changed By",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 11 } },
+            "groups": [],
+            "template": "{changer_first_name} {changer_last_name}",
+            "attributes": [
+                {
+                    "attribute": { "id": "CHANGER_FIRST_NAME" },
+                    "group": { "id": "grp_changed_by" },
+                    "nameInGroup": "changer_first_name"
+                },
+                {
+                    "attribute": { "id": "CHANGER_LAST_NAME" },
+                    "group": { "id": "grp_changed_by" },
+                    "nameInGroup": "changer_last_name"
+                }
+            ],
+            "displayAttributes": []
+        },
+        {
+            "id": "DEPTH____UnitOfMeasureGroup",
+            "label": "Depth",
+            "type": "Group",
+            "isSortable": false,
+            "usage": {},
+            "groups": [],
+            "template": "{DEPTH} {DIM_UNIT____Description}",
+            "attributes": [
+                {
+                    "attribute": { "id": "DEPTH" },
+                    "group": { "id": "DEPTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "DEPTH"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "DEPTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                }
+            ],
+            "displayAttributes": ["DEPTH", "DIM_UNIT____Description"]
+        },
+        {
+            "id": "HEIGHT____UnitOfMeasureGroup",
+            "label": "Height",
+            "type": "Group",
+            "isSortable": false,
+            "usage": {},
+            "groups": [],
+            "template": "{HEIGHT} {DIM_UNIT____Description}",
+            "attributes": [
+                {
+                    "attribute": { "id": "HEIGHT" },
+                    "group": { "id": "HEIGHT____UnitOfMeasureGroup" },
+                    "nameInGroup": "HEIGHT"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "HEIGHT____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                }
+            ],
+            "displayAttributes": ["HEIGHT", "DIM_UNIT____Description"]
+        },
+        {
+            "id": "WIDTH____UnitOfMeasureGroup",
+            "label": "Width",
+            "type": "Group",
+            "isSortable": false,
+            "usage": {},
+            "groups": [],
+            "template": "{WIDTH} {DIM_UNIT____Description}",
+            "attributes": [
+                {
+                    "attribute": { "id": "WIDTH" },
+                    "group": { "id": "WIDTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "WIDTH"
+                },
+                {
+                    "attribute": { "id": "DIM_UNIT____Description" },
+                    "group": { "id": "WIDTH____UnitOfMeasureGroup" },
+                    "nameInGroup": "DIM_UNIT____Description"
+                }
+            ],
+            "displayAttributes": ["WIDTH", "DIM_UNIT____Description"]
+        }
+    ]
+}

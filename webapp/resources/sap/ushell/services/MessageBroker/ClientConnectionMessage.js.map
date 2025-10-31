@@ -1,0 +1,1 @@
+{"version":3,"file":"ClientConnectionMessage.js","names":["sap","ui","define","ClientConnectionMessage","ClientSubscribed","ClientUnsubscribed"],"sources":["ClientConnectionMessage-dbg.js"],"mappings":";AAEAA,IAAIC,GAAGC,OAAO,GACX,KAEC,aAUA,MAAMC,EAA0B,CAQ5BC,iBAAkB,mBASlBC,mBAAoB,sBAGxB,OAAOF","ignoreList":[]}

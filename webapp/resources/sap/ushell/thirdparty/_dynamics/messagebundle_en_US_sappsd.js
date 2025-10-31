@@ -1,0 +1,2 @@
+sap.ui.define(["exports"],function(T){"use strict";var _="[[[{0} įţēɱş]]]";var e={DRAG_DROP_MULTIPLE_TEXT:_};T.DRAG_DROP_MULTIPLE_TEXT=_;T.default=e});
+//# sourceMappingURL=messagebundle_en_US_sappsd.js.map

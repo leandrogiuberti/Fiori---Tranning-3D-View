@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/Log","sap/base/util/uid"],(e,t)=>{"use strict";class s{#e={};generateItemId(){const e=t();if(Object.hasOwn(this.#e,e)){return this.generateItemId()}this.#e[e]=null;return e}storeItem(e,t){this.#e[e]=t}getItem(e){return this.#e[e]}removeItem(e){delete this.#e[e]}visitItems(t,s){t.forEach(t=>{const i=this.getItem(t);if(i){s(i)}else{e.warning(`Item with id ${t} not found`)}})}applyItemVisibility(e,t){if(t){e.showForCurrentApp()}else{e.hideForCurrentApp()}}}return s});
+//# sourceMappingURL=ExtensionItems.js.map

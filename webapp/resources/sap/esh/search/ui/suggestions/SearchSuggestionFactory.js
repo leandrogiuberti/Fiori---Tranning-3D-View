@@ -1,0 +1,7 @@
+/*!
+ * SAPUI5
+ * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
+ * 
+ */
+sap.ui.define(["../i18n","./SuggestionType"],function(e,t){"use strict";function r(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const n=r(e);const o=r(t);const a=t["Type"];function i(e){const t=e.getProperty("/breadcrumbsHierarchyNodePaths").length;if(t>0){let r="";let o=" > ";let a=e.getProperty("/breadcrumbsHierarchyNodePaths").slice();if(document.documentElement.getAttribute("dir")==="rtl"){o=" < ";a=a.reverse()}a.forEach((e,n)=>{r+=e.label;if(++n<t){r+=o}});return n.getText("resultsIn",["<span>"+e.getSearchBoxTerm()+"</span>",r])}if(e.getProperty("/dataSources").length>1){return n.getText("resultsIn",["<span>"+e.getSearchBoxTerm()+"</span>",e.getDataSource().labelPlural])}return e.getSearchBoxTerm()}function c(e){const t=e.getProperty("/uiFilter");const r=t.dataSource;const n=r.getStaticHierarchyAttributeMetadata()?.id;const o=t.rootCondition.getAttributes().filter(e=>{if(n&&n===e){return false}return true});return o.length>0}function u(e){const t=e.getSearchBoxTerm();if(!t||t==="*"||t==="")return;return{label:i(e),icon:"sap-icon://search",titleNavigation:e.createSearchNavigationTargetCurrentState(),uiSuggestionType:a.Search,position:o.properties.Search.position,filterIcon:c(e)?"sap-icon://filter":""}}var s={__esModule:true};s.createSearchSuggestionForCurrentSearch=u;return s});
+//# sourceMappingURL=SearchSuggestionFactory.js.map

@@ -2,11 +2,41 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Fiori Tranning 3D View</title>
-    <script>
-      // Redireciona automaticamente para o index_standalone.html
-      window.location.replace("index_standalone.html");
+    <title>Fiori Launchpad Sandbox</title>
+
+    <!-- Bootstrap do SAPUI5 -->
+    <script
+      id="sap-ui-bootstrap"
+      src="resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-libs="sap.m, sap.ushell, sap.fe.templates"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-preload="async"
+      data-sap-ui-frameOptions="allow">
     </script>
+
+    <!-- Espera o UI5 carregar antes de rodar o sandbox -->
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require(["sap/ushell/services/Container"], function () {
+          // Carrega o script do sandbox depois que o UI5 estiver pronto
+          jQuery.sap.includeScript("flpSandbox.js");
+        });
+      });
+    </script>
+
+    <style>
+      html, body, #content {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body>
+    <div id="content"></div>
+  </body>
 </html>

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/thirdparty/URI"],e=>{"use strict";function t(){this.sendFeedback=function(){return Promise.resolve()};this.getLegalText=function(){return""};this.isEnabled=async function(){throw new Error("EndUserFeedback service is deprecated and therefore always disabled.")};this.getPathOfURL=function(t){const r=new e(t);return r.pathname()}}t.hasNoAdapter=true;return t},true);
+//# sourceMappingURL=EndUserFeedback.js.map

@@ -1,0 +1,20 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "sap.fe.ariba.ListReport",
+		"type": "component",
+		"i18n": "../messagebundle.properties",
+		"applicationVersion": {
+			"version": "1.141.1"
+		},
+		"title": "List Report",
+		"tags": {
+			"keywords": ["List Report"]
+		},
+		"ach": "CA-UI5-FE",
+		"embeddedBy": "../",
+		"offline": false,
+		"resources": "resources.json"
+	},
+	"sap.ui5": {}
+}

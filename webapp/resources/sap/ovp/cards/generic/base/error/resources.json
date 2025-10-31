@@ -1,0 +1,70 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "BaseError-dbg.controller.js",
+			"module": "sap/ovp/cards/generic/base/error/BaseError.controller.js",
+			"size": 4336,
+			"isDebug": true,
+			"required": [
+				"sap/ovp/app/OVPLogger.js",
+				"sap/ovp/cards/NavigationHelper.js",
+				"sap/ovp/cards/generic/Card.controller.js"
+			]
+		},
+		{
+			"name": "BaseError.controller.js",
+			"module": "sap/ovp/cards/generic/base/error/BaseError.controller.js",
+			"size": 2215,
+			"required": [
+				"sap/ovp/app/OVPLogger.js",
+				"sap/ovp/cards/NavigationHelper.js",
+				"sap/ovp/cards/generic/Card.controller.js"
+			]
+		},
+		{
+			"name": "BaseError.controller.js.map",
+			"size": 2840,
+			"isDebug": true
+		},
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ovp/cards/generic/base/error/Component.js",
+			"size": 903,
+			"isDebug": true,
+			"required": [
+				"sap/ovp/cards/generic/Component.js"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ovp/cards/generic/base/error/Component.js",
+			"size": 520,
+			"required": [
+				"sap/ovp/cards/generic/Component.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 497,
+			"isDebug": true
+		},
+		{
+			"name": "Error.fragment.xml",
+			"module": "sap/ovp/cards/generic/base/error/Error.fragment.xml",
+			"size": 1548,
+			"condRequired": [
+				"sap/m/IllustratedMessage.js",
+				"sap/m/Page.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "resources.json",
+			"size": 1518
+		}
+	]
+}

@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
+ */
+sap.ui.define([],function(){"use strict";var a=function(a){a["SapSemantics"]="sap:semantics";a["UITextArrangement"]="com.sap.vocabularies.UI.v1.TextArrangement";a["UIHidden"]="com.sap.vocabularies.UI.v1.Hidden";a["CommonLabel"]="com.sap.vocabularies.Common.v1.Label";a["UIHeaderInfo"]="com.sap.vocabularies.UI.v1.HeaderInfo";a["UISelectionPresentationVariant"]="com.sap.vocabularies.UI.v1.SelectionPresentationVariant";a["UILineItem"]="com.sap.vocabularies.UI.v1.LineItem";a["UIPresentationVariant"]="com.sap.vocabularies.UI.v1.PresentationVariant";a["UIChart"]="com.sap.vocabularies.UI.v1.Chart";a["MeasuresISOCurrency"]="Org.OData.Measures.V1.ISOCurrency";a["MeasuresUnit"]="Org.OData.Measures.V1.Unit";a["CommonFieldControl"]="com.sap.vocabularies.Common.v1.FieldControl";a["UIIsImageURL"]="com.sap.vocabularies.UI.v1.IsImageURL";a["CommonText"]="com.sap.vocabularies.Common.v1.Text";a["CommonSemanticKey"]="com.sap.vocabularies.Common.v1.SemanticKey";return a}(a||{});var e={__esModule:true};e.UIAnnotations=a;return e});
+//# sourceMappingURL=CardsInterface.js.map

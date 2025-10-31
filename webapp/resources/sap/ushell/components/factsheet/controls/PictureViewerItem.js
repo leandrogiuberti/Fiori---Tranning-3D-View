@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/Control","sap/m/Image"],(e,t)=>{"use strict";const s=e.extend("sap.ushell.components.factsheet.controls.PictureViewerItem",{metadata:{deprecated:true,library:"sap.ushell",properties:{src:{type:"string",group:"Misc",defaultValue:null}},aggregations:{image:{type:"sap.m.Image",multiple:false}}}});s.prototype.setSrc=function(e){this.setProperty("src",e);let s=this.getImage();if(s==null){s=new t}s.setSrc(e);this.setImage(s);return this};s.prototype.exit=function(){const e=this.getImage();if(e){e.destroy()}};return s});
+//# sourceMappingURL=PictureViewerItem.js.map

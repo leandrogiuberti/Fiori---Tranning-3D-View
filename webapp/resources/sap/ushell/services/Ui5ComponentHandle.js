@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(()=>{"use strict";function t(t){this._oComponent=t}t.onBeforeApplicationInstanceCreated=function(){sap.ui.require(["sap/ushell/Fiori20AdapterTest"],()=>{})};t.prototype.getInstance=function(){return this._oComponent};t.prototype.getMetadata=function(){return this._oComponent.getMetadata()};t.prototype.getComponentName=function(){return this._oComponent.getMetadata().getComponentName()};t.prototype.destroy=function(){if(this._oComponent&&!this._oComponent.isDestroyed()){return this._oComponent.destroy()}};return t});
+//# sourceMappingURL=Ui5ComponentHandle.js.map

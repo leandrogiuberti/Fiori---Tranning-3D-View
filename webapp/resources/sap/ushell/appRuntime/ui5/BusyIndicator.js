@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+var apprtBIdiv;document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("sap-ui-bootstrap");if(!e){return}const t=e.src;if(!t){return}const d=t.split("/resources/")[0];const n=document.createElement("link");n.rel="stylesheet";n.href=`${d}/resources/sap/ushell/appRuntime/ui5/BusyIndicator.css`;document.head.appendChild(n);apprtBIdiv=document.createElement("div");apprtBIdiv.classList.add("apprtBIcenter");apprtBIdiv.appendChild(document.createElement("div"));apprtBIdiv.appendChild(document.createElement("div"));apprtBIdiv.appendChild(document.createElement("div"));document.body.appendChild(apprtBIdiv)});
+//# sourceMappingURL=BusyIndicator.js.map

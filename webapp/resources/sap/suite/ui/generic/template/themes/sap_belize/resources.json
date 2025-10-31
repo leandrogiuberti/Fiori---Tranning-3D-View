@@ -1,0 +1,48 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 738,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "ObjectPage.less",
+			"size": 1855,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 41628,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/suite/ui/generic/template/themes/sap_belize/library-parameters.json",
+			"size": 3010,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.css",
+			"size": 41636,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.less",
+			"size": 2852,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "library.source.less",
+			"size": 772,
+			"designtime": true,
+			"theme": "sap_belize"
+		},
+		{
+			"name": "resources.json",
+			"size": 818
+		}
+	]
+}

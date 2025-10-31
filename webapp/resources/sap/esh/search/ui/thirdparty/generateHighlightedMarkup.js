@@ -1,0 +1,2 @@
+sap.ui.define(["exports","sap/esh/search/ui/thirdparty/encodeXML"],function(e,n){"use strict";const r=e=>e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");function t(e,n,t,c){return e.replaceAll(new RegExp(r(n),`${c?"i":""}g`),t)}function c(e,r){if(!e||!r)return e;const c=n=>{const[t,c]=n.split("");for(;e.indexOf(n)>=0||r.indexOf(n)>=0;)n=`${t}${n}${c}`;return n},i=c("12"),f=c("34");let s=n.fnEncodeXML(t(e,r,e=>`${i}${e}${f}`,true));return[[i,"<b>"],[f,"</b>"]].forEach(([e,n])=>{s=t(s,e,n,false)}),s}e.f=c});
+//# sourceMappingURL=generateHighlightedMarkup.js.map

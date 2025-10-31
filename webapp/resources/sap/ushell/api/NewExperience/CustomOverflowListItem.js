@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/m/CustomListItem","sap/m/CustomListItemRenderer","sap/ui/core/Element"],(e,t,s)=>{"use strict";const n=e.extend("sap.ushell.api.NewExperience.CustomOverflowListItem",{metadata:{library:"sap.ushell",properties:{contentId:{type:"string",group:"Misc",defaultValue:null}}},renderer:t});n.prototype.getContent=function(){const e=s.getElementById(this.getContentId());return[e]};return n});
+//# sourceMappingURL=CustomOverflowListItem.js.map

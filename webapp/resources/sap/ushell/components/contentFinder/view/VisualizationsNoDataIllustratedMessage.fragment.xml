@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <IllustratedMessage
+        visible="{ui>/visualizations/loaded}"
+        illustrationType="{
+            parts: [
+                'ui>/visualizations/searchTerm',
+                'ui>/customErrorMessage/type'
+            ], formatter: '.formatter.formatVisualizationsNoDataIllustratedMessageType' }"
+        title="{
+            parts: [
+                'ui>/categoryTree/itemPressed',
+                'ui>/visualizations/searchTerm',
+                'i18n>ContentFinder.AppSearch.IllustratedMessage.Tiles.NoData.Title',
+                'ui>/customErrorMessage/title'
+            ], formatter: '.formatter.formatVisualizationsNoDataIllustratedMessageTitle' }"
+        description="{
+            parts: [
+                'ui>/categoryTree/itemPressed',
+                'ui>/visualizations/searchTerm',
+                'ui>/componentSettings/noItemsInCatalogDescription',
+                'ui>/customErrorMessage/description'
+            ], formatter: '.formatter.formatVisualizationsNoDataIllustratedMessageDescription' }"
+
+    />
+
+</core:FragmentDefinition>

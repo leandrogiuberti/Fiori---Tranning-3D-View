@@ -1,0 +1,1 @@
+{"version":3,"file":"requestNodePlain.d.ts","sourceRoot":"../../../../../../../..","sources":["src/sap/esh/search/ui/sinaNexTS/core/requestNodePlain.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,mDAAmD,CAAC;IACnE;;;;OAIG;IACH,OAAO,EAAE,iBAAiB,EAAE,kBAAkB,EAAE,MAAM,uCAAuC,CAAC;IAG9F,SAAsB,gBAAgB,CAAC,UAAU,EAAE,iBAAiB,GAAG,OAAO,CAAC,kBAAkB,CAAC,CAqDjG;CAEA"}

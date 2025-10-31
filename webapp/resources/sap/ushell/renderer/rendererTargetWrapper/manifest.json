@@ -1,0 +1,43 @@
+{
+    "_version": "1.0.0",
+    "sap.fiori": {
+        "registrationIds": [""]
+    },
+    "sap.app": {
+        "id": "sap.ushell.renderer.rendererTargetWrapper",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "ach": "CA-FLP-FE-COR",
+        "type": "component",
+        "title": "",
+        "resources": "resources.json"
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "componentName": "sap.ushell.renderer.rendererTargetWrapper",
+        "rootView": {
+            "viewName": "sap.ushell.renderer.rendererTargetWrapper.RendererTarget",
+            "type": "XML",
+            "async": true
+        },
+        "dependencies": {
+            "minUI5Version": "1.100",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    }
+}

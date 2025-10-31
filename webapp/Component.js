@@ -1,7 +1,7 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
   "sap/ui/Device"
-], function (UIComponent, Device) {
+], function (UIComponent) {
   "use strict";
 
   return UIComponent.extend("leandrogiuberti.FioriTranning3DView.Component", {
@@ -16,8 +16,6 @@ sap.ui.define([
       // enable routing
       this.getRouter().initialize();
 
-      // set the device model
-      // O models.js original não tem createDeviceModel, então a linha foi removida para evitar erro
     }
   });
 });

@@ -1,0 +1,54 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 187,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "SideNavigation.less",
+			"size": 252,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "ToolHeader.less",
+			"size": 880,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 27924,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/tnt/themes/sap_bluecrystal/library-parameters.json",
+			"size": 6167,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.css",
+			"size": 27921,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.less",
+			"size": 2385,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "library.source.less",
+			"size": 995,
+			"designtime": true,
+			"theme": "sap_bluecrystal"
+		},
+		{
+			"name": "resources.json",
+			"size": 947
+		}
+	]
+}

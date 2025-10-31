@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/thirdparty/jquery"],jQuery=>{"use strict";function e(){this._oValue=undefined}e.prototype.getPersData=function(){const e=new jQuery.Deferred;e.resolve(this._oValue);return e.promise()};e.prototype.setPersData=function(e){const t=new jQuery.Deferred;this._oValue=e;t.resolve();return t.promise()};e.prototype.delPersData=function(){const e=new jQuery.Deferred;this._oValue=undefined;e.resolve();return e.promise()};e.prototype.setValue=function(e){this._oValue=e};e.prototype.getValue=function(){return this._oValue};return e});
+//# sourceMappingURL=TransientPersonalizer.js.map

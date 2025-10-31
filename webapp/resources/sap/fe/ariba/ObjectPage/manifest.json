@@ -1,0 +1,20 @@
+{
+	"_version": "1.14.0",
+	"sap.app": {
+		"id": "sap.fe.ariba.ObjectPage",
+		"type": "component",
+		"applicationVersion": {
+			"version": "1.141.1"
+		},
+		"title": "Object Page",
+		"tags": {
+			"keywords": ["Object Page"]
+		},
+		"ach": "CA-UI5-FE",
+		"i18n": "../messagebundle.properties",
+		"embeddedBy": "../",
+		"offline": false,
+		"resources": "resources.json"
+	},
+	"sap.ui5": {}
+}

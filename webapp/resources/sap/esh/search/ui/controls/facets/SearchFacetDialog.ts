@@ -1,0 +1,1058 @@
+/*!
+ * SAPUI5
+ * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
+ * 
+ */
+import i18n from "../../i18n";
+import * as SearchHelper from "sap/esh/search/ui/SearchHelper";
+import SearchFacetDialogModel from "sap/esh/search/ui/SearchFacetDialogModel";
+import SearchFacetDialogHelper from "sap/esh/search/ui/SearchFacetDialogHelper";
+import SearchFacetDialogHelper_SearchAdvancedCondition_ModuleLoader from "sap/esh/search/ui/SearchFacetDialogHelper_SearchAdvancedCondition_ModuleLoader";
+import SearchFacetDialogHelperCharts from "sap/esh/search/ui/SearchFacetDialogHelperCharts";
+import SearchAdvancedCondition from "sap/esh/search/ui/controls/SearchAdvancedCondition";
+import FacetItem from "sap/esh/search/ui/FacetItem";
+import { ButtonType } from "sap/m/library";
+import { ListMode } from "sap/m/library";
+import { ListSeparators } from "sap/m/library";
+import { FlexAlignItems } from "sap/m/library";
+import { FlexJustifyContent } from "sap/m/library";
+import { BackgroundDesign } from "sap/m/library";
+import Page from "sap/m/Page";
+import Dialog, { $DialogSettings } from "sap/m/Dialog";
+import Select from "sap/m/Select";
+import CheckBox from "sap/m/CheckBox";
+import SearchField from "sap/m/SearchField";
+import ToggleButton from "sap/m/ToggleButton";
+import Button from "sap/m/Button";
+import StandardListItem from "sap/m/StandardListItem";
+import SplitContainer from "sap/m/SplitContainer";
+import Item from "sap/ui/core/Item";
+import List from "sap/m/List";
+import HBox from "sap/m/HBox";
+import VBox from "sap/m/VBox";
+import Filter from "sap/ui/model/Filter";
+import FilterOperator from "sap/ui/model/FilterOperator";
+import ScrollContainer from "sap/m/ScrollContainer";
+import Toolbar from "sap/m/Toolbar";
+import IconTabBar from "sap/m/IconTabBar";
+import IconTabFilter from "sap/m/IconTabFilter";
+import JSONModel from "sap/ui/model/json/JSONModel";
+import Event from "sap/ui/base/Event";
+import MenuButton from "sap/m/MenuButton";
+import SearchModel from "sap/esh/search/ui/SearchModel";
+import { UserEventType } from "../../eventlogging/UserEvents";
+import Context from "sap/ui/model/Context";
+import SearchHierarchyDynamicFacet from "../../hierarchydynamic/SearchHierarchyDynamicFacet";
+import SearchFacetHierarchyDynamic from "./types/SearchFacetHierarchyDynamic";
+import Model from "sap/ui/model/Model";
+import { ListBase$SelectionChangeEvent } from "sap/m/ListBase";
+import { FacetTypeUI } from "./FacetTypeUI";
+import Element from "sap/ui/core/Element";
+import ManagedObject from "sap/ui/base/ManagedObject";
+import Log from "sap/base/Log";
+import SearchFacetPieChart from "./types/tabbarfacet/SearchFacetPieChart";
+
+export interface $SearchFacetDialogSettings extends $DialogSettings {
+    selectedAttribute: string;
+    selectedTabBarIndex: number;
+    tabBarItems: Array<IconTabFilter>;
+}
+
+/**
+ * @namespace sap.esh.search.ui.controls
+ */
+export default class SearchFacetDialog extends Dialog {
+    oSplitContainer: SplitContainer;
+    bConditionValidateError: boolean;
+    bShowCharts: boolean;
+    bOldPieChart: boolean;
+    selectedAttribute: string;
+    chartOnDisplayIndex: number;
+    facetOnDisplayIndex: number;
+    chartOnDisplayIndexByFilterArray: Array<number>;
+    aItemsForBarChart: Array<any>;
+    aItemsForBarChartFacetTotalCount: number;
+    tabBarItems: Array<IconTabFilter>;
+    SearchFacetDialogHelperCharts: SearchFacetDialogHelperCharts;
+    onSearchFieldLiveChangeDelayed: any;
+
+    static readonly metadata = {
+        properties: {
+            tabBarItems: {
+                type: "object", // Array<IconTabFilter>
+            },
+            selectedAttribute: {
+                type: "string",
+            },
+            selectedTabBarIndex: {
+                type: "int",
+            },
+        },
+    };
+
+    constructor(sId?: string, settings?: Partial<$SearchFacetDialogSettings>) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const loaderDummy = new SearchFacetDialogHelper_SearchAdvancedCondition_ModuleLoader();
+        super(sId, settings);
+        const oSettings = typeof sId === "object" ? sId : settings;
+        this.bConditionValidateError = false;
+        this.bShowCharts = true; // change this to completely turn off charts in show more dialog
+        this.bOldPieChart = true;
+        this.chartOnDisplayIndex = oSettings.selectedTabBarIndex; // charts
+        this.facetOnDisplayIndex = 0; // charts
+        this.chartOnDisplayIndexByFilterArray = []; // charts
+        this.aItemsForBarChart = []; // charts
+        this.aItemsForBarChartFacetTotalCount = undefined; // will be replaced by real total count of facet requests
+        this.SearchFacetDialogHelperCharts = new SearchFacetDialogHelperCharts(this);
+        if (!this.getProperty("tabBarItems")) {
+            SearchFacetDialogHelperCharts.setDummyTabBarItems(this);
+        }
+        this.setShowHeader(true);
+        this.setTitle(i18n.getText("dialogTitle"));
+        this.setHorizontalScrolling(false);
+        this.setVerticalScrolling(false);
+        this.setContentHeight("35rem");
+        this.setBeginButton(
+            new Button({
+                text: i18n.getText("okDialogBtn"),
+                type: ButtonType.Emphasized,
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                press: (oEvent: Event): void => {
+                    this.onOkClick();
+                    this.close();
+                    this.getModel().destroy();
+                    this.destroy();
+                },
+            })
+        );
+        this.setEndButton(
+            new Button({
+                text: i18n.getText("cancelDialogBtn"),
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                press: (oEvent) => {
+                    this.onCancelClick();
+                    this.close();
+                    this.getModel().destroy();
+                    this.destroy();
+                },
+            })
+        );
+        this.setEscapeHandler(() => {
+            this.onCancelClick();
+            this.close();
+            this.getModel().destroy();
+            this.destroy();
+        });
+        this.addContent(this.createContainer());
+        SearchFacetDialogHelper.init(this);
+        this.addStyleClass("sapUshellSearchFacetDialog");
+        this.onSearchFieldLiveChangeDelayed = SearchHelper.delayedExecution(
+            this.onSearchFieldLiveChange,
+            1000
+        );
+    }
+
+    createContainer(): SplitContainer {
+        // create SplitContainer with masterPages
+        this.oSplitContainer = new SplitContainer({
+            masterPages: this.createMasterPages(),
+        });
+        // binding detailPages in SplitContainer
+        this.oSplitContainer.bindAggregation("detailPages", {
+            path: "/facetDialog",
+            factory: (sId: string, oContext: Context) => {
+                return this.createDetailPage(sId, oContext);
+            },
+        });
+        this.oSplitContainer.addStyleClass("sapUshellSearchFacetDialogContainer");
+        return this.oSplitContainer;
+    }
+
+    setModel(oModel: Model, sName?: string): any {
+        // this/SearchFacetDialog not working as return type
+        super.setModel(oModel, sName);
+        if (oModel instanceof SearchModel && typeof oModel.config !== "undefined") {
+            if (oModel.config.optimizeForValueHelp) {
+                this.addStyleClass("sapUshellSearchFacetDialogValueHelp");
+            }
+        }
+        return this;
+    }
+
+    // create masterPages in splitContainer (we only have one master page)
+    createMasterPages(): Array<Page> {
+        // create facet list
+        const oFacetList = new List({
+            mode: ListMode.SingleSelectMaster,
+            selectionChange: (oEvent) => {
+                this.onMasterPageSelectionChange(oEvent);
+            },
+        });
+        oFacetList.addStyleClass("sapUshellSearchFacetDialogFacetList");
+        oFacetList.bindItems({
+            path: "/facetDialog",
+            factory: (sId: string, oContext): StandardListItem => {
+                const facet = oContext.getObject();
+                if (facet instanceof SearchHierarchyDynamicFacet) {
+                    const oListItem = new StandardListItem({
+                        title: { path: "title" },
+                        counter: { path: "filterCount" },
+                        visible: { path: "visible" },
+                    });
+                    return oListItem;
+                } else {
+                    const oListItem = new StandardListItem({
+                        title: { path: "title" },
+                        counter: { path: "count" },
+                        visible: { path: "visible" },
+                    });
+                    return oListItem;
+                }
+            },
+        });
+        // create a scrollContainer, content is the facet list
+        const oResetButton = new Button({
+            icon: "sap-icon://clear-filter",
+            tooltip: i18n.getText("resetFilterButton_tooltip"),
+            type: ButtonType.Transparent,
+            enabled: { path: "/facetDialogOverallCounter" },
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            press: (oEvent) => {
+                this.resetAllFilters();
+            },
+        });
+        oResetButton.addStyleClass("sapUshellSearchFacetDialogFilterResetButton");
+        const oMasterPage = new Page({
+            title: i18n.getText("filters"),
+            headerContent: oResetButton,
+            content: [oFacetList],
+        }).addStyleClass("sapUshellSearchFacetDialogMasterContainer");
+        oMasterPage.addEventDelegate({
+            onAfterRendering: () => {
+                if (this.getProperty("selectedAttribute")) {
+                    for (let i = 0; i < oFacetList.getItems().length; i++) {
+                        const oListItem = oFacetList.getItems()[i];
+                        const oFacetItem = oListItem.getBindingContext().getObject() as any; // ToDo 'any'
+                        if (this.getProperty("selectedAttribute") === oFacetItem.dimension) {
+                            oFacetList.setSelectedItem(oListItem);
+                            this.facetOnDisplayIndex = i;
+                            this.chartOnDisplayIndexByFilterArray.push(this.chartOnDisplayIndex); // initial setting of array
+                        } else {
+                            let n = 0;
+                            const ar = (
+                                oListItem.getBindingContext().getModel() as SearchFacetDialogModel
+                            ).getData().facets;
+                            for (let j = 0; j < ar.length; j++) {
+                                if (
+                                    ar[j].chartIndex &&
+                                    ar[j].dimension === oFacetItem.dimension &&
+                                    !isNaN(ar[j].chartIndex)
+                                ) {
+                                    n = ar[j].chartIndex;
+                                }
+                            }
+                            this.chartOnDisplayIndexByFilterArray.push(n); // initial setting of array
+                        }
+                    }
+                }
+                if (!oFacetList.getSelectedItem()) {
+                    oFacetList.setSelectedItem(oFacetList.getItems()[0]);
+                }
+                const oSelectedItem = oFacetList.getSelectedItem();
+                if (oSelectedItem) {
+                    // can be empty, if no facets are loaded (i.e. value help mode or search model w/o any facets)
+                    SearchFacetDialogHelper.updateDetailPage(oSelectedItem, null, true);
+                }
+                this.resetEnabledForFilterResetButton();
+            },
+        });
+        // masterPages has only one page
+        return [oMasterPage];
+    }
+
+    resetAllFilters() {
+        // if 'show selected on top' is checked, uncheck
+        const settingsContainer = document.querySelector(".sapUshellSearchFacetDialogSettingsContainer");
+        let checkboxElem: HTMLElement | null = null;
+        if (settingsContainer) {
+            // querySelectorAll for multiple classes, using double quotes
+            const checkboxes = settingsContainer.querySelectorAll(".sapMCbBg.sapMCbHoverable.sapMCbMark");
+            if (checkboxes.length === 1) {
+                checkboxElem = checkboxes[0] as HTMLElement;
+            }
+        }
+        if (checkboxElem && checkboxElem.parentNode) {
+            const id = (checkboxElem.parentNode as HTMLElement).id;
+            const oCheckbox = Element.getElementById(id) as CheckBox;
+            oCheckbox.setSelected(false);
+            oCheckbox.setEnabled(false);
+        }
+        const oModel = this.getModel() as SearchFacetDialogModel;
+        oModel.aFilters = [];
+        // none of the above work since selections in all lists are physically counted to addFilterCondition
+        SearchFacetDialogHelper.bResetFilterIsActive = true;
+        const oMasterPageList = SearchFacetDialogHelper.getFacetList();
+        const aFacets = oMasterPageList.getItems();
+        for (let j = 0; j < aFacets.length; j++) {
+            aFacets[j].setCounter(0);
+        }
+        this.resetAdvancedConditionFilters();
+        SearchFacetDialogHelper.resetChartQueryFilters();
+        SearchFacetDialogHelper.updateDetailPage(oMasterPageList.getSelectedItem());
+        this.resetEnabledForFilterResetButton();
+        SearchFacetDialogHelper.bResetFilterIsActive = false;
+    }
+
+    resetAdvancedConditionFilters(): void {
+        let oAdvancedContainer, condition1, n1, n2, oParent, oChild;
+        const oDetailPages = this.oSplitContainer.getDetailPages() as Array<Page>;
+        for (let i = 0; i < oDetailPages.length; i++) {
+            const oDetailPage = oDetailPages[i];
+            const facet = oDetailPage.getBindingContext().getObject();
+            if (facet instanceof SearchHierarchyDynamicFacet) {
+                continue;
+            }
+            n1 = SearchFacetDialogHelper.POS_ATTRIBUTE_LIST_CONTAINER;
+            oAdvancedContainer = oDetailPage.getContent()[n1]; // for numbers, dates etc, not strings or texts
+            if (oAdvancedContainer) {
+                for (let j = oAdvancedContainer.getContent().length - 2; j > 0; j--) {
+                    condition1 = oAdvancedContainer.getContent()[j];
+                    oParent = condition1.getParent();
+                    oChild = condition1;
+                    oParent.removeContent(oChild);
+                }
+            } else {
+                n1 = SearchFacetDialogHelper.POS_ICONTABBAR;
+                n2 = SearchFacetDialogHelper.POS_TABBAR_CONDITION;
+                oAdvancedContainer = (
+                    (oDetailPage.getContent()[n1] as IconTabBar).getItems()[n2] as IconTabFilter
+                ).getContent()[0]; // for numbers, dates etc, not strings or texts
+                if (oAdvancedContainer) {
+                    for (let j = oAdvancedContainer.getContent().length - 1; j > -1; j--) {
+                        condition1 = oAdvancedContainer.getContent()[j];
+                        if (condition1.getContent && condition1.getContent()[1]) {
+                            const conditionItem = condition1.getContent()[1].getContent()[1]; //condition1 = [a box, a layout, and an x button]
+                            const conditionValue = conditionItem.getValue();
+                            if (conditionValue && ("" + conditionValue).length > 0) {
+                                oParent = condition1.getParent();
+                                oChild = condition1;
+                                oParent.removeContent(oChild);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    resetEnabledForFilterResetButton(bForceEnabled?: boolean): void {
+        let bFiltersExist = false;
+        let overallCounter = 0;
+        const oMasterPageList = SearchFacetDialogHelper.getFacetList();
+        const aFacets = oMasterPageList.getItems();
+        for (let i = 0; i < aFacets.length; i++) {
+            overallCounter += aFacets[i].getCounter();
+        }
+        const oModel = this.getModel() as SearchFacetDialogModel;
+        if ((oModel.aFilters && oModel.aFilters.length > 0) || bForceEnabled || overallCounter > 0) {
+            bFiltersExist = true;
+        }
+        oModel.setProperty("/facetDialogOverallCounter", bFiltersExist);
+    }
+
+    // event: select listItems in masterPage
+    onMasterPageSelectionChange(oEvent: ListBase$SelectionChangeEvent): void {
+        const oListItem = oEvent.getParameter("listItem");
+        this.facetOnDisplayIndex = (oListItem.getParent() as any).indexOfItem(
+            (oListItem.getParent() as any).getSelectedItem()
+        );
+        this.setChartOnDisplayIndexForFacetListItem(this.facetOnDisplayIndex);
+        const oModel = oListItem.getParent().getModel() as SearchFacetDialogModel;
+        const sBindingPath = oListItem.getBindingContext().getPath();
+        this.resetIcons(oModel, sBindingPath, this);
+        SearchFacetDialogHelper.updateDetailPage(oListItem);
+        if (this.oSplitContainer.getMode() === "ShowHideMode") {
+            this.oSplitContainer.hideMaster();
+        }
+        this.controlChartVisibility(this, this.chartOnDisplayIndex);
+    }
+
+    createDetailPage(sId: string, oContext: Context): Page {
+        const facet: any = oContext.getObject();
+        switch (facet.facetType) {
+            case FacetTypeUI.Attribute:
+                return this.createAttributeDetailPage(sId, oContext);
+            case FacetTypeUI.Hierarchy:
+                return this.createDynamicHierarchyAttributeDetailPage(sId, oContext);
+        }
+    }
+
+    createDynamicHierarchyAttributeDetailPage(sId: string, oContext: Context): Page {
+        const facetControl = new SearchFacetHierarchyDynamic("", { showTitle: false });
+        const facet: SearchHierarchyDynamicFacet = oContext.getObject() as SearchHierarchyDynamicFacet;
+        const page = new Page({
+            title: facet.title,
+            showHeader: true,
+            content: [facetControl],
+        })
+            .addStyleClass("sapUshellSearchFacetDialogDetailPage")
+            .addStyleClass("sapUshellSearchFacetDialogHierarchyTreeDetailPage");
+        return page;
+    }
+
+    // create pages of 'detailPages' in splitContainer, using data binding
+    createAttributeDetailPage(sId: string, oContext: Context): Page {
+        const sFacetType = oContext.getModel().getProperty(oContext.getPath()).facetType;
+        const sDataType = oContext
+            .getModel()
+            ["getAttributeDataType"](oContext.getModel().getProperty(oContext.getPath()));
+        // create a settings container with select and checkBox, initial is not visible
+        const oSelect = new Select({
+            items: [
+                new Item({
+                    text: i18n.getText("notSorted"),
+                    key: "notSorted",
+                }),
+                new Item({
+                    text: i18n.getText("sortByCount"),
+                    key: "sortCount",
+                }),
+                new Item({
+                    text: i18n.getText("sortByName"),
+                    key: "sortName",
+                }),
+            ],
+            selectedKey: sDataType === "string" || sDataType === "text" ? "sortCount" : "notSorted",
+            change: (oEvent: Event): void => {
+                this.onSelectChange(oEvent);
+            },
+        }).addStyleClass("sapUshellSearchFacetDialogSettingsSelect");
+        const oHBox = new HBox({
+            alignItems: FlexAlignItems.End,
+            justifyContent: FlexJustifyContent.End,
+            items: [oSelect],
+        });
+        const oCheckBox = new CheckBox({
+            text: i18n.getText("showSelectedOnTop"),
+            enabled: false,
+            select: (oEvent) => {
+                this.onCheckBoxSelect(oEvent);
+            },
+        });
+        const oSettings = new VBox({
+            items: [oHBox, oCheckBox],
+        }).addStyleClass("sapUshellSearchFacetDialogSettingsContainer");
+        oSettings.setVisible(false);
+        // create the attribute list for each facet
+        const oList = new List({
+            backgroundDesign: BackgroundDesign.Transparent,
+            includeItemInSelection: true,
+            showNoData: false,
+            showSeparators: ListSeparators.None,
+            selectionChange: (oEvent: Event) => {
+                this.onDetailPageSelectionChange(oEvent);
+            },
+        });
+        oList.addStyleClass("sapUshellSearchFacetDialogDetailPageList");
+        oList.addStyleClass("largeChart0");
+        if (sFacetType === FacetTypeUI.Attribute) {
+            oList.setMode(ListMode.MultiSelect);
+        }
+        const oBindingInfo = {
+            path: "items",
+            factory: (sId: string, oContext): StandardListItem => {
+                const oFacetItem = oContext.oModel.getProperty(oContext.sPath);
+                const oListItem = new StandardListItem({
+                    title: { path: "label" },
+                    tooltip: i18n.getText("facetListTooltip", [
+                        ManagedObject.escapeSettingsValue(oFacetItem.label),
+                        ManagedObject.escapeSettingsValue(oFacetItem.valueLabel),
+                    ]),
+                    info: { path: "valueLabel" },
+                    selected: { path: "selected" },
+                });
+                // prepare the local filterConditions array in facet dialog
+                if (oFacetItem.selected) {
+                    oContext.oModel.addFilter(oFacetItem);
+                }
+                return oListItem;
+            },
+        };
+        if (sDataType === "number" || sDataType === "integer") {
+            oSelect.removeItem(2);
+        }
+        oBindingInfo["filters"] = new Filter("advanced", FilterOperator.NE, true); // ToDo
+        oList.bindAggregation("items", oBindingInfo);
+        oList.data("dataType", sDataType);
+        if (this.bShowCharts) {
+            oList.addEventDelegate({
+                onAfterRendering: (oEvent: Event): void => {
+                    this.hideSelectively(oEvent, this, 0);
+                },
+            });
+        }
+        let oListContainer, oChartPlaceholder2;
+        const oChartPlaceholder1 = SearchFacetDialogHelperCharts.getBarChartPlaceholder();
+        oChartPlaceholder1.addEventDelegate({
+            onAfterRendering: (oEvent: Event): void => {
+                this.hideSelectively(oEvent, this, 1);
+            },
+        });
+        oChartPlaceholder1.data("dataType", sDataType);
+        if (this.bOldPieChart) {
+            oChartPlaceholder2 = SearchFacetDialogHelperCharts.getPieChartPlaceholder();
+        } else {
+            oChartPlaceholder2 = {};
+        }
+        oChartPlaceholder2.addEventDelegate({
+            onAfterRendering: (oEvent: Event) => {
+                this.hideSelectively(oEvent, this, 2);
+            },
+        });
+        if (this.bShowCharts && (sDataType === "string" || sDataType === "text")) {
+            oListContainer = new ScrollContainer({
+                height: "67.2%",
+                horizontal: false,
+                vertical: true,
+                content: [oList, oChartPlaceholder1, oChartPlaceholder2],
+            });
+        } else {
+            oListContainer = new ScrollContainer({
+                height: "calc(100% - 0.25rem)",
+                horizontal: false,
+                vertical: true,
+                content: [oList],
+            });
+            if (sDataType === "number" || sDataType === "integer") {
+                oListContainer.addStyleClass("sapUshellSearchFacetDialogDetailPageListContainerNumber");
+            } else {
+                oListContainer.addStyleClass("sapUshellSearchFacetDialogDetailPageListContainerDate");
+            }
+        }
+        oListContainer.addStyleClass("sapUshellSearchFacetDialogDetailPageListContainer");
+        oListContainer.addStyleClass("searchFacetLargeChartContainer");
+        oListContainer.setBusyIndicatorDelay(0);
+        // create advanced search
+        const oAdvancedCondition = new SearchAdvancedCondition("", {
+            type: sDataType,
+        });
+        let oPage;
+        if (sDataType === "string" || sDataType === "text") {
+            const oAdvancedContainer = new ScrollContainer({
+                horizontal: false,
+                vertical: true,
+                content: [oAdvancedCondition],
+            });
+            oAdvancedContainer.addStyleClass("sapUshellSearchFacetDialogDetailPageAdvancedContainer");
+            const oPlusButton = new Button({
+                icon: "sap-icon://add",
+                type: ButtonType.Transparent,
+                press: (oEvent: Event): void => {
+                    this.onPlusButtonPress(oEvent, sDataType);
+                },
+            });
+            oPlusButton.addStyleClass("sapUshellSearchFacetDialogDetailPageAdvancedContainerPlusButton");
+            oAdvancedContainer.addContent(oPlusButton);
+            oAdvancedContainer.data("dataType", sDataType);
+            oAdvancedContainer.data("initial", true);
+            // create a page for type string or text, content include settings container and attribute list, head toolbar has a setting button and a search field
+            oListContainer.setHeight("calc(100% - 0.25rem)");
+            oAdvancedContainer.setHeight("100%");
+            const oChartSelectionButton = SearchFacetDialogHelperCharts.getDropDownButton(this);
+            const subheader = new Toolbar({
+                content: [
+                    new SearchField({
+                        placeholder: i18n.getText("filterPlaceholder"),
+                        liveChange: (oEvent: Event): void => {
+                            this.onSearchFieldLiveChangeDelayed(oEvent["oSource"].getValue()); // ToDo
+                        },
+                    }),
+                    new ToggleButton({
+                        icon: "sap-icon://sort",
+                        press: (oEvent: Event): void => {
+                            this.onSettingButtonPress(oEvent);
+                        },
+                    }).addStyleClass("sapUshellSearchFacetDialogSortButton"),
+                ],
+            }).addStyleClass("sapUshellSearchFacetDialogSubheaderToolbar");
+            subheader.addEventDelegate({
+                onAfterRendering: (): void => {
+                    document.querySelectorAll(".sapUshellSearchFacetDialogSubheaderToolbar").forEach((el) => {
+                        el.classList.remove("sapContrastPlus");
+                    });
+                },
+            });
+            if (this.bShowCharts) {
+                subheader.addContent(oChartSelectionButton);
+            }
+            const oTabListPage = new Page({
+                showHeader: false,
+                subHeader: subheader,
+                content: [oSettings, oListContainer],
+            }).addStyleClass("sapUshellSearchFacetDialogDetailPage");
+            const oIconTabBar = new IconTabBar({
+                expandable: false,
+                stretchContentHeight: true,
+                backgroundDesign: BackgroundDesign.Transparent,
+                applyContentPadding: false,
+                select: () => {
+                    this.controlChartVisibility(this, this.chartOnDisplayIndex);
+                },
+                items: [
+                    new IconTabFilter({
+                        text: i18n.getText("selectFromList"),
+                        content: [oTabListPage],
+                    }),
+                    new IconTabFilter({
+                        text: i18n.getText("defineCondition"),
+                        content: [oAdvancedContainer],
+                    }),
+                ],
+            });
+            oIconTabBar.addStyleClass("sapUshellSearchFacetDialogIconTabBar");
+            oPage = new Page({
+                showHeader: true,
+                title: oContext.getModel().getProperty(oContext.getPath()).title,
+                content: [oIconTabBar],
+            });
+            oPage.addStyleClass("sapUshellSearchFacetDialogDetailPageString");
+        } else {
+            oListContainer.addContent(oAdvancedCondition);
+            oListContainer.data("dataType", sDataType);
+            oListContainer.data("initial", true);
+            // create a page for type number or date
+            if (this.bShowCharts) {
+                const title = oContext.getModel().getProperty(oContext.getPath()).title;
+                oPage = new Page({
+                    title: title,
+                    showHeader: true,
+                    content: [oSettings, oListContainer],
+                });
+            } else {
+                oPage = new Page({
+                    showHeader: true,
+                    title: oContext.getModel().getProperty(oContext.getPath()).title,
+                    content: [oSettings, oListContainer],
+                });
+            }
+            oPage.addStyleClass("sapUshellSearchFacetDialogDetailPage");
+        }
+        oPage.addEventDelegate({
+            onAfterRendering: () => {
+                this.controlChartVisibility(this, this.chartOnDisplayIndex);
+            },
+        });
+        return oPage;
+    }
+
+    // event: select listItems in detailPages
+    onDetailPageSelectionChange(oEvent: ListBase$SelectionChangeEvent): void {
+        const oSelectedItems = oEvent.getParameter("listItems");
+        oSelectedItems.forEach((oSelectedItem) => {
+            // update aFilters
+            const oFacetItem = oSelectedItem.getBindingContext().getObject() as FacetItem;
+            const oModel = this.getModel() as SearchFacetDialogModel;
+            if (oSelectedItem.getSelected()) {
+                oFacetItem.listed = true;
+                oModel.addFilter(oFacetItem);
+            } else {
+                oFacetItem.listed = false;
+                oModel.removeFilter(oFacetItem);
+            }
+            // update the count info in masterPageList
+            const oList = oEvent.getSource() as List;
+            let oDetailPage;
+            if (oList.data("dataType") === "string" || oList.data("dataType") === "text") {
+                oDetailPage = oList.getParent().getParent().getParent().getParent().getParent().getParent();
+            } else {
+                oDetailPage = oList.getParent().getParent();
+            }
+            SearchFacetDialogHelper.updateCountInfo(oDetailPage);
+            // deselect setting check box
+            const oSettings = (oList.getParent().getParent() as any).getContent()[
+                SearchFacetDialogHelper.POS_SETTING_CONTAINER
+            ];
+            const oCheckbox = oSettings.getItems()[SearchFacetDialogHelper.POS_SHOWONTOP_CHECKBOX];
+            const oSelect = oSettings.getItems()[SearchFacetDialogHelper.POS_SORTING_SELECT].getItems()[0];
+            if (oCheckbox.getSelected()) {
+                oCheckbox.setSelected(false);
+                oSelect.setSelectedKey("notSorted");
+            }
+            if (oList.getSelectedContexts().length > 0) {
+                oCheckbox.setEnabled(true);
+            } else {
+                oCheckbox.setEnabled(false);
+            }
+        });
+    }
+
+    // event: search in detailPages
+    onSearchFieldLiveChange(value: string): void {
+        const oSelectedItem = SearchFacetDialogHelper.getFacetList().getSelectedItem();
+        SearchFacetDialogHelper.updateDetailPage(oSelectedItem, value);
+    }
+
+    // event: click setting button
+    onSettingButtonPress(oEvent: Event): void {
+        const oSettingsButton = oEvent.getSource() as ToggleButton;
+        const bPressed = oSettingsButton.getPressed();
+        const oSettings = oSettingsButton.getParent().getParent()["getContent"]()[
+            SearchFacetDialogHelper.POS_SETTING_CONTAINER
+        ];
+        const oListContainer = oSettingsButton.getParent().getParent()["getContent"]()[
+            SearchFacetDialogHelper.POS_ATTRIBUTE_LIST_CONTAINER
+        ];
+        if (bPressed) {
+            oSettings.setVisible(true);
+            oListContainer.setHeight("calc(100% - 4.25rem)");
+        } else {
+            oSettings.setVisible(false);
+            oListContainer.setHeight("calc(100% - 0.25rem)");
+        }
+    }
+
+    // event: change select box in settings
+    onSelectChange(oEvent: Event): void {
+        const oSelect = oEvent.getSource() as Select;
+        SearchFacetDialogHelper.sortingAttributeList(oSelect.getParent().getParent().getParent());
+    }
+
+    // e­­­­vent: select check box in settings
+    onCheckBoxSelect(oEvent: Event): void {
+        const oCheckbox = oEvent.getSource() as CheckBox;
+        SearchFacetDialogHelper.sortingAttributeList(oCheckbox.getParent().getParent());
+    }
+
+    // event: advanced condition plus button pressed
+    onPlusButtonPress(oEvent: Event, type: string): void {
+        const oPlusButton = oEvent.getSource() as Button;
+        const oAdvancedContainer = oPlusButton.getParent() as ScrollContainer;
+        const oNewAdvancedCondition = new SearchAdvancedCondition("", {
+            type: type,
+        });
+        const insertIndex = oAdvancedContainer.getContent().length - 1;
+        oAdvancedContainer.insertContent(oNewAdvancedCondition, insertIndex);
+    }
+
+    // event: click ok button
+    onOkClick(): void {
+        const oModel = this.getModel() as SearchFacetDialogModel;
+        const oSearchModel = this.getModel("searchModel") as SearchModel;
+        oSearchModel.resetFilterByFilterConditions(false);
+        const aDetailPages = this.oSplitContainer.getDetailPages();
+        // no advanced filter
+        for (let m = 0; m < oModel.aFilters.length; m++) {
+            const item = oModel.aFilters[m];
+            if (!item.advanced || item.listed) {
+                oSearchModel.addFilterCondition(item.filterCondition, false);
+            }
+        }
+        // advanced filter
+        for (let i = 0; i < aDetailPages.length; i++) {
+            const detailPage = aDetailPages[i];
+            const facet = detailPage.getBindingContext().getObject();
+            if (facet instanceof SearchHierarchyDynamicFacet) {
+                continue;
+            }
+            if (SearchFacetDialogHelper.getFacetList().getItems()[i]) {
+                SearchFacetDialogHelper.applyAdvancedCondition(
+                    detailPage,
+                    SearchFacetDialogHelper.getFacetList().getItems()[i].getBindingContext().getObject(),
+                    oSearchModel
+                );
+            }
+        }
+        if (!this.bConditionValidateError) {
+            oSearchModel.filterChanged = true;
+            oSearchModel.invalidateQuery();
+            oSearchModel.fireSearchQuery();
+        }
+        oSearchModel.eventLogger.logEvent({
+            type: UserEventType.FACET_SHOW_MORE_CLOSE,
+            dataSourceKey: oSearchModel.getDataSource().id,
+        });
+    }
+
+    onCancelClick(): void {
+        const oSearchModel = this.getModel("searchModel") as SearchModel;
+        oSearchModel.eventLogger.logEvent({
+            type: UserEventType.FACET_SHOW_MORE_CLOSE,
+            dataSourceKey: oSearchModel.getDataSource().id,
+        });
+    }
+
+    setChartOnDisplayIndexForFacetListItem(facetOnDisplayIndex: number): void {
+        let res = 0;
+        try {
+            res = this.chartOnDisplayIndexByFilterArray[facetOnDisplayIndex];
+        } catch (e) {
+            Log.warning("Error in setChartOnDisplayIndexForFacetListItem: " + e);
+            res = 0;
+        }
+        if (res === undefined) {
+            res = 0;
+        }
+        this.chartOnDisplayIndex = res;
+    }
+
+    // ensure dropdown icons are correct -> see SearchFacetDialogHelper.js:89
+    resetIcons(oModel: SearchFacetDialogModel, sPath: string, oControl): void {
+        let isTextDataType = false;
+        const sDataType = oModel.getAttributeDataType(oModel.getProperty(sPath));
+        if (this.bShowCharts && (sDataType === "string" || sDataType === "text")) {
+            isTextDataType = true;
+        }
+        const allDropdownbuttons = Array.from(
+            document.getElementsByClassName("sapUshellSearchFacetDialogTabBarButton")
+        ) as HTMLElement[];
+        if (isTextDataType) {
+            allDropdownbuttons.forEach((btnElem) => {
+                btnElem.style.display = "block";
+            });
+            for (let i = 0; i < allDropdownbuttons.length; i++) {
+                const id = allDropdownbuttons[i].id;
+                const oDropDownButton = Element.getElementById(id) as MenuButton;
+                // reset the main button
+                const btn = oControl.getProperty("tabBarItems")[oControl.chartOnDisplayIndex].getIcon();
+                oDropDownButton.setIcon(btn);
+                const asWhat = oControl.getProperty("tabBarItems")[oControl.chartOnDisplayIndex].getText();
+                // reset the main button tooltip
+                // @ts-expect-error: setTooltip expects TooltipBase, but i18n.getText returns string
+                oDropDownButton.setTooltip(i18n.getText("displayAs", [asWhat]));
+            }
+        } else {
+            allDropdownbuttons.forEach((btnElem) => {
+                btnElem.style.display = "none";
+            });
+        }
+    }
+
+    // event: select chart elements
+    onDetailPageSelectionChangeCharts(oEvent: any): void {
+        let cnt = 0;
+        let context,
+            model,
+            data,
+            isSelected,
+            becomesSelected,
+            oSelectedItem,
+            sSelectedBindingPath,
+            oFacetItem,
+            sPath;
+        let ar, oNode, oMasterPageListItem;
+        if (oEvent.getSource && oEvent.getId() === "press") {
+            context = (oEvent.getSource() as Page).getBindingContext();
+            model = context.getModel();
+            data = context.getObject();
+            isSelected = data.selected;
+            becomesSelected = !isSelected;
+            // first set the selected value in model
+            oSelectedItem = oEvent.getSource();
+            sSelectedBindingPath = oSelectedItem.getBindingContext().sPath + "/selected";
+            model.setProperty(sSelectedBindingPath, becomesSelected);
+            // update aFilters
+            oFacetItem = oSelectedItem.getBindingContext().getObject();
+            if (becomesSelected) {
+                model.addFilter(oFacetItem);
+            } else {
+                model.removeFilter(oFacetItem);
+            }
+            // count the number of selected items in the model
+            sPath = sSelectedBindingPath.replace(/\/items.+/, ""); //"/facetDialog/1/items/11/selected"
+            sPath += "/items";
+            ar = model.getProperty(sPath);
+            cnt = 0;
+            for (let i = 0; i < ar.length; i++) {
+                oNode = ar[i];
+                if (oNode.selected === true) {
+                    cnt++;
+                }
+            }
+        } else {
+            // pie chart
+            data = oEvent["dataObject"];
+            isSelected = data.selected;
+            becomesSelected = !isSelected;
+            cnt = oEvent["cnt"];
+            model = oEvent["model"];
+            oFacetItem = new FacetItem();
+            oFacetItem.facetAttribute = ManagedObject.escapeSettingsValue(data.dimension);
+            oFacetItem.filterCondition = ManagedObject.escapeSettingsValue(data.filterCondition);
+            oFacetItem.label = ManagedObject.escapeSettingsValue(data.label);
+            oFacetItem.selected = ManagedObject.escapeSettingsValue(data.selected);
+            oFacetItem.listed = ManagedObject.escapeSettingsValue(data.selected);
+            oFacetItem.value = ManagedObject.escapeSettingsValue(data.value);
+            oFacetItem.valueLabel = ManagedObject.escapeSettingsValue(data.valueLabel);
+            // bar chart
+            // - update aItemsForBarChart
+            for (let j = 0; j < this.aItemsForBarChart.length; j++) {
+                const item = this.aItemsForBarChart[j];
+                if (item.label === ManagedObject.escapeSettingsValue(data.label)) {
+                    item.selected = data.selected;
+                }
+            }
+            // this.aItemsForBarChartFacetTotalCount = ... -> do not update, here
+            const oModel = this.getModel() as SearchFacetDialogModel;
+            if (isSelected) {
+                oModel.addFilter(oFacetItem);
+            } else {
+                oModel.removeFilter(oFacetItem);
+            }
+        }
+        // update the count info in masterPageList
+        const oMasterPageList = SearchFacetDialogHelper.getFacetList();
+        oMasterPageListItem = oMasterPageList.getSelectedItem();
+        if (!oMasterPageListItem) {
+            oMasterPageListItem = oMasterPageList.getItems()[0];
+        }
+        oMasterPageListItem.setCounter(cnt);
+        this.resetEnabledForFilterResetButton();
+    }
+
+    updateDetailPageCharts(aItems: Array<any>, facetTotalCount: number): void {
+        if (this.bShowCharts === false) {
+            return;
+        }
+        this.aItemsForBarChart = aItems;
+        this.aItemsForBarChartFacetTotalCount = facetTotalCount;
+        const listContainers = SearchFacetDialogHelperCharts.getListContainersForDetailPage();
+        const oListContainer = listContainers[1];
+        if (!oListContainer) {
+            return;
+        }
+        const contents = oListContainer.getContent();
+        // adjust visibility of charts
+        if (contents && this.chartOnDisplayIndex === 1) {
+            // hide pie chart (if in DOM)
+            const elem2 = contents[2].getDomRef();
+            if (elem2) {
+                const elem2Dom = document.getElementById(elem2.id);
+                if (elem2Dom) {
+                    elem2Dom.style.display = "none";
+                }
+            }
+        } else if (contents && this.chartOnDisplayIndex === 2) {
+            // update pie chart
+            if (contents && this.chartOnDisplayIndex === 2) {
+                const oPieChart = contents[2] as SearchFacetPieChart;
+                const elemChart = listContainers[5];
+                let relevantContainerHeight = listContainers[2];
+                relevantContainerHeight = 0.9 * relevantContainerHeight;
+                const piechartOptions = {
+                    relevantContainerHeight: relevantContainerHeight,
+                    oSearchFacetDialog: this,
+                };
+                const oFacetItemModel = new JSONModel();
+                oFacetItemModel.setData(aItems);
+                const chartElem = document.getElementById(elemChart.id);
+                if (chartElem) {
+                    chartElem.innerHTML = "";
+                }
+                oPieChart.directUpdate(aItems, elemChart, oFacetItemModel, facetTotalCount, piechartOptions);
+            }
+            // hide bar chart (if in DOM)
+            const elem1 = contents[1].getDomRef();
+            if (elem1) {
+                const elem1Dom = document.getElementById(elem1.id);
+                if (elem1Dom) {
+                    elem1Dom.style.display = "none";
+                }
+            }
+        }
+    }
+
+    // this is for the button that toggles the charts but also calls updateDetailPageCharts() for pie chart
+    controlChartVisibility(oControl: SearchFacetDialog, chartIndexToShow: number, forcePie?: boolean): void {
+        let elem, classNames, isChart;
+        if (this.bShowCharts === false) return;
+        const listContainers = SearchFacetDialogHelperCharts.getListContainersForDetailPage();
+        const oListContainer = listContainers[1];
+        if (!oListContainer || !oListContainer.getContent) return;
+        const contents2 = oListContainer.getContent();
+        for (let i = 0; i < contents2.length; i++) {
+            elem = contents2[i].getDomRef();
+            if (!elem) return;
+            classNames = elem.className;
+            isChart = false;
+            if (classNames.indexOf("largeChart") > -1) {
+                isChart = true;
+            }
+            const elemDom = document.getElementById(elem.id);
+            if (elemDom) {
+                if (isChart && i !== chartIndexToShow) {
+                    elemDom.style.display = "none";
+                } else {
+                    elemDom.style.display = "block";
+                }
+            }
+        }
+        if (oControl.bOldPieChart) {
+            if (isChart && chartIndexToShow === 2 && forcePie) {
+                const aItems = this.aItemsForBarChart;
+                const aFacetTotalCount = this.aItemsForBarChartFacetTotalCount;
+                this.updateDetailPageCharts(aItems, aFacetTotalCount);
+            }
+            if (isChart && chartIndexToShow === 2) {
+                oListContainer.setVertical(false);
+            } else {
+                oListContainer.setVertical(true);
+            }
+        }
+        const oSortButtonSet = listContainers[6];
+        const oInputFieldForFilterTextSet = listContainers[7];
+        if (oSortButtonSet) {
+            const sortBtnElem = document.getElementById(oSortButtonSet.sId);
+            const inputFieldElem = document.getElementById(oInputFieldForFilterTextSet.sId);
+            if (chartIndexToShow === 0) {
+                if (sortBtnElem) sortBtnElem.style.display = "block";
+                if (inputFieldElem) inputFieldElem.style.visibility = "visible";
+            } else {
+                if (sortBtnElem) sortBtnElem.style.display = "none";
+                if (inputFieldElem) inputFieldElem.style.visibility = "hidden";
+            }
+        }
+    }
+
+    hideSelectively(oEvent: Event, oControl: SearchFacetDialog, chartIndex: number): void {
+        const elem = document.getElementById(oEvent["srcControl"].sId);
+        const chartIndexToShow = oControl.chartOnDisplayIndex;
+        const listContainers = SearchFacetDialogHelperCharts.getListContainersForDetailPage();
+        const oListContainer = listContainers[1];
+        if (listContainers[0].firstChild.children.length != 3) return;
+        if (chartIndexToShow !== undefined) {
+            if (oControl.chartOnDisplayIndex !== chartIndex) {
+                if (elem) elem.style.display = "none";
+            } else {
+                if (elem) elem.style.display = "block";
+            }
+        } else {
+            if (elem) elem.style.display = "block";
+        }
+        if (chartIndexToShow === 2) {
+            if (
+                !listContainers[0].firstChild.children[2] ||
+                !listContainers[0].firstChild.children[2].firstChild
+            ) {
+                oControl.controlChartVisibility(oControl, oControl.chartOnDisplayIndex, true);
+            }
+            if (oControl.bOldPieChart) {
+                oListContainer.setVertical(false);
+            }
+        } else {
+            oListContainer.setVertical(true);
+        }
+        const oSortButton = listContainers[6];
+        if (oSortButton) {
+            const elemSortButton = document.getElementById(oSortButton.sId);
+            if (chartIndexToShow === 0) {
+                if (elemSortButton) elemSortButton.style.display = "block";
+            } else {
+                if (elemSortButton) elemSortButton.style.display = "none";
+            }
+        }
+    }
+
+    static renderer = {
+        apiVersion: 2,
+    };
+}

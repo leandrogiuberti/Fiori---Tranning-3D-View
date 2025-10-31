@@ -1,0 +1,95 @@
+{
+  "_version": "1.70.0",
+  "sap.app": {
+    "id": "sap.ushell.components.shell.SearchCEPNew",
+    "type": "component",
+    "title": "SearchCEPNew",
+    "ach": "CA-FLP-FE-UI",
+    "applicationVersion": {
+      "version": "1.141.1"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "phone": true,
+      "tablet": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.135",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "componentName": "sap.ushell.components.shell.SearchCEPNew",
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ushell.components.shell.SearchCEPNew.resources.resources",
+          "async": true,
+          "supportedLocales": [
+            "",
+            "ar",
+            "bg",
+            "ca",
+            "cnr",
+            "cs",
+            "cy",
+            "da",
+            "de",
+            "el",
+            "en",
+            "en-GB",
+            "en-US-x-saprigi",
+            "es",
+            "es-MX",
+            "et",
+            "fi",
+            "fr",
+            "fr-CA",
+            "hi",
+            "hr",
+            "hu",
+            "id",
+            "it",
+            "iw",
+            "ja",
+            "kk",
+            "ko",
+            "lt",
+            "lv",
+            "mk",
+            "ms",
+            "nl",
+            "no",
+            "pl",
+            "pt",
+            "pt-PT",
+            "ro",
+            "ru",
+            "sh",
+            "sk",
+            "sl",
+            "sr",
+            "sv",
+            "th",
+            "tr",
+            "uk",
+            "vi",
+            "zh-CN",
+            "zh-TW"
+          ]
+        }
+      }
+    }
+  }
+}

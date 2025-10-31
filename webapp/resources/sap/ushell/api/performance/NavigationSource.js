@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";this.oNavigationSource={AppFinder:"apFi",Application:"appl",FrequentlyUsed:"frUs",RecentlyUsed:"reUs",Situation:"situ",SearchCEP:"seCP",SearchDirectLaunch:"seDL",SearchEnterprise:"seEP",SideBar:"siBa",Task:"task",Todo:"toDo"};return Object.freeze(this.oNavigationSource)});
+//# sourceMappingURL=NavigationSource.js.map

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["./abap.configure.ushell","./abap.configure.theme","./abap.load.launchpad","./boottask","sap/ushell/bootstrap/common/common.configure.ui5","sap/ushell/bootstrap/common/common.configure.ui5.extractLibs","sap/ushell/bootstrap/common/common.debug.mode","sap/ushell/bootstrap/common/common.load.bootstrapExtension"],(a,o,s,t,e,p,l,m)=>{"use strict";window["sap-ui-debug"]=l.isDebug();const n=a();const{theme:b,themeRoots:u}=o(n);e({ushellConfig:n,libs:p(n),theme:b,themeRoots:u,platform:"abap",platformAdapters:{abap:"sap.ushell_abap.adapters.abap",hana:"sap.ushell_abap.adapters.hana"},bootTask:t.start,onInitCallback:s});m(n)});
+//# sourceMappingURL=abap-def-dev.js.map

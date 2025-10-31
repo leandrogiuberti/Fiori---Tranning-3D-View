@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/thirdparty/jquery"],jQuery=>{"use strict";function e(){this.oLastPromise=new jQuery.Deferred;this.oLastPromise.resolve()}e.prototype.addToQueue=function(e){const t=new jQuery.Deferred;this.oLastPromise.always(()=>{const s=e();s.done(function(){t.resolve.apply(t,arguments)}).fail(function(){t.reject.apply(t,arguments)})});this.oLastPromise=t;return t.promise()};return e});
+//# sourceMappingURL=Sequentializer.js.map
