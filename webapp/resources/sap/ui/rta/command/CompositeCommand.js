@@ -1,7 +1,0 @@
-/*!
- * OpenUI5
- * (c) Copyright 2025 SAP SE or an SAP affiliate company.
- * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
- */
-sap.ui.define(["sap/ui/rta/command/BaseCommand","sap/ui/rta/command/FlexCommand","sap/ui/fl/Utils"],function(t,e,o){"use strict";const a=t.extend("sap.ui.rta.command.CompositeCommand",{metadata:{library:"sap.ui.rta",properties:{},aggregations:{commands:{type:"sap.ui.rta.command.BaseCommand",multiple:true}},events:{}}});a.prototype.execute=async function(){try{await o.execPromiseQueueSequentially(this.getCommands().map(t=>t.execute.bind(t)),true)}catch(t){await this.undo();const o=this.getCommands();o.forEach(t=>{if(t instanceof e){this.removeCommand(t)}});throw t}};a.prototype.undo=function(){return o.execPromiseQueueSequentially(this.getCommands().toReversed().map(t=>t.undo.bind(t)))};function n(t){this._sCompositeId||=o.createDefaultFileName("composite");const e=t.getPreparedChange&&t.getPreparedChange();if(e){const t=e.getSupportInformation();if(!t.compositeCommand){t.compositeCommand=this._sCompositeId;e.setSupportInformation(t)}}else if(t.setCompositeId){t.setCompositeId(this._sCompositeId)}}a.prototype.addCommand=function(t,e){n.call(this,t);return this.addAggregation("commands",t,e)};a.prototype.insertCommand=function(t,e,o){n.call(this,t);return this.insertAggregation("commands",t,e,o)};return a});
-//# sourceMappingURL=CompositeCommand.js.map

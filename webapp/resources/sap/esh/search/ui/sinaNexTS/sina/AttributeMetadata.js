@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define(["./AttributeMetadataBase"],function(t){"use strict";const e=t["AttributeMetadataBase"];class a extends e{label;isSortable;isKey;matchingStrategy;isHierarchy;hierarchyName;hierarchyDisplayType;iconUrlAttributeName;_private={semanticObjectType:"",temporaryUsage:{}};constructor(t){super(t);this.label=t.label??this.label;this.isSortable=t.isSortable??this.isSortable;this.format=t.format??this.format;this.isKey=t.isKey??this.isKey;this.semantics=t.semantics??this.semantics;this.matchingStrategy=t.matchingStrategy??this.matchingStrategy;this.isHierarchy=t.isHierarchy??false;this.hierarchyName=t.hierarchyName;this.hierarchyDisplayType=t.hierarchyDisplayType;this.iconUrlAttributeName=t.iconUrlAttributeName}toJson(){return{id:this.id,label:this.label,type:this.type,displayOrder:this?.displayOrder,isSortable:this?.isSortable,usage:this?.usage,isKey:this?.isKey,matchingStrategy:this?.matchingStrategy,format:this?.format}}static fromJson(t,e){return e._createAttributeMetadata({id:t.id,type:t.type,label:t.label,isSortable:t.isSortable,matchingStrategy:t.matchingStrategy,isKey:t.isKey,usage:t.usage,format:t.format})}}var i={__esModule:true};i.AttributeMetadata=a;return i});
-//# sourceMappingURL=AttributeMetadata.js.map

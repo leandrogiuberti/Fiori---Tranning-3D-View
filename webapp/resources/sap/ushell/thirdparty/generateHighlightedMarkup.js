@@ -1,2 +1,0 @@
-sap.ui.define(["exports","sap/ushell/thirdparty/encodeXML"],function(e,n){"use strict";const t=e=>e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");function r(e,n,r,c){return e.replaceAll(new RegExp(t(n),`${c?"i":""}g`),r)}function c(e,t){if(!e||!t)return e;const c=n=>{const[r,c]=n.split("");for(;e.indexOf(n)>=0||t.indexOf(n)>=0;)n=`${r}${n}${c}`;return n},f=c("12"),i=c("34");let o=n.fnEncodeXML(r(e,t,e=>`${f}${e}${i}`,true));return[[f,"<b>"],[i,"</b>"]].forEach(([e,n])=>{o=r(o,e,n,false)}),o}e.f=c});
-//# sourceMappingURL=generateHighlightedMarkup.js.map

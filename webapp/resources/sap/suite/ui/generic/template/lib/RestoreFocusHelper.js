@@ -1,2 +1,0 @@
-sap.ui.define(["sap/ui/base/Object","sap/base/util/extend","sap/suite/ui/generic/template/genericUtilities/controlHelper"],function(e,t,n){"use strict";function u(){var e=null;function t(t){e=t}function u(){if(!e){return}n.focusControl(e);i()}function i(){e=null}return{rememberFocus:t,restoreFocus:u,resetFocus:i}}return e.extend("sap.suite.ui.generic.template.lib.RestoreFocusHelper",{constructor:function(){t(this,u())}})});
-//# sourceMappingURL=RestoreFocusHelper.js.map

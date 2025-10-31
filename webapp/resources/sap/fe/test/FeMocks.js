@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *      (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["@sap-ux/jest-mock-ui5/dist/generic","sap/fe/core/PageController","sap/fe/core/controllerextensions/EditFlow","sap/fe/macros/controls/FilterBar"],function(t,e,n,o){"use strict";var r={};var s=t.mock;function i(){const t={_getApplyAutomaticallyOnVariant:jest.fn(),_getFilterBarControl:jest.fn(),_getControls:jest.fn(),_isFilterBarHidden:jest.fn(),_isFilterBarHiddenUsed:jest.fn(),_isMultiMode:jest.fn(),_getMultiModeControl:jest.fn(),_getFilterBarVariantControl:jest.fn(),_hasMultiVisualizations:jest.fn(),_shouldAutoTriggerSearch:jest.fn(),_getTable:jest.fn(),getExtensionAPI:jest.fn(),getFilterBarSelectionVariant:jest.fn(),_getControlFromPageModelProperty:jest.fn(),getChartControl:jest.fn(),editFlow:s(n)};return Object.assign(s(e),t)}r.mockListReportController=i;function a(){const t={getStickyEditMode:jest.fn(),getExtensionAPI:jest.fn(),editFlow:s(n),_getObjectPageLayoutControl:jest.fn()};return Object.assign(s(e),t)}r.mockObjectPageController=a;function l(t,e,n){const o=e.getView();t.getView=()=>o;const r=s(n||{});return Object.assign(r,t)}r.mockContextForExtension=l;function c(){const t=s(o);t.mock.waitForInitialization=jest.fn();return t}r.mockFilterBar=c;return r},false);
-//# sourceMappingURL=FeMocks.js.map

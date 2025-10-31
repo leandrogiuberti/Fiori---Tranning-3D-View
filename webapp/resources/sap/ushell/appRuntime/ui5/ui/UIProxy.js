@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ushell/appRuntime/ui5/renderers/fiori2/Renderer","sap/m/Button","sap/base/util/ObjectPath"],(e,t,s)=>{"use strict";function n(){s.set("sap.ushell.ui.shell.ShellHeadItem",function(t){const s=this;Object.keys(t).forEach(e=>{s[e]=t[e];s[`get${e[0].toUpperCase()}${e.slice(1)}`]=function(){return t[e]}});e.createShellHeadItem(t)})}return new n});
-//# sourceMappingURL=UIProxy.js.map

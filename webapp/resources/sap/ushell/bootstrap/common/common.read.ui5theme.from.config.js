@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/base/util/ObjectPath"],e=>{"use strict";function t(t){const o=e.get("services.Container.adapter.config",t);return{sDefaultTheme:e.get("userProfile.defaults.theme",o),sPersonalizedTheme:e.get("userProfilePersonalization.theme",o),oRangeTheme:e.get("userProfile.metadata.ranges.theme",o)}}function o(e){const o=t(e);const n=o.sPersonalizedTheme;const s=o.oRangeTheme;const r=o.sDefaultTheme;if(o.oRangeTheme){if(Object.keys(s).indexOf(n)>-1){const e=s[n]||{};return{theme:n,root:e.themeRoot}}const e=s[r]||{};return{theme:r,root:e.themeRoot}}const a=n||r;return{theme:a,root:""}}return o});
-//# sourceMappingURL=common.read.ui5theme.from.config.js.map

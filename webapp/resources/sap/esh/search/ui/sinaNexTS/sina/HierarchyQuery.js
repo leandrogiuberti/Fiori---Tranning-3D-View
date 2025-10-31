@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define(["./DataSourceType","./FacetQuery"],function(e,t){"use strict";const r=e["DataSourceSubType"];const s=e["DataSourceType"];const i=t["FacetQuery"];class u extends i{attributeId;nodeId;constructor(e){super(e);this.top=e.top??30;this.attributeId=e.attributeId;this.nodeId=e.nodeId}equals(e){return e instanceof u&&super.equals(e)&&this.nodeId===e.nodeId}clone(){return new u({label:this.label,icon:this.icon,top:this.top,skip:this.skip,nlq:this.nlq,sortOrder:this.sortOrder,filter:this.filter.clone(),searchTerm:this.getSearchTerm(),sina:this.sina,attributeId:this.attributeId,nodeId:this.nodeId})}async _execute(e){return this._doExecuteHierarchyQuery(e)}async _doExecuteHierarchyQuery(e){const t=this._filteredQueryTransform(e);const r=await this.sina.provider.executeHierarchyQuery(t);return this._filteredQueryBackTransform(e,r)}_filteredQueryTransform(e){return this._genericFilteredQueryTransform(e)}_filteredQueryBackTransform(e,t){if(e.filter.dataSource.type!==s.BusinessObject||e.filter.dataSource.subType!==r.Filtered){return t}t.query=e;return t}}var n={__esModule:true};n.HierarchyQuery=u;return n});
-//# sourceMappingURL=HierarchyQuery.js.map

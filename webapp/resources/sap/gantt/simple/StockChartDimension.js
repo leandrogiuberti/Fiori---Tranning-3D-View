@@ -1,8 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
-
-		(c) Copyright 2009-2015 SAP SE. All rights reserved
-	
- */
-sap.ui.define(["sap/ui/core/Element","sap/gantt/library"],function(e,t){"use strict";var a=e.extend("sap.gantt.simple.StockChartDimension",{metadata:{library:"sap.gantt",properties:{name:{type:"string"},dimensionPathColor:{type:"sap.gantt.ValueSVGPaintServer",defaultValue:"sapContent_ForegroundBorderColor"},remainCapacityColor:{type:"sap.gantt.ValueSVGPaintServer",defaultValue:"sapChart_Sequence_Neutral_Plus1"},remainCapacityColorNegative:{type:"sap.gantt.ValueSVGPaintServer",defaultValue:"sapChart_Sequence_Bad_Plus1"},relativePoint:{type:"float",defaultValue:0},isThreshold:{type:"boolean",defaultValue:false},dimensionStrokeDasharray:{type:"string"},dimensionStrokeWidth:{type:"float",defaultValue:2}},defaultAggregation:"stockChartPeriods",aggregations:{stockChartPeriods:{type:"sap.gantt.simple.StockChartPeriod"}}}});a.prototype.getDimensionPathColor=function(){return t.ValueSVGPaintServer.normalize(this.getProperty("dimensionPathColor"))};a.prototype.getRemainCapacityColor=function(){return t.ValueSVGPaintServer.normalize(this.getProperty("remainCapacityColor"))};a.prototype.getRemainCapacityColorNegative=function(){return t.ValueSVGPaintServer.normalize(this.getProperty("remainCapacityColorNegative"))};return a},true);
-//# sourceMappingURL=StockChartDimension.js.map

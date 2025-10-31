@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ui/core/mvc/View","sap/m/Label","sap/esh/search/ui/SearchCompositeControl","sap/esh/search/ui/SearchModel"],(e,r,n,o)=>{"use strict";return e.extend("sap.ushell.renderer.search.searchComponent.view.CEPSearchApp",{getControllerName:function(){return"sap.ushell.renderer.search.searchComponent.controller.CEPSearchApp"},createContent:function(){const e=o.getModelSingleton({},"flp");return new n({model:e,applicationComponent:"HAN-AS-INA-UI"})}})});
-//# sourceMappingURL=CEPSearchApp.view.js.map

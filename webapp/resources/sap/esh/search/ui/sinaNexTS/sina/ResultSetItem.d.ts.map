@@ -1,1 +1,0 @@
-{"version":3,"file":"ResultSetItem.d.ts","sourceRoot":"../../../../../../../..","sources":["src/sap/esh/search/ui/sinaNexTS/sina/ResultSetItem.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,gDAAgD,CAAC;IAChE;;;;OAIG;IACH,OAAO,EAAE,SAAS,EAAE,MAAM,4CAA4C,CAAC;IACvE,OAAO,EAAE,UAAU,EAAE,MAAM,6CAA6C,CAAC;IAEzE,MAAa,aAAc,SAAQ,UAAU;QACzC,MAAM,EAAE,SAAS,CAAC;KACrB;CAEA"}

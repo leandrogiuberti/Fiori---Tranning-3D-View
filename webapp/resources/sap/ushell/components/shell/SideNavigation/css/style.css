@@ -1,8 +1,0 @@
-.sapUshellSideNavigationPositionRelative>.sapMNavItem {
-    position: relative;
-}
-
-.sapUshellSideNavigationNavContainer {
-  z-index: 2;
-  overflow: visible;
-}

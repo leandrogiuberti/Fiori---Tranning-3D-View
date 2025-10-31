@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define([],()=>{"use strict";function e(e,r,t,n){return new Promise((i,d)=>{function o(r){r.target.removeEventListener("load",o);r.target.removeEventListener("error",o);if(r.type==="error"){d(new Error(`Failed to load script: ${e}`))}i()}const a=document.createElement("script");a.src=e;a.async=!!n;a.addEventListener("load",o);a.addEventListener("error",o);if(r){a.id=r}if(t){a.setAttribute("defer","")}document.head.appendChild(a)})}return{loadScript:e}});
-//# sourceMappingURL=common.load.script.js.map

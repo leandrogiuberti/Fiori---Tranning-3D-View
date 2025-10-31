@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/base/Log"],t=>{"use strict";function e(e,a){const o=`meta[name^='${e}']:not([name=''])`;const r=document.querySelectorAll(o);const n="sap/ushell/bootstrap/common/common.read.metatags";const s=[];a=a||JSON.parse;Array.prototype.forEach.call(r,e=>{try{s.push(a(e.content))}catch(e){t.error("Metatag Read failed",e,n)}});return s}return{readMetaTags:e}});
-//# sourceMappingURL=common.read.metatags.js.map

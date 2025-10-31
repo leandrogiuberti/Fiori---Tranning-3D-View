@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define(["./ResultSet","./AttributeType"],function(t,e){"use strict";const s=t["ResultSet"];const o=e["AttributeType"];class n extends s{facets=[];totalCount;nlqResult;hierarchyNodePaths=[];constructor(t){super(t);this.facets=t.facets??this.facets;this.totalCount=t.totalCount??this.totalCount;this.hierarchyNodePaths=t.hierarchyNodePaths??this.hierarchyNodePaths;this.nlqResult=t.nlqResult}toString(...t){const e=[];e.push(s.prototype.toString.apply(this,t));for(let t=0;t<this.facets.length;++t){if(t===0){e.push("## Facets")}const s=this.facets[t];e.push(s.toString())}return e.join("\n")}toCSV(){console.log("===== Parse Result to CSV String: =====\n");if(this.items.length===0){console.log("");return""}let t="";for(const e of this.items[0].attributes){t=t.concat('"'+e.id+'",')}t=t.slice(0,-1).concat("\n");let e="";for(const t of this.items){for(const s of t.attributes){if(s.metadata?.type===o.Double||s.metadata?.type===o.Integer){e=e.concat('"'+s.value?.toString()+'",')}else{e=e.concat('"'+s.valueFormatted+'",')}}e=e.slice(0,-1).concat("\n")}e=e.slice(0,-1);console.log(t.concat(e));return t.concat(e)}}var c={__esModule:true};c.SearchResultSet=n;return c});
-//# sourceMappingURL=SearchResultSet.js.map

@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["../BaseLayout","./PageManager","./PersonalisationUtils"],function(e,t,n){"use strict";function s(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const a=s(e);const r=s(t);const i=s(n);function o(e){const t=new URLSearchParams(window.location.search);return t.get(e)?.toUpperCase()==="TRUE"||false}function u(e){const t=e.getParent();const n=t?.getParent();const s=n instanceof a?n?.getProperty("persContainerId"):"";const o=s||i.getPersContainerId(e);const u=r.getInstance(o,i.getOwnerComponent(e));return u}function c(e,t=false){return e.filter(e=>{if(!e.isSection&&(e.isCount||e.isSmartBusinessTile)){return t}else if(e.isSection){e.apps=c(e.apps||[],t);e.badge=e.apps.length.toString()}return!t}).filter(e=>e.isSection?e.apps.length>0:true)}var f={__esModule:true};f.isURLParamEnabled=o;f.getPageManagerInstance=u;f.filterVisualizations=c;return f});
-//# sourceMappingURL=CommonUtils.js.map

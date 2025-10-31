@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/base/util/deepExtend"],e=>{"use strict";let t;function r(){return t}function n(e){t=e}function s(e){return e!==null&&typeof e!=="undefined"}function o(e){return Object.keys(e).reduce((t,r)=>{const n=e[r];if(Object.prototype.toString.apply(n)==="[object Array]"){t[r]=n[0]}else if(typeof n==="string"){t[r]=n}else{throw new Error("Parameters should be passed as strings or array of strings")}return t},{})}function u(t,r){const n=e({},t);const s=e({},r);return Object.keys(s).reduce((e,t)=>{e[t]=s[t];return e},n)}return{mergeObject:u,hasValue:s,removeArrayParameterNotation:o,getURIHashContext:r,setURIHashContext:n}});
-//# sourceMappingURL=utils.js.map

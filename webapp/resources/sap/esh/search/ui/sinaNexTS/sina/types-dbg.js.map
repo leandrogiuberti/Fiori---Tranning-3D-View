@@ -1,1 +1,0 @@
-{"version":3,"file":"types-dbg.js","names":[],"sources":["types.ts"],"sourcesContent":["/*!\n * SAPUI5\n * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.\n * \n */\nexport type Value = string | number | boolean | Date | object; //last one is only for GeoJSON\n"],"mappings":"","ignoreList":[]}

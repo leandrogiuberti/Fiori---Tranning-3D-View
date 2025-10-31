@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["sap/ui/fl/changeHandler/MoveControls","../changeHandler/NewsFeedVisibilityChange","../changeHandler/SetNewsFeedUrl","../changeHandler/SpacePageColorHandler","../changeHandler/SpacePageIconHandler"],function(e,a,n,r,l){"use strict";function E(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const t=E(a);const c=E(n);const o=E(r);const C=E(l);var d=function(e){e["HIDE"]="hideControl";e["UNHIDE"]="unhideControl";e["MOVE"]="moveControls";e["PAGE_COLOR"]="applyPageColor";e["SPACE_COLOR"]="applySpaceColor";e["PAGE_ICON"]="applyPageIcon";e["SPACE_ICON"]="applySpaceIcon";e["NEWS_FEED_URL"]="changeNewsFeedURL";e["NEWS_FEED_VISIBILITY"]="setNewsFeedVisibility";return e}(d||{});var s={[d.MOVE]:{layers:{USER:true},changeHandler:e},[d.SPACE_COLOR]:{layers:{CUSTOMER:true},changeHandler:o},[d.PAGE_COLOR]:{layers:{CUSTOMER:true},changeHandler:o},[d.SPACE_ICON]:{layers:{CUSTOMER:true},changeHandler:C},[d.PAGE_ICON]:{layers:{CUSTOMER:true},changeHandler:C},[d.NEWS_FEED_URL]:{layers:{CUSTOMER:true},changeHandler:c},[d.NEWS_FEED_VISIBILITY]:{layers:{CUSTOMER:true},changeHandler:t}};s.CHANGE_TYPES=d;return s});
-//# sourceMappingURL=Layout.flexibility.js.map

@@ -1,2 +1,0 @@
-sap.ui.define(["sap/apf/cloudFoundry/ui/utils/ComponentCorrector","sap/ui/core/mvc/ViewType"],function(e,o){"use strict";var a="sap.apf.cloudFoundry.ui.valuehelp";async function i(i,t){e.createView(t.getComponent(),{viewName:a+".view.CatalogBrowser",type:o.XML,viewData:i})}return{show:i}});
-//# sourceMappingURL=showValueHelp.js.map

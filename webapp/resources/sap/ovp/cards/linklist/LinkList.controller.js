@@ -1,5 +1,0 @@
-/*!
- * Copyright (c) 2009-2014 SAP SE, All Rights Reserved
- */
-sap.ui.define(["sap/ovp/cards/generic/base/linklist/BaseLinklist.controller","sap/ovp/filter/FilterUtils","sap/ui/core/EventBus","sap/base/util/isEmptyObject"],function(t,e,n,i){"use strict";return t.extend("sap.ovp.cards.linklist.LinkList",{onInit:function(){t.prototype.onInit.apply(this,arguments);var i=this;this.eventhandler=function(t,n,a){e.applyFiltersToV2Card(a,i)};this.GloabalEventBus=n.getInstance();if(this.oMainComponent&&this.oMainComponent.isMacroFilterBar){this.GloabalEventBus.subscribe("OVPGlobalfilter","OVPGlobalFilterSeacrhfired",i.eventhandler)}},onDataReceived:function(t){var e=this.getCardContentContainer();if(!e){return}var n=t.getParameter("data");if(!n||i(n)||!n.results||!n.results.length){var a=this.getOwnerComponent().getComponentData().cardId;if(a&&this.oMainComponent.aErrorCards.indexOf(a)===-1){this.oMainComponent.createNoDataCard(a)}}}})});
-//# sourceMappingURL=LinkList.controller.js.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"NavContainer.js","names":["sap","ui","define","NavContainer","add","oControl","Error","to","vControl","toRoot"],"sources":["NavContainer-dbg.js"],"mappings":";AAKAA,IAAIC,GAAGC,OAAO,GACX,KAEC,aAaA,MAAMC,EASF,GAAAC,CAAKC,GACD,MAAM,IAAIC,MAAM,0BACpB,CAUA,EAAAC,CAAIC,GACA,MAAM,IAAIF,MAAM,0BACpB,CASA,MAAAG,GACI,MAAM,IAAIH,MAAM,0BACpB,EAGJ,OAAOH","ignoreList":[]}

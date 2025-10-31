@@ -1,1 +1,0 @@
-{"version":3,"file":"requestBrowser.d.ts","sourceRoot":"../../../../../../../..","sources":["src/sap/esh/search/ui/sinaNexTS/core/requestBrowser.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,iDAAiD,CAAC;IACjE;;;;OAIG;IACH,OAAO,EAAE,iBAAiB,EAAE,kBAAkB,EAAE,MAAM,uCAAuC,CAAC;IAG9F,SAAsB,cAAc,CAAC,UAAU,EAAE,iBAAiB,GAAG,OAAO,CAAC,kBAAkB,CAAC,CA+C/F;CAEA"}

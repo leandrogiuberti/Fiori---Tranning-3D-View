@@ -1,5 +1,0 @@
-/*!
- * Copyright (c) 2009-2014 SAP SE, All Rights Reserved
- */
-sap.ui.define(["sap/ovp/cards/generic/base/table/BaseTable.controller","sap/ovp/cards/OVPCardAsAPIUtils","sap/ovp/cards/Filterhelper","sap/ovp/cards/generic/base/analytical/Utils"],function(e,t,a,n){"use strict";return e.extend("sap.ovp.cards.v4.table.Table",{onInit:function(){e.prototype.onInit.apply(this,arguments)},onAfterRendering:function(){e.prototype.onAfterRendering.apply(this,arguments);if(!t.checkIfAPIIsUsed(this)){var n=this.getCardPropertiesModel();var i=this.getOwnerComponent().getModel("ui").getData().cards;this.selectionVaraintFilter=a.getSelectionVariantFilters(i,n,this.getEntityType())}},onDataReceived:function(e){this.bdataLoadedToEnableAddToInsight=true;var t=this.byId("ovpTable");t&&t.setBusy(false);if(n.isDataSetEmpty(e)){var a=this.getOwnerComponent().getComponentData().cardId;if(a&&this.oMainComponent.aErrorCards.indexOf(a)===-1){this.oMainComponent.createNoDataCard(a)}}}})});
-//# sourceMappingURL=Table.controller.js.map

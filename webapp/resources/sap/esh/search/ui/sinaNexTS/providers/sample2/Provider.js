@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define(["../../sina/Capabilities","../AbstractProvider","./SearchEngine"],function(e,t,n){"use strict";const i=e["Capabilities"];const s=t["AbstractProvider"];const r=n["SearchEngine"];class a extends s{id="sample2";configurations={default:["bp","employees","products","tlt","purchaseOrders"],tlt:["tlt"],emptyDataSource:["emptyDataSource"]};constructor(){super();this.searchEngine=new r(this.sina,this.configurations["default"])}async initAsync(e){this.sina=e.sina??this.sina;const t=e?.configuration??this._getConfigurationFromUrl();const n=this.configurations[t]??this.configurations["default"];this.searchEngine=new r(this.sina,n);await this.searchEngine.initAsync(this.sina);return{capabilities:new i({})}}_getConfigurationFromUrl(){let e=undefined;if(typeof window!=="undefined"){const t=new URLSearchParams(window.location?.search);e=t?.get("sample2Configuration")||undefined}return e}async executeSearchQuery(e){return this.searchEngine.search(e)}async executeSuggestionQuery(e){return this.searchEngine.suggestion(e)}async executeChartQuery(e){return this.searchEngine.chart(e)}executeHierarchyQuery(e){throw new Error("Method not implemented.")}}var c={__esModule:true};c.Provider=a;return c});
-//# sourceMappingURL=Provider.js.map

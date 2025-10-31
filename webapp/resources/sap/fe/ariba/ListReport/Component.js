@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *      (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["sap/fe/base/ClassSupport","sap/fe/templates/ListReport/Component","sap/m/library"],function(t,r,e){"use strict";var o,i;var a={};var n=e.OverflowToolbarPriority;var s=t.defineUI5Class;function p(t,r){t.prototype=Object.create(r.prototype),t.prototype.constructor=t,f(t,r)}function f(t,r){return f=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,r){return t.__proto__=r,t},f(t,r)}let l=(o=s("sap.fe.ariba.ListReport.Component",{library:"sap.fe.ariba",manifest:"json"}),o(i=function(t){function r(){return t.apply(this,arguments)||this}a=r;p(r,t);var e=r.prototype;e.init=function r(){this.breadcrumbsHierarchyMode=this.breadcrumbsHierarchyMode??"fullNavigation";this.shareOverflowPriority=n.AlwaysOverflow;t.prototype.init.call(this)};e._getControllerName=function t(){return"sap.fe.ariba.ListReport.ListReportController"};return r}(r))||i);a=l;return a},false);
-//# sourceMappingURL=Component.js.map

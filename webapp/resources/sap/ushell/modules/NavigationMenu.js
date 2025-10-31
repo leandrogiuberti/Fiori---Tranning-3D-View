@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ushell/Config","sap/ushell/modules/NavigationMenu/NavigationMenuMode"],(i,e)=>{"use strict";class o{NavigationMenuMode=e;constructor(){i.emit("/core/sideNavigation/enabled",true)}setNavigationListProvider(e,o){i.emit("/core/sideNavigation/navigationListProvider",{modulePath:e,configuration:JSON.stringify(o||{})})}setFixedNavigationListProvider(e,o){i.emit("/core/sideNavigation/fixedNavigationListProvider",{modulePath:e,configuration:JSON.stringify(o||{})})}setMode(o){if(!Object.values(e).includes(o)){throw new Error(`Invalid mode: ${o}`)}i.emit("/core/sideNavigation/mode",o)}}return new o});
-//# sourceMappingURL=NavigationMenu.js.map

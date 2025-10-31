@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.require(["sap/ushell_abap/pbServices/ui2/Chip","sap/ushell_abap/pbServices/ui2/Error","sap/base/Log"],(i,e,t)=>{"use strict";i.addContract("visible",function(i){let r=true;let s;function n(){try{s(r)}catch(e){t.error(`${i}: call to visible handler failed: ${e.message||e.toString()}`,null,"chip.visible")}}this.attachVisible=function(i){if(typeof i!=="function"){throw new e(`Not a function: ${i}`,"chip.visible")}if(s===i){return}s=i;n()};this.isVisible=function(){return r};return{setVisible:function(i){if(r===i){return}r=i;if(s){n()}}}})});
-//# sourceMappingURL=visible.js.map

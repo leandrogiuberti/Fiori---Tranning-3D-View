@@ -1,1 +1,0 @@
-{"version":3,"file":"BaseRTAPluginStatus.js","names":["sap","ui","define","STATUS_STARTING","STATUS_STARTED","STATUS_STOPPING","STATUS_STOPPED"],"sources":["BaseRTAPluginStatus-dbg.js"],"mappings":";;;AAIAA,IAAIC,GAAGC,OAAO,GAOX,KAEC,aAEA,MAAO,CACHC,gBAAiB,WACjBC,eAAgB,UAChBC,gBAAiB,WACjBC,eAAgB,YAEP","ignoreList":[]}

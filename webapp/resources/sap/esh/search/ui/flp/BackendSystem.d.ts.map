@@ -1,1 +1,0 @@
-{"version":3,"file":"BackendSystem.d.ts","sourceRoot":"../../../../../../..","sources":["src/sap/esh/search/ui/flp/BackendSystem.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,qCAAqC,CAAC;IACrD;;;;OAIG;IACH,OAAO,WAAW,MAAM,+BAA+B,CAAC;IACxD,OAAO,EAAE,MAAM,EAAE,MAAM,yCAAyC,CAAC;IAEjE,MAAM,CAAC,OAAO,OAAO,aAAa;eAChB,SAAS,CAAC,WAAW,EAAE,WAAW,GAAG,MAAM;KAG5D;CAEA"}

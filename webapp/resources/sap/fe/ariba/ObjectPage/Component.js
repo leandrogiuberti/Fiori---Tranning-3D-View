@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *      (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["sap/fe/base/ClassSupport","sap/fe/templates/ObjectPage/Component","sap/m/library"],function(t,e,r){"use strict";var o,a;var i={};var n=r.OverflowToolbarPriority;var s=t.defineUI5Class;function p(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t,c(t,e)}function c(t,e){return c=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t},c(t,e)}let f=(o=s("sap.fe.ariba.ObjectPage.Component",{library:"sap.fe.ariba",manifest:"json"}),o(a=function(t){function e(){return t.apply(this,arguments)||this}i=e;p(e,t);var r=e.prototype;r.init=function e(){this.breadcrumbsHierarchyMode=this.breadcrumbsHierarchyMode??"fullNavigation";this.shareOverflowPriority=n.AlwaysOverflow;t.prototype.init.call(this)};r._getControllerName=function t(){return"sap.fe.ariba.ObjectPage.ObjectPageController"};return e}(e))||a);i=f;return i},false);
-//# sourceMappingURL=Component.js.map

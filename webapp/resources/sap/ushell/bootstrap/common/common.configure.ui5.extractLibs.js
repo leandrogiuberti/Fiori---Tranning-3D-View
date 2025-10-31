@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/base/Log","sap/base/util/isPlainObject"],(i,u)=>{"use strict";return function e(s){if(!s||!s.ui5||!s.ui5.libs){return[]}if(!u(s.ui5.libs)){i.error("Invalid ushell configuration: /ui5/libs must be an object");return[]}return Object.keys(s.ui5.libs).filter(function(i){return this[i]},s.ui5.libs)}});
-//# sourceMappingURL=common.configure.ui5.extractLibs.js.map

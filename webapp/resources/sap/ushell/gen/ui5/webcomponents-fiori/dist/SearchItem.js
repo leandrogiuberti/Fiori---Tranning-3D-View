@@ -1,5 +1,0 @@
-/*!
- * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
- */
-sap.ui.define(["sap/ushell/gen/ui5/webcomponents/dist/ListItemBase","sap/ushell/gen/ui5/webcomponents-fiori","sap/ushell/thirdparty/SearchItem"],function(e){"use strict";const t=e.extend("sap.ushell.gen.ui5.webcomponents-fiori.dist.SearchItem",{metadata:{namespace:"sap/ushell/gen/ui5/webcomponents-fiori",qualifiedNamespace:"sap.ushell.gen.ui5.webcomponents-fiori",tag:"ui5-search-item-16d3c820",interfaces:[],properties:{text:{type:"string",mapping:"property"},description:{type:"string",mapping:"property"},icon:{type:"string",mapping:"property"},selected:{type:"boolean",mapping:"property",defaultValue:false},deletable:{type:"boolean",mapping:"property",defaultValue:false},scopeName:{type:"string",mapping:"property"}},aggregations:{image:{type:"sap.ui.core.Control",multiple:true,slot:"image"}},associations:{},events:{delete:{allowPreventDefault:false,enableEventBubbling:false,parameters:{}}},getters:[],methods:[],designtime:"sap/ushell/gen/ui5/webcomponents-fiori/designtime/SearchItem.designtime"}});return t});
-//# sourceMappingURL=SearchItem.js.map

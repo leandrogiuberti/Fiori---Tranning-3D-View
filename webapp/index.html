@@ -7,12 +7,15 @@
     <!-- Bootstrap do SAPUI5 -->
     <script
       id="sap-ui-bootstrap"
-      src="resources/sap-ui-core.js"
+      src="https://sapui5.hana.ondemand.com/1.141.1/resources/sap-ui-core.js"
       data-sap-ui-theme="sap_fiori_3"
       data-sap-ui-libs="sap.m, sap.ushell, sap.fe.templates"
       data-sap-ui-compatVersion="edge"
       data-sap-ui-preload="async"
-      data-sap-ui-frameOptions="allow">
+      data-sap-ui-frameOptions="allow"
+      data-sap-ui-resourceroots='{
+        "leandrogiuberti.FioriTranning3DView": "./"
+      }'>
     </script>
 
     <!-- Espera o UI5 carregar antes de rodar o sandbox -->
@@ -20,7 +23,9 @@
       sap.ui.getCore().attachInit(function () {
         sap.ui.require(["sap/ushell/services/Container"], function () {
           // Carrega o script do sandbox depois que o UI5 estiver pronto
-          jQuery.sap.includeScript("flpSandbox.js");
+          sap.ui.require(["leandrogiuberti/FioriTranning3DView/flpSandbox"], function (flpSandbox) {
+            flpSandbox.init();
+          });
         });
       });
     </script>

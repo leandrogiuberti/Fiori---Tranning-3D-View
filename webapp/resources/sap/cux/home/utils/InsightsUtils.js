@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["sap/ui/core/Element","./FESRUtil"],function(e,t){"use strict";const n=t["addFESRId"];const c=t=>e.getElementById(t.getAssociation("fullScreenMenuItem",null));const s=t=>e.getElementById(t.getAssociation("fullScreenButton",null));const o=(e,t,s)=>{const o=c(e);const r=o?.clone(t);if(s){n(r,s)}return r};const r=(e,t,c)=>{const o=s(e);const r=o?o.clone(t):null;if(c&&r){n(r,c)}return r};const u=(e,t)=>t?.sort((t,n)=>{const c=t.getId();const s=n.getId();const o=e.findIndex(e=>c.includes(e));const r=e.findIndex(e=>s.includes(e));return o-r});const l=(e,t)=>{if(e&&t){if(Object.keys(e).length===0&&Object.keys(t).length===0){return true}else if(Object.keys(e).length&&Object.keys(t).length){return e.semanticObject===t.semanticObject&&e.action===t.action}}return false};var i={__esModule:true};i.getAssociatedFullScreenMenuItem=c;i.getAssociatedFullScreenButton=s;i.createShowMoreMenuItem=o;i.createShowMoreActionButton=r;i.sortMenuItems=u;i.targetsAreEqual=l;return i});
-//# sourceMappingURL=InsightsUtils.js.map

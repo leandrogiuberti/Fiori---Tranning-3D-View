@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define([],()=>{"use strict";function e(e,i,t,s){this.CreatorUserID=e;this.SelectedUserIDs=i;this.RetrievalMapping=t;this.Expiration=s}return e});
-//# sourceMappingURL=AppStatePersistencySettings.js.map

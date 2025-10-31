@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define([],function(){"use strict";var e=function(e){e[e["enterMethod"]=0]="enterMethod";e[e["beforeMethod"]=1]="beforeMethod";return e}(e||{});class t{performanceLog;performanceLogStartDate;constructor(){this.performanceLog=[];this.performanceLogStartDate=new Date}getUniqueId(){return(new Date).getTime()}enterMethod(t,r){this.performanceLog.push({type:e.enterMethod,methodName:t.name,start:new Date,end:null,time:-1,children:[],stack:(new Error).stack.replace("Error: \n","").trim().replace("at PerformanceLogger.newPerfEntry","").trim(),parameterBag:r})}leaveMethod(e){for(const t of this.performanceLog){if(t.methodName===e.name){t.end=new Date;t.time=t.end.getTime()-t.start.getTime()}}}printLogToBrowserConsole(){console.table(this.getLogSummary())}getLogSummary(){return this.performanceLog?.map(e=>{let t="-";if(e.parameterBag&&typeof e.parameterBag==="object"&&"comments"in e.parameterBag&&e.parameterBag.comments){t=String(e.parameterBag.comments)}return{step:e.methodName,secFromStart:Math.round((e.start.getTime()-this.performanceLogStartDate.getTime())/100)/10,msecTotal:e.time,comments:t}})}clearPerformanceLog(){this.performanceLogStartDate=new Date;this.performanceLog=[]}}t.LogEntryType=e;return t});
-//# sourceMappingURL=PerformanceLogger.js.map

@@ -1,7 +1,0 @@
-/*!
- * OpenUI5
- * (c) Copyright 2025 SAP SE or an SAP affiliate company.
- * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
- */
-sap.ui.define(["sap/base/util/ObjectPath","sap/ui/rta/util/hasStableId","sap/ui/dt/OverlayUtil","sap/base/util/isPlainObject"],function(e,t,n,s){"use strict";function i(t){const n=t.getManifest();const s=!!e.get(["sap.ui5","dependencies","libs","sap.fe.templates"],n);const i=!!e.get(["sap.ui.generic.app"],n);const a=!!e.get(["sap.ovp"],n);return i||s||a}function a(t){const n=t.getManifest();const i=e.get(["sap.ui5","extends","extensions","sap.ui.viewExtensions"],n);const a=[];if(s(i)){Object.keys(i).forEach(function(e){if(e.startsWith("sap.suite.ui.generic.template")){const t=i[e];Object.keys(t).forEach(function(e){a.push(t[e])})}})}return a}function c(e,t){const s=[];for(let n=0,i=t.length;n<i;n++){const i=t[n];const a=i.getElement();const c=e.some(function(e){let t;let n;if(a.isA("sap.ui.core.mvc.View")){n=a.getViewName();t=e.viewName}else if(a.isA("sap.ui.core.Fragment")){n=a.getFragmentName()}else{return false}return a.isA(e.className)&&n===t});if(c){s.push(i);if(s.length===e.length){break}}}const i=[];s.forEach(function(e){n.iterateOverlayElementTree(e,function(e){i.push(e)})});return i}return function(e,n){let s=e.slice(0);if(i(n)){const e=a(n);s=e.length?c(e,s):[]}return s.filter(function(e){return!e.getDesignTimeMetadata().markedAsNotAdaptable()&&!t(e)})}});
-//# sourceMappingURL=validateStableIds.js.map

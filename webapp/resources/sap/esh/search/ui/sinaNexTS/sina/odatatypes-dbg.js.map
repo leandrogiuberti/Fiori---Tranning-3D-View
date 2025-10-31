@@ -1,1 +1,0 @@
-{"version":3,"file":"odatatypes-dbg.js","names":[],"sources":["odatatypes.ts"],"sourcesContent":["/*!\n * SAPUI5\n * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.\n * \n */\nexport type ODataValue = string | number | boolean | object | Array<string | unknown>;\n"],"mappings":"","ignoreList":[]}

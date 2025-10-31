@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ui/core/service/ServiceFactory"],e=>{"use strict";const r={_servicePromises:{},createServiceFactory:function(r){const i=this._servicePromises;const s=e.extend(`sap.ushell.ui5Service.${r}Factory`,{createInstance:function(){let e=i[r];if(!e){e=new Promise((e,i)=>{sap.ui.require([`sap/ushell/ui5service/${r}`],s=>{if(!s){i(new Error(`Failed to load UI5 service ${r}`))}const c=new s;e(c)},()=>{i(new Error(`Failed to load UI5 service ${r}`))})});i[r]=e}return e}});return new s}};return r});
-//# sourceMappingURL=Ui5NativeServiceFactory.js.map

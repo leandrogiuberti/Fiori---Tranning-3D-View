@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ui/model/resource/ResourceModel"],e=>{"use strict";const u={};u.bundle=null;u.model=new e({bundleName:"sap.ushell.components.cepsearchresult.app.util.i18n.i18n",async:true});u._pResourceBundle=u.model.getResourceBundle().then(e=>{u.bundle=e});u.awaitResourceBundle=async function(){await u._pResourceBundle};return u});
-//# sourceMappingURL=resources.js.map

@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ushell/utils/UrlShortening"],e=>{"use strict";function a(){this.compactHash=e.compactHash.bind(e);this.checkHashLength=e.checkHashLength.bind(e);this.expandHash=e.expandHash.bind(e);this.expandParamGivenRetrievalFunction=e.expandParamGivenRetrievalFunction.bind(e)}a.hasNoAdapter=true;return a},true);
-//# sourceMappingURL=URLShortening.js.map

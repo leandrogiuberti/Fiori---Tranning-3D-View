@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ui/core/mvc/View","sap/ui/core/mvc/Controller"],(e,n)=>{"use strict";return n.extend("sap.ushell.components.shell.Settings.search.Search",{onInit:function(){this._loadContent()},_loadContent:function(){const n=this.getView().byId("searchContent");e.create({id:"searchPrefsDialogView",viewName:"module:sap/esh/search/ui/userpref/SearchPrefsDialog.view"}).then(e=>{n.addItem(e)})},onCancel:function(){this.oView.getModel().cancelPreferences()},onSave:function(){return this.oView.getModel().savePreferences()}})});
-//# sourceMappingURL=Search.controller.js.map

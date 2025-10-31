@@ -1,1 +1,0 @@
-{"version":3,"file":"UIEvents.d.ts","sourceRoot":"../../../../../..","sources":["src/sap/esh/search/ui/UIEvents.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,4BAA4B,CAAC;IAC5C;;;;OAIG;IACH,KAAK,QAAQ;QACT,iBAAiB,sBAAsB;QACvC,gBAAgB,qBAAqB;QACrC,sBAAsB,2BAA2B;QACjD,mBAAmB,wBAAwB;QAE3C,wBAAwB,6BAA6B;QACrD,mBAAmB,wBAAwB;KAC9C;IAED,eAAe,QAAQ,CAAC;CAEvB"}

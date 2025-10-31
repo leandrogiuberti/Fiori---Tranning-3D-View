@@ -1,2 +1,0 @@
-sap.ui.define(["exports","sap/ushell/thirdparty/Icons","sap/ushell/thirdparty/information"],function(s,t,e){"use strict";var r="sys-enter-2";s.selectedAccount=r});
-//# sourceMappingURL=sys-enter-2.js.map

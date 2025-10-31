@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ui/core/Lib","sap/ui/core/library","sap/m/library"],(p,a,i)=>{"use strict";const s=p.init({name:"sap.ushell_abap",apiVersion:2,version:"1.141.1",dependencies:["sap.ui.core","sap.m"],noLibraryCSS:true,extensions:{"sap.ui.support":{diagnosticPlugins:["sap/ushell_abap/support/plugins/app-infra/AppInfraOnSapNetWeaverSupportPlugin"]}}});return s});
-//# sourceMappingURL=library.js.map

@@ -1,1 +1,0 @@
-{"version":3,"file":"StylingPanelItem.js","names":["sap","ui","define","StylingPanelItem","TableProperties","NumberFormatting","ConditionalFormatting"],"sources":["StylingPanelItem-dbg.js"],"mappings":";;;;;AAMAA,IAAIC,GAAGC,OAAO,kDAAmD,GAAI,WASnE,IAAIC,EAAmB,CAIrBC,gBAAiB,kBAIjBC,iBAAkB,mBAIlBC,sBAAuB,yBAEzB,OAAOH,CACT,EAAiB","ignoreList":[]}

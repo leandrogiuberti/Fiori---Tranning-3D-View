@@ -1,7 +1,0 @@
-/*!
- * SAPUI5
- * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
- * 
- */
-sap.ui.define([],function(){"use strict";var E=function(E){E["SESSION_START"]="SESSION_START";E["HASH_CHANGE"]="HASH_CHANGE";E["DATASOURCE_CHANGE"]="DATASOURCE_CHANGE";E["SEARCH_REQUEST"]="SEARCH_REQUEST";E["SEARCH_WITH_FILTERS"]="SEARCH_WITH_FILTERS";E["SEARCH_WITH_SEARCHTERM"]="SEARCH_WITH_SEARCHTERM";E["SEARCH_WITH_SEARCHTERM_FILTERS"]="SEARCH_WITH_SEARCHTERM_FILTERS";E["SEARCH_WITHOUT_SEARCHTERM_FILTERS"]="SEARCH_WITHOUT_SEARCHTERM_FILTERS";return E}(E||{});var S={__esModule:true};S.TechnicalEventType=E;return S});
-//# sourceMappingURL=TechnicalEvents.js.map
