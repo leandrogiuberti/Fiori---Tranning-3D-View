@@ -1,0 +1,30 @@
+[{
+    "MaintPriority": "1",
+    "MaintPriorityType": "CM",
+    "MaintPriority_Text": "Description 1"
+},
+{
+    "MaintPriority": "1",
+    "MaintPriorityType": "QM",
+    "MaintPriority_Text": "Description 2"
+},
+{
+    "MaintPriority": "1",
+    "MaintPriorityType": "PM",
+    "MaintPriority_Text": "Description 3"
+},
+{
+    "MaintPriority": "2",
+    "MaintPriorityType": "CM",
+    "MaintPriority_Text": "Description 4"
+},
+{
+    "MaintPriority": "2",
+    "MaintPriorityType": "QM",
+    "MaintPriority_Text": "Description 5"
+},
+{
+    "MaintPriority": "2",
+    "MaintPriorityType": "PM",
+    "MaintPriority_Text": "Description 6"
+}]

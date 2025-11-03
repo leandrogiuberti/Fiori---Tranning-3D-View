@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href="style/sapvbistyle.css" type="text/css" rel="stylesheet" /> -->
+
+	<script src="../../../../resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-libs="sap.m,sap.ui.vbm,sap.ui.layout" data-sap-ui-theme="sap_bluecrystal">
+
+
+	</script>
+	<style type="text/css">
+		h1,
+		h2,
+		p {
+			margin: 0;
+		}
+		
+		h4 {
+			margin: 1em 0;
+		}
+		
+		i {
+			color: blue
+		}
+		
+		.col {
+			color: red;
+		}
+		
+		#description1 {
+			background: white;
+			border: 1px solid #bfbfbf;
+			margin: 0.25%;
+			float: left;
+			width: 100%;
+			height: 200px;
+			overflow-y: auto;
+			padding-left: 1.25%;
+		}
+		
+		.vbi-main {
+			border: 0px;
+		}
+
+	</style>
+
+	<script>
+	
+
+		var oPanel = null;
+
+		function onOpenWindow(oEvent) {
+			if (oEvent.getParameter("id") != "Detail1")
+				return;
+
+			// create a panel instance
+			if (!oPanel) {
+				oPanel = new sap.m.Panel({
+                     width: "350px",
+                     headerText: "Location Data", //Set the title of the panel
+                     backgroundDesign: sap.m.BackgroundDesign.Transparent
+                  });
+                  var oVBox = new sap.m.VBox();
+
+                  //Create a simple form within the layout
+                  function createFormRow(labelText, inputValue) {
+                     return new sap.m.HBox({
+                        items: [
+                           new sap.m.Label({
+                              text: labelText,
+                              width: "100px" // Fixed width for labels
+                           }),
+                           new sap.m.Input({
+                              value: inputValue
+                           })
+                        ],
+                        justifyContent: "Start",
+                        alignItems: "Center"
+                     });
+                  }
+
+                  // Add form rows to VBox
+                  oVBox.addItem(createFormRow("Name", "Mustermann"));
+                  oVBox.addItem(createFormRow("First Name", "Max"));
+
+				// Wrap VBox inside SimpleForm
+				var oSimpleForm = new sap.ui.layout.form.SimpleForm({
+					layout: "ResponsiveLayout",
+					editable: true,
+					content: [oVBox]
+				});
+
+				// Add the SimpleForm to the panel's content area
+				oPanel.addContent(oSimpleForm);
+			}
+
+			//Attach the panel to the page
+			oPanel.placeAt(oEvent.getParameter("contentarea").id);
+		};
+
+		function onCloseWindow(oEvent) {
+			// when the panel should be destroyed it can be done.............//
+			// if( oPanel )
+			//   oPanel.destroy();
+			// oPanel = null;
+		};
+
+		// creation of visual business...........................//
+		sap.ui.localResources("vbitestapp");
+
+		function onSubmit(e) {
+			var datEvent = JSON.parse(e.mParameters.data);
+			//var instance = parseInt(datEvent.Action.instance);
+			var instance = datEvent.Action.instance.match(/\d+/g);
+			if (instance) {
+				if (instance[0] == 0)
+					onDetailWindow1();
+				else if (instance[0] == 1)
+					onDetailWindow2();
+				else if (instance[0] == 2)
+					onDetailWindow3();
+			}
+		};
+
+
+		var oVBI1 = new sap.ui.vbm.VBI('ds', {
+			width: "100%",
+			height: "100%",
+			openWindow: onOpenWindow,
+			submit: onSubmit // set the event handler
+		});
+
+		// create a mobile App
+		// it initializes the HTML page for mobile use and provides animated page handling
+		var app = new sap.m.App("myApp", {
+			initialPage: "page1"
+
+		}); // page1 should be displayed first
+
+
+		// create the first page of your application
+		var page1 = new sap.m.Page("page1", {
+			showHeader: false,
+			//height: "100%",//ERROR:Assertion failed: [sapapi_detail_m.html] ManagedObject.apply: encountered unknown setting 'height' for class 'sap.m.Page' (value:'100%')
+			enableScrolling: false,
+			content: oVBI1
+		});
+
+		app.addPage(page1);
+		app.placeAt("content"); // place the App into the HTML document
+
+		// load the json and set the default text area text
+		var dat = $.getJSON("media/vbdetail/maindevices.json", function(dat) {
+			var userStoredData = JSON.parse(localStorage.getItem("map"));
+			dat.SAPVB.MapLayerStacks.Set.MapLayerStack = userStoredData.MapLayerStacks;
+			dat.SAPVB.MapProviders.Set.MapProvider = userStoredData.MapProvider;
+
+			var scene = userStoredData.MapLayerStacks;
+			if (scene instanceof Array) {
+				dat.SAPVB.Scenes.Set.SceneGeo.refMapLayerStack = userStoredData.MapLayerStacks[0].name;
+			} else {
+				dat.SAPVB.Scenes.Set.SceneGeo.refMapLayerStack = userStoredData.MapLayerStacks.name;
+			}
+			oVBI1.load(dat);
+		});
+
+	</script>
+</head>
+
+<body class="sapUiBody">
+	<div id="description1">
+		<h3> The aim: </h3>
+		<p> To test detail window</p>
+		<h3> To test: </h3>
+		<ol>
+			<li>Check that a map loads with three spots.</li>
+			<li> Click on each spot and check that a detail window opens for each.</li>
+		</ol>
+	</div>
+	<div id="content"></div>
+	<script>
+		//...........................................................//
+		// setting some objects......................................//
+
+		function onClearMap() {
+			var dat = $.getJSON("media/vbdetail/clear.json", function(dat) {
+				oVBI1.load(dat);
+			});
+		};
+
+		function onDetailWindow1() {
+			var dat = $.getJSON("media/vbdetail/opendetail1devices.json", function(dat) {
+				oVBI1.load(dat);
+			});
+		};
+
+		function onDetailWindow2() {
+			var dat = $.getJSON("media/vbdetail/opendetail2devices.json", function(dat) {
+				oVBI1.load(dat);
+			});
+		};
+
+		function onDetailWindow3() {
+			var dat = $.getJSON("media/vbdetail/opendetail3devices.json", function(dat) {
+				oVBI1.load(dat);
+			});
+		};
+
+	</script>
+
+</body>
+
+</html>

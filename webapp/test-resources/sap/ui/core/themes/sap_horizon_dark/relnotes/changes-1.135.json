@@ -1,0 +1,37 @@
+{
+  "1.135.0": {
+    "date": "April 2025",
+    "notes": [
+      {
+        "id": "614f192d294b8bfe8b434fbcce13511e2ac4e4a6",
+        "type": "FIX",
+        "text": " sap.m.ObjectStatus: is correctly displayed in ListItem in HCB"
+      },
+      {
+        "id": "69f44d4e4e18b72d8c6c171e4f4f0be597156805",
+        "type": "FIX",
+        "text": " sap.m.TabContainer: icons are displayed correctly in HCB and HCW themes"
+      },
+      {
+        "id": "fd2ee5f097daba9e8520c808eabb0d7a4522dba3",
+        "type": "FEATURE",
+        "text": " sap.tnt.SideNavigation: Update visual design"
+      },
+      {
+        "id": "c07e07dae058f381401db78fe527e226c3e31549",
+        "type": "FIX",
+        "text": " We've now fixed the overlap banner issue in OneByOne type genericTile and we've also removed the application of active state color of the banner"
+      },
+      {
+        "id": "b56e75216ddfbca9d91c5ff1d2c03cbdc4157338",
+        "type": "FIX",
+        "text": " sap.uxap.ObjectPageSubSection: Header padding fixed"
+      },
+      {
+        "id": "9a1faecd659fe88d8fcabdf8d347d1acfcec1feb",
+        "type": "FIX",
+        "text": "sap.m.Token: Readonly text color is now correct"
+      }
+    ]
+  }
+}

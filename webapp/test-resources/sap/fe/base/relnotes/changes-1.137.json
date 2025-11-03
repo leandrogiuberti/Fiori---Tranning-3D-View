@@ -1,0 +1,12 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "77aeadea4f3f8dbcc8a33db822ddc46a5e49428d",
+        "type": "FIX",
+        "text": " We now ensure using a binding expression for the readOnly property in the Field building block works correctly"
+      }
+    ]
+  }
+}

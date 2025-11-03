@@ -1,0 +1,28 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Field"
+		introduction="The SAP Fiori elements Field building block provides an easy way to instantiate a property that was configured as part of the service metadata. The Field analyzes the different annotations that are defined for the property to create the most appropriate controls and additionally offers you configuration options for adjusting the behavior to fit your needs."
+		documentation="5260b9ca249f465ab33769b9edb442aa"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="If not annotated otherwise, an editable property is rendered as an Input field in edit mode."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start=" Description   :" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

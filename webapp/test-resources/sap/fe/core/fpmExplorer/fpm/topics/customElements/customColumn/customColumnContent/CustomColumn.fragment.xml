@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:commons="sap.suite.ui.commons" xmlns="sap.m">
+	<commons:MicroProcessFlow renderType="NoWrap">
+		<commons:content>
+			<commons:MicroProcessFlowItem state="{ApprovalStatus}" title="{i18n>approvalStatus}" />
+			<commons:MicroProcessFlowItem state="{PaymentStatus}" title="{i18n>paymentStatus}" />
+			<commons:MicroProcessFlowItem state="{ConfirmationStatus}" title="{i18n>confirmationStatus}" />
+		</commons:content>
+	</commons:MicroProcessFlow>
+</core:FragmentDefinition>

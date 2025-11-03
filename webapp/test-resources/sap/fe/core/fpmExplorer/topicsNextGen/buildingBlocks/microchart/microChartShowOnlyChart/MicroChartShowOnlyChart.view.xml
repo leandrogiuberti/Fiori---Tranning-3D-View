@@ -1,0 +1,26 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Show Only Chart"
+		introduction="The MicroChart building block enables you to render micro charts without additional information."
+		documentation="74554b4ca1de49aea42e2c309946ba05"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.microChartShowOnlyChart.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="To show only the chart without additional information, you can set the 'showOnlyChart' property to true in the micro chart building block."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="microchart/microChartShowOnlyChart/Sample.fragment.xml" codeType="view" start="column" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

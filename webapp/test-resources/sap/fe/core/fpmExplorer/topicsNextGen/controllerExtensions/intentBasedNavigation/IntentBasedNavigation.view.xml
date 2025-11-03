@@ -1,0 +1,99 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.intentBasedNavigation.Sample"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="External Navigation"
+		introduction="SAP Fiori elements provides three different approaches for implementing external navigation to other applications. You can use semantic object annotations to show a popover with multiple related navigation options, UI.DataFieldWithIntentBasedNavigation for direct navigation to a specific intent, or the IntentBasedNavigation controller extension for programmatic navigation control."
+		documentation="1d4a0f94bfee48d1b50ca8084a76beec"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.intentBasedNavigation.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Option 1: Annotating the Semantic Object"
+				text="Annotate entity properties with semantic objects to show a popover with multiple navigation options. When users click the field, they see all available intents for that semantic object (for example, create new travel request, approve travel, etc.)."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="intentBasedNavigation/localService/service.cds"
+						fileName="extendedService.cds"
+						codeType="cds"
+						start="Common.SemanticObject"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Display Semantic Object Fields"
+				text="Create a field group that displays the annotated field. The semantic object annotation will automatically render the field as a clickable link that opens a popover with all available navigation options."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="intentBasedNavigation/localService/service.cds"
+						codeType="cds"
+						start="SemanticObjectNavigation"
+						end="7"
+						fileName="extendedService.cds"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Option 2: UI.DataFieldWithIntentBasedNavigation"
+				text="Use UI.DataFieldWithIntentBasedNavigation to create a direct navigation link to one specific intent. Unlike semantic objects, this creates a button or link that navigates directly to a single target application (for example, directly to approve travel request)."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="intentBasedNavigation/localService/service.cds"
+						codeType="cds"
+						start="IntentBasedNavigation"
+						end="9"
+						fileName="extendedService.cds"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Option 3: IntentBasedNavigation Controller Extension"
+				text="Implement custom navigation logic using the controller extension API. Pass parameters and control when navigation occurs."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="intentBasedNavigation/Sample.controller.js"
+						codeType="ts"
+						start="navigateExternal: function (event)"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Configure Cross Navigation"
+				text="Define outbound navigation targets in the manifest.json to specify which semantic objects and actions your application can navigate to."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="intentBasedNavigation/manifest.json" codeType="manifest" start="crossNavigation" end="9" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Adapt Parameters"
+				text="Override the 'adaptNavigationContext' method to customize navigation behavior."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="intentBasedNavigation/Sample.controller.js"
+						codeType="ts"
+						start="intentBasedNavigation: IntentBasedNavigation.override"
+						end="}),"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

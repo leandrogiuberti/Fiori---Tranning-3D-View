@@ -1,0 +1,43 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Analytical List Page"
+		documentation="3d33684b08ca4490b26a844b6ce19b83"
+		introduction="The analytical list page offers a unique way to analyze data step by step from different perspectives, to investigate a root cause through drilldown, and to act on transactional content."
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="analyticalListReport" autoFocus="false" height="1180px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Visual Filter"
+				text="The visual filter bar enables end users to select filter values based on measure values in addition to the filters and filter values already selected in the regular filter bar."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/analyticalListReport/localService/service.cds"
+						start="UI.PresentationVariant #pvFlightDate"
+						end="  };"
+					/>
+					<fpmExplorer:CodeLink file="floorplanListReport/analyticalListReport/code/visualFilter.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="Bar Chart" text="Use a chart that provides visual representation of analytical data.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/analyticalListReport/localService/service.cds"
+						start="annotate Booking with @UI.Chart"
+						end="};"
+					/>
+					<fpmExplorer:CodeLink file="floorplanListReport/analyticalListReport/code/barChart.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:l="sap.ui.layout">
+	<l:VerticalLayout>
+		<Label text="Switch to Edit Mode and Press Enter in the Field:" />
+		<macros:Field metaPath="TitleProperty" id="TitleProperty" />
+	</l:VerticalLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,33 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Avatar"
+		introduction="The Field building block enables you to render avatars and icons. "
+		documentation="5760b638ea274d7aab59e4e434899528"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldAvatar.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Define a string property and annotate it with UI.IsImageUrl. Then the field will render a icon or an image, depending on the backend data."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldAvatar/localService/service.cds"
+						start="Icon"
+						end="ImageUrl"
+						fileName="avatar.cds"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldAvatar/code/avatar.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

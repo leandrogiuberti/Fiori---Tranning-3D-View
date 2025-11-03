@@ -1,0 +1,52 @@
+{
+    "1.137.0": {
+        "date": "May 2025",
+        "notes": [
+            {
+                "id": "I62cdf53bd19d10b79a89ee75780cf129944bffc7",
+                "text": "Now actionButtons aggregations, will preserved focus on UI after press",
+                "type": "FIX",
+                "references": []
+            },
+            {
+                "id": "I93636797676203368c7be31bdf9ccfd17c7cec6a",
+                "text": "We've now enhanced the aria label of the process flow control",
+                "type": "FIX",
+                "references": []
+            },
+            {
+                "id": "I0dc1311a17ae2eb6276742a64dbe05c13deb9409",
+                "text": "We now ensure that when a node is collapsed, all parent nodes of its descendants (including shared children) have their action buttons invalidated, preventing stale button states across multiple parents sharing the same child subtree",
+                "type": "FIX",
+                "references": [
+                    {
+                        "type": "BCP",
+                        "reference": "DINC0479728"
+                    }
+                ]
+            },
+            {
+                "id": "Id2e8daa81e5cea06675d021cfd575577013b58bd",
+                "text": "We've now fixed a screen reader issue where empty cells were announced as blank",
+                "type": "FIX",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "CS20240008826958"
+                    }
+                ]
+            },
+            {
+                "id": "Icacf7b682da362f3bb0ecf1ef6f0c80d4c898f0e",
+                "text": "We've now fixed an issue where the chart container was rendering infinitely when the content was empty",
+                "type": "FIX",
+                "references": [
+                    {
+                        "type": "BCP",
+                        "reference": "DINC0457461"
+                    }
+                ]
+            }
+        ]
+    }
+}

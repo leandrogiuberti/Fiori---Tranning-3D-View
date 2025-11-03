@@ -1,0 +1,11 @@
+{
+    "sap.ovp": {
+        "cards": {
+            "card008_cardchartsverticalbullettimeseries": {
+                "settings": {
+                    "showTimeAxis": false
+                }
+            }
+        }
+    }
+}

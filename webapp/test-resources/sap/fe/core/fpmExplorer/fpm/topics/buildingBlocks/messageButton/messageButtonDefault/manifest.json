@@ -1,0 +1,101 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.messageButtonDefault",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/messageButtonDefault/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"routing": {
+			"targets": {
+				"ProductsList": {
+					"type": "Component",
+					"name": "sap.fe.templates.ListReport",
+					"id": "Default",
+					"options": {
+						"settings": {
+							"entitySet": "Products",
+							"initialLoad": "Enabled",
+							"navigation": {
+								"Products": {
+									"detail": {
+										"route": "ProductsDetail"
+									}
+								}
+							}
+						}
+					}
+				},
+				"ProductsDetail": {
+					"type": "Component",
+					"name": "sap.fe.core.fpm",
+					"id": "ProductsDetail",
+					"options": {
+						"settings": {
+							"entitySet": "Products",
+							"viewName": "sap.fe.core.fpmExplorer.messageButtonDefault.MessageButtonDefault",
+							"navigation": {}
+						}
+					},
+					"controlConfiguration": {
+						"@com.sap.vocabularies.UI.v1.LineItem": {
+							"tableSettings": {
+								"type": "GridTable"
+							}
+						}
+					}
+				}
+			},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "ProductsList",
+					"target": "ProductsList"
+				},
+				{
+					"pattern": "Products({key}):?query:",
+					"name": "ProductsDetail",
+					"target": "ProductsDetail"
+				}
+			]
+		}
+	}
+}

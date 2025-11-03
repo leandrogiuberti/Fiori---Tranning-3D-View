@@ -1,0 +1,30 @@
+[
+	{
+		"fileName": "changing_object_page_table_to_read_only",
+		"fileType": "change",
+		"changeType": "propertyChange",
+		"reference": "SOwoExtSE.Component",
+		"packageName": "$TMP",
+		"content": {
+			"property": "editable",
+			"newValue": false
+		},
+		"selector": {
+			"id": "SOwoExtSE::sap.suite.ui.generic.template.ObjectPage.view.Details::C_STTA_SalesOrder_WD_20--to_Item::com.sap.vocabularies.UI.v1.LineItem::Table",
+			"type": "sap.ui.comp.smarttable.SmartTable",
+			"idIsLocal": false
+		},
+		"layer": "VENDOR",
+		"texts": {},
+		"namespace": "apps/SOwoExtSE/changes/",
+		"creation": "2017-07-12T11:25:11.214Z",
+		"originalLanguage": "EN",
+		"conditions": {},
+		"context": "",
+		"support": {
+			"generator": "Change.createInitialFileContent",
+			"service": "",
+			"user": ""
+		}
+	}
+]

@@ -1,0 +1,33 @@
+<Annotation Term="UI.SelectionPresentationVariant" Qualifier="All">
+	<Record Type="UI.SelectionPresentationVariantType">
+		<PropertyValue Property="Text" String="All" />
+		<PropertyValue Property="SelectionVariant">
+			<Record Type="UI.SelectionVariantType">
+				<PropertyValue Property="Text" String="All" />
+				<PropertyValue Property="SelectOptions">
+					<Collection>
+						<Record Type="UI.SelectOptionType">
+							<PropertyValue Property="PropertyName" PropertyPath="TravelID" />
+						</Record>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</PropertyValue>
+		<PropertyValue Property="PresentationVariant">
+			<Record Type="UI.PresentationVariantType">
+				<PropertyValue Property="SortOrder">
+					<Collection>
+						<Record Type="Common.SortOrderType">
+							<PropertyValue Property="Property" PropertyPath="Description" />
+						</Record>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="Visualizations">
+					<Collection>
+						<AnnotationPath>@UI.LineItem</AnnotationPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</PropertyValue>
+	</Record>
+</Annotation>

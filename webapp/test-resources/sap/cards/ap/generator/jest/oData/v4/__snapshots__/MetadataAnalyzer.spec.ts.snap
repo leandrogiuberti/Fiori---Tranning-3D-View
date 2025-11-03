@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card CardGenerator validate function getNavigationPropertyInfoFromEntity 1`] = `
+[
+  {
+    "name": "_RootPaymentTerms",
+    "properties": [
+      {
+        "label": "_RootPaymentTerms",
+        "name": "_RootPaymentTerms",
+        "type": "com.sap.gateway.srvd.ui_cashbank_manage.v0001.CashBankType",
+      },
+    ],
+  },
+]
+`;
+
+exports[`Card CardGenerator validate function getPropertyInfoFromEntity 1`] = `
+[
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankCountry",
+    "name": "BankCountry",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankInternalID",
+    "name": "BankInternalID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "IsActiveEntity",
+    "name": "IsActiveEntity",
+    "type": "Edm.Boolean",
+  },
+  {
+    "UOM": "kg",
+    "isDate": false,
+    "kind": "Property",
+    "label": "property1",
+    "name": "property1",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "INR",
+    "isDate": false,
+    "kind": "Property",
+    "label": "property2",
+    "name": "property2",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "navProperty_ID",
+    "name": "navProperty_ID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "RootPaymentTerms",
+    "name": "RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "referencedTestEntities_ID",
+    "name": "referencedTestEntities_ID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "_RootPaymentTerms_RootPaymentTerms",
+    "name": "_RootPaymentTerms_RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "DraftAdministrativeData_RootPaymentTerms",
+    "name": "DraftAdministrativeData_RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "SiblingEntity_ID",
+    "name": "SiblingEntity_ID",
+    "type": "Edm.String",
+  },
+]
+`;
+
+exports[`Card CardGenerator validate function getPropertyInfoFromEntity with navigation 1`] = `
+[
+  {
+    "UOM": "",
+    "category": "Select a Navigational Property:",
+    "isDate": false,
+    "kind": "NavigationProperty",
+    "label": "_RootPaymentTerms",
+    "name": "_RootPaymentTerms",
+    "type": "sap.cards.ap.test.JestService.RootPaymentTerms",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Navigational Property:",
+    "isDate": false,
+    "kind": "NavigationProperty",
+    "label": "DraftAdministrativeData",
+    "name": "DraftAdministrativeData",
+    "type": "sap.cards.ap.test.JestService.RootPaymentTerms",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankCountry",
+    "name": "BankCountry",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankInternalID",
+    "name": "BankInternalID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "IsActiveEntity",
+    "name": "IsActiveEntity",
+    "type": "Edm.Boolean",
+  },
+  {
+    "UOM": "kg",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "property1",
+    "name": "property1",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "INR",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "property2",
+    "name": "property2",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "navProperty_ID",
+    "name": "navProperty_ID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "RootPaymentTerms",
+    "name": "RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "referencedTestEntities_ID",
+    "name": "referencedTestEntities_ID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "_RootPaymentTerms_RootPaymentTerms",
+    "name": "_RootPaymentTerms_RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "DraftAdministrativeData_RootPaymentTerms",
+    "name": "DraftAdministrativeData_RootPaymentTerms",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "category": "Select a Property:",
+    "isDate": false,
+    "kind": "Property",
+    "label": "SiblingEntity_ID",
+    "name": "SiblingEntity_ID",
+    "type": "Edm.String",
+  },
+]
+`;
+
+exports[`Card CardGenerator validate function getPropertyReferenceKey 1`] = `
+[
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankCountry",
+    "name": "BankCountry",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankInternalID",
+    "name": "BankInternalID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "IsActiveEntity",
+    "name": "IsActiveEntity",
+    "type": "Edm.Boolean",
+  },
+]
+`;

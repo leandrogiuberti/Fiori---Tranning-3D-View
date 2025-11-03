@@ -1,0 +1,32 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Date-Time Picker"
+		introduction="The Field building block enables you to render date input fields with a date-time picker."
+		documentation="a5608eabcc184aee99e1a7d88b28816c"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldDateTimePicker.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Define a property of type DateTime. The field formats the string value and in edit mode offers a date-time picker for changing date and time."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldDateTimePicker/localService/service.cds"
+						start="ReminderTime"
+						fileName="dateTime.cds"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

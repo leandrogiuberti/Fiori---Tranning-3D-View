@@ -1,0 +1,35 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:f="sap.f"
+	xmlns:macros="sap.fe.macros"
+	controllerName="sap.fe.core.fpmExplorer.messageButtonDefault.MessageButtonDefault"
+>
+	<f:DynamicPage id="Page" title="My Title">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Message Button Building Block" />
+				</f:heading>
+				<f:actions>
+					<Button text="Add Bound Messages" press=".addBoundMessages" visible="{ui>/isEditable}" />
+					<Button text="Clear Messages" press=".clearMessages" visible="{ui>/isEditable}" />
+					<Button text="Add Unbound Messages" press=".addUnBoundMessages" visible="{ui>/isEditable}" />
+				</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<VBox>
+				<CheckBox text="Toggle Page Edit Mode" selected="{ui>/isEditable}" select=".onSelect" class="sapUiSmallMarginBottom" />
+				<MessageStrip id="messageStrip" visible="false" class="sapUiSmallMarginBottom" />
+				<macros:Form metaPath="@UI.FieldGroup#GeneralInformation" id="FormBB" />
+			</VBox>
+		</f:content>
+		<f:footer>
+			<OverflowToolbar>
+				<macros:MessageButton visibilityChange=".handleMessageButtonVisibility" />
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

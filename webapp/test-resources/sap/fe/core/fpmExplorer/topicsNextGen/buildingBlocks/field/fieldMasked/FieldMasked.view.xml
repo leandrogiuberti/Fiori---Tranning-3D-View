@@ -1,0 +1,30 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Masked Field"
+		introduction="The Field building block enables you to render masked fields to hide sensitive data."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldMasked.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep text="Add a Common.Masked annotation to a property holding sensitive data.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldMasked/localService/service.cds"
+						start="CreditCardNumber"
+						fileName="masked.cds"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

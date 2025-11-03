@@ -1,0 +1,50 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Draft Handling with Edit Flow Controller Extension"
+		documentation="ed9aa41c563a44b18701529c8327db4d"
+		introduction="The Edit Flow controller extension implements all the draft actions (such as creating a draft, saving a draft). It provides hooks you can implement to add your custom logic. It can also be used to implement the draft handling in custom pages."
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="editFlow" autoFocus="true" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Defining a Controller Extension in Manifest"
+				text="To implement hooks provided by the Edit Flow controller extension, you need to register a custom controller extension in the manifest.json file for the object page instance you want to extend."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="editFlow/manifest.json" codeType="manifest" start="extends" end="10" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Implementing a Hook"
+				text="In your controller extension, you can implement the hooks provided by the Edit Flow controller extensions, for example the onBeforeEdit hook."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="editFlow/TravelExtend.controller.js" start="editFlow: " end="onBeforeEdit" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Invoking an Action"
+				text="In your controller extension, you can invoke OData actions provided by your service. If the action has parameters, a dialog is displayed to the user to enter the parameters. You can also pass the parameters and skip the dialog by using the 'skipParameterDialog' property."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="editFlow/TravelExtend.controller.js" start="this.base.editFlow" end="11" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Draft Handling on Custom Page"
+				text="You can use the Edit Flow controller extension to implement draft handling on custom pages as described in the following topic."
+			>
+				<fpmExplorer:Link topic="controllerExtensions/customEditFlow" text="Draft Handling on Custom Page" />
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

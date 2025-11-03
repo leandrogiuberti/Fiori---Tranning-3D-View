@@ -1,0 +1,126 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customSubSection",
+		"type": "application",
+		"i18n": {
+			"bundleName": "sap.fe.core.fpmExplorer.customSubSection.i18n.i18n",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/customSubSection/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {},
+				"sap.ui.vbm": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.fe.core.fpmExplorer.customSubSection.i18n.i18n"
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.fe.core.fpmExplorer.customSubSection.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.customSubSection.CustomSubSection"
+		},
+		"routing": {
+			"config": {
+				"controlId": "customSubSection"
+			},
+			"routes": [
+				{
+					"pattern": "/Travel({key}):?query:",
+					"name": "default",
+					"target": "sample"
+				},
+				{
+					"pattern": "/Travel({key})/to_Booking({key2}):?query:",
+					"name": "Booking",
+					"target": "Booking"
+				}
+			],
+			"targets": {
+				"Booking": {
+					"type": "Component",
+					"id": "booking",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"contextPath": "/Travel/to_Booking"
+						}
+					}
+				},
+				"sample": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 1,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+							"navigation": {
+								"items": {
+									"detail": {
+										"route": "to_Booking"
+									}
+								}
+							},
+							"content": {
+								"body": {
+									"sections": {
+										"TravelData": {
+											"subSections": {
+												"flightMap": {
+													"name": "sap.fe.core.fpmExplorer.customSubSection.CustomSubSectionFlightMap",
+													"type": "XMLFragment",
+													"title": "{i18n>FlightMap}"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

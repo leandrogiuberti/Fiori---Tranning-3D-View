@@ -1,0 +1,46 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Page"
+		introduction="The Page building block enables you to create a custom page with a pre-defined layout."
+		documentation="025865041ec64c6daf58034d78f11310"
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="customPage" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Using the Page Building Block"
+				text="You can use the Page building block to create a new page. You can configure the content of the building block as per your requirements."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="page/pageDefault/Sample.view.xml"
+						name="Sample.view.xml"
+						codeType="view"
+						start="macros:Page"
+						fullTag="false"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Using Building Blocks"
+				text="You can use the building blocks in your page as shown in the following example."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="page/pageDefault/Sample.view.xml"
+						name="Sample.view.xml"
+						codeType="view"
+						start="macros:Table"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

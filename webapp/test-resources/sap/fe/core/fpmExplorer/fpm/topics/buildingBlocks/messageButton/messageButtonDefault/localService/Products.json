@@ -1,0 +1,102 @@
+[
+	{
+		"ID": 1,
+		"Title": "Helmet",
+		"Description": "Description 1",
+		"Requester": "Sibylle Haumann",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 75,
+		"Classification": "Clothing",
+		"Rating": 5
+	},
+	{
+		"ID": 2,
+		"Title": "Brake pads",
+		"Description": "Description 2",
+		"Requester": "Samuel Kunz",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 0,
+		"Classification": "Parts",
+		"Rating": 4
+	},
+	{
+		"ID": 3,
+		"Title": "Bell",
+		"Description": "Description 3",
+		"Requester": "Sibylle Haumann",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Accessories",
+		"Rating": 3
+	},
+	{
+		"ID": 4,
+		"Title": "Jersey",
+		"Description": "Description 4",
+		"Requester": "Lukas Kästner",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Clothing",
+		"Rating": 4
+	},
+	{
+		"ID": 5,
+		"Title": "Front wheel",
+		"Description": "Description 5",
+		"Requester": "Tillo Welter",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 90,
+		"Classification": "Parts",
+		"Rating": 4
+	},
+	{
+		"ID": 6,
+		"Title": "Socks",
+		"Description": "Description 6",
+		"Requester": "Sibylle Haumann",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Clothing",
+		"Rating": 5
+	},
+	{
+		"ID": 7,
+		"Title": "Pedals",
+		"Description": "Description 7",
+		"Requester": "Samuel Kunz",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 0,
+		"Classification": "Parts",
+		"Rating": 5
+	},
+	{
+		"ID": 8,
+		"Title": "Basket",
+		"Description": "Description 8",
+		"Requester": "Judith Brotz",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Accessories",
+		"Rating": 5
+	},
+	{
+		"ID": 9,
+		"Title": "Gloves",
+		"Description": "Description 9",
+		"Requester": "Lukas Kästner",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Clothing",
+		"Rating": 4
+	},
+	{
+		"ID": 10,
+		"Title": "Saddle",
+		"Description": "Description 10",
+		"Requester": "Tillo Welter",
+		"ProductGroup": "Cycling Parts",
+		"Progress": 100,
+		"Classification": "Parts",
+		"Rating": 4
+	}
+]

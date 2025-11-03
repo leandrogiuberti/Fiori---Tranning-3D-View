@@ -1,0 +1,93 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="Custom List Report Header" documentation="1ab83e62a8804f1eb270f7bc353f3669">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text text="You can add custom content to the header of the list report. This content is added above the filter bar." />
+				<Text
+					text="The example below shows three tiles added to the header controlling the filtering of items in the list report and the execution of actions."
+				/>
+				<Text
+					text="Depending on the way the header is shown (expanded or collapsed) different fragments are used showing either controls of type GenericTile or KPITag."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customHeaderListReport" autoFocus="false" height="740px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Fragment settings in the Manifest"
+				text="You can specify separate Fragments in the manifest.json file for the expanded header and the collapsed header as shown in the sample code."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customHeaderListReport/manifest.json"
+						start="header"
+						end="6"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Fragment definition for the expanded header"
+				text="Controls of type GenericTile with its properties and press-handlers are used to show the tiles for the List Report header."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customHeaderListReport/CustomHeaderExpanded.fragment.xml"
+						start="GenericTile"
+						end="/GenericTile>"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Fragment definition for the collapsed header"
+				text="For the collapsed header KPITag macros are used to show the KPI tags."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customHeaderListReport/CustomHeaderCollapsed.fragment.xml"
+						start="HBox class"
+						end="/HBox>"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Extensions settings in the Manifest"
+				text="The controller used for the extension is defined in the extensions section of the manifest file."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customHeaderListReport/manifest.json"
+						start="extends"
+						end="},"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Controller implementation"
+				text="The Controller implementation used to set the filtering and to handle the press-event for the action to be triggered."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customHeaderListReport/LRExtend.controller.js"
+						start="pressTravelEntitiesWithFilter"
+						end="4"
+						codeType="ts"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

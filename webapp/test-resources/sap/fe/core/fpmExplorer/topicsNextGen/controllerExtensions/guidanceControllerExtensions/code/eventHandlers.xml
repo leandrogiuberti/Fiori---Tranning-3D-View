@@ -1,0 +1,4 @@
+<HBox>
+	<Button text="Accept" press=".extension.myApp.ext.OPExtend.accept" type="Positive" />
+	<Text text="{path: 'TotalNetAmount', formatter:'.extension.myApp.ext.OPExtend.myFormatter' }" />
+</HBox>

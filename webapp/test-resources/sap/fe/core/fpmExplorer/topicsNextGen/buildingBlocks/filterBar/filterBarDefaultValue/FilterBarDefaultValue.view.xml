@@ -1,0 +1,42 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.filterBarDefaultValue.FilterBarDefaultValue"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Filter Bar Default Values"
+		introduction="The FilterBar building block enables you to set default values for the filter fields."
+		documentation="78386110817d43978ffd6988d1704e38"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarDefaultValue.Sample" type="XML" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Annotation Options"
+				text="There are two ways to annotate default filter values. Use either 'UI.SelectionVariant' or 'Common.FilterDefaultValue'. If both are defined, 'Common.FilterDefaultValue' will be ignored."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarDefaultValue/localService/service.cds"
+						codeType="cds"
+						start="// The following will be used to set"
+						end="30"
+					/>
+					<fpmExplorer:CodeLink file="filterBar/filterBarDefaultValue/code/defaultValues.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Setting Flexible Values via Controller"
+				text="Annotations cannot set flexible values (Semantic Operators) as default values. To achieve this, use a controller implementation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="filterBar/filterBarDefaultValue/FilterBarDefaultValue.controller.js" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

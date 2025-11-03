@@ -1,0 +1,23 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Annotations Target="Service.RootEntity">
+		<Annotation Term="Common.SideEffects" Qualifier="singleSourceProperty">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="SourceProperties">
+					<Collection>
+						<PropertyPath>sourceProperty1</PropertyPath>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>targetProperty1a</String>
+						<String>fieldControlProperty1</String>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+	<Annotations Target="sap.fe.core.Service.RootEntity/TargetProperty1b">
+		<Annotation Term="Common.FieldControl" Path="fieldControlProperty1" />
+		<Annotation Term="Common.Label" String="Input Enabled by Field Control" />
+	</Annotations>
+</Schema>

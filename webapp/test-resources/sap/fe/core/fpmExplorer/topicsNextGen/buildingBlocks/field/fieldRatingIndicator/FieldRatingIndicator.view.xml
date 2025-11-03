@@ -1,0 +1,30 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Rating Indicator"
+		introduction="The Field building block enables you to render rating indicators."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldRatingIndicator.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Add a DataPoint annotation with the visualization type #Rating. The Value points to the property representing the data to be visualized."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="DataPoint #Rating" end="}," fileName="service.cds" />
+					<fpmExplorer:CodeLink file="field/fieldRatingIndicator/code/rating.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<macros:Table
+		metaPath="/RootEntity/@com.sap.vocabularies.UI.v1.LineItem"
+		id="MyAnalyticalTable"
+		type="AnalyticalTable"
+		rowCount="5"
+		variantManagement="Control"
+	/>
+</core:FragmentDefinition>

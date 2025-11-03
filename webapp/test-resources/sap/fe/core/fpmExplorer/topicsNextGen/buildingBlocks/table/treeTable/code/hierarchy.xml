@@ -1,0 +1,18 @@
+<Annotations Target="Service.Products">
+	<Annotation Term="Aggregation.RecursiveHierarchy" Qualifier="ProductsHierarchy">
+		<Record Type="Aggregation.RecursiveHierarchyType">
+			<PropertyValue Property="NodeProperty" PropertyPath="ID" />
+			<PropertyValue Property="ParentNavigationProperty" NavigationPropertyPath="Parent" />
+		</Record>
+	</Annotation>
+	<Annotation Term="Hierarchy.RecursiveHierarchy" Qualifier="ProductsHierarchy">
+		<Record Type="Hierarchy.RecursiveHierarchyType">
+			<PropertyValue Property="ExternalKey" Path="ID" />
+			<PropertyValue Property="LimitedDescendantCount" Path="LimitedDescendantCount" />
+			<PropertyValue Property="DistanceFromRoot" Path="DistanceFromRoot" />
+			<PropertyValue Property="DrillState" Path="DrillState" />
+			<PropertyValue Property="Matched" Path="Matched" />
+			<PropertyValue Property="MatchedDescendantCount" Path="MatchedDescendantCount" />
+		</Record>
+	</Annotation>
+</Annotations>

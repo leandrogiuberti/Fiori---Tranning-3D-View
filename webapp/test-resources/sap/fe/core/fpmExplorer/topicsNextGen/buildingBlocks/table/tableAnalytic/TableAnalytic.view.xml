@@ -1,0 +1,44 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Analytical Table"
+		introduction="Analytical tables enable you to display and manage your data efficiently. This table type provides powerful functionalities, including advanced grouping and aggregation."
+		documentation="7f844f1021cd4791b8f7408eac7c1cec"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.tableAnalytic.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Annotating a Service as an Analytical Service"
+				text="To set the analytical capabilities of your service or entity, use the Aggregation.ApplySupported annotation at the entity set level. The analytical table offers the possibility to group rows based on groupable properties. You must define which properties are groupable so that the table allows grouping the relevant properties. To annotate a set of properties as groupable, add it to the GroupableProperties annotation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableAnalytic/localService/service.cds"
+						start="@Aggregation.ApplySupported "
+						end="5"
+					/>
+					<fpmExplorer:CodeLink file="table/tableAnalytic/code/applySupported.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Defining Aggregatable Properties"
+				text="The properties can also be annotated as aggregatable (measures). To do so, at the entity level, you must also define the Aggregation.CustomAggregate annotation, which has the property name as the qualifier."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableAnalytic/localService/service.cds" start="@Aggregation.CustomAggregate" />
+					<fpmExplorer:CodeLink file="table/tableAnalytic/code/customAggregate.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

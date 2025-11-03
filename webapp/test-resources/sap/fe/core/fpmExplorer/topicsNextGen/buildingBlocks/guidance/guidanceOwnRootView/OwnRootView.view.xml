@@ -1,0 +1,65 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Custom Root View"
+		documentation="9834a0a3b9284a6197f116f6c377ed06"
+		introduction="If neither of the standard root views provided by SAP Fiori elements suit your needs, you can create and register a custom root view. The following standard root views are available: NavContainer and Flexible Column Layout."
+	>
+		<fpmExplorer:sample>
+			<VBox>
+				<MessageStrip
+					type="Information"
+					text="The sample shows a list report where the NavContainer control is used in a custom root view."
+				/>
+				<NavContainer id="ownRootView" autoFocus="false" height="600px" />
+			</VBox>
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Add a NavContainer or FlexibleColumnLayout to Your Custom Root View"
+				text="Ensure your custom root view contains an sap.m.NavContainer (or an sap.f.FlexibleColumnLayout) as the main container for your application content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceOwnRootView/OwnRootView.view.xml" codeType="view" start="ownRootView" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Use the Appropriate Controller for Your Custom Root View"
+				text="Ensure your custom root view uses the sap.fe.core.rootView.NavContainer controller (or sap.fe.core.rootView.Fcl controller), or a controller extending it. This enables the default SAP Fiori elements features in your custom root view."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="guidance/guidanceOwnRootView/OwnRootView.view.xml"
+						codeType="view"
+						start="controllerName"
+						fullTag="false"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Set the Control ID for the Main Container"
+				text="Ensure the ID of the NavContainer (or FlexibleColumnLayout) is set as 'appContent' or is defined in the application manifest under '/sap.ui5/routing/config/controlId'. This allows the router to target the correct container."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceOwnRootView/manifest.json" codeType="manifest" start="routing" end="4" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Register the Root View in the Manifest"
+				text="Ensure your custom root is defined in the application manifest under '/sap.ui5/rootView/viewName'. This registers your custom root view for the application."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceOwnRootView/manifest.json" codeType="manifest" start="rootView" end="4" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

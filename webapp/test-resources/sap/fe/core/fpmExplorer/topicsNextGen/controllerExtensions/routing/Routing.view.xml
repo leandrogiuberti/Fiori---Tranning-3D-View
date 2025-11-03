@@ -1,0 +1,56 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Internal Navigation and Routing"
+		documentation="2c65f07f44094012a511d6bd83f50f2d"
+		introduction="The Routing controller extension implements the routing and the navigation between pages. It provides hooks you can implement to add your custom logic. It can also be used to trigger navigation in custom code."
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="routing" autoFocus="true" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Defining a Controller Extension in Manifest"
+				text="To implement hooks provided by the Routing controller extension, you need to register a custom controller extension for in the manifest.json file for the pages you want to extend."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="routing/manifest.json" codeType="manifest" start="extends" end="13" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Implementing a Hook"
+				text="In your controller extension, you can implement the hooks provided by the Routing controller extensions, for example the onAfterBinding hook."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="routing/TravelDetailExtension.controller.js"
+						start="routing: "
+						end="onAfterBinding"
+						codeType="ts"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Invoking Navigation"
+				text="In your controller extension, you can invoke the navigation to another page using the 'navigateToRoute' method. You can pass instance keys to navigate to a specific instance."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="routing/TravelListExtension.controller.js" start="navigateToRoute" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Intercepting Navigation"
+				text="In your controller extension, you can intercept the navigation to a specific page and add your custom logic by overriding the 'onBeforeNavigation' hook. By return true, you can prevent the navigation to the target page and implement your own logic instead."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="routing/TravelListExtension.controller.js" start="onBeforeNavigation" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

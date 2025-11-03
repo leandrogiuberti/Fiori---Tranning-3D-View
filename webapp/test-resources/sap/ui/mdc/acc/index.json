@@ -1,0 +1,81 @@
+{
+	"tests" : [
+		{
+			"control" : "sap.ui.mdc.Field",
+			"url" : "./field/Field.html",
+			"desc" : "Fields with various data types rendering various input controls",
+			"appComponent" : "CA-UI5-MDC",
+			"accTest": {
+				"name": "sap.ui.mdc.Field",
+				"title": "ACC test for sap.ui.mdc.Field",
+				"module": "./mdc/Field.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.Filterbar",
+			"url" : "./filterbar/FilterBar.html",
+			"desc" : "A filter bar with several filter fields of various data types",
+			"appComponent" : "CA-UI5-MDC",
+			"accTest": {
+				"name": "sap.ui.mdc.FilterBar",
+				"title": "ACC test for sap.ui.mdc.FieldFilterBar",
+				"module": "./mdc/FilterBar.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.FilterField",
+			"url" : "./filterbar/FilterBar.html",
+			"desc" : "FilterFields with various data types rendering various input controls",
+			"appComponent" : "CA-UI5-MDC",
+			"accTest": {
+				"name": "sap.ui.mdc.FilterField",
+				"title": "ACC test for sap.ui.mdc.FilterField",
+				"module": "./mdc/FilterField.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.Link",
+			"url" : "./link/Link.html",
+			"desc" : "A link using a delegate payload",
+			"appComponent" : "CA-UI5-CMP-SOF",
+			"accTest": {
+				"name": "sap.ui.mdc.Link",
+				"title": "ACC test for sap.ui.mdc.Link",
+				"module": "./mdc/Link.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.MultiValueField",
+			"url" : "./multivaluefield/MultiValueField.html",
+			"desc" : "Multi-value field in different state",
+			"appComponent" : "CA-UI5-MDC",
+			"accTest": {
+				"name": "sap.ui.mdc.MultiValueField",
+				"title": "ACC test for sap.ui.mdc.MultiValueField",
+				"module": "./mdc/MultiValueField.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.ValueHelp",
+			"url" : "./filterbar/FilterBar.html",
+			"desc" : "Different FilterFields with a more complex value help dialog including filter and search features",
+			"appComponent" : "CA-UI5-MDC",
+			"accTest": {
+				"name": "sap.ui.mdc.ValueHelp",
+				"title": "ACC test for sap.ui.mdc.ValueHelp",
+				"module": "./mdc/ValueHelp.qunit"
+			}
+		},
+		{
+			"control" : "sap.ui.mdc.Chart",
+			"url" : "./chart/Chart.html",
+			"desc" : "A Chart with basic configuration and enabled personalization",
+			"appComponent" : "CA-UI5-CMP-SOF",
+			"accTest": {
+				"name": "sap.ui.mdc.Chart",
+				"title": "ACC test for sap.ui.mdc.Chart",
+				"module": "./mdc/Chart.qunit"
+			}
+		}
+	]
+}

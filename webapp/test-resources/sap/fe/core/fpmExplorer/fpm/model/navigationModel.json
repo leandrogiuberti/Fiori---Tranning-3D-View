@@ -1,0 +1,705 @@
+{
+	"navigation": [
+		{
+			"title": "Introduction",
+			"key": "introduction",
+			"chapter": "overview",
+			"tags": "",
+			"icon": "sap-icon://home",
+			"items": [
+				{
+					"key": "portal",
+					"chapter": "overview/introduction",
+					"title": "Using the Portal"
+				}
+			]
+		},
+		{
+			"title": "Building Blocks",
+			"key": "buildingblocks",
+			"chapter": "buildingBlocks",
+			"icon": "sap-icon://puzzle",
+			"items": [
+				{
+					"key": "fieldDefault",
+					"chapter": "buildingBlocks/field",
+					"title": "Field",
+					"tags": "field",
+					"items": [
+						{
+							"key": "fieldDefault",
+							"chapter": "buildingBlocks/field",
+							"title": "Overview",
+							"tags": "field"
+						},
+						{
+							"key": "fieldAvatar",
+							"chapter": "buildingBlocks/field",
+							"title": "Avatar",
+							"tags": "field"
+						},
+						{
+							"key": "fieldCheckbox",
+							"chapter": "buildingBlocks/field",
+							"title": "Check Box",
+							"tags": "field"
+						},
+						{
+							"key": "fieldContact",
+							"chapter": "buildingBlocks/field",
+							"title": "Contact",
+							"tags": "field"
+						},
+						{
+							"key": "fieldDataPoint",
+							"chapter": "buildingBlocks/field",
+							"title": "Data Point",
+							"tags": "field"
+						},
+						{
+							"key": "fieldDateAndTimeGroup",
+							"title": "Date and Time Fields",
+							"items": [
+								{
+									"key": "fieldDatePicker",
+									"chapter": "buildingBlocks/field",
+									"title": "Date Picker",
+									"tags": "field"
+								},
+								{
+									"key": "fieldDateTimePicker",
+									"chapter": "buildingBlocks/field",
+									"title": "Date Time Picker",
+									"tags": "field"
+								},
+								{
+									"key": "fieldTimePicker",
+									"chapter": "buildingBlocks/field",
+									"title": "Time Picker",
+									"tags": "field"
+								}
+							]
+						},
+						{
+							"key": "fieldFile",
+							"chapter": "buildingBlocks/field",
+							"title": "File Upload and Download",
+							"tags": "field"
+						},
+						{
+							"key": "fieldInputGroup",
+							"title": "Input Fields",
+							"items": [
+								{
+									"key": "fieldInputMask",
+									"chapter": "buildingBlocks/field",
+									"title": "Input Mask",
+									"tags": "field"
+								},
+								{
+									"key": "fieldInputWithValueHelp",
+									"chapter": "buildingBlocks/field",
+									"title": "Input with Value Help",
+									"tags": "field"
+								}
+							]
+						},
+						{
+							"key": "fieldLinkGroup",
+							"title": "Links",
+							"items": [
+								{
+									"key": "fieldLink",
+									"chapter": "buildingBlocks/field",
+									"title": "Link with URL",
+									"tags": "field"
+								},
+								{
+									"key": "fieldLinkWithQuickView",
+									"chapter": "buildingBlocks/field",
+									"title": "Link with Quick View",
+									"tags": "field"
+								}
+							]
+						},
+						{
+							"key": "fieldMasked",
+							"chapter": "buildingBlocks/field",
+							"title": "Masked",
+							"tags": "field"
+						},
+						{
+							"key": "fieldMultiLineText",
+							"chapter": "buildingBlocks/field",
+							"title": "Multi-line Text",
+							"tags": "field"
+						},
+						{
+							"key": "fieldNumberWithUnitOrCurrencyAligned",
+							"chapter": "buildingBlocks/field",
+							"title": "Number with Unit or Currency Aligned",
+							"tags": "field"
+						},
+						{
+							"key": "fieldObjectStatus",
+							"chapter": "buildingBlocks/field",
+							"title": "Object Status",
+							"tags": "field"
+						},
+						{
+							"key": "fieldRadioButtonGroup",
+							"chapter": "buildingBlocks/field",
+							"title": "Radio Button Group",
+							"tags": "field"
+						},
+						{
+							"key": "fieldRatingIndicator",
+							"chapter": "buildingBlocks/field",
+							"title": "Rating Indicator",
+							"tags": "field"
+						},
+						{
+							"key": "fieldMultiValueField",
+							"chapter": "buildingBlocks/field",
+							"title": "Multi Value Field",
+							"tags": "field"
+						}
+					]
+				},
+				{
+					"title": "Form",
+					"chapter": "buildingBlocks/form",
+					"key": "formDefault",
+					"items": [
+						{
+							"key": "formDefault",
+							"chapter": "buildingBlocks/form",
+							"title": "Overview",
+							"tags": "UI.ReferenceFacet, UI.CollectionFacet, grid layout"
+						},
+						{
+							"key": "formElementLabel",
+							"chapter": "buildingBlocks/formElement",
+							"title": "Form Element",
+							"tags": "label"
+						},
+						{
+							"key": "formCustom",
+							"title": "Extensions",
+							"chapter": "buildingBlocks/form",
+							"tags": "UI.ReferenceFacet"
+						}
+					]
+				},
+				{
+					"title": "Table",
+					"key": "tableDefault",
+					"chapter": "buildingBlocks/table",
+					"items": [
+						{
+							"key": "tableDefault",
+							"chapter": "buildingBlocks/table",
+							"title": "Overview",
+							"tags": ""
+						},
+						{
+							"key": "treeTable",
+							"chapter": "buildingBlocks/table",
+							"title": "Tree Table",
+							"tags": ""
+						},
+						{
+							"key": "tableAnalytic",
+							"chapter": "buildingBlocks/table",
+							"title": "Analytical Table",
+							"tags": ""
+						},
+						{
+							"key": "tableUpload",
+							"chapter": "buildingBlocks/table",
+							"title": "Upload Table",
+							"tags": "MediaResource, Attachments"
+						},
+						{
+							"key": "tableHighlighting",
+							"chapter": "buildingBlocks/table",
+							"title": "Highlighting Lines",
+							"tags": ""
+						},
+						{
+							"key": "tableMassEdit",
+							"chapter": "buildingBlocks/table",
+							"title": "Mass Edit",
+							"tags": "massedit, mass-edit, quickfilter, quickvariant"
+						},
+						{
+							"key": "tableQuickVariants",
+							"chapter": "buildingBlocks/table",
+							"title": "Quick Variants",
+							"tags": "quickfilter, quickvariant"
+						},
+						{
+							"key": "tableFilterBar",
+							"chapter": "buildingBlocks/table",
+							"title": "Usage with Filter Bar",
+							"tags": "filter bar live mode"
+						},
+						{
+							"title": "Extensions",
+							"key": "tableExtensions",
+							"items": [
+								{
+									"key": "customColumn",
+									"chapter": "buildingBlocks/table",
+									"title": "Custom Columns",
+									"tags": ""
+								},
+								{
+									"key": "customTableAction",
+									"chapter": "buildingBlocks/table",
+									"title": "Custom Actions",
+									"tags": "custom row press handler, custom selection change handler"
+								},
+								{
+									"key": "tablePublicAPIs",
+									"chapter": "buildingBlocks/table",
+									"title": "Interacting via APIs",
+									"tags": "table presentation variant, get presentation variant, set presentation variant, interacting with APIs, message handling, get variant management, set variant management"
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "Filter Bar",
+					"key": "filterBarDefault",
+					"chapter": "buildingBlocks/filterBar",
+					"items": [
+						{
+							"key": "filterBarDefault",
+							"chapter": "buildingBlocks/filterBar",
+							"title": "Overview"
+						},
+						{
+							"key": "filterBarDefaultValue",
+							"chapter": "buildingBlocks/filterBar",
+							"title": "Filter Bar Default Values"
+						},
+						{
+							"key": "filterBarVMWithChart",
+							"chapter": "buildingBlocks/filterBar",
+							"title": "With Chart and Variant Management"
+						},
+						{
+							"key": "filterBarParameterizedWithTable",
+							"chapter": "buildingBlocks/filterBar",
+							"title": "Parameterized"
+						},
+						{
+							"key": "filterBarCustom",
+							"chapter": "buildingBlocks/filterBar",
+							"title": "Extensions",
+							"items": [
+								{
+									"key": "filterBarCustom",
+									"chapter": "buildingBlocks/filterBar",
+									"title": "Custom Filters"
+								},
+								{
+									"key": "filterBarPublicAPIs",
+									"chapter": "buildingBlocks/filterBar",
+									"title": "Interacting via APIs"
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "Micro Chart",
+					"key": "microChartDefault",
+					"chapter": "buildingBlocks/microchart",
+					"items": [
+						{
+							"key": "microChartDefault",
+							"chapter": "buildingBlocks/microchart",
+							"title": "Overview",
+							"tags": "harvey ball, bullet chart, radial chart, column chart, area chart, line chart, stacked bar chart, comparison chart"
+						},
+						{
+							"key": "microChartDynamicSize",
+							"chapter": "buildingBlocks/microchart",
+							"title": "Dynamic Size",
+							"tags": "harvey ball, bullet chart, radial chart, column chart, area chart, line chart, stacked bar chart, comparison chart"
+						},
+						{
+							"key": "microChartShowOnlyChart",
+							"chapter": "buildingBlocks/microchart",
+							"title": "Show Only Chart",
+							"tags": "harvey ball, bullet chart, radial chart, column chart, area chart, line chart, stacked bar chart, comparison chart"
+						}
+					]
+				},
+				{
+					"title": "Chart",
+					"key": "chartDefault",
+					"chapter": "buildingBlocks/chart",
+					"items": [
+						{
+							"key": "chartDefault",
+							"chapter": "buildingBlocks/chart",
+							"title": "Overview",
+							"tags": ""
+						},
+						{
+							"key": "chartControlLevelVariant",
+							"chapter": "buildingBlocks/chart",
+							"title": "Variant Management",
+							"tags": "variant management"
+						},
+						{
+							"key": "chartSelectionMode",
+							"chapter": "buildingBlocks/chart",
+							"title": "Selection Mode",
+							"tags": ""
+						},
+						{
+							"key": "chartFilterBar",
+							"chapter": "buildingBlocks/chart",
+							"title": "Usage with Filter Bar",
+							"tags": ""
+						},
+						{
+							"key": "chartQualifier",
+							"chapter": "buildingBlocks/chart",
+							"title": "Usage with Qualifier",
+							"tags": ""
+						},
+						{
+							"key": "chartActions",
+							"chapter": "buildingBlocks/chart",
+							"title": "Extensions",
+							"tags": "",
+							"items": [
+								{
+									"key": "chartActions",
+									"chapter": "buildingBlocks/chart",
+									"title": "Custom Actions",
+									"tags": "custom actions, xml actions, manifest actions, action groups, menu, header, headerVisible, headerLevel, placeholder, anchor"
+								},
+								{
+									"key": "chartPublicAPIs",
+									"chapter": "buildingBlocks/chart",
+									"title": "Interacting via APIs",
+									"tags": "chart presentation variant, get presentation variant, set presentation variant, interacting with APIs"
+								}
+							]
+						}
+					]
+				},
+				{
+					"title": "RichTextEditor",
+					"key": "rteDefault",
+					"chapter": "buildingBlocks/rte",
+					"items": [
+						{
+							"key": "rteDefault",
+							"chapter": "buildingBlocks/rte",
+							"title": "Overview"
+						}
+					]
+				},
+				{
+					"title": "KPITag",
+					"key": "kpiTagDefault",
+					"chapter": "buildingBlocks/kpiTag",
+					"items": [
+						{
+							"key": "kpiTagDefault",
+							"chapter": "buildingBlocks/kpiTag",
+							"title": "Overview"
+						}
+					]
+				},
+				{
+					"title": "Page",
+					"key": "pageDefault",
+					"chapter": "buildingBlocks/page",
+					"items": [
+						{
+							"key": "pageDefault",
+							"chapter": "buildingBlocks/page",
+							"title": "Overview"
+						}
+					]
+				},
+				{
+					"title": "Flexible Column Layout Actions",
+					"key": "fclNavigationButtons",
+					"chapter": "buildingBlocks/features",
+					"items": [
+						{
+							"key": "fclNavigationButtons",
+							"chapter": "buildingBlocks/features",
+							"title": "Overview"
+						}
+					]
+				},
+				{
+					"title": "Share",
+					"key": "share",
+					"chapter": "buildingBlocks",
+					"items": [
+						{
+							"key": "share",
+							"chapter": "buildingBlocks",
+							"title": "Overview"
+						},
+						{
+							"key": "shareExtensibility",
+							"title": "Extensions",
+							"tags": "Share extensibility, share controller extension",
+							"chapter": "controllerExtensions"
+						}
+					]
+				},
+				{
+					"title": "Status",
+					"key": "statusDefault",
+					"chapter": "buildingBlocks/status",
+					"items": [
+						{
+							"key": "statusDefault",
+							"chapter": "buildingBlocks/status",
+							"title": "Overview"
+						}
+					]
+				},
+				{
+					"title": "Paginator",
+					"key": "paginatorDefault",
+					"chapter": "buildingBlocks/features",
+					"items": [
+						{
+							"key": "paginatorDefault",
+							"chapter": "buildingBlocks/features",
+							"title": "Overview"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Global Patterns",
+			"tags": "",
+			"icon": "sap-icon://action",
+			"key": "guidanceControllerExtensions",
+			"chapter": "controllerExtensions",
+			"items": [
+				{
+					"key": "guidanceControllerExtensions",
+					"chapter": "controllerExtensions",
+					"title": "Controller Extensions",
+					"tags": "load custom controller, override controller, extensionAPI, lifecycle hooks, event handlers, formatters, use building blocks in fragments, loadFragment"
+				},
+				{
+					"key": "editFlow",
+					"chapter": "controllerExtensions",
+					"title": "Draft Handling",
+					"tags": "invokeAction, bound action, unbound action, action with parameters, skip action parameter dialog"
+				},
+				{
+					"key": "guidanceSideEffects",
+					"chapter": "advancedFeatures/guidance",
+					"title": "Side Effects",
+					"tags": "Action, TriggerAction, CheckBox, Core.OperationAvailable, invalidate cached value help"
+				},
+				{
+					"key": "draftValidation",
+					"tags": "side effects, PrepareAction, back-end messages, table",
+					"title": "Draft Validation",
+					"chapter": "advancedFeatures/guidance"
+				},
+				{
+					"key": "routing",
+					"title": "Internal Navigation",
+					"tags": "navigation",
+					"chapter": "controllerExtensions"
+				},
+				{
+					"key": "intentBasedNavigation",
+					"title": "External Navigation",
+					"tags": "navigateOutbound, override in custom page",
+					"chapter": "controllerExtensions"
+				},
+				{
+					"key": "adaptI18n",
+					"chapter": "buildingBlocks/guidance",
+					"title": "Adapt i18n",
+					"tags": "override texts, i18n properties"
+				},
+				{
+					"key": "dynamicInstantiation",
+					"chapter": "controllerExtensions",
+					"title": "Dynamic Instantiation",
+					"tags": "Building blocks, controller"
+				},
+				{
+					"key": "fclListReport",
+					"chapter": "floorplans/floorplanListReport",
+					"title": "Flexible Column Layout"
+				}
+			]
+		},
+		{
+			"title": "List Report",
+			"tags": "LR List Report",
+			"icon": "sap-icon://table-view",
+			"key": "simpleListReport",
+			"chapter": "floorplans/floorplanListReport",
+			"items": [
+				{
+					"key": "simpleListReport",
+					"chapter": "floorplans/floorplanListReport",
+					"title": "Overview"
+				},
+				{
+					"key": "worklist",
+					"chapter": "floorplans/floorplanListReport",
+					"title": "Work List"
+				},
+				{
+					"key": "analyticalListReport",
+					"chapter": "floorplans/floorplanListReport",
+					"title": "Analytical List Page"
+				},
+				{
+					"title": "Extensions",
+					"chapter": "floorplans/floorplanListReport",
+					"key": "customHeaderListReport",
+					"items": [
+						{
+							"key": "customHeaderListReport",
+							"chapter": "floorplans/floorplanListReport",
+							"title": "Custom List Report Header"
+						},
+						{
+							"key": "customViewListReport",
+							"chapter": "floorplans/floorplanListReport",
+							"title": "Custom View in List Report",
+							"tags": ""
+						},
+						{
+							"title": "Custom KPI Tags in List Report",
+							"chapter": "floorplans/floorplanListReport",
+							"key": "customKPI"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Object Page",
+			"tags": "OP Object Page",
+			"icon": "sap-icon://switch-classes",
+			"key": "simpleObjectPage",
+			"chapter": "floorplans/floorplanObjectPage",
+			"items": [
+				{
+					"key": "simpleObjectPage",
+					"chapter": "floorplans/floorplanObjectPage",
+					"title": "Overview"
+				},
+				{
+					"key": "showHideContent",
+					"chapter": "floorplans/floorplanObjectPage",
+					"title": "Show/Hide Content",
+					"tags": "UI.PartOfPreview, show more, show details, show less"
+				},
+				{
+					"title": "Extensions",
+					"chapter": "floorplans/floorplanObjectPage",
+					"key": "customSection",
+					"items": [
+						{
+							"key": "customSection",
+							"chapter": "floorplans/floorplanObjectPage",
+							"title": "Custom Section",
+							"tags": "building block form element, building block table, table navigation, hide in edit mode"
+						},
+						{
+							"key": "customSubSection",
+							"chapter": "floorplans/floorplanObjectPage",
+							"title": "Custom Subsection",
+							"tags": "building block table, UI.CollectionFacet, UI.ReferenceFacet"
+						},
+						{
+							"key": "customAction",
+							"chapter": "floorplans/floorplanObjectPage",
+							"title": "Custom Action",
+							"tags": "action visibility, action enablement, hide in edit mode, secured execution"
+						},
+						{
+							"key": "customHeaderFacet",
+							"chapter": "floorplans/floorplanObjectPage",
+							"title": "Custom Header Facet",
+							"tags": "micro chart, column chart, bullet chart, data point, building block micro chart, building block form element"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Custom Page",
+			"tags": "Custom Page, dialog, custom dialog, building blocks in controller",
+			"icon": "sap-icon://developer-settings",
+			"chapter": "floorplans",
+			"key": "customPage",
+			"items": [
+				{
+					"key": "customPage",
+					"chapter": "floorplans",
+					"title": "Overview",
+					"tags": "custom page, blank page, layout page building block"
+				},
+				{
+					"key": "guidanceCustomApps",
+					"chapter": "buildingBlocks/guidance",
+					"title": "Building Blocks Usage",
+					"tags": "extend sap.fe.PageController, extend sap.fe.AppComponent, wrap FPM component, handling edit mode, metaPath, contextPath, navigation, sap.fe.macros"
+				},
+				{
+					"key": "guidanceOwnRootView",
+					"chapter": "buildingBlocks/guidance",
+					"title": "Using Own Root View",
+					"tags": "sap.fe.core.rootView.NavContainer, sap.fe.core.rootView.Fcl, flexible column layout"
+				},
+				{
+					"key": "customEditFlow",
+					"chapter": "controllerExtensions",
+					"title": "Draft Handling in Custom Page",
+					"tags": "custom page, edit flow, draft"
+				},
+				{
+					"key": "viewState",
+					"chapter": "controllerExtensions",
+					"title": "Custom State Handling",
+					"tags": ""
+				}
+			]
+		},
+		{
+			"title": "SAP Fiori Tools",
+			"icon": "sap-icon://SAP-icons-TNT/fiori-application",
+			"tags": "",
+			"key": "fioriTools",
+			"chapter": "overview",
+			"items": [
+				{
+					"key": "fioriTools",
+					"chapter": "overview",
+					"title": "Overview"
+				}
+			]
+		}
+	]
+}

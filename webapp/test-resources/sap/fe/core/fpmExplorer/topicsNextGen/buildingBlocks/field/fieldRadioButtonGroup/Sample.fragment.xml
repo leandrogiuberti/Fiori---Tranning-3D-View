@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox binding="{path:'/Booking(BookingUUID=\'1A757221A8E4645C17002DF03754AB66\')'}" class="sapUiTinyMarginTop" width="320px">
+		<Label text="Payment Method:" />
+		<macros:Field metaPath="PaymentMethod" id="FieldRadioButtonGroupPaymentMethod">
+			<formatOptions fieldEditStyle="RadioButtons" />
+		</macros:Field>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,26 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Micro Chart Dynamic Size"
+		introduction="The MicroChart building block enables you to render micro charts in different sizes."
+		documentation="74554b4ca1de49aea42e2c309946ba05"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.microChartDynamicSize.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="To define the size of the micro chart, you can use the 'size' property of the micro chart building block. Valid sizes are 'XS', 'S', 'M', and 'L'."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="microchart/MicroChartDynamicSize/Sample.fragment.xml" codeType="view" start="harveyball" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

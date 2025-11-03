@@ -1,0 +1,152 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.analyticalListReport",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/analyticalListReport/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.analyticalListReport.AnalyticalListReport"
+		},
+		"routing": {
+			"config": {
+				"controlId": "analyticalListReport"
+			},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "listPage",
+					"target": "listPage"
+				},
+				{
+					"pattern": "/Booking({key}):?query:",
+					"name": "objectPage",
+					"target": "objectPage"
+				}
+			],
+			"targets": {
+				"listPage": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"contextPath": "/Booking",
+							"entitySet": "Booking",
+							"variantManagement": "Page",
+							"initialLoad": "Enabled",
+							"navigation": {
+								"Booking": {
+									"detail": {
+										"route": "objectPage"
+									}
+								}
+							},
+							"views": {
+								"paths": [
+									{
+										"primary": [
+											{
+												"annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant"
+											}
+										],
+										"secondary": [
+											{
+												"annotationPath": "@com.sap.vocabularies.UI.v1.PresentationVariant"
+											}
+										],
+										"defaultPath": "both"
+									}
+								]
+							},
+							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.LineItem": {
+									"tableSettings": {
+										"type": "AnalyticalTable",
+										"enableExport": true
+									}
+								},
+								"@com.sap.vocabularies.UI.v1.SelectionFields": {
+									"layout": "CompactVisual",
+									"initialLayout": "Visual",
+									"filterFields": {
+										"FlightDate": {
+											"label": "Flight Date",
+											"availability": "Default",
+											"visualFilter": {
+												"valueList": "com.sap.vocabularies.Common.v1.ValueList#vlFlightDate"
+											}
+										},
+										"airline": {
+											"label": "Airline",
+											"availability": "Default",
+											"visualFilter": {
+												"valueList": "com.sap.vocabularies.Common.v1.ValueList#vlAirline"
+											}
+										}
+									}
+								}
+							},
+							"keyPerformanceIndicators": {
+								"KPI1": {
+									"entitySet": "Booking",
+									"qualifier": "myKPI1"
+								}
+							}
+						}
+					}
+				},
+				"objectPage": {
+					"type": "Component",
+					"id": "objectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"entitySet": "Booking",
+							"contextPath": "/Booking"
+						}
+					}
+				}
+			}
+		}
+	}
+}

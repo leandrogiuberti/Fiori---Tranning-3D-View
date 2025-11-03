@@ -1,0 +1,54 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<EntityContainer Name="EntityContainer">
+		<EntitySet Name="AbsoluteEntity" EntityType="sap.fe.core.Service.AbsoluteEntity" />
+		<Singleton Name="EntitiesSingleton" Type="sap.fe.core.Service.EntitiesSingleton" />
+	</EntityContainer>
+	<Annotations Target="sap.fe.core.Service.addRound(sap.fe.core.Service.RootEntity)">
+		<Annotation Term="Common.SideEffects">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>/sap.fe.core.Service.EntityContainer/EntitiesSingleton/BooleanProperty</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>/sap.fe.core.Service.EntityContainer/AbsoluteEntity</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+	<Annotations Target="sap.fe.core.Service.stopRound(sap.fe.core.Service.RootEntity)">
+		<Annotation Term="Common.SideEffects">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>/sap.fe.core.Service.EntityContainer/EntitiesSingleton/BooleanProperty</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>/sap.fe.core.Service.EntityContainer/AbsoluteEntity</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+	<Annotations Target="sap.fe.core.Service.clearRounds(sap.fe.core.Service.RootEntity)">
+		<Annotation Term="Common.SideEffects">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>/sap.fe.core.Service.EntityContainer/EntitiesSingleton/BooleanProperty</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>/sap.fe.core.Service.EntityContainer/AbsoluteEntity</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+</Schema>

@@ -1,0 +1,28 @@
+{
+    "sap.app": {
+        "id": "sap.esh.search.ui.sample.SearchLink",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "sap.esh.search.ui.sample.SearchLink.SearchLink",
+            "type": "XML"
+        },
+        "dependencies": {
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.esh.search.ui": {}
+            }
+        },
+        "config": {
+            "sample": {
+                "stretch": true,
+                "files": ["SearchLink.view.xml", "SearchLink.controller.js", "manifest.json"]
+            }
+        }
+    }
+}

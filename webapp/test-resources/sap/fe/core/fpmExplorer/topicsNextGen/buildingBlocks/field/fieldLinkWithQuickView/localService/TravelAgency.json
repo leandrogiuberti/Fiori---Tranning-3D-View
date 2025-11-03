@@ -1,0 +1,15 @@
+[
+	{
+		"AgencyID": "070001",
+		"City": "Rochester",
+		"CountryCode_code": "US",
+		"EMailAddress": "info@sunshine-travel.sap",
+		"Name": "Sunshine Travel",
+		"PhoneNumber": "+1 901-632-5620",
+		"PostalCode": "54323",
+		"Street": "134 West Street",
+		"WebAddress": "http://www.sunshine-travel.sap",
+		"Rating": "4",
+		"Recommendation": "88"
+	}
+]

@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox binding="{path:'/Booking(BookingUUID=\'7A757221A8E4645C17002DF03754AB66\')'}" class="sapUiTinyMarginTop" width="320px">
+		<Label text="Flight Price:" />
+		<macros:Field metaPath="FlightPrice" id="FieldNumberWitCurrencyFlightPrice" />
+		<Label text="Distance:" class="sapUiTinyMarginTop" />
+		<macros:Field metaPath="Distance" id="FieldNumberWitUnitDistance" />
+	</VBox>
+</core:FragmentDefinition>

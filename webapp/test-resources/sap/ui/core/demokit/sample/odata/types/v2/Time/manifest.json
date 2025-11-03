@@ -1,0 +1,46 @@
+{
+	"_version": "1.49.0",
+	"sap.app": {
+		"applicationVersion": {
+			"version": "1.141.0"
+		},
+		"description": "Example how to use OData V2 Edm.Time in SAPUI5 applications",
+		"dataSources": {
+			"default": {
+				"type": "JSON"
+			}
+		},
+		"id": "sap.ui.core.sample.odata.types.v2.Time",
+		"type": "application"
+	},
+	"sap.ui5": {
+		"config": {
+			"sample": {
+				"files": [
+					"Time.view.xml",
+					"Time.controller.js",
+					"manifest.json",
+					"Component.js"
+				]
+			}
+		},
+		"dependencies": {
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"handleValidation": true,
+		"models": {
+			"": {
+				"dataSource": "default",
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"rootView": {
+			"viewName": "sap.ui.core.sample.odata.types.v2.Time.Time",
+			"type": "XML"
+		}
+	}
+}

@@ -1,0 +1,37 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Form"
+		introduction="The Form building block enables you to render a form based on a FieldGroup annotation."
+		documentation="391aad28bfc64616abe2500a631391c1"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.formDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Define UI.FieldGroup Annotation"
+				text="To define the fields of the form, you can use the UI.FieldGroup annotation in your service definition. This annotation allows you to specify which properties should be included in the form."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" codeType="cds" start="#ApprovalData" end="]}" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Usage of Form Building Block"
+				text="To use a form, you need to define the metaPath pointing to a UI.FieldGroup annotation. You can also set a tile for the form."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="form/formDefault/Sample.fragment.xml" codeType="view" start="myForm" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

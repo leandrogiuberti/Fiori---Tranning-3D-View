@@ -1,0 +1,6 @@
+<Annotations Target="TravelService.Travel/to_Agency_AgencyID">
+	<Annotation Term="Common.Text" Path="to_Agency/Name">
+		<Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst" />
+	</Annotation>
+	...
+</Annotations>

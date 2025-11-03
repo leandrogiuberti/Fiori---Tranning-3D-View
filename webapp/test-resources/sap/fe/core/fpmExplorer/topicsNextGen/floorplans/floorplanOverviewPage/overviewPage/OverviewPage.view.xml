@@ -1,0 +1,70 @@
+<mvc:View
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:uxap="sap.uxap"
+>
+	<uxap:ObjectPageLayout>
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:actions>
+					<fpmExplorer:Link documentation="d59dbec411f04a64bd6d6dda898fdc84" header="true" />
+				</uxap:actions>
+				<uxap:heading>
+					<Title text="Floorplan Overview Page" />
+				</uxap:heading>
+
+				<uxap:snappedTitleOnMobile>
+					<Title text="Floorplan Overview Page" />
+				</uxap:snappedTitleOnMobile>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+
+		<uxap:sections>
+			<uxap:ObjectPageSection titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Introduction" mode="Expanded" titleUppercase="false">
+						<VBox class="sapUiTinyMarginTop">
+							<Text text="The Overview Page..." />
+							<Text text="The Overview Page..." />
+						</VBox>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<uxap:ObjectPageSection titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Sample" mode="Expanded" titleUppercase="false">
+						<Panel
+							headerText="Example of an Overview Page"
+							class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd"
+							expanded="true"
+						>
+							<NavContainer id="overviewPage" autoFocus="false" height="600px" />
+						</Panel>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<uxap:ObjectPageSection titleUppercase="false" title="Components">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Overview Page" mode="Expanded" titleUppercase="false">
+						<VBox class="sapUiTinyMarginTop">
+							<Text text="The Overview Page consists of ..." />
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="floorplanOverviewPage/overviewPage/manifest.json"
+									start="cards"
+									end="},"
+									codeType="manifest"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

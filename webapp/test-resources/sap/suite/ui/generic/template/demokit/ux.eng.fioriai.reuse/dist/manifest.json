@@ -1,0 +1,14 @@
+{
+	"sap.app": {
+		"id": "ux.eng.fioriai.reuse",
+		"type": "library"
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"libs": {}
+		},
+		"library": {
+			"css": false
+		}
+	}
+}

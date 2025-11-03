@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Custom Filters"
+		introduction="The filter bar displays the most suitable selection control for each field, based on the data type. You can customize the filter bar by using a different selection control if it better suits your use case."
+		documentation="2df783760a8e4540ad19ce5ec3ed91c8"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarCustom.Sample" type="XML" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Define Custom Filter Fields"
+				text="Define custom filter bars as FilterField controls inside FilterBar. The Key property points to the property from the service."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="filterBar/filterBarCustom/Sample.fragment.xml" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Define Custom Filter Bar via Manifest"
+				text="Alternatively, define a custom filter bar using the manifest configuration."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="filterBar/filterBarCustom/code/CustomFilterBar.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

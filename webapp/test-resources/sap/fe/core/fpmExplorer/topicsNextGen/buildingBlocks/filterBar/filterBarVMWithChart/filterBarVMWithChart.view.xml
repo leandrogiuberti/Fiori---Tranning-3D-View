@@ -1,0 +1,57 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Filter Bar with Variant Management and Chart"
+		introduction="Linking the FilterBar building block to the VariantManagement building block enables you to render a filter bar where users can save and manage different filter configurations. This example shows a chart with a filter bar that allows users to filter the data displayed in the chart."
+		documentation="33640ff8ccba4df48e23a92a25288651"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarVMWithChart.Sample" type="XML" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Variant Management Configuration"
+				text="Configure the variant management to control both the filter bar and chart by specifying their IDs in the 'for' property. This enables users to save and restore different combinations of filters and chart settings."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarVMWithChart/Sample.fragment.xml"
+						codeType="view"
+						start="macros:VariantManagement"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Filter Bar Configuration"
+				text="Create the filter bar with a specific ID that matches the variant management configuration. The filter bar will provide filtering capabilities for the chart."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarVMWithChart/Sample.fragment.xml"
+						codeType="view"
+						start="macros:FilterBar"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Chart Configuration"
+				text="Connect the chart to the filter bar using the 'filterBar' property. The chart will automatically update when filters are applied, and both components will be managed by the same variant management."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarVMWithChart/Sample.fragment.xml"
+						codeType="view"
+						start="macros:Chart"
+						end="8"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

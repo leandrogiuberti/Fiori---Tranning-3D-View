@@ -1,0 +1,17 @@
+<Annotation Term="UI.PresentationVariant" Qualifier="pvFlightDate">
+	<Record Type="UI.PresentationVariantType">
+		<PropertyValue Property="SortOrder">
+			<Collection>
+				<Record Type="Common.SortOrderType">
+					<PropertyValue Property="Property" PropertyPath="FlightDate" />
+					<PropertyValue Property="Descending" Bool="true" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="Visualizations">
+			<Collection>
+				<AnnotationPath>@UI.Chart#chartFlightDate</AnnotationPath>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

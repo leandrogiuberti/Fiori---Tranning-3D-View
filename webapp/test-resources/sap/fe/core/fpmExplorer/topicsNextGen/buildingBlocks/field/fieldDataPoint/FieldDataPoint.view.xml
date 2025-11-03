@@ -1,0 +1,35 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Data Point"
+		introduction="The Field building block enables you to render single data points."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldDataPoint.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Add a DataPoint annotation. The Value points to the property representing the data to be visualized, for example in the form of a Progress Indicator (Visualization: #Progress)."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="../../service/service.cds"
+						start="DataPoint #Recommendation"
+						end="},"
+						fileName="service.cds"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldDataPoint/code/dataPoint.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

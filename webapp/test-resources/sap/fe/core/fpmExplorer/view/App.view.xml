@@ -1,0 +1,84 @@
+<mvc:View
+	displayBlock="true"
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.controller.App"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Page enableScrolling="false">
+		<headerContent>
+			<Toolbar width="100%">
+				<Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<Image src="overview/images/sap-logo.svg" width="65px" />
+				<Title text="SAP Fiori Development Portal" class="sapUiVisibleOnlyOnDesktop sapUiHideOnPhone" />
+				<ToolbarSpacer />
+				<SearchField
+					id="searchField"
+					width="30%"
+					placeholder="Search Portal..."
+					maxLength="1000"
+					enableSuggestions="true"
+					search=".onSearch"
+					suggest=".onSuggest"
+					suggestionItems="{
+							path: 'sampleSearch>/',
+							sorter: { path: 'title' }
+						}"
+				>
+					<SuggestionItem
+						text="{sampleSearch>title}"
+						description="{sampleSearch>tagHit}"
+						icon="{sampleSearch>icon}"
+						key="{sampleSearch>key}"
+					/>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</SearchField>
+				<!-- <ToolbarSpacer /> -->
+				<MenuButton icon="sap-icon://official-service">
+					<menu>
+						<Menu>
+							<MenuItem text="Legal" icon="sap-icon://compare" press=".onLegalPress('legal')" />
+							<MenuItem text="Privacy" icon="sap-icon://locked" press=".onLegalPress('privacy')" />
+							<MenuItem text="Terms of Use" icon="sap-icon://document-text" press=".onLegalPress('terms_of_use')" />
+						</Menu>
+					</menu>
+				</MenuButton>
+				<Button icon="sap-icon://action-settings" type="Transparent" press="handleAppSettings('open')">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</Toolbar>
+		</headerContent>
+		<content>
+			<SplitContainer id="toolPage" initialDetail="navContainer" initialMaster="navigationList">
+				<masterPages>
+					<Page id="navigationList" showHeader="false" backgroundDesign="List">
+						<Tree id="navigationTree" items="{path: '/navigation'}" toggleOpenState="onPageChange">
+							<StandardTreeItem
+								title="{title}"
+								icon="{icon}"
+								type="{= !${items} ? 'Navigation' : 'Active' }"
+								press="onNavigationItemPress"
+							>
+								<customData>
+									<core:CustomData key="hasContent" value="{hasContent}" />
+								</customData>
+							</StandardTreeItem>
+						</Tree>
+					</Page>
+				</masterPages>
+				<detailPages>
+					<NavContainer id="navContainer" showHeader="false" />
+				</detailPages>
+			</SplitContainer>
+		</content>
+	</Page>
+</mvc:View>

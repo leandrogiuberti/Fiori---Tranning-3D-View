@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:macros="sap.fe.macros" xmlns:f="sap.f">
+	<HBox>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="Root entities"
+			subheader="Subtitle"
+			press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressRootEntitiesNoFilter"
+			id="tileId"
+		>
+			<TileContent unit="Unit">
+				<NumericContent id="numericId" icon="sap-icon://line-charts" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="Root entities with filter"
+			subheader="Subtitle"
+			press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressRootEntitiesWithFilter"
+		>
+			<TileContent unit="Unit">
+				<NumericContent value="2" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="Cumulative Totals"
+			subheader="Expenses"
+			press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressNavigation"
+		>
+			<TileContent unit="Unit">
+				<NumericContent value="12" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+	</HBox>
+</core:FragmentDefinition>

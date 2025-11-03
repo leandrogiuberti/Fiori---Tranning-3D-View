@@ -1,0 +1,42 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Chart"
+		introduction="The Chart building block enables you to render a chart based on an entitySet or a specific navigation property."
+		documentation="52d065ab8bb740c58c834a0c985e3b9e"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Chart Definition"
+				text="The UI.Chart annotation defines the chart type, dimensions, and measures."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartDefault/localService/service.cds" start="UI.Chart" end="};" />
+					<fpmExplorer:CodeLink file="chart/chartDefault/code/chartAnnotation.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Analytics Configuration"
+				text="Analytics aggregated properties define the measures that can be used in the chart."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="chart/chartDefault/localService/service.cds"
+						start="@Analytics.AggregatedProperty #min"
+						end="}"
+					/>
+					<fpmExplorer:CodeLink file="chart/chartDefault/code/analyticsProperties.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

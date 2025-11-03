@@ -1,0 +1,123 @@
+{
+	"_version": "0.1.0",
+	"sap.app": {
+		"_version": "0.1.0",
+		"id": "sap.ui.mdc.demokit.sample.Chart.MDCChartV4",
+		"type": "application",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"default": {
+				"uri": "https://odatav4server.internal.cfapps.sap.hana.ondemand.com/catalog/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "0.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.7.0",
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.mdc.demokit.sample.Chart.MDCChartV4.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "chart",
+					"name": "chart",
+					"target": [
+						"chart"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "chart",
+					"target": [
+						"chart"
+					]
+				}
+			],
+			"targets": {
+				"chart": {
+					"viewId": "Chart",
+					"viewName": "Chart"
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.ui.mdc.demokit.sample.Chart.MDCChartV4.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.70",
+			"libs": {
+				"sap.m": {
+					"lazy": true
+				},
+				"sap.ui.layout": {
+					"lazy": true
+				},
+				"sap.ui.fl": {
+					"lazy": false
+				},
+				"sap.ui.mdc": {
+					"lazy": true
+				}
+			}
+		},
+		"autoPrefixId": true,
+		"models": {
+			"": {
+				"dataSource": "default",
+				"preload": true,
+				"settings": {
+					"autoExpandSelect": true,
+					"operationMode": "Server",
+					"updateGroupId": "booksGroup"
+				},
+				"type": "sap.ui.model.odata.v4.ODataModel"
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"config": {
+			"sample": {
+				"files": [
+					"manifest.json",
+					"view/App.view.xml",
+					"view/Chart.view.xml",
+					"controller/App.controller.js",
+					"delegate/Books.FB.delegate.js",
+					"controller/Books.controller.js",
+					"index.html",
+					"Component.js"
+				]
+			}
+		}
+	}
+}

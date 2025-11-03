@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>RichTextEditorTinyMCE6 - sap.ui.richtexteditor</title>
+
+	<script src="../../../../resources/sap-ui-core.js"
+		type="text/javascript"
+		charset="UTF-8"
+		id="sap-ui-bootstrap"
+		data-sap-ui-libs="sap.ui.richtexteditor, sap.m"
+		data-sap-ui-theme="sap_fiori_3"
+		data-sap-ui-preload="async">
+	</script>
+
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			sap.ui.require([
+				"sap/ui/richtexteditor/RichTextEditor",
+				"sap/ui/richtexteditor/RichTextEditorFontFamily",
+				"sap/ui/richtexteditor/RTESplitButton",
+				"sap/m/App",
+				"sap/m/Page",
+				"sap/m/Button",
+				"sap/ui/core/InvisibleText"
+			], function (RTE, RichTextEditorFontFamily, RTESplitButton, App, Page, Button, InvisibleText) {
+
+				var oApp = new App("myApp", {
+					initialPage: "myPage"
+				});
+
+				var oRichTextEditor = new RTE("myRTE", {
+					width: "100%",
+					height: "300px",
+					showGroupFont: true,
+					showGroupUndo: true,
+					showGroupLink: true,
+					showGroupInsert: true,
+					value: `<p>fbdfbfdb<span style="font-family: 'book antiqua', palatino, serif;" >drheheheh</span>erherh<span style="font-family: arial black,avant garde;">erherherh<span style="font-size: large;">erherherher</span></span><a href="http://www.sap.com">This is a link</a></p>`,
+					customToolbar: true,
+					customButtons: [
+						new Button({
+							text: "Custom Button",
+							icon: "sap-icon://crm-sales",
+							type: "Transparent",
+							tooltip: "Custom button",
+							press: function () {
+								oRichTextEditor.setValue("Hello world!");
+							}
+						})
+					],
+					customFonts: [
+						new RichTextEditorFontFamily({
+							name: "google-fonts-press-start-2p",
+							text: "Press Start 2P",
+							value: "'Press Start 2P', cursive",
+							url: "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-pacifico",
+							text: "Pacifico",
+							value: "'Pacifico', cursive",
+							url: "https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-major-mono-display",
+							text: "Major Mono Display",
+							value: "'Major Mono Display', monospace",
+							url: "https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-tilt-prism",
+							text: "Tilt Prism",
+							value: "'Tilt Prism', display",
+							url: "https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-orbitron",
+							text: "Orbitron",
+							value: "'Orbitron', sans-serif",
+							url: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-bungee-shade",
+							text: "Bungee Shade",
+							value: "'Bungee Shade', display",
+							url: "https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-monoton",
+							text: "Monoton",
+							value: "'Monoton', display",
+							url: "http://fonts.googleapis.com/css2?family=Monoton&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-caveat",
+							text: "Caveat",
+							value: "'Caveat', cursive",
+							url: "http://fonts.googleapis.com/css2?family=Caveat&display=swap"
+						}),
+						new RichTextEditorFontFamily({
+							name: "google-fonts-fredericka-the-great",
+							text: "Fredericka the Great",
+							value: "'Fredericka the Great', cursive",
+							url: "http://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap"
+						})
+					]
+				});
+
+				var oInvisibleText = new InvisibleText({
+					id: "textForRTE",
+					text: "RichTextEditor with a custom toolbar",
+				});
+				oRichTextEditor.addAriaLabelledBy(oInvisibleText);
+
+				// This timeout is needed because the custom toolbar must be rendered before adding new groups in it.
+				setTimeout(function() {
+					oRichTextEditor.addButtonGroup("styles");
+					oRichTextEditor.addButtonGroup("table");
+				}, 1000);
+
+				var oPage = new Page("myPage", {
+					title: "Fully featured RichTextEditorTinyMCE7 with custom toolbar and custom fonts",
+					contentOnlyBusy: true,
+					content: [
+						oInvisibleText,
+						oRichTextEditor
+					]
+				});
+
+				oApp.addPage(oPage).placeAt("content");
+			});
+		});
+	</script>
+</head>
+<body class="sapUiBody">
+<div id="content"></div>
+</body>
+</html>

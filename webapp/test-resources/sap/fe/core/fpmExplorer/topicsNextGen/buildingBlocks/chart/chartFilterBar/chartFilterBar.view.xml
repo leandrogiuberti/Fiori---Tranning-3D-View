@@ -1,0 +1,27 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Chart with Filter Bar"
+		introduction="Linking the Chart building block to the FilterBar building block enables you to provide filtering capabilities. This example shows a chart with a filter bar that allows users to filter the data displayed in the chart."
+		documentation="52d065ab8bb740c58c834a0c985e3b9e"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartFilterBar.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="The Chart building block can be connected to a FilterBar using the filterBar property to enable interactive filtering."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartFilterBar/Sample.fragment.xml" codeType="view" start=":FilterBar" end="9" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

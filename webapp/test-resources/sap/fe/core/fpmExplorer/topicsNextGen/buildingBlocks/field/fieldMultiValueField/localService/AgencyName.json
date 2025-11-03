@@ -1,0 +1,82 @@
+[
+	{
+		"AgencyID": "070001",
+		"Name": "Sunshine Travel"
+	},
+	{
+		"AgencyID": "070002",
+		"Name": "Fly High"
+	},
+	{
+		"AgencyID": "070003",
+		"Name": "Happy Hopping"
+	},
+	{
+		"AgencyID": "070004",
+		"Name": "Pink Panther"
+	},
+	{
+		"AgencyID": "070005",
+		"Name": "Your Choice"
+	},
+	{
+		"AgencyID": "070006",
+		"Name": "Bella Italia"
+	},
+	{
+		"AgencyID": "070007",
+		"Name": "Hot Socks Travel"
+	},
+	{
+		"AgencyID": "070008",
+		"Name": "Burns Nuclear"
+	},
+	{
+		"AgencyID": "070009",
+		"Name": "Honauer Reisen GmbH"
+	},
+	{
+		"AgencyID": "070010",
+		"Name": "Travel from Walldorf"
+	},
+	{
+		"AgencyID": "070011",
+		"Name": "Voyager Enterprises"
+	},
+	{
+		"AgencyID": "070012",
+		"Name": "Ben McCloskey Ltd."
+	},
+	{
+		"AgencyID": "070013",
+		"Name": "Pillepalle Trips"
+	},
+	{
+		"AgencyID": "070014",
+		"Name": "Kangeroos"
+	},
+	{
+		"AgencyID": "070015",
+		"Name": "Bavarian Castle"
+	},
+	{
+		"AgencyID": "070016",
+		"Name": "Ali's Bazar"
+	},
+	{
+		"AgencyID": "070017",
+		"Name": "Super Agency"
+	},
+	{
+		"AgencyID": "070018",
+		"Name": "Wang Chong"
+	},
+	{
+		"AgencyID": "070019",
+		"Name": "Around the World"
+	},
+	{
+		"AgencyID": "070020",
+		"Name": "No Return"
+	}
+]

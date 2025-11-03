@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:macros="sap.fe.macros" xmlns:f="sap.f">
+	<HBox>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="All Travel entities"
+			subheader="No filtering"
+			press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressTravelEntitiesNoFilter"
+			id="tileId"
+		>
+			<TileContent unit="Travels">
+				<NumericContent id="numericId" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="Open Travel entities"
+			subheader="Status Open"
+			press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressTravelEntitiesWithFilter"
+		>
+			<TileContent unit="Travels">
+				<NumericContent value="2" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+		<GenericTile
+			class="sapUiTinyMarginBegin"
+			header="Other Actions..."
+			subheader="...to be executed"
+			press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressNavigation"
+		>
+			<TileContent unit="Travels">
+				<NumericContent value="x" withMargin="false" />
+			</TileContent>
+		</GenericTile>
+	</HBox>
+</core:FragmentDefinition>

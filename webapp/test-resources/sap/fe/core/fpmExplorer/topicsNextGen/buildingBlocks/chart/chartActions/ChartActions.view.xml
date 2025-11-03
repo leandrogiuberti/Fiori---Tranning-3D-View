@@ -1,0 +1,57 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.chartActions.ChartActions"
+>
+	<fpmExplorer:Page
+		title="Custom Actions"
+		introduction="The Chart building block enables you to define custom actions as toolbar buttons and menu items. This example shows a standalone action, a selection-dependent action, and an action group."
+		documentation="52d065ab8bb740c58c834a0c985e3b9e"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartActions.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Custom Actions"
+				text="Add custom actions using macrosChart:Action elements within the macros:actions aggregation. These actions can be positioned relative to annotation-based actions."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartActions/Sample.fragment.xml" codeType="view" start=":actions" end="/>" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Selection-Dependent Actions"
+				text="Create actions that are only enabled when chart items are selected by setting requiresSelection='true'."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartActions/Sample.fragment.xml" start="requiresSelection" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Action Groups"
+				text="Group related actions together using macrosChart:ActionGroup to create dropdown menus in the chart toolbar."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartActions/Sample.fragment.xml" start=":ActionGroup" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Action Event Handlers"
+				text="Implement event handlers in the controller to respond to action presses. Selection-dependent actions can access selected chart contexts."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="chart/chartActions/ChartActions.controller.js"
+						start="onPressAction"
+						codeType="ts"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

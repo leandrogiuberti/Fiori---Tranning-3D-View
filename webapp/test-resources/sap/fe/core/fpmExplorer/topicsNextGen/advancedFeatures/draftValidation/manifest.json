@@ -1,0 +1,99 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/draftValidation/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.draftValidation.DraftValidation"
+		},
+		"routing": {
+			"config": {
+				"controlId": "draftValidation"
+			},
+			"routes": [
+				{
+					"pattern": "/RootEntity({key}):?query:",
+					"name": "Detail",
+					"target": "Detail"
+				}
+			],
+			"targets": {
+				"Detail": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 1,
+					"options": {
+						"settings": {
+							"contextPath": "/RootEntity",
+							"editableHeaderContent": false,
+							"sectionLayout": "Page",
+							"content": {
+								"header": {
+									"anchorBarVisible": false
+								},
+								"body": {
+									"sections": {
+										"SimpleField": {
+											"template": "sap.fe.core.fpmExplorer.SimpleField",
+											"title": "Field Example"
+										},
+										"SimpleTable": {
+											"template": "sap.fe.core.fpmExplorer.SimpleTable",
+											"title": "Table Bound to an Entity Set without Global SideEffects"
+										},
+										"SimpleTableWithSE": {
+											"template": "sap.fe.core.fpmExplorer.SimpleTableWithSE",
+											"title": "Table Bound to an Entity Set with Global SideEffects"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

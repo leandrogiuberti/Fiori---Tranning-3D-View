@@ -1,0 +1,37 @@
+{
+	"sample": {
+		"type": "Component",
+		"id": "sample",
+		"name": "sap.fe.templates.ObjectPage",
+		"options": {
+			"settings": {
+				"contextPath": "/Travel",
+				"controlConfiguration": {
+					"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+						"actions": {
+							"customAction": {
+								"press": "sap.fe.core.fpmExplorer.customTableAction.CustomAction.onPressAction",
+								"text": "My Custom Action"
+							},
+							"menuAction1": {
+								"text": "Menu Action 1",
+								"press": "sap.fe.core.fpmExplorer.customTableAction.CustomAction.onPressMenuAction"
+							},
+							"menuAction2": {
+								"text": "Menu Action 2",
+								"press": "sap.fe.core.fpmExplorer.customTableAction.CustomAction.onPressMenuAction"
+							},
+							"DataFieldForActionGroup::MyActionGroup": {
+								"menu": ["menuAction1", "menuAction2"],
+								"position": {
+									"anchor": "customAction",
+									"position": "After"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

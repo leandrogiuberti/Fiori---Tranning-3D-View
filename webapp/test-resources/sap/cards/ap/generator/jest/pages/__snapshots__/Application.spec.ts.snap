@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application should initialize and update the freeStyle Model for dialog 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanItemTP",
+      "name": "C_SalesPlanItemTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": false,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`Application should initialize and update the freeStyle Model for dialog 2`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanItemTP",
+      "name": "C_SalesPlanItemTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+  "entitySetWithObjectContextList": [
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-8091d302d596',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-8091d302d596',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-5cd256c05529',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-5cd256c05529',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-540e5299d527',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-540e5299d527',IsActiveEntity=true)",
+    },
+  ],
+  "isApplyServiceDetailsEnabled": true,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`Application test for OData V4 based freestyle application 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanItemTP",
+      "name": "C_SalesPlanItemTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+  "entitySetWithObjectContextList": [
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-8091d302d596',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-8091d302d596',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-5cd256c05529',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-5cd256c05529',IsActiveEntity=true)",
+    },
+    {
+      "labelWithValue": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-540e5299d527',IsActiveEntity=true)",
+      "name": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a09f-540e5299d527',IsActiveEntity=true)",
+    },
+  ],
+  "isApplyServiceDetailsEnabled": true,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;

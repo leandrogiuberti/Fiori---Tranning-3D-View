@@ -1,0 +1,44 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Chart Selection Mode"
+		introduction="The Chart building block provides different selection modes that enable you to control how users can interact with chart data points. This example shows the multiple selection mode and the single selection mode."
+		documentation="653ed0f4f0d743dbb33ace4f68886c4e"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartSelectionMode.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Multiple Selection Mode"
+				text="Set selectionMode='Multiple' to allow users to select multiple data points in the chart. This is useful for comparing multiple values or performing bulk operations."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="chart/chartSelectionMode/Sample.fragment.xml"
+						start="chartSelectionModeMultipleSample"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Single Selection Mode"
+				text="Set selectionMode='Single' to allow users to select only one data point at a time. This is the default behavior and is useful for detailed analysis of individual values."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="chart/chartSelectionMode/Sample.fragment.xml"
+						start="chartSelectionModeSingleSample"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>XMLView - sap.ui.core.mvc - Extended Event Handler Syntax</title>
+
+		<script id="sap-ui-bootstrap"
+			data-sap-ui-async="true"
+			data-sap-ui-compat-version="edge"
+			data-sap-ui-on-init="main"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-resource-roots='{
+				"mvctest": ""
+			}'
+			src="../../../../../../resources/sap-ui-core.js"
+			>
+		</script>
+
+		<script>
+			function main() {
+				sap.ui.require(["sap/ui/core/mvc/XMLView"], async (XMLView) => {
+					const oView = await XMLView.create({
+						viewName:"mvctest.views.ExtendedXMLViewEventHandlerSyntax"
+					});
+					oView.placeAt("content");
+				});
+			}
+		</script>
+	</head>
+
+	<body class="sapUiBody">
+		<h1>Test Page for Extended XMLView Event Handler Syntax</h1>
+		<div id="content"></div>
+	</body>
+</html>

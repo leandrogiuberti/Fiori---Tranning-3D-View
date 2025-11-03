@@ -1,0 +1,3012 @@
+{
+	"navigation": [
+		{
+			"key": "introduction",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "overview"
+		},
+		{
+			"key": "portal",
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "overview"
+		},
+		{
+			"key": "fioriTools",
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "overview"
+		},
+		{
+			"key": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "overview"
+		},
+		{
+			"key": "simpleListReport",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/simpleListReport/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				}
+			]
+		},
+		{
+			"key": "worklist",
+			"topic": "floorplans",
+			"nextGen": true,
+			"skipHeader": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/worklist/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			]
+		},
+		{
+			"key": "fclListReport",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/fclListReport/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				}
+			]
+		},
+		{
+			"key": "analyticalListReport",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/analyticalListReport/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/analyticalListReport/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			]
+		},
+		{
+			"key": "customHeaderListReport",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customHeaderListReport/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customHeaderListReport/LRExtend.controller.js",
+					"name": "LRExtend.controller.js",
+					"key": "LRExtend.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customHeaderListReport/CustomHeaderExpanded.fragment.xml",
+					"name": "CustomHeaderExpanded.fragment.xml",
+					"key": "CustomHeaderExpanded.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customHeaderListReport/CustomHeaderCollapsed.fragment.xml",
+					"name": "CustomHeaderCollapsed.fragment.xml",
+					"key": "CustomHeaderCollapsed.fragment.xml"
+				}
+			]
+		},
+		{
+			"key": "customViewListReport",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customViewListReport/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customViewListReport/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customViewListReport/CustomViewWithList.fragment.xml",
+					"name": "CustomViewWithList.fragment.xml",
+					"key": "CustomViewWithList.fragment.xml"
+				}
+			]
+		},
+		{
+			"key": "uiConfigListReport",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"topic": "floorplans"
+		},
+		{
+			"key": "floorplanObjectPage",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "floorplans"
+		},
+		{
+			"key": "simpleObjectPage",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				}
+			]
+		},
+		{
+			"key": "showHideContent",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/showHideContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			]
+		},
+		{
+			"key": "customAction",
+			"topic": "floorplans",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/localService/service.cds",
+					"name": "localService.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/localService/Travel.js",
+					"name": "Travel.js",
+					"key": "Travel.js"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/extendOP.controller.js",
+					"name": "extendOP.controller.js",
+					"key": "extendOP.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/localService/EntitiesSingleton.json",
+					"name": "EntitiesSingleton.json",
+					"key": "EntitiesSingleton.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customAction/CustomAction.js",
+					"name": "CustomAction.js",
+					"key": "CustomAction.js"
+				}
+			]
+		},
+		{
+			"key": "customHeaderFacet",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetBuildingBlockMicroChart.fragment.xml",
+					"name": "CustomHeaderFacetBuildingBlockMicroChart.fragment.xml",
+					"key": "CustomHeaderFacetBuildingBlockMicroChart.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetBuildingBlockMicroChartEdit.fragment.xml",
+					"name": "CustomHeaderFacetBuildingBlockMicroChartEdit.fragment.xml",
+					"key": "CustomHeaderFacetBuildingBlockMicroChartEdit.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetBuildingBlockFormElement.fragment.xml",
+					"name": "CustomHeaderFacetBuildingBlockFormElement.fragment.xml",
+					"key": "CustomHeaderFacetBuildingBlockFormElement.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetBuildingBlockFormElementEdit.fragment.xml",
+					"name": "CustomHeaderFacetBuildingBlockFormElementEdit.fragment.xml",
+					"key": "CustomHeaderFacetBuildingBlockFormElementEdit.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetColumnChart.fragment.xml",
+					"name": "CustomHeaderFacetColumnChart.fragment.xml",
+					"key": "CustomHeaderFacetColumnChart.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetDataPoint.fragment.xml",
+					"name": "CustomHeaderFacetDataPoint.fragment.xml",
+					"key": "CustomHeaderFacetDataPoint.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetDataPointEdit.fragment.xml",
+					"name": "CustomHeaderFacetDataPointEdit.fragment.xml",
+					"key": "CustomHeaderFacetDataPointEdit.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetMicroChart.fragment.xml",
+					"name": "CustomHeaderFacetMicroChart.fragment.xml",
+					"key": "CustomHeaderFacetMicroChart.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customHeaderFacet/CustomHeaderFacetMicroChartEdit.fragment.xml",
+					"name": "CustomHeaderFacetMicroChartEdit.fragment.xml",
+					"key": "CustomHeaderFacetMicroChartEdit.fragment.xml"
+				}
+			],
+			"topic": "floorplans"
+		},
+		{
+			"key": "uiConfigObjectPage",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"topic": "floorplans"
+		},
+		{
+			"key": "overviewPage",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "floorplans"
+		},
+		{
+			"key": "overviewPageOverview",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"topic": "floorplans"
+		},
+		{
+			"key": "buildingBlockOverview",
+			"nextGen": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "guidance",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "guidanceCustomApps",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceCustomApps/code/Component.js",
+					"name": "Component.js",
+					"key": "Component.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceCustomApps/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceCustomApps/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceCustomApps/code/SamplePage.controller.js",
+					"name": "SamplePage.controller.js",
+					"key": "SamplePage.controller.js"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "adaptI18n",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"topic": "buildingBlocks",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/adaptI18n/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/adaptI18n/i18n/i18n.properties",
+					"name": "i18n.properties",
+					"key": "i18n.properties"
+				}
+			]
+		},
+		{
+			"key": "singletonDefault",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/SingletonDefault.view.xml",
+					"name": "SingletonDefault.view.xml",
+					"key": "SingletonDefault.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/localService/User.json",
+					"name": "User.json",
+					"key": "User.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/localService/SingletonPropertyFields.json",
+					"name": "SingletonPropertyFields.json",
+					"key": "SingletonPropertyFields.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonDefault/SingletonDefault.controller.js",
+					"name": "Singleton.controller.js",
+					"key": "SingletonDefault.controller.js"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "singletonColumn",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonColumn/SingletonColumn.view.xml",
+					"name": "SingletonColumn.view.xml",
+					"key": "SingletonColumn.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonColumn/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonColumn/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonColumn/localService/User.json",
+					"name": "User.json",
+					"key": "User.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/guidance/singletonColumn/SingletonColumn.controller.js",
+					"name": "Singleton.controller.js",
+					"key": "SingletonColumn.controller.js"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "guidanceOwnRootView",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceOwnRootView/OwnRootView.view.xml",
+					"name": "OwnRootView.view.xml",
+					"key": "OwnRootView.view.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/guidance/guidanceOwnRootView/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "field",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldAvatar",
+			"nextGen": true,
+			"experimental": false,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldAvatar/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldAvatar/localService/service.cds",
+					"name": "avatar.cds",
+					"key": "avatar.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldAvatar/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldCheckbox",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldCheckbox/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldCheckbox/localService/service.cds",
+					"name": "checkbox.cds",
+					"key": "checkbox.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldCheckbox/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldContact",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldContact/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/TravelAgency.json",
+					"name": "TravelAgency.json",
+					"key": "TravelAgency.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldDataPoint",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldDataPoint/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/TravelAgency.json",
+					"name": "TravelAgency.json",
+					"key": "TravelAgency.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldDatePicker",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldDatePicker/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldDateTimePicker",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldDateTimePicker/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldDateTimePicker/localService/service.cds",
+					"name": "dateTime.cds",
+					"key": "dateTime.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldFile",
+			"nextGen": true,
+			"experimental": false,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldFile/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldFile/localService/service.cds",
+					"name": "fieldFile.cds",
+					"key": "fieldFile.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldFile/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldRadioButtonGroup",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldRadioButtonGroup/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				},
+				{
+					"url": "/service/Payment.json",
+					"name": "Payment.json",
+					"key": "Payment.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldRatingIndicator",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldRatingIndicator/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/TravelAgency.json",
+					"name": "TravelAgency.json",
+					"key": "TravelAgency.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldTimePicker",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldTimePicker/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldTimePicker/localService/service.cds",
+					"name": "time.cds",
+					"key": "time.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldDefault",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldInputMask",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldInputMask/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldInputMask/localService/service.cds",
+					"name": "inputMask.cds",
+					"key": "inputMask.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldInputMask/localService/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldInputWithValueHelp",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldInputWithValueHelp/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldLink",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldLink/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldLinkWithQuickView",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldLinkWithQuickView/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldLinkWithQuickView/localService/service.cds",
+					"name": "linkWithQuickView.cds",
+					"key": "linkWithQuickView.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldLinkWithQuickView/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldLinkWithQuickView/localService/TravelAgency.json",
+					"name": "TravelAgency.json",
+					"key": "TravelAgency.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldMasked",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMasked/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMasked/localService/service.cds",
+					"name": "masked.cds",
+					"key": "masked.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMasked/localService/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldMultiLineText",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMultiLineText/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldNumberWithUnitOrCurrencyAligned",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldNumberWithUnitOrCurrencyAligned/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldNumberWithUnitOrCurrencyAligned/localService/service.cds",
+					"name": "fieldWithUnitOrCurrency.cds",
+					"key": "fieldWithUnitOrCurrency.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldNumberWithUnitOrCurrencyAligned/localService/Booking.json",
+					"name": "Booking.json",
+					"key": "Booking.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldObjectStatus",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldObjectStatus/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldFormatOptions",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/field/fieldFormatOptions/FieldFormatOptions.view.xml",
+					"name": "FieldFormatOptions.view.xml",
+					"key": "FieldFormatOptions.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/field/fieldFormatOptions/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/field/fieldFormatOptions/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/field/fieldFormatOptions/localService/UnitOfMeasure.json",
+					"name": "UnitOfMeasure.json",
+					"key": "UnitOfMeasure.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/field/fieldFormatOptions/localService/FixedValueListEntity.json",
+					"name": "FixedValueListEntity.json",
+					"key": "FixedValueListEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fieldMultiValueField",
+			"topic": "buildingBlocks",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMultiValueField/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMultiValueField/FieldMultiValueField.view.xml",
+					"name": "FieldMultiValueField.view.xml",
+					"key": "FieldMultiValueField.view.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/field/fieldMultiValueField/FieldMultiValueField.controller.js",
+					"name": "FieldMultiValueField.controller.js",
+					"key": "FieldMultiValueField.controller.js"
+				}
+			]
+		},
+		{
+			"key": "form",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "formDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/form/formDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "formCustom",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/form/formCustom/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "formElementLabel",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/formElement/formElementLabel/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "table",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "treeTable",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/treeTable/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/treeTable/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/treeTable/localService/Products.json",
+					"name": "Products.json",
+					"key": "Products.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableAnalytic",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableAnalytic/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableAnalytic/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableAnalytic/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableUpload",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableUpload/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableUpload/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableHighlighting",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableHighlighting/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableHighlighting/localService/service.cds",
+					"name": "criticality.cds",
+					"key": "criticality.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableHighlighting/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableHighlighting/localService/TravelStatus.json",
+					"name": "TravelStatus.json",
+					"key": "TravelStatus.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableMassEdit",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableMassEdit/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableQuickVariants",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableQuickVariants/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableQuickVariants/localService/service.cds",
+					"name": "quickVariants.cds",
+					"key": "quickVariants.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableQuickVariants/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableMessages",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/table/tableMessages/TableMessages.view.xml",
+					"name": "TableMessages.view.xml",
+					"key": "TableMessages.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/table/tableMessages/TableMessages.controller.js",
+					"name": "TableMessages.controller.js",
+					"key": "TableMessages.controller.js"
+				},
+				{
+					"url": "/topics/buildingBlocks/table/tableMessages/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/table/tableMessages/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/table/tableMessages/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tableFilterBar",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tableFilterBar/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "tablePublicAPIs",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tablePublicAPIs/TablePublicAPIs.controller.js",
+					"name": "TablePublicAPIs.controller.js",
+					"key": "TablePublicAPIs.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/tablePublicAPIs/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBar",
+			"experimental": false,
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarDefault",
+			"experimental": false,
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/ValueHelpEntity.js",
+					"name": "ValueHelpEntity.js",
+					"key": "ValueHelpEntity.js"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarDefaultValue",
+			"experimental": false,
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarDefaultValue/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarDefaultValue/FilterBarDefaultValue.controller.js",
+					"name": "filterBarDafaultValue.controller.js",
+					"key": "filterBarDefaultValue.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarDefaultValue/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarSVandAnnotationDefaults",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/FilterBarSVandAnnotationDefaults.view.xml",
+					"name": "filterBarSVandAnnotationDefaults.view.xml",
+					"key": "filterBarSVandAnnotationDefaults.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/FilterBarSVandAnnotationDefaults.controller.js",
+					"name": "filterBarSVandAnnotationDefaults.controller.js",
+					"key": "filterBarSVandAnnotationDefaults.controller.js"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/localService/ValueHelpEntity.js",
+					"name": "ValueHelpEntity.js",
+					"key": "ValueHelpEntity.js"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarSVandAnnotationDefaults/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarCustom",
+			"experimental": false,
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarCustom/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarCustom/CustomRangeFilter.fragment.xml",
+					"name": "CustomRangeFilter.fragment.xml",
+					"key": "CustomRangeFilter.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarCustom/CustomFilter.js",
+					"name": "CustomFilter.js",
+					"key": "CustomFilter.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarCustom/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarVMWithTable",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarVMWithTable/FilterBarVMWithTable.view.xml",
+					"name": "FilterBarVMWithTable.view.xml",
+					"key": "FilterBarVMWithTable.view.xml"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarVMWithTable/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/buildingBlocks/filterBar/filterBarVMWithTable/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarVMWithChart",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarVMWithChart/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarVMWithChart/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarVMWithChart/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarParameterizedWithTable",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarParameterizedWithTable/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarParameterizedWithTable/localService/metadata.xml",
+					"name": "parameterizedMetadata.xml",
+					"key": "parameterizedMetadata.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarParameterizedWithTable/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "filterBarPublicAPIs",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarPublicAPIs/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarPublicAPIs/Sample.controller.js",
+					"name": "Sample.controller.js",
+					"key": "Sample.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarPublicAPIs/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/filterBar/filterBarPublicAPIs/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "microchart",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "microChartDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDefault/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDefault/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDefault/localService/ChildEntity.json",
+					"name": "ChildEntity.json",
+					"key": "ChildEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDefault/localService/CreditLimitDetails.json",
+					"name": "CreditLimitDetails.json",
+					"key": "CreditLimitDetails.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "microChartDynamicSize",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDynamicSize/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDynamicSize/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDynamicSize/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDynamicSize/localService/ChildEntity.json",
+					"name": "ChildEntity.json",
+					"key": "ChildEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartDynamicSize/localService/CreditLimitDetails.json",
+					"name": "CreditLimitDetails.json",
+					"key": "CreditLimiitDetails.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "microChartShowOnlyChart",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartShowOnlyChart/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartShowOnlyChart/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartShowOnlyChart/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartShowOnlyChart/localService/ChildEntity.json",
+					"name": "ChildEntity.json",
+					"key": "ChildEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/microchart/microChartShowOnlyChart/localService/CreditLimitDetails.json",
+					"name": "CreditLimitDetails.json",
+					"key": "CreditLimiitDetails.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chart",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartDefault/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartDefault/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartDefault/localService/ChildEntity.json",
+					"name": "ChildEntity.json",
+					"key": "ChildEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartControlLevelVariant",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartControlLevelVariant/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartControlLevelVariant/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartControlLevelVariant/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartFilterBar",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartFilterBar/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartFilterBar/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartFilterBar/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartFilterBar/localService/status.json",
+					"name": "status.json",
+					"key": "status.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartSelectionMode",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartSelectionMode/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartSelectionMode/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartSelectionMode/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartQualifier",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartQualifier/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartQualifier/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartQualifier/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartActions",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartActions/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartActions/ChartActions.controller.js",
+					"name": "ChartActions.controller.js",
+					"key": "ChartActions.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartActions/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartActions/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "chartPublicAPIs",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartPublicAPIs/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartPublicAPIs/ChartPublicAPIs.controller.js",
+					"name": "ChartPublicAPIs.controller.js",
+					"key": "ChartPublicAPIs.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartPublicAPIs/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/chart/chartPublicAPIs/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "rte",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "rteDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/richTextEditor/rteDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "status",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "statusDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/status/statusDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/status/statusDefault/Default.controller.js",
+					"name": "Default.controller.js",
+					"key": "Default.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "kpiTag",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "kpiTagDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/kpiTag/kpiTagDefault/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/kpiTag/kpiTagDefault/Main.controller.js",
+					"name": "Main.controller.js",
+					"key": "Main.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "page",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "pageDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/page/pageDefault/Sample.view.xml",
+					"name": "Sample.view.xml",
+					"key": "Sample.view.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/page/pageDefault/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "features",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "fclNavigationButtons",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/fcl/fclNavigationButtons/Sample.view.xml",
+					"name": "Sample.view.xml",
+					"key": "Sample.view.xml"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "share",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"_hash": "#Share-Overview",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/share/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "paginatorDefault",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/paginator/paginatorDefault/Sample.view.xml",
+					"name": "Sample.view.xml",
+					"key": "Sample.view.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/paginator/paginatorDefault/Paginator.controller.js",
+					"name": "Paginator.controller.js",
+					"key": "Paginator.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customElementsOverview",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customSection",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/CustomSectionFlightMap.fragment.xml",
+					"name": "CustomSectionFlightMap.fragment.xml",
+					"key": "CustomSectionFlightMap.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "floorplans"
+		},
+		{
+			"key": "customSubSection",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Travel(TravelID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSubSection/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSubSection/CustomSubSectionFlightMap.fragment.xml",
+					"name": "CustomSubSectionFlightMap.fragment.xml",
+					"key": "CustomSubSectionFlightMap.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanObjectPage/customSection/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "floorplans"
+		},
+		{
+			"key": "customActionContent",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "RootEntity(ID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topics/customElements/customAction/customActionContent/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/EntitiesSingleton.json",
+					"name": "EntitiesSingleton.json",
+					"key": "EntitiesSingleton.json"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/ChildEntity.json",
+					"name": "ChildEntity.json",
+					"key": "ChildEntity.json"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/CustomAction.js",
+					"name": "CustomAction.js",
+					"key": "CustomAction.js"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/extendOP.controller.js",
+					"name": "extendOP.controller.js",
+					"key": "extendOP.controller.js"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/RootEntity.js",
+					"name": "RootEntity.js",
+					"key": "RootEntity.js"
+				},
+				{
+					"url": "/topics/customElements/customAction/customActionContent/localService/ChildEntity.js",
+					"name": "ChildEntity.js",
+					"key": "ChildEntity.js"
+				}
+			],
+			"topic": "customElements"
+		},
+		{
+			"key": "customColumn",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/customColumn/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/customColumn/CustomColumn.fragment.xml",
+					"name": "CustomColumn.fragment.xml",
+					"key": "CustomColumn.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/customColumn/localService/service.cds",
+					"name": "localService.cds",
+					"key": "localService.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customTableAction",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/buildingBlocks/table/customTableAction/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customFormElementContent",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "RootEntity(ID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topics/customElements/customFormElement/customFormElementContent/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/customElements/customFormElement/customFormElementContent/CustomFormElement1.fragment.xml",
+					"name": "CustomFormElement1.fragment.xml",
+					"key": "CustomFormElement1.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFormElement/customFormElementContent/CustomFormElement2.fragment.xml",
+					"name": "CustomFormElement2.fragment.xml",
+					"key": "CustomFormElement2.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFormElement/customFormElementContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/customElements/customFormElement/customFormElementContent/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customFilterContent",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/CustomStringFilter.fragment.xml",
+					"name": "CustomStringFilter.fragment.xml",
+					"key": "CustomStringFilter.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/CustomRatingFilter.fragment.xml",
+					"name": "CustomRatingFilter.fragment.xml",
+					"key": "CustomRatingFilter.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/CustomRatingFilterOperator.fragment.xml",
+					"name": "CustomRatingFilterOperator.fragment.xml",
+					"key": "CustomRatingFilterOperator.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/CustomRatingMultiComboBoxFilterWithOperator.fragment.xml",
+					"name": "CustomRatingMultiComboBoxFilterWithOperator.fragment.xml",
+					"key": "CustomRatingMultiComboBoxFilterWithOperator.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/CustomFilter.js",
+					"name": "CustomFilter.js",
+					"key": "CustomFilter.js"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/customElements/customFilter/customFilterContent/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customPage",
+			"nextGen": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/customPage/CustomPageSample.view.xml",
+					"name": "CustomPageSample.view.xml",
+					"key": "CustomPageSample.view.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/customPage/CustomPageSample.controller.js",
+					"name": "CustomPageSample.controller.js",
+					"key": "CustomPageSample.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "floorplans"
+		},
+		{
+			"key": "CustomView",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customViewInLRContent",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/CustomViewWithTable.fragment.xml",
+					"name": "CustomViewWithTable.fragment.xml",
+					"key": "CustomViewWithTable.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/LRExtend.controller.js",
+					"name": "LRExtend.controller.js",
+					"key": "LRExtend.controller.js"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/CustomViewWithButton.fragment.xml",
+					"name": "CustomViewWithButton.fragment.xml",
+					"key": "CustomViewWithButton.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				},
+				{
+					"url": "/topics/customElements/customViewInLR/customViewInLRContent/CustomButton.js",
+					"name": "CustomButton.js",
+					"key": "CustomButton.js"
+				}
+			],
+			"topic": "customElements"
+		},
+		{
+			"key": "customViewWithMacroTableContent",
+			"experimental": false,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topics/customElements/customViewWithMacroTable/customViewWithMacroTableContent/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topics/customElements/customViewWithMacroTable/customViewWithMacroTableContent/CustomViewWithMacroTable.fragment.xml",
+					"name": "CustomViewWithMacroTable.fragment.xml",
+					"key": "CustomViewWithMacroTable.fragment.xml"
+				},
+				{
+					"url": "/topics/customElements/customViewWithMacroTable/customViewWithMacroTableContent/LRExtend.controller.js",
+					"name": "LRExtend.controller.js",
+					"key": "LRExtend.controller.js"
+				},
+				{
+					"url": "/topics/customElements/customViewWithMacroTable/customViewWithMacroTableContent/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topics/customElements/customViewWithMacroTable/customViewWithMacroTableContent/localService/RootEntity.json",
+					"name": "RootEntity.json",
+					"key": "RootEntity.json"
+				}
+			],
+			"topic": "buildingBlocks"
+		},
+		{
+			"key": "customKPI",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"files": [
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customKPI/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customKPI/CustomKPITag.fragment.xml",
+					"name": "CustomKPITag.fragment.xml",
+					"key": "CustomKPITag.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customKPI/CustomKPITagWithPress.fragment.xml",
+					"name": "CustomKPITagWithPress.fragment.xml",
+					"key": "CustomKPITagWithPress.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/floorplans/floorplanListReport/customKPI/LRExtend.controller.js",
+					"name": "LRExtend.controller.js",
+					"key": "LRExtend.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "floorplans"
+		},
+		{
+			"key": "controllerExtensionsOverview",
+			"experimental": false,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "guidanceControllerExtensions",
+			"nextGen": true,
+			"downloadProject": false,
+			"editable": false,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/guidanceControllerExtensions/code/implementCE.js",
+					"name": "implementControllerExtension.js",
+					"key": "implementControllerExtension.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/guidanceControllerExtensions/code/extensionAPI.js",
+					"name": "extensionAPI.js",
+					"key": "extensionAPI.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/guidanceControllerExtensions/code/loadFragment.js",
+					"name": "loadFragment.js",
+					"key": "loadFragment.js"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "editFlow",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "EditFlow-Sample?&/Travel(TravelUUID='52657221A8E4645C17002DF03754AB66',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/editFlow/TravelExtend.controller.js",
+					"name": "TravelExtend.controller.js",
+					"key": "TravelExtend.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/editFlow/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/editFlow/localService/service.cds",
+					"name": "editFlow.cds",
+					"key": "editFlow.cds"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/editFlow/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "customEditFlow",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/customEditFlow/Sample.controller.js",
+					"name": "Sample.controller.js",
+					"key": "Sample.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/customEditFlow/Sample.view.xml",
+					"name": "Sample.view.xml",
+					"key": "Sample.view.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "viewState",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "#ViewState-Sample?&/Travel(TravelUUID='52657221A8E4645C17002DF03754AB66',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/viewState/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/viewState/OPExtend.controller.js",
+					"name": "OPExtend.controller.js",
+					"key": "OPExtend.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/viewState/CustomSection.fragment.xml",
+					"name": "CustomSection.fragment.xml",
+					"key": "CustomSection.fragment.xml"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "shareExtensibility",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/shareExtensibility/Sample.controller.js",
+					"name": "Sample.controller.js",
+					"key": "Sample.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/shareExtensibility/ShareExtension.js",
+					"name": "ShareExtension.js",
+					"key": "ShareExtension.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/shareExtensibility/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "dynamicInstantiation",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/dynamicInstantiation/DynamicInstantiation.controller.js",
+					"name": "DynamicInstantiation.controller.js",
+					"key": "DynamicInstantiation.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "routing",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "Routing-Sample",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/routing/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/routing/TravelListExtension.controller.js",
+					"name": "TravelListExtension.controller.js",
+					"key": "TravelListExtension.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/routing/TravelDetailExtension.controller.js",
+					"name": "TravelDetailExtension.controller.js",
+					"key": "TravelDetailExtension.controller.js"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/service/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "intentBasedNavigation",
+			"nextGen": true,
+			"downloadProject": true,
+			"editable": true,
+			"hash": "#IntentBasedNavigation-Sample",
+			"files": [
+				{
+					"url": "/topicsNextGen/controllerExtensions/intentBasedNavigation/localService/service.cds",
+					"name": "extendedService.cds",
+					"key": "extendedService.cds"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/intentBasedNavigation/manifest.json",
+					"name": "manifest.json",
+					"key": "manifest.json"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/intentBasedNavigation/Sample.fragment.xml",
+					"name": "Sample.fragment.xml",
+					"key": "Sample.fragment.xml"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/intentBasedNavigation/Sample.controller.js",
+					"name": "Sample.controller.js",
+					"key": "Sample.controller.js"
+				},
+				{
+					"url": "/topicsNextGen/controllerExtensions/intentBasedNavigation/localService/Travel.json",
+					"name": "Travel.json",
+					"key": "Travel.json"
+				},
+				{
+					"url": "/service/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "controllerExtensions"
+		},
+		{
+			"key": "guidanceSideEffects",
+			"nextGen": true,
+			"downloadRootUrl": "/topics/advancedFeatures/guidanceSideEffects/",
+			"editable": true,
+			"hash": "/RootEntity(ID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/advancedFeatures/guidanceSideEffects/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				},
+				{
+					"url": "/topicsNextGen/advancedFeatures/guidanceSideEffects/localService/metadata.xml",
+					"name": "metadata.xml",
+					"key": "metadata.xml"
+				}
+			],
+			"topic": "advancedFeatures"
+		},
+		{
+			"key": "draftValidation",
+			"nextGen": true,
+			"downloadRootUrl": "/topics/advancedFeatures/draftValidation/",
+			"editable": true,
+			"hash": "#DraftValidation-Sample?&/RootEntity(ID='1',IsActiveEntity=true)",
+			"files": [
+				{
+					"url": "/topicsNextGen/advancedFeatures/draftValidation/localService/service.cds",
+					"name": "service.cds",
+					"key": "service.cds"
+				}
+			],
+			"topic": "advancedFeatures"
+		},
+		{
+			"key": "showMore",
+			"experimental": false,
+			"downloadProject": true,
+			"downloadRootUrl": "/topics/advancedFeatures/showMore/",
+			"editable": true,
+			"hash": "/RootEntity(ID='1',IsActiveEntity=true)",
+			"files": [
+				[
+					{
+						"url": "/topics/advancedFeatures/showMore/manifest.json",
+						"name": "manifest.json",
+						"key": "manifest.json"
+					},
+					{
+						"url": "/topics/advancedFeatures/showMore/localService/service.cds",
+						"name": "service.cds",
+						"key": "service.cds"
+					},
+					{
+						"url": "/topics/advancedFeatures/showMore/localService/RootEntity.json",
+						"name": "RootEntity.json",
+						"key": "RootEntity.json"
+					},
+					{
+						"url": "/topics/advancedFeatures/showMore/localService/ChildEntity.json",
+						"name": "ChildEntity.json",
+						"key": "ChildEntity.json"
+					}
+				]
+			],
+			"topic": "advancedFeatures"
+		}
+	]
+}

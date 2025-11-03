@@ -1,0 +1,4 @@
+<mvc:View controllerName="sap.esh.search.ui.sample.SearchText.SearchText" xmlns="sap.m"
+    xmlns:esh="sap.esh.search.ui" height="100%">
+    <Text text="SearchText"/>
+</mvc:View>

@@ -1,0 +1,80 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Building Blocks Usage"
+		introduction="You can use the building blocks provided by SAP Fiori elements to create a custom app if none of the floorplans suit your use case. By using the custom page building block, you can build a custom app that still runs on the SAP Fiori elements framework, but where all pages are treated as custom pages. When creating a new app, we recommend that you use the SAP Fiori tools - Application Generator and then choose the 'Custom Page' template. You can even include the SAP Fiori elements building blocks into an existing SAPUI5 freestyle application – to do so, make the changes described on this page."
+		documentation="24c1304739dd4f19af0ce2482c4d9bbe"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.guidanceCustomApps.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Extending the sap.fe.AppComponent"
+				text="Change your Component.js file to extend the SAP Fiori elements AppComponent instead of the SAPUI5 Core Component. This ensures your app runs within the SAP Fiori elements framework."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceCustomApps/code/Component.js" codeType="ts" start="sap" end="10" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Adapting Your Manifest"
+				text="In the manifest, wrap each view that uses SAP Fiori elements building blocks into the SAP Fiori development portal component. SAP Fiori elements requires the context path to serve as a pointer to the metadata path."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceCustomApps/manifest.json" codeType="manifest" start="targets" end="15" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Adding the SAP Fiori Elements Library as a Dependent Library"
+				text="To benefit from performance optimizations, add the SAP Fiori elements library as a dependency.&#10;&#10;- For building blocks only: add sap.fe.macros.&#10;&#10;- For floorplans: add sap.fe.templates (which includes sap.fe.macros)."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="guidance/guidanceCustomApps/manifest.json"
+						codeType="manifest"
+						start="dependencies"
+						end="8"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Extending the sap.fe.PageController"
+				text="Extend the page controller of SAP Fiori elements instead of the SAPUI5 mvc.Controller. Adapt the view controller of your custom page as shown below. Always call the onInit of the PageController when adding your own initialization logic."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="guidance/guidanceCustomApps/code/SamplePage.controller.js"
+						codeType="ts"
+						start="sap"
+						end="10"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Adding Building Blocks"
+				text="You can now add the building blocks provided by SAP Fiori elements. The example below uses the Table building block by defining the metaPath relative to the contextPath."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidance/guidanceCustomApps/Sample.fragment.xml" codeType="view" start="Table" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Accessing the App Component"
+				text="You can’t access your app component from the view controller of your custom view using this.getOwnerComponent() because you've added an additional component to your application tree. You must use this.getAppComponent() instead."
+			/>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

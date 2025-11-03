@@ -1,0 +1,11 @@
+{
+    "sap.ovp": {
+        "cards": {
+            "card_19_v4": {
+                "settings": {
+                    "showTimeAxis": false
+                }
+            }
+        }
+    }
+}

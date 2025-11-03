@@ -1,0 +1,102 @@
+
+/* global QUnit */
+sap.ui.define([
+	"sap/ui/base/DesignTime",
+	"sap/ui/core/mvc/ControllerExtensionProvider",
+	"sap/ui/core/mvc/XMLView",
+	"sap/ui/core/ComponentHooks",
+	"sap/ui/core/ExtensionPoint",
+	"sap/ui/fl/apply/_internal/flexState/communication/FLPAboutInfo",
+	"sap/ui/fl/initial/_internal/ManifestUtils",
+	"sap/ui/fl/initial/_internal/preprocessors/RegistrationDelegator",
+	"sap/ui/thirdparty/sinon-4"
+], function(
+	DesignTime,
+	MvcControllerExtensionProvider,
+	XMLView,
+	ComponentHooks,
+	ExtensionPoint,
+	FLPAboutInfo,
+	ManifestUtils,
+	RegistrationDelegator,
+	sinon
+) {
+	"use strict";
+
+	const sandbox = sinon.createSandbox();
+
+	function deregisterAllComponentHooks() {
+		ComponentHooks.onInstanceCreated.deregister();
+		ComponentHooks.onComponentLoaded.deregister();
+		ComponentHooks.onPreprocessManifest.deregister();
+		ComponentHooks.onModelCreated.deregister();
+	}
+
+	QUnit.module("sap.ui.fl.apply._internal.preprocessors.RegistrationDelegator", {
+		afterEach() {
+			deregisterAllComponentHooks();
+			sandbox.restore();
+		}
+	}, function() {
+		QUnit.test("Check if all the registration functions were called", function(assert) {
+			const oRegisterAllSpy = sandbox.spy(RegistrationDelegator, "registerAll");
+			const oRegisterExtensionProviderStub = sandbox.stub(MvcControllerExtensionProvider, "registerExtensionProvider");
+			const oRegisterXMLPreprocessorStub = sandbox.stub(XMLView, "registerPreprocessor");
+			const oRegisterExtensionPointProviderStub = sandbox.stub(ExtensionPoint, "registerExtensionProvider");
+			const oRegisterFLPAboutInfoStub = sandbox.stub(FLPAboutInfo, "initialize");
+			const fnDone = assert.async();
+			sap.ui.require(["sap/ui/fl/library"], function() {
+				assert.equal(oRegisterAllSpy.callCount, 1, "register all was called once");
+				assert.ok(ComponentHooks.onInstanceCreated.isRegistered(), "register changes in component is registered.");
+				assert.ok(ComponentHooks.onComponentLoaded.isRegistered(), "load component event handler is registered.");
+				assert.equal(oRegisterExtensionProviderStub.callCount, 1, "Extension provider called.");
+				assert.equal(oRegisterXMLPreprocessorStub.callCount, 1, "XML preprocessor called.");
+				assert.equal(oRegisterExtensionPointProviderStub.callCount, 1, "ExtensionPoint called.");
+				assert.ok(ComponentHooks.onPreprocessManifest.isRegistered());
+				assert.ok(oRegisterFLPAboutInfoStub.callCount, 1, "FLPAboutInfo registration is called.");
+				fnDone();
+			});
+		});
+	});
+
+	const sWriteProcessorPath = "sap/ui/fl/write/_internal/extensionPoint/Processor";
+	const sApplyProcessorPath = "sap/ui/fl/apply/_internal/extensionPoint/Processor";
+
+	QUnit.module("sap.ui.fl.RegistrationDelegator getExtensionPointProvider function", {
+		beforeEach() {
+			const oRegisterExtensionProviderStub = sandbox.stub(ExtensionPoint, "registerExtensionProvider");
+			RegistrationDelegator.registerAll();
+			[this.fnExtensionProvider] = oRegisterExtensionProviderStub.firstCall.args;
+		},
+		afterEach() {
+			deregisterAllComponentHooks();
+			sandbox.restore();
+		}
+	}, function() {
+		QUnit.test("When extension point handling is disabled", function(assert) {
+			sandbox.stub(ManifestUtils, "isFlexExtensionPointHandlingEnabled").returns(false);
+			assert.notOk(this.fnExtensionProvider({}), "then 'undefined' is returned");
+		});
+
+		QUnit.test("When extension point handling is disabled and design mode (adaptation project) is enabled", function(assert) {
+			sandbox.stub(ManifestUtils, "isFlexExtensionPointHandlingEnabled").returns(false);
+			sandbox.stub(DesignTime, "isDesignModeEnabled").returns(true);
+			assert.strictEqual(this.fnExtensionProvider({}), sWriteProcessorPath, "then the base processor module path is returned");
+		});
+
+		QUnit.test("When extension point handling is enabled", function(assert) {
+			sandbox.stub(ManifestUtils, "isFlexExtensionPointHandlingEnabled").returns(true);
+			assert.strictEqual(this.fnExtensionProvider({}), sApplyProcessorPath, "then the processor module path is returned");
+		});
+
+		QUnit.test("When extension point handling is enabled and design mode (adaptation project) is enabled", function(assert) {
+			sandbox.stub(DesignTime, "isDesignModeEnabled").returns(true);
+			sandbox.stub(ManifestUtils, "isFlexExtensionPointHandlingEnabled").returns(true);
+			assert.strictEqual(this.fnExtensionProvider({}), sApplyProcessorPath, "then the processor module path is returned");
+		});
+	});
+
+	QUnit.done(function() {
+		document.getElementById("qunit-fixture").style.display = "none";
+	});
+});

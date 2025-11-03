@@ -1,0 +1,17 @@
+<mvc:View
+	id="application-product"
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.pageDefault.CustomPage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+>
+	<macros:Page title="Page title" description="Page description" avatarSrc="sap-icon://page" binding="{path:'/RootEntity(\'1\')'}">
+		<Panel headerText="First content" id="firstContent">
+			<Text text="This is the first content of the page" />
+		</Panel>
+		<Panel headerText="Second content" id="secondContent">
+			<Text text="This is the second content, it is properly padded" />
+		</Panel>
+	</macros:Page>
+</mvc:View>

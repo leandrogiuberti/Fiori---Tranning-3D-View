@@ -1,0 +1,50 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.kpiTagDefault.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+>
+	<!--
+		The contextPath is set to "/Travel" - therefore all fields use a relative metaPath to "/Travel"
+	-->
+	<Page showHeader="false">
+		<Panel headerText="KPI Tag usage" binding="{path:'/Travel(\'52657221A8E4645C17002DF03754AB66\')'}">
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Success" class="sapUiSmallMarginEnd" />
+				<macros:KPITag id="mySuccessKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Success" />
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Error" class="sapUiSmallMarginEnd" />
+				<macros:KPITag id="myErrorKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Error" />
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Warning" class="sapUiSmallMarginEnd" />
+				<macros:KPITag id="myWarningKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Warning" />
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Information" class="sapUiSmallMarginEnd" />
+				<macros:KPITag id="myInformationKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Information" />
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Warning with icon" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="myWarningKPIWithIcon"
+					number="{TotalPrice}"
+					unit="{CurrencyCode_code}"
+					status="Warning"
+					showIcon="true"
+				/>
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="Start">
+				<Label text="Error with press event" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="myErrorWithPress"
+					number="{TotalPrice}"
+					unit="{CurrencyCode_code}"
+					status="Error"
+					press=".onKPIPressed"
+				/>
+			</FlexBox>
+		</Panel>
+	</Page>
+</mvc:View>

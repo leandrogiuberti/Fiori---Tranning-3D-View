@@ -1,0 +1,108 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:ce="sap.ui.codeeditor">
+	<VBox>
+		<macros:Table metaPath="/Travel/@com.sap.vocabularies.UI.v1.LineItem" id="myTable" variantManagement="Control" />
+		<Panel expandable="false" expanded="false" headerText="Interacting with Table API" class="sapUiMediumMarginTop">
+			<Panel expandable="true" expanded="false" headerText="Message Handling">
+				<Button press=".addMessage" text="Add error message" />
+				<Button press=".removeAllMessages" text="Remove all messages" />
+			</Panel>
+
+			<Panel expandable="true" expanded="false" headerText="No Data">
+				<MessageStrip text="Delete all travel requests to see the custom no data message." type="Information" showIcon="true" />
+			</Panel>
+
+			<Panel expandable="true" expanded="false" headerText="Presentation Variant">
+				<FlexBox direction="Column" fitContainer="true" justifyContent="Start">
+					<HBox alignItems="Center" class="sapUi-Std-PaddingS">
+						<Button width="100%" text="getPresentationVariant" press=".tablePVToCodeEditor" />
+						<Text
+							text="Click this button to get the table's current presentation variant to the code editor below."
+							width="100%"
+							class="sapUiSmallMargin"
+						/>
+					</HBox>
+					<HBox alignItems="Center" class="sapUi-Std-PaddingS">
+						<Button
+							width="100%"
+							text="setPresentationVariant"
+							press=".codeEditorPVToTable"
+							tooltip="{interactionModel>/setPVButton/tooltip}"
+							type="{interactionModel>/setPVButton/type}"
+						/>
+						<Text
+							text="Click this button to set the presentation variant from the code editor below to the table."
+							width="100%"
+							class="sapUiSmallMargin"
+						/>
+					</HBox>
+
+					<ce:CodeEditor
+						id="tablesDisplayTwo"
+						type="json"
+						lineNumbers="true"
+						value="{interactionModel>/pvObject}"
+						editable="true"
+						liveChange=".validatePV"
+						height="10rem"
+					>
+						<ce:layoutData>
+							<FlexItemData growFactor="1" shrinkFactor="1" />
+						</ce:layoutData>
+					</ce:CodeEditor>
+				</FlexBox>
+			</Panel>
+
+			<Panel expandable="true" expanded="false" headerText="Selection Variant">
+				<FlexBox direction="Column" fitContainer="true" justifyContent="Start">
+					<HBox alignItems="Center" class="sapUi-Std-PaddingS">
+						<Button width="100%" text="getSelectionVariant" press=".tableSVToCodeEditor" />
+						<Text
+							text="Click this button to get the current selection variant from the table and insert it into the code editor."
+							width="100%"
+							class="sapUiSmallMargin"
+						/>
+					</HBox>
+					<HBox alignItems="Center" class="sapUi-Std-PaddingS">
+						<Button
+							width="100%"
+							text="setSelectionVariant"
+							press=".codeEditorSVToTable"
+							tooltip="{interactionModel>/setSVButton/tooltip}"
+							type="{interactionModel>/setSVButton/type}"
+						/>
+						<Text
+							text="Click this button to set the selection variant from the code editor below to the table."
+							width="100%"
+							class="sapUiSmallMargin"
+						/>
+					</HBox>
+
+					<ce:CodeEditor
+						id="tablesDisplayThree"
+						type="json"
+						lineNumbers="true"
+						value="{interactionModel>/svObject}"
+						editable="true"
+						liveChange=".validateSV"
+						height="10rem"
+					>
+						<ce:layoutData>
+							<FlexItemData growFactor="1" shrinkFactor="1" />
+						</ce:layoutData>
+					</ce:CodeEditor>
+				</FlexBox>
+			</Panel>
+
+			<Panel expandable="true" expanded="false" headerText="Variant Management">
+				<Button press=".tableGetVariantManagement" text="Get Current Variant Management Key" />
+				<Button press=".tableSetVariantManagement" text="Set Variant Management" />
+				<Input id="variantManagementKey" placeholder="Enter Variant Management Key" />
+			</Panel>
+
+			<Panel expandable="true" expanded="false" headerText="Column Visibility">
+				<Button press=".hideColumn" text="Hide Description Column" id="hideColumn" />
+				<Button press=".showColumn" text="Show Description Column" id="showColumn" enabled="false" />
+			</Panel>
+		</Panel>
+	</VBox>
+</core:FragmentDefinition>

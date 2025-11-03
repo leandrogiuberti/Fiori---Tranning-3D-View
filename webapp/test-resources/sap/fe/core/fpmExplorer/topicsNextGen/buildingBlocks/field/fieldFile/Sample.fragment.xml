@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}" class="sapUiTinyMarginTop">
+		<Label text="Note File:" />
+		<HBox width="320px">
+			<macros:Field metaPath="File" id="FieldFile" />
+		</HBox>
+		<Label text="Note:" class="sapUiTinyMarginTop" />
+		<Text
+			text="As this example builds on a simple demo service, there is no real upload and delete. For this example, this means: (1) the file content won't change on uploading a different file and (2) uploads after a delete will result in an error message until you refresh you browser."
+		/>
+	</VBox>
+</core:FragmentDefinition>

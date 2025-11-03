@@ -1,0 +1,19 @@
+<mvc:View
+	id="application-product"
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.paginatorDefault.Paginator"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+>
+	<Page id="PaginatorPage">
+		<customHeader>
+			<Toolbar>
+				<Title text="Paginator Sample" level="H2" />
+				<ToolbarSpacer />
+				<macros:Paginator id="paginator" />
+			</Toolbar>
+		</customHeader>
+		<macros:Form metaPath="/Travel/@com.sap.vocabularies.UI.v1.FieldGroup#ApprovalData" id="myForm" title="Travel Data" />
+	</Page>
+</mvc:View>

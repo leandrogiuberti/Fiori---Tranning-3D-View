@@ -1,0 +1,94 @@
+{
+	"sap.ui.generic.app": {
+		"pages": [
+			{
+				"component": {
+					"list": true,
+					"name": "sap.suite.ui.generic.template.ListReport"
+				},
+				"entitySet": "C_ContractMaintain",
+				"pages": [
+					{
+						"component": {
+							"name": "sap.suite.ui.generic.template.ObjectPage",
+							"settings": {
+								"sections": {
+									"partnerId": {
+										"createMode": "inline",
+										"entitySet": "C_PurCtrPartners",
+										"navigationProperty": "to_PurctrpartnersWithDraft"
+									}
+								}
+							}
+						},
+						"embeddedComponents": {
+							"simple::Attachments": {
+								"componentName": "sap.se.mi.plm.lib.attachmentservice.attachment.components.stcomponent",
+								"id": "simple::Attachments",
+								"preload": false,
+								"settings": {
+									"mode": "{= ${ui>/editable}?'C':'D'}",
+									"objectKey": "{parts:[{path:'PurchaseContract'},{path:'DraftUUID'}],formatter:'ui.s2p.mm.pur.ctr.maintain.sts1.model.formatter.returnAttachmentKey'}",
+									"objectType": "BUS2014"
+								},
+								"title": "{{Attachments}}"
+							}
+						},
+						"entitySet": "C_ContractMaintain",
+						"pages": [
+							{
+								"component": {
+									"name": "sap.suite.ui.generic.template.ObjectPage",
+									"settings": {
+										"allowDeepLinking": true
+									}
+								},
+								"embeddedComponents": {
+									"simple::Root": {
+										"componentName": "s4.cfnd.sit.reuse.pc",
+										"hiddenByDefault": true,
+										"id": "simple::Root",
+										"settings": {
+											"anchorObjectKey": "{parts:[{path:'PurchaseContract'},{path:'PurchaseContractItem'}],formatter:'ui.s2p.mm.pur.ctr.maintain.sts1.model.formatter.getUniqueId'}",
+											"anchorObjectType": "PurchaseContractItemUniqueID",
+											"preselectedSituationInstanceId": "{path:'situationModel>/preselectedSituationInstanceId'}",
+											"selectedSituationProperty": "/selectedSituation",
+											"situationDataProperty": "/situationData",
+											"situationModelName": "situationModel"
+										},
+										"title": "{{SituationFacetLabel}}"
+									}
+								},
+								"entitySet": "C_ContractMaintainItem",
+								"navigationProperty": "to_PurchaseContractItemWD",
+								"pages": [
+									{
+										"component": {
+											"name": "sap.suite.ui.generic.template.ObjectPage"
+										},
+										"entitySet": "C_Purctraccassign",
+										"navigationProperty": "to_PurCtrAccountWD"
+									},
+									{
+										"component": {
+											"name": "sap.suite.ui.generic.template.ObjectPage"
+										},
+										"entitySet": "C_PurCtrCndItem",
+										"navigationProperty": "to_PurCtrCndItemWithDraft"
+									}
+								]
+							},
+							{
+								"component": {
+									"name": "sap.suite.ui.generic.template.ObjectPage"
+								},
+								"entitySet": "C_PurCtrPartners",
+								"navigationProperty": "to_PurctrpartnersWithDraft"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

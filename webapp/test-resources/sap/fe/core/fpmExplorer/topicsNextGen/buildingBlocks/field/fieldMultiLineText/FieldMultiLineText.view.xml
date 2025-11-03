@@ -1,0 +1,29 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Multi-Line Text"
+		introduction="The Field building block enables you to render expandable multi-line text fields. "
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldMultiLineText.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Add a UI.MultiLineText annotation to the property. In display mode, this will result in an expandable text, in edit mode, there will be a text area."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="@UI.MultiLineText" end=";" />
+					<fpmExplorer:CodeLink file="field/fieldMultiLineText/code/multiLineText.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

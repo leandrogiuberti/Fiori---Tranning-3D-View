@@ -1,0 +1,27 @@
+{
+  "1.134.0": {
+    "date": "March 2025",
+    "notes": [
+      {
+        "id": "3f8f42c062990a848812c8f099d337477fe12749",
+        "type": "FIX",
+        "text": " sap.uxap.ObjectPageSubSection: Adjustment class added for table"
+      },
+      {
+        "id": "02b32e763928321176eb1cf9c1135fc989db70d5",
+        "type": "FIX",
+        "text": " sap.m.Avatar: Deltas added"
+      },
+      {
+        "id": "a5074447782417172c416dc1a6a09fdb3a12a702",
+        "type": "FIX",
+        "text": " Integration cards: Rounded corners focus is now displayed correctly"
+      },
+      {
+        "id": "fce5dd94fd9336e0376c6b9be22168ba894ac07c",
+        "type": "FIX",
+        "text": " sap.m.ProgressIndicator: Condensed styles fixed"
+      }
+    ]
+  }
+}

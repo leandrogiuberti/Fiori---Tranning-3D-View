@@ -1,0 +1,87 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="Custom Sections in Object Page" documentation="92ad9968e41748aeb74971f7a08a91c8">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text
+					text="You can add custom sections to your Object Page application to display additional content that is not covered by standard Fiori Elements building blocks."
+				/>
+				<Text
+					text="Custom sections allow you to integrate custom UI controls, visualizations, or third-party components into your Object Page layout."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customSection" autoFocus="false" height="740px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Section Configuration in Manifest"
+				text="Define your custom sections in the manifest.json file under the 'content.body.sections' configuration. Each section references a fragment that contains the custom content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSection/manifest.json"
+						start="body"
+						end="15"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Section Positioning"
+				text="Use the position property to control where your custom section appears in the Object Page. You can place it before or after existing sections using the placement and anchor properties."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSection/manifest.json"
+						start="position"
+						end="}"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Section Title and Internationalization"
+				text="Define section titles using i18n keys to support multiple languages. The title property in the section configuration references the i18n bundle."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="floorplanObjectPage/customSection/manifest.json" start="title" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Fragment Type Configuration"
+				text="Specify the fragment type as 'XMLFragment' in the section configuration to ensure proper loading and rendering of your custom content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="floorplanObjectPage/customSection/manifest.json" start="XMLFragment" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Custom Section Fragment"
+				text="Create a fragment that defines your custom section content. This example shows a flight map visualization using the VBM (Visual Business Map) control."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSection/CustomSectionFlightMap.fragment.xml"
+						start="vbm:AnalyticMap"
+						end="14"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,71 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="Custom Views in the List Report" documentation="eb37203f2b884b5097c3c858107cae1f">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text
+					text="App developers can display custom content in a dedicated tab together with regular tabs defined through annotations."
+				/>
+				<Text
+					text="Be aware, that it only makes sense to add custom implementations if there is no way to reach the same result with SAP Fiori elements means."
+				/>
+				<Text
+					text="The example below shows two tabs in the list report. The first tab represents the standard table showing the items. The second tab shows the id and description of Travel entities in a list control."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customViewListReport" autoFocus="false" height="640px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="View settings in the Manifest"
+				text="The Views to be shown on top of the list report table are defined in the page definition area of the manifest."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customViewListReport/manifest.json"
+						start="views"
+						end="showCounts"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Extension settings in the Manifest"
+				text="The controller used for the extension is defined in the Extensions section of the manifest file."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customViewListReport/manifest.json"
+						start="extensions"
+						end="8"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Referencing the table in the Selection Presentation Variants"
+				text="You can define selection presentation variants by using the UI.SelectionPresentationVariant in your service implementation. The selection presentation variant points to UI.SelectionVariant and UI.PresentationVariant annotations."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customViewListReport/localService/service.cds"
+						start="PresentationVariant"
+						end="});"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customViewListReport/code/selectionPresentationVariant.xml"
+						codeType="xml"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

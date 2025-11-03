@@ -1,0 +1,34 @@
+<Annotations Target="YourEntity">
+	<Annotation Term="UI.SelectionVariant">
+		<Record Type="UI.SelectionVariantType">
+			<PropertyValue Property="SelectOptions">
+				<Collection>
+					<Record Type="UI.SelectOptionType">
+						<PropertyValue Property="PropertyName" PropertyPath="BeginDate" />
+						<PropertyValue Property="Ranges">
+							<Collection>
+								<Record Type="UI.SelectionRangeType">
+									<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+									<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GE" />
+									<PropertyValue Property="Low" String="2025-01-01" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+					<Record Type="UI.SelectOptionType">
+						<PropertyValue Property="PropertyName" PropertyPath="TravelStatus_code" />
+						<PropertyValue Property="Ranges">
+							<Collection>
+								<Record Type="UI.SelectionRangeType">
+									<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+									<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+									<PropertyValue Property="Low" String="O" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+</Annotations>

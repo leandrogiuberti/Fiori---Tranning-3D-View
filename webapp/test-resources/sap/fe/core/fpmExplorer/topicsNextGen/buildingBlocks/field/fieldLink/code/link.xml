@@ -1,0 +1,13 @@
+<Annotation Term="UI.FieldGroup" Qualifier="Link">
+	<Record Type="UI.FieldGroupType">
+		<PropertyValue Property="Data">
+			<Collection>
+				<Record Type="UI.DataFieldWithUrl">
+					<PropertyValue Property="Value" Path="Description" />
+					<PropertyValue Property="Url" Path="WebsiteUrl" />
+					<PropertyValue Property="Label" String="Website" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

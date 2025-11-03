@@ -1,0 +1,28 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Date Picker"
+		introduction="The Field building block enables you to render date input fields with a date picker."
+		documentation="a5608eabcc184aee99e1a7d88b28816c"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldDatePicker.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Define a property of type Date. The field formats the string value and in edit mode offers a Date Picker for changing the date."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="BeginDate" end=";" fileName="service.cds" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

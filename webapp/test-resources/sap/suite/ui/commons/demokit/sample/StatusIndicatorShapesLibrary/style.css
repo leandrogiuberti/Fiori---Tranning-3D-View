@@ -1,0 +1,9 @@
+.SICursorStyle:hover {
+    cursor: pointer;
+}
+.SIBorderStyle {
+    border: 1px solid #cccccc;
+}
+.SIPanelStyle .sapMPanelContent{
+    overflow: visible;
+}

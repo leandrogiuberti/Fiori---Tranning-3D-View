@@ -1,0 +1,88 @@
+[
+	{
+		"ObjectID": "rls-0-1",
+		"RelationID": "rls-0",
+		"ParentObjectID": "object-0-1-1",
+		"PredecTaskID": "object-0-1-1",
+		"SuccTaskID": "object-0-1-2",
+		"RelationType": "StartToFinish"
+	},
+	{
+		"ObjectID": "rls-0-2",
+		"RelationID": "rls-0",
+		"ParentObjectID": "object-0-1-2",
+		"PredecTaskID": "object-0-1-1",
+		"SuccTaskID": "object-0-1-2",
+		"RelationType": "StartToFinish"
+	},
+
+	{
+		"ObjectID": "rls-1-1",
+		"RelationID": "rls-1",
+		"ParentObjectID": "object-0-2-2",
+		"PredecTaskID": "object-0-2-2",
+		"SuccTaskID": "object-0-2-3",
+		"RelationType": "FinishToFinish"
+	},
+	{
+		"ObjectID": "rls-1-2",
+		"RelationID": "rls-1",
+		"ParentObjectID": "object-0-2-3",
+		"PredecTaskID": "object-0-2-2",
+		"SuccTaskID": "object-0-2-3",
+		"RelationType": "FinishToFinish"
+	},
+
+
+	{
+		"ObjectID": "rls-2-1",
+		"RelationID": "rls-2",
+		"ParentObjectID": "object-0-2-5",
+		"PredecTaskID": "object-0-2-5",
+		"SuccTaskID": "object-0-2-6",
+		"RelationType": "StartToStart"
+	},
+	{
+		"ObjectID": "rls-2-2",
+		"RelationID": "rls-2",
+		"ParentObjectID": "object-0-2-6",
+		"PredecTaskID": "object-0-2-5",
+		"SuccTaskID": "object-0-2-6",
+		"RelationType": "StartToStart"
+	},
+
+
+	{
+		"ObjectID": "rls-3-1",
+		"RelationID": "rls-3",
+		"ParentObjectID": "object-0-5-2",
+		"PredecTaskID": "object-0-5-2",
+		"SuccTaskID": "object-0-5-3",
+		"RelationType": "FinishToStart"
+	},
+	{
+		"ObjectID": "rls-3-2",
+		"RelationID": "rls-3",
+		"ParentObjectID": "object-0-5-3",
+		"PredecTaskID": "object-0-5-2",
+		"SuccTaskID": "object-0-5-3",
+		"RelationType": "FinishToStart"
+	},
+
+	{
+		"ObjectID": "rls-7-1",
+		"RelationID": "rls-7",
+		"ParentObjectID": "object-0-1-1",
+		"PredecTaskID": "object-0-1-1",
+		"SuccTaskID": "object-0-6-2",
+		"RelationType": "FinishToFinish"
+	},
+	{
+		"ObjectID": "rls-7-2",
+		"RelationID": "rls-7",
+		"ParentObjectID": "object-0-6-2",
+		"PredecTaskID": "object-0-1-1",
+		"SuccTaskID": "object-0-6-2",
+		"RelationType": "FinishToFinish"
+	}
+]

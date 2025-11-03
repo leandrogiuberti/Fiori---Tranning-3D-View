@@ -1,0 +1,23 @@
+<Annotation Term="UI.LineItem">
+	<Collection>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="TravelID" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="BeginDate" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="EndDate" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="to_Agency_AgencyID" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="BookingFee" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="TotalPrice" />
+		</Record>
+	</Collection>
+	<Annotation Term="UI.Criticality" Path="TravelStatus/criticality" />
+</Annotation>

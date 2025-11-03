@@ -1,0 +1,25 @@
+@UI.lineItem: [{ position: 10 }]
+key TravelID : abap.numc(8);
+
+@UI.lineItem: [{ position: 20 }]
+BeginDate : abap.dats;
+
+@UI.lineItem: [{ position: 30 }]
+EndDate : abap.dats;
+
+@UI.lineItem: [{ position: 40 }]
+to_Agency_AgencyID : abap.char(10);
+
+@UI.lineItem: [
+  { position: 50, criticality: 'TravelStatusCriticality', importance: #HIGH, style: [{ width: '10em' }] }
+]
+TravelStatus_code : abap.char(2);
+
+@UI.lineItem: [{ position: 60 }]
+BookingFee : abap.curr(10,2);
+
+@UI.lineItem: [{ position: 70 }]
+TotalPrice : abap.curr(10,2);
+
+@ObjectModel.virtualElement.calculatedBy: 'ABAP:<class_name>'
+virtual TravelStatusCriticality: abap.int1

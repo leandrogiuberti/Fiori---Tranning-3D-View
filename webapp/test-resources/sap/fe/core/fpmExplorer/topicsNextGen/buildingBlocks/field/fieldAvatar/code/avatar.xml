@@ -1,0 +1,4 @@
+<Annotations Target="TravelService.Travel/Icon">
+	<Annotation Term="UI.IsImageURL" Bool="true" />
+	<Annotation Term="Common.Label" String="Icon" />
+</Annotations>

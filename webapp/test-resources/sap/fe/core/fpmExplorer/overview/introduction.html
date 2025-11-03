@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>SAP Fiori Elements Overview</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://ui5.sap.com/resources/sap/ui/core/themes/sap_fiori_3/library.css" />
+		<script src="https://ui5.sap.com/resources/sap-ui-core.js"></script>
+		<style>
+			body {
+				font-family: "72", Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				gap: 20px;
+				padding: 20px;
+			}
+			.container > h2:first-of-type {
+				margin-bottom: 0px;
+				font-size: 2.5rem;
+			}
+			.container > h3 {
+				margin-bottom: 6px;
+			}
+			.section,
+			.section2 {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.section {
+				padding: 20px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				background-color: #f9f9f9;
+				text-align: center;
+			}
+			.section2 {
+				width: calc(50% - 10px);
+				padding: 20px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				background-color: #f9f9f9;
+				text-align: center;
+			}
+
+			.section h2 {
+				color: #000000;
+			}
+			.section2 h2 {
+				color: #000000;
+			}
+			.section2 h3 {
+				margin-bottom: 1px;
+			}
+			.row {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				width: 100%;
+			}
+			.row2 {
+				display: flex;
+				gap: 20px;
+				justify-content: end;
+				width: 100%;
+			}
+			.card {
+				width: 100px;
+				height: 100px;
+				background-color: #f9f9f9;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				text-align: center;
+				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.card span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 50px;
+			}
+			.card img {
+				width: 50px;
+				height: 50px;
+			}
+			.card2 {
+				width: 150px;
+				height: 200px;
+				background-color: #f9f9f9;
+				border-radius: 8px;
+				text-align: center;
+				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 2px;
+			}
+			.card2 img {
+				width: 250px;
+				height: 178px;
+			}
+			.card3 {
+				width: 40%;
+				height: 100px;
+				background-color: #f9f9f9;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				text-align: center;
+				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				align-items: center;
+				justify-content: center;
+			}
+			.clickable-card {
+				text-decoration: none;
+				color: inherit;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+			.clickable-card:hover {
+				background-color: #b7aaaa;
+				border-color: #4a5568;
+				color: #ffffff;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+			}
+			.clickable-card:hover .table::before,
+			.clickable-card:hover .field::before,
+			.clickable-card:hover .chart::before,
+			.clickable-card:hover .filter::before,
+			.clickable-card:hover .form::before {
+				color: #ffffff;
+			}
+			.clickable-card:hover p {
+				color: #ffffff;
+			}
+			.clickable-card:focus {
+				outline: 2px solid #0a6ed1;
+				outline-offset: 2px;
+			}
+			.clickable-card:active {
+				transform: translateY(0);
+				background-color: #1a202c;
+			}
+			.comparison {
+				margin-top: 20px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			.comparison-line {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #ddd;
+				padding: 10px 0;
+				width: 100%;
+			}
+			.comparison-line h4 {
+				flex: 1;
+				margin: 0;
+				font-size: 16px;
+				color: #333;
+			}
+			.comparison-line p {
+				flex: 2;
+				margin: 0;
+				font-size: 14px;
+				color: #666;
+			}
+			.status {
+				flex: 1;
+				display: flex;
+				justify-content: space-around;
+			}
+			.status img {
+				width: 20px;
+				height: 20px;
+			}
+			.field::before {
+				font-family: SAP-icons;
+				content: "\e265";
+				color: #f75050;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.table::before {
+				font-family: SAP-icons;
+				content: "\e0ba";
+				color: #1a23d1;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.chart::before {
+				font-family: SAP-icons;
+				content: "\e193";
+				color: #c11dcd;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.filter::before {
+				font-family: SAP-icons;
+				content: "\e076";
+				color: #20c831;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.edit::before {
+				font-family: SAP-icons;
+				content: "\e0c4";
+				color: #38681f;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.more::before {
+				font-family: SAP-icons;
+				content: "\e1f2";
+				color: #000000;
+				font-size: 2rem;
+				line-height: 1;
+			}
+			.form::before {
+				font-family: SAP-icons;
+				content: "\e070";
+				color: #9a1212;
+				font-size: 2rem;
+				line-height: 1;
+			}
+
+			.learn-more-btn {
+				margin-top: 16px;
+				padding: 12px 24px;
+				background-color: transparent;
+				color: #0a6ed1;
+				border: 2px solid #0a6ed1;
+				border-radius: 4px;
+				font-size: 14px;
+				font-weight: 500;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-align: center;
+			}
+
+			.learn-more-btn:hover {
+				background-color: #0a6ed1;
+				color: #ffffff;
+				transform: translateY(-1px);
+				box-shadow: 0 4px 8px rgba(10, 110, 209, 0.3);
+			}
+
+			.learn-more-btn:focus {
+				outline: 2px solid #0a6ed1;
+				outline-offset: 2px;
+			}
+
+			.learn-more-btn:active {
+				transform: translateY(0);
+				background-color: #074a91;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h2 style="text-align: center">Introduction</h2>
+			<p style="text-align: center">
+				SAP Fiori elements for OData V4 empowers you to effectively develop scalable, efficient, and modern applications that align
+				with SAP's design principles and user-centric approach.
+			</p>
+
+			<!-- Section 1: Building Blocks -->
+			<div class="section">
+				<h3>Building Blocks</h3>
+				<p style="text-align: center">
+					Building blocks are reusable artifacts that are consistently orchestrated by SAP Fiori elements and are the basis for
+					every OData V4 application.<br />
+					They contain standardized layout patterns or interaction behaviors to provide enterprise readiness, support UI
+					consistency, and boost developer efficiency.
+				</p>
+				<div class="row">
+					<a href="#" data-link-type="field" class="card clickable-card">
+						<span class="field"></span>
+						<p>Field</p>
+					</a>
+					<a href="#" data-link-type="form" class="card clickable-card">
+						<span class="form"></span>
+						<p>Form</p>
+					</a>
+					<a href="#" data-link-type="table" class="card clickable-card">
+						<span class="table"></span>
+						<p>Table</p>
+					</a>
+					<a href="#" data-link-type="filterbar" class="card clickable-card">
+						<span class="filter"></span>
+						<p>Filter Bar</p>
+					</a>
+
+					<a href="#" data-link-type="chart" class="card clickable-card">
+						<span class="chart"></span>
+						<p>Chart</p>
+					</a>
+
+					<div class="card disabled-card">
+						<span class="more"></span>
+						<p>And More</p>
+					</div>
+				</div>
+			</div>
+
+			<h3 style="text-align: center">Select Your Option</h3>
+			<p style="text-align: center">Select the option that best matches your target app requirements.</p>
+
+			<!-- Diagram -->
+			<div class="row">
+				<!-- Section 2: Predefined Pages -->
+				<div class="section2">
+					<h3>Floorplans</h3>
+					<div class="row">
+						<div class="card2">
+							<img src="images/ListReport_Floorplan.svg" alt="List Report" />
+						</div>
+					</div>
+					<p style="text-align: left">
+						Predefined layouts of building blocks are provided as floorplans to enable efficient SAP Fiori elements application
+						development. These floorplans inherit all the qualities of their building blocks while adding optimizations for
+						component interaction at the floorplan level.
+					</p>
+					<h4 style="text-align: left">When to Use</h4>
+					<ul style="text-align: left; padding-left: 20px">
+						<li>The most efficient approach for building your SAP Fiori elements application.</li>
+						<li>For specific deviations, you can leverage the extension points provided by SAP Fiori elements.</li>
+					</ul>
+					<button class="learn-more-btn" role="button" data-section="floorplans">Learn More</button>
+				</div>
+
+				<!-- Section 3: Custom Pages -->
+				<div class="section2">
+					<h3>Custom Layout</h3>
+					<div class="row">
+						<div class="card2">
+							<img src="images/CustomUi5_Floorplan.svg" alt="Custom Layout" />
+						</div>
+					</div>
+					<p style="text-align: left">
+						Custom pages serve as the basis for custom layouts that can utilize building blocks with all their framework
+						qualities. These custom pages can contain a layout building block for optimal support while offering maximum
+						flexibility.
+					</p>
+					<h4 style="text-align: left">When to Use</h4>
+					<ul style="text-align: left; padding-left: 20px">
+						<li>The most flexible approach for building your SAP Fiori elements application.</li>
+						<li>
+							For added flexibility, select custom pages with their building blocks and options for additional SAPUI5 coding.
+						</li>
+					</ul>
+					<button class="learn-more-btn" role="button" data-section="customLayout">Learn More</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="introduction.js"></script>
+	</body>
+</html>

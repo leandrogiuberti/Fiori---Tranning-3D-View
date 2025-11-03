@@ -1,0 +1,37 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page title="Worklist" documentation="d1d588f1061b4bac96a1facb80d3f3a2">
+		<fpmExplorer:introductionContent>
+			<VBox class="sapUiTinyMarginTop">
+				<Text
+					text="The focus of the worklist floorplan is on processing items. This differs from the list report floorplan, which focuses on filtering content to create a list."
+				/>
+				<Text text="From a technical perspective, a worklist is a simplified list report without a filter bar." />
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="worklist" autoFocus="false" height="480px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="For worklists, the FilterBar and Variant Management are deactivated by settings in the manifest.json file. By default, there is no Go button to load the data - therefore the initialLoad option is active."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/worklist/manifest.json"
+						start="variantManagement"
+						end="Enabled"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>sap.m.table.columnmenu.Menu</title>
+	<script src="shared-config.js"></script>
+	<script id="sap-ui-bootstrap" src="../../../resources/sap-ui-core.js" data-sap-ui-libs="sap.m, sap.ui.layout"
+		data-sap-ui-xx-bindingSyntax="complex">
+		</script>
+	<style type="text/css">
+		.customLabel {
+			margin: 0 0.5rem;
+			vertical-align: middle;
+			vertical-align: -webkit-baseline-middle;
+		}
+
+		.customClassForVisualTests {
+			caret-color: transparent;
+		}
+	</style>
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			sap.ui.require([
+				"sap/m/table/columnmenu/Menu",
+				"sap/m/table/columnmenu/QuickAction",
+				"sap/m/table/columnmenu/QuickSort",
+				"sap/m/table/columnmenu/QuickSortItem",
+				"sap/m/table/columnmenu/QuickGroup",
+				"sap/m/table/columnmenu/QuickGroupItem",
+				"sap/m/table/columnmenu/QuickTotal",
+				"sap/m/table/columnmenu/QuickTotalItem",
+				"sap/m/table/columnmenu/ActionItem",
+				"sap/m/Button",
+				"sap/m/Column",
+				"sap/m/ColumnListItem",
+				"sap/m/ComboBox",
+				"sap/m/FlexBox",
+				"sap/m/SegmentedButton",
+				"sap/m/SegmentedButtonItem",
+				"sap/m/Table",
+				"sap/m/Text",
+				"sap/m/Toolbar",
+				"sap/m/ToolbarSpacer",
+				"sap/m/library",
+				"sap/ui/layout/GridData",
+				"sap/ui/model/json/JSONModel"
+			], function (
+				ColumnMenu,
+				QuickAction,
+				QuickSort,
+				QuickSortItem,
+				QuickGroup,
+				QuickGroupItem,
+				QuickTotal,
+				QuickTotalItem,
+				ActionItem,
+				Button,
+				Column,
+				ColumnListItem,
+				ComboBox,
+				FlexBox,
+				SegmentedButton,
+				SegmentedButtonItem,
+				Table,
+				Text,
+				Toolbar,
+				ToolbarSpacer,
+				library,
+				GridData,
+				JSONModel
+			) {
+				var oData = {"items": []};
+				for (var i = 0; i < 10; i++) {
+					oData["items"].push({
+						name: "Name " + i,
+						street: "Street " + i,
+						city: "City " + i
+					});
+				}
+
+				var oQuickSort = new QuickSort({
+					items : [
+						new QuickSortItem({
+							key: "propertyA",
+							label: "A",
+							sortOrder: "Ascending"
+						}),
+						new QuickSortItem({
+							key: "propertyB",
+							label: "B",
+							sortOrder: "Descending"
+						})
+					]
+				});
+
+				var oQuickFilter = new QuickAction({
+					label: "Quick Filter",
+					content: new ComboBox(),
+					category: "Filter"
+				});
+
+				var oQuickGroup = new QuickGroup({
+					items: [
+						new QuickGroupItem({
+							key: "PropertyA",
+							label: "Criterion A",
+							grouped: true
+						}),
+						new QuickGroupItem({
+							key: "PropertyB",
+							label: "Criterion B",
+							grouped: false
+						})
+					]
+				});
+
+				var oQuickTotal = new QuickTotal({
+					items: [
+						new QuickTotalItem({
+							key: "PropertyA",
+							label: "Property A",
+							totaled: false
+						}),
+						new QuickTotalItem({
+							key: "PropertyB",
+							label: "Property B",
+							totaled: true
+						})
+					]
+				});
+
+				var oQuickCustomAction = new QuickAction({
+					label: "Quick Custom",
+					content: new Button({ text: "Execute Custom Action" }),
+					category: "Sort"
+				});
+
+				var oQuickCustomFilter = new QuickAction({
+					label: "Quick Filter",
+					content: new Button({ text: "Execute Custom Filter" }),
+					category: "Filter"
+				});
+
+				var oQuickCustomLayoutNormal = new QuickAction({
+					label: "Quick Custom Layout Long",
+					content: [
+						new Button({ text: "Button 1", layoutData: new GridData({spanS: 4, spanM: 3}) }),
+						new Button({ text: "Button 2", layoutData: new GridData({spanS: 4, spanM: 3}) }),
+						new Button({ text: "Button 3", layoutData: new GridData({spanS: 4, spanM: 2}) })
+					]
+				});
+
+				var oQuickCustomActionLong = new QuickAction({
+					label: "Quick Custom Long",
+					content: new FlexBox({
+						items: [
+							new Button({ text: "Execute Custom Action 1" }),
+							new Button({ text: "Execute Custom Action 2" }),
+							new Button({ text: "Execute Custom Action 3" })
+						],
+						wrap: library.FlexWrap.Wrap
+					})
+				});
+
+				var oQuickMultiCustomActionLong = new QuickAction({
+					label: "Quick Custom Long with HBox and just items",
+					content: [
+						new Button({ text: "Standalone Button 1"}),
+						new FlexBox({
+							items: [new Button({ text: "Execute Custom Action 1" }), new Button({ text: "Execute Custom Action 2" }), new Button({ text: "Execute Custom Action 3" })],
+							wrap: library.FlexWrap.Wrap
+						})
+					]
+				});
+
+				var oActionItem = new ActionItem({
+					label: "Action Item",
+					icon: "sap-icon://table-column"
+				});
+
+				var oItemFilter = new ActionItem({
+					label: "Filter",
+					icon: "sap-icon://filter"
+				});
+
+				var oItemGroup = new ActionItem({
+					label: "Group",
+					icon: "sap-icon://group-2"
+				});
+
+				// Test Menu
+				var oMenu = new ColumnMenu({
+					showTableSettingsButton: true,
+					quickActions: [oQuickSort, oQuickFilter, oQuickGroup, oQuickTotal, oQuickCustomLayoutNormal, oQuickCustomActionLong, oQuickMultiCustomActionLong],
+					items: [oActionItem, oItemFilter, oItemGroup]
+				});
+
+				var oButton = new Button({
+					text: "Open ColumnMenu",
+					width: "200px",
+					press: function () {
+						oMenu.openBy(this);
+					}
+				});
+				oButton.addDependent(oMenu);
+				oButton.placeAt("body");
+
+				/**
+				 * @deprecated As of version 1.132
+				 */
+				(function() {
+					var oButtonAddItem = new Button({
+						text: "Add Item",
+						width: "200px",
+						press: addItemToMenu
+					});
+					oButtonAddItem.placeAt("body");
+
+					function addItemToMenu() {
+						var oTable = new Table({
+							sticky: [library.Sticky.ColumnHeaders, library.Sticky.HeaderToolbar],
+							headerToolbar: new Toolbar({
+								content: [
+									new Text({text: "Example Table"}),
+									new ToolbarSpacer(),
+									new Button({text: "Example Button"})
+								]
+							}),
+							columns: [
+								new Column({
+									header: new Text({text: "Column A"})
+								}),
+								new Column({
+									header: new Text({text: "Column B"})
+								}),
+								new Column({
+									header: new Text({text: "Column C"})
+								})
+							]
+						});
+
+						var oTemplate = new ColumnListItem({
+							cells : [
+								new Text({text : "{name}"}),
+								new Text({text : "{street}"}),
+								new Text({text : "{city}"})
+							]
+						});
+						oTable.setModel(new JSONModel(oData));
+						oTable.bindItems({
+							path: "/items",
+							template : oTemplate,
+							key: "name"
+						});
+
+						sap.ui.require([
+							"sap/m/table/columnmenu/Item"
+						], function (Item) {
+								var oItemTable = new Item({
+								label: "Table",
+								icon: "sap-icon://table-column",
+								content: oTable,
+								resetButtonEnabled: false
+							});
+
+							oMenu.addItem(oItemTable);
+						});
+					}
+				})();
+			});
+		});
+	</script>
+</head>
+
+<body id="body" class="sapUiBody sapUiSizeCompact">
+</body>
+
+</html>

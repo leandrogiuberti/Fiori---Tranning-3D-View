@@ -1,0 +1,89 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customKPIContent",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/service/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ListReport.ListReportController": {
+						"controllerName": "sap.fe.core.fpmExplorer.customKPI.LRExtend"
+					}
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.customKPI.CustomKPI"
+		},
+		"routing": {
+			"config": {
+				"controlId": "customKPI"
+			},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "sample",
+					"target": "sample"
+				}
+			],
+			"targets": {
+				"sample": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+							"variantManagement": "None",
+							"initialLoad": true,
+							"keyPerformanceIndicators": {
+								"myKPITag": {
+									"template": "sap.fe.core.fpmExplorer.customKPI.CustomKPITag"
+								},
+								"myKPIWithPress": {
+									"template": "sap.fe.core.fpmExplorer.customKPI.CustomKPITagWithPress"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<EntityContainer Name="EntityContainer">
+		<ActionImport Name="unBoundAction" Action="sap.fe.core.Service.unBoundAction" />
+	</EntityContainer>
+	<Action Name="unBoundAction" IsBound="false" />
+	<Annotations Target="sap.fe.core.Service.UnboundAction()">
+		<Annotation Term="Common.SideEffects">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>"/sap.fe.core.Service.EntityContainer/RootEntity"</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+</Schema>

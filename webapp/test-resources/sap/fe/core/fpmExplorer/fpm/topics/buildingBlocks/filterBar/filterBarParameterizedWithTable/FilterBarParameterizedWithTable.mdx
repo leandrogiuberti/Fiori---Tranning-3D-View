@@ -1,0 +1,15 @@
+When linked to a parameterized entity set, the filter bar automatically adds fields for required parameters.
+A parameterized entity set has specific parameters to tailor the data it delivers,
+making it valuable for complex data retrieval involving complex queries or calculations based on different input values.
+
+In this sample's service definition, "Customers" with a "Total Spend" that is stored in "US Dollar (USD)"
+are linked to the parameterized entity set "CustomerParameters", using the pseudo key "PreferredCurrency".
+The filter bar, now linked to the parameterized entity set as well, automatically includes a field for the required parameter "Preferred Currency".
+The backend will use this input to convert the "Total Spend" to your specified preferred currency.
+
+<BuildingBlockPlayground>
+	{`
+        <core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarParameterizedWithTable.FilterBarParameterizedWithTable" type="XML" />
+	`}
+</BuildingBlockPlayground>
+&nbsp;

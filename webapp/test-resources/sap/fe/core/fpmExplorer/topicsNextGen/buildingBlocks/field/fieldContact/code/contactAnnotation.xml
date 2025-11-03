@@ -1,0 +1,21 @@
+<Annotation Term="Communication.Contact">
+	<Record Type="Communication.ContactType">
+		<PropertyValue Property="fn" Path="AgencyName" />
+		<PropertyValue Property="tel">
+			<Collection>
+				<Record Type="Communication.PhoneNumberType">
+					<PropertyValue Property="uri" Path="Phone" />
+					<PropertyValue Property="type" EnumMember="Communication.PhoneType/work" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="email">
+			<Collection>
+				<Record Type="Communication.EmailAddressType">
+					<PropertyValue Property="address" Path="Email" />
+					<PropertyValue Property="type" EnumMember="Communication.ContactInformationType/work" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

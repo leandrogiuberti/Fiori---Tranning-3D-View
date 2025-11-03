@@ -1,0 +1,51 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page title="Show and Hide Details" documentation="9fcea86d8ffd48459dd053eb5255a046">
+		<fpmExplorer:introductionContent>
+			<VBox class="sapUiTinyMarginTop">
+				<Text
+					text="You can show or hide reference facets on the UI using the Show More and Show Less buttons, and show or hide fields inside reference facets using the Show Details and Hide Details buttons."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="showHideContent" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Show and Hide Fields"
+				text="You can show or hide fields inside reference facets by applying the @UI.PartOfPreview annotation. This renders the Show Details and Hide Details buttons."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/showHideContent/localService/service.cds"
+						start="Value: BeginDate"
+						end="false"
+					/>
+					<fpmExplorer:CodeLink file="floorplanObjectPage/showHideContent/code/showHideField.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Show and Hide Facets"
+				text="You can show or hide Reference Facets by applying the @UI.PartOfPreview annotation on Facet level. This renders the Show More and Show Less buttons."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/showHideContent/localService/service.cds"
+						start="Target: 'to_Booking"
+						end="false"
+					/>
+					<fpmExplorer:CodeLink file="floorplanObjectPage/showHideContent/code/showHideFacet.xml" codeType="xml" />
+					<fpmExplorer:CodeLink file="floorplanObjectPage/showHideContent/code/showHideFacet.rap" codeType="rap" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

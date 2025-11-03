@@ -1,0 +1,34 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Input Mask"
+		introduction="The Field building block enables you to render masked input fields, which allow users to enter values only in the specified format."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldInputMask.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Add a UI.Mask annotation to the property to be masked. The annotation specifies the Mask to be applied to the value, the PlaceholderSymbol shows where the user can enter data."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldInputMask/localService/service.cds"
+						start="DiscountCode"
+						end=");"
+						fileName="inputMask.cds"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldInputMask/code/inputMask.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

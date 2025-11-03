@@ -1,0 +1,102 @@
+{
+	"sap.app": {
+		"id": "card.explorer.dataSources.categories",
+		"type": "card"
+	},
+	"sap.card": {
+		"configuration": {
+			"parameters": {
+				"filterVisibility": {
+					"value": false,
+					"type": "boolean"
+				}
+			},
+			"filters": {
+				"category": {
+					"data": {
+						"json": [
+							{
+								"title": "Flat Screen Monitors",
+								"key": "FSM",
+								"additionalText": "FSM",
+								"group": "Group 1"
+							},
+							{
+								"title": "Graphic Cards",
+								"key": "GC",
+								"additionalText": "GC",
+								"group": "Group 1"
+							},
+							{
+								"title": "Mouses and Keyboards",
+								"key": "MK",
+								"additionalText": "MK",
+								"group": "Group 2"
+							},
+							{
+								"title": "Motherboards",
+								"key": "MB",
+								"additionalText": "MB",
+								"group": "Group 2"
+							}
+						]
+					},
+					"selectedKey": "FSM",
+					"type": "ComboBox",
+					"label": "Category",
+					"placeholder": "Test Placeholder",
+					"item": {
+						"path": "/",
+						"template": {
+							"key": "{key}",
+							"title": "{title}",
+							"additionalText": "{additionalText}"
+						}
+					}
+				}
+			}
+		},
+		"type": "List",
+		"data": {
+			"json": [
+				{
+					"title": "Flat Screen Monitors",
+					"key": "FSM",
+					"additionalText": "FSM",
+					"group": "Group 1"
+				},
+				{
+					"title": "Graphic Cards",
+					"key": "GC",
+					"additionalText": "GC",
+					"group": "Group 1"
+				},
+				{
+					"title": "Mouses and Keyboards",
+					"key": "MK",
+					"additionalText": "MK",
+					"group": "Group 2"
+				},
+				{
+					"title": "Motherboards",
+					"key": "MB",
+					"additionalText": "MB",
+					"group": "Group 2"
+				}
+			]
+		},
+		"header": {
+			"title": "{filters>/category/selectedItem/title}",
+			"subtitle": "{filters>/category/selectedItem/additionalText}",
+			"icon": {
+				"src": "sap-icon://product"
+			}
+		},
+		"content": {
+			"item": {
+				"title": "{filters>/category/selectedItem/key}",
+				"description": "{filters>/category/value}"
+			}
+		}
+	}
+}

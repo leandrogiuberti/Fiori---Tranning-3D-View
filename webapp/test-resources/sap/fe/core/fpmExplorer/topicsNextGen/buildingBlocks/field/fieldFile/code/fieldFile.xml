@@ -1,0 +1,13 @@
+<Annotations Target="YourEntity/File">
+	<Annotation Term="Core.MediaType" String="text/plain" />
+	<Annotation Term="Core.AcceptableMediaTypes">
+		<Collection>
+			<String>text/plain</String>
+		</Collection>
+	</Annotation>
+	<Annotation Term="Core.ContentDisposition">
+		<Record>
+			<PropertyValue Property="Filename" PropertyPath="FileName" />
+		</Record>
+	</Annotation>
+</Annotations>

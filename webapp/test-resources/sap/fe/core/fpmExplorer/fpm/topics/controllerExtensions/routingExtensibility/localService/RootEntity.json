@@ -1,0 +1,34 @@
+[
+	{
+		"ID": 1,
+		"Priority": "High",
+		"Criticality": 1,
+		"IsActiveEntity": true,
+		"TitleProperty": "You don't want to see this",
+		"DescriptionProperty": "Navigation with Dialog Confirmation"
+	},
+	{
+		"ID": 2,
+		"Priority": "Low",
+		"Criticality": 3,
+		"IsActiveEntity": true,
+		"TitleProperty": "Click me, no worries",
+		"DescriptionProperty": "Normal Navigation"
+	},
+	{
+		"ID": 3,
+		"Priority": "Medium",
+		"Criticality": 2,
+		"IsActiveEntity": true,
+		"TitleProperty": "Maybe check this out?",
+		"DescriptionProperty": "Navigation with navigateToRoute to detail"
+	},
+	{
+		"ID": 4,
+		"Priority": "Low",
+		"Criticality": 3,
+		"IsActiveEntity": true,
+		"TitleProperty": "Definitely check this out!",
+		"DescriptionProperty": "Navigation with navigateToRoute to a super secret page"
+	}
+]

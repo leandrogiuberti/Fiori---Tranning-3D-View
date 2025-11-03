@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.shareExtensibility.Sample"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Share Extension"
+		introduction="The Share controller extension enables you to extend the share functionality in your application."
+		documentation="41b02dfe1ac44d72bb766f5fc3e3d244"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.shareExtensibility.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Overriding the Share Controller Extension"
+				text="To implement a custom share functionality, you need to override the Share controller extension. This allows you to add custom logic to the share action in your application."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="shareExtensibility/Sample.controller.js" codeType="ts" start="Share.override" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Implementing Custom Share Logic"
+				text="In the overridden Share controller extension, you can implement your custom share logic. This includes defining how the share action should behave, such as modifying the e-mail title."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="shareExtensibility/ShareExtension.js" codeType="ts" start="adaptShareMetadata" end="}" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,6 @@
+<mvc:View height="100%" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:macros="sap.fe.macros" controllerName="sap.fe.core.PageController">
+	<macros:Page title="My Travel Requests" class="sapUiContentPadding">
+		<MessageStrip text="Click on a travel request to see the Flexible Column Layout actions" type="Information" showIcon="true" />
+		<macros:Table metaPath="/Travel/@com.sap.vocabularies.UI.v1.LineItem" />
+	</macros:Page>
+</mvc:View>

@@ -1,0 +1,33 @@
+<Annotation Term="UI.Chart">
+	<Record Type="UI.ChartDefinitionType">
+		<PropertyValue Property="Title" String="Chart Title" />
+		<PropertyValue Property="Description" String="Chart Description" />
+		<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column" />
+		<PropertyValue Property="DynamicMeasures">
+			<Collection>
+				<String>@Analytics.AggregatedProperty#min</String>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="Dimensions">
+			<Collection>
+				<PropertyPath>Status</PropertyPath>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="MeasureAttributes">
+			<Collection>
+				<Record Type="UI.ChartMeasureAttributeType">
+					<PropertyValue Property="DynamicMeasure" String="@Analytics.AggregatedProperty#min" />
+					<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="DimensionAttributes">
+			<Collection>
+				<Record Type="UI.ChartDimensionAttributeType">
+					<PropertyValue Property="Dimension" PropertyPath="Status" />
+					<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

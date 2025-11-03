@@ -1,0 +1,41 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Custom Page"
+		introduction="You can build your SAP Fiori elements app from a blank custom page while still getting full support through our building blocks, including the Page building block."
+		documentation="025865041ec64c6daf58034d78f11310"
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="customPage" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep title="Using Building Blocks">
+				<fpmExplorer:textContent>
+					<VBox>
+						<Text text="You can use the building blocks in your custom page as described in the following topic:" />
+						<fpmExplorer:Link text="Building Blocks Usage" topic="buildingBlocks/guidance/guidanceCustomApps" />
+					</VBox>
+				</fpmExplorer:textContent>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Using the Page Building Block"
+				text="You can use the Page building block to create a new custom page. By default, it contains a title and is preconfigured with the appropriate margins and padding."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="customPage/CustomPageSample.view.xml"
+						name="CustomPageSample.view.xml"
+						codeType="view"
+						start="macros:Page"
+						end="2"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

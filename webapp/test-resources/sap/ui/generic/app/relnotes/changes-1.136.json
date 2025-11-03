@@ -1,0 +1,45 @@
+{
+    "1.136.0": {
+        "date": "May 2025",
+        "notes": [
+            {
+                "id": "Idc86e62c060df1661b623a69e213217afa1f0afa",
+                "type": "FIX",
+                "text": "We've resolved an accessibility issue where the screen reader read incorrect information after a new object was created using the Create dialog",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "CS20240008959638"
+                    }
+                ]
+            },
+            {
+                "id": "I1532b392285da2d6129e1601dcf74e018ecc5f29",
+                "type": "FIX",
+                "text": "We've resolved an issue where the confirmation popup for a critical action remained visible even after the end user confirmed the action",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "DINC0382866"
+                    }
+                ]
+            }
+        ]
+    },
+    "1.136.3": {
+        "date": "July 2025",
+        "notes": [
+            {
+                "id": "I484518b15173521897fed4e76fafe7a91ee8567d",
+                "type": "FIX",
+                "text": "We've resolved an issue with editing the object page after performing a multi edit on the same record from the list report",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "DINC0507472"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Time Picker"
+		introduction="The Field building block enables you to render time input fields with a time picker."
+		documentation="a5608eabcc184aee99e1a7d88b28816c"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldTimePicker.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Define a property of type Time. The field formats the string value and in edit mode offers a Time Picker for changing the time."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="field/fieldTimePicker/localService/service.cds" start="ReminderTime" fileName="time.cds" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

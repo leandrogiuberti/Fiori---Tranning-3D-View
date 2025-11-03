@@ -1,0 +1,37 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Custom Column"
+		introduction="The Table building block enables you to render custom columns in a table."
+		documentation="d525522c1bf54672ae4e02d66b38e60c"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.customColumn.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Add Custom Columns"
+				text="You can add custom columns to your table. In this example, a process flow is added as a custom column. By specifying property names in the 'properties' attribute of the column, users can sort, group, export, and paste data based on these properties."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/customColumn/Sample.fragment.xml" codeType="view" start="myColumnKey" end="4" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Add Columns through Manifest"
+				text="If you want to add custom columns to your object page table rendered through UI.Facet annotations, you can use the 'columns' property in the controlConfiguration section of the respective UI.LineItem."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/customColumn/code/CustomColumns.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

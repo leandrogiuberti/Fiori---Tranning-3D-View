@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mc="sap.suite.ui.microchart" xmlns:macros="sap.fe.macros">
+	<HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="No Filter" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="RootEntitiesNoFilter"
+					number="5"
+					status="Success"
+					unit="Unit"
+					press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressRootEntitiesNoFilter"
+				/>
+			</FlexBox>
+		</HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="With Filter" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="RootEntitiesWithFilter"
+					number="2"
+					status="Information"
+					unit="Unit"
+					press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressRootEntitiesWithFilter"
+				/>
+			</FlexBox>
+		</HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="Cumulative Totals" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="Navigation"
+					number="12"
+					status="Information"
+					unit="Unit"
+					press=".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.pressNavigation"
+				/>
+			</FlexBox>
+		</HBox>
+	</HBox>
+</core:FragmentDefinition>

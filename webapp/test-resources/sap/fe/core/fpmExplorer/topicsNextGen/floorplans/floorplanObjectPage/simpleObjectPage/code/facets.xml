@@ -1,0 +1,22 @@
+<Annotations Target="TravelService.Travel">
+	...
+	<Annotation Term="UI.Facets">
+		<Collection>
+			<Record Type="UI.ReferenceFacet">
+				<PropertyValue Property="ID" String="TravelData" />
+				<PropertyValue Property="Label" String="Travel Information" />
+				<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#TravelData" />
+			</Record>
+			<Record Type="UI.ReferenceFacet">
+				<PropertyValue Property="ID" String="ApprovalData" />
+				<PropertyValue Property="Label" String="Approval Data" />
+				<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#ApprovalData" />
+			</Record>
+			<Record Type="UI.ReferenceFacet">
+				<PropertyValue Property="ID" String="BookingList" />
+				<PropertyValue Property="Label" String="Bookings" />
+				<PropertyValue Property="Target" AnnotationPath="to_Booking/@UI.LineItem" />
+			</Record>
+		</Collection>
+	</Annotation>
+</Annotations>

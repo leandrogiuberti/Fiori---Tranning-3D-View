@@ -1,0 +1,128 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page title="Custom Actions" documentation="7619517a92414e27b71f02094bd08d06">
+		<fpmExplorer:introductionContent>
+			<VBox class="sapUiTinyMarginTop">
+				<Text
+					text="This page demonstrates several options to configure custom actions and to influence their appearance. You can define custom actions as annotations in the service or in the Manifest file and add them to the header, sections and footer of the ObjectPage. The actions can be defined as buttons or as menu items within action groups and, depending on your needs, they can dynamically be set hidden or visible as well as enabled or disabled."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customAction" autoFocus="false" height="780px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Manifest Action 'Show Message'"
+				text="The header action 'Show Message' is defined in the Manifest. Its visibility and enablement is controlled by the content of the Travel entity fields 'HeaderActionVisible' and 'HeaderBooleanEnabled'. When in edit mode, you can change the fields 'Show Message enabled' and 'Show Message visible' to see the action switching between enabled and disabled, visible and hidden."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="customHeaderActionShowMessage"
+						end="},"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/extendOP.controller.js"
+						codeType="ts"
+						start="onPress"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Manifest Action 'Show Alert'"
+				text="The header action 'Show Alert' is also defined in the Manifest. Its visibility is controlled by the singleton '/EntitiesSingleton/ShowAlertVisible' within file 'EntitiesSingleton.json'. The enablement depends on the state of the ObjectPage, i.e. whether or not it is editable. This is controlled by the 'ui>/isEditable' expression."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="customHeaderActionShowAlert"
+						end="},"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/CustomAction.js"
+						codeType="ts"
+						start="alertHeader"
+						end="},"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Enhance an Action Group"
+				text="The header action group 'Travel Actions' shows an example how an action group defined in the servive by annotations can be enhanced within the Manifest file. The actions 'Copy' and 'Share' are defined by annotations. 
+				In the Manifest file the group is enhanced to provide two more actions, 'Check Travel Status' and 'Set Travel Status'. 'Check Travel Status' is also defined in the service but added to the action group via Manifest setting.
+				'Set Travel Status' is a custom action defined and added to the action group in the Manifest - therefore it is not part of the service and only available for a specific application."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/localService/service.cds"
+						start="DataFieldForActionGroup"
+						end="TravelService.CheckStatusAction"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="setTravelStatus"
+						end="17"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Action triggering Secured Execution"
+				text="The action 'Secured Execution' in the Travel Information section triggers a secured execution by calling the method 'this.editFlow.securedExecution()'. It assures that the UI is showing a busy indicator while the action is executed. 
+				The actions visibility and enablement is controlled by the fields 'NameProperty' and 'BooleanProperty' of the entity. When in edit mode, you can change the fields 'Secured Execution enabled' and 'Secured Execution visibility' to see the action switching between enabled and disabled, visible and hidden."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="customSectionAction"
+						end="},"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/CustomAction.js"
+						codeType="ts"
+						start="securedExecution"
+						end="34"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="'Show Total Price' Action in the Bookings table"
+				text="This action is implemented in the Manifest and also depends on whether the ObjectPage is editable or not. In this case it is only active when the travel item is in display mode."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="customActionShowTotalPrice"
+						end="},"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="'Revert Changes' Action in the Footer Bar"
+				text="The action is defined in the Manifest file. It is always enabled but the visibility depends on whether the ObjectPage is in display mode or in edit mode."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customAction/manifest.json"
+						codeType="manifest"
+						start="customRevertChangesAction"
+						end="7"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

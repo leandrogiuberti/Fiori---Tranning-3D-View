@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>sap.m.List with Growing Feature Test</title>
+
+<script src="shared-config.js"></script>
+<script src="../../../resources/sap-ui-core.js" data-sap-ui-xx-bindingSyntax="complex"
+	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m">
+</script>
+
+<script>
+	jQuery.sap.require("sap.ui.core.util.MockServer");
+	jQuery.sap.require("sap.ui.model.odata.v2.ODataModel");
+
+	var sServiceURI = "/ProductSet/" ;
+	var sMetaDataURI = "mockdata/";
+
+	// configure respond to requests delay
+	sap.ui.core.util.MockServer.config({
+		autoRespond : true,
+		autoRespondAfter : 1000
+	});
+
+	// create mockserver
+	var oMockServer = new sap.ui.core.util.MockServer({
+		rootUri : sServiceURI
+	});
+
+	// start mockserver
+	oMockServer.simulate(sMetaDataURI + "metadata.xml", sMetaDataURI);
+	oMockServer.start();
+
+	// controls
+	var oTemplate = new sap.m.StandardListItem({
+		title : "{product>Name} {product>SalesOrderID}",
+		description : "{product>Description}",
+		info : "{product>Price} {product>CurrencyCode}",
+		type : "Navigation",
+		navigated: {
+			path: "product>Price",
+			formatter: function(value) {
+				return (value === "956.0");
+			}
+		},
+		highlight: {
+			path: "product>Price",
+			formatter: function(value) {
+				value = parseFloat(value);
+				if (value < 50) {
+					return "Error";
+				}
+				if (value < 1000) {
+					return "Warning";
+				}
+				if (value <= 10000) {
+					return "Indication04";
+				}
+				if (value > 10000 && value < 50000) {
+					return "Success";
+				}
+				return "None";
+			}
+		},
+		counter: {
+			path : "product>Price",
+			formatter : function(value) {
+				return Math.ceil(Math.random() * 100);
+			}
+		},
+		selected : {
+			path : "product>Price",
+			formatter : function(value) {
+				return value > 1300 ? true : false;
+			}
+		},
+		infoState : {
+			path : "product>Price",
+			formatter : function(value) {
+				return value > 300 ? "Warning" : "Success";
+			}
+		},
+		actions: [
+			new sap.m.ListItemAction({
+				text: "Accept",
+				icon: "sap-icon://accept"
+			}),
+			new sap.m.ListItemAction({
+				type: "Edit"
+			}),
+			new sap.m.ListItemAction({
+				type: "Delete"
+			})
+		]
+	});
+
+	var oList = new sap.m.List({
+		growing : true,
+		busyIndicatorDelay : 400,
+		growingThreshold: {
+			path : "growing>/threshold",
+			formatter : function(value) {
+				return +value;
+			}
+		},
+		growingScrollToLoad : "{growing>/scrollToLoad}",
+		mode: sap.m.ListMode.MultiSelect,
+		showNoData: true,
+		itemActionCount: 2,
+		itemActionPress: function(oEvent) {
+			const oItem = oEvent.getParameter("listItem");
+			const oAction = oEvent.getParameter("action");
+			const iItemIndex = oItem.getParent().indexOfItem(oItem);
+			const sAction = oAction.getText() || oAction.getType();
+			sap.m.MessageToast.show(`${sAction} action of item ${iItemIndex} is pressed`);
+		}
+	});
+
+	var oPage = new sap.m.Page({
+		title : "Growing List Testpage",
+		footer : new sap.m.Bar({})
+	});
+
+	// list properties
+	var oGrowingModel = new sap.ui.model.json.JSONModel();
+	oGrowingModel.setData({ threshold : 14, scrollToLoad : true });
+	oList.setModel(oGrowingModel, "growing");
+	oPage.setModel(oGrowingModel, "growing");
+
+	// odata model
+	var oModel = new sap.ui.model.odata.v2.ODataModel(sServiceURI, true);
+	oList.setModel(oModel, "product");
+
+	// bind Aggregation
+	oList.bindItems({
+		path : "product>/ProductSet",
+		template : oTemplate
+	});
+
+	var oToolbar = new sap.m.Toolbar({
+		design: "Solid",
+		content : [
+			new sap.m.Label({
+				text: "Growing Threshold:"
+			}),
+			new sap.m.Input({
+				value: "{growing>/threshold}",
+				width: "4rem",
+				type: "Number"
+			}),
+			new sap.m.ToolbarSeparator(),
+			new sap.m.CheckBox({
+				text : "ScrollToLoad More",
+				selected: "{growing>/scrollToLoad}"
+			}),
+			new sap.m.ToolbarSeparator(),
+			new sap.m.ToggleButton({
+				text: "Upwards Direction",
+				press: function(oEvent) {
+					var sDir = oEvent.getSource().getPressed() ? "Upwards" : "Downwards";
+					oList.setGrowingDirection(sDir).bindItems({
+						path : "product>/ProductSet",
+						template : oTemplate
+					});
+				}
+			}),
+			new sap.m.ToolbarSpacer(),
+			new sap.m.Button({
+				text : "Group",
+				press : function () {
+					var oBinding = oList.getBinding("items");
+					oBinding.sort([
+						new sap.ui.model.Sorter("Category", false, true)
+					]);
+				}
+			}),
+			new sap.m.ToolbarSeparator(),
+			new sap.m.Button({
+				text : "Ungroup",
+				press : function () {
+					oList.getBinding("items").sort([]);
+				}
+			})
+		]
+	});
+
+	oPage.setFooter(oToolbar);
+	oPage.addContent(oList);
+
+	var oApp = new sap.m.App({
+		pages : [oPage]
+	}).placeAt("body");
+
+</script>
+
+</head>
+<body id="body" class="sapUiBody">
+</body>
+</html>

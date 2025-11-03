@@ -1,0 +1,38 @@
+[
+	{
+		"Currency": "AED",
+		"Currency_Text": "United Arab Emirates Dirham"
+	},
+	{
+		"Currency": "AUD",
+		"Currency_Text": "Australian Dollar"
+	},
+	{
+		"Currency": "BHD",
+		"Currency_Text": "Bahraini Dinar"
+	},
+	{
+		"Currency": "CAD",
+		"Currency_Text": "Canadian Dollar"
+	},
+	{
+		"Currency": "CHF",
+		"Currency_Text": "Swiss Franc"
+	},
+	{
+		"Currency": "EUR",
+		"Currency_Text": "European Euro"
+	},
+	{
+		"Currency": "GBP",
+		"Currency_Text": "British Pound"
+	},
+	{
+		"Currency": "JPY",
+		"Currency_Text": "Japanese Yen"
+	},
+	{
+		"Currency": "USD",
+		"Currency_Text": "United States Dollar"
+	}
+]

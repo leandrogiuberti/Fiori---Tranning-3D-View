@@ -1,0 +1,119 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/editFlow/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ObjectPage.ObjectPageController#sap.fe.core.fpmExplorer.editFlow::Default": {
+						"controllerName": "sap.fe.core.fpmExplorer.editFlow.TravelExtend"
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.editFlow.EditFlow"
+		},
+		"routing": {
+			"config": {
+				"controlId": "editFlow"
+			},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "TravelList",
+					"target": "TravelList"
+				},
+				{
+					"pattern": "/Travel({key}):?query:",
+					"name": "TravelDetail",
+					"target": "TravelDetail"
+				}
+			],
+			"targets": {
+				"TravelList": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+							"variantManagement": "Page",
+							"initialLoad": "Enabled",
+							"navigation": {
+								"Travel": {
+									"detail": {
+										"route": "TravelDetail"
+									}
+								}
+							}
+						}
+					}
+				},
+				"TravelDetail": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 1,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+							"content": {
+								"header": {
+									"actions": {
+										"headerInvokeAction": {
+											"press": ".extension.sap.fe.core.fpmExplorer.editFlow.TravelExtend.invokeAction",
+											"text": "Check Travel Policy"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

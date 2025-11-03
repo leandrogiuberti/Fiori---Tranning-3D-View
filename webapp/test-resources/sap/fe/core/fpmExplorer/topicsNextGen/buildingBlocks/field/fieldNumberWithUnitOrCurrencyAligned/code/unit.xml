@@ -1,0 +1,4 @@
+<Annotations Target="TravelService.Travel/Distance">
+	<Annotation Term="Measures.Unit" Path="DistanceUnit" />
+	<Annotation Term="Common.Label" String="Distance" />
+</Annotations>

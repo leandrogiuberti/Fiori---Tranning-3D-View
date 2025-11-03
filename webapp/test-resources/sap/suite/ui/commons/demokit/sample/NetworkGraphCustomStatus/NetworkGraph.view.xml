@@ -1,0 +1,61 @@
+<mvc:View
+		controllerName="sap.suite.ui.commons.sample.NetworkGraphCustomStatus.NetworkGraph"
+		xmlns="sap.suite.ui.commons.networkgraph"
+		xmlns:mvc="sap.ui.core.mvc"
+		height="100%">
+	<Graph enableWheelZoom="false"
+		   nodes="{/nodes}"
+		   lines="{/lines}"
+		   groups="{/groups}"
+		   id="graph">
+		<statuses>
+			<Status key="CustomSuccess" title="Success" contentColor="Sequence1" headerContentColor="Sequence1"
+					legendColor="Sequence1" useFocusColorAsContentColor="true"/>
+
+			<Status key="LineStatus" title="Line status"
+					backgroundColor="Sequence2"
+					legendColor="Sequence2"/>
+
+			<Status key="CustomStandard" title="Standard" backgroundColor="Error" />
+
+			<Status key="CustomStandardGroup" title="Standard"
+					backgroundColor="Neutral"
+					contentColor="Sequence3" useFocusColorAsContentColor="true"
+					legendColor="Sequence2"/>
+
+			<Status key="AttributeLabel" contentColor="Sequence1"/>
+
+			<Status key="AttributeValue" contentColor="Good"/>
+		</statuses>
+		<nodes>
+			<Node key="{key}"
+				  title="{title}"
+				  selected="{selected}"
+				  icon="{icon}"
+				  group="{group}"
+				  attributes="{path:'attributes', templateShareable:true}"
+				  shape="{shape}"
+				  status="{status}">
+				<attributes>
+					<ElementAttribute
+							label="{label}"
+							value="{value}"
+							labelStatus="{labelStatus}"
+							valueStatus="{valueStatus}"/>
+				</attributes>
+			</Node>
+		</nodes>
+		<lines>
+			<Line from="{from}"
+				  to="{to}"
+				  status="LineStatus">
+			</Line>
+		</lines>
+		<groups>
+			<Group key="{key}"
+				   status="CustomStandardGroup"
+				   title="{title}">
+			</Group>
+		</groups>
+	</Graph>
+</mvc:View>

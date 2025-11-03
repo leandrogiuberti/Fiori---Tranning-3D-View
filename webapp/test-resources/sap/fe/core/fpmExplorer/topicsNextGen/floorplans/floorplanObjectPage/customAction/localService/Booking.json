@@ -1,0 +1,100 @@
+[
+	{
+		"BookingUUID": "1A757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "52657221A8E4645C17002DF03754AB66",
+		"BookingID": "0001",
+		"BookingDate": "2025-10-20",
+		"ConnectionID": "1001",
+		"FlightDate": "2025-11-04",
+		"FlightPrice": "405.00",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B",
+		"TextProperty": "Description 1"
+	},
+	{
+		"BookingUUID": "1B757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "52657221A8E4645C17002DF03754AB66",
+		"BookingID": "0002",
+		"BookingDate": "2025-10-20",
+		"ConnectionID": "1002",
+		"FlightDate": "2025-11-06",
+		"FlightPrice": "495.00",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B",
+		"TextProperty": "Description 2"
+	},
+	{
+		"BookingUUID": "2A757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "53657221A8E4645C17002DF03754AB66",
+		"BookingID": "0001",
+		"BookingDate": "2025-11-20",
+		"ConnectionID": "2001",
+		"FlightDate": "2025-12-04",
+		"FlightPrice": "1492.08",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	},
+	{
+		"BookingUUID": "2B757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "53657221A8E4645C17002DF03754AB66",
+		"BookingID": "0002",
+		"BookingDate": "2025-11-20",
+		"ConnectionID": "2002",
+		"FlightDate": "2025-12-16",
+		"FlightPrice": "1671.92",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	},
+	{
+		"BookingUUID": "3A757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "54657221A8E4645C17002DF03754AB66",
+		"BookingID": "0001",
+		"BookingDate": "2025-07-20",
+		"ConnectionID": "3001",
+		"FlightDate": "2025-08-04",
+		"FlightPrice": "785.82",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	},
+	{
+		"BookingUUID": "3B757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "54657221A8E4645C17002DF03754AB66",
+		"BookingID": "0002",
+		"BookingDate": "2025-07-20",
+		"ConnectionID": "3002",
+		"FlightDate": "2025-08-08",
+		"FlightPrice": "1085.18",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	},
+	{
+		"BookingUUID": "4A757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "55657221A8E4645C17002DF03754AB66",
+		"BookingID": "0001",
+		"BookingDate": "2025-08-20",
+		"ConnectionID": "4001",
+		"FlightDate": "2025-09-04",
+		"FlightPrice": "632.40",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	},
+	{
+		"BookingUUID": "4B757221A8E4645C17002DF03754AB66",
+		"to_Travel_TravelUUID": "55657221A8E4645C17002DF03754AB66",
+		"BookingID": "0002",
+		"BookingDate": "2025-08-20",
+		"ConnectionID": "4002",
+		"FlightDate": "2025-09-05",
+		"FlightPrice": "607.60",
+		"CurrencyCode_code": "USD",
+		"BookingStatus_code": "N",
+		"PaymentMethod": "B"
+	}
+]

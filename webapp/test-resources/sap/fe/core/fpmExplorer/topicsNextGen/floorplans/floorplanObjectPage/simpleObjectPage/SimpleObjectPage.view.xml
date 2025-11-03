@@ -1,0 +1,45 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page title="Object Page" documentation="645e27ae85d54c8cbc3f6722184a24a1">
+		<fpmExplorer:introductionContent>
+			<VBox class="sapUiTinyMarginTop">
+				<Text
+					text="The object page floorplan is used to display and categorize all relevant information about a business object. Categorized content can be accessed quickly using anchor or tab navigation, and users can switch from display to edit mode to change the content."
+				/>
+				<Text
+					text="The object page floorplan comes with a flexible, responsive layout and a dynamic header area that can be adapted to display simple and complex business objects. This allows you to adjust the layout to a wide range of use cases."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="simpleObjectPage" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Header Facet"
+				text="The object page consists of facets that display data. You can use the header facet and header info to show essential business object details that remain permanently visible on the UI."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="HeaderFacets            :" end="});" />
+					<fpmExplorer:CodeLink file="floorplanObjectPage/simpleObjectPage/code/headerFacet.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Facets"
+				text="Within Facets you can show the data collected in field groups. You can use facets to group and show related information on the UI."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="Facets                  :" end="]," />
+					<fpmExplorer:CodeLink file="floorplanObjectPage/simpleObjectPage/code/facets.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

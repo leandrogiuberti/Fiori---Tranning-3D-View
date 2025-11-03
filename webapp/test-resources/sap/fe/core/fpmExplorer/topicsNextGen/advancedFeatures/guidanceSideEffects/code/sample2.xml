@@ -1,0 +1,22 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Action Name="sideEffectTriggerAction" IsBound="true">
+		<Parameter Name="in" Type="sap.fe.core.Service.RootEntity" />
+	</Action>
+	<Annotations Target="Service.RootEntity">
+		<Annotation Term="Common.SideEffects" Qualifier="triggerActionProperty">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="SourceProperties">
+					<Collection>
+						<PropertyPath>sourceProperty2</PropertyPath>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>targetProperty2</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TriggerAction" String="sap.fe.core.Service.sideEffectTriggerAction" />
+			</Record>
+		</Annotation>
+	</Annotations>
+</Schema>

@@ -1,0 +1,17 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Action Name="increaseAndCheckPrime" IsBound="true">
+		<Parameter Name="_it" Type="sap.fe.core.Service.RootEntity" />
+	</Action>
+	<Annotations Target="sap.fe.core.Service.increaseAndCheckPrime(sap.fe.core.Service.RootEntity)">
+		<Annotation Term="Common.SideEffects">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>_it/*</String>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+		<Annotation Term="Core.OperationAvailable" Path="_it/OperationAvailable" />
+	</Annotations>
+</Schema>

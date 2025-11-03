@@ -1,0 +1,83 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="State Handling"
+		introduction="You can implement custom state handling in controller extensions to save and restore the state of custom controls and additional data when navigating between pages."
+		documentation="89fa878945294931b15a581a99043005"
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="viewState" autoFocus="false" height="720px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Override View State Methods"
+				text="To implement view state management, you need to extend the controller and override the viewState methods. The viewState object provides several hooks to customize how the state is managed."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="viewState/OPExtend.controller.js" codeType="ts" start="viewState: " end="}" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Control State Adaptation"
+				text="Use adaptControlStateHandler to define how custom controls should save and restore their state. This method allows you to specify retrieve and apply functions for different control types."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="viewState/OPExtend.controller.js"
+						codeType="ts"
+						start="adaptControlStateHandler: function"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Register State Controls"
+				text="Use adaptStateControls to register which controls should be included in the state management. Add your custom controls to the aControls array."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="viewState/OPExtend.controller.js"
+						codeType="ts"
+						start="adaptStateControls: function"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Additional State Management"
+				text="Use retrieveAdditionalStates and applyAdditionalStates to manage custom data that is not bound to specific controls, such as timestamps or user preferences."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="viewState/OPExtend.controller.js"
+						codeType="ts"
+						start="retrieveAdditionalStates: function"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Update App State"
+				text="Call the updateAppState method from the extension API to save the current state. This is typically done in response to user actions."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="viewState/OPExtend.controller.js"
+						codeType="ts"
+						start="onSaveToAppState: function"
+						end="}"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

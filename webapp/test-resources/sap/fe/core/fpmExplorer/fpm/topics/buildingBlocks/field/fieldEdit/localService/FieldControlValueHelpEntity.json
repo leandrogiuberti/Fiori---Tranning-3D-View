@@ -1,0 +1,18 @@
+[
+	{
+		"KeyProp": 0,
+		"Description": "Disabled"
+	},
+	{
+		"KeyProp": 1,
+		"Description": "Read Only"
+	},
+	{
+		"KeyProp": 3,
+		"Description": "Editable (optional)"
+	},
+	{
+		"KeyProp": 7,
+		"Description": "Editable (mandatory)"
+	}
+]

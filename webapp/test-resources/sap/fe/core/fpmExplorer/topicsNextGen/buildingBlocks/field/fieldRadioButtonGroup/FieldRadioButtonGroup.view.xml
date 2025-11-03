@@ -1,0 +1,38 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Radio Button Group"
+		introduction="The Field building block enables you to render fields with a fixed value list as radio button groups."
+		documentation="5260b9ca249f465ab33769b9edb442aa"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldRadioButtonGroup.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Step 1: Define a fixed value list"
+				text="Add Commmon.ValueList and Common.ValueListWithFixedValues annotations to the property for which you want to show a radio button group in edit mode. Inside Common.ValueList, also add a Parameters entry of type Common.ValueLIstParameterInOut connecting the local property with the ValueList property."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="PaymentMethod" end="};" />
+					<fpmExplorer:CodeLink file="field/fieldRadioButtonGroup/code/radioButtonGroup.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Step 2: Add format options to the field"
+				text="For the field building block, add a formatOptions element with a fieldEditStyle attribute and the value RadioButtons."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="field/fieldRadioButtonGroup/Sample.fragment.xml" start="formatOptions" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

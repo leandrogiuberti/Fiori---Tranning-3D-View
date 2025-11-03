@@ -1,0 +1,50 @@
+<Annotations Target="TravelService.Travel">
+	<Annotation Term="UI.PresentationVariant">
+		<Record Type="UI.PresentationVariantType">
+			<PropertyValue Property="Visualizations">
+				<Collection>
+					<AnnotationPath>@UI.LineItem</AnnotationPath>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+	<Annotation Term="UI.SelectionVariant" Qualifier="Approved">
+		<Record Type="UI.SelectionVariantType">
+			<PropertyValue Property="Text" String="Approved" />
+			<PropertyValue Property="SelectOptions">
+				<Collection>
+					<Record Type="UI.SelectOptionType">
+						<PropertyValue Property="PropertyName" PropertyPath="TravelStatus_code" />
+						<PropertyValue Property="Ranges">
+							<Collection>
+								<Record Type="UI.SelectionRangeType">
+									<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+									<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+									<PropertyValue Property="Low" String="A" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+	<Annotation Term="UI.SelectionPresentationVariant" Qualifier="Approved">
+		<Record Type="UI.SelectionPresentationVariantType">
+			<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#Approved" />
+			<PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant" />
+			<PropertyValue Property="Text" String="Approved" />
+		</Record>
+	</Annotation>
+	<Annotation Term="UI.SelectionPresentationVariant" Qualifier="All">
+		<Record Type="UI.SelectionPresentationVariantType">
+			<PropertyValue Property="SelectionVariant">
+				<Record Type="UI.SelectionVariantType">
+					<PropertyValue Property="Text" String="All" />
+				</Record>
+			</PropertyValue>
+			<PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant" />
+			<PropertyValue Property="Text" String="All" />
+		</Record>
+	</Annotation>
+</Annotations>

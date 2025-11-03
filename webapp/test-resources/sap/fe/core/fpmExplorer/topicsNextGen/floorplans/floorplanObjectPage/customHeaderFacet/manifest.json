@@ -1,0 +1,169 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customHeaderFacet",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/customHeaderFacet/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacet"
+		},
+		"routing": {
+			"config": {
+				"controlId": "customHeaderFacet"
+			},
+			"routes": [
+				{
+					"pattern": "/Travel({key}):?query:",
+					"name": "objectPage",
+					"target": "objectPage"
+				},
+				{
+					"pattern": "/Travel({key})/to_Booking({key2}):?query:",
+					"name": "subObjectPage",
+					"target": "subObjectPage"
+				}
+			],
+			"targets": {
+				"objectPage": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 1,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+							"content": {
+								"header": {
+									"facets": {
+										"customColumnChart": {
+											"template": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetColumnChart",
+											"requestGroupId": "Heroes",
+											"stashed": false,
+											"visible": "{= ${BooleanProperty}}",
+											"position": {
+												"placement": "After",
+												"anchor": "HeaderFacetIdentifier1"
+											},
+											"flexSettings": {
+												"designtime": "not-adaptable-visibility"
+											}
+										},
+										"customDataPoint": {
+											"template": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetDataPoint",
+											"title": "Custom Data Point",
+											"subTitle": "Car Rental",
+											"requestGroupId": "LongRunners",
+											"position": {
+												"placement": "After",
+												"anchor": "customColumnChart"
+											},
+											"templateEdit": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetDataPointEdit"
+										}
+									}
+								}
+							},
+							"editableHeaderContent": true,
+							"controlConfiguration": {
+								"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+									"actions": {}
+								},
+								"@com.sap.vocabularies.UI.v1.HeaderFacets": {
+									"facets": {
+										"customMicroChart": {
+											"template": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetMicroChart",
+											"title": "Custom Micro Chart",
+											"requestGroupId": "Workers",
+											"position": {
+												"placement": "After",
+												"anchor": "customDataPoint"
+											},
+											"templateEdit": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetMicroChartEdit"
+										},
+										"customBuildingBlockMicroChart": {
+											"template": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetBuildingBlockMicroChart",
+											"title": "Custom Building Block Micro Chart",
+											"requestGroupId": "Workers",
+											"position": {
+												"placement": "After",
+												"anchor": "customMicroChart"
+											},
+											"templateEdit": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetBuildingBlockMicroChartEdit"
+										},
+										"customBuildingBlockFormElement": {
+											"template": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetBuildingBlockFormElement",
+											"title": "Custom Building Block Form Element",
+											"requestGroupId": "Workers",
+											"position": {
+												"placement": "After",
+												"anchor": "customBuildingBlockMicroChart"
+											},
+											"templateEdit": "sap.fe.core.fpmExplorer.customHeaderFacet.CustomHeaderFacetBuildingBlockFormElementEdit"
+										}
+									}
+								}
+							},
+							"navigation": {
+								"Booking": {
+									"detail": {
+										"route": "subObjectPage"
+									}
+								}
+							}
+						}
+					}
+				},
+				"subObjectPage": {
+					"type": "Component",
+					"id": "subObjectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 2,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel/to_Booking"
+						}
+					}
+				}
+			}
+		}
+	}
+}

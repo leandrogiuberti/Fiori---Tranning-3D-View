@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<macros:Chart
+		id="chartDefault"
+		header="Chart Header"
+		headerVisible="true"
+		metaPath="/RootEntity/items/@com.sap.vocabularies.UI.v1.Chart"
+		personalization="Sort,Type,Item,Filter"
+		selectionMode="Multiple"
+	/>
+</core:FragmentDefinition>

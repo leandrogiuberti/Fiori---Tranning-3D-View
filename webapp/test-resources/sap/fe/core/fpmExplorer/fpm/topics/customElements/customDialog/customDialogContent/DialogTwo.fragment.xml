@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:macros="sap.fe.macros" xmlns:f="sap.f">
+	<Dialog title="Dialog with Table Building Block" resizable="true" contentHeight="400px" contentWidth="600px" verticalScrolling="false">
+		<content>
+			<macros:Table
+				metaPath="/RootEntity/@com.sap.vocabularies.UI.v1.LineItem"
+				type="GridTable"
+				rowCountMode="Auto"
+				readOnly="true"
+				id="LineItemTable"
+			/>
+		</content>
+		<endButton>
+			<Button text="Close Dialog" press=".closeDialog" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

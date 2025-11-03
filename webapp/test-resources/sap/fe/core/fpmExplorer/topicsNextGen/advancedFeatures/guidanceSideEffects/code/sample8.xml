@@ -1,0 +1,34 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Annotations Target="sap.fe.core.Service.RootEntity">
+		<Annotation Term="Common.SideEffects" Qualifier="BusinessPartner">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="SourceProperties">
+					<Collection>
+						<PropertyPath>BusinessPartnerID</PropertyPath>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>businessPartner</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+	<Annotations Target="sap.fe.core.Service.deleteBusinessPartner(sap.fe.core.Service.RootEntity)">
+		<Annotation Term="Common.SideEffects" Qualifier="InvalidateCachedValueHelp">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>_it/BusinessPartnerID</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetEntities">
+					<Collection>
+						<NavigationPropertyPath>/sap.fe.core.Service.EntityContainer/BusinessPartnerAddress</NavigationPropertyPath>
+					</Collection>
+				</PropertyValue>
+			</Record>
+		</Annotation>
+	</Annotations>
+</Schema>

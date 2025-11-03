@@ -1,0 +1,70 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.Fcl"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Flexible Column Layout"
+		documentation="e762257125b34513b0859faa1610b09e"
+		introduction="The flexible column layout is a feature that can show two or three columns on a single page."
+	>
+		<fpmExplorer:sample>
+			<Panel height="620px" width="100%" class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd" expanded="true">
+				<f:FlexibleColumnLayout id="appContent" autoFocus="false" />
+			</Panel>
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep title="Routing Configuration" text="Setting the column layout within the manifest">
+				<VBox class="sapUiTinyMarginTop">
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="floorplanListReport/fclListReport/manifest.json"
+							start="config"
+							end="routes"
+							codeType="manifest"
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Routing Routes"
+				text="The route target for the Object Page contains both pages, the List Report as well as the Object Page"
+			>
+				<VBox class="sapUiTinyMarginTop">
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="floorplanListReport/fclListReport/manifest.json"
+							start="Travel("
+							end="]"
+							codeType="manifest"
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="Pages Control Aggregation" text="Setting the controlAggregation for each page">
+				<VBox class="sapUiTinyMarginTop">
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="floorplanListReport/fclListReport/manifest.json"
+							start="sap.fe.templates.ListReport"
+							end=","
+							codeType="manifest"
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="floorplanListReport/fclListReport/manifest.json"
+							start="sap.fe.templates.ObjectPage"
+							end=","
+							codeType="manifest"
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

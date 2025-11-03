@@ -1,0 +1,33 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Rich Text Editor"
+		introduction="The RichTextEditor building block enables you to add a control that shows a formatted text in display mode and allows users to edit and format it directly in edit mode."
+		documentation="7bd2767a8f74423ca5fbdf84f1341782"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.rteDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="To use the rich text editor, you need to define the metaPath pointing to a string property. The building block is based on the rich text editor used in SAPUI5, allowing you to define the button groups and plugins the same way as you would in that control."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="richTextEditor/rteDefault/Sample.fragment.xml"
+						codeType="view"
+						start="RichTextEditorWithMetadata"
+						end="6"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

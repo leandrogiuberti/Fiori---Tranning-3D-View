@@ -1,0 +1,34 @@
+<Annotation Term="UI.Chart">
+	<Record Type="UI.ChartDefinitionType">
+		<PropertyValue Property="Title" String="Bookings" />
+		<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Bar" />
+		<PropertyValue Property="DynamicMeasures">
+			<Collection>
+				<AnnotationPath>@Analytics.AggregatedProperty#minPrice</AnnotationPath>
+				<AnnotationPath>@Analytics.AggregatedProperty#maxPrice</AnnotationPath>
+				<AnnotationPath>@Analytics.AggregatedProperty#avgPrice</AnnotationPath>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="Dimensions">
+			<Collection>
+				<PropertyPath>airline</PropertyPath>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="MeasureAttributes">
+			<Collection>
+				<Record Type="UI.ChartMeasureAttributeType">
+					<PropertyValue Property="DynamicMeasure" AnnotationPath="@Analytics.AggregatedProperty#minPrice" />
+					<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="DimensionAttributes">
+			<Collection>
+				<Record Type="UI.ChartDimensionAttributeType">
+					<PropertyValue Property="Dimension" PropertyPath="airline" />
+					<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

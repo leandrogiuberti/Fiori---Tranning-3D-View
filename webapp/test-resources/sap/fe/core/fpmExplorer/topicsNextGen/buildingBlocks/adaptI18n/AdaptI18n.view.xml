@@ -1,0 +1,101 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:code="sap.ui.codeeditor"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		documentation="b8cb649973534f08a6047692f8c6830d"
+		title="Adapt i18n Texts"
+		introduction="This guide describes how to override standard texts in your generated SAP Fiori elements apps using building blocks."
+	>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="1. Adapt the Manifest to Override the Texts"
+				text="Changes must be made in the manifest file of the application. Add 'enhanceI18n' to the settings of the corresponding section as shown in the following code sample:"
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="adaptI18n/manifest.json" start="enhanceI18n" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="2. Create an i18n Properties File to Override the Text"
+				text="When you have created your specific application component, for example in SAP Fiori tools, standard texts are available from a specific template component (for example, i18n file within the application folder)."
+			>
+				<VBox>
+					<Text class="sapUiTinyMargin" text="1. If an i18n file is not present, then create a file in the application" />
+					<Text class="sapUiTinyMargin" text="Folder structure looks like:" />
+					<Image
+						src="/test-resources/sap/fe/core/fpmExplorer/topics/buildingBlocks/guidance/adaptI18n/resources/Folder.png"
+						height="8.5rem"
+						width="17rem"
+					/>
+					<Text
+						class="sapUiTinyMargin"
+						text="2. Add the relevant key and the text to be overridden to the newly created or existing file."
+					/>
+					<code:CodeEditor
+						class="sapUiTinyMargin"
+						lineNumbers="false"
+						type="xml"
+						value="FILTERBAR_EDITING_STATUS=Editing Status Filter"
+						editable="false"
+						height="25Px"
+					/>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="3. You Can Now Use the Building Blocks Provided by SAP Fiori Elements"
+				text="Example: Using the 'Filter Bar' building block. Add the editing status key to the i18n properties file."
+			>
+				<VBox height="50px">
+					<Image
+						src="/test-resources/sap/fe/core/fpmExplorer/topics/buildingBlocks/guidance/adaptI18n/resources/Filterbar.png"
+						width="80rem"
+					/>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="4. Keys That Are Publicly Available for the Building Blocks"
+				text="The following table lists keys you can override for building blocks."
+			>
+				<Table id="idKeys" items="">
+					<headerToolbar>
+						<Toolbar>
+							<Label text="Keys You Can Override" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column>
+							<Text text="Key" />
+						</Column>
+						<Column>
+							<Text text="Default Text in SAP Fiori Elements" />
+						</Column>
+						<Column>
+							<Text text="Used In" />
+						</Column>
+						<Column>
+							<Text text="Building block" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="FILTERBAR_EDITING_STATUS" />
+								<Text text="Editing Status" />
+								<Text text="Label for the 'Editing Status' field in the filter bar" />
+								<Text text="Filterbar" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

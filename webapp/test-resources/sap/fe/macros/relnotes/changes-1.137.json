@@ -1,0 +1,132 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "fe6cfd3ad288be063a80da7daab8b02d2aa9b3e0",
+        "type": "FIX",
+        "text": " We now correctly truncate the quick view description"
+      },
+      {
+        "id": "5945e9f2313fbf9e1f220209ca9e374a91296cb2",
+        "type": "FIX",
+        "text": " You can now configure the exportRequestSize parameter in tree and analytical tables using the Table building block or manifest.json file"
+      },
+      {
+        "id": "f88ff1413e3b453b7678c2813fb74726bbf109f0",
+        "type": "FIX",
+        "text": " We've resolved an issue in the Table building block API that prevented showing or hiding columns"
+      },
+      {
+        "id": "dc8240e4bc1e3ac2bd88c76d95ae72e021479fae",
+        "type": "FIX",
+        "text": " We now ensure that the binding for the timezone property works correctly"
+      },
+      {
+        "id": "7b6ffb3fb56b657d10d563297376534257dfabb9",
+        "type": "FIX",
+        "text": " The mass edit functionality now supports fields containing date-time values with time zones"
+      },
+      {
+        "id": "5074a383a9730cf0ec8a5f1d18777266fcd74d3d",
+        "type": "FIX",
+        "text": " We now ensure that the busy indicator is displayed during paste, drag, and move operations"
+      },
+      {
+        "id": "4a2cc7eebb4719673166427c37e968b310121509",
+        "type": "FEATURE",
+        "text": " We now migrated the FormElement Building Block to an extended UI5 control"
+      },
+      {
+        "id": "1c9b761e9ebeea71e3a01c8a62dbf4fb533bf5b0",
+        "type": "FIX",
+        "text": " Radio buttons now have tooltips"
+      },
+      {
+        "id": "5f34fb8959cd774d3e093cc49a2822d3dac543cb",
+        "type": "FIX",
+        "text": " We now request messages when an action is executed from the controller extension"
+      },
+      {
+        "id": "5694133f3e43dadbba726d7c3a489293ea97d8f8",
+        "type": "FIX",
+        "text": " We’ve resolved an error in the calculation of the column width in tables used within the value help"
+      },
+      {
+        "id": "3207857f3c7b0a582f082c34a7ce08470a668fe6",
+        "type": "FIX",
+        "text": " We've reintroduced the extension.additionalProperties property to ensure that analytical tables are correctly displayed"
+      },
+      {
+        "id": "9e587ac7a87372cc8592b6845ed170ff0b777a04",
+        "type": "FIX",
+        "text": " We've resolved an issue with the return of GetFilters"
+      },
+      {
+        "id": "27cb624b8ad8b24a478183179036d7474a900d15",
+        "type": "FIX",
+        "text": " We now correctly set the width of radio buttons"
+      },
+      {
+        "id": "4ff2987cddaac3cc53b6ee6cf05cfbbaf4242c35",
+        "type": "FIX",
+        "text": " Value help for multi-input fields now works correctly"
+      },
+      {
+        "id": "6f611bc344a328a0027f5b77844893ac95cfc464",
+        "type": "FIX",
+        "text": " We've resolved an issue where the type-ahead suggestions weren't shown when focusing on a field for the first time"
+      },
+      {
+        "id": "97b3251811d7a81bf5fb43922d086e4ce5ed28d0",
+        "type": "FIX",
+        "text": " We now ensure that the Edit button is enabled when no conditions are applied to it"
+      },
+      {
+        "id": "64dc80d3f64fa996b45a3035970765ea886d5c47",
+        "type": "FIX",
+        "text": " We now ensure that properties are displayed with the correct labels in the p13n personalization dialog"
+      },
+      {
+        "id": "01874f4b5e5ab3215af2847bd6046599229d284d",
+        "type": "FIX",
+        "text": " We now emphasize semantic keys in a grid table when they have semantic objects"
+      },
+      {
+        "id": "1864ce4fe60c7c99f7ecef805d1213a56f6cf316",
+        "type": "FIX",
+        "text": " We've resolved an issue with setting a semantic object in the Field building block"
+      },
+      {
+        "id": "3de006b7d8bfa91d81aaa3ccdf8742a3d7991214",
+        "type": "FIX",
+        "text": " We now avoid displaying empty brackets when the description is missing"
+      },
+      {
+        "id": "ff0e23055af81e6c289aa6c6eab3a2ec2ce632cc",
+        "type": "FIX",
+        "text": " We now ensure that the textFromValueList property is correctly used as fallback text for the field"
+      },
+      {
+        "id": "e69ea1c1efa22d1c363838db0fa8901995d9fe49",
+        "type": "FIX",
+        "text": " We've resolved an issue where manifest settings weren't applied to charts on the object page"
+      },
+      {
+        "id": "55b25c11f5d25dd81c5f824bef35a0689cb16ce6",
+        "type": "FIX",
+        "text": " We've resolved an issue where the EditState filter didn’t behave correctly when used inside nested MultiFilters"
+      },
+      {
+        "id": "0d639331b5fa69d233ce414c935fa9a0227a8b11",
+        "type": "FEATURE",
+        "text": " We've introduced a toggle button on the column selection tab in the table's p13N dialog, to allow users to display description columns when needed"
+      },
+      {
+        "id": "77aeadea4f3f8dbcc8a33db822ddc46a5e49428d",
+        "type": "FIX",
+        "text": " We now ensure using a binding expression for the readOnly property in the Field building block works correctly"
+      }
+    ]
+  }
+}

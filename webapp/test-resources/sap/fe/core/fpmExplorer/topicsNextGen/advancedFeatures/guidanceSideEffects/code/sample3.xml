@@ -1,0 +1,23 @@
+<Schema Namespace="sap.fe.core.Service" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Action Name="sideEffectTriggerActionMultiSources" IsBound="true">
+		<Parameter Name="in" Type="sap.fe.core.Service.RootEntity" />
+	</Action>
+	<Annotations Target="Service.RootEntity">
+		<Annotation Term="Common.SideEffects" Qualifier="multiSourceProperties">
+			<Record Type="Common.SideEffectsType">
+				<PropertyValue Property="SourceProperties">
+					<Collection>
+						<PropertyPath>sourceProperty3a</PropertyPath>
+						<PropertyPath>sourceProperty3b</PropertyPath>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TargetProperties">
+					<Collection>
+						<String>targetProperty3</String>
+					</Collection>
+				</PropertyValue>
+				<PropertyValue Property="TriggerAction" String="sap.fe.core.Service.sideEffectTriggerActionMultiSources" />
+			</Record>
+		</Annotation>
+	</Annotations>
+</Schema>

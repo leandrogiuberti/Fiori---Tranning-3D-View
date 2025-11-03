@@ -1,0 +1,39 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Tree Table"
+		introduction="The TreeTable building block enables you to render a table with hierarchical data."
+		documentation="667851f2d0d746a387d7e2fc7766b743"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.treeTable.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Hierarchy Definition"
+				text="The Aggregation.RecursiveHierarchy and @Hierarchy.RecursiveHierarchy defines the hierarchy of the tree table."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/treeTable/localService/service.cds"
+						start="@Aggregation.RecursiveHierarchy"
+						end="12"
+					/>
+					<fpmExplorer:CodeLink file="table/treeTable/code/hierarchy.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="LineItem Definition" text="The UI.LineItem annotation defines the columns of the table.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/treeTable/localService/service.cds" start="LineItem" end="]" />
+					<fpmExplorer:CodeLink file="table/treeTable/code/lineItems.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

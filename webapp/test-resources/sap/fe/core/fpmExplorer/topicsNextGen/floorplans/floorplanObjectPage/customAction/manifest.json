@@ -1,0 +1,187 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customAction",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/customAction/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.fe.core.fpmExplorer.customAction.i18n.i18n"
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.fe.core.fpmExplorer.customAction.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.customAction.CustomAction"
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ObjectPage.ObjectPageController": {
+						"controllerName": "sap.fe.core.fpmExplorer.customAction.extendOP"
+					}
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"controlId": "customAction"
+			},
+			"routes": [
+				{
+					"pattern": "/Travel({key}):?query:",
+					"name": "objectPage",
+					"target": "objectPage"
+				},
+				{
+					"pattern": "/Travel({key})/to_Booking({key2}):?query:",
+					"name": "subObjectPage",
+					"target": "subObjectPage"
+				}
+			],
+			"targets": {
+				"objectPage": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 1,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel",
+
+							"content": {
+								"header": {
+									"actions": {
+										"customHeaderActionShowMessage": {
+											"press": ".extension.sap.fe.core.fpmExplorer.customAction.extendOP.onPress",
+											"visible": "{= %{HeaderActionVisible} === 1 }",
+											"enabled": "{= %{HeaderBooleanEnabled}}",
+											"text": "{i18n>showMessage}"
+										},
+										"customHeaderActionShowAlert": {
+											"press": "sap.fe.core.fpmExplorer.customAction.CustomAction.alertHeader",
+											"visible": "{= ${/EntitiesSingleton/ShowAlertVisible}}",
+											"enabled": "{ui>/isEditable}",
+											"text": "{i18n>showAlert}"
+										},
+										"setTravelStatus": {
+											"text": "{i18n>setTravelStatus}",
+											"press": "sap.fe.core.fpmExplorer.customAction.CustomAction.setTravelStatus"
+										},
+										"DataFieldForActionGroup::TravelActions": {
+											"menu": [
+												"DataFieldForAction::TravelService.CopyAction",
+												"DataFieldForAction::TravelService.ShareAction",
+												"DataFieldForAction::TravelService.CheckStatusAction",
+												"setTravelStatus"
+											],
+											"position": {
+												"anchor": "customHeaderActionShowAlert",
+												"position": "After"
+											}
+										}
+									}
+								},
+								"footer": {
+									"actions": {
+										"customRevertChangesAction": {
+											"press": "sap.fe.core.fpmExplorer.customAction.CustomAction.revertChangesAction",
+											"visible": "{= !${ui>/isEditable}}",
+											"enabled": true,
+											"text": "{i18n>customRevertChangesAction}"
+										}
+									}
+								}
+							},
+
+							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.FieldGroup#TravelData": {
+									"actions": {
+										"customSectionAction": {
+											"press": "sap.fe.core.fpmExplorer.customAction.CustomAction.securedExecution",
+											"visible": "{= %{NameProperty} === 'Visible'}",
+											"enabled": "{= %{BooleanProperty}}",
+											"text": "{i18n>customSectionAction}"
+										}
+									}
+								},
+								"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+									"actions": {
+										"customActionShowTotalPrice": {
+											"press": "sap.fe.core.fpmExplorer.customAction.CustomAction.showTotalPrice",
+											"text": "{i18n>customShowTotalPrice}",
+											"enabled": "{= !${ui>/isEditable}}"
+										}
+									}
+								}
+							},
+							"navigation": {
+								"Booking": {
+									"detail": {
+										"route": "subObjectPage"
+									}
+								}
+							}
+						}
+					}
+				},
+				"subObjectPage": {
+					"type": "Component",
+					"id": "subObjectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"viewLevel": 2,
+					"options": {
+						"settings": {
+							"contextPath": "/Travel/to_Booking"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "3a1472bc0ccba78e657880e66d34d68b69401340",
+        "type": "FIX",
+        "text": "SmartFilterBar: REVERTS Saving composite keys in the variant is now supported"
+      },
+      {
+        "id": "733419a0f8340f96969cd758b0255511a255e2ad",
+        "type": "FEATURE",
+        "text": " ColumnMenu: Implement Accessible Resize Option for m.Table"
+      },
+      {
+        "id": "56d52c0d4959eb09bc47ee0b7145c8f58a3a3eb4",
+        "type": "FIX",
+        "text": " ValueHelpProvider: Absolute Path is now correctly encoded"
+      },
+      {
+        "id": "b6c9e717af5fd6cc7723c9c8aa61ee094108ded4",
+        "type": "FIX",
+        "text": " We've now fixed an issue where the Select All checkbox was disabled by introducing a configurable boolean property"
+      },
+      {
+        "id": "c24bfb6c3823f6f635f12ff7e9b65b9692541eff",
+        "type": "FIX",
+        "text": " SmartField Guid Type throwns validation error when key property missing in the model"
+      },
+      {
+        "id": "a5cc135698e3bf811c89b40e243cb9e124bf9a6a",
+        "type": "FIX",
+        "text": " SmartFilterBar: Saving composite keys in the variant is now supported"
+      },
+      {
+        "id": "f6bbcfb7bea6f515898addbab37b5ff6e2264b5c",
+        "type": "FIX",
+        "text": " SmartField: display behaviour is fetched correctly when criticality qualifier is applied"
+      },
+      {
+        "id": "4d4b7d1ae89e255f705b97bee3ba814d469ec427",
+        "type": "FIX",
+        "text": " FilterBar: prevent buttons to cover filters"
+      },
+      {
+        "id": "2efc04182a8e0f710d95fd459175e0ced3629cf1",
+        "type": "FIX",
+        "text": " SmartControls: Keyboard Shortcut Documentation articles are now correct"
+      },
+      {
+        "id": "c2e2fcf0d3d66d22d83d0a53064080ea34ae4edd",
+        "type": "FIX",
+        "text": " SmartControls: Keyboard Shortcut Documentation articles are now correct"
+      }
+    ]
+  }
+}

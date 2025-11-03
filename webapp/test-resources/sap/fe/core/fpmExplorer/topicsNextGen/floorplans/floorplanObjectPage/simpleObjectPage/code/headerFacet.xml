@@ -1,0 +1,28 @@
+<Annotations Target="TravelService.Travel">
+	...
+	<Annotation Term="UI.HeaderFacets">
+		<Collection>
+			<Record Type="UI.ReferenceFacet">
+				<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#HeaderMain" />
+			</Record>
+		</Collection>
+	</Annotation>
+
+	<Annotation Term="UI.HeaderInfo">
+		<Record Type="UI.HeaderInfoType">
+			<PropertyValue Property="TypeName" String="Travel" />
+			<PropertyValue Property="TypeNamePlural" String="Travels" />
+			<PropertyValue Property="Title">
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="TravelID" />
+				</Record>
+			</PropertyValue>
+			<PropertyValue Property="Description">
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="Description" />
+				</Record>
+			</PropertyValue>
+			<PropertyValue Property="TypeImageUrl" String="sap-icon://header" />
+		</Record>
+	</Annotation>
+</Annotations>

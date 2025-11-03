@@ -1,0 +1,23 @@
+<Annotation Term="UI.FieldGroup" Qualifier="TravelData">
+	<Record Type="UI.FieldGroupType">
+		<PropertyValue Property="Data">
+			<Collection>
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="TravelID" />
+				</Record>
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="Description" />
+				</Record>
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="to_Agency_AgencyID" />
+				</Record>
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="BeginDate" />
+				</Record>
+				<Record Type="UI.DataField">
+					<PropertyValue Property="Value" Path="EndDate" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

@@ -1,0 +1,71 @@
+<mvc:View
+	controllerName="sap.ui.core.sample.odata.types.v4.Date.Date"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		DateIntervalType: 'sap/ui/model/type/DateInterval',
+		DateType: 'sap/ui/model/odata/type/Date',
+		StringType: 'sap/ui/model/odata/type/String'
+	}">
+	<App>
+	<Page id="page" floatingFooter="true" showHeader="false"
+		title="Example how to use OData V4 Edm.Date in SAPUI5 applications">
+	<VBox width="100%">
+		<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="true"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" width="auto">
+			<form:toolbar>
+				<Toolbar>
+					<Title text="How to use OData V4 Edm.Date type with SAPUI5 controls" />
+					<ToolbarSpacer />
+					<Link href="https://ui5.sap.com/#/topic/6c9e61dc157a40c19460660ece8368bc"
+						text="Details on OData date and time related types" target="_blank" />
+				</Toolbar>
+			</form:toolbar>
+			<form:content>
+				<Label text="sap.m.Text" />
+				<Text text="{path: '/Date', type: 'DateType'}" />
+				<Label text="sap.m.Input" />
+				<Input value="{path: '/Date', type: 'DateType'}" />
+				<Label text="sap.m.DatePicker" />
+				<DatePicker value="{path: '/Date', type: 'DateType'}" />
+				<Label text="sap.m.DateRangeSelection" />
+				<DateRangeSelection value="{
+						formatOptions: {UTC: true},
+						parts: [
+							{path: '/Date', type: 'DateType'},
+							{path: '/EndDate', type: 'DateType'}],
+						type: 'DateIntervalType'
+					}" />
+			</form:content>
+		</form:SimpleForm>
+		<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="false"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" title="Model values"
+				width="auto">
+			<form:content>
+				<Label text="OData Model Value 'Date'" />
+				<Text text="{
+						path: '/Date',
+						formatter: '.formatDate',
+						type: 'StringType'
+					}" />
+				<Label text="'Date' Value as URI Parameter Value" />
+				<Text text="{
+						path: '/Date',
+						formatter: '.formatDateAsURIParameter',
+						type: 'StringType'
+					}" />
+				<Label text="OData Model Value 'EndDate'" />
+				<Text text="{
+						path: '/EndDate',
+						formatter: '.formatDate',
+						type: 'StringType'
+					}" />
+			</form:content>
+		</form:SimpleForm>
+	</VBox>
+	</Page>
+	</App>
+</mvc:View>

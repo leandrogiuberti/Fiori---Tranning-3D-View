@@ -1,0 +1,1255 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+
+/**
+ * @fileoverview QUnit tests for "sap.ushell.services.FlpLaunchPage".
+ */
+sap.ui.define([
+    "sap/base/Log",
+    "sap/m/library",
+    "sap/ui/thirdparty/jquery",
+    "sap/ushell/adapters/local/FlpLaunchPageAdapter",
+    "sap/ushell/Config",
+    "sap/ushell/Container",
+    "sap/ushell/services/ContentExtensionAdapterFactory",
+    "sap/ushell/services/_ContentExtensionAdapterFactory/ContentExtensionAdapterConfig",
+    "sap/ushell/services/_ContentExtensionAdapterFactory/FeaturedGroupConfig",
+    "sap/ushell/services/FlpLaunchPage",
+    "sap/ushell/test/utils"
+], (
+    Log,
+    mobileLibrary,
+    jQuery,
+    FlpLaunchPageAdapter,
+    Config,
+    Container,
+    ContentExtensionAdapterFactory,
+    AdapterFactoryConfig,
+    FeaturedGroupMock,
+    FlpLaunchPage,
+    testUtils
+) => {
+    "use strict";
+
+    // shortcut for sap.m.LoadState
+    const LoadState = mobileLibrary.LoadState;
+
+    /* global QUnit, sinon */
+
+    const sandbox = sinon.createSandbox();
+
+    const sUshellTestRootPath = sap.ui.require.toUrl("sap/ushell").replace("resources", "test-resources");
+    const oLaunchPageConfig = {
+        config: {
+            pathToLocalizedContentResources: `${sUshellTestRootPath}/test/services/resources/resources.properties`,
+            groups: [{
+                id: "group_0",
+                title: "test_group1",
+                isPreset: true,
+                isVisible: true,
+                isGroupLocked: false,
+                tiles: [{
+                    id: "9a6eb46c-2d10-3a37-90d8-8f49f60cb111",
+                    title: "test_tile_header",
+                    size: "1x1",
+                    tileType: "sap.ushell.ui.tile.TileBase",
+                    keywords: ["test_keywords"],
+                    properties: {
+                        chipId: "catalogTile_1",
+                        title: "test_tile_header",
+                        subtitle: "test_sub_tile_header",
+                        infoState: "Neutral",
+                        info: "test_info",
+                        icon: "sap-icon://travel-expense-report",
+                        targetURL: "#Action-todefaultapp",
+                        formFactor: "Desktop,Tablet,Phone"
+                    }
+                }, {
+                    id: "tile_001",
+                    title: "test_tile_preview_api",
+                    size: "1x1",
+                    tileType: "sap.ushell.ui.tile.TileBase",
+                    keywords: ["test_keywords"],
+                    properties: {
+                        chipId: "catalogTile_1",
+                        infoState: "Neutral",
+                        info: "test_info",
+                        formFactor: "Desktop,Tablet,Phone"
+                    }
+                }, {
+                    id: "tile_787",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    isLink: true,
+                    properties: {
+                        text: "I am a link!",
+                        href: "#Action-todefaultapp"
+                    }
+                }, {
+                    id: "tile_777",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    isLink: true,
+                    properties: {
+                        text: "I am an external link!",
+                        href: "http://www.google.com"
+                    }
+                }, {
+                    id: "tile_797",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    mode: "HeaderMode",
+                    properties: {
+                        title: "test_tile_header",
+                        subtitle: "test_sub_tile_header"
+                    }
+                }, {
+                    id: "tile_807",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    mode: "ContentMode",
+                    properties: {
+                        title: "test_tile_header",
+                        subtitle: "test_sub_tile_header"
+                    }
+                }]
+            }, {
+                id: "group_1",
+                title: "test_group2",
+                isPreset: true,
+                isVisible: true,
+                isGroupLocked: false,
+                tiles: [{}]
+            }, {
+                id: "group_2",
+                title: "test_group3",
+                isPreset: true,
+                isVisible: true,
+                isGroupLocked: false,
+                tiles: [{
+                    id: "tile_102",
+                    title: "Test component tile",
+                    size: "1x1",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    moduleName: "sap.ushell.demo.demoTiles",
+                    moduleType: "UIComponent",
+                    namespace: "sap.ushell.demo.demoTiles",
+                    path: `${sUshellTestRootPath}/demoapps/demoTiles/`,
+                    properties: {
+                        chipId: "catalogTile_38",
+                        title: "Test component tile",
+                        subtitle: "A tile wrapped in a component",
+                        infoState: "Neutral",
+                        info: "0 days running without bugs",
+                        icon: "sap-icon://flight",
+                        targetURL: "#Action-todefaultapp",
+                        formFactor: "Desktop,Tablet"
+                    }
+                }, {
+                    id: "tile_103",
+                    title: "Test view tile",
+                    size: "1x1",
+                    tileType: "sap.ushell.ui.tile.StaticTile",
+                    moduleName: "sap.ushell.demo.demoTiles.TestViewTile",
+                    moduleType: "JS",
+                    namespace: "sap.ushell.demo.demoTiles",
+                    path: `${sUshellTestRootPath}/demoapps/demoTiles/`,
+                    properties: {
+                        chipId: "catalogTile_38",
+                        title: "Test view tile",
+                        subtitle: "A tile wrapped in a view",
+                        infoState: "Neutral",
+                        info: "0 days running without bugs",
+                        icon: "sap-icon://flight",
+                        targetURL: "#Action-todefaultapp",
+                        formFactor: "Desktop,Tablet"
+                    }
+                }]
+            }, {
+                id: "group_3",
+                title: "test_group4",
+                isPreset: true,
+                isVisible: true,
+                isGroupLocked: true,
+                tiles: [{}]
+            }, {
+                id: "group_4",
+                title: "test_group5",
+                isPreset: true,
+                isVisible: false,
+                isGroupLocked: true,
+                tiles: [{}]
+            }],
+            catalogs: [{
+                id: "test_catalog_01",
+                title: "test_catalog1",
+                tiles: [{}]
+            }, {
+                id: "test_catalog_02",
+                title: "test_catalog2",
+                tiles: [{}]
+            }]
+        }
+    };
+    const aAdditionalAdapterConfig = [{
+        name: "feature",
+        adapter: "sap.ushell.adapters.local.LaunchPageAdapter",
+        config: "/core/home/featuredGroup/enable",
+        system: {
+            alias: "",
+            platform: "local"
+        },
+        configHandler: function () {
+            return FeaturedGroupMock.getMockAdapterConfig(true, true);
+        }
+    }];
+    const oFeatureGroupConfig = {
+        groups: [{
+            id: "featuredArea",
+            contentProvider: "feature",
+            isPersonalizationLocked: function () {
+                return true;
+            },
+            getTitle: function () {
+                return "Featured";
+            },
+            title: "Featured",
+            isFeatured: true,
+            isPreset: true,
+            isVisible: true,
+            isDefaultGroup: false,
+            isGroupLocked: true,
+            tiles: [{
+                id: "tile_00",
+                contentProvider: "feature",
+                type: "recent",
+                title: "[FEATURED] Sales Performance",
+                text: "[FEATURED] Sales Performance",
+                size: "1x1",
+                tileType: "sap.ushell.ui.tile.DynamicTile",
+                isLinkPersonalizationSupported: false,
+                keywords: ["sales", "performance"],
+                formFactor: "Desktop,Tablet,Phone",
+                serviceRefreshInterval: 10,
+                actions: [{
+                    text: "Go To Sample App",
+                    icon: "sap-icon://action",
+                    targetURL: "#Action-toappnavsample"
+                }, {
+                    text: "Go to stackoverflow",
+                    icon: "sap-icon://action",
+                    targetURL: "http://stackoverflow.com/"
+                }, {
+                    text: "Illigal URL",
+                    icon: "sap-icon://action",
+                    targetURL: "stackoverflow.com/"
+                }, {
+                    text: "Callback action",
+                    icon: "sap-icon://action-settings"
+                }],
+                chipId: "catalogTile_33",
+                properties: {
+                    title: "[FEATURED] Sales Performance",
+                    numberValue: 3.75,
+                    info: "Change to Last Month in %",
+                    numberFactor: "%",
+                    numberDigits: 2,
+                    numberState: "Positive",
+                    stateArrow: "Up",
+                    icon: "sap-icon://Fiori2/F0002",
+                    targetURL: "#Action-toappnavsample"
+                }
+            }, {
+                id: "tile_shelluiservicesample",
+                contentProvider: "feature",
+                type: "frequent",
+                title: "[FEATURED] ShellUIService Sample App",
+                size: "1x1",
+                tileType: "sap.ushell.ui.tile.StaticTile",
+                isLinkPersonalizationSupported: true,
+                formFactor: "Desktop,Tablet",
+                chipId: "catalogTile_45",
+                properties: {
+                    title: "[FEATURED] Sample App for ShellUIService",
+                    text: "[FEATURED] Sample App for ShellUIService",
+                    subtitle: "",
+                    infoState: "Neutral",
+                    info: "#Action-toappshelluiservicesample",
+                    icon: "sap-icon://syringe",
+                    targetURL: "#Action-toappshelluiservicesample"
+                }
+            }]
+        }]
+    };
+
+    [{
+        testDescription: "when enableFeaturedGroup is true",
+        input: { enableFeaturedGroup: true },
+        output: { numberOfFeaturedGroups: 1 }
+    }, {
+        testDescription: "when enableFeaturedGroup is false",
+        input: { enableFeaturedGroup: false },
+        output: { numberOfFeaturedGroups: 0 }
+    }].forEach((oFixture) => {
+        QUnit.module(`sap.ushell.services.FlpLaunchPage ${oFixture.testDescription}`, {
+            beforeEach: function () {
+                this.oConfigLastStub = sandbox.stub(Config, "last");
+                this.oConfigLastStub.withArgs("/core/spaces/enabled").returns(false);
+                this.oConfigLastStub.returns(oFixture.input.enableFeaturedGroup);
+
+                this.oAppStateService = {};
+
+                this.oGetServiceAsyncStub = sandbox.stub(Container, "getServiceAsync");
+                this.oGetServiceAsyncStub.withArgs("AppState").resolves(this.oAppStateService);
+
+                sandbox.stub(FeaturedGroupMock, "getMockAdapterConfig").returns(oFeatureGroupConfig);
+                sandbox.stub(AdapterFactoryConfig, "_getConfigAdapters").returns(aAdditionalAdapterConfig);
+            },
+            afterEach: function () {
+                sandbox.restore();
+            }
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("addBookmark failures", function (assert) {
+            // Act
+            const oLaunchPageService = new FlpLaunchPage();
+
+            // Assert
+            assert.throws(() => {
+                oLaunchPageService.addBookmark();
+            });
+            assert.throws(() => {
+                oLaunchPageService.addBookmark("Test");
+            });
+            assert.throws(() => {
+                oLaunchPageService.addBookmark({});
+            }, /Title missing in bookmark configuration/);
+            assert.throws(() => {
+                oLaunchPageService.addBookmark({ title: "" });
+            }, /Title missing in bookmark configuration/);
+            assert.throws(() => {
+                oLaunchPageService.addBookmark({ title: "MyTitle" });
+            }, /URL missing in bookmark configuration/);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("addBookmark success", function (assert) {
+            // Arrange
+            const oBookmarkConfig = { title: "MyTitle", url: "MyUrl" };
+            const oLaunchPageAdapter = {
+                addBookmark: sandbox.stub().returns(new jQuery.Deferred().promise())
+            };
+
+            const sContentProviderId = "TestProviderA";
+
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            oLaunchPageService.addBookmark(oBookmarkConfig, undefined, sContentProviderId);
+
+            // Assert
+            assert.strictEqual(oLaunchPageAdapter.addBookmark.callCount, 1, "The function addBookmark has been called once.");
+            assert.ok(oLaunchPageAdapter.addBookmark.calledWith(oBookmarkConfig, undefined, sContentProviderId), "The function addBookmark has been called with the correct parameters.");
+        });
+
+        QUnit.test("setTileVisible", function (assert) {
+            const oTile = {};
+            const oLaunchPageAdapter = {
+                setTileVisible: sandbox.spy()
+            };
+
+            // prepare test
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // code under test
+            oLaunchPageService.setTileVisible(oTile, true);
+
+            // test
+            assert.ok(oLaunchPageAdapter.setTileVisible.calledOnce);
+            assert.ok(oLaunchPageAdapter.setTileVisible.calledWithExactly(oTile, true));
+        });
+
+        QUnit.test("getCatalogError", function (assert) {
+            const oCatalog = {};
+            const oLaunchPageAdapter = {
+                getCatalogError: sandbox.stub().returns("foo")
+            };
+
+            // prepare test
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // code under test
+            assert.strictEqual(oLaunchPageService.getCatalogError(oCatalog), "foo");
+
+            // test
+            assert.ok(oLaunchPageAdapter.getCatalogError.calledOnce);
+            assert.ok(oLaunchPageAdapter.getCatalogError.calledWithExactly(oCatalog));
+        });
+
+        QUnit.test("isTileIntentSupported", function (assert) {
+            const oTile = {};
+            const oLaunchPageAdapter = {
+                isTileIntentSupported: sandbox.stub().returns("foo") // deliberately no boolean
+            };
+
+            // part 1: unsupported in adapter
+            let oLaunchPageService = new FlpLaunchPage({});
+            assert.strictEqual(oLaunchPageService.isTileIntentSupported(oTile), true);
+
+            // part 2: delegates to adapter
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            assert.strictEqual(oLaunchPageService.isTileIntentSupported(oTile), "foo");
+            assert.ok(oLaunchPageAdapter.isTileIntentSupported.calledOnce);
+            assert.ok(oLaunchPageAdapter.isTileIntentSupported.calledWithExactly(oTile));
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getCardManifest", function (assert) {
+            const oCard = {};
+            const oLaunchPageAdapter = {
+                getCardManifest: sandbox.stub().returns("Manifest")
+            };
+
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            assert.strictEqual(oLaunchPageService.getCardManifest(oCard), "Manifest");
+            assert.ok(oLaunchPageAdapter.getCardManifest.calledOnce);
+            assert.ok(oLaunchPageAdapter.getCardManifest.calledWithExactly(oCard));
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("isGroupVisible", function (assert) {
+            const oGroup = {};
+            const oLaunchPageAdapter = {
+                isGroupVisible: sandbox.stub().returns("visible")
+            };
+
+            // part 1: unsupported in adapter - default value received from the service directly
+            let oLaunchPageService = new FlpLaunchPage({});
+            assert.strictEqual(oLaunchPageService.isGroupVisible(oGroup), true);
+
+            // part 2: delegates to adapter
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            assert.strictEqual(oLaunchPageService.isGroupVisible(oGroup), "visible");
+            assert.ok(oLaunchPageAdapter.isGroupVisible.calledOnce);
+            assert.ok(oLaunchPageAdapter.isGroupVisible.calledWithExactly(oGroup));
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("isGroupLocked", function (assert) {
+            const oGroup = {};
+            const oLaunchPageAdapter = {
+                isGroupLocked: sandbox.stub().returns("foo")
+            };
+
+            // part 1: unsupported in adapter - default value received from the service directly
+            let oLaunchPageService = new FlpLaunchPage({});
+            assert.strictEqual(oLaunchPageService.isGroupLocked(oGroup), false);
+
+            // part 2: delegates to adapter
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            assert.strictEqual(oLaunchPageService.isGroupLocked(oGroup), "foo");
+            assert.ok(oLaunchPageAdapter.isGroupLocked.calledOnce);
+            assert.ok(oLaunchPageAdapter.isGroupLocked.calledWithExactly(oGroup));
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("hideGroups", function (assert) {
+            const aGroups = [];
+            const oLaunchPageAdapter = {
+                hideGroups: sandbox.stub().returns({
+                    fail: function () { },
+                    done: function () { return this; }
+                })
+            };
+
+            // part 1: unsupported in adapter - A deferred object is expected which is in failed status
+            let oLaunchPageService = new FlpLaunchPage({});
+            const oDeferred = oLaunchPageService.hideGroups([]);
+            assert.strictEqual(oDeferred.state(), "rejected");
+
+            // part 2: delegates to adapter
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            oLaunchPageService.hideGroups(aGroups);
+            assert.ok(oLaunchPageAdapter.hideGroups.calledOnce);
+            assert.ok(oLaunchPageAdapter.hideGroups.calledWithExactly(aGroups));
+        });
+
+        QUnit.test("getCatalogData", function (assert) {
+            const oCatalog = {};
+            const oResult = {};
+            const oLogMock = testUtils.createLogMock()
+                .filterComponent("sap.ushell.services.FlpLaunchPage")
+                .warning("getCatalogData not implemented in adapter", null, "sap.ushell.services.FlpLaunchPage");
+
+            // part 1: unsupported in adapter
+            let oLaunchPageService = new FlpLaunchPage({
+                getCatalogId: function (oCatalog0) {
+                    assert.strictEqual(oCatalog0, oCatalog);
+                    return "foo";
+                }
+            });
+            assert.deepEqual(oLaunchPageService.getCatalogData(oCatalog), { id: "foo" });
+            oLogMock.verify();
+
+            // part 2: delegates to adapter
+            const oLaunchPageAdapter = {
+                getCatalogData: sandbox.stub().returns(oResult)
+            };
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            assert.strictEqual(oLaunchPageService.getCatalogData(oCatalog), oResult);
+            assert.ok(oLaunchPageAdapter.getCatalogData.calledOnce);
+            assert.ok(oLaunchPageAdapter.getCatalogData.calledWithExactly(oCatalog));
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("test countBookmarks", function (assert) {
+            const oExpectedPromise = (new jQuery.Deferred()).promise();
+            const oLaunchPageAdapter = {
+                countBookmarks: sandbox.stub().returns(oExpectedPromise)
+            };
+
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            assert.throws(() => {
+                oLaunchPageService.countBookmarks();
+            }, /Missing URL/);
+            assert.throws(() => {
+                oLaunchPageService.countBookmarks("");
+            }, /Missing URL/);
+            assert.throws(() => {
+                oLaunchPageService.countBookmarks({});
+            }, /Missing URL/);
+            assert.ok(oLaunchPageAdapter.countBookmarks.notCalled);
+
+            const oActualPromise = oLaunchPageService.countBookmarks("###", "contentProviderId");
+
+            assert.strictEqual(oActualPromise, oExpectedPromise);
+            assert.ok(oLaunchPageAdapter.countBookmarks.calledOnce);
+            assert.strictEqual(oLaunchPageAdapter.countBookmarks.args[0][0], "###");
+            assert.strictEqual(oLaunchPageAdapter.countBookmarks.args[0][1], "contentProviderId");
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("test deleteBookmarks", function (assert) {
+            const fnDone = assert.async();
+
+            const oDeleteBookmarksStub = sandbox.stub().returns(new jQuery.Deferred().resolve().promise());
+            const oLaunchPageAdapter = {
+                deleteBookmarks: oDeleteBookmarksStub
+            };
+
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            const oDeleteStatesDataStub = sandbox.stub(oLaunchPageService, "deleteURLStatesPersistentData");
+
+            oLaunchPageService.deleteBookmarks("###", "contentProviderId")
+                .done(() => {
+                    assert.strictEqual(oDeleteBookmarksStub.callCount, 1, "The function deleteBookmarks of the adapter has been called once.");
+                    assert.deepEqual(oDeleteBookmarksStub.firstCall.args, ["###", undefined, "contentProviderId"], "The function deleteBookmarks has been called with the correct parameters.");
+                    assert.strictEqual(oDeleteStatesDataStub.callCount, 1, "The function deleteURLStatesPersistentData of the adapter has been called once.");
+                    assert.strictEqual(oDeleteStatesDataStub.firstCall.args[0], "###", "The function deleteBookmarks has been called with the correct parameter.");
+                    assert.strictEqual(oDeleteStatesDataStub.firstCall.args[1], this.oAppStateService, "The function deleteBookmarks has been called with the correct parameter.");
+                })
+                .fail(() => {
+                    assert.notOk(true, "The promise should have been resolved.");
+                })
+                .always(fnDone);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("The function deleteBookmarks throws if no URL is passed", function (assert) {
+            const fnDone = assert.async();
+
+            // Arrange
+            const oDeleteBookmarksStub = sandbox.stub();
+            const oLaunchPageAdapter = {
+                deleteBookmarks: oDeleteBookmarksStub
+            };
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            oLaunchPageService.deleteBookmarks()
+                .fail((oError) => {
+                    // Assert
+                    assert.strictEqual(oError.message, "Missing URL", "The correct error message has been found.");
+                    assert.strictEqual(oDeleteBookmarksStub.callCount, 0, "The function deleteBookmarks of the adapter has not been called.");
+                })
+                .done(() => {
+                    assert.ok(false, "The promise should have been rejected.");
+                })
+                .always(fnDone);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("The function deleteBookmarks throws if an empty URL is passed", function (assert) {
+            const fnDone = assert.async();
+
+            // Arrange
+            const oDeleteBookmarksStub = sandbox.stub();
+            const oLaunchPageAdapter = {
+                deleteBookmarks: oDeleteBookmarksStub
+            };
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            oLaunchPageService.deleteBookmarks("")
+                .fail((oError) => {
+                    // Assert
+                    assert.strictEqual(oError.message, "Missing URL", "The correct error message has been found.");
+                    assert.strictEqual(oDeleteBookmarksStub.callCount, 0, "The function deleteBookmarks of the adapter has not been called.");
+                })
+                .done(() => {
+                    assert.ok(false, "The promise should have been rejected.");
+                })
+                .always(fnDone);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("The function deleteBookmarks throws if a non-string URL is passed", function (assert) {
+            const fnDone = assert.async();
+
+            // Arrange
+            const oDeleteBookmarksStub = sandbox.stub();
+            const oLaunchPageAdapter = {
+                deleteBookmarks: oDeleteBookmarksStub
+            };
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            oLaunchPageService.deleteBookmarks(42)
+                .fail((oError) => {
+                    // Assert
+                    assert.strictEqual(oError.message, "Missing URL", "The correct error message has been found.");
+                    assert.strictEqual(oDeleteBookmarksStub.callCount, 0, "The function deleteBookmarks of the adapter has not been called.");
+                })
+                .done(() => {
+                    assert.ok(false, "The promise should have been rejected.");
+                })
+                .always(fnDone);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("test updateBookmarks", function (assert) {
+            const oLaunchPageAdapter = {
+                updateBookmarks: sandbox.stub().returns(new jQuery.Deferred().resolve())
+            };
+
+            sandbox.stub(ContentExtensionAdapterFactory, "getAdapters").returns(new jQuery.Deferred().resolve({}));
+
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            assert.throws(() => {
+                oLaunchPageService.updateBookmarks();
+            }, /Missing URL/);
+            assert.throws(() => {
+                oLaunchPageService.updateBookmarks("");
+            }, /Missing URL/);
+            assert.throws(() => {
+                oLaunchPageService.updateBookmarks({});
+            }, /Missing URL/);
+            assert.throws(() => {
+                oLaunchPageService.updateBookmarks("foo");
+            }, /Missing parameters/);
+            assert.throws(() => {
+                oLaunchPageService.updateBookmarks("foo", true);
+            }, /Missing parameters/);
+            assert.strictEqual(oLaunchPageAdapter.updateBookmarks.callCount, 0, "The adapter function \"updateBookmarks\" was not called.");
+
+            this.oAppStateService.getSupportedPersistencyMethods = sandbox.stub().returns([]);
+            this.oAppStateService.getPersistentWhenShared = sandbox.stub().returns(false);
+            return oLaunchPageService.updateBookmarks("###", { url: "foo" }, "contentProviderId").done(() => {
+                assert.strictEqual(oLaunchPageAdapter.updateBookmarks.callCount, 1, "The adapter function \"updateBookmarks\" was called exactly once.");
+                assert.strictEqual(oLaunchPageAdapter.updateBookmarks.args[0][0], "###", "1. Argument of adapter call is correct.");
+                assert.deepEqual(oLaunchPageAdapter.updateBookmarks.args[0][1], { url: "foo" }, "2. Argument of adapter call is correct.");
+                assert.deepEqual(oLaunchPageAdapter.updateBookmarks.args[0][2], undefined, "3. Argument of adapter call is correct.");
+                assert.deepEqual(oLaunchPageAdapter.updateBookmarks.args[0][3], "contentProviderId", "4. Argument of adapter call is correct.");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("Tile actions", function (assert) {
+            const oTile = {};
+
+            // part 1: no actions
+            let oLaunchPageAdapter = {};
+            let oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            assert.deepEqual(oLaunchPageService.getTileActions(oTile), []);
+
+            // part 2: internal actions
+            let aInternalActions = [{ text: "InternalAction1" }, { text: "InternalAction2" }];
+            oLaunchPageAdapter = {
+                getTileActions: sandbox.stub().returns(aInternalActions)
+            };
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            assert.deepEqual(oLaunchPageService.getTileActions(oTile), aInternalActions);
+            assert.ok(oLaunchPageAdapter.getTileActions.calledWithExactly(oTile));
+
+            // part 3: external actions
+            let aExternalActions1 = [{ text: "ExternalAction11" }, { text: "ExternalAction12" }];
+            let aExternalActions2 = [{ text: "ExternalAction21" }, { text: "ExternalAction22" }];
+            oLaunchPageAdapter = {};
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            oLaunchPageService.registerTileActionsProvider(sandbox.stub().returns(aExternalActions1));
+            oLaunchPageService.registerTileActionsProvider(sandbox.stub().returns(aExternalActions2));
+
+            assert.deepEqual(oLaunchPageService.getTileActions(oTile), aExternalActions1.concat(aExternalActions2));
+
+            // part 4: internal and external actions
+            aInternalActions = [{ text: "InternalAction1" }, { text: "InternalAction2" }];
+            oLaunchPageAdapter = {
+                getTileActions: sandbox.stub().returns(aInternalActions)
+            };
+            aExternalActions1 = [{ text: "ExternalAction11" }, { text: "ExternalAction12" }];
+            aExternalActions2 = [{ text: "ExternalAction21" }, { text: "ExternalAction22" }];
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            oLaunchPageService.registerTileActionsProvider(sandbox.stub().returns(aExternalActions1));
+            oLaunchPageService.registerTileActionsProvider(sandbox.stub().returns(aExternalActions2));
+
+            assert.deepEqual(oLaunchPageService.getTileActions(oTile), aInternalActions.concat(aExternalActions1.concat(aExternalActions2)));
+
+            assert.ok(oLaunchPageAdapter.getTileActions.calledWithExactly(oTile));
+        });
+
+        QUnit.test("getCatalogTileTargetURL", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act & Assert
+            // part 1: TargetUrl exist in configuration
+            let sTargetUrl = oLaunchPageService.getCatalogTileTargetURL(oLaunchPageConfig.config.groups[0].tiles[0]);
+            assert.strictEqual(sTargetUrl, oLaunchPageConfig.config.groups[0].tiles[0].properties.targetURL, "TargetUrl as expected");
+
+            // Act & Assert
+            // part 2: TargetUrl does not exist in configuration
+            sTargetUrl = oLaunchPageService.getCatalogTileTargetURL(oLaunchPageConfig.config.groups[0].tiles[1]);
+            assert.strictEqual(sTargetUrl, null, "TargetUrl default value is null");
+        });
+
+        QUnit.test("getCatalogTilePreviewTitle", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act & Assert
+            // part 1: Title exist in configuration
+            let sPreviewTitle = oLaunchPageService.getCatalogTilePreviewTitle(oLaunchPageConfig.config.groups[0].tiles[0]);
+            assert.strictEqual(sPreviewTitle, oLaunchPageConfig.config.groups[0].tiles[0].properties.title, "Preview title as expected");
+
+            // Act & Assert
+            // part 2: Title does not exist in configuration
+            sPreviewTitle = oLaunchPageService.getCatalogTilePreviewTitle(oLaunchPageConfig.config.groups[0].tiles[1]);
+            assert.strictEqual(sPreviewTitle, null, "Preview title default value is null");
+        });
+
+        QUnit.test("getCatalogTilePreviewInfo", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            const sPreviewInfo = oLaunchPageService.getCatalogTilePreviewInfo(oLaunchPageConfig.config.groups[0].tiles[0]);
+
+            // Assert
+            assert.strictEqual(sPreviewInfo, oLaunchPageConfig.config.groups[0].tiles[0].properties.info, "The function getCatalogTilePreviewInfo returns the correct catalog tile preview info.");
+        });
+
+        QUnit.test("getCatalogTilePreviewSubtitle", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act & Assert
+            // part 1: Title exist in configuration
+            let sPreviewSubtitle = oLaunchPageService.getCatalogTilePreviewSubtitle(oLaunchPageConfig.config.groups[0].tiles[0]);
+            assert.strictEqual(sPreviewSubtitle, oLaunchPageConfig.config.groups[0].tiles[0].properties.subtitle, "Preview subtitle as expected");
+
+            // Act & Assert
+            // part 2: Title does not exist in configuration
+            sPreviewSubtitle = oLaunchPageService.getCatalogTilePreviewSubtitle(oLaunchPageConfig.config.groups[0].tiles[1]);
+            assert.strictEqual(sPreviewSubtitle, null, "Preview subtitle default value is null");
+        });
+
+        QUnit.test("getCatalogTilePreviewIcon", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act & Assert
+            // part 1: Title exist in configuration
+            let sPreviewIcon = oLaunchPageService.getCatalogTilePreviewIcon(oLaunchPageConfig.config.groups[0].tiles[0]);
+            assert.strictEqual(sPreviewIcon, oLaunchPageConfig.config.groups[0].tiles[0].properties.icon, "Preview icon as expected");
+
+            // Act & Assert
+            // part 2: Title does not exist in configuration
+            sPreviewIcon = oLaunchPageService.getCatalogTilePreviewIcon(oLaunchPageConfig.config.groups[0].tiles[1]);
+            assert.strictEqual(sPreviewIcon, null, "Preview icon default value is null");
+        });
+
+        QUnit.test("getCatalogWithTranslation", function (assert) {
+            // Arrange
+            const fnDone = assert.async();
+
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            oLaunchPageService.getCatalogs()
+                .done((aCatalogs) => {
+                    // Assert
+                    assert.strictEqual(aCatalogs[0].title, "Translated Catalog 1", "Correct catalog [0] title");
+                    assert.strictEqual(aCatalogs[1].title, "Translated Catalog 2", "Correct catalog [1] title");
+                })
+                .fail((oError) => {
+                    assert.notOk(true, "The promise should have been resolved.");
+                    throw oError;
+                }).always(fnDone);
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getGroupsWithTranslation", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            // part 1: unsupported in adapter
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getGroups().done((aGroups) => {
+                // Assert
+                assert.strictEqual(aGroups[0].title, "Translated Group 1", "Group translation error for aGroups[0].title");
+                assert.strictEqual(aGroups[1].title, "Translated Group 2", "Group translation error for aGroups[1].title");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getGroupsWithFeatureGroup", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getGroups().done((aGroups) => {
+                // Assert
+                const iNumFeaturedGroups = aGroups.filter((oGroup) => {
+                    return oGroup.contentProvider === "feature";
+                }).length;
+                assert.strictEqual(iNumFeaturedGroups, oFixture.output.numberOfFeaturedGroups, "feature group loaded");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getViewDataWithTranslation", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            // part 1: unsupported in adapter
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getTileView(oLaunchPageConfig.config.groups[0].tiles[0]).done((oView) => {
+                // Assert
+                assert.strictEqual(oView.getProperty("title"), "Translated Header title", "Translated title check");
+                assert.strictEqual(oView.getProperty("subtitle"), "Translated Sub Title", "Translated Sub Title");
+                assert.strictEqual(oView.getProperty("info"), "Translated Info", "Translated Info");
+                assert.strictEqual(oLaunchPageConfig.config.groups[0].tiles[0].keywords[0], "Translated Keyword", "Translated keywords");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getViewForComponentTile", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            // part 1: unsupported in adapter
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getTileView(oLaunchPageConfig.config.groups[2].tiles[0]).done((oTileUI) => {
+                // Assert
+                assert.strictEqual(oTileUI.getMetadata().getName(), "sap.ui.core.ComponentContainer", "Module path registered and Component wrapped with ComponentContainer");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getViewForViewTileTile", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            // part 1: unsupported in adapter
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getTileView(oLaunchPageConfig.config.groups[2].tiles[1]).done((oTileUI) => {
+                // Assert
+                assert.strictEqual(oTileUI.getMetadata().getName(), "sap.ui.core.mvc.JSView", "Module path registered and View tile retreived");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getViewForHeaderModeTile", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getTileView(oLaunchPageConfig.config.groups[0].tiles[4]).done((oTileUI) => {
+                // Assert
+                assert.strictEqual(oTileUI.getProperty("mode"), "HeaderMode", "Tile is in Header Mode");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("getViewForContentModeTile", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Act
+            return oLaunchPageService.getTileView(oLaunchPageConfig.config.groups[0].tiles[5]).done((oTileUI) => {
+                // Assert
+                assert.strictEqual(oTileUI.getProperty("mode"), "ContentMode", "Tile is in Content Mode");
+            });
+        });
+
+        /**
+         * @deprecated since 1.120
+         */
+        QUnit.test("isLinkPersonalizationSupported", function (assert) {
+            // Arrange
+            const oTile = {};
+            const oLaunchPageAdapter = {
+                isLinkPersonalizationSupported: sandbox.stub().returns(true)
+            };
+
+            // Act
+            let oLaunchPageService = new FlpLaunchPage({});
+
+            // Assert
+            assert.strictEqual(oLaunchPageService.isLinkPersonalizationSupported(oTile), false);
+
+            // Act
+            oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+            // Assert
+            assert.strictEqual(oLaunchPageService.isLinkPersonalizationSupported(oTile), true);
+            assert.ok(oLaunchPageAdapter.isLinkPersonalizationSupported.calledOnce);
+            assert.ok(oLaunchPageAdapter.isLinkPersonalizationSupported.calledWithExactly(oTile));
+        });
+
+        QUnit.test("getCatalogTileViewControl", function (assert) {
+            // Arrange
+            const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+            const oTileData = {
+                namespace: undefined,
+                path: undefined,
+                moduleType: undefined,
+                tileType: "tileTypePart1.tileTypePart2.tileTypePart3",
+                properties: {
+                    title: "title",
+                    subtitle: "subTitle",
+                    info: "info",
+                    targetURL: "#a-b"
+                }
+            };
+            function oViewConstructor (oProps) {
+                return {
+                    oViewProperties: oProps
+                };
+            }
+
+            sandbox.stub(oLaunchPageAdapter, "_getImageContent").returns({
+                addStyleClass: sandbox.stub()
+            });
+            sandbox.stub(sap.ui, "require").callsArgWith(1, oViewConstructor);
+            const oHandleTilePressStub = sandbox.stub(oLaunchPageAdapter, "_handleTilePress").returns({});
+            const oApplyDynamicTileIfoState = sandbox.stub(oLaunchPageAdapter, "_applyDynamicTileInfoState").returns({});
+
+            // Act
+            return oLaunchPageService.getCatalogTileViewControl(oTileData).done((oView) => {
+                // Assert
+                assert.strictEqual(oHandleTilePressStub.callCount, 1, "_handleTilePressStub called once");
+                assert.strictEqual(oApplyDynamicTileIfoState.callCount, 1, "_applyDynamicTileInfoState called once");
+                assert.strictEqual(oView.oViewProperties.title, "title", "Returned view title is correct");
+            });
+        });
+    });
+
+    /**
+     * @deprecated since 1.120
+     */
+    QUnit.test("getGroupsForBookmarks when part of the groups are locked or not visable", function (assert) {
+        // Arrange
+        const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+        const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+        // Act
+        return oLaunchPageService.getGroupsForBookmarks().done((aGroups) => {
+            // Assert
+            assert.strictEqual(aGroups.length, 3, "groups were filtered correctly");
+            assert.strictEqual(aGroups[0].title, "My Home", "title was changed correctly");
+        });
+    });
+
+    /**
+     * @deprecated since 1.120
+     */
+    QUnit.module("getGroups", {
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("getGroups with pages enabled should return a promise resolving to an empty array", function (assert) {
+        // Arrange
+        sandbox.stub(Config, "last").withArgs("/core/spaces/enabled").returns(true);
+
+        const oLaunchPageAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+        const oLaunchPageService = new FlpLaunchPage(oLaunchPageAdapter);
+
+        // Act
+        return oLaunchPageService.getGroups().done((aGroups) => {
+            // Assert
+            assert.strictEqual(aGroups.length, 0, "an empty array is returned");
+        });
+    });
+
+    QUnit.module("getCatalogTileViewControl", {
+        beforeEach: function () {
+            this.oViewMock = {};
+            this.oAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            this.oGetCatalogTileViewStub = sandbox.stub().returns(this.oViewMock);
+            this.oAdapter.getCatalogTileView = this.oGetCatalogTileViewStub;
+
+            this.oService = new FlpLaunchPage(this.oAdapter);
+            sandbox.stub(this.oService, "getTileTitle").returns("Tile Title");
+        },
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("Uses a fallback on getCatalogTileView", function (assert) {
+        // Arrange
+        delete this.oAdapter.getCatalogTileViewControl;
+        const oTileData = {};
+
+        // Act
+        this.oService.getCatalogTileViewControl(oTileData, true).done((oView) => {
+            // Assert
+            assert.strictEqual(oView, this.oViewMock, "Resolved the correct view");
+            assert.deepEqual(this.oGetCatalogTileViewStub.getCall(0).args, [oTileData, true], "Called the adapter with the correct tileData");
+        });
+    });
+
+    /**
+     * @deprecated since 1.120
+     */
+    QUnit.module("getCatalogTileView", {
+        beforeEach: function () {
+            this.oViewMock = {};
+            this.oAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            this.oGetCatalogTileViewStub = sandbox.stub().returns(this.oViewMock);
+            this.oAdapter.getCatalogTileView = this.oGetCatalogTileViewStub;
+
+            this.oService = new FlpLaunchPage(this.oAdapter);
+            sandbox.stub(this.oService, "getTileTitle").returns("Tile Title");
+
+            this.oErrorStub = sandbox.stub(Log, "error");
+        },
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("Logs a deprecation error", function (assert) {
+        // Arrange
+        const sDeprecationMessage = "Deprecated API call of 'sap.ushell.LaunchPage.getCatalogTileView'. Please use 'getCatalogTileViewControl' instead";
+        const sModule = "sap.ushell.services.LaunchPage";
+
+        // Act
+        this.oService.getCatalogTileView({});
+
+        // Assert
+        assert.strictEqual(this.oErrorStub.withArgs(sDeprecationMessage, null, sModule).callCount, 1, "The deprecation message was logged");
+    });
+
+    QUnit.test("Returns a view provided by the adapter", function (assert) {
+        // Arrange
+        const oTileData = {};
+
+        // Act
+        const oView = this.oService.getCatalogTileView(oTileData);
+
+        // Assert
+        assert.strictEqual(oView, this.oViewMock, "Returned the correct view");
+        assert.strictEqual(this.oGetCatalogTileViewStub.getCall(0).args[0], oTileData, "Called the adapter with the correct tileData");
+    });
+
+    QUnit.test("Returns an error tile in case the adapter does not implement getCatalogTileView", function (assert) {
+        // Arrange
+        delete this.oAdapter.getCatalogTileView;
+
+        // Act
+        const oErrorTile = this.oService.getCatalogTileView({});
+
+        // Assert
+        assert.ok(oErrorTile.isA("sap.m.GenericTile"), "Error tile has correct type");
+        assert.strictEqual(oErrorTile.getState(), LoadState.Failed, "Error tile has correct state");
+        assert.strictEqual(oErrorTile.getHeader(), "Tile Title", "Error tile has correct title");
+        assert.strictEqual(oErrorTile.getSubheader(), "The LaunchPageAdapter does not support getCatalogTileView", "Error tile has correct subtitle");
+    });
+
+    /**
+     * @deprecated since 1.120
+     */
+    QUnit.module("The function _createErrorTile", {
+        beforeEach: function () {
+            const oAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            this.oService = new FlpLaunchPage(oAdapter);
+            sandbox.stub(Container, "getServiceAsync").returns(Promise.resolve({
+                getPersistentWhenShared: sandbox.stub().returns(true),
+                getSupportedPersistencyMethods: sandbox.stub().returns([]),
+                setAppStateToPublic: sandbox.stub().returns(new jQuery.Deferred().resolve(
+                    "http://www.a.com?sap-xapp-state=CCC&sap-iapp-state=DDD&dummy=4"
+                ).promise())
+            }));
+        },
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("Returns a GenericTile with correct properties", function (assert) {
+        // Arrange
+        const sTitle = "Error Title";
+        const sMessage = "Error Message";
+
+        // Act
+        const oErrorTile = this.oService._createErrorTile(sTitle, sMessage);
+
+        // Assert
+        assert.ok(oErrorTile.isA("sap.m.GenericTile"), "Error tile has correct type");
+        assert.strictEqual(oErrorTile.getState(), LoadState.Failed, "Error tile has correct state");
+        assert.strictEqual(oErrorTile.getHeader(), sTitle, "Error tile has correct title");
+        assert.strictEqual(oErrorTile.getSubheader(), sMessage, "Error tile has correct subtitle");
+    });
+
+    QUnit.module("The function getStableCatalogTileId", {
+        beforeEach: function () {
+            this.oAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+            this.oService = new FlpLaunchPage(this.oAdapter);
+        },
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("returns the expected ID when the adapter supports the method", function (assert) {
+        // Arrange
+        const oTile = {
+            referenceChipId: "stable123"
+        };
+        const oGetStableCatalogTileIdStub = sandbox.stub(this.oAdapter, "getStableCatalogTileId");
+        oGetStableCatalogTileIdStub.withArgs(oTile).returns(oTile.referenceChipId);
+
+        // Act
+        const sResult = this.oService.getStableCatalogTileId(oTile);
+
+        // Assert
+        assert.strictEqual(sResult, "stable123", "The expected ID was returned");
+    });
+
+    QUnit.test("Returns null when the adapter does not support the method", function (assert) {
+        // Arrange
+        const oTile = {
+            referenceChipId: "stable123"
+        };
+        delete this.oAdapter.getStableCatalogTileId;
+
+        // Act
+        const sResult = this.oService.getStableCatalogTileId(oTile);
+
+        // Assert
+        assert.strictEqual(sResult, null, "The expected result was returned");
+    });
+
+    /**
+     * @deprecated since 1.120
+     */
+    QUnit.module("getGroupTilesForSearch", {
+        beforeEach: function () {
+            this.oGroup = { id: "group1" };
+
+            this.oAdapter = new FlpLaunchPageAdapter(undefined, undefined, oLaunchPageConfig);
+
+            const aGroupTileClones = [{ id: "tileClone1" }];
+            this.oAdapter.getGroupTileClones = sandbox.stub().withArgs(this.oGroup).resolves(aGroupTileClones);
+            const aGroupTiles = [{ id: "tile1" }];
+            this.oAdapter.getGroupTiles = sandbox.stub().withArgs(this.oGroup).resolves(aGroupTiles);
+
+            this.oService = new FlpLaunchPage(this.oAdapter);
+            sandbox.stub(this.oService, "getTileTitle").returns("Tile Title");
+
+            this.oErrorStub = sandbox.stub(Log, "error");
+        },
+        afterEach: function () {
+            sandbox.restore();
+        }
+    });
+
+    QUnit.test("Resolves the group tiles returned by the adapter", function (assert) {
+        // Arrange
+        const aExpectedTiles = [{ id: "tileClone1" }];
+        // Act
+        return this.oService.getGroupTilesForSearch(this.oGroup).then((aGroupTiles) => {
+            // Assert
+            assert.deepEqual(aGroupTiles, aExpectedTiles, "Resolved the expected tiles");
+        });
+    });
+
+    QUnit.test("Has a fallback to getGroupTiles", function (assert) {
+        // Arrange
+        delete this.oAdapter.getGroupTileClones;
+        const aExpectedTiles = [{ id: "tile1" }];
+        // Act
+        return this.oService.getGroupTilesForSearch(this.oGroup).then((aGroupTiles) => {
+            // Assert
+            assert.deepEqual(aGroupTiles, aExpectedTiles, "Resolved the expected tiles");
+        });
+    });
+});

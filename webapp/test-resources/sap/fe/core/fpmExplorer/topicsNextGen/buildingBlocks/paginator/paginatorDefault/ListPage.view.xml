@@ -1,0 +1,39 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.paginatorDefault.Paginator"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+>
+	<macros:Page title="My Travel Requests" class="sapUiContentPadding">
+		<VBox>
+			<MessageStrip showIcon="true" text="Click on a travel request to see the paginator on the detail page." type="Information" />
+			<Table id="travelList" inset="false" items="{path: '/Travel'}">
+				<columns>
+					<Column>
+						<Text text="Description" />
+					</Column>
+					<Column>
+						<Text text="Begin Date" />
+					</Column>
+					<Column>
+						<Text text="End Date" />
+					</Column>
+					<Column>
+						<Text text="Total Price" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem press=".rowPress" type="Navigation">
+						<cells>
+							<Text text="{Description}" />
+							<Text text="{BeginDate}" />
+							<Text text="{EndDate}" />
+							<Text text="{TotalPrice}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</VBox>
+	</macros:Page>
+</mvc:View>

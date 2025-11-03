@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>SAP Fiori Tools Overview</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://ui5.sap.com/resources/sap/ui/core/themes/sap_fiori_3/library.css" />
+		<script src="https://ui5.sap.com/resources/sap-ui-core.js"></script>
+		<style>
+			body {
+				font-family: "72", Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			.header-title {
+				text-align: center;
+				margin-bottom: 0px;
+				font-size: 2.5rem;
+			}
+			.header-description {
+				text-align: center;
+				margin-top: 20px;
+			}
+			.cardToolsLogo img {
+				width: 70px;
+				height: auto;
+			}
+			.header h2 {
+				text-align: center;
+				margin: 0;
+				color: #000000;
+			}
+			.tools-images-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 32px;
+				margin: 50px 0;
+				max-width: 100%;
+			}
+
+			.cardToolsImages {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 8px;
+				flex: 0 0 auto;
+				min-width: 80px;
+				text-decoration: none;
+				color: inherit;
+				transition: all 0.3s ease;
+				border-radius: 8px;
+				padding: 8px;
+			}
+			.cardToolsImages img {
+				width: 80px; /* 10% of original 90px size */
+				height: auto;
+				margin: 0;
+			}
+			.cardToolsImages:hover {
+				background-color: #e6f3ff;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 8px rgba(10, 110, 209, 0.2);
+			}
+
+			.cardToolsImages:focus {
+				outline: 2px solid #0a6ed1;
+				outline-offset: 2px;
+			}
+
+			.cardToolsImages:active {
+				transform: translateY(0);
+			}
+			.image-label {
+				font-size: 14px;
+				color: #333;
+				text-align: center;
+				white-space: nowrap;
+			}
+			.tools-description {
+				max-width: calc(100% - 60px);
+				margin: 0 auto;
+				text-align: center;
+			}
+			.tools-description p {
+				text-align: center;
+			}
+			.tools-description ul {
+				text-align: left;
+				display: inline-block;
+				margin: 0 auto;
+			}
+			.container {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				gap: 20px;
+				padding: 20px;
+			}
+			.section {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.section {
+				padding: 20px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				background-color: #f9f9f9;
+				text-align: center;
+			}
+			.section h3 {
+				color: #000000;
+			}
+			.visit-docu-btn {
+				margin-top: 16px;
+				padding: 12px 24px;
+				background-color: transparent;
+				color: #0a6ed1;
+				border: 2px solid #0a6ed1;
+				border-radius: 4px;
+				font-size: 14px;
+				font-weight: 500;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-align: center;
+			}
+
+			.visit-docu-btn:hover {
+				background-color: #0a6ed1;
+				color: #ffffff;
+				transform: translateY(-1px);
+				box-shadow: 0 4px 8px rgba(10, 110, 209, 0.3);
+			}
+
+			.visit-docu-btn:focus {
+				outline: 2px solid #0a6ed1;
+				outline-offset: 2px;
+			}
+
+			.visit-docu-btn:active {
+				transform: translateY(0);
+				background-color: #074a91;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- <div class="header"> -->
+			<!-- <div class="cardToolsLogo" style="text-align: center">
+					<img src="images/SapFioriTools.png" alt="SAP Fiori Tools Logo" />
+				</div> -->
+			<h2 class="header-title">SAP Fiori Tools</h2>
+			<p class="header-description">
+				SAP Fiori tools provides a fast and convenient way to create and maintain SAP Fiori elements applications.
+			</p>
+			<!-- </div> -->
+
+			<div class="section">
+				<h3 style="text-align: center">Extensions</h3>
+
+				<div class="tools-images-container">
+					<a href="#" class="cardToolsImages" data-tool-type="sap-fiori-generator">
+						<img src="images/AppGenerator.svg" alt="Generator" />
+						<span class="image-label">SAP Fiori Generator</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="application-modeler">
+						<img src="images/ApplicationModeler.svg" alt="Application Modeler" />
+						<span class="image-label">Application Modeler</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="guided-development">
+						<img src="images/GuidedDevelopment.svg" alt="Guided Development" />
+						<span class="image-label">Guided Development</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="service-modeler">
+						<img src="images/ServiceModeler.svg" alt="Service Modeler" />
+						<span class="image-label">Service Modeler</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="xml-annotation-language-server">
+						<img src="images/AnnotationLsp.svg" alt="Annotation LSP" />
+						<span class="image-label">XML Annotation Language Server</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="guided-answers">
+						<img src="images/GuidedAnswers.svg" alt="Guided Answers" />
+						<span class="image-label">Guided Answers</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="ui5-language-assistant">
+						<img src="images/UI5LangAssist.svg" alt="UI5 Language Assistant" />
+						<span class="image-label">UI5 Language Assistant</span>
+					</a>
+
+					<!-- <a href="#" class="cardToolsImages" data-tool-type="internal-enablement">
+						<img src="images/InternalEnablement.svg" alt="Internal Enablement" />
+						<span class="image-label">Internal Enablement</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="app-info-page">
+						<img src="images/AppInfoPage.svg" alt="Application Info Page" />
+						<span class="image-label">Application Info Page</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="config-documentation">
+						<img src="images/ConfigDocumentation.svg" alt="Configuration Documentation" />
+						<span class="image-label">Configuration Documentation</span>
+					</a>
+					<a href="#" class="cardToolsImages" data-tool-type="data-editor">
+						<img src="images/DataEditor.svg" alt="Data Editor" />
+						<span class="image-label">Data Editor</span>
+					</a> -->
+				</div>
+
+				<div class="tools-text-container">
+					<h3 style="text-align: center">Overview</h3>
+					<div style="text-align: center" class="tools-description">
+						<p>Here are some of the most important features provided by SAP Fiori tools:</p>
+						<!-- <p>Here are some of the features our tools provide:</p> -->
+						<ul style="text-align: left">
+							<li>
+								Generate SAP Fiori elements applications as standalone projects or within CAP projects using one of the SAP
+								Fiori elements floorplans or a custom layout.
+							</li>
+							<li>Preview your application during development with live or mock data.</li>
+							<li>Add, delete, and configure pages, navigation, and consumed services of your application.</li>
+							<li>Modify manifest and annotation-based settings using a schematic overview of your applications.</li>
+							<li>Use intelligent code assistance when writing annotations with the annotation LSP.</li>
+							<li>Learn how to add new features to your application with guided development.</li>
+							<li>Use AI-powered generation and modification assistants.</li>
+						</ul>
+					</div>
+					<br />
+				</div>
+
+				<h3>Want to know more?</h3>
+				<p style="text-align: center">
+					<button class="visit-docu-btn" role="button" href="https://help.sap.com/docs/SAP_FIORI_tools" target="_blank">
+						Visit the SAP Help Portal
+					</button>
+				</p>
+			</div>
+		</div>
+		<script src="fioriTools.js"></script>
+	</body>
+</html>

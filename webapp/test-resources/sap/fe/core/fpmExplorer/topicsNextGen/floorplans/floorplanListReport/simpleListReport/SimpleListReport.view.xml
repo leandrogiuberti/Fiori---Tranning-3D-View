@@ -1,0 +1,78 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="List Report" documentation="1cf5c7f5b81c4cb3ba98fd14314d4504">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text
+					text="With a list report, users can view and work with a large set of items. This floorplan offers powerful features for finding and acting on relevant items."
+				/>
+				<Text text="It is often used as an entry point for navigating to the item details, which are usually shown on an" />
+				<fpmExplorer:Link topic="floorplans/floorplanObjectPage/simpleObjectPage" text="Object Page" />
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="simpleListReport" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Filter Fields in the Filter Bar"
+				text="You can select the fields to be shown in the Filter Bar by using annotation UI.SelectionFields. At runtime, you can add and remove Filter Fields by pressing the Adapt Filters button."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="SelectionFields" end="});" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/filterFields.rap" codeType="rap" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/filterFields.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="Table Columns">
+				<fpmExplorer:textContent>
+					<VBox>
+						<Text text="Define the table columns to be shown with annotation UI.LineItem." />
+						<fpmExplorer:Link text="Details about using Tables" topic="buildingBlocks/table/tableDefault" />
+					</VBox>
+				</fpmExplorer:textContent>
+
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="annotate Travel with @UI.LineItem" end="];" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/tableColumns.rap" codeType="rap" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/tableColumns.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="Value Help">
+				<fpmExplorer:textContent>
+					<VBox>
+						<Text
+							text="Value lists enable you to read the possible values for a given property, such as Agency-Name and -ID in the TravelAgency entity type. A value list is typically visualized as a dropdown list, or as a value help dialog, that is, a popup with additional features such as filters which help finding the correct value."
+						/>
+						<fpmExplorer:Link text="Value Help details" topic="advancedFeatures/guidance/guidanceValueHelp" />
+					</VBox>
+				</fpmExplorer:textContent>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="to_Agency @Common.ValueList:" end="};" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/valueHelp.xml" codeType="xml" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/valueHelp.rap" codeType="rap" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Text annotation and Text Arrangement"
+				text="You can configure properties to show both text and ID for value help fields in Edit and Display modes."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="../../service/service.cds"
+						start="@Common.Text           : to_Agency.Name"
+						end="#TextFirst"
+					/>
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/textArrangement.rap" codeType="rap" />
+					<fpmExplorer:CodeLink file="floorplanListReport/simpleListReport/code/textArrangement.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

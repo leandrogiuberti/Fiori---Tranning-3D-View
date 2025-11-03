@@ -1,0 +1,37 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Chart Qualifier"
+		introduction="Chart qualifiers enable you to define multiple chart annotations on the same entity. This allows you to create different chart configurations for various use cases while maintaining a single data model."
+		documentation="52d065ab8bb740c58c834a0c985e3b9e"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartQualifier.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Chart Definition with Qualifier"
+				text="Define a UI.Chart annotation with a specific qualifier to create a named chart configuration. The qualifier allows you to have multiple chart definitions on the same entity."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartQualifier/localService/service.cds" start="UI.Chart #ChartQualifier" end="};" />
+					<fpmExplorer:CodeLink file="chart/chartQualifier/code/chartAnnotation.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Referencing Qualified Chart"
+				text="Use the metaPath property to reference a specific qualified chart annotation. The syntax includes the qualifier after the # symbol."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="chart/chartQualifier/Sample.fragment.xml" start="ChartQualifier" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

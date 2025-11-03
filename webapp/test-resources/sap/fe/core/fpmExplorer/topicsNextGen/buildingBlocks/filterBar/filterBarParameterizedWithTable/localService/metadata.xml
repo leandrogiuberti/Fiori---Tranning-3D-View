@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm" Version="4.0">
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+	>
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common" />
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value"
+	>
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core" />
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value"
+	>
+		<edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures" />
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
+	>
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI" />
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="com.sap.gateway.srvd.zrc_arcustomer_definition.v0001" Alias="SAP__self">
+			<EntityType Name="CustomerParameters">
+				<Key>
+					<PropertyRef Name="PreferredCurrency" />
+				</Key>
+				<Property Name="PreferredCurrency" Type="Edm.String" Nullable="false" MaxLength="5" />
+				<NavigationProperty
+					Name="Set"
+					Type="Collection(com.sap.gateway.srvd.zrc_arcustomer_definition.v0001.CustomerType)"
+					Partner="Parameters"
+					ContainsTarget="true"
+				/>
+			</EntityType>
+			<EntityType Name="CustomerType">
+				<Key>
+					<PropertyRef Name="CustomerID" />
+				</Key>
+				<Property Name="CustomerID" Type="Edm.String" Nullable="false" MaxLength="10" />
+				<Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="80" />
+				<Property Name="CityName" Type="Edm.String" Nullable="false" MaxLength="40" />
+				<Property Name="TotalSpend" Type="Edm.Decimal" Precision="12" Scale="variable" />
+				<Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" />
+				<NavigationProperty
+					Name="Parameters"
+					Type="com.sap.gateway.srvd.zrc_arcustomer_definition.v0001.CustomerParameters"
+					Nullable="false"
+				/>
+			</EntityType>
+			<EntityType Name="CurrencyVHType">
+				<Key>
+					<PropertyRef Name="Currency" />
+				</Key>
+				<Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" />
+				<Property Name="Currency_Text" Type="Edm.String" Nullable="false" MaxLength="40" />
+			</EntityType>
+			<EntityType Name="CityVHType">
+				<Key>
+					<PropertyRef Name="CityName" />
+				</Key>
+				<Property Name="CityName" Type="Edm.String" MaxLength="100" Nullable="false" />
+			</EntityType>
+			<EntityContainer Name="Container">
+				<EntitySet Name="Customer" EntityType="com.sap.gateway.srvd.zrc_arcustomer_definition.v0001.CustomerParameters">
+					<NavigationPropertyBinding Path="Set/Parameters" Target="Customer" />
+				</EntitySet>
+				<EntitySet Name="CurrencyVH" EntityType="com.sap.gateway.srvd.zrc_arcustomer_definition.v0001.CurrencyVHType" />
+				<EntitySet Name="CityVH" EntityType="com.sap.gateway.srvd.zrc_arcustomer_definition.v0001.CityVHType" />
+			</EntityContainer>
+			<Annotations Target="SAP__self.CityType">
+				<Annotation Term="SAP__common.Label" String="City" />
+			</Annotations>
+			<Annotations Target="SAP__self.CityType/CityName">
+				<Annotation Term="SAP__common.Label" String="City" />
+			</Annotations>
+			<Annotations Target="SAP__self.CurrencyType">
+				<Annotation Term="SAP__common.Label" String="Currency" />
+			</Annotations>
+			<Annotations Target="SAP__self.CurrencyType/Currency_Text">
+				<Annotation Term="SAP__common.Label" String="Currency" />
+			</Annotations>
+			<Annotations Target="SAP__self.CurrencyType/USDConversionRate">
+				<Annotation Term="SAP__common.Label" String="Conversion Rate (USD)" />
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerParameters/PreferredCurrency">
+				<Annotation Term="SAP__core.Computed" />
+				<Annotation Term="SAP__common.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Currency" />
+						<PropertyValue Property="CollectionPath" String="CurrencyVH" />
+						<PropertyValue Property="SearchSupported" Bool="true" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="SAP__common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="PreferredCurrency" />
+									<PropertyValue Property="ValueListProperty" String="Currency" />
+								</Record>
+								<Record Type="SAP__common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Currency_Text" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__common.Label" String="Preferred Currency" />
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerParameters">
+				<Annotation Term="SAP__common.ResultContext" />
+				<Annotation Term="SAP__UI.LineItem">
+					<Collection>
+						<Record Type="SAP__UI.DataField">
+							<PropertyValue Property="Value" Path="PreferredCurrency" />
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerType/CustomerID">
+				<Annotation Term="SAP__common.Text" Path="CustomerName">
+					<Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextFirst" />
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerType/CityName">
+				<Annotation Term="SAP__core.Computed" />
+				<Annotation Term="SAP__common.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="City" />
+						<PropertyValue Property="CollectionPath" String="CityVH" />
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="SAP__common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CityName" />
+									<PropertyValue Property="ValueListProperty" String="CityName" />
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__common.Label" String="City" />
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerType/TotalSpend">
+				<Annotation Term="SAP__measures.ISOCurrency" Path="CurrencyCode" />
+				<Annotation Term="SAP__common.Label" String="Total Spend" />
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerType/CurrencyCode">
+				<Annotation Term="SAP__common.IsCurrency" />
+			</Annotations>
+			<Annotations Target="SAP__self.CustomerType">
+				<Annotation Term="SAP__common.Label" String="Customer List" />
+				<Annotation Term="SAP__UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="Customer" />
+						<PropertyValue Property="TypeNamePlural" String="Customers" />
+						<PropertyValue Property="Title">
+							<Record Type="SAP__UI.DataField">
+								<PropertyValue Property="Value" Path="CustomerID" />
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__UI.LineItem">
+					<Collection>
+						<Record Type="SAP__UI.DataField">
+							<PropertyValue Property="Label" String="Customer" />
+							<PropertyValue Property="Value" Path="CustomerID" />
+						</Record>
+						<Record Type="SAP__UI.DataField">
+							<PropertyValue Property="Value" Path="CityName" />
+						</Record>
+						<Record Type="SAP__UI.DataField">
+							<PropertyValue Property="Value" Path="TotalSpend" />
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="SAP__UI.SelectionFields">
+					<Collection>
+						<PropertyPath>CityName</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

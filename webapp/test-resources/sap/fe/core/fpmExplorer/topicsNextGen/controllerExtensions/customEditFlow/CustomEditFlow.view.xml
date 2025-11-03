@@ -1,0 +1,34 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Draft Handling"
+		introduction="You can implement draft handling on a custom page using the editFlow controller extension."
+		documentation="ed9aa41c563a44b18701529c8327db4d"
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="customEditFlow" autoFocus="false" height="720px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Using the editFlow Controller Extension"
+				text="You must extend the PageController to implement draft handling on a custom page. You can then access the editFlow controller extension through 'this.editFlow'. The editFlow controller provides methods to manage the draft state, such as creating drafts, saving drafts, and canceling drafts."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="customEditFlow/Sample.controller.js" codeType="ts" start="this.editFlow" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Implementing a Hook"
+				text="You can implement the hooks provided by the editFlow controller extensions, for example, the onBeforeEdit hook, as described in the following topic."
+			>
+				<fpmExplorer:Link topic="controllerExtensions/editFlow" text="Draft Handling on Custom Page" />
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

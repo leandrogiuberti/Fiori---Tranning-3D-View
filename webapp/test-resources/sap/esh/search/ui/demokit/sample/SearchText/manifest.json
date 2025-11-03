@@ -1,0 +1,28 @@
+{
+    "sap.app": {
+        "id": "sap.esh.search.ui.sample.SearchText",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "sap.esh.search.ui.sample.SearchText.SearchText",
+            "type": "XML"
+        },
+        "dependencies": {
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.esh.search.ui": {}
+            }
+        },
+        "config": {
+            "sample": {
+                "stretch": true,
+                "files": ["SearchText.view.xml", "SearchText.controller.js", "manifest.json"]
+            }
+        }
+    }
+}

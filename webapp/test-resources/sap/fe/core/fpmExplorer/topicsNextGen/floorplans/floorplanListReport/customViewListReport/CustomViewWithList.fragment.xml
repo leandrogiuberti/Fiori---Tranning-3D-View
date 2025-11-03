@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<List id="customViewWithTableList" items="{path: '/Travel', sorter: {path: 'TravelID'}}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Travel Entities" level="H2" />
+					<ToolbarSpacer />
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<infoToolbar>
+			<OverflowToolbar>
+				<Label text="List of Travel entities" />
+			</OverflowToolbar>
+		</infoToolbar>
+
+		<items>
+			<StandardListItem title="{TravelID}" description="{Description}" />
+		</items>
+	</List>
+</core:FragmentDefinition>

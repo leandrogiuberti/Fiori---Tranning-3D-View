@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Micro Chart"
+		introduction="The MicroChart building block enables you to render different types of micro charts."
+		documentation="74554b4ca1de49aea42e2c309946ba05"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.microChartDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Define UI.FieldGroup Annotation"
+				text="To define the micro chart, you can use the UI.Chart annotation in your service definition. This annotation refers to a UI.DataPoint annotation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="microchart/microChartDefault/localService/service.cds"
+						codeType="cds"
+						start="#HarveyBallCriticalityPath"
+						end="19"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Usage of Micro Chart Building Block"
+				text="To use a micro chart, you need to define the metaPath pointing to a UI.Chart annotation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="microchart/microChartDefault/Sample.fragment.xml" codeType="view" start="harveyball" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

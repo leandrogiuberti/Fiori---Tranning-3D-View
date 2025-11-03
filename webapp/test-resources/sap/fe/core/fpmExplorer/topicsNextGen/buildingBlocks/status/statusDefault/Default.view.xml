@@ -1,0 +1,30 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.statusDefault.Default"
+>
+	<fpmExplorer:Page title="Status" editMode="false">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text text="Use the Status Building block to display a DataField with criticality and provide a press event." />
+				<Text text="Note that the status of this building block is experimental and its API may change." />
+			</VBox>
+		</fpmExplorer:introductionContent>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.statusDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Usage of Status Building Block"
+				text="To use the Status building block, you must define the metaPath pointing to a DataField or a property. The criticality of the DataField (or its DataFieldDefault) determines its color. You can attach a press event to the Status to handle user interactions."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="status/statusDefault/Sample.fragment.xml" codeType="xml" start="Status" end="8" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

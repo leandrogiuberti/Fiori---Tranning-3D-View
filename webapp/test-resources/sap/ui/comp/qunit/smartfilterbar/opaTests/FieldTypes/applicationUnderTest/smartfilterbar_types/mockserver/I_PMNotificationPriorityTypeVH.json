@@ -1,0 +1,12 @@
+[{
+    "MaintPriorityType": "CM",
+    "MaintPriorityType_Text": "Description 1"
+},
+{
+    "MaintPriorityType": "PM",
+    "MaintPriorityType_Text": "Description 3"
+},
+{
+    "MaintPriorityType": "QM",
+    "MaintPriorityType_Text": "QM priorities"
+}]

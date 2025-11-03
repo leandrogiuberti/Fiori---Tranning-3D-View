@@ -1,0 +1,14 @@
+@UI.selectionField: [{ position: 10 }]
+key TravelID : abap.numc(8);
+
+@UI.selectionField: [{ position: 20 }]
+to_Agency_AgencyID : abap.char(10);
+
+@UI.selectionField: [{ position: 30 }]
+TravelStatus_code : abap.char(2);
+
+@UI.selectionField: [{ position: 40 }]
+BeginDate : abap.dats;
+
+@UI.selectionField: [{ position: 50 }]
+EndDate : abap.dats;

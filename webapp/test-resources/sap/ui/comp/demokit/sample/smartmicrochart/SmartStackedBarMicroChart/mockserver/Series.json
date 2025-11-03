@@ -1,0 +1,33 @@
+[{
+	"Month": "January",
+	"Price": "20000",
+	"DisplayValue": "20K",
+	"Title" : "My Chart Title From Data",
+	"Description": "MyDescription",
+	"Currency": "Euro",
+	"Criticality": "Sequence1"
+}, {
+	"Month": "February",
+	"Price": "40000",
+	"DisplayValue": "40K",
+	"Title" : "MyChartTitleFromData",
+	"Description": "MyDescription",
+	"Currency": "Euro",
+	"Criticality": "Sequence2"
+}, {
+	"Month": "March",
+	"Price": "10000",
+	"DisplayValue": "10K",
+	"Title" : "MyChartTitleFromData",
+	"Description": "MyDescription",
+	"Currency": "Euro",
+	"Criticality": "Sequence3"
+}, {
+	"Month": "April",
+	"Price": "5000",
+	"DisplayValue": "5K",
+	"Title" : "MyChartTitleFromData",
+	"Description": "MyDescription",
+	"Currency": "Euro",
+	"Criticality": "Sequence4"
+}]

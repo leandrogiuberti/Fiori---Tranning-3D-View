@@ -1,0 +1,77 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="Custom Subsections in Object Page" documentation="ce8d468269814077bc4b132572979b66">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text
+					text="You can add custom subsections to existing sections in your Object Page application to display additional content within a structured layout."
+				/>
+				<Text
+					text="Custom subsections allow you to extend standard sections with custom UI controls, visualizations, or third-party components while maintaining the Object Page's hierarchical structure."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customSubSection" autoFocus="false" height="740px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="SubSection Configuration in Manifest"
+				text="Define your custom subsections in the manifest.json file under the 'content.body.sections.[sectionName].subSections' configuration. Each subsection references a fragment that contains the custom content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSubSection/manifest.json"
+						start="subSections"
+						end="10"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Subsection Title"
+				text="Define subsection titles using i18n keys to support multiple languages. The title property in the subsection configuration references the i18n bundle."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="floorplanObjectPage/customSubSection/manifest.json" start="title" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Fragment Type Configuration"
+				text="Specify the fragment type as 'XMLFragment' in the subsection configuration to ensure proper loading and rendering of your custom content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSubSection/manifest.json"
+						start="XMLFragment"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Custom SubSection Fragment"
+				text="Create a fragment that defines your custom subsection content. This example shows a flight map visualization using the VBM (Visual Business Map) control within a subsection."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customSubSection/CustomSubSectionFlightMap.fragment.xml"
+						start="vbm:AnalyticMap"
+						end="14"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

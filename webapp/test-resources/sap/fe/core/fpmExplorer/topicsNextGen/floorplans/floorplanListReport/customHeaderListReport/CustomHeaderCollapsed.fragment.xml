@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mc="sap.suite.ui.microchart" xmlns:macros="sap.fe.macros">
+	<HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="No filtering" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="TravelEntitiesNoFilter"
+					number="4"
+					status="Success"
+					unit="Travels"
+					press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressTravelEntitiesNoFilter"
+				/>
+			</FlexBox>
+		</HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="Status Open" class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="TravelEntitiesWithFilter"
+					number="2"
+					status="Information"
+					unit="Travels"
+					press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressTravelEntitiesWithFilter"
+				/>
+			</FlexBox>
+		</HBox>
+		<HBox class="sapUiTinyMarginEnd">
+			<FlexBox alignItems="Center" justifyContent="Start" class="sapUiTinyMarginEnd">
+				<Label text="Other Actions..." class="sapUiSmallMarginEnd" />
+				<macros:KPITag
+					id="Navigation"
+					number="x"
+					status="Information"
+					unit="Travels"
+					press=".extension.sap.fe.core.fpmExplorer.customHeaderListReport.LRExtend.pressNavigation"
+				/>
+			</FlexBox>
+		</HBox>
+	</HBox>
+</core:FragmentDefinition>

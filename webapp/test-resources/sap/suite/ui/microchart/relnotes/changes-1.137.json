@@ -1,0 +1,12 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "bf0b7d5a4153e2478b5dadb5367730c94348bb80",
+        "type": "FIX",
+        "text": " We've now fixed an issue for the bar color of type error where the shadows on the label of stacked bar micro chart was missing"
+      }
+    ]
+  }
+}

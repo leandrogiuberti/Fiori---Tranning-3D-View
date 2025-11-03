@@ -1,0 +1,8 @@
+<Annotation Term="UI.DataPoint" Qualifier="Rating">
+	<Record Type="UI.DataPointType">
+		<PropertyValue Property="Value" Path="Rating" />
+		<PropertyValue Property="Title" String="Rating" />
+		<PropertyValue Property="TargetValue" Decimal="5" />
+		<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating" />
+	</Record>
+</Annotation>

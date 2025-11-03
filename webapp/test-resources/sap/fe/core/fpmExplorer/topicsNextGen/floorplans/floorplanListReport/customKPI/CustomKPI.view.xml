@@ -1,0 +1,89 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page title="Custom KPI Tags in List Report" documentation="88743992c11d4fb7bb5d39a667ff9f79">
+		<fpmExplorer:introductionContent>
+			<VBox>
+				<Text
+					text="You can add custom Key Performance Indicator (KPI) tags to your List Report application to display important metrics and data points."
+				/>
+				<Text text="You can use the KPITag building block as described here:" />
+				<fpmExplorer:Link topic="buildingBlocks/kpiTag/kpiTagDefault" text="KPITag Building Block" />
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customKPI" autoFocus="false" height="740px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="KPI Configuration in Manifest"
+				text="Define your custom KPI tags in the manifest.json file under the keyPerformanceIndicators section. Each KPI references a fragment template that defines its appearance and behavior."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customKPI/manifest.json"
+						start="keyPerformanceIndicators"
+						end="9"
+						codeType="manifest"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Basic KPI Tag Fragment"
+				text="Create a fragment that defines a simple KPI tag with static values. The KPITag macro provides properties for number, unit, and status display."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customKPI/CustomKPITag.fragment.xml"
+						start="macros:KPITag"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Interactive KPI Tag with Press Handler"
+				text="For interactive KPI tags, add a press handler that references a method in your controller extension. This allows users to click on the KPI for additional actions."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customKPI/CustomKPITagWithPress.fragment.xml"
+						start="macros:KPITag"
+						codeType="view"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Controller Extension Configuration"
+				text="Register your controller extension in the manifest.json file to handle KPI press events and other custom logic."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="floorplanListReport/customKPI/manifest.json" start="extends" end="}," codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Controller Implementation"
+				text="Implement the press handler method in your controller extension to define what happens when users interact with the KPI tags."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanListReport/customKPI/LRExtend.controller.js"
+						start="onKPIPressed"
+						end="}"
+						codeType="ts"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

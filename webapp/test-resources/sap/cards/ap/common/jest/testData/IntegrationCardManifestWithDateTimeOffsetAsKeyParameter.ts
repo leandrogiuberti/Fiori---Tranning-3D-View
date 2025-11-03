@@ -1,0 +1,201 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
+ */
+export default {
+	_version: "1.15.0",
+	"sap.app": {
+		id: "objectCard",
+		type: "card",
+		title: "{{CardGeneratorHeaderTitle}}",
+		subTitle: "{{CardGeneratorHeaderSubTitle}} | {overall_status}",
+		applicationVersion: {
+			version: "1.0.0"
+		}
+	},
+	"sap.ui": {
+		technology: "UI5",
+		icons: {
+			icon: "sap-icon://switch-classes"
+		}
+	},
+	"sap.card": {
+		extension: "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+		type: "Object",
+		configuration: {
+			parameters: {
+				_headerSelectQuery: {
+					value: "$select=CreatedByUser,CreationDateTime,node_key,EndDate"
+				},
+				_contentSelectQuery: {
+					value: "$select=CreatedByUser,CreationDateTime,node_key,EndDate"
+				},
+				node_key: {
+					type: "string",
+					value: "guid'17beb005-2229-1edf-bcfe-327784b30b'"
+				},
+				CreatedByUser: {
+					type: "string",
+					value: "C1234"
+				},
+				CreationDateTime: {
+					type: "datetime",
+					value: "Wed Feb 26 2025 08:57:17 GMT+0530 (India Standard Time)"
+				},
+				EndDate: {
+					type: "datetime",
+					value: "Fri Dec 31 9999 05:30:00 GMT+0530 (India Standard Time)"
+				},
+				_adaptiveFooterActionParameters: {
+					C_SalesPlanTPRelease: {
+						actionParameters: [],
+						data: {
+							isConfirmationRequired: false
+						},
+						enablePath: "salesorderID",
+						label: "Release",
+						style: "default",
+						verb: "C_SalesPlanTPRelease"
+					}
+				},
+				footerActionParameters: {},
+				_entitySet: {
+					value: "C_STTA_SalesOrder_WD_20",
+					type: "string"
+				}
+			},
+			destinations: {
+				service: {
+					name: "(default)",
+					defaultUrl: "/"
+				}
+			},
+			csrfTokens: {
+				token1: {
+					data: {
+						request: {
+							url: "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+							method: "HEAD",
+							headers: {
+								"X-CSRF-Token": "Fetch"
+							}
+						}
+					}
+				}
+			}
+		},
+		data: {
+			request: {
+				url: "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+				method: "POST",
+				headers: {
+					"X-CSRF-Token": "{{csrfTokens.token1}}"
+				},
+				batch: {
+					header: {
+						method: "GET",
+						url: "{{parameters._entitySet}}(CreatedByUser='{{parameters.CreatedByUser}}',CreationDateTime=datetimeoffset'{{parameters.CreationDateTime}}',node_key=guid'{{parameters.node_key}}',EndDate=datetime'{{parameters.EndDate}}')?{{parameters._headerSelectQuery}}{{parameters._headerExpandQuery}}",
+						headers: {
+							Accept: "application/json",
+							"Accept-Language": "{{parameters.LOCALE}}"
+						},
+						retryAfter: 30
+					},
+					content: {
+						method: "GET",
+						url: "{{parameters._entitySet}}(CreatedByUser='{{parameters.CreatedByUser}}',CreationDateTime=datetimeoffset'{{parameters.CreationDateTime}}',node_key=guid'{{parameters.node_key}}',EndDate=datetime'{{parameters.EndDate}}')?{{parameters._contentSelectQuery}}{{parameters._contentExpandQuery}}",
+						headers: {
+							Accept: "application/json",
+							"Accept-Language": "{{parameters.LOCALE}}"
+						}
+					}
+				}
+			}
+		},
+		header: {
+			data: {
+				path: "/content/d/"
+			},
+			type: "Numeric",
+			title: "{{CardGeneratorHeaderTitle}}",
+			subTitle: "{{CardGeneratorHeaderSubTitle}}",
+			unitOfMeasurement: "{overall_status}",
+			mainIndicator: {
+				number: '{= format.float(${net_amount}, {"decimals":2,"style":"short"})} {currency_code}',
+				unit: "",
+				trend: "None",
+				state: "{= extension.formatters.formatCriticality(${Language}, 'color') }"
+			},
+			sideIndicators: [
+				{
+					title: "",
+					number: "",
+					unit: ""
+				},
+				{
+					title: "",
+					number: "",
+					unit: ""
+				}
+			]
+		},
+		content: {
+			data: {
+				path: "/content/d/"
+			},
+			groups: [
+				{
+					title: "{{CardGeneratorGroupHeader_Groups_0}}",
+					items: [
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_0}}",
+							value: '{= format.float(${net_amount}, {"decimals":2,"style":"short"})} {currency_code}',
+							name: "net_amount"
+						},
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_1}}",
+							value: "{gross_amount} {currency_code}",
+							name: "gross_amount"
+						},
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_2}}",
+							value: "{tax_amount} {currency_code}",
+							name: "tax_amount"
+						}
+					]
+				},
+				{
+					title: "{{CardGeneratorGroupHeader_Groups_1}}",
+					items: [
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_0}}",
+							value: "{bp_id}",
+							name: "bp_id"
+						},
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_1}}",
+							value: '{= format.dateTime(${created_at}, {"relative":false,"UTC":true})}',
+							name: "created_at"
+						},
+						{
+							label: "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_2}}",
+							value: "{so_id}",
+							name: "so_id"
+						}
+					]
+				}
+			]
+		},
+		footer: {
+			actionsStrip: []
+		}
+	},
+	"sap.insights": {
+		templateName: "ObjectPage",
+		parentAppId: "sales.order.wd20",
+		cardType: "LEAN_DT",
+		versions: {
+			ui5: "1.125.1-SNAPSHOT-202406281543"
+		}
+	}
+};

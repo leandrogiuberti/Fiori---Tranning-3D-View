@@ -1,0 +1,16 @@
+{
+	"sap.ui5": {
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ListReport.ListReportController": {
+						"controllerName": "myApp.ext.LRExtend"
+					},
+					"sap.fe.templates.ObjectPage.ObjectPageController#myAppID::CustomerDetails": {
+						"controllerNames": ["myApp.ext.OPExtend", "myApp.ext.CustomerDetailsExtend"]
+					}
+				}
+			}
+		}
+	}
+}

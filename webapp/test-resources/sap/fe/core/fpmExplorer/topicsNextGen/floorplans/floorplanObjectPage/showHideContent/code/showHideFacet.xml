@@ -1,0 +1,6 @@
+<Record Type="UI.ReferenceFacet">
+	<PropertyValue Property="Label" String="Bookings" />
+	<PropertyValue Property="ID" String="BookingList" />
+	<PropertyValue Property="Target" AnnotationPath="to_Booking/@UI.LineItem" />
+	<Annotation Term="UI.PartOfPreview" Bool="false" />
+</Record>

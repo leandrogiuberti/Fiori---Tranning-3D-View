@@ -1,0 +1,431 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+
+/**
+ * @fileOverview QUnit tests for sap/ushell/bootstrap/sandbox.js
+ */
+sap.ui.define([
+    "sap/base/util/deepExtend",
+    "sap/ui/thirdparty/jquery",
+    "sap/ushell/adapters/local/NavTargetResolutionInternalAdapter",
+    "sap/ushell/Container",
+    "sap/ushell/test/utils",
+    "sap/ushell/utils"
+], (
+    deepExtend,
+    jQuery,
+    NavTargetResolutionAdapter,
+    Container,
+    testUtils,
+    utils
+) => {
+    "use strict";
+
+    /* global QUnit, sinon */
+
+    const oNavigationTargetResolutionAdapterConfig = {
+        config: {
+            applications: {
+                "Foo-bar": {
+                    _comment: "Commenting the world famous foobar application!",
+                    additionalInformation: "SAPUI5.Component=sap.foo.bar.FooBarApplication",
+                    applicationType: "URL",
+                    url: "/foo/bar/application",
+                    description: "The world famous foobar application!",
+                    text: "Foo-bar title",
+                    fullWidth: true,
+                    navigationMode: "embedded"
+                },
+                "Foo-bar2": {
+                    _comment: "Commenting why the sequel is better than the original.",
+                    additionalInformation: "SAPUI5.Component=sap.foo.bar.FooBar2Application",
+                    applicationType: "URL",
+                    url: "/foo/bar2/application",
+                    description: "Second edition of the world famous foobar application!",
+                    text: "Foo-bar2 title",
+                    fullWidth: true,
+                    navigationMode: "embedded"
+                }
+            }
+        }
+    };
+
+    /*
+     * Create clone object
+     */
+    function createClone (oObjectToClone) {
+        return deepExtend({}, oObjectToClone);
+    }
+
+    QUnit.module("sap.ushell.adapters.local.NavTargetResolutionInternalAdapter - config tests", {
+        beforeEach: function (assert) {
+            return Container.init("local");
+        },
+        afterEach: function () {
+            Container.resetServices();
+        }
+    });
+
+    [{
+        configDescription: "undefined",
+        config: undefined
+    }, {
+        configDescription: "[]",
+        config: []
+    }].forEach((oFixture) => {
+        QUnit.test(`part 1: config = ${oFixture.configDescription}`, function (assert) {
+            const done = assert.async();
+            // Purpose: Test if odd configurations will lead to some error.
+            // As the constructor is empty, we use both methods to test for those errors.
+            const oService = new NavTargetResolutionAdapter(undefined, undefined, /* config = */oFixture.config);
+            oService.resolveHashFragment("#Foo-bar")
+                .fail(() => {
+                    assert.ok(true, "resolveHashFragment threw no exception");
+                    done();
+                });
+        });
+
+        QUnit.test(`part 2: config = ${oFixture.configDescription}`, function (assert) {
+            const done = assert.async();
+            // Purpose: Test if odd configurations will lead to some error.
+            // As the constructor is empty we use both methods to test for those errors.
+            const oService = new NavTargetResolutionAdapter(undefined, undefined, /* config = */oFixture.config);
+            oService.getSemanticObjectLinks("Foo")
+                .done((aSemanticObjectLinks) => {
+                    assert.ok(aSemanticObjectLinks.length === 0, "getSemanticObjectLinks returned an empty array");
+                    done();
+                });
+        });
+    });
+
+    QUnit.module("sap.ushell.adapters.local.NavTargetResolutionInternalAdapter", {
+        beforeEach: function () {
+            this.oService = new NavTargetResolutionAdapter(undefined, undefined, createClone(oNavigationTargetResolutionAdapterConfig));
+            return Container.init("local");
+        },
+        afterEach: function () {
+            this.oService = undefined;
+            Container.resetServices();
+        }
+    });
+
+    QUnit.test("resolveHashFragment: invalid hash", function (assert) {
+        assert.throws(this.oService.resolveHashFragment.bind(undefined, "invalid-hash"),
+            utils.Error("Hash fragment expected",
+                "sap.ushell.renderers.minimal.Shell"), "expected exception was thrown");
+    });
+
+    [{
+        sIntent: "#Foo-bar",
+        expectedResult: {
+            url: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].url,
+            applicationType: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].applicationType,
+            additionalInformation: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].additionalInformation,
+            text: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].text,
+            fullWidth: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].fullWidth,
+            navigationMode: oNavigationTargetResolutionAdapterConfig.config.applications["Foo-bar"].navigationMode
+        }
+    }, {
+        sIntent: "#Action-search",
+        expectedResult: {
+            additionalInformation: "SAPUI5.Component=sap.ushell.renderer.search.searchComponent",
+            applicationType: "SAPUI5",
+            fullWidth: undefined,
+            text: undefined,
+            url: "resources/sap/ushell/renderer/search/searchComponent",
+            navigationMode: "embedded"
+        }
+    }, {
+        sIntent: "#Action-search?p1=A&p2=B",
+        expectedResult: {
+            additionalInformation: "SAPUI5.Component=sap.ushell.renderer.search.searchComponent",
+            applicationType: "SAPUI5",
+            fullWidth: undefined,
+            text: undefined,
+            url: "resources/sap/ushell/renderer/search/searchComponent?p1=A&p2=B",
+            navigationMode: "embedded"
+        }
+    }, {
+        sIntent: "#Action-search?p1=A&p2=B&/My/Inner/App/Route",
+        expectedResult: {
+            additionalInformation: "SAPUI5.Component=sap.ushell.renderer.search.searchComponent",
+            applicationType: "SAPUI5",
+            fullWidth: undefined,
+            text: undefined,
+            url: "resources/sap/ushell/renderer/search/searchComponent?p1=A&p2=B",
+            navigationMode: "embedded"
+        }
+    }, {
+        sIntent: "#Action-search&/My/Inner/App/Route",
+        expectedResult: {
+            additionalInformation: "SAPUI5.Component=sap.ushell.renderer.search.searchComponent",
+            applicationType: "SAPUI5",
+            fullWidth: undefined,
+            text: undefined,
+            url: "resources/sap/ushell/renderer/search/searchComponent",
+            navigationMode: "embedded"
+        }
+    }].forEach((oFixture) => {
+        QUnit.test(`resolveHashFragment: resolves '${oFixture.sIntent}'`, function (assert) {
+            const done = assert.async();
+            this.oService.resolveHashFragment(oFixture.sIntent)
+                .done((oResult) => {
+                    assert.deepEqual(oResult, oFixture.expectedResult, "resolved to the expected result");
+                    done();
+                })
+                .fail((oError) => {
+                    assert.ok(false, "failed to resolve");
+                    done();
+                });
+        });
+    });
+
+    QUnit.test("resolveHashFragment: resolve '#'", function (assert) {
+        const done = assert.async();
+
+        this.oService.resolveHashFragment("#")
+            .done((oResult) => {
+                assert.deepEqual(oResult, undefined, "'#' correctly resolved");
+                done();
+            })
+            .fail((oError) => {
+                assert.ok(false, "failed to resolve");
+                done();
+            });
+    });
+
+    QUnit.test("resolveHashFragment: resolve '#unknown-hash'", function (assert) {
+        const done = assert.async();
+        this.oService.resolveHashFragment("#unknown-hash")
+            .done((oResult) => {
+                assert.ok(false, "should not be able to resolve");
+            })
+            .fail((oError) => {
+                assert.equal(oError.message, "Could not resolve link 'unknown-hash'", "resolve rejected as expected");
+            })
+            .always(() => {
+                done();
+            });
+    });
+
+    QUnit.test("resolveHashFragment: resolve with parameter '#Foo-bar?param1=value1&param2=value2'", function (assert) {
+        const done = assert.async();
+        const oClone = createClone(oNavigationTargetResolutionAdapterConfig).config.applications["Foo-bar"];
+        const oExpected = {
+            additionalInformation: oClone.additionalInformation,
+            url: `${oClone.url}?param1=value1&param2=value2`,
+            applicationType: oClone.applicationType,
+            text: oClone.text,
+            fullWidth: oClone.fullWidth,
+            navigationMode: oClone.navigationMode
+        };
+        this.oService.resolveHashFragment("#Foo-bar?param1=value1&param2=value2")
+            .done((oResult) => {
+                assert.deepEqual(oResult, oExpected, "correctly resolved and parameter treated as expected");
+            })
+            .fail((oError) => {
+                assert.ok(false, "should not be able to resolve");
+            })
+            .always(() => {
+                done();
+            });
+    });
+
+    [
+        "",
+        "Foo",
+        "Muh"
+    ].forEach((sFixture) => {
+        QUnit.test(`getSemanticObjectLinks: resolves '${sFixture}'`, function (assert) {
+            const done = assert.async();
+            let oExpectedLink;
+            let sIntent;
+            // Arrange
+            const sSemanticObject = sFixture;
+            const aExpectedLinks = [];
+            const oApplications = oNavigationTargetResolutionAdapterConfig.config.applications;
+            for (sIntent in oApplications) {
+                if (oApplications.hasOwnProperty(sIntent) && sIntent.substring(0, sIntent.indexOf("-")) === sSemanticObject) {
+                    oExpectedLink = createClone(oApplications[sIntent]);
+                    oExpectedLink.id = sIntent;
+                    oExpectedLink.intent = `#${sIntent}`;
+                    aExpectedLinks.push(oExpectedLink);
+                }
+            }
+            // Act
+            this.oService.getSemanticObjectLinks(sSemanticObject)
+                .done((aResult) => {
+                    // Assert
+                    assert.deepEqual(aResult, aExpectedLinks, "Resolves the semantic object to the expected array");
+                })
+                .fail((oError) => {
+                    // Assert
+                    assert.ok(false, "Resolves the semantic object");
+                })
+                .always(() => {
+                    done();
+                });
+        });
+    });
+
+    [
+        { description: "empty", So: "Foo", params: { A: ["B1", "B2"] }, result: [{ intent: "#Foo-bar?A=B1&A=B2" }] }
+    ].forEach((oFixture) => {
+        QUnit.test(`getSemanticObjectLinks: resolves '${oFixture.description}' with parameters`, function (assert) {
+            const done = assert.async();
+
+            // Arrange
+            const sSemanticObject = oFixture.So;
+
+            // Act
+            this.oService.getSemanticObjectLinks(sSemanticObject, oFixture.params)
+                .done((aResult) => {
+                    // Assert
+                    assert.deepEqual(aResult[0].intent, oFixture.result[0].intent, "intent is proper");
+                })
+                .fail((oError) => {
+                    // Assert
+                    assert.ok(false, "Resolves the semantic object");
+                })
+                .always(() => {
+                    done();
+                });
+        });
+    });
+
+    QUnit.test("isIntentSupported: success", function (assert) {
+        const done = assert.async();
+
+        const aDeferreds = [];
+        const mExpectedResult = {};
+        const aIntents = ["#fo'o-b ar", "#AccessControlRole", "#foo", "#bar"];
+        let bResolved = false;
+
+        const oAdapter = new NavTargetResolutionAdapter();
+        sinon.stub(oAdapter, "resolveHashFragment").callsFake((sHashFragment) => {
+            const oDeferred = new jQuery.Deferred();
+            aDeferreds.push(oDeferred);
+            return oDeferred.promise();
+        });
+
+        // code under test
+        oAdapter.isIntentSupported(aIntents).fail(testUtils.onError)
+            .done((mSupportedByIntent) => {
+                bResolved = true;
+                assert.deepEqual(mSupportedByIntent, mExpectedResult, " expected result");
+                assert.deepEqual(Object.keys(mSupportedByIntent), aIntents, "keys ok");
+                done();
+            });
+
+        assert.strictEqual(oAdapter.resolveHashFragment.callCount, aIntents.length);
+        aIntents.forEach((sIntent, i) => {
+            const bSupported = (i % 2) === 1;
+
+            assert.ok(oAdapter.resolveHashFragment.calledWith(sIntent), `resolved: ${sIntent}`);
+            mExpectedResult[sIntent] = { supported: bSupported };
+            if (bSupported) {
+                aDeferreds[i].resolve({/* don't care */ });
+            } else {
+                aDeferreds[i].reject(new Error("don't care"));
+            }
+        });
+
+        assert.strictEqual(bResolved, true, "isIntentSupported's promise now resolved");
+    });
+
+    QUnit.test("isIntentSupported: when resolveHashFragment promises are not resolved", function (assert) {
+        const mExpectedResult = {};
+        const aDeferreds = [];
+        const aIntents = ["#fo'o-b ar", "#AccessControlRole", "#foo", "#bar"];
+        let bResolved = false;
+
+        const oAdapter = new NavTargetResolutionAdapter();
+        sinon.stub(oAdapter, "resolveHashFragment").callsFake((sHashFragment) => {
+            const oDeferred = new jQuery.Deferred();
+            aDeferreds.push(oDeferred);
+            return oDeferred.promise();
+        });
+        // code under test
+        oAdapter.isIntentSupported(aIntents).fail(testUtils.onError)
+            .done((mSupportedByIntent) => {
+                bResolved = true;
+                assert.deepEqual(mSupportedByIntent, mExpectedResult, "Expected result");
+                assert.deepEqual(Object.keys(mSupportedByIntent), aIntents, "keys and intents");
+            });
+        assert.strictEqual(oAdapter.resolveHashFragment.callCount, aIntents.length, "call count ok");
+        aIntents.forEach((sIntent, i) => {
+            assert.ok(oAdapter.resolveHashFragment.calledWith(sIntent), `resolved: ${sIntent}`);
+        });
+        assert.strictEqual(bResolved, false, "isIntentSupported's promise will not get resolved");
+
+        aIntents.forEach((sIntent, i) => {
+            const bSupported = (i % 2) === 1;
+
+            assert.ok(oAdapter.resolveHashFragment.calledWith(sIntent), `resolved: ${sIntent}`);
+            mExpectedResult[sIntent] = { supported: bSupported };
+            if (bSupported) {
+                aDeferreds[i].resolve({/* don't care */ });
+            } else {
+                aDeferreds[i].reject(new Error("don't care"));
+            }
+        });
+        assert.strictEqual(bResolved, true, "isIntentSupported's promise got resolved");
+    });
+
+    QUnit.test("isIntentSupported: failure", function (assert) {
+        const done = assert.async();
+
+        const aIntents = ["#foo", "#bar"];
+
+        const oAdapter = new NavTargetResolutionAdapter();
+        sinon.stub(oAdapter, "resolveHashFragment").callsFake((sHashFragment) => {
+            return (new jQuery.Deferred()).reject(new Error("Failed intentionally")).promise();
+        });
+
+        // code under test
+        oAdapter.isIntentSupported(aIntents).done((oRes) => {
+            assert.deepEqual(oRes, { "#foo": { supported: false }, "#bar": { supported: false } }, " ok");
+            done();
+        });
+    });
+
+    QUnit.test("isIntentSupported: single intent", function (assert) {
+        const oDeferred = new jQuery.Deferred();
+        const mExpectedResult = {};
+        const sIntent = "#foo";
+        let bResolved = false;
+
+        const oAdapter = new NavTargetResolutionAdapter();
+        sinon.stub(oAdapter, "resolveHashFragment").callsFake((sHashFragment) => {
+            return oDeferred.promise();
+        });
+
+        // code under test
+        oAdapter.isIntentSupported([sIntent]).fail(testUtils.onError)
+            .done((mSupportedByIntent) => {
+                bResolved = true;
+                assert.deepEqual(Object.keys(mSupportedByIntent), [sIntent]);
+                assert.deepEqual(mSupportedByIntent, mExpectedResult);
+            });
+
+        assert.strictEqual(bResolved, false, "isIntentSupported's promise not yet resolved");
+        assert.strictEqual(oAdapter.resolveHashFragment.callCount, 1);
+        assert.ok(oAdapter.resolveHashFragment.calledWith(sIntent), `resolved: ${sIntent}`);
+        mExpectedResult[sIntent] = { supported: true };
+        oDeferred.resolve({/* don't care */ });
+        assert.strictEqual(bResolved, true, "isIntentSupported's promise now resolved");
+    });
+
+    QUnit.test("isIntentSupported: zero intents ([])", function (assert) {
+        const done = assert.async();
+        const oAdapter = new NavTargetResolutionAdapter();
+
+        sinon.stub(oAdapter, "resolveHashFragment").callsFake(testUtils.onError);
+
+        // code under test
+        oAdapter.isIntentSupported([]).fail(testUtils.onError)
+            .done((mSupportedByIntent) => {
+                assert.deepEqual(mSupportedByIntent, {});
+                done();
+            });
+    });
+});

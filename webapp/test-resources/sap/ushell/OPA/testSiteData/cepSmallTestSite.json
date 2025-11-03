@@ -1,0 +1,523 @@
+{
+    "_version": "3.1.0",
+    "applications": {
+        "sap.ushell.demo.AppInfoSample": {
+            "sap.app": {
+                "ach": "CA-FLP-FE-COR",
+                "applicationVersion": {
+                    "version": "1.0.0"
+                },
+                "crossNavigation": {
+                    "inbounds": {
+                        "Action-toAppInfoSample": {
+                            "action": "toAppInfoSample",
+                            "semanticObject": "Action",
+                            "signature": {
+                                "additionalParameters": "allowed",
+                                "parameters": {}
+                            }
+                        }
+                    }
+                },
+                "id": "sap.ushell.demo.AppInfoSample",
+                "title": "AppInfoSample"
+            },
+            "sap.flp": {
+                "type": "application"
+            },
+            "sap.platform.runtime": {
+                "componentProperties": {
+                    "url": "./test-resources/sap/ushell/demoapps/AppInfoSample"
+                }
+            },
+            "sap.ui": {
+                "deviceTypes": {
+                    "desktop": true,
+                    "phone": true,
+                    "tablet": true
+                },
+                "icons": {
+                    "icon": "sap-icon://hint"
+                },
+                "technology": "UI5"
+            },
+            "sap.ui5": {
+                "componentName": "sap.ushell.demo.AppInfoSample"
+            }
+        },
+        "sap.ushell.demo.bookmark": {
+            "sap.app": {
+                "ach": "CA-UI2-INT-FE",
+                "applicationVersion": {
+                    "version": "1.0.0"
+                },
+                "crossNavigation": {
+                    "inbounds": {
+                        "target": {
+                            "action": "toBookmark",
+                            "semanticObject": "Action",
+                            "signature": {
+                                "additionalParameters": "allowed",
+                                "parameters": {}
+                            }
+                        }
+                    }
+                },
+                "id": "sap.ushell.demo.bookmark",
+                "subTitle": "sample subtitle",
+                "title": "Bookmark Sample App"
+            },
+            "sap.flp": {
+                "type": "application"
+            },
+            "sap.platform.runtime": {
+                "componentProperties": {
+                    "url": "./test-resources/sap/ushell/demoapps/BookmarkSample"
+                }
+            },
+            "sap.ui": {
+                "deviceTypes": {
+                    "desktop": true,
+                    "phone": true,
+                    "tablet": true
+                },
+                "icons": {
+                    "icon": "sap-icon://favorite"
+                },
+                "technology": "UI5"
+            },
+            "sap.ui5": {
+                "componentName": "sap.ushell.demo.bookmark"
+            }
+        }
+    },
+    "catalogs": {
+        "/dummyCatalog": {
+            "identification": {
+                "id": "/dummyCatalog",
+                "title": "Broken Tiles"
+            },
+            "payload": {
+                "viz": [
+                    "dummyTile1",
+                    "dummyTile2",
+                    "dummyTile3"
+                ]
+            }
+        },
+        "customTiles": {
+            "identification": {
+                "id": "customTiles",
+                "title": "Custom Tiles"
+            },
+            "payload": {
+                "viz": [
+                    "newsTile"
+                ]
+            }
+        },
+        "standardCatalog": {
+            "identification": {
+                "id": "standardCatalog",
+                "title": "FLP - Standard Catalog"
+            },
+            "payload": {
+                "viz": [
+                    "Bookmark_Viz1",
+                    "Bookmark_Viz2",
+                    "FLP-testApp1",
+                    "sap.ushell.demo.AppInfoSample"
+                ]
+            }
+        }
+    },
+    "groups": {
+        "firstGroup": {
+            "identification": {
+                "id": "firstGroup",
+                "namespace": "",
+                "title": ""
+            },
+            "payload": {
+                "groups": [],
+                "links": [],
+                "tiles": []
+            }
+        }
+    },
+    "menus": {
+        "main": {
+            "identification": {
+                "id": "main"
+            },
+            "payload": {
+                "menuEntries": [
+                    {
+                        "description": "A space for the sales guy",
+                        "help-id": "Space-space01",
+                        "icon": "sap-icon://syringe",
+                        "id": "space01",
+                        "target": {
+                            "action": "openFLPPage",
+                            "parameters": [
+                                {
+                                    "name": "pageId",
+                                    "value": "page1"
+                                },
+                                {
+                                    "name": "spaceId",
+                                    "value": "space01"
+                                }
+                            ],
+                            "semanticObject": "Launchpad"
+                        },
+                        "title": "Sales Space",
+                        "type": "IBN"
+                    },
+                    {
+                        "description": "An empty Space",
+                        "help-id": "Space-emptySpace",
+                        "icon": "sap-icon://syringe",
+                        "id": "emptySpace",
+                        "target": {
+                            "action": "openFLPPage",
+                            "parameters": [
+                                {
+                                    "name": "pageId",
+                                    "value": "emptyPage"
+                                },
+                                {
+                                    "name": "spaceId",
+                                    "value": "emptySpace"
+                                }
+                            ],
+                            "semanticObject": "Launchpad"
+                        },
+                        "title": "Empty Space",
+                        "type": "IBN"
+                    }
+                ]
+            }
+        }
+    },
+    "pages": {
+        "emptyPage": {
+            "identification": {
+                "id": "emptyPage",
+                "title": "Empty Page"
+            },
+            "payload": {
+                "layout": {
+                    "sectionOrder": []
+                },
+                "sections": {}
+            }
+        },
+        "page1": {
+            "identification": {
+                "id": "page1",
+                "title": "The First Page"
+            },
+            "payload": {
+                "layout": {
+                    "sectionOrder": [
+                        "section1"
+                    ]
+                },
+                "sections": {
+                    "section1": {
+                        "id": "section1",
+                        "layout": {
+                            "vizOrder": [
+                                "00002",
+                                "00003"
+                            ]
+                        },
+                        "title": "First Page Section",
+                        "viz": {
+                            "00002": {
+                                "id": "00002",
+                                "vizId": "Bookmark_Viz1"
+                            },
+                            "00003": {
+                                "displayFormatHint": "compact",
+                                "id": "00003",
+                                "vizId": "Bookmark_Viz2"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "page2": {
+            "identification": {
+                "id": "page2",
+                "title": "The Second Page"
+            },
+            "payload": {
+                "layout": {
+                    "sectionOrder": [
+                        "section2"
+                    ]
+                },
+                "sections": {
+                    "section2": {
+                        "id": "section2",
+                        "layout": {
+                            "vizOrder": [
+                                "00004"
+                            ]
+                        },
+                        "title": "Second Page Section",
+                        "viz": {
+                            "00004": {
+                                "id": "00004",
+                                "vizId": "sap.ushell.demo.AppInfoSample"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "site": {
+        "identification": {
+            "description": "FLP Home Page",
+            "id": "c9dcc1f3-dec0-4db4-91d3-639bf38d91ce",
+            "title": "Home"
+        },
+        "payload": {
+            "config": {
+                "ushellConfig": {
+                    "renderers": {
+                        "fiori2": {
+                            "componentData": {
+                                "config": {
+                                    "enableSearch": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "groupsOrder": [
+                "firstGroup"
+            ]
+        }
+    },
+    "systemAliases": {},
+    "visualizations": {
+        "Bookmark_Viz1": {
+            "vizConfig": {
+                "sap.app": {},
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {}
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "Bookmark_Viz2": {
+            "vizConfig": {
+                "sap.app": {
+                    "subTitle": "with Params",
+                    "title": "Bookmark Sample"
+                },
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {
+                            "preferredMode": {
+                                "value": {
+                                    "format": "plain",
+                                    "value": "create"
+                                }
+                            }
+                        }
+                    }
+                },
+                "sap.ui": {
+                    "icons": {
+                        "icon": "sap-icon://create"
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "dummyTile1": {
+            "vizConfig": {
+                "sap.app": {
+                    "title": "Dummy Tile 1"
+                },
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {}
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "dummyTile2": {
+            "vizConfig": {
+                "sap.app": {
+                    "title": "Dummy Tile 2"
+                },
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {}
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "dummyTile3": {
+            "vizConfig": {
+                "sap.app": {
+                    "title": "Dummy Tile 3"
+                },
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {}
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "FLP-testApp1": {
+            "vizConfig": {
+                "sap.app": {
+                    "subTitle": "some awesome app",
+                    "title": "FLP - Test App"
+                },
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.bookmark",
+                        "inboundId": "target",
+                        "parameters": {
+                            "preferredMode": {
+                                "value": {
+                                    "format": "plain",
+                                    "value": "create"
+                                }
+                            }
+                        }
+                    }
+                },
+                "sap.ui": {
+                    "icons": {
+                        "icon": "sap-icon://electrocardiogram"
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        },
+        "newsTile": {
+            "vizConfig": {
+                "sap.app": {
+                    "subTitle": "no subtitle",
+                    "title": "News"
+                },
+                "sap.flp": {
+                    "target": {
+                        "type": "URL",
+                        "url": "https://www.sap.com"
+                    }
+                },
+                "sap.ui": {
+                    "deviceTypes": {
+                        "desktop": true,
+                        "phone": true,
+                        "tablet": true
+                    },
+                    "icons": {
+                        "icon": "sap-icon://time-entry-request"
+                    }
+                }
+            },
+            "vizType": "newsTileType"
+        },
+        "sap.ushell.demo.AppInfoSample": {
+            "vizConfig": {
+                "sap.flp": {
+                    "target": {
+                        "appId": "sap.ushell.demo.AppInfoSample",
+                        "inboundId": "Action-toAppInfoSample"
+                    }
+                }
+            },
+            "vizType": "sap.ushell.StaticAppLauncher"
+        }
+    },
+    "vizTypes": {
+        "newsTileType": {
+            "config": {
+                "cycleInterval": 7000,
+                "defaultImage": "",
+                "eFilter1": "",
+                "eFilter2": "",
+                "eFilter3": "",
+                "eFilter4": "",
+                "eFilter5": "",
+                "feed1": "",
+                "feed10": "",
+                "feed2": "",
+                "feed3": "",
+                "feed4": "",
+                "feed5": "",
+                "feed6": "",
+                "feed7": "",
+                "feed8": "",
+                "feed9": "",
+                "iFilter1": "",
+                "iFilter2": "",
+                "iFilter3": "",
+                "iFilter4": "",
+                "iFilter5": "",
+                "refreshInterval": 0,
+                "useDefaultImage": false
+            },
+            "sap.app": {
+                "ach": "CA-UI2-INT-FE",
+                "description": "this is a news tile",
+                "id": "newsTileType",
+                "subTitle": "no subtitle",
+                "title": "News"
+            },
+            "sap.flp": {
+                "tileSize": "1x2",
+                "type": "tile"
+            },
+            "sap.platform.runtime": {
+                "componentProperties": {
+                    "asyncHints": {},
+                    "url": "/sap/bc/ui5_demokit/test-resources/sap/ushell/demotiles/cdm/newstile"
+                },
+                "includeManifest": true
+            },
+            "sap.ui": {
+                "deviceTypes": {
+                    "desktop": true,
+                    "phone": true,
+                    "tablet": true
+                },
+                "icons": {
+                    "icon": "sap-icon://time-entry-request"
+                },
+                "technology": "URL"
+            },
+            "sap.ui5": {
+                "componentName": "sap.ushell.demotiles.cdm.newstile"
+            }
+        }
+    }
+}

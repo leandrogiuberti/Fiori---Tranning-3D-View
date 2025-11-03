@@ -1,0 +1,36 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.dynamicInstantiation.DynamicInstantiation"
+>
+	<fpmExplorer:Page
+		title="Dynamic Instantiation"
+		introduction="You can dynamically instantiate building blocks, such as a table or a form, in your controller coding."
+		documentation="24c1304739dd4f19af0ce2482c4d9bbe"
+	>
+		<fpmExplorer:sample>
+			<Button
+				text="Open Dialog"
+				press="onOpenDialog"
+				binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+			/>
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="You can dynamically instantiate building blocks in your controller coding as shown below."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="dynamicInstantiation/DynamicInstantiation.controller.js"
+						start="new Form"
+						end="});"
+						type="ts"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

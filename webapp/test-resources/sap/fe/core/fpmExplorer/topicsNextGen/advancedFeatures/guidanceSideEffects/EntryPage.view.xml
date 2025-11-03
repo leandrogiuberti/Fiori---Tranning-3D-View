@@ -1,0 +1,462 @@
+<mvc:View
+	id="application-product"
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.guidanceSideEffects.EntryPage"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:fe="sap.fe.macros"
+	xmlns:code="sap.ui.codeeditor"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Side Effects"
+		documentation="18b17bdd49d1436fa9172cbb01e26544"
+		introduction="If an end user changes the content of a field or performs another activity, this change can potentially influence other fields on the UI. This system behavior is called a side effect."
+		editMode="true"
+	>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Side Effect Annotation Elements"
+				text="For a side effect annotation, the following properties are supported by SAP Fiori elements for OData V4:"
+			>
+				<VBox>
+					<Panel>
+						<Table id="SideEffectsTable" items="{path:'/SideEffectsProperties'}">
+							<columns>
+								<Column>
+									<Text text="Property" />
+								</Column>
+								<Column>
+									<Text text="Type" />
+								</Column>
+								<Column>
+									<Text text="Description" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="{Property}" wrapping="false" />
+										<Text text="{PropertyType}" wrapping="false" />
+										<Text text="{Description}" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</Panel>
+					<Panel
+						headerText="Usage of * in 'TargetProperties' of a Side Effects Annotation"
+						width="auto"
+						class="sapUiResponsiveMargin"
+					>
+						<Text
+							class="sapUiTinyMargin"
+							text="'TargetProperties' are defined as a collection of strings. For 'TargetProperties', a property path may end with a '*' segment. With such a segment ending, the side effect can target all structural properties that are directly reachable via the property path. Navigation properties are excluded, unless you list them explicitly.&#13;&#10;
+					Examples of 'TargetProperties' with a '*' segment:"
+						/>
+						<Table id="TargetPropertiesTable" items="{path:'/TargetPropertiesSample'}">
+							<columns>
+								<Column>
+									<Text text="'TargetProperties' Example" />
+								</Column>
+								<Column>
+									<Text text="Side Effect Target" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="{TargetProperties}" wrapping="false" />
+										<Text text="{Description}" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="1.) Side Effect with Single Source Property"
+				text="If you define one source property, the side effect request is sent immediately after the property was changed."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Enter a value in the field 'Single Source Property'.&#13;&#10;When the input focus is set outside the input field (e.g. by pressing the tab key), the side effect is triggered and the target property is updated.&#13;&#10;
+						Additionally, this updates the property 'fieldControlProperty1' in a custom back-end handler. The property is used for toggling the input readiness of the field 'Target Property 1b'."
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<fe:FormElement metaPath="sourceProperty1" id="formElementSingleSourceProperty" />
+											<fe:FormElement metaPath="targetProperty1a" id="formElementTargetProperty1a" />
+											<fe:FormElement metaPath="targetProperty1b" id="formElementTargetProperty1b" />
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 1" end="11" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample1.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="2.) Side Effect with Trigger Action"
+				text="If you define an additional trigger action, it is always issued before the GET request for 'TargetProperties' and/or 'TargetEntities' defined with the side effect. The action is only called when the side effect source property is changed."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Enter a value in the field 'Source Property 2'.&#13;&#10;When the input focus is set outside the input field (e.g. by pressing the tab key), the trigger action of the side effect is issued and the target property is updated.&#13;&#10;"
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<fe:FormElement metaPath="sourceProperty2" id="formElementSourceProperty2" />
+											<fe:FormElement metaPath="targetProperty2" id="formElementTargetProperty2" />
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 2" end="7" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample2.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="3.) Side Effect with Multiple Source Properties"
+				text="By configuring a side effect with multiple source properties, a virtual field group is defined. The side effect is only requested when any of the source properties are changed and the focus leaves the virtual field group."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Enter a value in both fields 'Source Property 3a' and 'Source Property 3b'.&#13;&#10;When the input focus is set outside the virtual field group (e.g. by pressing the tab key), for instance, on 'Other Property 3c', the trigger action is requested and the target property is updated."
+						/>
+						<fe:Form metaPath="@com.sap.vocabularies.UI.v1.Facets/0" id="SourceGroup" />
+						<fe:Form metaPath="@com.sap.vocabularies.UI.v1.Facets/1" id="TargetGroup" />
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 3" end="10" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample3.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="4.) Side Effect on a Checkbox"
+				text="Properties of type 'Boolean' are displayed as a checkbox on the UI. By defining a side effect with the Boolean property as the source property, the side effect is triggered immediately when the checkbox is selected."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Select the checkbox 'Boolean Source Property'. This updates the property 'fieldControlProperty2' in a custom back-end handler.&#13;&#10;The property is used for toggling the input readiness of the field 'Target Property 4'. The value for 'fieldControlProperty2' is requested via a side effect."
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<fe:FormElement metaPath="sourceProperty4" id="formElementSourceProperty4" />
+											<fe:FormElement metaPath="targetProperty4" id="formElementTargetProperty4" />
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 4" end="8" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample4.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="5.) Side Effect on a Source Entity"
+				text="You can define one or several entity paths in the side effect annotation property 'SourceEntities'. An empty 'SourceEntities' path implies the annotated entity itself."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Enter a different price in one of the table lines and change the input field focus. &#13;&#10; The recalculated value for 'Total Amount' is requested via a GET request."
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<fe:FormElement metaPath="totalAmount" id="formElementTotalAmount" />
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<Panel headerText="Source Entity Items">
+								<fe:Table metaPath="items/@com.sap.vocabularies.UI.v1.LineItem#sample5" id="LineItemTableSourceEntity" />
+							</Panel>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 5" end="6" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample5.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="6.) Side Effect on a Bound Action (with Operation Control)"
+				text="If an action applies changes to an entity, these changes are only reflected on the UI after adding a side effect annotation to that action."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Trigger the bound action by clicking the button. The values shown in the field group are updated via an action-based side effect. &#13;&#10;
+							The target property of the side effect is always annotated as a string. The example uses the special character '*' as the last path segment, ensuring all directly reachable properties of the annotated entity are updated.&#13;&#10;
+							In this example, the annotated entity is represented by the OData binding parameter alias '_it', which is used as the preceding path in 'TargetProperties'.&#13;&#10;
+							To enable the action button, an additional 'OperationAvailable' annotation with a path expression referring to a Boolean property is defined on the action.&#13;&#10;
+							Depending on the checkbox selection state, the Boolean property is set to true or false."
+						/>
+						<f:Form>
+							<f:layout>
+								<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<Button
+												text="Increase Number"
+												class="sapUiTinyMargin"
+												width="10em"
+												press="onPress"
+												enabled="{= ${OperationAvailable}}"
+											/>
+										</f:FormElement>
+										<f:FormElement>
+											<fe:Form
+												contextPath="/RootEntity"
+												metaPath="@com.sap.vocabularies.UI.v1.Facets#OperationAvailable/0"
+												id="Sample6Group1"
+											/>
+										</f:FormElement>
+										<f:FormElement>
+											<fe:Form
+												contextPath="/RootEntity"
+												metaPath="@com.sap.vocabularies.UI.v1.Facets#complexProperty/0"
+												id="Sample6Group2"
+											/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 6" end="8" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample6.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="7.) Side Effect on an Unbound Action"
+				text="An unbound action can have side effects annotated on it. As the action is not bound to any context, the underlying side effects definition has to use absolute paths."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Trigger the unbound action by clicking the 'Table Refresh' button.&#13;&#10;
+							The ubound action triggers its annotated side effect.&#13;&#10;
+							The side effect execution triggers the refresh of the entity 'RootEntity'."
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+							</f:Form>
+							<Panel headerText="Root Entity Items">
+								<fe:Table
+									contextPath="/RootEntity"
+									metaPath="@com.sap.vocabularies.UI.v1.LineItem#sample7"
+									id="LineItemTableRefresh"
+								/>
+							</Panel>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 7" end="4" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample7.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="8.) Side Effect for Refreshing Data of an Entity for Invalidating a Cached Value Help"
+				text="You can define one or several navigation property paths and/or absolute paths for the side effect property 'TargetEntities'. Value lists are cached during runtime for better performance. They can be refreshed by defining an absolute side effect with the value list collection as the target."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Select a business partner via the value help. This refreshes the data from the associated entity shown in the field group."
+						/>
+						<VBox>
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<fe:FormElement metaPath="BusinessPartnerID" id="formElementBusinessPartnerID" />
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<fe:Form metaPath="@com.sap.vocabularies.UI.v1.Facets#BusinessPartnerAddress/0" id="Sample7Group" />
+							<f:Form>
+								<f:layout>
+									<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement>
+												<Button
+													text="Delete Business Partner"
+													press="onDeleteBusinessPartner"
+													enabled="{= ${businessPartner/FullName} !== null}"
+												/>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<Text
+								class="sapUiTinyMargin"
+								text="Click the button in order to delete the selected business partner ID and associated business partner.&#13;&#10;
+								The cached value help of the field 'Business Partner ID' is refreshed by defining a side effect on the delete action with an absolute path in the property 'TargetEntities', pointing to the value list collection.&#13;&#10;
+								 The field 'Business Partner ID' itself is refreshed by adding '_it/BusinessPartnerID' (using the OData binding parameter as a prefix) into the side effect property 'TargetProperties'.&#13;&#10;
+								 This also ensures that the business partner address fields are refreshed via the first side effect definition which has 'BusinessPartnerID' defined in the property 'SourceProperties'."
+							/>
+						</VBox>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 8" end="10" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample8.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="9.) Side Effect with an Absolute Target Entity Path"
+				text="Some entities requiring a complete refresh on the UI might not be referred by an association. These entities can be addressed in the side effect annotation property 'TargetEntities' by defining an absolute path."
+			>
+				<VBox>
+					<Panel headerText="Example" width="auto" class="sapUiResponsiveMargin">
+						<Text
+							class="sapUiTinyMargin"
+							text="Click the button 'Start'. Clicking on 'Round' updates the duration and adds a new entry to the table.&#13;&#10;
+							The table is refreshed via a side effect defining the target entity with an absolute path."
+						/>
+						<f:Form>
+							<f:layout>
+								<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" labelCellsLarge="12" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<Button
+												text="Round"
+												press="onAddRound"
+												enabled="{= ${/EntitiesSingleton/BooleanProperty} === true}"
+											/>
+											<Button
+												text="Start"
+												press="onStartRound"
+												enabled="{= ${/EntitiesSingleton/BooleanProperty} === false}"
+											/>
+											<Button
+												text="Stop"
+												press="onStopRound"
+												enabled="{= ${/EntitiesSingleton/BooleanProperty} === true}"
+											/>
+											<Button
+												text="Clear"
+												press="onClearRounds"
+												enabled="{= ${/EntitiesSingleton/BooleanProperty} === false}"
+											/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+						<Panel headerText="Absolute Entity Items">
+							<fe:Table
+								contextPath="/AbsoluteEntity"
+								metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+								id="LineItemTableAbsoluteEntity"
+							/>
+						</Panel>
+					</Panel>
+					<Panel headerText="Annotations" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink file="guidanceSideEffects/localService/service.cds" start="//Sample 9" end="10" />
+							<fpmExplorer:CodeLink file="guidanceSideEffects/code/sample9.xml" codeType="xml" />
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

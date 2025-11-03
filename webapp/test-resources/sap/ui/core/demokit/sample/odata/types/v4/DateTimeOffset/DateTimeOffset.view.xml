@@ -1,0 +1,65 @@
+<mvc:View
+	controllerName="sap.ui.core.sample.odata.types.v4.DateTimeOffset.DateTimeOffset"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		DateTimeOffsetType: 'sap/ui/model/odata/type/DateTimeOffset',
+		DateTimeWithTimezoneType: 'sap/ui/model/odata/type/DateTimeWithTimezone',
+		StringType: 'sap/ui/model/odata/type/String'
+	}">
+	<App>
+	<Page id="page" floatingFooter="true" showHeader="false"
+		title="Example how to use OData V4 Edm.DateTimeOffset in SAPUI5 applications">
+	<VBox width="100%">
+		<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="true"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" width="auto">
+			<form:toolbar>
+				<Toolbar>
+					<Title text="How to use OData V4 Edm.DateTimeOffset type with SAPUI5 controls" />
+					<ToolbarSpacer />
+					<Link href="https://ui5.sap.com/#/topic/6c9e61dc157a40c19460660ece8368bc"
+						text="Details on OData date and time related types" target="_blank" />
+				</Toolbar>
+			</form:toolbar>
+			<form:content>
+				<Label text="sap.m.Text" />
+				<Text text="{path: '/Timestamp', type: 'DateTimeOffsetType'}" />
+				<Label text="sap.m.Input" />
+				<Input value="{path: '/Timestamp', type: 'DateTimeOffsetType'}" />
+				<Label text="sap.m.DateTimePicker" />
+				<DateTimePicker value="{path: '/Timestamp', type: 'DateTimeOffsetType'}" />
+			</form:content>
+		</form:SimpleForm>
+		<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="false"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" title="Model values"
+				width="auto">
+			<form:content>
+				<Label text="OData Model Value 'Timestamp'" />
+				<Text text="{
+						path: '/Timestamp',
+						formatter: '.formatTimestamp',
+						type: 'StringType'
+					}" />
+				<Label text="'Timestamp' in Current Time Zone" />
+				<Text text="{
+						parts: [
+							{path: '/Timestamp', type: 'DateTimeOffsetType', constraints: {V4: true}},
+							{value: null}
+						],
+						type: 'DateTimeWithTimezoneType'
+					}" />
+				<Label text="'Timestamp' Value as URI Parameter Value" />
+				<Text text="{
+						path: '/Timestamp',
+						formatter: '.formatTimestampAsURIParameter',
+						type: 'StringType'
+					}" />
+			</form:content>
+		</form:SimpleForm>
+	</VBox>
+	</Page>
+	</App>
+</mvc:View>

@@ -1,0 +1,10 @@
+<Annotation Term="UI.SelectionFields">
+	<Collection>
+		<PropertyPath>TravelID</PropertyPath>
+		<PropertyPath>to_Agency_AgencyID</PropertyPath>
+		<PropertyPath>BeginDate</PropertyPath>
+		<PropertyPath>EndDate</PropertyPath>
+		<PropertyPath>BookingFee</PropertyPath>
+		<PropertyPath>TotalPrice</PropertyPath>
+	</Collection>
+</Annotation>

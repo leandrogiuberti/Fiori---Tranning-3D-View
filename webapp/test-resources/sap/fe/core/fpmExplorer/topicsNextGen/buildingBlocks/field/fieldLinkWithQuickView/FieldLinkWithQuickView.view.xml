@@ -1,0 +1,42 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Link with Quick View"
+		introduction="The Field building block enables you to render links with quick views."
+		documentation="307ced1bc98c4e3d93ecbe9658dc9176"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldLinkWithQuickView.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="You can add a QuickViewFacets annotation to an entity and point to a ReferenceFacet defining what should be shown inside the Quick View Popover."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldLinkWithQuickView/localService/service.cds"
+						start="QuickViewFacets"
+						end=";"
+						fileName="linkWithQuickView.cds"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldLinkWithQuickView/code/linkWithQuickView.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Intent-based Navigation"
+				text="For intent-based navigation via semantic objects, please refer to the following topic."
+			>
+				<fpmExplorer:Link topic="controllerExtensions/intentBasedNavigation" text="External Navigation" />
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,27 @@
+<Annotations Target="YourEntity">
+	<Annotation Term="UI.QuickViewFacets">
+		<Collection>
+			<Record Type="UI.ReferenceFacet">
+				<PropertyValue Property="Label" String="Travel Agency" />
+				<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#QuickViewContent" />
+			</Record>
+		</Collection>
+	</Annotation>
+	<Annotation Term="UI.FieldGroup" Qualifier="QuickViewContent">
+		<Record>
+			<PropertyValue Property="Data">
+				<Collection>
+					<Record Type="UI.DataField">
+						<PropertyValue Property="Value" PropertyPath="Name" />
+					</Record>
+					<Record Type="UI.DataField">
+						<PropertyValue Property="Value" PropertyPath="City" />
+					</Record>
+					<Record Type="UI.DataField">
+						<PropertyValue Property="Value" PropertyPath="CountryCode_code" />
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+</Annotations>

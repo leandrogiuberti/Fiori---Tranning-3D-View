@@ -1,0 +1,5 @@
+@ObjectModel.text.element: ['AgencyText']
+@UI.textArrangement: #TEXT_FIRST
+agencyID,
+
+_toAgency._toAgencyText.AgencyText: localized

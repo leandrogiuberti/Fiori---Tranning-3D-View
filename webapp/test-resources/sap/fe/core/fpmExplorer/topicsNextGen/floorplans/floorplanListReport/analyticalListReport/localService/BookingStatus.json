@@ -1,0 +1,14 @@
+[
+	{
+		"code": "B",
+		"name": "Booked"
+	},
+	{
+		"code": "N",
+		"name": "New"
+	},
+	{
+		"code": "X",
+		"name": "Canceled"
+	}
+]

@@ -1,0 +1,140 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.tablePublicAPIs.TablePublicAPIs"
+>
+	<fpmExplorer:Page
+		title="Table APIs"
+		introduction="The Table building block enables you to extend the table using APIs."
+		documentation="3801656db27b4b7a9099b6ed5fa1d769"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.tablePublicAPIs.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Message Handling"
+				text="You can add and remove messages using the APIs provided by the Table building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.addMessage("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.removeMessage("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="No Data"
+				text="You can add a custom illustrated message shown once the table shows no data using the APIs provided by the Table building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.setNoData("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Presentation Variant"
+				text="You can get and set the presentation variant of a table using the APIs provided by the Table building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="getPresentationVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="setPresentationVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Selection Variant"
+				text="You can get and set the selection variant of a table using the APIs provided by the Table building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="getSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="setSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Variant Management"
+				text="You can get the currently selected variant and change the variant of a table using the APIs provided by the Table building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.getCurrentVariantKey("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.setCurrentVariantKey("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Column Visibility"
+				text="You can hide and show columns of a table using the APIs provided by the Table building block. Please note, this API is still experimental and may change in the future."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.hideColumns("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="table/tablePublicAPIs/TablePublicAPIs.controller.js"
+							codeType="ts"
+							start="table.showColumns("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

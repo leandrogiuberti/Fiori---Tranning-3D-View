@@ -1,0 +1,11 @@
+<Annotations Target="YourEntity">
+	<Annotation Term="UI.SelectionFields">
+		<Collection>
+			<PropertyPath>TravelID</PropertyPath>
+			<PropertyPath>to_Agency_AgencyID</PropertyPath>
+			<PropertyPath>TravelStatus_code</PropertyPath>
+			<PropertyPath>BeginDate</PropertyPath>
+			<PropertyPath>EndDate</PropertyPath>
+		</Collection>
+	</Annotation>
+</Annotations>

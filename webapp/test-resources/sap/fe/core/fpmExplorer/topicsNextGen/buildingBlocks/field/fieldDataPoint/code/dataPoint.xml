@@ -1,0 +1,12 @@
+<Annotation Term="UI.DataPoint" Qualifier="Recommendation">
+	<Record Type="UI.DataPointType">
+		<PropertyValue Property="Value" Path="AcceptanceStatus" />
+		<PropertyValue Property="Title" String="Acceptance" />
+		<PropertyValue Property="TargetValue" Decimal="4" />
+		<PropertyValue Property="ForecastValue" Path="Rating" />
+		<PropertyValue Property="MinimumValue" Decimal="0" />
+		<PropertyValue Property="MaximumValue" Decimal="5" />
+		<PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Progress" />
+		<PropertyValue Property="Criticality" Path="OverallStatus_code" />
+	</Record>
+</Annotation>

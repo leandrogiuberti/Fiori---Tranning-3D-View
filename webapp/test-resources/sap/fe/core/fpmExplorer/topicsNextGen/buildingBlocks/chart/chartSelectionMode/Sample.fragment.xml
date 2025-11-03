@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox fitContainer="true" alignItems="Stretch" alignContent="Stretch" justifyContent="Start" renderType="Div">
+		<Panel headerText="Multiple Selection Mode">
+			<VBox fitContainer="true" alignItems="Stretch" alignContent="Stretch" justifyContent="Start" renderType="Div">
+				<macros:Chart id="chartSelectionModeMultipleSample" metaPath="@com.sap.vocabularies.UI.v1.Chart" selectionMode="Multiple" />
+			</VBox>
+		</Panel>
+		<Panel headerText="Single Selection Mode">
+			<VBox fitContainer="true" alignItems="Stretch" alignContent="Stretch" justifyContent="Start" renderType="Div">
+				<macros:Chart id="chartSelectionModeSingleSample" metaPath="@com.sap.vocabularies.UI.v1.Chart" selectionMode="Single" />
+			</VBox>
+		</Panel>
+	</VBox>
+</core:FragmentDefinition>

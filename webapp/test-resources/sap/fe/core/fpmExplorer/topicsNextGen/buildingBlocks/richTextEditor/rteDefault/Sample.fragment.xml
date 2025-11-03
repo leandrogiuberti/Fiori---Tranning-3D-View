@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:macros="sap.fe.macros"
+	xmlns:richtexteditor="sap.fe.macros.richtexteditor"
+>
+	<VBox binding="{path:'/Travel(\'52657221A8E4645C17002DF03754AB66\')'}">
+		<macros:RichTextEditorWithMetadata metaPath="Description" id="myRichTextEditor">
+			<macros:buttonGroups>
+				<richtexteditor:ButtonGroup name="font-style" visible="true" priority="10" buttons="bold,italic,underline" />
+			</macros:buttonGroups>
+		</macros:RichTextEditorWithMetadata>
+	</VBox>
+</core:FragmentDefinition>

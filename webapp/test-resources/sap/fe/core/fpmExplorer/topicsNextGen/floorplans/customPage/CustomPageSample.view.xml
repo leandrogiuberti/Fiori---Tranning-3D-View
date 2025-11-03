@@ -1,0 +1,46 @@
+<mvc:View
+	id="application-product"
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.customPage.CustomPageSample"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:macros="sap.fe.macros"
+>
+	<macros:Page title="My Travel Requests" class="sapUiContentPadding">
+		<Panel headerText="Pending Travel Requests">
+			<ProgressIndicator
+				width="40%"
+				class="sapUiTinyMarginTopBottom"
+				percentValue="40"
+				displayValue="28k of 70k travel budget used"
+				showValue="true"
+				state="Warning"
+			/>
+			<l:HorizontalLayout
+				id="TileContainerExpanded"
+				allowWrapping="true"
+				content="{
+        			path : '/Travel',
+        			filters : [
+            			{ path : 'TravelStatus_code', operator : 'EQ', value1 : 'O'}
+        			]
+    			}"
+			>
+				<GenericTile
+					header="{Description}"
+					subheader="{BeginDate}"
+					press="onPressed"
+					class="sapUiTinyMarginEnd sapUiTinyMarginTop tileLayout"
+				>
+					<TileContent unit="{CurrencyCode_code}">
+						<NumericContent withMargin="false" value="{TotalPrice}" truncateValueTo="6" />
+					</TileContent>
+				</GenericTile>
+			</l:HorizontalLayout>
+		</Panel>
+		<Panel headerText="All Travel Requests">
+			<macros:Table metaPath="/Travel/@com.sap.vocabularies.UI.v1.LineItem" />
+		</Panel>
+	</macros:Page>
+</mvc:View>

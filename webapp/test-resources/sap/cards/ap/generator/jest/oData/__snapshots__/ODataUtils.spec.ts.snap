@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createPathWithEntityContext validate method getLabelForEntitySet and getPropertyReference for V2 data 1`] = `
+[
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "Bank Country",
+    "name": "BankCountry",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "Bank Internal ID",
+    "name": "BankInternalID",
+    "type": "Edm.Guid",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "Is Active Entity",
+    "name": "IsActiveEntity",
+    "type": "Edm.Boolean",
+  },
+]
+`;
+
+exports[`createPathWithEntityContext validate method getLabelForEntitySet and getPropertyReference for for V4 data 1`] = `
+[
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankCountry",
+    "name": "BankCountry",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "BankInternalID",
+    "name": "BankInternalID",
+    "type": "Edm.String",
+  },
+  {
+    "UOM": "",
+    "isDate": false,
+    "kind": "Property",
+    "label": "IsActiveEntity",
+    "name": "IsActiveEntity",
+    "type": "Edm.Boolean",
+  },
+]
+`;

@@ -1,0 +1,27 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "5f34fb8959cd774d3e093cc49a2822d3dac543cb",
+        "type": "FIX",
+        "text": " We now request messages when an action is executed from the controller extension"
+      },
+      {
+        "id": "64dc80d3f64fa996b45a3035970765ea886d5c47",
+        "type": "FIX",
+        "text": " We now ensure that properties are displayed with the correct labels in the p13n personalization dialog"
+      },
+      {
+        "id": "8912679371252543970f1eb48a37f7c698ddb7ee",
+        "type": "FEATURE",
+        "text": " We've defined a new format for the page title displayed in the browser tab for OData V4 apps"
+      },
+      {
+        "id": "e69ea1c1efa22d1c363838db0fa8901995d9fe49",
+        "type": "FIX",
+        "text": " We've resolved an issue where manifest settings weren't applied to charts on the object page"
+      }
+    ]
+  }
+}

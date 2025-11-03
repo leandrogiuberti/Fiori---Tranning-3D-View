@@ -1,0 +1,12 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "fe6cfd3ad288be063a80da7daab8b02d2aa9b3e0",
+        "type": "FIX",
+        "text": " We now correctly truncate the quick view description"
+      }
+    ]
+  }
+}

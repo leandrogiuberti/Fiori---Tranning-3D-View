@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox binding="{path:'/TravelAgency(AgencyID=\'070001\')'}" class="sapUiTinyMarginTop" width="320px">
+		<Label text="Travel Agency:" />
+		<macros:Field metaPath="@com.sap.vocabularies.UI.v1.FieldGroup#Contact/Data/0" id="FieldContact" />
+	</VBox>
+</core:FragmentDefinition>

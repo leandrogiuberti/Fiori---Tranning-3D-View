@@ -1,0 +1,2422 @@
+{
+    "$schema-ref": "http://schemas.sap.com/sapui5/designtime/api.json/1.0",
+    "version": "0.0.1",
+    "library": "sap.cux.home",
+    "symbols": [
+        {
+            "kind": "class",
+            "name": "sap.cux.home.App",
+            "basename": "App",
+            "resource": "sap/cux/home/App.ts",
+            "module": "sap/cux/home/App",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.cux.home.BaseApp",
+            "implements": [],
+            "description": "App class for managing and storing Apps.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new app, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.App.$AppSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new app"
+                    }
+                ],
+                "description": "Constructor for a new App."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.AppsContainer",
+            "basename": "AppsContainer",
+            "resource": "sap/cux/home/AppsContainer.ts",
+            "module": "sap/cux/home/AppsContainer",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseContainer",
+            "implements": [],
+            "description": "Container class for managing and storing apps.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.AppsContainer.$AppsContainerSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new app container."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseApp",
+            "basename": "BaseApp",
+            "resource": "sap/cux/home/BaseApp.ts",
+            "module": "sap/cux/home/BaseApp",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.ui.core.Element",
+            "implements": [],
+            "description": "Base App class for managing and storing Apps.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new app, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseApp.$BaseAppSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new app"
+                    }
+                ],
+                "description": "Constructor for a new Base App."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseContainer",
+            "basename": "BaseContainer",
+            "resource": "sap/cux/home/BaseContainer.ts",
+            "module": "sap/cux/home/BaseContainer",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.ui.core.Control",
+            "implements": [],
+            "description": "Abstract base class for all container controls in the Home Page Layout.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "height",
+                        "bindable": true,
+                        "description": "Height to be set for the container.",
+                        "group": "Appearance",
+                        "methods": [
+                            "getHeight",
+                            "setHeight"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "sap.ui.core.CSSSize",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "width",
+                        "bindable": true,
+                        "description": "Width to be set for the container.",
+                        "group": "Appearance",
+                        "defaultValue": "100%",
+                        "methods": [
+                            "getWidth",
+                            "setWidth"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "sap.ui.core.CSSSize",
+                        "visibility": "public"
+                    }
+                ],
+                "aggregations": [
+                    {
+                        "name": "actionButtons",
+                        "singularName": "actionButton",
+                        "bindable": true,
+                        "cardinality": "0..n",
+                        "description": "This aggregation contains the actions that should be displayed within the container.",
+                        "methods": [],
+                        "type": "sap.m.Button",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "content",
+                        "singularName": "content",
+                        "bindable": true,
+                        "cardinality": "0..n",
+                        "description": "The container content aggregation which should be of type BasePanel.",
+                        "methods": [],
+                        "type": "sap.cux.home.BasePanel",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "menuItems",
+                        "singularName": "menuItem",
+                        "bindable": true,
+                        "cardinality": "0..n",
+                        "description": "This aggregation holds the items that should be shown within the dropdown menu of the container.",
+                        "methods": [],
+                        "type": "sap.cux.home.MenuItem",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseContainer.$BaseContainerSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Base Container."
+            },
+            "methods": [
+                {
+                    "name": "getHeight",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.CSSSize",
+                        "description": "<p>Value of property <code>height</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseContainer#methods/getHeight\">height</a>.</p>"
+                },
+                {
+                    "name": "getWidth",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.CSSSize",
+                        "description": "<p>Value of property <code>width</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseContainer#methods/getWidth\">width</a>.</p>"
+                },
+                {
+                    "name": "setHeight",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.CSSSize",
+                        "description": "<p>Value of property <code>height</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseContainer#methods/setHeight\">height</a>.</p>"
+                },
+                {
+                    "name": "setWidth",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.CSSSize",
+                        "description": "<p>Value of property <code>width</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseContainer#methods/setWidth\">width</a>.</p>"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseLayout",
+            "basename": "BaseLayout",
+            "resource": "sap/cux/home/BaseLayout.ts",
+            "module": "sap/cux/home/BaseLayout",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.m.Page",
+            "implements": [],
+            "description": "Abstract base class for My Home layout.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "persContainerId",
+                        "bindable": true,
+                        "description": "Container ID for Ushell Personalisation.\nThis property holds the ID of the personalization container.\nIt is used to store and retrieve personalized settings for the control.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getPersContainerId",
+                            "setPersContainerId"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseLayout.$BaseLayoutSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Base Layout."
+            },
+            "methods": [
+                {
+                    "name": "getPersContainerId",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>persContainerId</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseLayout#methods/getPersContainerId\">persContainerId</a>.</p>"
+                },
+                {
+                    "name": "setPersContainerId",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>persContainerId</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.BaseLayout#methods/setPersContainerId\">persContainerId</a>.</p>"
+                },
+                {
+                    "name": "setSettingsDialog",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "this",
+                        "description": "the dialog for chaining"
+                    },
+                    "description": "Sets SettingsDialog aggregation.\nOverridden to update cached settings panels.\nSets the aggregated settingsDialog.<br/>The settings dialog aggregation which controls settings for my home controls.\nIt should be of type BaseSettingsDialog.\nIf Not provided, a default settings dialog will be created from sap.cux.home.SettingsDialog.\nIn case of only custom settings panels, the settings dialog should be created and set manually from sap.cux.home.SettingsDialog.\n"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseNewsItem",
+            "basename": "BaseNewsItem",
+            "resource": "sap/cux/home/BaseNewsItem.ts",
+            "module": "sap/cux/home/BaseNewsItem",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.ui.core.Element",
+            "implements": [],
+            "description": "Base class for managing and storing News items.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new base news item, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseNewsItem.$BaseNewsItemSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new base news item"
+                    }
+                ],
+                "description": "Constructor for a new Base News Item."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseNewsPanel",
+            "basename": "BaseNewsPanel",
+            "resource": "sap/cux/home/BaseNewsPanel.ts",
+            "module": "sap/cux/home/BaseNewsPanel",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Base Panel class for managing and storing News.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new panel, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseNewsPanel.$BaseNewsPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new panel"
+                    }
+                ],
+                "description": "Constructor for a new Base News Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BasePagePanel",
+            "basename": "BasePagePanel",
+            "resource": "sap/cux/home/BasePagePanel.ts",
+            "module": "sap/cux/home/BasePagePanel",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Base Panel class for managing and storing Pages.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new panel, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePagePanel.$BasePagePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new panel"
+                    }
+                ],
+                "description": "Constructor for a new Base Page Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BasePanel",
+            "basename": "BasePanel",
+            "resource": "sap/cux/home/BasePanel.ts",
+            "module": "sap/cux/home/BasePanel",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.ui.core.Element",
+            "implements": [],
+            "description": "Abstract base class for all panels placed in {@link sap.cux.home.BaseContainer }.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePanel.$BasePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Base Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseSettingsDialog",
+            "basename": "BaseSettingsDialog",
+            "resource": "sap/cux/home/BaseSettingsDialog.ts",
+            "module": "sap/cux/home/BaseSettingsDialog",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.m.Dialog",
+            "implements": [],
+            "description": "Abstract base class for custom settings dialog for {@link sap.cux.home.BaseLayout }.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseSettingsDialog.$BaseSettingsDialogSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Base Settings Dialog."
+            },
+            "methods": [
+                {
+                    "name": "addPanel",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "BaseSettingsDialog",
+                        "description": "the dialog for chaining"
+                    },
+                    "description": "Adds a new panel at the end of the available panels.\nOverridden to update cached panels.\nAdds some panel to the aggregation \"panels\".<br/>Contains the panels aggregation and should be of type BaseSettingsPanel.\n"
+                },
+                {
+                    "name": "getPanels",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.cux.home.BaseSettingsPanel[]",
+                        "description": "panel array"
+                    },
+                    "description": "Returns all the panels in the dialog.\nOverridden to return cached panels.\nGets content of aggregation \"panels\".<br/>Contains the panels aggregation and should be of type BaseSettingsPanel.\n"
+                },
+                {
+                    "name": "init",
+                    "visibility": "public",
+                    "description": "Init lifecycle method"
+                },
+                {
+                    "name": "insertPanel",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "BaseSettingsDialog",
+                        "description": "Returns 'this' to allow method chaining."
+                    },
+                    "parameters": [
+                        {
+                            "name": "panel",
+                            "type": "sap.cux.home.BaseSettingsPanel",
+                            "optional": false,
+                            "description": "The panel to insert."
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "description": "The index at which to insert the panel."
+                        }
+                    ],
+                    "description": "Adds a new panel to the 'panels' aggregation at the index.\nOverridden to update cached panels.\nInserts a panel into the aggregation \"panels\".<br/>Contains the panels aggregation and should be of type BaseSettingsPanel.\n"
+                },
+                {
+                    "name": "removeAllPanels",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.cux.home.BaseSettingsPanel[]",
+                        "description": "An empty array representing the removed panels."
+                    },
+                    "description": "Removes all panels from the dialog, clears the internal panel cache.\nOverridden to update cached panels.\nRemoves all the controls from the aggregation \"panels\".\nAdditionally, it unregisters them from the hosting UIArea.<br/>Contains the panels aggregation and should be of type BaseSettingsPanel.\n"
+                },
+                {
+                    "name": "removePanel",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.cux.home.BaseSettingsPanel",
+                        "description": "The removed panel."
+                    },
+                    "parameters": [
+                        {
+                            "name": "panel",
+                            "type": "sap.cux.home.BaseSettingsPanel",
+                            "optional": false,
+                            "description": "- The panel to remove."
+                        }
+                    ],
+                    "description": "Removes a panel from the dialog and updates the cache.\nRemoves a panel from the aggregation \"panels\".<br/>Contains the panels aggregation and should be of type BaseSettingsPanel.\n"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.BaseSettingsPanel",
+            "basename": "BaseSettingsPanel",
+            "resource": "sap/cux/home/BaseSettingsPanel.ts",
+            "module": "sap/cux/home/BaseSettingsPanel",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.ui.core.Element",
+            "implements": [],
+            "description": "Abstract base class for panels inside My Home Settings Dialog.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseSettingsPanel.$BaseSettingsPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Base Settings Panel."
+            },
+            "methods": [
+                {
+                    "name": "addActionButton",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "BaseSettingsPanel",
+                        "description": "The instance of the panel for chaining."
+                    },
+                    "parameters": [
+                        {
+                            "name": "button",
+                            "type": "sap.m.Button",
+                            "optional": false,
+                            "description": "- The button to add."
+                        }
+                    ],
+                    "description": "Adds an action button to the panel."
+                },
+                {
+                    "name": "addKeyUserChanges",
+                    "visibility": "public",
+                    "description": "Add Changes made by user in case of KeyUser Settings Panel."
+                },
+                {
+                    "name": "clearKeyUserChanges",
+                    "visibility": "public",
+                    "description": "Clear all KeyUser Changes made by user."
+                },
+                {
+                    "name": "getActionButtons",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.m.Button[]",
+                        "description": "array of action buttons."
+                    },
+                    "description": "Retrieves the action buttons from the panel."
+                },
+                {
+                    "name": "getKeyUserChanges",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Array<sap.cux.home.interface.KeyUserInterface.IKeyUserChange>"
+                    },
+                    "description": "Returns the KeyUser Changes made by user."
+                },
+                {
+                    "name": "init",
+                    "visibility": "public",
+                    "description": "Init lifecycle method"
+                },
+                {
+                    "name": "insertActionButton",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "BaseSettingsPanel",
+                        "description": "The instance of the panel for chaining."
+                    },
+                    "parameters": [
+                        {
+                            "name": "button",
+                            "type": "sap.m.Button",
+                            "optional": false,
+                            "description": "- The button to insert."
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "description": "- The index at which to insert the button."
+                        }
+                    ],
+                    "description": "Inserts an action button at a specific index in the panel."
+                },
+                {
+                    "name": "isSupported",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Promise<boolean>",
+                        "description": "A promise that resolves to true if the panel is supported."
+                    },
+                    "description": "Checks if the panel is supported. To be overridden by subclasses."
+                },
+                {
+                    "name": "removeActionButton",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "null | sap.m.Button",
+                        "description": "The removed button or null if not found."
+                    },
+                    "parameters": [
+                        {
+                            "name": "button",
+                            "type": "sap.m.Button",
+                            "optional": false,
+                            "description": "- The button to remove."
+                        }
+                    ],
+                    "description": "Removes an action button from the panel."
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.CardsPanel",
+            "basename": "CardsPanel",
+            "resource": "sap/cux/home/CardsPanel.ts",
+            "module": "sap/cux/home/CardsPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.122.0",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Panel class for managing and storing Insights Cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.CardsPanel.$CardsPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new card panel."
+            },
+            "methods": [
+                {
+                    "name": "refreshData",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Promise<void>",
+                        "description": "A promise that resolves once the Insights Cards section has been refreshed."
+                    },
+                    "description": "Triggers a full refresh of the Insights Cards's data and UI.<br/>Reloads all the user cards within the Insights Cards section by reinitializing relevant services\nand re-rendering the panel.\n"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.ErrorPanel",
+            "basename": "ErrorPanel",
+            "resource": "sap/cux/home/ErrorPanel.ts",
+            "module": "sap/cux/home/ErrorPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.122.0",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Panel class for displaying Error Message.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new panel, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.ErrorPanel.$ErrorPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new panel"
+                    }
+                ],
+                "description": "Constructor for a new Error Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.FavAppPanel",
+            "basename": "FavAppPanel",
+            "resource": "sap/cux/home/FavAppPanel.ts",
+            "module": "sap/cux/home/FavAppPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.cux.home.BaseAppPersPanel",
+            "implements": [],
+            "description": "Provides the FavAppPanel Class.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePanel.$BasePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new favorite app panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.FrequentAppPanel",
+            "basename": "FrequentAppPanel",
+            "resource": "sap/cux/home/FrequentAppPanel.ts",
+            "module": "sap/cux/home/FrequentAppPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.cux.home.BaseAppPersPanel",
+            "implements": [],
+            "description": "Provides the class for managing frequent apps.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePanel.$BasePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new frequent app panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.Group",
+            "basename": "Group",
+            "resource": "sap/cux/home/Group.ts",
+            "module": "sap/cux/home/Group",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.cux.home.BaseApp",
+            "implements": [],
+            "description": "Class for managing apps group.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new group, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.Group.$GroupSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new group"
+                    }
+                ],
+                "description": "Constructor for a new Group."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.InsightsContainer",
+            "basename": "InsightsContainer",
+            "resource": "sap/cux/home/InsightsContainer.ts",
+            "module": "sap/cux/home/InsightsContainer",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseContainer",
+            "implements": [],
+            "description": "Container class for managing and storing Insights Tiles and Insights Cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseContainer.$BaseContainerSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Insights container."
+            }
+        },
+        {
+            "kind": "interface",
+            "name": "sap.cux.home.IToDoPanel",
+            "basename": "IToDoPanel",
+            "resource": "sap/cux/home/IToDoPanel.ts",
+            "module": "sap/cux/home/IToDoPanel",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "description": "Common Interface for creating To-Do Panels displayed in the {@link sap.cux.home.ToDosContainer }.",
+            "ui5-metadata": {},
+            "methods": [
+                {
+                    "name": "generateCardTemplate",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.Control",
+                        "description": "The generated card template."
+                    },
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "description": "The ID for the template."
+                        },
+                        {
+                            "name": "context",
+                            "type": "sap.ui.model.Context",
+                            "optional": false,
+                            "description": "The context required for the template."
+                        }
+                    ],
+                    "description": "Generate a default card template for the To Do Panel.\nAn extended panel can have it's own template by overridding\nthis method and providing a custom card template."
+                },
+                {
+                    "name": "generateRequestUrls",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string[]",
+                        "description": "An array of request URLs."
+                    },
+                    "parameters": [
+                        {
+                            "name": "cardCount",
+                            "type": "number",
+                            "optional": false,
+                            "description": "- The number of cards which will be displayed in the To-Do Panel."
+                        }
+                    ],
+                    "description": "Provides custom request URLs specific to the To-Do Panel."
+                },
+                {
+                    "name": "getNoDataText",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "The text for the \"No Data\" message."
+                    },
+                    "description": "Retrieves the text for the \"No Data\" message for the To-Do Panel."
+                },
+                {
+                    "name": "onDataReceived",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Promise<void>",
+                        "description": "A promise that resolves when the data has been processed."
+                    },
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "any[]",
+                            "optional": false,
+                            "description": "- The data received from the request."
+                        },
+                        {
+                            "name": "options",
+                            "type": "sap.cux.home.ToDoPanel.RequestOptions",
+                            "optional": true,
+                            "description": "- Optional request options."
+                        }
+                    ],
+                    "description": "Handles the data received from a batch request.\nThis hook can be used to process the data before it is displayed."
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.Layout",
+            "basename": "Layout",
+            "resource": "sap/cux/home/Layout.ts",
+            "module": "sap/cux/home/Layout",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseLayout",
+            "implements": [],
+            "description": "Layout class for the My Home layout.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseLayout.$BaseLayoutSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new layout."
+            }
+        },
+        {
+            "kind": "namespace",
+            "name": "sap.cux",
+            "basename": "cux",
+            "resource": "sap/cux/home/library.ts",
+            "module": "sap/cux/home/library",
+            "export": "cux",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "description": "Root namespace for all the libraries related to Common User Experience.",
+            "since": "1.121"
+        },
+        {
+            "kind": "namespace",
+            "name": "sap.cux.home",
+            "basename": "home",
+            "resource": "sap/cux/home/library.ts",
+            "module": "sap/cux/home/library",
+            "export": "home",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "description": "This is an SAPUI5 library with controls specialized for common user experience.",
+            "since": "1.121"
+        },
+        {
+            "kind": "enum",
+            "name": "sap.cux.home.NewsType",
+            "basename": "NewsType",
+            "resource": "sap/cux/home/library.ts",
+            "module": "sap/cux/home/library",
+            "export": "NewsType",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "description": "Supported News Types for {@link sap.cux.home.NewsPanel }.",
+            "properties": [
+                {
+                    "name": "Custom",
+                    "visibility": "restricted",
+                    "allowedFor": [
+                        "ux.eng.s4producthomes1"
+                    ],
+                    "static": true,
+                    "type": "undefined",
+                    "description": "News is of type custom news feed"
+                },
+                {
+                    "name": "Default",
+                    "visibility": "restricted",
+                    "allowedFor": [
+                        "ux.eng.s4producthomes1"
+                    ],
+                    "static": true,
+                    "type": "undefined",
+                    "description": "News is of type default news feed"
+                },
+                {
+                    "name": "NewsUrl",
+                    "visibility": "restricted",
+                    "allowedFor": [
+                        "ux.eng.s4producthomes1"
+                    ],
+                    "static": true,
+                    "type": "undefined",
+                    "description": "News is of type Url"
+                },
+                {
+                    "name": "None",
+                    "visibility": "restricted",
+                    "allowedFor": [
+                        "ux.eng.s4producthomes1"
+                    ],
+                    "static": true,
+                    "type": "undefined",
+                    "description": "News is of type None"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.MenuItem",
+            "basename": "MenuItem",
+            "resource": "sap/cux/home/MenuItem.ts",
+            "module": "sap/cux/home/MenuItem",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.ui.core.Element",
+            "implements": [],
+            "description": "Class for managing and storing menu items.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "icon",
+                        "bindable": true,
+                        "description": "Icon of the menu item.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getIcon",
+                            "setIcon"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "sap.ui.core.URI",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "title",
+                        "bindable": true,
+                        "description": "Title of the menu item.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getTitle",
+                            "setTitle"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "type",
+                        "bindable": true,
+                        "description": "Type of the menu item visualization in the menu list",
+                        "group": "Misc",
+                        "defaultValue": "Active",
+                        "methods": [
+                            "getType",
+                            "setType"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "visible",
+                        "bindable": true,
+                        "description": "Visibility of the menu item in the menu list",
+                        "group": "Misc",
+                        "defaultValue": "true",
+                        "methods": [
+                            "getVisible",
+                            "setVisible"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "boolean",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.MenuItem.$MenuItemSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new menu item."
+            },
+            "events": [
+                {
+                    "name": "press",
+                    "description": "Fires whenever the menu item is pressed.",
+                    "visibility": "public"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getIcon",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.URI",
+                        "description": "<p>Value of property <code>icon</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/getIcon\">icon</a>.</p>"
+                },
+                {
+                    "name": "getTitle",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>title</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/getTitle\">title</a>.</p>"
+                },
+                {
+                    "name": "getType",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>type</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/getType\">type</a>.</p>"
+                },
+                {
+                    "name": "getVisible",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "boolean",
+                        "description": "<p>Value of property <code>visible</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/getVisible\">visible</a>.</p>"
+                },
+                {
+                    "name": "setIcon",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.URI",
+                        "description": "<p>Value of property <code>icon</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/setIcon\">icon</a>.</p>"
+                },
+                {
+                    "name": "setTitle",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>title</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/setTitle\">title</a>.</p>"
+                },
+                {
+                    "name": "setType",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>type</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/setType\">type</a>.</p>"
+                },
+                {
+                    "name": "setVisible",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "boolean",
+                        "description": "<p>Value of property <code>visible</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.MenuItem#methods/setVisible\">visible</a>.</p>"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.NewsAndPagesContainer",
+            "basename": "NewsAndPagesContainer",
+            "resource": "sap/cux/home/NewsAndPagesContainer.ts",
+            "module": "sap/cux/home/NewsAndPagesContainer",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseContainer",
+            "implements": [],
+            "description": "Container class for managing and storing News and Pages.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.NewsAndPagesContainer.$NewsAndPagesContainerSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for the new News and Pages container."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.NewsPanel",
+            "basename": "NewsPanel",
+            "resource": "sap/cux/home/NewsPanel.ts",
+            "module": "sap/cux/home/NewsPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseNewsPanel",
+            "implements": [],
+            "description": "Panel class for managing and storing News.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "url",
+                        "bindable": true,
+                        "description": "The URL of the news item.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getUrl",
+                            "setUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseNewsPanel.$BaseNewsPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new News Panel."
+            },
+            "methods": [
+                {
+                    "name": "getUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>url</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.NewsPanel#methods/getUrl\">url</a>.</p>"
+                },
+                {
+                    "name": "setUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>url</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.NewsPanel#methods/setUrl\">url</a>.</p>"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.NoDataContainer",
+            "basename": "NoDataContainer",
+            "resource": "sap/cux/home/NoDataContainer.ts",
+            "module": "sap/cux/home/NoDataContainer",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseContainer",
+            "implements": [],
+            "description": "Container class to show no data content.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BaseContainer.$BaseContainerSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new NoData Container."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.PagePanel",
+            "basename": "PagePanel",
+            "resource": "sap/cux/home/PagePanel.ts",
+            "module": "sap/cux/home/PagePanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.122",
+            "extends": "sap.cux.home.BasePagePanel",
+            "implements": [],
+            "description": "Panel class for managing and storing Pages.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePagePanel.$BasePagePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Page panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.RecentAppPanel",
+            "basename": "RecentAppPanel",
+            "resource": "sap/cux/home/RecentAppPanel.ts",
+            "module": "sap/cux/home/RecentAppPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121.0",
+            "extends": "sap.cux.home.BaseAppPersPanel",
+            "implements": [],
+            "description": "Provides class for managing Recently Used apps.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePanel.$BasePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Recently Used apps Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.RecommendedAppPanel",
+            "basename": "RecommendedAppPanel",
+            "resource": "sap/cux/home/RecommendedAppPanel.ts",
+            "module": "sap/cux/home/RecommendedAppPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.128.0",
+            "extends": "sap.cux.home.BaseAppPersPanel",
+            "implements": [],
+            "description": "Provides the RecommendedAppPanel Class.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.BasePanel.$BasePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Recommended Apps Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.SituationPanel",
+            "basename": "SituationPanel",
+            "resource": "sap/cux/home/SituationPanel.ts",
+            "module": "sap/cux/home/SituationPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.ToDoPanel",
+            "implements": [],
+            "description": "Panel class for managing and storing Situation cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.ToDoPanel.$ToDoPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Situation Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.SpaceInsightsPanel",
+            "basename": "SpaceInsightsPanel",
+            "resource": "sap/cux/home/SpaceInsightsPanel.ts",
+            "module": "sap/cux/home/SpaceInsightsPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Tiles Panel class for managing and storing Space Insights Tiles.",
+            "experimental": {
+                "since": "1.138.0"
+            },
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.SpaceInsightsPanel.$SpaceInsightsPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Tiles Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.SpacePanel",
+            "basename": "SpacePanel",
+            "resource": "sap/cux/home/SpacePanel.ts",
+            "module": "sap/cux/home/SpacePanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "extends": "sap.cux.home.BaseAppPersPanel",
+            "implements": [],
+            "description": "Provides the SpacePanel Class.",
+            "experimental": {
+                "since": "1.138.0"
+            },
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.SpacePanel.$SpacePanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new favorite app panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.TaskPanel",
+            "basename": "TaskPanel",
+            "resource": "sap/cux/home/TaskPanel.ts",
+            "module": "sap/cux/home/TaskPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.ToDoPanel",
+            "implements": [],
+            "description": "Panel class for managing and storing Task cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "customAttributeUrl",
+                        "bindable": true,
+                        "description": "Specifies the URL that fetches the custom attributes to be displayed along with the task cards.",
+                        "group": "Data",
+                        "defaultValue": "",
+                        "methods": [
+                            "getCustomAttributeUrl",
+                            "setCustomAttributeUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "enableActions",
+                        "bindable": true,
+                        "description": "Specifies if actions should be enabled for the task cards.",
+                        "group": "Data",
+                        "defaultValue": "false",
+                        "methods": [
+                            "getEnableActions",
+                            "setEnableActions"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "boolean",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.TaskPanel.$TaskPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Task Panel."
+            },
+            "methods": [
+                {
+                    "name": "getCustomAttributeUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>customAttributeUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.TaskPanel#methods/getCustomAttributeUrl\">customAttributeUrl</a>.</p>"
+                },
+                {
+                    "name": "getEnableActions",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "boolean",
+                        "description": "<p>Value of property <code>enableActions</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.TaskPanel#methods/getEnableActions\">enableActions</a>.</p>"
+                },
+                {
+                    "name": "setCustomAttributeUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>customAttributeUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.TaskPanel#methods/setCustomAttributeUrl\">customAttributeUrl</a>.</p>"
+                },
+                {
+                    "name": "setEnableActions",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "boolean",
+                        "description": "<p>Value of property <code>enableActions</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.TaskPanel#methods/setEnableActions\">enableActions</a>.</p>"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.TilesPanel",
+            "basename": "TilesPanel",
+            "resource": "sap/cux/home/TilesPanel.ts",
+            "module": "sap/cux/home/TilesPanel",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.122.0",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [],
+            "description": "Tiles Panel class for managing and storing Insights Tiles.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.TilesPanel.$TilesPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new Tiles Panel."
+            }
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.ToDoPanel",
+            "basename": "ToDoPanel",
+            "resource": "sap/cux/home/ToDoPanel.ts",
+            "module": "sap/cux/home/ToDoPanel",
+            "export": "",
+            "abstract": true,
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BasePanel",
+            "implements": [
+                "sap.cux.home.IToDoPanel"
+            ],
+            "description": "Abstract Panel class for managing and storing To-Do cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "properties": [
+                    {
+                        "name": "baseUrl",
+                        "bindable": true,
+                        "description": "Specifies the base URL for batching requests sent from the panel.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getBaseUrl",
+                            "setBaseUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "countUrl",
+                        "bindable": true,
+                        "description": "Specifies the URL for fetching the count of requested to-do cards.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getCountUrl",
+                            "setCountUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "dataUrl",
+                        "bindable": true,
+                        "description": "Specifies the URL from where the to-do cards should be fetched.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getDataUrl",
+                            "setDataUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    },
+                    {
+                        "name": "targetAppUrl",
+                        "bindable": true,
+                        "description": "Specifies the URL of the target application associated with the to-do cards.",
+                        "group": "Misc",
+                        "defaultValue": "",
+                        "methods": [
+                            "getTargetAppUrl",
+                            "setTargetAppUrl"
+                        ],
+                        "ui5-metadata": {
+                            "sap.cux": {
+                                "expectedAnnotations": [],
+                                "expectedTypes": [],
+                                "allowedValues": []
+                            }
+                        },
+                        "type": "string",
+                        "visibility": "public"
+                    }
+                ],
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "sap.cux.home.ToDoPanel.$ToDoPanelSettings",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new To-Dos Panel."
+            },
+            "methods": [
+                {
+                    "name": "generateCardTemplate",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "sap.ui.core.Control",
+                        "description": "The generated card template."
+                    },
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "description": "The ID for the template."
+                        },
+                        {
+                            "name": "context",
+                            "type": "sap.ui.model.Context",
+                            "optional": false,
+                            "description": "The context for the template."
+                        }
+                    ],
+                    "description": "Generates the card template for the Current Panel."
+                },
+                {
+                    "name": "generateRequestUrls",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string[]",
+                        "description": "An array of request URLs."
+                    },
+                    "parameters": [
+                        {
+                            "name": "cardCount",
+                            "type": "number",
+                            "optional": false,
+                            "description": "- The number of cards to retrieve."
+                        }
+                    ],
+                    "description": "Generates request URLs for fetching data based on the specified card count."
+                },
+                {
+                    "name": "getBaseUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>baseUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/getBaseUrl\">baseUrl</a>.</p>"
+                },
+                {
+                    "name": "getCountUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>countUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/getCountUrl\">countUrl</a>.</p>"
+                },
+                {
+                    "name": "getDataUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>dataUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/getDataUrl\">dataUrl</a>.</p>"
+                },
+                {
+                    "name": "getNoDataText",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "The text for the \"No Data\" message."
+                    },
+                    "description": "Get the text for the \"No Data\" message."
+                },
+                {
+                    "name": "getTargetAppUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>targetAppUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/getTargetAppUrl\">targetAppUrl</a>.</p>"
+                },
+                {
+                    "name": "onDataReceived",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Promise<void>"
+                    },
+                    "parameters": [
+                        {
+                            "defaultValue": "[]",
+                            "name": "results",
+                            "type": "any[]",
+                            "optional": true,
+                            "description": "- Data retrieved from the batch call."
+                        },
+                        {
+                            "name": "options",
+                            "type": "sap.cux.home.ToDoPanel.RequestOptions",
+                            "optional": true,
+                            "description": "- Additional options for parsing the data.\nStructure may vary based on the backend service."
+                        }
+                    ],
+                    "description": "A promise that resolves when the data has been processed.\nThis method can be overridden to perform additional data processing operations."
+                },
+                {
+                    "name": "setBaseUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>baseUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/setBaseUrl\">baseUrl</a>.</p>"
+                },
+                {
+                    "name": "setCountUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>countUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/setCountUrl\">countUrl</a>.</p>"
+                },
+                {
+                    "name": "setDataUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>dataUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/setDataUrl\">dataUrl</a>.</p>"
+                },
+                {
+                    "name": "setTargetAppUrl",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "<p>Value of property <code>targetAppUrl</code></p>"
+                    },
+                    "description": "<p>Gets current value of property <a target=\"self\" href=\"api/sap.cux.home.ToDoPanel#methods/setTargetAppUrl\">targetAppUrl</a>.</p>"
+                }
+            ]
+        },
+        {
+            "kind": "class",
+            "name": "sap.cux.home.ToDosContainer",
+            "basename": "ToDosContainer",
+            "resource": "sap/cux/home/ToDosContainer.ts",
+            "module": "sap/cux/home/ToDosContainer",
+            "export": "",
+            "static": true,
+            "visibility": "restricted",
+            "allowedFor": [
+                "ux.eng.s4producthomes1"
+            ],
+            "since": "1.121",
+            "extends": "sap.cux.home.BaseContainer",
+            "implements": [],
+            "description": "Container class for managing and storing To-Do cards.",
+            "ui5-metadata": {
+                "stereotype": "object",
+                "sap.cux": {
+                    "returnTypes": []
+                }
+            },
+            "constructor": {
+                "name": "",
+                "visibility": "public",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "description": "ID for the new control, generated automatically if an ID is not provided"
+                    },
+                    {
+                        "name": "settings",
+                        "type": "object",
+                        "optional": true,
+                        "description": "Initial settings for the new control"
+                    }
+                ],
+                "description": "Constructor for a new To-Dos container."
+            },
+            "methods": [
+                {
+                    "name": "getSelectedKey",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "string",
+                        "description": "The selected key."
+                    },
+                    "description": "Gets the selected key of the To-Dos container.\nIf no selected key is set, it defaults to the first item."
+                },
+                {
+                    "name": "refreshData",
+                    "visibility": "public",
+                    "returnValue": {
+                        "type": "Promise<void>",
+                        "description": "A promise that resolves when the section is successfully refreshed."
+                    },
+                    "description": "Asynchronously refreshes the section by forcing all inner panels to be reloaded."
+                }
+            ]
+        }
+    ]
+}

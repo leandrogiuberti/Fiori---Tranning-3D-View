@@ -1,0 +1,67 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "dc8240e4bc1e3ac2bd88c76d95ae72e021479fae",
+        "type": "FIX",
+        "text": " We now ensure that the binding for the timezone property works correctly"
+      },
+      {
+        "id": "5f34fb8959cd774d3e093cc49a2822d3dac543cb",
+        "type": "FIX",
+        "text": " We now request messages when an action is executed from the controller extension"
+      },
+      {
+        "id": "27cb624b8ad8b24a478183179036d7474a900d15",
+        "type": "FIX",
+        "text": " We now correctly set the width of radio buttons"
+      },
+      {
+        "id": "e7bf232bde5c7ad6af35281d58141ac1a3ebbff1",
+        "type": "FIX",
+        "text": " We now ensure that messages are correctly handled when data is copied and pasted from external applications into tables"
+      },
+      {
+        "id": "deab2e3d994053401fe771829541a5753d884dd1",
+        "type": "FIX",
+        "text": " We now ensure that the notes facet is displayed inside a collection facet"
+      },
+      {
+        "id": "64dc80d3f64fa996b45a3035970765ea886d5c47",
+        "type": "FIX",
+        "text": " We now ensure that properties are displayed with the correct labels in the p13n personalization dialog"
+      },
+      {
+        "id": "932b1b64ffac1e1a29fefa0474953f3073b0bc03",
+        "type": "FIX",
+        "text": " We now ensure messages are shown after saving when sticky mode is used"
+      },
+      {
+        "id": "1864ce4fe60c7c99f7ecef805d1213a56f6cf316",
+        "type": "FIX",
+        "text": " We've resolved an issue with setting a semantic object in the Field building block"
+      },
+      {
+        "id": "8912679371252543970f1eb48a37f7c698ddb7ee",
+        "type": "FEATURE",
+        "text": " We've defined a new format for the page title displayed in the browser tab for OData V4 apps"
+      },
+      {
+        "id": "5705af2fac527a5cca7a2ba7831f1bf4ea76b649",
+        "type": "FIX",
+        "text": " You can now use the semanticObject as a path annotation in DataFieldWithIntentBasedNavigation"
+      },
+      {
+        "id": "50a775e942746c4f1fe33e99dab13763e0040e0c",
+        "type": "FIX",
+        "text": " We now consider filter and sort restrictions in table personalization in a containment scenario"
+      },
+      {
+        "id": "0d639331b5fa69d233ce414c935fa9a0227a8b11",
+        "type": "FEATURE",
+        "text": " We've introduced a toggle button on the column selection tab in the table's p13N dialog, to allow users to display description columns when needed"
+      }
+    ]
+  }
+}

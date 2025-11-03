@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox>
+		<MessageStrip type="Information" class="sapUiSmallMarginBottom" text="Click on 'Send E-Mail' to see the custom mail title." />
+		<macros:Share id="share" />
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,37 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.kpiTagDefault.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="KPI Tag"
+		introduction="The KPITag building block enables you to render the key performance indicator (KPI) tag. It is a clickable control with a KPI value."
+		documentation="88743992c11d4fb7bb5d39a667ff9f79"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.kpiTagDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="For a simple usage, a number, optional a unit, and the status need to be passed to the control."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="kpiTag/kpiTagDefault/Sample.fragment.xml" start="mySuccessKPI" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep text="By setting the showIcon property to true, in addition a status icon is shown.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="kpiTag/kpiTagDefault/Sample.fragment.xml" start="myWarningKPIWithIcon" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep text="The press event can be handled by defining an event handler.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="kpiTag/kpiTagDefault/Sample.fragment.xml" start="myErrorWithPress" codeType="view" />
+					<fpmExplorer:CodeLink file="kpiTag/kpiTagDefault/Main.controller.js" start="onKPIPressed" end="10" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

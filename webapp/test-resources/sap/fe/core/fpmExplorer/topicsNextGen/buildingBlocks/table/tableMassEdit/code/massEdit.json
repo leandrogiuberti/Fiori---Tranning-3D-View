@@ -1,0 +1,20 @@
+{
+	"sample": {
+		"type": "Component",
+		"id": "sample",
+		"name": "sap.fe.templates.ObjectPage",
+		"options": {
+			"settings": {
+				"contextPath": "/Travel",
+				"controlConfiguration": {
+					"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+						"enableMassEdit": {
+							"visibleFields": "BeginDate,EndDate,BookingFee",
+							"ignoredFields": "TravelID,TravelStatus_code"
+						}
+					}
+				}
+			}
+		}
+	}
+}

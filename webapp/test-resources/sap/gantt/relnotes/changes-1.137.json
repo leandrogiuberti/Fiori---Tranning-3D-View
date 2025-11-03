@@ -1,0 +1,25 @@
+{
+    "1.137.0": {
+        "date": "May 2025",
+        "notes": [
+            {
+                "id": "I65e3c86478530b50fbaf90a8e058d4e7af266e59",
+                "text": "We've now fixed the issue with the triggering of the shapeSelectionChange event for sap.gantt.simple.GanttChartWithTable",
+                "type": "FIX",
+                "references": []
+            },
+            {
+                "id": "I65e3c86478530b50fbaf90a8e058d4e7af266e59",
+                "text": "We've now fixed the issue with the triggering of the shapeSelectionChange event for sap.gantt.simple.GanttChartWithTable",
+                "type": "FIX",
+                "references": []
+            },
+            {
+                "id": "Ifc5c35131f1145f07cb8d6db1a8dc3494e8c5ac2",
+                "text": "sap.gantt.simple.GanttChartWithTable shapeSelectionChange event not triggered",
+                "type": "FIX",
+                "references": []
+            }
+        ]
+    }
+}

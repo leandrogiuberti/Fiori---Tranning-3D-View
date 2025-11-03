@@ -1,0 +1,91 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customListReportHeaderContent",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/customListReportHeaderContent/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.fe.templates.ListReport.ListReportController": {
+						"controllerName": "sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend"
+					}
+				}
+			}
+		},
+		"routing": {
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "default",
+					"target": "sample"
+				}
+			],
+			"targets": {
+				"sample": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.templates.ListReport",
+					"options": {
+						"settings": {
+							"contextPath": "/RootEntity",
+							"variantManagement": "Page",
+							"initialLoad": true,
+							"liveMode": true,
+							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.LineItem": {
+									"tableSettings": {
+										"beforeRebindTable": ".extension.sap.fe.core.fpmExplorer.customListReportHeaderContent.LRExtend.beforeRebindTableLR"
+									}
+								}
+							},
+							"content": {
+								"header": {
+									"customHeader": {
+										"expandedHeaderFragment": "sap.fe.core.fpmExplorer.customListReportHeaderContent.CustomExpandedHeader",
+										"collapsedHeaderFragment": "sap.fe.core.fpmExplorer.customListReportHeaderContent.CustomCollapsedHeader"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

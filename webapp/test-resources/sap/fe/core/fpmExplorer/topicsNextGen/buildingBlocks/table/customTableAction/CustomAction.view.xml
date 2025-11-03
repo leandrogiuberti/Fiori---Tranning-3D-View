@@ -1,0 +1,44 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+	controllerName="sap.fe.core.fpmExplorer.customTableAction.CustomAction"
+>
+	<fpmExplorer:Page
+		title="Custom Action"
+		introduction="The Table building block enables you to define custom actions in a table."
+		documentation="d525522c1bf54672ae4e02d66b38e60c"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.customTableAction.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep title="Add Custom Actions" text="You can add custom actions to your table.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/customTableAction/Sample.fragment.xml" codeType="view" start="customAction" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep title="Add Custom Menu Actions" text="You can also add custom menu actions to your table.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/customTableAction/Sample.fragment.xml"
+						codeType="view"
+						start="macrosTable:ActionGroup"
+						end="10"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Add Actions through Manifest"
+				text="If you want to add custom actions to your object page table rendered through UI.Facet annotations, you can use the 'actions' property in the controlConfiguration section of the respective UI.LineItem."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/customTableAction/code/CustomActions.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,84 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.chartPublicAPIs.ChartPublicAPIs"
+>
+	<fpmExplorer:Page
+		title="Chart APIs"
+		introduction="The Chart building block enables you to extend the chart using APIs. This includes presentation variant management, selection variant handling, and variant management capabilities."
+		documentation="52d065ab8bb740c58c834a0c985e3b9e"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.chartPublicAPIs.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Presentation Variant Management"
+				text="You can get and set the presentation variant of a chart using the APIs provided by the Chart building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start="chart.getPresentationVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start=".setPresentationVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Selection Variant Management"
+				text="You can get and set the selection variant of a chart using the APIs provided by the Chart building block. This function considers only the selection variant applied at the control level."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start="chart.getSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start=".setSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Variant Management"
+				text="You can get the currently selected variant and change the variant of a chart using the APIs provided by the Chart building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start="chart.getCurrentVariantKey("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="chart/chartPublicAPIs/ChartPublicAPIs.controller.js"
+							codeType="ts"
+							start="chart.setCurrentVariantKey("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

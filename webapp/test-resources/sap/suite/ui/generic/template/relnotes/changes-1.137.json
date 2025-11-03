@@ -1,0 +1,40 @@
+{
+    "1.137.0": {
+        "date": "June 2025",
+        "notes": [
+            {
+                "id": "I7e60ce4ef4f1bcc1eaa61c2400b321d8cbb45da9",
+                "type": "FIX",
+                "text": "We've resolved an issue where the message popover displayed incomplete subtitles when key values were missing",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "DINC0479689"
+                    }
+                ]
+            },
+            {
+                "id": "I819c30c9873d31c135f26c0a93fb9f9f7bdd9a19",
+                "type": "FIX",
+                "text": "We now ensure that the current object page context is always passed as a parameter while fetching the Related Apps",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "DINC0506715"
+                    }
+                ]
+            },
+            {
+                "id": "I3549498ede817ba0a44ae5a38996718fd430ee96",
+                "type": "FIX",
+                "text": "We've resolved an issue with displaying the file uploader button based on a field control property that pointed to a path in the annotation",
+                "references": [
+                    {
+                        "type": "SNOW",
+                        "reference": "DINC0435347"
+                    }
+                ]
+            }
+        ]
+    }
+}

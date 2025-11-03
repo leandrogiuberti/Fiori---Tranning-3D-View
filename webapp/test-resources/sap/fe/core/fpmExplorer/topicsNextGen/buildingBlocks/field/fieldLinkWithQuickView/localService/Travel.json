@@ -1,0 +1,14 @@
+[
+	{
+		"TravelUUID": "52657221A8E4645C17002DF03754AB66",
+		"TravelID": "00000001",
+		"BeginDate": "2025-11-04",
+		"EndDate": "2025-11-06",
+		"BookingFee": "20.00",
+		"TotalPrice": "900.00",
+		"CurrencyCode_code": "USD",
+		"Description": "Business Trip for Christine, Pierre",
+		"TravelStatus_code": "A",
+		"to_Agency_AgencyID": "070001"
+	}
+]

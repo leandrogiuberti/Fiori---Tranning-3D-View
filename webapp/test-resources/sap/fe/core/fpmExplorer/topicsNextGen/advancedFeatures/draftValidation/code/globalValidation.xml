@@ -1,0 +1,12 @@
+<Annotations Target="YourEntity">
+	<Annotation Term="Common.Messages" PropertyPath="SAP_Message" />
+	<Annotation Term="Common.SideEffects" Qualifier="globalValidation">
+		<Record>
+			<PropertyValue Property="TargetProperties">
+				<Collection>
+					<PropertyPath>SAP_Message</PropertyPath>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+</Annotations>

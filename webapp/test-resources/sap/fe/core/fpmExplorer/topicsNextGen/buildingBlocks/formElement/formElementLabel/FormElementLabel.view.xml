@@ -1,0 +1,32 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Form Element"
+		introduction="The FormElement building block enables you to add a label and visibility control to a field inside a form."
+		documentation="b45f038068ca4b68a2d8008c1de5f7fb"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.formElementLabel.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="To use a form element, you need to define the metaPath of the field you want to display. You can also set a label for the field. If no label is provided, the label will be set automatically based on the metadata."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="formElement/formElementLabel/Sample.fragment.xml"
+						codeType="view"
+						start="formElementIdWithLabel"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

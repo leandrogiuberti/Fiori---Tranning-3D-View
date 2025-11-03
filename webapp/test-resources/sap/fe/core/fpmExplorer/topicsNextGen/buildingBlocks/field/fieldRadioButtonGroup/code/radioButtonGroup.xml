@@ -1,0 +1,16 @@
+<Annotations Target="TravelService.Travel/PaymentMethod">
+	<Annotation Term="Common.ValueList">
+		<Record Type="Common.ValueListType">
+			<PropertyValue Property="CollectionPath" String="PaymentMethod" />
+			<PropertyValue Property="Parameters">
+				<Collection>
+					<Record Type="Common.ValueListParameterInOut">
+						<PropertyValue Property="LocalDataProperty" PropertyPath="PaymentMethod" />
+						<PropertyValue Property="ValueListProperty" String="code" />
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+	<Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+</Annotations>

@@ -1,0 +1,6 @@
+@UI.Facet: [{
+        type: #FIELDGROUP_REFERENCE,
+        label: 'Bookings',
+        targetQualifier: 'BookingList',
+        isPartOfPreview: false
+}]

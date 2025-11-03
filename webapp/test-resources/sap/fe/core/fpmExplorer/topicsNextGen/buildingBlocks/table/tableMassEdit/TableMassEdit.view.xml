@@ -1,0 +1,55 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Mass Edit"
+		introduction="Mass editing enables users to simultaneously change multiple objects that share the same editable properties."
+		documentation="965ef5b2895641bc9b6cd44f1bd0eb4d"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.tableMassEdit.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Enabling Mass Edit"
+				text="You can enable mass edit by adding the 'massEdit' aggregation to the table. The 'visibleFields' property lets you specify which fields are available in the mass edit dialog, even if these fields are not displayed in the table. The 'ignoredFields' property lets you hide specific fields from the mass edit dialog, even if these fields are displayed in the table."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableMassEdit/Sample.fragment.xml"
+						codeType="view"
+						start="macrosTable:MassEdit"
+						fullTag="false"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Adding Custom Content"
+				text="You can add custom content to the mass edit dialog by using the 'customContent' aggregation of the massEdit. This allows you to include additional fields or controls in the dialog."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableMassEdit/Sample.fragment.xml"
+						codeType="view"
+						start="macrosTable:MassEdit"
+						end="10"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Enabling through Manifest"
+				text="If you want to enable mass edit to your object page table rendered through UI.Facet annotations, you can use the 'enableMassEdit' property in the controlConfiguration section of the respective UI.LineItem."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableMassEdit/code/massEdit.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

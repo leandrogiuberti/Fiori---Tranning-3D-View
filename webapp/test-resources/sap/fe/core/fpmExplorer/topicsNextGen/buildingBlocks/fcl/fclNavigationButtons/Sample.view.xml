@@ -1,0 +1,22 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:macros="sap.fe.macros">
+	<f:DynamicPage headerExpanded="true" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Showing Flexible Column Layout Actions" />
+				</f:heading>
+				<f:navigationActions>
+					<macros:FlexibleColumnLayoutActions />
+				</f:navigationActions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<MessageStrip
+				text="You can see the Flexible Column Layout actions in the header of this page."
+				visible="true"
+				showIcon="true"
+				type="Information"
+			/>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,4108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_getObjectPageCardManifest returns the adaptive card manifest for object page card 1`] = `
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "text": "Card Header",
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "wrap": true,
+    },
+  ],
+  "type": "AdaptiveCard",
+  "version": "1.3",
+}
+`;
+
+exports[`_getObjectPageCardManifest returns the integration card manifest for object page card 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "id": "objectCard",
+    "subTitle": "{{CardGeneratorHeaderSubTitle}} | {overall_status}",
+    "title": "{{CardGeneratorHeaderTitle}}",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "BankCountry": {
+          "type": "number",
+          "value": "0000000006",
+        },
+        "IsActiveEntity": {
+          "type": "boolean",
+          "value": true,
+        },
+        "_adaptiveFooterActionParameters": {
+          "C_SalesPlanTPRelease": {
+            "actionParameters": [],
+            "data": {
+              "actionParams": {
+                "keys": [
+                  "SalesPlanUUID",
+                  "IsActiveEntity",
+                ],
+              },
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "salesorderID",
+            "label": "Release",
+            "parameters": {
+              "IsActiveEntity": true,
+              "SalesPlanUUID": "00000000-0000-0000-0000-000000000000",
+            },
+            "style": "default",
+            "verb": "C_SalesPlanTPRelease",
+          },
+        },
+        "_contentSelectQuery": {
+          "value": "$select=so_id,bp_id,created_at,net_amount,gross_amount,tax_amount,currency_code,overall_status",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_headerSelectQuery": {
+          "value": "$select=bp_id,currency_code,overall_status",
+        },
+        "_noText": {
+          "type": "string",
+          "value": "No",
+        },
+        "_yesText": {
+          "type": "string",
+          "value": "Yes",
+        },
+        "footerActionParameters": {},
+        "node_key": {
+          "type": "string",
+          "value": "12345",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_0}}",
+              "name": "net_amount",
+              "value": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+            },
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_1}}",
+              "name": "gross_amount",
+              "value": "{gross_amount} {currency_code}",
+            },
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_0_Items_2}}",
+              "name": "tax_amount",
+              "value": "{tax_amount} {currency_code}",
+            },
+          ],
+          "title": "{{CardGeneratorGroupHeader_Groups_0}}",
+        },
+        {
+          "items": [
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_0}}",
+              "name": "bp_id",
+              "value": "{bp_id}",
+            },
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_1}}",
+              "name": "created_at",
+              "value": "{= format.dateTime(\${created_at}, {"relative":false,"UTC":true})}",
+            },
+            {
+              "label": "{{CardGeneratorGroupPropertyLabel_Groups_1_Items_2}}",
+              "name": "so_id",
+              "value": "{so_id}",
+            },
+          ],
+          "title": "{{CardGeneratorGroupHeader_Groups_1}}",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "retryAfter": 30,
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})?{{parameters._headerSelectQuery}}",
+          },
+        },
+        "headers": {
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "mainIndicator": {
+        "number": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+        "state": "{= extension.formatters.formatCriticality(\${Language}, 'color') }",
+        "trend": "None",
+        "unit": "",
+      },
+      "sideIndicators": [
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+      ],
+      "subTitle": "{{CardGeneratorHeaderSubTitle}}",
+      "title": "{{CardGeneratorHeaderTitle}}",
+      "type": "Numeric",
+      "unitOfMeasurement": "{overall_status}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "1.125.1-SNAPSHOT-202406281543",
+    },
+  },
+  "sap.ui": {
+    "icons": {
+      "icon": "sap-icon://switch-classes",
+    },
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - Semantic Card Generation OData V2 Semantic Card Generation generateSemanticCard=always scenarios should generate semantic MS Teams Adaptive Card when generateSemanticCard=always for OData V2 application: semantic-adaptive-card-v2-always 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "actions": [],
+  "body": [
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "altText": "SAP",
+              "size": "Small",
+              "type": "Image",
+              "url": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjMwIiB3aWR0aD0iNjAuOTM3NSIgdmlld0JveD0iMCAwIDQxMi4zOCAyMDQiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIyMDYuMTkiIHgyPSIyMDYuMTkiIHkyPSIyMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGI4ZjEiLz48c3RvcCBvZmZzZXQ9IjAuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9IjAuMzEiIHN0b3AtY29sb3I9IiMwZDkwZDkiLz48c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiMxNzc1YzgiLz48c3RvcCBvZmZzZXQ9IjAuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjAgMjA0IDIwOC40MSAyMDQgNDEyLjM4IDAgMCAwIDAgMjA0Ii8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjQ0LjczLDM4LjM2bC00MC42LDB2OTYuNTJMMTY4LjY3LDM4LjMzSDEzMy41MWwtMzAuMjcsODAuNzJDMTAwLDk4LjcsNzksOTEuNjcsNjIuNCw4Ni40LDUxLjQ2LDgyLjg5LDM5Ljg1LDc3LjcyLDQwLDcyYy4wOS00LjY4LDYuMjMtOSwxOC4zOC04LjM4LDguMTcuNDMsMTUuMzcsMS4wOSwyOS43MSw4bDE0LjEtMjQuNTVDODkuMDYsNDAuNDIsNzEsMzYuMjEsNTYuMTcsMzYuMTloLS4wOWMtMTcuMjgsMC0zMS42OCw1LjYtNDAuNiwxNC44M0EzNC4yMywzNC4yMywwLDAsMCw1Ljc3LDc0LjdDNS41NCw4Ny4xNSwxMC4xMSw5NiwxOS43MSwxMDNjOC4xLDUuOTQsMTguNDYsOS43OSwyNy42LDEyLjYyLDExLjI3LDMuNDksMjAuNDcsNi41MywyMC4zNiwxM0E5LjU3LDkuNTcsMCwwLDEsNjUsMTM1Yy0yLjgxLDIuOS03LjEzLDQtMTMuMDksNC4xLTExLjQ5LjI0LTIwLTEuNTYtMzMuNjEtOS41OUw1Ljc3LDE1NC40MmE5My43Nyw5My43NywwLDAsMCw0NiwxMi4yMmwyLjExLDBjMTQuMjQtLjI1LDI1Ljc0LTQuMzEsMzQuOTItMTEuNzEuNTMtLjQxLDEtLjg0LDEuNDktMS4yOEw4Ni4xNywxNjQuNUgxMjNsNi4xOS0xOC44MmE2Ny40Niw2Ny40NiwwLDAsMCwyMS42OCwzLjQzLDY4LjMzLDY4LjMzLDAsMCwwLDIxLjE2LTMuMjVsNiwxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEsMCw1MC40Ni0xNi4xNSw1MC40Ni00My4yQzMwMS43NCw1Mi4xOSwyODMuNTIsMzguMzYsMjQ0LjczLDM4LjM2Wk0xNTAuOTEsMTIxYTM2LjkzLDM2LjkzLDAsMCwxLTEzLTIuMjhsMTIuODctNDAuNTlIMTUxbDEyLjY1LDQwLjcxQTM4LjUsMzguNSwwLDAsMSwxNTAuOTEsMTIxWm05Ni4yLTIzLjMzaC04Ljk0VjY0LjkxaDguOTRjMTEuOTMsMCwyMS40NCw0LDIxLjQ0LDE2LjE0LDAsMTIuNi05LjUxLDE2LjU3LTIxLjQ0LDE2LjU3Ii8+PC9zdmc+Cg==",
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "text": "Sales Order",
+              "type": "TextBlock",
+              "weight": "Bolder",
+              "wrap": true,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "type": "ColumnSet",
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "\${string(so_id)}",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "none",
+              "text": "\${string(Product)}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Currency Code",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${formatWithBrackets(to_Currency ? string(to_Currency.Currency_Code_Text) : '',string(currency_code))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Gross Amount",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(gross_amount)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Amount",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(net_amount)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Tax Amount",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(tax_amount)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Opportunity ID",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(op_id)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Changed By",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${formatWithBrackets(to_ChangedBy ? string(to_ChangedBy.FormattedName) : '',string(LastChangedUserName))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Overall Status",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(overall_status)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+  ],
+  "metadata": {
+    "context": {
+      "entitySet": "C_STTA_SalesOrder_WD_20",
+      "fe": "v2",
+      "filters": [
+        {
+          "name": "Activation_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Edit_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Messageval_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Preparation_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setapprovalstatus_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setcurrency_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setcurrencyusd_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setopandconfirm_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setopportunityid_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Setoverallstatus_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Showsinglemsg_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Validation_ac",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "op_id_fc",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "Delete_mc",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "Update_mc",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "node_key",
+          "type": "Edm.Guid",
+        },
+        {
+          "name": "so_id",
+          "type": "Edm.String",
+        },
+        {
+          "name": "bp_id",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CreatedAt",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "currency_code",
+          "type": "Edm.String",
+        },
+        {
+          "name": "gross_amount",
+          "type": "Edm.Decimal",
+        },
+        {
+          "name": "net_amount",
+          "type": "Edm.Decimal",
+        },
+        {
+          "name": "tax_amount",
+          "type": "Edm.Decimal",
+        },
+        {
+          "name": "lifecycle_status",
+          "type": "Edm.String",
+        },
+        {
+          "name": "billing_status",
+          "type": "Edm.String",
+        },
+        {
+          "name": "delivery_status",
+          "type": "Edm.String",
+        },
+        {
+          "name": "op_id",
+          "type": "Edm.String",
+        },
+        {
+          "name": "opid_fc",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "created_at",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "CreationUserName",
+          "type": "Edm.String",
+        },
+        {
+          "name": "changed_at",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "LastChangedUserName",
+          "type": "Edm.String",
+        },
+        {
+          "name": "overall_status",
+          "type": "Edm.String",
+        },
+        {
+          "name": "approval_status",
+          "type": "Edm.String",
+        },
+        {
+          "name": "Product",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ProductForEdit",
+          "type": "Edm.String",
+        },
+        {
+          "name": "Language",
+          "type": "Edm.String",
+        },
+        {
+          "name": "LanguageForEdit",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrder_Form",
+          "type": "Edm.String",
+        },
+        {
+          "name": "HasDraftEntity",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "ActiveUUID",
+          "type": "Edm.Guid",
+        },
+        {
+          "name": "DraftEntityCreationDateTime",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "DraftEntityLastChangeDateTime",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "HasActiveEntity",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "IsActiveEntity",
+          "type": "Edm.Boolean",
+        },
+      ],
+      "keys": [
+        "node_key",
+        "IsActiveEntity",
+      ],
+      "path": "/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(node_key=guid'fa163ee4-7bdd-1ee8-b1ff-d3c5a4e5236a',IsActiveEntity=true)?$format=json&$select=so_id,Product,currency_code,gross_amount,net_amount,tax_amount,op_id,LastChangedUserName,overall_status&$expand=to_Currency,to_ChangedBy",
+      "service": "/sap/opu/odata/sap/salesorder/",
+      "type": "fe",
+    },
+    "webUrl": "https://my313815.s4hana.ondemand.com/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(node_key=guid'fa163ee4-7bdd-1ee8-b1ff-d3c5a4e5236a',IsActiveEntity=true)?$format=json&$select=so_id,Product,currency_code,gross_amount,net_amount,tax_amount,op_id,LastChangedUserName,overall_status&$expand=to_Currency,to_ChangedBy",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - Semantic Card Generation OData V2 Semantic Card Generation generateSemanticCard=always scenarios should generate semantic UI5 Integration Card when generateSemanticCard=always for OData V2 application: semantic-ui5-integration-card-v2-always 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "id": "sales.order.wd20.Object",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "IsActiveEntity": {
+          "type": "string",
+          "value": "true",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_mandatoryODataParameters": {
+          "value": [
+            "node_key",
+            "IsActiveEntity",
+          ],
+        },
+        "logo": {
+          "type": "string",
+          "value": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjMwIiB3aWR0aD0iNjAuOTM3NSIgdmlld0JveD0iMCAwIDQxMi4zOCAyMDQiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIyMDYuMTkiIHgyPSIyMDYuMTkiIHkyPSIyMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGI4ZjEiLz48c3RvcCBvZmZzZXQ9IjAuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9IjAuMzEiIHN0b3AtY29sb3I9IiMwZDkwZDkiLz48c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiMxNzc1YzgiLz48c3RvcCBvZmZzZXQ9IjAuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjAgMjA0IDIwOC40MSAyMDQgNDEyLjM4IDAgMCAwIDAgMjA0Ii8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjQ0LjczLDM4LjM2bC00MC42LDB2OTYuNTJMMTY4LjY3LDM4LjMzSDEzMy41MWwtMzAuMjcsODAuNzJDMTAwLDk4LjcsNzksOTEuNjcsNjIuNCw4Ni40LDUxLjQ2LDgyLjg5LDM5Ljg1LDc3LjcyLDQwLDcyYy4wOS00LjY4LDYuMjMtOSwxOC4zOC04LjM4LDguMTcuNDMsMTUuMzcsMS4wOSwyOS43MSw4bDE0LjEtMjQuNTVDODkuMDYsNDAuNDIsNzEsMzYuMjEsNTYuMTcsMzYuMTloLS4wOWMtMTcuMjgsMC0zMS42OCw1LjYtNDAuNiwxNC44M0EzNC4yMywzNC4yMywwLDAsMCw1Ljc3LDc0LjdDNS41NCw4Ny4xNSwxMC4xMSw5NiwxOS43MSwxMDNjOC4xLDUuOTQsMTguNDYsOS43OSwyNy42LDEyLjYyLDExLjI3LDMuNDksMjAuNDcsNi41MywyMC4zNiwxM0E5LjU3LDkuNTcsMCwwLDEsNjUsMTM1Yy0yLjgxLDIuOS03LjEzLDQtMTMuMDksNC4xLTExLjQ5LjI0LTIwLTEuNTYtMzMuNjEtOS41OUw1Ljc3LDE1NC40MmE5My43Nyw5My43NywwLDAsMCw0NiwxMi4yMmwyLjExLDBjMTQuMjQtLjI1LDI1Ljc0LTQuMzEsMzQuOTItMTEuNzEuNTMtLjQxLDEtLjg0LDEuNDktMS4yOEw4Ni4xNywxNjQuNUgxMjNsNi4xOS0xOC44MmE2Ny40Niw2Ny40NiwwLDAsMCwyMS42OCwzLjQzLDY4LjMzLDY4LjMzLDAsMCwwLDIxLjE2LTMuMjVsNiwxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEsMCw1MC40Ni0xNi4xNSw1MC40Ni00My4yQzMwMS43NCw1Mi4xOSwyODMuNTIsMzguMzYsMjQ0LjczLDM4LjM2Wk0xNTAuOTEsMTIxYTM2LjkzLDM2LjkzLDAsMCwxLTEzLTIuMjhsMTIuODctNDAuNTlIMTUxbDEyLjY1LDQwLjcxQTM4LjUsMzguNSwwLDAsMSwxNTAuOTEsMTIxWm05Ni4yLTIzLjMzaC04Ljk0VjY0LjkxaDguOTRjMTEuOTMsMCwyMS40NCw0LDIxLjQ0LDE2LjE0LDAsMTIuNi05LjUxLDE2LjU3LTIxLjQ0LDE2LjU3Ii8+PC9zdmc+Cg==",
+        },
+        "node_key": {
+          "type": "string",
+          "value": "guid'fa163ee4-7bdd-1ee8-b1ff-d3c5a4e5236a'",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Currency Code",
+              "value": "{= extension.formatters.formatWithBrackets(\${to_Currency/Currency_Code_Text},\${currency_code}) }",
+            },
+            {
+              "label": "Gross Amount",
+              "value": "{gross_amount}",
+            },
+            {
+              "label": "Net Amount",
+              "value": "{net_amount}",
+            },
+            {
+              "label": "Tax Amount",
+              "value": "{tax_amount}",
+            },
+            {
+              "label": "Opportunity ID",
+              "value": "{op_id}",
+            },
+            {
+              "label": "Changed By",
+              "value": "{= extension.formatters.formatWithBrackets(\${to_ChangedBy/FormattedName},\${LastChangedUserName}) }",
+            },
+            {
+              "label": "Overall Status",
+              "value": "{overall_status}",
+            },
+          ],
+          "title": "Sales Order",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20(node_key={{parameters.node_key}},IsActiveEntity={{parameters.IsActiveEntity}})?$format=json&$select=so_id,Product,currency_code,gross_amount,net_amount,tax_amount,op_id,LastChangedUserName,overall_status&$expand=to_Currency,to_ChangedBy",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20(node_key={{parameters.node_key}},IsActiveEntity={{parameters.IsActiveEntity}})?$format=json&$select=so_id,Product,currency_code,gross_amount,net_amount,tax_amount,op_id,LastChangedUserName,overall_status&$expand=to_Currency,to_ChangedBy",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/insights/CardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "icon": {
+        "fitType": "Contain",
+        "shape": "Square",
+        "src": "{{parameters.logo}}",
+      },
+      "subTitle": "{Product}",
+      "title": "{so_id}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "GEN_CARD",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "Object",
+  },
+  "sap.ui": {
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - Semantic Card Generation OData V4 Semantic Card Generation generateSemanticCard=always scenarios should generate semantic MS Teams Adaptive Card when generateSemanticCard=always for OData V4 application: semantic-adaptive-card-v4-always 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "actions": [],
+  "body": [
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "altText": "SAP",
+              "size": "Small",
+              "type": "Image",
+              "url": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjMwIiB3aWR0aD0iNjAuOTM3NSIgdmlld0JveD0iMCAwIDQxMi4zOCAyMDQiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIyMDYuMTkiIHgyPSIyMDYuMTkiIHkyPSIyMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGI4ZjEiLz48c3RvcCBvZmZzZXQ9IjAuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9IjAuMzEiIHN0b3AtY29sb3I9IiMwZDkwZDkiLz48c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiMxNzc1YzgiLz48c3RvcCBvZmZzZXQ9IjAuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjAgMjA0IDIwOC40MSAyMDQgNDEyLjM4IDAgMCAwIDAgMjA0Ii8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjQ0LjczLDM4LjM2bC00MC42LDB2OTYuNTJMMTY4LjY3LDM4LjMzSDEzMy41MWwtMzAuMjcsODAuNzJDMTAwLDk4LjcsNzksOTEuNjcsNjIuNCw4Ni40LDUxLjQ2LDgyLjg5LDM5Ljg1LDc3LjcyLDQwLDcyYy4wOS00LjY4LDYuMjMtOSwxOC4zOC04LjM4LDguMTcuNDMsMTUuMzcsMS4wOSwyOS43MSw4bDE0LjEtMjQuNTVDODkuMDYsNDAuNDIsNzEsMzYuMjEsNTYuMTcsMzYuMTloLS4wOWMtMTcuMjgsMC0zMS42OCw1LjYtNDAuNiwxNC44M0EzNC4yMywzNC4yMywwLDAsMCw1Ljc3LDc0LjdDNS41NCw4Ny4xNSwxMC4xMSw5NiwxOS43MSwxMDNjOC4xLDUuOTQsMTguNDYsOS43OSwyNy42LDEyLjYyLDExLjI3LDMuNDksMjAuNDcsNi41MywyMC4zNiwxM0E5LjU3LDkuNTcsMCwwLDEsNjUsMTM1Yy0yLjgxLDIuOS03LjEzLDQtMTMuMDksNC4xLTExLjQ5LjI0LTIwLTEuNTYtMzMuNjEtOS41OUw1Ljc3LDE1NC40MmE5My43Nyw5My43NywwLDAsMCw0NiwxMi4yMmwyLjExLDBjMTQuMjQtLjI1LDI1Ljc0LTQuMzEsMzQuOTItMTEuNzEuNTMtLjQxLDEtLjg0LDEuNDktMS4yOEw4Ni4xNywxNjQuNUgxMjNsNi4xOS0xOC44MmE2Ny40Niw2Ny40NiwwLDAsMCwyMS42OCwzLjQzLDY4LjMzLDY4LjMzLDAsMCwwLDIxLjE2LTMuMjVsNiwxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEsMCw1MC40Ni0xNi4xNSw1MC40Ni00My4yQzMwMS43NCw1Mi4xOSwyODMuNTIsMzguMzYsMjQ0LjczLDM4LjM2Wk0xNTAuOTEsMTIxYTM2LjkzLDM2LjkzLDAsMCwxLTEzLTIuMjhsMTIuODctNDAuNTlIMTUxbDEyLjY1LDQwLjcxQTM4LjUsMzguNSwwLDAsMSwxNTAuOTEsMTIxWm05Ni4yLTIzLjMzaC04Ljk0VjY0LjkxaDguOTRjMTEuOTMsMCwyMS40NCw0LDIxLjQ0LDE2LjE0LDAsMTIuNi05LjUxLDE2LjU3LTIxLjQ0LDE2LjU3Ii8+PC9zdmc+Cg==",
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "text": "Sales Order",
+              "type": "TextBlock",
+              "weight": "Bolder",
+              "wrap": true,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "type": "ColumnSet",
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "\${string(SalesOrder)}",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "none",
+              "text": "\${formatWithBrackets(_SalesOrderType ? string(_SalesOrderType.SalesOrderType_Text) : '',string(SalesOrderType))}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Sold-to Party",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${formatWithBrackets(string(CustomerName),string(SoldToParty))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Customer Reference",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(PurchaseOrderByCustomer)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Overall Status",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${_OverallSDProcessStatus ? string(_OverallSDProcessStatus.OverallSDProcessStatus_Text) : ''}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Requested Delivery Date",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(RequestedDeliveryDate)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Value",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(TotalNetAmount)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Document Date",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(SalesOrderDate)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Ship-to Party",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${formatWithBrackets(_ShipToParty ? string(_ShipToParty.FullName) : '',_ShipToParty ? string(_ShipToParty.Partner) : '')}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+  ],
+  "metadata": {
+    "context": {
+      "entitySet": "SalesOrderManage",
+      "fe": "v4",
+      "filters": [
+        {
+          "name": "SalesOrder",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrderType",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SoldToParty",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerName",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SoldToPartyAddressID",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrganization",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrganizationForFilter",
+          "type": "Edm.String",
+        },
+        {
+          "name": "DistributionChannel",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ReferenceDistributionChannel",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OrganizationDivision",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ReferenceOrganizationDivision",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOffice",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesGroup",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesDistrict",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrderDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "PurchaseOrderByCustomer",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerPurchaseOrderType",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerPurchaseOrderDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "PurchaseOrderByShipToParty",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerGroup",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AdditionalCustomerGroup1",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AdditionalCustomerGroup2",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AdditionalCustomerGroup3",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AdditionalCustomerGroup4",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AdditionalCustomerGroup5",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SDDocumentReason",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SDDocumentReasonForFilter",
+          "type": "Edm.String",
+        },
+        {
+          "name": "PricingDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "ServicesRenderedDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "BillingDocumentDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "SDPricingProcedure",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerPriceGroup",
+          "type": "Edm.String",
+        },
+        {
+          "name": "PriceListType",
+          "type": "Edm.String",
+        },
+        {
+          "name": "RequestedDeliveryDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "DeliveryDateTypeRule",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ShippingCondition",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CompleteDeliveryIsDefined",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "OrderCombinationIsAllowed",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "ShippingType",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SlsDocIsRlvtForProofOfDeliv",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "ReceivingPoint",
+          "type": "Edm.String",
+        },
+        {
+          "name": "IncotermsClassification",
+          "type": "Edm.String",
+        },
+        {
+          "name": "IncotermsVersion",
+          "type": "Edm.String",
+        },
+        {
+          "name": "IncotermsLocation1",
+          "type": "Edm.String",
+        },
+        {
+          "name": "IncotermsLocation2",
+          "type": "Edm.String",
+        },
+        {
+          "name": "FixedValueDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "TaxDepartureCountry",
+          "type": "Edm.String",
+        },
+        {
+          "name": "VATRegistrationCountry",
+          "type": "Edm.String",
+        },
+        {
+          "name": "HeaderBillingBlockReason",
+          "type": "Edm.String",
+        },
+        {
+          "name": "DeliveryBlockReason",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesOrderApprovalReason",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerPaymentTerms",
+          "type": "Edm.String",
+        },
+        {
+          "name": "BillingCompanyCode",
+          "type": "Edm.String",
+        },
+        {
+          "name": "BillingPlan",
+          "type": "Edm.String",
+        },
+        {
+          "name": "PaymentMethod",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerAccountAssignmentGroup",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AssignmentReference",
+          "type": "Edm.String",
+        },
+        {
+          "name": "AccountingDocExternalReference",
+          "type": "Edm.String",
+        },
+        {
+          "name": "TotalNetAmount",
+          "type": "Edm.Decimal",
+        },
+        {
+          "name": "TransactionCurrency",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CustomerCreditAccount",
+          "type": "Edm.String",
+        },
+        {
+          "name": "UICT_ReferenceSemanticObject",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ReferenceSDDocument",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ReferenceSDDocumentCategory",
+          "type": "Edm.String",
+        },
+        {
+          "name": "ControllingArea",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OverallSDProcessStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OverallDeliveryBlockStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "DeliveryBlockCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallBillingBlockStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "BillingBlockCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallDeliveryStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlDeliveryStatusCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "TotalCreditCheckStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "TotalCreditCheckStsCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallSDDocumentRejectionSts",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlSDDocRejectionStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "TotalBlockStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "TotalBlockStatusCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "SlsDocOvrlGenIncompltnStsText",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SlsDocOvrlIncompltnStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "HdrGeneralIncompletionStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "HdrGenIncompltnStsCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OvrlItmGeneralIncompletionSts",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlItmGenIncompltnStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallSDDocReferenceStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesDocApprovalStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SalesDocApprovalStsCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallChmlCmplncStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlChmlCmplncStsCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallDangerousGoodsStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlDngrsGdsStsCriticality",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallSafetyDataSheetStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlSftyDataSheetStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallTrdCmplncEmbargoSts",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlTrdCmplncEmbargoStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OvrlTrdCmplncSnctndListChkSts",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlTrdCmplncSnctndListCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OvrlTrdCmplncLegalCtrlChkSts",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlTrdCmplncLglCtrlStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "OverallOrdReltdBillgStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "OvrlOrdReltdBillingStsCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "SalesOrderDownPaymentStatus",
+          "type": "Edm.String",
+        },
+        {
+          "name": "SlsOrdDownPaymentStatusCritlty",
+          "type": "Edm.Byte",
+        },
+        {
+          "name": "PartnerDeterminationProcedure",
+          "type": "Edm.String",
+        },
+        {
+          "name": "BusinessSolutionOrder",
+          "type": "Edm.String",
+        },
+        {
+          "name": "LastChangeDateTime",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "CreatedByUser",
+          "type": "Edm.String",
+        },
+        {
+          "name": "CreationDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "CreationTime",
+          "type": "Edm.TimeOfDay",
+        },
+        {
+          "name": "SalesDocumentCreationDateTime",
+          "type": "Edm.DateTimeOffset",
+        },
+        {
+          "name": "LastChangedByUser",
+          "type": "Edm.String",
+        },
+        {
+          "name": "LastChangeDate",
+          "type": "Edm.Date",
+        },
+        {
+          "name": "IsEUTriangularDeal",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_BillingPlanType",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_BillingPlan",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_EnableBillingPlan",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_OutputRequestUUID",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_CustomerCreditLimitAmount",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_LastChangeDateTime",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_WithdrawFromApproval",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "NumberOfAttachments",
+          "type": "Edm.Int16",
+        },
+        {
+          "name": "UICT_DownPaymentStatus",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_OvrlOrdReltdBillgStatus",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_ProposeItems",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_TradeComplianceIsActive",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_CreateDlvFromSalesDoc",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "AIRecommendationModelIsActive",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_ProductComplianceIsActive",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_OvrlDangerousGoodsStatus",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_OvrlSafetyDataSheetStatus",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_OverallChmlCmplncStatus",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_SlsOrdIsForStrPkupOnly",
+          "type": "Edm.Boolean",
+        },
+        {
+          "name": "UICT_TotAmtInTransacCrcy",
+          "type": "Edm.Decimal",
+        },
+        {
+          "name": "SiteName",
+          "type": "Edm.String",
+        },
+        {
+          "name": "Store",
+          "type": "Edm.String",
+        },
+      ],
+      "keys": [
+        "SalesOrder",
+      ],
+      "path": "/sap/opu/odata4/sap/c_salesordermanage_srv/srvd/sap/c_salesordermanage_sd/0001/SalesOrderManage('SalesOrd29')?$format=json&$select=SalesOrder,SalesOrderType,CustomerName,SoldToParty,PurchaseOrderByCustomer,RequestedDeliveryDate,TotalNetAmount,TransactionCurrency,SalesOrderDate&$expand=_SalesOrderType($select=SalesOrderType_Text),_OverallSDProcessStatus($select=OverallSDProcessStatus_Text),_ShipToParty($select=FullName,Partner)",
+      "service": "/sap/opu/odata4/sap/c_salesordermanage_srv/srvd/sap/c_salesordermanage_sd/0001/",
+      "type": "fe",
+    },
+    "webUrl": "https://my313815.s4hana.ondemand.com/sap/opu/odata4/sap/c_salesordermanage_srv/srvd/sap/c_salesordermanage_sd/0001/SalesOrderManage('SalesOrd29')?$format=json&$select=SalesOrder,SalesOrderType,CustomerName,SoldToParty,PurchaseOrderByCustomer,RequestedDeliveryDate,TotalNetAmount,TransactionCurrency,SalesOrderDate&$expand=_SalesOrderType($select=SalesOrderType_Text),_OverallSDProcessStatus($select=OverallSDProcessStatus_Text),_ShipToParty($select=FullName,Partner)",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - Semantic Card Generation OData V4 Semantic Card Generation generateSemanticCard=always scenarios should generate semantic UI5 Integration Card when generateSemanticCard=always for OData V4 application: semantic-ui5-integration-card-v4-always 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "id": "cus.sd.salesorderv2.manage.Object",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata4/sap/c_salesordermanage_srv/srvd/sap/c_salesordermanage_sd/0001/",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "SalesOrder": {
+          "type": "string",
+          "value": "SalesOrd29",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "SalesOrderManage",
+        },
+        "_mandatoryODataParameters": {
+          "value": [
+            "SalesOrder",
+          ],
+        },
+        "logo": {
+          "type": "string",
+          "value": "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBoZWlnaHQ9IjMwIiB3aWR0aD0iNjAuOTM3NSIgdmlld0JveD0iMCAwIDQxMi4zOCAyMDQiPjxkZWZzPjxzdHlsZT4uY2xzLTEsLmNscy0ye2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fS5jbHMtMntmaWxsOiNmZmY7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIyMDYuMTkiIHgyPSIyMDYuMTkiIHkyPSIyMDQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGI4ZjEiLz48c3RvcCBvZmZzZXQ9IjAuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9IjAuMzEiIHN0b3AtY29sb3I9IiMwZDkwZDkiLz48c3RvcCBvZmZzZXQ9IjAuNTgiIHN0b3AtY29sb3I9IiMxNzc1YzgiLz48c3RvcCBvZmZzZXQ9IjAuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjAgMjA0IDIwOC40MSAyMDQgNDEyLjM4IDAgMCAwIDAgMjA0Ii8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjQ0LjczLDM4LjM2bC00MC42LDB2OTYuNTJMMTY4LjY3LDM4LjMzSDEzMy41MWwtMzAuMjcsODAuNzJDMTAwLDk4LjcsNzksOTEuNjcsNjIuNCw4Ni40LDUxLjQ2LDgyLjg5LDM5Ljg1LDc3LjcyLDQwLDcyYy4wOS00LjY4LDYuMjMtOSwxOC4zOC04LjM4LDguMTcuNDMsMTUuMzcsMS4wOSwyOS43MSw4bDE0LjEtMjQuNTVDODkuMDYsNDAuNDIsNzEsMzYuMjEsNTYuMTcsMzYuMTloLS4wOWMtMTcuMjgsMC0zMS42OCw1LjYtNDAuNiwxNC44M0EzNC4yMywzNC4yMywwLDAsMCw1Ljc3LDc0LjdDNS41NCw4Ny4xNSwxMC4xMSw5NiwxOS43MSwxMDNjOC4xLDUuOTQsMTguNDYsOS43OSwyNy42LDEyLjYyLDExLjI3LDMuNDksMjAuNDcsNi41MywyMC4zNiwxM0E5LjU3LDkuNTcsMCwwLDEsNjUsMTM1Yy0yLjgxLDIuOS03LjEzLDQtMTMuMDksNC4xLTExLjQ5LjI0LTIwLTEuNTYtMzMuNjEtOS41OUw1Ljc3LDE1NC40MmE5My43Nyw5My43NywwLDAsMCw0NiwxMi4yMmwyLjExLDBjMTQuMjQtLjI1LDI1Ljc0LTQuMzEsMzQuOTItMTEuNzEuNTMtLjQxLDEtLjg0LDEuNDktMS4yOEw4Ni4xNywxNjQuNUgxMjNsNi4xOS0xOC44MmE2Ny40Niw2Ny40NiwwLDAsMCwyMS42OCwzLjQzLDY4LjMzLDY4LjMzLDAsMCwwLDIxLjE2LTMuMjVsNiwxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEsMCw1MC40Ni0xNi4xNSw1MC40Ni00My4yQzMwMS43NCw1Mi4xOSwyODMuNTIsMzguMzYsMjQ0LjczLDM4LjM2Wk0xNTAuOTEsMTIxYTM2LjkzLDM2LjkzLDAsMCwxLTEzLTIuMjhsMTIuODctNDAuNTlIMTUxbDEyLjY1LDQwLjcxQTM4LjUsMzguNSwwLDAsMSwxNTAuOTEsMTIxWm05Ni4yLTIzLjMzaC04Ljk0VjY0LjkxaDguOTRjMTEuOTMsMCwyMS40NCw0LDIxLjQ0LDE2LjE0LDAsMTIuNi05LjUxLDE2LjU3LTIxLjQ0LDE2LjU3Ii8+PC9zdmc+Cg==",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Sold-to Party",
+              "value": "{= extension.formatters.formatWithBrackets(\${CustomerName},\${SoldToParty}) }",
+            },
+            {
+              "label": "Customer Reference",
+              "value": "{PurchaseOrderByCustomer}",
+            },
+            {
+              "label": "Overall Status",
+              "value": "{_OverallSDProcessStatus/OverallSDProcessStatus_Text}",
+            },
+            {
+              "label": "Requested Delivery Date",
+              "value": "{RequestedDeliveryDate}",
+            },
+            {
+              "label": "Net Value",
+              "value": "{TotalNetAmount}",
+            },
+            {
+              "label": "Document Date",
+              "value": "{SalesOrderDate}",
+            },
+            {
+              "label": "Ship-to Party",
+              "value": "{= extension.formatters.formatWithBrackets(\${_ShipToParty/FullName},\${_ShipToParty/Partner}) }",
+            },
+          ],
+          "title": "Sales Order",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "SalesOrderManage('{{parameters.SalesOrder}}')?$format=json&$select=SalesOrder,SalesOrderType,CustomerName,SoldToParty,PurchaseOrderByCustomer,RequestedDeliveryDate,TotalNetAmount,TransactionCurrency,SalesOrderDate&$expand=_SalesOrderType($select=SalesOrderType_Text),_OverallSDProcessStatus($select=OverallSDProcessStatus_Text),_ShipToParty($select=FullName,Partner)",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "SalesOrderManage('{{parameters.SalesOrder}}')?$format=json&$select=SalesOrder,SalesOrderType,CustomerName,SoldToParty,PurchaseOrderByCustomer,RequestedDeliveryDate,TotalNetAmount,TransactionCurrency,SalesOrderDate&$expand=_SalesOrderType($select=SalesOrderType_Text),_OverallSDProcessStatus($select=OverallSDProcessStatus_Text),_ShipToParty($select=FullName,Partner)",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata4/sap/c_salesordermanage_srv/srvd/sap/c_salesordermanage_sd/0001/$batch",
+      },
+    },
+    "extension": "module:sap/insights/CardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "data": {
+        "path": "/content/",
+      },
+      "icon": {
+        "fitType": "Contain",
+        "shape": "Square",
+        "src": "{{parameters.logo}}",
+      },
+      "subTitle": "{= extension.formatters.formatWithBrackets(\${_SalesOrderType/SalesOrderType_Text},\${SalesOrderType}) }",
+      "title": "{SalesOrder}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "GEN_CARD",
+    "parentAppId": "cus.sd.salesorderv2.manage",
+    "templateName": "Object",
+  },
+  "sap.ui": {
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V2 getObjectPageCardManifestForPreview - V2 returns integration card manifest when dateTimeOffset and datetime are present as key parameters 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "id": "objectCard",
+    "subTitle": "A Fiori application. | {overall_status}",
+    "title": "Sales Order",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "CreatedByUser": {
+          "type": "string",
+          "value": "C1234",
+        },
+        "CreationDateTime": {
+          "type": "datetime",
+          "value": "2025-02-26T03%3A27%3A17.4713650Z",
+        },
+        "EndDate": {
+          "type": "datetime",
+          "value": "9999-12-31T00%3A00%3A00",
+        },
+        "_adaptiveFooterActionParameters": {
+          "C_SalesPlanTPRelease": {
+            "actionParameters": [],
+            "data": {
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "salesorderID",
+            "label": "Release",
+            "style": "default",
+            "verb": "C_SalesPlanTPRelease",
+          },
+        },
+        "_contentSelectQuery": {
+          "value": "$select=CreatedByUser,CreationDateTime,node_key,EndDate",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_headerSelectQuery": {
+          "value": "$select=CreatedByUser,CreationDateTime,node_key,EndDate",
+        },
+        "footerActionParameters": {},
+        "node_key": {
+          "type": "string",
+          "value": "17beb005-2229-1edf-bcfe-327784b3026b",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Net Amount",
+              "name": "net_amount",
+              "value": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+            },
+            {
+              "label": "Gross Amount",
+              "name": "gross_amount",
+              "value": "{gross_amount} {currency_code}",
+            },
+            {
+              "label": "Tax Amount",
+              "name": "tax_amount",
+              "value": "{tax_amount} {currency_code}",
+            },
+          ],
+          "title": "Amount",
+        },
+        {
+          "items": [
+            {
+              "label": "Business Partner ID",
+              "name": "bp_id",
+              "value": "{bp_id}",
+            },
+            {
+              "label": "Created At",
+              "name": "created_at",
+              "value": "{= format.dateTime(\${created_at}, {"relative":false,"UTC":true})}",
+            },
+            {
+              "label": "Sales Order ID",
+              "name": "so_id",
+              "value": "{so_id}",
+            },
+          ],
+          "title": "Additional Info",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "{{parameters._entitySet}}(CreatedByUser='{{parameters.CreatedByUser}}',CreationDateTime=datetimeoffset'{{parameters.CreationDateTime}}',node_key=guid'{{parameters.node_key}}',EndDate=datetime'{{parameters.EndDate}}')?{{parameters._contentSelectQuery}}{{parameters._contentExpandQuery}}",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "retryAfter": 30,
+            "url": "{{parameters._entitySet}}(CreatedByUser='{{parameters.CreatedByUser}}',CreationDateTime=datetimeoffset'{{parameters.CreationDateTime}}',node_key=guid'{{parameters.node_key}}',EndDate=datetime'{{parameters.EndDate}}')?{{parameters._headerSelectQuery}}{{parameters._headerExpandQuery}}",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "actions": [
+        {
+          "parameters": {
+            "ibnParams": {
+              "CreatedByUser": "C1234",
+              "CreationDateTime": "datetimeoffset'2025-02-26T03%3A27%3A17.4713650Z'",
+              "EndDate": "datetime'9999-12-31T00%3A00%3A00'",
+              "node_key": "guid'17beb005-2229-1edf-bcfe-327784b3026b'",
+              "sap-xapp-state-data": "{"selectionVariant":{"Parameters":[],"SelectOptions":[{"PropertyName":"CreatedByUser","Ranges":[{"Sign":"I","Option":"EQ","Low":"C1234","High":null}]},{"PropertyName":"CreationDateTime","Ranges":[{"Sign":"I","Option":"EQ","Low":"datetimeoffset'2025-02-26T03%3A27%3A17.4713650Z'","High":null}]},{"PropertyName":"node_key","Ranges":[{"Sign":"I","Option":"EQ","Low":"guid'17beb005-2229-1edf-bcfe-327784b3026b'","High":null}]},{"PropertyName":"EndDate","Ranges":[{"Sign":"I","Option":"EQ","Low":"datetime'9999-12-31T00%3A00%3A00'","High":null}]}]}}",
+            },
+            "ibnTarget": {
+              "action": "intent",
+              "semanticObject": "test",
+            },
+          },
+          "type": "Navigation",
+        },
+      ],
+      "data": {
+        "path": "/header/d/",
+      },
+      "mainIndicator": {
+        "number": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+        "state": "{= extension.formatters.formatCriticality(\${Language}, 'color') }",
+        "trend": "None",
+        "unit": "",
+      },
+      "sideIndicators": [
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+      ],
+      "subTitle": "A Fiori application.",
+      "title": "Sales Order",
+      "type": "Numeric",
+      "unitOfMeasurement": "{overall_status}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "1.125.1-SNAPSHOT-202406281543",
+    },
+  },
+  "sap.ui": {
+    "icons": {
+      "icon": "sap-icon://switch-classes",
+    },
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V2 returns adaptive card manifest ready for preview when no select query parameter exists for card 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "color": "Default",
+      "maxLines": 1,
+      "size": "default",
+      "spacing": "none",
+      "text": "[ Sales Order ](http://localhost:8080/test#test-intent&/C_STTA_SalesOrder_WD_20(id=12345))",
+      "type": "TextBlock",
+      "weight": "bolder",
+      "wrap": false,
+    },
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "A Fiori application.",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.' && '{overall_status}') ? true: false}",
+              "color": "Default",
+              "horizontalAlignment": "Center",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "|",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('{overall_status}') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "\${string(overall_status)}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "spacing": "none",
+      "type": "ColumnSet",
+    },
+    {
+      "color": "\${if(toLower(Language) == 'critical', 'Warning', if(toLower(Language) == 'error', 'Attention', if(toLower(Language) == 'good', 'Good', if(int(Language) == 3, 'Good', if(int(Language) == 1, 'Attention', if(int(Language) == 2, 'Warning', 'Default'))))))}",
+      "maxLines": 1,
+      "size": "extraLarge",
+      "spacing": "none",
+      "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+      "type": "TextBlock",
+      "weight": "default",
+      "wrap": false,
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Amount",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Gross Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(gross_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Tax Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(tax_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Additional Info",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Business Partner ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(bp_id)) == '', '&minus;', string(bp_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Created At:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(created_at && created_at != '', convertToUTC(created_at, 'UTC', 'ddd d MMM YYYY HH:mm'), '&minus;')}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Sales Order ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(so_id)) == '', '&minus;', string(so_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+  ],
+  "metadata": {
+    "sap.cards.ap": {
+      "cardType": "LEAN_DT",
+      "parentAppId": "sales.order.wd20",
+      "templateName": "ObjectPage",
+      "versions": {
+        "ui5": "1.125.1-SNAPSHOT-202406281543",
+      },
+    },
+    "webUrl": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(id=12345)",
+  },
+  "msteams": {
+    "width": "full",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V2 returns adaptive card manifest ready for preview when there exists select query parameters 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "color": "Default",
+      "maxLines": 1,
+      "size": "default",
+      "spacing": "none",
+      "text": "[ Sales Order ](http://localhost:8080/test#test-intent&/C_STTA_SalesOrder_WD_20(id=12345))",
+      "type": "TextBlock",
+      "weight": "bolder",
+      "wrap": false,
+    },
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "A Fiori application.",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.' && '{overall_status}') ? true: false}",
+              "color": "Default",
+              "horizontalAlignment": "Center",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "|",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('{overall_status}') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "\${string(overall_status)}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "spacing": "none",
+      "type": "ColumnSet",
+    },
+    {
+      "color": "\${if(toLower(Language) == 'critical', 'Warning', if(toLower(Language) == 'error', 'Attention', if(toLower(Language) == 'good', 'Good', if(int(Language) == 3, 'Good', if(int(Language) == 1, 'Attention', if(int(Language) == 2, 'Warning', 'Default'))))))}",
+      "maxLines": 1,
+      "size": "extraLarge",
+      "spacing": "none",
+      "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+      "type": "TextBlock",
+      "weight": "default",
+      "wrap": false,
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Amount",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Gross Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(gross_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Tax Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(tax_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Additional Info",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Business Partner ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(bp_id)) == '', '&minus;', string(bp_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Created At:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(created_at && created_at != '', convertToUTC(created_at, 'UTC', 'ddd d MMM YYYY HH:mm'), '&minus;')}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Sales Order ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(so_id)) == '', '&minus;', string(so_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+    {
+      "actions": [
+        {
+          "$when": "\${salesorderID ? true : false}",
+          "data": {
+            "actionParams": {
+              "keys": [
+                "SalesPlanUUID",
+                "IsActiveEntity",
+              ],
+            },
+            "contextURL": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(id='12345')",
+            "isConfirmationRequired": false,
+          },
+          "isEnabled": "\${salesorderID}",
+          "style": "default",
+          "title": "Release",
+          "type": "Action.Execute",
+          "verb": "C_SalesPlanTPRelease",
+        },
+      ],
+      "type": "ActionSet",
+    },
+  ],
+  "metadata": {
+    "sap.cards.ap": {
+      "cardType": "LEAN_DT",
+      "parentAppId": "sales.order.wd20",
+      "templateName": "ObjectPage",
+      "versions": {
+        "ui5": "1.125.1-SNAPSHOT-202406281543",
+      },
+    },
+    "webUrl": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(id='12345')?$select=bp_id,currency_code,overall_status,so_id,created_at,net_amount,gross_amount,tax_amount",
+  },
+  "msteams": {
+    "width": "full",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V2 returns integration card manifest 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "id": "objectCard",
+    "subTitle": "A Fiori application. | {overall_status}",
+    "title": "Sales Order",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "BankCountry": {
+          "type": "number",
+          "value": "0000000006",
+        },
+        "IsActiveEntity": {
+          "type": "boolean",
+          "value": true,
+        },
+        "_adaptiveFooterActionParameters": {
+          "C_SalesPlanTPRelease": {
+            "actionParameters": [],
+            "data": {
+              "actionParams": {
+                "keys": [
+                  "SalesPlanUUID",
+                  "IsActiveEntity",
+                ],
+              },
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "salesorderID",
+            "label": "Release",
+            "parameters": {
+              "IsActiveEntity": true,
+              "SalesPlanUUID": "00000000-0000-0000-0000-000000000000",
+            },
+            "style": "default",
+            "verb": "C_SalesPlanTPRelease",
+          },
+        },
+        "_contentSelectQuery": {
+          "value": "$select=so_id,bp_id,created_at,net_amount,gross_amount,tax_amount,currency_code,overall_status",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_headerSelectQuery": {
+          "value": "$select=bp_id,currency_code,overall_status",
+        },
+        "_noText": {
+          "type": "string",
+          "value": "No",
+        },
+        "_yesText": {
+          "type": "string",
+          "value": "Yes",
+        },
+        "contextParameters": {
+          "type": "string",
+          "value": "node_key='12345'",
+        },
+        "footerActionParameters": {},
+        "node_key": {
+          "type": "string",
+          "value": "12345",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Net Amount",
+              "name": "net_amount",
+              "value": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+            },
+            {
+              "label": "Gross Amount",
+              "name": "gross_amount",
+              "value": "{gross_amount} {currency_code}",
+            },
+            {
+              "label": "Tax Amount",
+              "name": "tax_amount",
+              "value": "{tax_amount} {currency_code}",
+            },
+          ],
+          "title": "Amount",
+        },
+        {
+          "items": [
+            {
+              "label": "Business Partner ID",
+              "name": "bp_id",
+              "value": "{bp_id}",
+            },
+            {
+              "label": "Created At",
+              "name": "created_at",
+              "value": "{= format.dateTime(\${created_at}, {"relative":false,"UTC":true})}",
+            },
+            {
+              "label": "Sales Order ID",
+              "name": "so_id",
+              "value": "{so_id}",
+            },
+          ],
+          "title": "Additional Info",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "retryAfter": 30,
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})?{{parameters._headerSelectQuery}}",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "actions": [
+        {
+          "parameters": {
+            "ibnParams": {
+              "node_key": "12345",
+              "sap-xapp-state-data": "{"selectionVariant":{"Parameters":[],"SelectOptions":[{"PropertyName":"node_key","Ranges":[{"Sign":"I","Option":"EQ","Low":"12345","High":null}]}]}}",
+            },
+            "ibnTarget": {
+              "action": "intent",
+              "semanticObject": "test",
+            },
+          },
+          "type": "Navigation",
+        },
+      ],
+      "data": {
+        "path": "/header/d/",
+      },
+      "mainIndicator": {
+        "number": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+        "state": "{= extension.formatters.formatCriticality(\${Language}, 'color') }",
+        "trend": "None",
+        "unit": "",
+      },
+      "sideIndicators": [
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+      ],
+      "subTitle": "A Fiori application.",
+      "title": "Sales Order",
+      "type": "Numeric",
+      "unitOfMeasurement": "{overall_status}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "1.125.1-SNAPSHOT-202406281543",
+    },
+  },
+  "sap.ui": {
+    "icons": {
+      "icon": "sap-icon://switch-classes",
+    },
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V2 returns integration card manifest, with key-value format as context parameters 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "id": "objectCard",
+    "subTitle": "A Fiori application. | {overall_status}",
+    "title": "Sales Order",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "BankCountry": {
+          "type": "number",
+          "value": "0000000006",
+        },
+        "IsActiveEntity": {
+          "type": "boolean",
+          "value": true,
+        },
+        "_adaptiveFooterActionParameters": {
+          "C_SalesPlanTPRelease": {
+            "actionParameters": [],
+            "data": {
+              "actionParams": {
+                "keys": [
+                  "SalesPlanUUID",
+                  "IsActiveEntity",
+                ],
+              },
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "salesorderID",
+            "label": "Release",
+            "parameters": {
+              "IsActiveEntity": true,
+              "SalesPlanUUID": "00000000-0000-0000-0000-000000000000",
+            },
+            "style": "default",
+            "verb": "C_SalesPlanTPRelease",
+          },
+        },
+        "_contentSelectQuery": {
+          "value": "$select=so_id,bp_id,created_at,net_amount,gross_amount,tax_amount,currency_code,overall_status",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_headerSelectQuery": {
+          "value": "$select=bp_id,currency_code,overall_status",
+        },
+        "_noText": {
+          "type": "string",
+          "value": "No",
+        },
+        "_yesText": {
+          "type": "string",
+          "value": "Yes",
+        },
+        "contextParameters": {
+          "type": "string",
+          "value": "id='12345'",
+        },
+        "footerActionParameters": {},
+        "node_key": {
+          "type": "string",
+          "value": "12345",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Net Amount",
+              "name": "net_amount",
+              "value": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+            },
+            {
+              "label": "Gross Amount",
+              "name": "gross_amount",
+              "value": "{gross_amount} {currency_code}",
+            },
+            {
+              "label": "Tax Amount",
+              "name": "tax_amount",
+              "value": "{tax_amount} {currency_code}",
+            },
+          ],
+          "title": "Amount",
+        },
+        {
+          "items": [
+            {
+              "label": "Business Partner ID",
+              "name": "bp_id",
+              "value": "{bp_id}",
+            },
+            {
+              "label": "Created At",
+              "name": "created_at",
+              "value": "{= format.dateTime(\${created_at}, {"relative":false,"UTC":true})}",
+            },
+            {
+              "label": "Sales Order ID",
+              "name": "so_id",
+              "value": "{so_id}",
+            },
+          ],
+          "title": "Additional Info",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "retryAfter": 30,
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})?{{parameters._headerSelectQuery}}",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "footer": {
+      "actionsStrip": [],
+    },
+    "header": {
+      "actions": [
+        {
+          "parameters": {
+            "ibnParams": {
+              "id": "12345",
+              "sap-xapp-state-data": "{"selectionVariant":{"Parameters":[],"SelectOptions":[{"PropertyName":"id","Ranges":[{"Sign":"I","Option":"EQ","Low":"12345","High":null}]}]}}",
+            },
+            "ibnTarget": {
+              "action": "intent",
+              "semanticObject": "test",
+            },
+          },
+          "type": "Navigation",
+        },
+      ],
+      "data": {
+        "path": "/header/d/",
+      },
+      "mainIndicator": {
+        "number": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+        "state": "{= extension.formatters.formatCriticality(\${Language}, 'color') }",
+        "trend": "None",
+        "unit": "",
+      },
+      "sideIndicators": [
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+      ],
+      "subTitle": "A Fiori application.",
+      "title": "Sales Order",
+      "type": "Numeric",
+      "unitOfMeasurement": "{overall_status}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "1.125.1-SNAPSHOT-202406281543",
+    },
+  },
+  "sap.ui": {
+    "icons": {
+      "icon": "sap-icon://switch-classes",
+    },
+    "technology": "UI5",
+  },
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V4 returns adaptive card manifest ready for preview when there exists select query parameters - when hideAction is true 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "color": "Default",
+      "maxLines": 1,
+      "size": "default",
+      "spacing": "none",
+      "text": "[ Sales Order ](http://localhost:8080/test#test-intent&/C_STTA_SalesOrder_WD_20(node_key=005056a7-004e-1ed8-b2e0-081387831f0d,IsActiveEntity=true,BankCountry=0000000006))",
+      "type": "TextBlock",
+      "weight": "bolder",
+      "wrap": false,
+    },
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "A Fiori application.",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.' && '{overall_status}') ? true: false}",
+              "color": "Default",
+              "horizontalAlignment": "Center",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "|",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('{overall_status}') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "\${string(overall_status)}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "spacing": "none",
+      "type": "ColumnSet",
+    },
+    {
+      "color": "\${if(toLower(Language) == 'critical', 'Warning', if(toLower(Language) == 'error', 'Attention', if(toLower(Language) == 'good', 'Good', if(int(Language) == 3, 'Good', if(int(Language) == 1, 'Attention', if(int(Language) == 2, 'Warning', 'Default'))))))}",
+      "maxLines": 1,
+      "size": "extraLarge",
+      "spacing": "none",
+      "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+      "type": "TextBlock",
+      "weight": "default",
+      "wrap": false,
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Amount",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Gross Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(gross_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Tax Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(tax_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Additional Info",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Business Partner ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(bp_id)) == '', '&minus;', string(bp_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Created At:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(created_at && created_at != '', convertToUTC(created_at, 'UTC', 'ddd d MMM YYYY HH:mm'), '&minus;')}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Sales Order ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(so_id)) == '', '&minus;', string(so_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+  ],
+  "metadata": {
+    "sap.cards.ap": {
+      "cardType": "LEAN_DT",
+      "parentAppId": "sales.order.wd20",
+      "templateName": "ObjectPage",
+      "versions": {
+        "ui5": "1.125.1-SNAPSHOT-202406281543",
+      },
+    },
+    "webUrl": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(node_key='005056a7-004e-1ed8-b2e0-081387831f0d',IsActiveEntity=true,BankCountry=0000000006)?$select=bp_id,currency_code,overall_status,so_id,created_at,net_amount,gross_amount,tax_amount",
+  },
+  "msteams": {
+    "width": "full",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V4 returns adaptive card manifest ready for preview when there exists select query parameters- when hideAction is false 1`] = `
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "body": [
+    {
+      "color": "Default",
+      "maxLines": 1,
+      "size": "default",
+      "spacing": "none",
+      "text": "[ Sales Order ](http://localhost:8080/test#test-intent&/C_STTA_SalesOrder_WD_20(node_key=005056a7-004e-1ed8-b2e0-081387831f0d,IsActiveEntity=true,BankCountry=0000000006))",
+      "type": "TextBlock",
+      "weight": "bolder",
+      "wrap": false,
+    },
+    {
+      "columns": [
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "A Fiori application.",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('A Fiori application.' && '{overall_status}') ? true: false}",
+              "color": "Default",
+              "horizontalAlignment": "Center",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "|",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+        {
+          "items": [
+            {
+              "$when": "\${ ('{overall_status}') ? true: false}",
+              "color": "Default",
+              "isSubtle": true,
+              "maxLines": 1,
+              "size": "default",
+              "spacing": "none",
+              "text": "\${string(overall_status)}",
+              "type": "TextBlock",
+              "weight": "default",
+              "wrap": false,
+            },
+          ],
+          "type": "Column",
+          "width": "auto",
+        },
+      ],
+      "spacing": "none",
+      "type": "ColumnSet",
+    },
+    {
+      "color": "\${if(toLower(Language) == 'critical', 'Warning', if(toLower(Language) == 'error', 'Attention', if(toLower(Language) == 'good', 'Good', if(int(Language) == 3, 'Good', if(int(Language) == 1, 'Attention', if(int(Language) == 2, 'Warning', 'Default'))))))}",
+      "maxLines": 1,
+      "size": "extraLarge",
+      "spacing": "none",
+      "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+      "type": "TextBlock",
+      "weight": "default",
+      "wrap": false,
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Amount",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Net Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(formatNumber(float(net_amount), 2, 'null'))} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Gross Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(gross_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Tax Amount:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${string(tax_amount)} \${string(currency_code)}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+        {
+          "items": [
+            {
+              "color": "Default",
+              "maxLines": 2,
+              "size": "small",
+              "spacing": "medium",
+              "text": "Additional Info",
+              "type": "TextBlock",
+              "weight": "bolder",
+              "wrap": true,
+            },
+            {
+              "items": [
+                {
+                  "columns": [
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Business Partner ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(bp_id)) == '', '&minus;', string(bp_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Created At:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(created_at && created_at != '', convertToUTC(created_at, 'UTC', 'ddd d MMM YYYY HH:mm'), '&minus;')}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                    {
+                      "items": [
+                        {
+                          "color": "Default",
+                          "isSubtle": true,
+                          "maxLines": 1,
+                          "size": "small",
+                          "spacing": "default",
+                          "text": "Sales Order ID:",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": false,
+                        },
+                        {
+                          "color": "Default",
+                          "maxLines": 2,
+                          "size": "small",
+                          "spacing": "none",
+                          "text": "\${if(trim(string(so_id)) == '', '&minus;', string(so_id))}",
+                          "type": "TextBlock",
+                          "weight": "default",
+                          "wrap": true,
+                        },
+                      ],
+                      "type": "Column",
+                      "width": "stretch",
+                    },
+                  ],
+                  "type": "ColumnSet",
+                },
+              ],
+              "spacing": "small",
+              "type": "Container",
+            },
+          ],
+          "spacing": "medium",
+          "type": "Container",
+        },
+      ],
+      "spacing": "large",
+      "type": "Container",
+    },
+    {
+      "actions": [
+        {
+          "$when": "\${salesorderID ? true : false}",
+          "data": {
+            "actionParams": {
+              "keys": [
+                "SalesPlanUUID",
+                "IsActiveEntity",
+              ],
+            },
+            "contextURL": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(id='12345')",
+            "isConfirmationRequired": false,
+          },
+          "isEnabled": "\${salesorderID}",
+          "style": "default",
+          "title": "Release",
+          "type": "Action.Execute",
+          "verb": "C_SalesPlanTPRelease",
+        },
+      ],
+      "type": "ActionSet",
+    },
+  ],
+  "metadata": {
+    "sap.cards.ap": {
+      "cardType": "LEAN_DT",
+      "parentAppId": "sales.order.wd20",
+      "templateName": "ObjectPage",
+      "versions": {
+        "ui5": "1.125.1-SNAPSHOT-202406281543",
+      },
+    },
+    "webUrl": "http://localhost:8080/sap/opu/odata/sap/salesorder/C_STTA_SalesOrder_WD_20(id='12345')?$select=bp_id,currency_code,overall_status,so_id,created_at,net_amount,gross_amount,tax_amount",
+  },
+  "msteams": {
+    "width": "full",
+  },
+  "type": "AdaptiveCard",
+  "version": "1.6",
+}
+`;
+
+exports[`getObjectPageCardManifestForPreview - V4 returns integration card manifest 1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "id": "objectCard",
+    "subTitle": "A Fiori application. | {overall_status}",
+    "title": "Sales Order",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "csrfTokens": {
+        "token1": {
+          "data": {
+            "request": {
+              "headers": {
+                "X-CSRF-Token": "Fetch",
+              },
+              "method": "HEAD",
+              "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder",
+            },
+          },
+        },
+      },
+      "destinations": {
+        "service": {
+          "defaultUrl": "/",
+          "name": "(default)",
+        },
+      },
+      "parameters": {
+        "BankCountry": {
+          "type": "number",
+          "value": "0000000006",
+        },
+        "IsActiveEntity": {
+          "type": "boolean",
+          "value": "true",
+        },
+        "_contentSelectQuery": {
+          "value": "$select=so_id,bp_id,created_at,net_amount,gross_amount,tax_amount,currency_code,overall_status",
+        },
+        "_entitySet": {
+          "type": "string",
+          "value": "C_STTA_SalesOrder_WD_20",
+        },
+        "_headerSelectQuery": {
+          "value": "$select=bp_id,currency_code,overall_status",
+        },
+        "_noText": {
+          "type": "string",
+          "value": "No",
+        },
+        "_yesText": {
+          "type": "string",
+          "value": "Yes",
+        },
+        "contextParameters": {
+          "type": "string",
+          "value": "node_key='005056a7-004e-1ed8-b2e0-081387831f0d',IsActiveEntity=true,BankCountry=0000000006",
+        },
+        "node_key": {
+          "type": "string",
+          "value": "005056a7-004e-1ed8-b2e0-081387831f0d",
+        },
+      },
+    },
+    "content": {
+      "data": {
+        "path": "/content/d/",
+      },
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Net Amount",
+              "name": "net_amount",
+              "value": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+            },
+            {
+              "label": "Gross Amount",
+              "name": "gross_amount",
+              "value": "{gross_amount} {currency_code}",
+            },
+            {
+              "label": "Tax Amount",
+              "name": "tax_amount",
+              "value": "{tax_amount} {currency_code}",
+            },
+          ],
+          "title": "Amount",
+        },
+        {
+          "items": [
+            {
+              "label": "Business Partner ID",
+              "name": "bp_id",
+              "value": "{bp_id}",
+            },
+            {
+              "label": "Created At",
+              "name": "created_at",
+              "value": "{= format.dateTime(\${created_at}, {"relative":false,"UTC":true})}",
+            },
+            {
+              "label": "Sales Order ID",
+              "name": "so_id",
+              "value": "{so_id}",
+            },
+          ],
+          "title": "Additional Info",
+        },
+      ],
+    },
+    "data": {
+      "request": {
+        "batch": {
+          "content": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})",
+          },
+          "header": {
+            "headers": {
+              "Accept": "application/json",
+              "Accept-Language": "{{parameters.LOCALE}}",
+            },
+            "method": "GET",
+            "retryAfter": 30,
+            "url": "C_STTA_SalesOrder_WD_20({{parameters.contextParameters}})?{{parameters._headerSelectQuery}}",
+          },
+        },
+        "headers": {
+          "Accept-Language": "{{parameters.LOCALE}}",
+          "X-CSRF-Token": "{{csrfTokens.token1}}",
+        },
+        "method": "POST",
+        "url": "{{destinations.service}}/sap/opu/odata/sap/salesorder/$batch",
+      },
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "header": {
+      "actions": [
+        {
+          "parameters": {
+            "ibnParams": {
+              "BankCountry": "0000000006",
+              "IsActiveEntity": "true",
+              "node_key": "005056a7-004e-1ed8-b2e0-081387831f0d",
+              "sap-xapp-state-data": "{"selectionVariant":{"Parameters":[],"SelectOptions":[{"PropertyName":"node_key","Ranges":[{"Sign":"I","Option":"EQ","Low":"005056a7-004e-1ed8-b2e0-081387831f0d","High":null}]},{"PropertyName":"IsActiveEntity","Ranges":[{"Sign":"I","Option":"EQ","Low":"true","High":null}]},{"PropertyName":"BankCountry","Ranges":[{"Sign":"I","Option":"EQ","Low":"0000000006","High":null}]}]}}",
+            },
+            "ibnTarget": {
+              "action": "intent",
+              "semanticObject": "test",
+            },
+          },
+          "type": "Navigation",
+        },
+      ],
+      "data": {
+        "path": "/header/",
+      },
+      "mainIndicator": {
+        "number": "{= format.float(\${net_amount}, {"decimals":2,"style":"short"})} {currency_code}",
+        "state": "{= extension.formatters.formatCriticality(\${Language}, 'color') }",
+        "trend": "None",
+        "unit": "",
+      },
+      "sideIndicators": [
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+        {
+          "number": "",
+          "title": "",
+          "unit": "",
+        },
+      ],
+      "subTitle": "A Fiori application.",
+      "title": "Sales Order",
+      "type": "Numeric",
+      "unitOfMeasurement": "{overall_status}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "sales.order.wd20",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "1.125.1-SNAPSHOT-202406281543",
+    },
+  },
+  "sap.ui": {
+    "icons": {
+      "icon": "sap-icon://switch-classes",
+    },
+    "technology": "UI5",
+  },
+}
+`;

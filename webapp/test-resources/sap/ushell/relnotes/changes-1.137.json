@@ -1,0 +1,122 @@
+{
+  "1.137.0": {
+    "date": "May 2025",
+    "notes": [
+      {
+        "id": "f695d6b57798da48e0537c735339b210af7b3d0c",
+        "type": "FIX",
+        "text": " sap.ushell.api.NewExperience: Reduced control reserved size to give the ShellTitle more space in case the Newexperience is not used."
+      },
+      {
+        "id": "667f132bb83ed156ada657e819a3245dac98f680",
+        "type": "FIX",
+        "text": " Error Tile Links"
+      },
+      {
+        "id": "7bccc5a495f3afc3c989beea86b545c34e440e7c",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.SideNavigation: Cosy/Compact handling removed."
+      },
+      {
+        "id": "8426a3ee73b9c0f5a6d36c734642977263f63e82",
+        "type": "FIX",
+        "text": " sap.ushellcomponents.shell.UserImage: ShellModel handling corrected."
+      },
+      {
+        "id": "5320a51ba3cae93a6abefdec5c4f62c3a5ed3e2d",
+        "type": "FIX",
+        "text": " Fix wrong virtual inbound for FLPPageTemplate-manage"
+      },
+      {
+        "id": "b551fc9d19cac768d407ebee0871f1f376bb2196",
+        "type": "FIX",
+        "text": " sap.ushell: i18n resource file loading reduced"
+      },
+      {
+        "id": "bcd971268c6f3ae227b6271584ac3059125a6555",
+        "type": "FIX",
+        "text": " add dts-generator directive for AppInfoParameterName"
+      },
+      {
+        "id": "869a52321474d4b8f4ff983ce8e6027682d9d43f",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.Settings: Browser Zoom to 200% improved"
+      },
+      {
+        "id": "0263e20af1055ef1b69f337ca12f96c6f5cc6aa5",
+        "type": "FIX",
+        "text": " AccessKeysHandler: Fix shellbar error when the old shellheader is used"
+      },
+      {
+        "id": "35fdbfe5afd9df848f0c1f4d25accd857330cfb8",
+        "type": "FIX",
+        "text": " run user settings dialog in display/hide mode"
+      },
+      {
+        "id": "03597423c64797f90abb478eac91c50c06c25df3",
+        "type": "FIX",
+        "text": " sap.ushell.component.shell.Settings.UserSettings: Additional tab stops removed"
+      },
+      {
+        "id": "57a11837358abafcb0ea9876989a1afaeda337ed",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.Notifications: Inner No Data title level provided"
+      },
+      {
+        "id": "337402dd1756f4bd1e922ef7be36635209d242bc",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.homepage.Component: Future fatal error log removed."
+      },
+      {
+        "id": "f19a46f690d5a9d566a1861dc032a3c250e27c75",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.Settings: Custom texts for Notification Switch removed."
+      },
+      {
+        "id": "9e5bb82bf3f4b66be8cbee8db48911c9e6c3686e",
+        "type": "FIX",
+        "text": " SplitScreen with keepAlive apps"
+      },
+      {
+        "id": "b88262fe1b7cfaac82fc73506261c43554f56032",
+        "type": "FIX",
+        "text": " Tile order on pages with different content providers"
+      },
+      {
+        "id": "9e0eaddb63b72687afa8846993183e940ea018e5",
+        "type": "FIX",
+        "text": " sap.ushell.ui.footer.AddBookmarkButton: Dialog structure changed to enabled two line GenericTile Title"
+      },
+      {
+        "id": "e5f3f46f5fdeec643e0f84f5c2fc799de9fcea0b",
+        "type": "FIX",
+        "text": " sap.ushell._ApplicationType.systemAlias: Determination of Load Balancing corrected"
+      },
+      {
+        "id": "e84ff20d25104a42f8eca955dc33a4656b990453",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.Settings: Missing list label added by ariaLabelledBy connected to the Dialog Title control."
+      },
+      {
+        "id": "7cde1bee453eca27c83f15886557738cd69aaaa1",
+        "type": "FIX",
+        "text": " Fixing Keyboard Arrow navigation in Shell header"
+      },
+      {
+        "id": "c9b556a324c07e4bda5328f34684a6f481090d4b",
+        "type": "FIX",
+        "text": " Provide box-shadow for FloatingContainer in high contrast themes"
+      },
+      {
+        "id": "f79d1bcf2306763f9b31233b3bdd5f5084036093",
+        "type": "FIX",
+        "text": " sap.ushell.components.shell.UserActionsMenu: Standard ID added. Was missing compared to the old implementation which breaks tests scripts."
+      },
+      {
+        "id": "910574a645993e6fddb4b9aa9db2e493adea758d",
+        "type": "FIX",
+        "text": " reopening apps in iframe with different parameters"
+      }
+    ]
+  }
+}

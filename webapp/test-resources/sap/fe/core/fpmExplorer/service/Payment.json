@@ -1,0 +1,14 @@
+[
+	{
+		"code": "B",
+		"Method": "Bank Transfer"
+	},
+	{
+		"code": "C",
+		"Method": "Credit Card"
+	},
+	{
+		"code": "I",
+		"Method": "Invoice"
+	}
+]

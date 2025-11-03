@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	height="100%"
+	displayBlock="true"
+>
+	<VBox class="sapUiTinyMarginTop">
+		<Text text="The custom column fragment needs to be defined in the manifest." />
+
+		<fpmExplorer:CodeBlock>
+			<fpmExplorer:CodeLink
+				file="customColumn/customColumnContent/manifest.json"
+				start="CustomColumnOnObjectPage"
+				end="availability"
+				codeType="manifest"
+			/>
+		</fpmExplorer:CodeBlock>
+	</VBox>
+</core:FragmentDefinition>

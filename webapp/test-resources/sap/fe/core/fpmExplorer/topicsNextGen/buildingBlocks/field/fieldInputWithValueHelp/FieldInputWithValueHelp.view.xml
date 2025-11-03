@@ -1,0 +1,441 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.fieldInputWithValueHelp.FieldInputWithValueHelp"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+	xmlns:macros="sap.fe.macros"
+>
+	<fpmExplorer:Page
+		title="Input with Value Help"
+		introduction="The Field building block enables you to render input fields with value help. Users can choose values from a list or use a dialog to search for and select values."
+		documentation="fccb255723d3489cae955648756411f6"
+		editMode="true"
+	>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Value Help Configuration using ValueList Annotation"
+				text="The com.sap.vocabularies.Common.v1.ValueList annotation configures value help functionality for input fields. It defines where to find possible values through its CollectionPath (resource path to OData collection) and CollectionRoot (service root URL) properties. The Label property provides the headline for the value list dialog. The Parameters property contains instructions for constructing requests and mapping response values through in/out mappings, determining how field values interact with the value help data."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Examples" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Dialog Value Help with Typeahead" design="Bold" />
+							<Text
+								text="Standard dialog with search-as-you-type functionality"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpDialog1"
+								metaPath="valueHelpField2_1"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Basic Value Help"
+									end="valueHelpField2_1;"
+								/>
+								<fpmExplorer:CodeLink file="field/fieldInputWithValueHelp/code/valueList.xml" codeType="xml" />
+							</fpmExplorer:CodeBlock>
+						</VBox>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Dialog without Typeahead" design="Bold" />
+							<Text
+								text="Search disabled via SearchRestrictions.Searchable: false"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpDialog3"
+								metaPath="valueHelpField2_3"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Dialog without Typeahead"
+									end="valueHelpField2_3;"
+								/>
+							</fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="annotate BusinessPartnerAddress3"
+									end="2"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Dialog with Text Arrangement" design="Bold" />
+							<Text
+								text="Dialog value help with TextArrangement annotation (Common.Text)"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpDialog2"
+								metaPath="valueHelpField2_2"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Dialog with Text Arrangement"
+									end="valueHelpField2_2;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Value Help with Select Control (Dropdown)"
+				text="This basic value help allows a single selection from a predefined list. Use Common.ValueListWithFixedValues to render as a dropdown select control. Fields can display key and description in different formats using TextArrangement annotation."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Dropdown Value Help (Fixed Values)" design="Bold" />
+							<Text
+								text="Uses Common.ValueListWithFixedValues for dropdown selection"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpDropdown1"
+								metaPath="valueHelpField1_1"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Value Help with fixed values"
+									end="valueHelpField1_1;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Dropdown with Text Arrangement" design="Bold" />
+							<Text
+								text="Shows key and description using TextArrangement (Common.Text)"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpDropdown2"
+								metaPath="valueHelpField1_2"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Dropdown with Text Arrangement"
+									end="valueHelpField1_2;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Value Help with Validation"
+				text="Demonstrates validation feature using Common.ValueListForValidation. Input values are validated against the value list data when leaving the field. Enter any value and remove focus - if the value is not found in the dataset, the field shows a red frame and error message."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Value Help with Validation" design="Bold" />
+							<Text
+								text="Validates input against value list data using ValueListForValidation"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpValidation"
+								metaPath="valueHelpField3_1"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Value help with validation"
+									end="valueHelpField3_1;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Context-Dependent Value Help"
+				text="Different value help dialogs based on context determined by another property. Use Common.ValueListRelevantQualifiers to configure behavior when using multiple value lists. The value help content changes dynamically based on the value of another field."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Context-Dependent Value Help" design="Bold" />
+							<Text
+								text="Value help content changes based on another field's value"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<HBox class="sapUiTinyMarginTop">
+								<VBox class="sapUiMediumMarginEnd" width="220px">
+									<Label text="Context Field:" />
+									<macros:Field
+										id="FieldInputWithValueHelpContext"
+										metaPath="valueHelpField4_1"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+								<VBox width="220px">
+									<Label text="Dependent Field:" />
+									<macros:Field
+										id="FieldInputWithValueHelpDependent"
+										metaPath="valueHelpField4_2"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+							</HBox>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Context-dependent value help"
+									end="valueHelpField4_2;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Multiple Value Help Dialogs"
+				text="Scenarios requiring more than one value help. Use a collection of ValueList annotations to select a value help variant from a dropdown list in the dialog. Click the value help icon to open the dialog, then use the dropdown menu at the top to switch between different value help variants."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Multiple Value Help Options" design="Bold" />
+							<Text
+								text="Dropdown in dialog to switch between different value help sources"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<macros:Field
+								id="FieldInputWithValueHelpMultiple"
+								metaPath="valueHelpField5_1"
+								readOnly="{= !${ui>/isEditable} }"
+							/>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Multiple value helps"
+									end="valueHelpField5_1;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="Control Multiple Value Help Content" design="Bold" />
+							<Text
+								text="Dropdown content changes based on context field value"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<HBox class="sapUiTinyMarginTop">
+								<VBox class="sapUiMediumMarginEnd" width="220px">
+									<Label text="Context Field:" />
+									<macros:Field
+										id="FieldInputWithValueHelpContext2"
+										metaPath="valueHelpField6_1"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+								<VBox width="220px">
+									<Label text="Multiple VH Field:" />
+									<macros:Field
+										id="FieldInputWithValueHelpMultiple2"
+										metaPath="valueHelpField6_2"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+							</HBox>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="Control Multiple Value Help Content"
+									end="valueHelpField6_2;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="In/Out Parameter Mapping"
+				text="Structure of ValueList annotation and how In/Out mappings link fields between main entity and value help entity. Out-Mapping automatically fills other fields when selecting a value help item. In-Mapping uses field values as filters in other value helps. In/Out-Mapping combines both behaviors."
+			>
+				<VBox>
+					<Panel width="auto" class="sapUiResponsiveMargin" binding="{path:'/RootEntity(\'1\')'}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+
+						<VBox class="sapUiMediumMarginBottom" width="640px">
+							<Label text="In/Out Parameter Mapping" design="Bold" />
+							<Text
+								text="Demonstrates parameter mapping between fields"
+								class="sapUiTinyMarginBottom"
+								textAlign="Begin"
+								wrapping="true"
+							/>
+							<HBox class="sapUiTinyMarginTop">
+								<VBox class="sapUiMediumMarginEnd" width="220px">
+									<Label text="Account ID:" />
+									<macros:Field
+										id="FieldInputWithValueHelpAccount"
+										metaPath="valueHelpField7_1"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+								<VBox class="sapUiMediumMarginEnd" width="250px">
+									<Label text="Account Name:" />
+									<macros:Field
+										id="FieldInputWithValueHelpAccountName"
+										metaPath="valueHelpField7_2"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+							</HBox>
+
+							<HBox class="sapUiTinyMarginTop">
+								<VBox class="sapUiMediumMarginEnd" width="220px">
+									<Label text="Business Partner:" />
+									<macros:Field
+										id="FieldInputWithValueHelpPartner"
+										metaPath="valueHelpField7_3"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+								<VBox class="sapUiMediumMarginEnd" width="250px">
+									<Label text="Partner Function:" />
+									<macros:Field
+										id="FieldInputWithValueHelpFunction"
+										metaPath="valueHelpField7_4"
+										readOnly="{= !${ui>/isEditable} }"
+									/>
+								</VBox>
+							</HBox>
+
+							<fpmExplorer:CodeBlock>
+								<fpmExplorer:CodeLink
+									file="field/fieldInputWithValueHelp/localService/service.cds"
+									start="In / Out Mappings in the ValueList Annotation"
+									end="valueHelpField7_1;"
+								/>
+							</fpmExplorer:CodeBlock>
+						</VBox>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Side Effects for Value Help Collection Updates"
+				text="Use side effects to refresh value help data when the underlying collection has been modified. This ensures users always see the most current data in value help dialogs. For detailed implementation, refer to the following documentation:"
+			>
+				<fpmExplorer:Link topic="advancedFeatures/guidance/guidanceSideEffects" text="Side Effects" />
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

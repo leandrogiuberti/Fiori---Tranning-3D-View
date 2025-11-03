@@ -1,0 +1,34 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Draft Validation"
+		documentation="ed9aa41c563a44b18701529c8327db4d"
+		introduction="When editing an Object Page, pressing 'Enter' in a field can trigger backend validation: depending on the entity and annotations, SAP Fiori elements may execute global SideEffects or a PreparationAction to fetch draft-related messages immediately."
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="draftValidation" autoFocus="true" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Defining Global Side Effects"
+				text="Global side effects are those side effects that are defined without any source properties or source entities. Global side effects can be annotated under each entity separately."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="draftValidation/localService/service.cds" start="globalValidation" />
+					<fpmExplorer:CodeLink file="draftValidation/code/globalValidation.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Fallback without Global Side Effect"
+				text="If Enter is pressed on a control bound to an entity without a global side effect, SAP Fiori elements checks the parent entity for side effects; if none are found, it triggers the draft prepare action and retrieves messages if these are annotated."
+			/>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,122 @@
+{
+  "defaultRenderer": "fiori2",
+  "bootstrapPlugins": {},
+  "renderers": {
+    "fiori2": {
+      "componentData": {
+        "config": {
+          "enableSearch": false
+        }
+      }
+    }
+  },
+  "ushell": {
+    "customPreload": {
+        "enabled": false
+    },
+    "darkMode": {
+      "enabled": false
+    }
+  },
+  "services": {
+    "CommonDataModel": {
+      "adapter": {
+        "config": {
+          "ignoreSiteDataPersonalization": true,
+          "siteDataUrl": "../OPA/testSiteData/cdmSmallTestSite.json",
+          "allowSiteSourceFromURLParameter": true
+        }
+      }
+    },
+    "UserInfo": {
+      "adapter": {
+        "config": {
+          "themes": [
+            { "id": "sap_horizon", "name": "SAP Morning Horizon", "root": "" },
+            { "id": "sap_horizon_dark", "name": "SAP Evening Horizon", "root": "" },
+            { "id": "sap_horizon_hcb", "name": "SAP High Contrast Black (SAP Horizon)", "root": "" },
+            { "id": "sap_horizon_hcw", "name": "SAP High Contrast White (SAP Horizon)", "root": "" },
+            { "id": "sap_fiori_3", "name": "SAP Quartz Light", "root": "" },
+            { "id": "sap_fiori_3_dark", "name": "SAP Quartz Dark", "root": "" },
+            { "id": "sap_fiori_3_hcb", "name": "SAP Quartz High Contrast Black", "root": "" },
+            { "id": "sap_fiori_3_hcw", "name": "SAP Quartz High Contrast White", "root": "" }
+          ],
+          "ignoreSiteDataPersonalization": true,
+          "siteDataUrl": "../OPA/testSiteData/cdmSmallTestSite.json",
+          "allowSiteSourceFromURLParameter": true
+        }
+      }
+    },
+    "LaunchPage": {
+      "adapter": {
+          "module": "sap.ushell.adapters.cdm.v3.FlpLaunchPageAdapter"
+      }
+    },
+     "PagePersistence": {
+      "adapter": {
+        "module": "sap.ushell.adapters.local.PagePersistenceAdapter"
+      }
+    },
+    "Ui5ComponentLoader": {
+    "config": {
+        "loadDefaultDependencies": false
+      }
+    },
+    "Container": {
+      "adapter": {
+        "config": {
+          "userProfile": {
+            "metadata": {
+              "editablePropterties": [
+                "accessibility",
+                "contentDensity",
+                "theme"
+              ],
+              "ranges": {
+                "theme": {
+                  "sap_horizon": { "displayName": "SAP Morning Horizon", "themeRoot": "" },
+                  "sap_horizon_dark": { "displayName": "SAP Evening Horizon", "themeRoot": "" },
+                  "sap_horizon_hcb": { "displayName": "SAP High Contrast Black (SAP Horizon)", "themeRoot": "" },
+                  "sap_horizon_hcw": { "displayName": "SAP High Contrast White (SAP Horizon)", "themeRoot": "" },
+                  "sap_fiori_3": { "displayName": "SAP Quartz Light", "themeRoot": "" },
+                  "sap_fiori_3_dark": { "displayName": "SAP Quartz Dark", "themeRoot": "" },
+                  "sap_fiori_3_hcb": { "displayName": "SAP Quartz High Contrast Black", "themeRoot": "" },
+                  "sap_fiori_3_hcw": { "displayName": "SAP Quartz High Contrast White", "themeRoot": "" }
+                }
+              }
+            },
+            "defaults": {
+              "email": "john.doe@sap.com",
+              "firstName": "John",
+              "lastName": "Doe",
+              "fullName": "John Doe",
+              "id": "DOEJ",
+              "language": "EN",
+              "languageBcp47": "en",
+              "sapDateFormat": "1",
+              "tislcal": [],
+              "numberFormat": "",
+              "rtl": false,
+              "sapTimeFormat": "0",
+              "timeZone": "CET"
+            }
+          },
+          "userProfilePersonalization": {
+            "sapDateFormat": "1",
+            "theme": "sap_horizon",
+            "sapTimeFormat": "0",
+            "timeZone": "CET",
+            "contentDensity": "cozy"
+          },
+          "systemProperties": {
+            "productName": "My Product Name",
+            "productVersion": "My Product Version",
+            "systemName": "My System Name",
+            "systemRole": "My System Role",
+            "tenantRole": "My Tenant Role"
+          }
+        }
+      }
+    }
+  }
+}

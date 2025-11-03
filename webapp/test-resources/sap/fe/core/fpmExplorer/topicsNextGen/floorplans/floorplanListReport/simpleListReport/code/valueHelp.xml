@@ -1,0 +1,43 @@
+<Annotations Target="TravelService.Travel/to_Agency_AgencyID">
+	<Annotation Term="Common.Text" Path="to_Agency/Name" />
+	<Annotation Term="Common.ValueList">
+		<Record Type="Common.ValueListType">
+			<PropertyValue Property="CollectionPath" String="TravelAgency" />
+			<PropertyValue Property="Label" String="" />
+			<PropertyValue Property="Parameters">
+				<Collection>
+					<Record Type="Common.ValueListParameterInOut">
+						<PropertyValue Property="LocalDataProperty" PropertyPath="to_Agency_AgencyID" />
+						<PropertyValue Property="ValueListProperty" String="AgencyID" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="Name" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="Street" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="PostalCode" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="City" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="CountryCode_code" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="PhoneNumber" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="EMailAddress" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="WebAddress" />
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+	<Annotation Term="Common.Label" String="Agency" />
+	<Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory" />
+</Annotations>

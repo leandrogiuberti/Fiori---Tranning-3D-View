@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:f="sap.f">
+	<VBox core:require="{handler: 'sap/fe/core/fpmExplorer/filterBarCustom/CustomFilter'}">
+		<macros:FilterBar
+			metaPath="@com.sap.vocabularies.UI.v1.SelectionFields#SF1"
+			id="FilterBar"
+			showClearButton="true"
+			key="FilterBar"
+			afterClear="handler.afterClear"
+		>
+			<macros:filterFields>
+				<macros:FilterField key="TotalPrice">
+					<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarCustom.CustomRangeFilter" type="XML" />
+				</macros:FilterField>
+			</macros:filterFields>
+		</macros:FilterBar>
+		<macros:Table metaPath="@com.sap.vocabularies.UI.v1.LineItem#LI1" id="LineItemTable" filterBar="FilterBar" initialLoad="true" />
+	</VBox>
+</core:FragmentDefinition>

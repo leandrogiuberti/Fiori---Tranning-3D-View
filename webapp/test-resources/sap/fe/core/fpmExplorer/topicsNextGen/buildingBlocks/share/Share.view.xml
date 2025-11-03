@@ -1,0 +1,24 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Share"
+		introduction="The Share building block enables you to add a button that allows users to share content from your application with other users or applications."
+		documentation="41b02dfe1ac44d72bb766f5fc3e3d244"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.share.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep text="To use the share building block, you need to define it in your view.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="share/Sample.fragment.xml" codeType="view" start="share" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,48 @@
+{
+  "services": {
+    "NavTargetResolution": {
+      "config": {
+        "allowTestUrlComponentConfig": true
+      }
+    },
+    "SupportTicket": {
+      "config": {
+        "enabled": true
+      }
+    },
+    "UserInfo": {
+      "adapter": {
+        "config": {
+          "themes": [
+            { "id": "sap_horizon", "name": "SAP Morning Horizon", "root": "" },
+            { "id": "sap_horizon_dark", "name": "SAP Evening Horizon", "root": "" },
+            { "id": "sap_horizon_hcb", "name": "SAP High Contrast Black (SAP Horizon)", "root": "" },
+            { "id": "sap_horizon_hcw", "name": "SAP High Contrast White (SAP Horizon)", "root": "" },
+            { "id": "sap_fiori_3", "name": "SAP Quartz Light", "root": "" },
+            { "id": "sap_fiori_3_dark", "name": "SAP Quartz Dark", "root": "" },
+            { "id": "sap_fiori_3_hcb", "name": "SAP Quartz High Contrast Black", "root": "" },
+            { "id": "sap_fiori_3_hcw", "name": "SAP Quartz High Contrast White", "root": "" }
+          ]
+        }
+      }
+    }
+  },
+  "renderers": {
+    "fiori2": {
+      "componentData": {
+        "config": {
+          "enableSetTheme": false,
+          "applications": {
+            "Shell-home": {
+              "enableActionModeMenuButton": true,
+              "enableActionModeFloatingButton": true,
+              "enableTileActionsIcon": true,
+              "enableHideGroups": true
+            }
+          },
+          "rootIntent": "Shell-home"
+        }
+      }
+    }
+  }
+}

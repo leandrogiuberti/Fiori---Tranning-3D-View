@@ -1,0 +1,6 @@
+@UI.dataPoint: {
+    targetValue: 100.0,
+    title: 'Recommendation',
+    visualization: #PROGRESS
+}
+Recommendation : Decimal(5,2);

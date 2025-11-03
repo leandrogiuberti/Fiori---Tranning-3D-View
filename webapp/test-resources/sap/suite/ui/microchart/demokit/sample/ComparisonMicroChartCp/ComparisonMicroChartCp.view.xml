@@ -1,0 +1,16 @@
+<mvc:View
+	controllerName="sap.suite.ui.microchart.sample.ComparisonMicroChartCp.ComparisonMicroChartCp"
+	xmlns="sap.suite.ui.microchart"
+	xmlns:mvc="sap.ui.core.mvc">
+	<ComparisonMicroChart size="M" scale="M" class="sapUiSmallMargin" press="press" shrinkable="true"
+		colorPalette="Sequence1,Sequence2,Sequence3,Sequence4,Sequence5,Sequence6,Sequence7,Sequence8,Sequence9,Sequence10,Sequence11">
+		<data>
+			<ComparisonMicroChartData	title="Americas" value="10"/>
+			<ComparisonMicroChartData	title="EMEA" value="50"/>
+			<ComparisonMicroChartData	title="APAC" value="-20"/>
+			<ComparisonMicroChartData	title="LTA" value="60"/>
+			<ComparisonMicroChartData	title="ALPS" value="-20"/>
+			<ComparisonMicroChartData	title="Australia" value="55"/>
+		</data>
+	</ComparisonMicroChart>
+</mvc:View>

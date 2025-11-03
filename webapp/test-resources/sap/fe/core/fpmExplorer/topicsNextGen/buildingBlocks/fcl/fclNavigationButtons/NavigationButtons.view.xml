@@ -1,0 +1,31 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:f="sap.f"
+	controllerName="sap.fe.core.rootView.Fcl"
+>
+	<fpmExplorer:Page
+		title="Flexible Column Layout Actions"
+		documentation="1ba680b7ed6f4b1f8415c0a196264a6c"
+		introduction="The FlexibleColumnLayoutActions building block enables you to render the flexible column layout buttons such as Close, Enter Full Screen, and Exit Full Screen."
+	>
+		<fpmExplorer:sample>
+			<Panel height="600px" class="sapUiSmallMarginBegin sapUiSmallMarginTop sapUiSmallMarginEnd" expanded="true">
+				<f:FlexibleColumnLayout id="appContent" autoFocus="false" />
+			</Panel>
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep text="To use the FlexibleColumnLayoutActions building block, you can include it in your view.">
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="fcl/fclNavigationButtons/Sample.view.xml"
+						codeType="view"
+						start="macros:FlexibleColumnLayoutActions"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

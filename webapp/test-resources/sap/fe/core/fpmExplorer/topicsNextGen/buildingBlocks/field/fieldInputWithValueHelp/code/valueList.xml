@@ -1,0 +1,23 @@
+<Annotations Target="YourEntity/YourProperty">
+	<Annotation Term="Common.ValueList">
+		<Record>
+			<PropertyValue Property="CollectionPath" String="BusinessPartnerAddress" />
+			<PropertyValue Property="Parameters">
+				<Collection>
+					<Record Type="Common.ValueListParameterInOut">
+						<PropertyValue Property="LocalDataProperty" PropertyPath="valueHelpField2_1" />
+						<PropertyValue Property="ValueListProperty" String="BusinessPartner" />
+						<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="FullName" />
+					</Record>
+					<Record Type="Common.ValueListParameterDisplayOnly">
+						<PropertyValue Property="ValueListProperty" String="CityName" />
+						<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+					</Record>
+				</Collection>
+			</PropertyValue>
+		</Record>
+	</Annotation>
+</Annotations>

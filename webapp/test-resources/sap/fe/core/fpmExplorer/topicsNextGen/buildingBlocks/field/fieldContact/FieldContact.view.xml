@@ -1,0 +1,42 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Contact"
+		introduction="The Field building block enables you to render clickable fields that open a contact card."
+		documentation="a6a8c0c4849b483eb10e87f6fdf9383c"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldContact.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Communication.Contact"
+				text="The Communication.Contact describes the contact information."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="../../service/service.cds"
+						start="Communication.Contact : "
+						end="Common.IsNaturalPerson: false"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldContact/code/contactAnnotation.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="DataFieldForAnnotation"
+				text="Define a UI.DataFieldForAnnotation that in turn targets a Communication.Contact."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="FieldGroup #Contact" end="}" />
+					<fpmExplorer:CodeLink file="field/fieldContact/code/contact.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

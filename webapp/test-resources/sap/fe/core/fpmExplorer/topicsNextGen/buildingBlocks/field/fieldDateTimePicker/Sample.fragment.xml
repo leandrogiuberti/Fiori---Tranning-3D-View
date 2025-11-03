@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox
+		binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+		class="sapUiTinyMarginTop"
+		width="320px"
+	>
+		<Title text="Date-Time Picker examples" />
+		<Label text="Reminder:" />
+		<macros:Field metaPath="ReminderTime" id="FieldReminderDateTime" />
+	</VBox>
+</core:FragmentDefinition>

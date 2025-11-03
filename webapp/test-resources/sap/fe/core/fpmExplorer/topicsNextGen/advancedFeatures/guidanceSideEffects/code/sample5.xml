@@ -1,0 +1,14 @@
+<Annotation Term="Common.SideEffects" Qualifier="sourceEntity">
+	<Record Type="Common.SideEffectsType">
+		<PropertyValue Property="SourceEntities">
+			<Collection>
+				<NavigationPropertyPath>items</NavigationPropertyPath>
+			</Collection>
+		</PropertyValue>
+		<PropertyValue Property="TargetProperties">
+			<Collection>
+				<String>totalAmount</String>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

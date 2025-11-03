@@ -1,0 +1,88 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Filter Bar with Parameterized Entity Set"
+		introduction="Parameterized entity sets use parameters to dynamically transform data at runtime, enabling consistent processing of values with different units of measure. For example, a 'Currency' parameter can automatically convert sales amounts stored in various currencies into a single target currency when data is fetched, allowing proper aggregation without altering the original back-end data. When linked to a parameterized entity set, the filter bar automatically adds fields for required parameters."
+		documentation="4bd7590569c74c61a0124c6e370030f6"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarParameterizedWithTable.Sample" type="XML" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Define Parameterized Entity"
+				text="For example, the 'CustomerType' in the following sample code represents the main entity set from which further data needs to be fetched. This has a 'Parameters' navigation entity set defined as well."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarParameterizedWithTable/localService/metadata.xml"
+						codeType="xml"
+						start='Name="CustomerType"'
+						fileName="parameterizedMetadata.xml"
+						end="16"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Define Parameter Entity"
+				text="In the 'CustomerParameters' entity type, you can now find the parameters that need to be supplied with values to access the data from the main parameterized entity set. Note that the 'Partner' term points to 'Parameters' here, which was also the navigation entity set pointing to this 'CustomerParameter' in the main entity type."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarParameterizedWithTable/localService/metadata.xml"
+						codeType="xml"
+						start="CustomerParameters"
+						fileName="parameterizedMetadata.xml"
+						end="13"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Annotate Parameter Entity with ResultContext"
+				text="Furthermore, the parameter entity type is annotated with the 'ResultContext' annotation, indicating that the parent entity set (in our example 'CustomerType') is a parameterized entity set."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarParameterizedWithTable/localService/metadata.xml"
+						codeType="xml"
+						start="ResultContext"
+						fileName="parameterizedMetadata.xml"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Define Entity Set"
+				text="Access the main entity set via the navigation entity set. The 'Customer' entity set corresponds to 'CustomerParameters'."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarParameterizedWithTable/localService/metadata.xml"
+						codeType="xml"
+						start="EntitySet"
+						fileName="parameterizedMetadata.xml"
+						end="4"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Use Parameterized Entity Set"
+				text="Reference the parameterized entity set in your manifest.json using the 'contextPath' property. This enables the filter bar to detect and use the parameters defined in the entity set, automatically adding fields for required parameters such as 'Preferred Currency'. The table will then display data according to the parameter values specified in the filter bar."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarParameterizedWithTable/manifest.json"
+						codeType="manifest"
+						start="contextPath"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

@@ -1,0 +1,235 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.fpmExplorer.fieldMultiValueField.FieldMultiValueField"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+	xmlns:macros="sap.fe.macros"
+	xmlns:table="sap.ui.table"
+	xmlns:rowmodes="sap.ui.table.rowmodes"
+>
+	<fpmExplorer:Page
+		title="Multi-Input Field"
+		introduction="The Field building block enables you to render multi-input fields, which allow users to input more than one value per field. A multi-input field visualizes 1:n relations by turning each related record into a token. It requires a ValueList annotation on the target property to resolve IDs into user-friendly texts and to open a selection dialog."
+		documentation="04ff5b1a81344a8e8169ea99630ff4e5"
+		editMode="true"
+	>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Multi-Input Field as Input Field"
+				text="The property &quot;Name&quot; of the Booking entity is used as multi-input field to show multiple agencies per travel. The property has a ValueList annotation to provide value help and to resolve the agency IDs into user-friendly names. 
+				Selecting agencies from the value help adds tokens referencing the selected agency IDs. The metaPath points to the navigation property to_Booking and the property &quot;Name&quot; within the target entity."
+			>
+				<VBox>
+					<Panel
+						width="auto"
+						class="sapUiResponsiveMargin"
+						binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+					>
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+						<macros:MultiValueField id="BasicMVF" metaPath="to_Booking/Name" readOnly="{= !${ui>/isEditable} }" />
+					</Panel>
+
+					<Panel headerText="Implementation" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/localService/service.cds"
+								start="Name @"
+								end="});"
+								fileName="localService.cds"
+							/>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.view.xml"
+								codeType="view"
+								start="BasicMVF"
+							/>
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Multi-Input Field as ReadOnly Field"
+				text="The multi-input field can be used with or without editing and the corresponding ValueHelp, depending on the attribute 'readOnly'."
+			>
+				<VBox>
+					<Panel
+						headerText="Example"
+						width="auto"
+						class="sapUiResponsiveMargin"
+						binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+					>
+						<macros:MultiValueField id="ReadOnlyMVF" metaPath="to_Booking/Name" readOnly="true" />
+					</Panel>
+					<Panel headerText="Implementation" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.view.xml"
+								codeType="view"
+								start="ReadOnlyMVF"
+							/>
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Multi-Input Field Target via Annotation"
+				text="The MetaPath of the multi-input field points to a DataField within a FieldGroup annotation to demonstrate the reuse of annotation-defined DataField instead of direct property path."
+			>
+				<VBox>
+					<Panel
+						width="auto"
+						class="sapUiResponsiveMargin"
+						binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+					>
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+						<macros:MultiValueField
+							id="DataFieldMVF"
+							metaPath="to_Booking/@com.sap.vocabularies.UI.v1.FieldGroup#Default/Data/0"
+							readOnly="{= !${ui>/isEditable} }"
+						/>
+					</Panel>
+					<Panel headerText="Implementation" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.view.xml"
+								codeType="view"
+								start="DataFieldMVF"
+							/>
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Multi-Input Field filled by JSON Model"
+				text="Demonstrates filling the multi-input field with data from a JSON Model. The JSON Model is created and set to the view in the controller onInit method."
+			>
+				<VBox>
+					<Panel
+						width="auto"
+						class="sapUiResponsiveMargin"
+						binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+					>
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+						<macros:MultiValueField
+							id="JsonModelMVF"
+							metaPath="to_Booking/Name"
+							items="{jsonModel>/Agencies}"
+							readOnly="{= !${ui>/isEditable} }"
+						/>
+					</Panel>
+					<Panel headerText="Implementation" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.view.xml"
+								codeType="view"
+								start="JsonModelMVF"
+							/>
+						</fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.controller.js"
+								start="var jsonModel"
+								end="]);"
+								codeType="ts"
+							/>
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Multi-Input Field in a Table"
+				text="The multi-input field used within a table column to show multiple agencies per travel in a tabular way. Due to performance reasons we strongly recommend adding the multi-input field as an annotation, instead of as a custom column. Adding a building block field or multi-input field to the table as a custom column will generate a ValueHelp for each row. This is only allowed for use cases with a defined and limited number of rows."
+			>
+				<VBox>
+					<Panel
+						width="auto"
+						class="sapUiResponsiveMargin"
+						binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}"
+					>
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Example" level="H6" />
+								<ToolbarSpacer />
+								<Button
+									text="{= ${ui>/isEditable} ? 'Switch to Display Mode' : 'Switch to Edit Mode' }"
+									press=".onToggleEdit"
+								/>
+							</Toolbar>
+						</headerToolbar>
+						<table:Table rows="{/Travel}" class="sapUiMediumMarginTop" id="TravelTable">
+							<table:columns>
+								<table:Column width="4em">
+									<Label text="ID" />
+									<table:template>
+										<Text text="{TravelID}" />
+									</table:template>
+								</table:Column>
+								<table:Column>
+									<Label text="Description" />
+									<table:template>
+										<Text text="{Description}" />
+									</table:template>
+								</table:Column>
+								<table:Column>
+									<Label text="Agencies" />
+									<table:template>
+										<macros:MultiValueField
+											id="CustomColumnMVF"
+											metaPath="to_Booking/Name"
+											readOnly="{= !${ui>/isEditable} }"
+										/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+							<table:rowMode>
+								<rowmodes:Auto maxRowCount="6" />
+							</table:rowMode>
+						</table:Table>
+					</Panel>
+					<Panel headerText="Implementation" width="auto" class="sapUiResponsiveMargin">
+						<fpmExplorer:CodeBlock>
+							<fpmExplorer:CodeLink
+								file="field/fieldMultiValueField/FieldMultiValueField.view.xml"
+								codeType="view"
+								start="table:Column"
+								end="23"
+							/>
+						</fpmExplorer:CodeBlock>
+					</Panel>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

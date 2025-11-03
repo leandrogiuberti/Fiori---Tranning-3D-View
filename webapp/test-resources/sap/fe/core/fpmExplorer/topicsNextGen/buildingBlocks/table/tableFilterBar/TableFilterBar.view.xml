@@ -1,0 +1,33 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Usage with Filter Bar"
+		introduction="Linking the Table building block to the FilterBar building block enables you to render a filter bar for the table."
+		documentation="3801656db27b4b7a9099b6ed5fa1d769"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.tableFilterBar.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="You can connect the Table with a Filter Bar by using the 'filterBar' property of the Table building block. You need to provide the ID of the Filter Bar. This ID can be a local or a global one."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableFilterBar/Sample.fragment.xml"
+						codeType="view"
+						start="macros:FilterBar"
+						end="9"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

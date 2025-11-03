@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox>
+		<macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields" id="FilterBar" />
+		<macros:Table metaPath="@com.sap.vocabularies.UI.v1.LineItem" id="LineItemTable" filterBar="FilterBar" initialLoad="true" />
+	</VBox>
+</core:FragmentDefinition>

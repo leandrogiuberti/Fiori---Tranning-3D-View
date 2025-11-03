@@ -1,0 +1,7 @@
+<Annotations Target="Service.RootEntity">
+	<Annotation Term="UI.MediaResource">
+		<Record Type="UI.MediaResourceType">
+			<PropertyValue Property="Stream" Path="file" />
+		</Record>
+	</Annotation>
+</Annotations>

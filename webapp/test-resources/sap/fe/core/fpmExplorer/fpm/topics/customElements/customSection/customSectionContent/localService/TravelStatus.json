@@ -1,0 +1,26 @@
+[
+	{
+		"code": "O",
+		"name": "Open",
+		"descr": "Open",
+		"fieldControl": 7,
+		"createDeleteHidden": false,
+		"insertDeleteRestriction": true
+	},
+	{
+		"code": "A",
+		"name": "Accepted",
+		"descr": "Accepted",
+		"fieldControl": 1,
+		"createDeleteHidden": true,
+		"insertDeleteRestriction": false
+	},
+	{
+		"code": "X",
+		"name": "Canceled",
+		"descr": "Canceled",
+		"fieldControl": 7,
+		"createDeleteHidden": true,
+		"insertDeleteRestriction": false
+	}
+]

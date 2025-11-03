@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:macros="sap.fe.macros" xmlns:ce="sap.ui.codeeditor">
+	<Panel>
+		<Panel
+			id="FilterBarParametrizedWithTable"
+			controllerName="sap.fe.core.fpmExplorer.filterBarParameterizedWithTable.FilterBarParameterizedWithTable"
+			width="825px"
+		>
+			<macros:FilterBar
+				metaPath="@com.sap.vocabularies.UI.v1.SelectionFields"
+				id="FilterBar"
+				showMessages="{fbConditions>/showMessageDialog}"
+				search=".handlers.onFiltersChanged"
+			/>
+			<macros:Table
+				id="LineItemTable"
+				filterBar="FilterBar"
+				metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+				readOnly="true"
+				enableAutoColumnWidth="true"
+				widthIncludingColumnHeader="true"
+			/>
+		</Panel>
+		<Panel expanded="{fbConditions>/expanded}" height="auto" headerText="Conditions from Filter Bar" expandable="true">
+			<FlexBox direction="Column" fitContainer="true" justifyContent="Start">
+				<ce:CodeEditor
+					height="15rem"
+					id="filtersDisplay"
+					type="json"
+					lineNumbers="false"
+					value="{fbConditions>/allFilters}"
+					editable="false"
+				>
+					<ce:layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="1" />
+					</ce:layoutData>
+				</ce:CodeEditor>
+			</FlexBox>
+			<layoutData>
+				<FlexItemData growFactor="1" shrinkFactor="1" />
+			</layoutData>
+		</Panel>
+	</Panel>
+</core:FragmentDefinition>

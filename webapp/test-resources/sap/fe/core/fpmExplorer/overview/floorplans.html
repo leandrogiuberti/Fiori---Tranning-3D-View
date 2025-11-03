@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>SAP Fiori Elements Floorplans</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://ui5.sap.com/resources/sap/ui/core/themes/sap_fiori_3/library.css" />
+		<script src="https://ui5.sap.com/resources/sap-ui-core.js"></script>
+		<style>
+			body {
+				font-family: "72", Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				gap: 20px;
+				padding: 20px;
+			}
+			.container > h2:first-of-type {
+				margin-bottom: 0px;
+				font-size: 2.5rem;
+			}
+			.container > h3 {
+				margin-bottom: 6px;
+			}
+			.section2 {
+				width: 100%;
+				box-sizing: border-box;
+			}
+			.section2 {
+				width: calc(50% - 10px);
+				padding: 20px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				background-color: #f9f9f9;
+				text-align: center;
+			}
+			.section2 h2 {
+				color: #000000;
+			}
+			.section2 h3 {
+				margin-bottom: 1px;
+			}
+			.row {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				width: 100%;
+			}
+			.card2 {
+				width: 150px;
+				height: 200px;
+				background-color: #f9f9f9;
+				border-radius: 8px;
+				text-align: center;
+				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 2px;
+			}
+			.card2 img {
+				width: 250px;
+				height: 178px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- <h2 style="text-align: center">Introduction</h2>
+			<p style="text-align: center">
+				SAP Fiori elements empowers you to effectively develop scalable, efficient, and modern applications that align with SAP's
+				design principles and user-centric approach.
+			</p> -->
+
+			<!-- Diagram -->
+			<div class="row">
+				<!-- Section 2: Predefined Pages -->
+				<div class="section2">
+					<h2>Floorplans</h2>
+					<div class="row">
+						<div class="card2">
+							<img src="images/ListReport_Floorplan.svg" alt="List Report" />
+						</div>
+					</div>
+					<p style="text-align: left">
+						Predefined layouts of building blocks are provided as floorplans to enable efficient SAP Fiori elements application
+						development. These floorplans inherit all the qualities of their building blocks while adding optimizations for
+						component interaction at the floorplan level.
+					</p>
+					<h4 style="text-align: left">When to Use</h4>
+					<ul style="text-align: left; padding-left: 20px">
+						<li>The most efficient approach for building your SAP Fiori elements application.</li>
+						<li>For specific deviations, you can leverage the extension points provided by SAP Fiori elements.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- <script src="introduction.js"></script> -->
+	</body>
+</html>

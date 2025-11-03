@@ -1,0 +1,30 @@
+{
+	"sample": {
+		"type": "Component",
+		"id": "sample",
+		"name": "sap.fe.templates.ObjectPage",
+		"options": {
+			"settings": {
+				"contextPath": "/Travel",
+				"controlConfiguration": {
+					"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+						"columns": {
+							"CustomColumnOnObjectPage": {
+								"header": "{i18n>bookingProcess}",
+								"width": "15em",
+								"importance": "High",
+								"horizontalAlign": "Left",
+								"position": {
+									"placement": "After",
+									"anchor": "DataField::ConnectionID"
+								},
+								"template": "sap.fe.core.fpmExplorer.CustomColumn",
+								"availability": "Default"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

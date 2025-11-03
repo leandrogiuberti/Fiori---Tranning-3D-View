@@ -1,0 +1,171 @@
+<mvc:View height="100%" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap">
+	<uxap:ObjectPageLayout
+		id="portalObjectPage"
+		showTitleInHeaderContent="true"
+		showHeaderContent="true"
+		upperCaseAnchorBar="false"
+		enableLazyLoading="false"
+	>
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<Title text="Using the SAP Fiori Development Portal" level="H1" />
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<Title text="Using the SAP Fiori Development Portal" level="H2" />
+				</uxap:snappedHeading>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+
+		<uxap:headerContent>
+			<VBox>
+				<Text
+					text="Welcome to the SAP Fiori development portal, your go-to destination for building and enhancing SAP Fiori elements for OData V4 applications. Whether you use the floorplans or custom pages provided by SAP Fiori elements, this portal provides the tools and resources to help you create, modify, and share applications effectively."
+				/>
+			</VBox>
+		</uxap:headerContent>
+
+		<uxap:sections>
+			<!-- Explore the Portal Section -->
+			<uxap:ObjectPageSection id="explorePortalSection" title="Explore the SAP Fiori Development Portal" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text
+									text="Discover all available building blocks and floorplans provided by SAP Fiori elements in our SAP Fiori development portal, designed to help you build SAP Fiori elements applications efficiently."
+								/>
+								<Text
+									text="Explore sample implementations, review our documentation, and learn how to apply everything in your own applications."
+									class="sapUiSmallMarginTop"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<!-- Show Code Editor Section -->
+			<uxap:ObjectPageSection id="showCodeEditorSection" title="Work with the Code" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text
+									text="You can view and edit the sample code by clicking the &quot;Show Code&quot; button in the top right corner of the page."
+								/>
+								<Text
+									text="Alternatively, use the &quot;Show Code&quot; button below a code snippet to instantly navigate to the relevant code lines in the editor which is a convenient way to jump straight to the code you want to explore."
+									class="sapUiSmallMarginTop"
+								/>
+								<Image
+									src="images/ShowCode.gif"
+									alt="Show Code demonstration"
+									class="sapUiResponsiveMargin"
+									densityAware="false"
+									width="75%"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<!-- Live Reload Section -->
+			<uxap:ObjectPageSection id="liveReloadSection" title="Use Live Preview" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text text="You can adapt the sample code and will directly see how this looks in the app." />
+								<Text
+									text="Simply deactivate the Auto Run flag if you need a little more time to modify the code."
+									class="sapUiSmallMarginTop"
+								/>
+								<Image
+									src="images/ShowCodeChange.gif"
+									alt="Auto Reload demonstration"
+									class="sapUiResponsiveMargin"
+									densityAware="false"
+									width="75%"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<!-- Download Sample Files Section -->
+			<!-- uxap:ObjectPageSection id="downloadSampleSection" title="Download Sample Files and Playground Project" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text
+									text="You can download all the files shown in the code editor together by using the corresponding menu button."
+								/>
+								<Text
+									text="Some samples can also be downloaded as a playground project for running the app in standalone mode."
+									class="sapUiSmallMarginTop"
+								/>
+
+								<Image
+									src="images/Download.jpg"
+									alt="Download functionality demonstration"
+									class="sapUiResponsiveMargin"
+									densityAware="false"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection -->
+
+			<!-- Share Modified Sample Section -->
+			<!-- uxap:ObjectPageSection id="shareModifiedSampleSection" title="Share Modified Sample with a Co-Worker" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text text="The downloaded files.zip archive comprises all the changes you have made to the sample code." />
+								<Text
+									text="You can upload this file to restore the sample to its modified state at a later point in time."
+									class="sapUiSmallMarginTop"
+								/>
+
+								<Image
+									src="images/ImportSample.gif"
+									alt="Import sample demonstration"
+									class="sapUiResponsiveMargin"
+									densityAware="false"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection -->
+
+			<!-- Sample Search Section -->
+			<uxap:ObjectPageSection id="sampleSearchSection" title="Search Samples" titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<VBox>
+								<Text
+									text="Can't find what you're looking for? Easily locate the information you need by using the tag-based search functionality."
+								/>
+								<Image
+									src="images/ShowSearch.gif"
+									alt="Search functionality demonstration"
+									class="sapUiResponsiveMargin"
+									densityAware="false"
+									width="75%"
+								/>
+							</VBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

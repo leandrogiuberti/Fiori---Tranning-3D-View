@@ -1,0 +1,36 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Link with URL"
+		introduction="The Field building block enables you to render fields with links."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldLink.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="URL-based Navigation"
+				text="You can add a DataFieldWithUrl annotation for a property and provide a URL. The field will render the value as a link, which navigates to the specified URL."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="FieldGroup #Link" end=";" />
+					<fpmExplorer:CodeLink file="field/fieldLink/code/link.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Intent-based Navigation"
+				text="For intent-based navigation via semantic objects, please refer to the following topic."
+			>
+				<fpmExplorer:Link topic="controllerExtensions/intentBasedNavigation" text="External Navigation" />
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

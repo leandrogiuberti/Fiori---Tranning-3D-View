@@ -1,0 +1,51 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Table File Upload"
+		introduction="The SAP Fiori elements Table building block provides a built-in upload functionality that allows users to upload files to the server."
+		documentation="d59dbec411f04a64bd6d6dda898fdc84"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<macros:Table
+				metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+				id="LineItemTableUpload"
+				class="sapUiSmallNegativeMarginBeginEnd"
+			/>
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="1) Property"
+				text="The entity type must have an Edm.Stream type property that is used to store the uploaded file."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableUpload/localService/service.cds" start="@Core.MediaType  " end="MediaType;" />
+					<fpmExplorer:CodeLink file="table/tableUpload/code/streamProperty.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="2) Line Items"
+				text="The UI.LineItem annotation must contain a reference to the Edm.Stream type property that is used to store the uploaded file."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableUpload/localService/service.cds" start="@(UI.LineItem: [" end="])" />
+					<fpmExplorer:CodeLink file="table/tableUpload/code/lineItems.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="3) Media Resource"
+				text="The entity type must have the UI.MediaResource annotation with the Stream property referencing the Edm.Stream type property that is used to store the uploaded file."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableUpload/localService/service.cds" start="@(UI.MediaResource" />
+					<fpmExplorer:CodeLink file="table/tableUpload/code/mediaResource.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

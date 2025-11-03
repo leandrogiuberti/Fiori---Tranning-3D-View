@@ -1,0 +1,6 @@
+<Annotation Term="UI.InputMask" Qualifier="DiscountCode">
+	<Record>
+		<PropertyValue Property="Mask" String="C ***-***-***" />
+		<PropertyValue Property="PlaceholderSymbol" String="_" />
+	</Record>
+</Annotation>

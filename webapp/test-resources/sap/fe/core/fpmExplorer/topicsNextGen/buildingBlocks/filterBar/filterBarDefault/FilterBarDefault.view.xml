@@ -1,0 +1,42 @@
+<mvc:View
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page
+		title="Filter Bar"
+		introduction="The filter bar enables users to set criteria that limit the data loaded and displayed in a table."
+		documentation="78386110817d43978ffd6988d1704e38"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarDefault.Sample" type="XML" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Define Filter Fields"
+				text="Use the following annotation to define the filters shown in the filter bar. The Search and Editing Status are out-of-the-box filters that appear if the entities are searchable and draft is enabled, respectively."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" codeType="cds" start="annotate Travel with @(UI" end="8" />
+					<fpmExplorer:CodeLink file="filterBar/filterBarDefault/code/selectionFields.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Connect Filter Bar to Table"
+				text="Connect the Filter Bar to a Table using the 'filterBar' property of the Table building block. Provide the ID of the Filter Bar, which can be either a local or global ID."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="filterBar/filterBarDefault/Sample.fragment.xml"
+						codeType="view"
+						start="macros:FilterBar"
+						end="3"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

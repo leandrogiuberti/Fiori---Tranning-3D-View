@@ -1,0 +1,30 @@
+{
+    "changes": [
+        {
+            "changeType": "addLink",
+            "reference": "applicationUnderTest",
+            "namespace": "apps/applicationUnderTest/changes/",
+            "creation": "2025-02-24T09:04:51.763Z",
+            "projectId": "applicationUnderTest",
+            "packageName": "$TMP",
+            "support": {
+                "user": "DEFAULT_USER",
+                "sapui5Version": "1.124.10"
+            },
+            "originalLanguage": "EN",
+            "layer": "USER",
+            "fileType": "change",
+            "fileName": "id_1740387891759_134_addLink",
+            "content": {
+                "visible": true,
+                "key": "applicationUnderTest_SemanticObjectCategory-action_03"
+            },
+            "texts": {},
+            "selector": {
+                "id": "sapuicompnavpopoverNavigationPopover---applicationUnderTest_SemanticObjectCategory",
+                "idIsLocal": true
+            },
+            "dependentSelector": {}
+        }
+    ]
+}

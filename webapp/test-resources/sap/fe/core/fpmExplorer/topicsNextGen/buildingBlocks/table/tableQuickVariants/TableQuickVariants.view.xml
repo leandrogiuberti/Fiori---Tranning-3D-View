@@ -1,0 +1,58 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Quick Variant Selection"
+		introduction="Quick variant selection provides segmented buttons in the toolbar to enable switching between the table content using a selection presentation variant annotation."
+		documentation="5532c899e6e94137b18b8ee68df12efb"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.tableQuickVariants.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Enabling Quick Variant Selection"
+				text="You can enable quick variant selection in your table by using the 'quickVariantSelection' aggregation of the table macro. This allows you to define a set of selection presentation variants that users can switch between."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableQuickVariants/Sample.fragment.xml"
+						codeType="view"
+						start="macros:Table"
+						end="9"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Enabling through Manifest"
+				text="If you want to enable quick variant selection to your object page table rendered through UI.Facet annotations, you can use the 'quickVariantSelection' property in the controlConfiguration section of the respective UI.LineItem."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="table/tableQuickVariants/code/quickVariantSelection.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Defining Selection Presentation Variants"
+				text="You can define selection presentation variants by using the UI.SelectionPresentationVariant in your CDS service. The selection presentation variants point to UI.SelectionVariant and UI.PresentationVariant annotations. These selection presentation variants will be used by the quick variant selection control to switch between different views of the table content."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="table/tableQuickVariants/localService/service.cds"
+						fileName="quickVariants.cds"
+						codeType="cds"
+						start="PresentationVariant"
+						end="35"
+					/>
+					<fpmExplorer:CodeLink file="table/tableQuickVariants/code/selectionPresentationVariant.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

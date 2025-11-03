@@ -1,0 +1,40 @@
+{
+    "explored": {
+        "entitiesDefaults": {
+            "appComponent": "HAN-AS-INA-UI",
+            "formFactors": "ML"
+        },
+        "samplesRef": {
+            "namespace": "sap.esh.search.ui.sample",
+            "ref": "test-resources/sap/esh/search/ui/demokit/sample"
+        },
+        "entities": [
+            {
+                "id": "sap.esh.search.ui.SearchLink",
+                "name": "Search Link",
+                "category": "Display",
+                "since": "1.140",
+                "samples": ["sap.esh.search.ui.sample.SearchLink"]
+            },
+            {
+                "id": "sap.esh.search.ui.SearchText",
+                "name": "Search Text",
+                "category": "Display",
+                "since": "1.140",
+                "samples": ["sap.esh.search.ui.sample.SearchText"]
+            }
+        ],
+        "samples": [
+            {
+                "id": "sap.esh.search.ui.sample.SearchLink",
+                "name": "SearchLink",
+                "description": "<code>SearchLink</code> used to display a link to a search result"
+            },
+            {
+                "id": "sap.esh.search.ui.sample.SearchText",
+                "name": "SearchText",
+                "description": "<code>SearchText</code> used to display a text that is a link to a search result"
+            }
+        ]
+    }
+}

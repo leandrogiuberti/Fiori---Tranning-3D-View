@@ -1,0 +1,12 @@
+<Annotation Term="UI.FieldGroup" Qualifier="Contact">
+	<Record Type="UI.FieldGroupType">
+		<PropertyValue Property="Data">
+			<Collection>
+				<Record Type="UI.DataFieldForAnnotation">
+					<PropertyValue Property="Target" AnnotationPath="@Communication.Contact" />
+					<PropertyValue Property="Label" String="Contact" />
+				</Record>
+			</Collection>
+		</PropertyValue>
+	</Record>
+</Annotation>

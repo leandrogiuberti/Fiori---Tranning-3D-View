@@ -1,0 +1,100 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    height="100%"
+    controllerName="sap.ushell.demo.HomeApp.Main" >
+    <Page
+        id="mainPage"
+        showHeader="false"
+        backgroundDesign="Transparent" >
+        <content>
+            <VBox
+                id="mainContent"
+                alignItems="Center"
+                justifyContent="Center" >
+                <FormattedText
+                    id="navigationTitle"
+                    htmlText="{/header/navigation}"
+                    class="sapUiResponsiveMargin" />
+                <form:SimpleForm
+                    id="navigationForm"
+                    maxContainerCols="2" >
+                    <Label
+                        id="semanticObjectLabel"
+                        text="{i18n>semanticObject}" />
+                    <Input
+                        id="semanticObjectInput"
+                        type="Text"
+                        value="{/navigation/semanticObject}"
+                        placeholder="Action" />
+                    <Label
+                        id="actionLabel"
+                        text="{i18n>action}" />
+                    <Input
+                        id="actionInput"
+                        value="{/navigation/action}"
+                        type="Text"
+                        placeholder="toappnavsample" />
+                    <Label
+                        id="parametersLabel"
+                        text="{i18n>parameters}" />
+                    <Input
+                        id="parametersInput"
+                        value="{/navigation/parameters}"
+                        type="Text"
+                        placeholder="foo=bar&amp;a=b" />
+                </form:SimpleForm>
+                <Button
+                    id="navigateButton"
+                    text="{i18n>navigation.navigate}"
+                    press=".navToTarget"
+                    class="sapUiResponsiveMargin" />
+                <FormattedText
+                    id="pagesTitle"
+                    htmlText="{/header/pages}"
+                    class="sapUiResponsiveMargin" />
+                <HeaderContainer
+                    id="pagesContainer"
+                    content="{/pages}"
+                    showDividers="false"
+                    width="70vw"
+                    class="sapUiResponsiveMargin" >
+                    <GenericTile
+                        id="pagesGenericTile"
+                        header="{label}"
+                        frameType="OneByHalf"
+                        press=".navToPage" />
+                </HeaderContainer>
+                <FormattedText
+                    id="recentsTitle"
+                    htmlText="{/header/recents}"
+                    class="sapUiResponsiveMargin" />
+                <HeaderContainer
+                    id="recentsContainer"
+                    content="{/recents}"
+                    showDividers="false"
+                    width="70vw"
+                    class="sapUiResponsiveMargin" >
+                    <GenericTile
+                        id="recentsGenericTile"
+                        header="{label}"
+                        frameType="OneByHalf"
+                        press=".navToRecents" />
+                </HeaderContainer>
+                <Panel
+                    id="rtaTestPanel"
+                    headerText="{i18n>rta.panel}" >
+                    <Text
+                        id="rtaTestText"
+                        text="{i18n>rta.text}" />
+                    <Button
+                        id="rtaTestButton"
+                        text="{i18n>rta.button}"
+                        class="sapUiResponsiveMargin" />
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

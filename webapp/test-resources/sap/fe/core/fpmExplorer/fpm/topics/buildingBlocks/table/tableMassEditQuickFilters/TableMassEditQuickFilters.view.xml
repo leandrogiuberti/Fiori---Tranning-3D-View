@@ -1,0 +1,54 @@
+<mvc:View
+	controllerName="sap.fe.core.fpmExplorer.tableMassEditQuickFilters.TableMassEditQuickFilters"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:macrosTable="sap.fe.macros.Table"
+>
+	<!--
+		The contextPath is set to "/RootEntity" - therefore all tables use a relative metaPath to "/RootEntity"
+	-->
+
+	<NavContainer id="wizardNavContainer">
+		<pages>
+			<Page id="mdcTablePageMassEdit">
+				<Panel headerText="{i18n>tableEditFlow}">
+					<macros:Table
+						metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+						id="LineItemTablePageMassEdit"
+						busy="{ui>/isBusy}"
+						enablePaste="true"
+					>
+						<massEdit>
+							<macrosTable:MassEdit visibleFields="BooleanProperty,TagStatus">
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Custom Element">
+											<Text text="This is a custom fragment displayed in the Mass-edit dialog" />
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</macrosTable:MassEdit>
+						</massEdit>
+					</macros:Table>
+				</Panel>
+				<Panel headerText="{i18n>tableQuickFilters}">
+					<macros:Table
+						metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+						id="LineItemTableQuickFilters"
+						busy="{ui>/isBusy}"
+						enablePaste="true"
+					>
+						<macros:quickVariantSelection>
+							<macrosTable:QuickVariantSelection
+								paths="com.sap.vocabularies.UI.v1.SelectionPresentationVariant#All,com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Success"
+								showCounts="true"
+							/>
+						</macros:quickVariantSelection>
+					</macros:Table>
+				</Panel>
+			</Page>
+		</pages>
+	</NavContainer>
+</mvc:View>

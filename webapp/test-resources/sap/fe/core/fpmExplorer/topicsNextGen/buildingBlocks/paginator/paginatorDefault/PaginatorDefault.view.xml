@@ -1,0 +1,52 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.rootView.NavContainer"
+>
+	<fpmExplorer:Page
+		title="Paginator"
+		documentation="997292b38e584e6aa6d848f22e4422fd"
+		introduction="The Paginator building block enables you to render paginator buttons in scenarios where users have to navigate through a list of items."
+	>
+		<fpmExplorer:sample>
+			<NavContainer id="navContainer" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Using the Paginator Building Block"
+				text="To use the Paginator building block, you can include it in your view."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="paginator/paginatorDefault/Sample.view.xml" codeType="view" start="macros:Paginator" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Initialize the Paginator Building Block"
+				text="To use the paginator building block, you need to initialize it in your controller coding and need to define a list binding and current context."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="paginator/paginatorDefault/Paginator.controller.js"
+						codeType="ts"
+						start="this.paginator.initialize"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Update the Page Context"
+				text="Once the user navigates to a new page through the paginator, you need to update the view context to reflect the new page's data."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="paginator/paginatorDefault/Paginator.controller.js"
+						codeType="ts"
+						start="Paginator.override"
+						end="})"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

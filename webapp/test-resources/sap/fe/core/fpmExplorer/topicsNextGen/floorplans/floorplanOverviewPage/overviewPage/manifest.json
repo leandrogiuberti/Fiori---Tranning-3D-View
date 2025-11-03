@@ -1,0 +1,127 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.overviewPage",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/overviewPage/",
+				"type": "OData",
+				"settings": {
+					"annotations": ["localAnnotations"],
+					"odataVersion": "4.0"
+				}
+			},
+			"localAnnotations": {
+				"uri": "localService/localAnnotations.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/localAnnotations.xml"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": true,
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.m": {
+					"lazy": false
+				},
+				"sap.ui.core": {
+					"lazy": false
+				},
+				"sap.fe.templates": {
+					"lazy": false
+				},
+				"sap.ovp": {
+					"lazy": false
+				},
+				"sap.ui.rta": {
+					"lazy": false
+				},
+				"sap.ui.layout": {
+					"lazy": false
+				}
+			}
+		},
+		"extends": {
+			"component": "sap.ovp.app",
+			"minVersion": "1.32.0",
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"mainModel": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.overviewPage.OverviewPage"
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"controlId": "overviewPage"
+			},
+			"routes": [],
+			"targets": {}
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "mainModel",
+		"globalFilterEntityType": "Travel",
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"considerAnalyticalParameters": false,
+		"cards": {
+			"card_06_v4": {
+				"model": "mainModel",
+				"template": "sap.ovp.cards.v4.list",
+				"settings": {
+					"title": "{{LIST_CARD_METADATA_ANNOTATIONS}}",
+					"subTitle": "{{COMMON_LIST_CARD_SUBTITLE_V4}}",
+					"entitySet": "Travel",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+					"dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint"
+				}
+			},
+			"card_07_v4": {
+				"model": "mainModel",
+				"template": "sap.ovp.cards.v4.charts.analytical",
+				"settings": {
+					"title": "{{MOST_POPULAR_PRODUCTS_ANALYTICAL_CARD}}",
+					"dynamicSubtitleAnnotationPath": "com.sap.vocabularies.UI.v1.HeaderInfo#dynamicSubtitle",
+					"entitySet": "Travel",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#donutchart",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#AllActualCosts",
+					"value": "KPI Annotation",
+					"navigation": "noHeaderNav"
+				}
+			}
+		},
+		"globalFilterControlType": "MacroFilterBar",
+		"useDateRangeType": true,
+		"chartSettings": {}
+	}
+}

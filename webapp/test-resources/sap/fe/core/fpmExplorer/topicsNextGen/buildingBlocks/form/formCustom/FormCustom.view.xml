@@ -1,0 +1,45 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Form Extensions"
+		introduction="Form extensions enable you to define custom inline fields and extend your forms."
+		documentation="4e49753530ad4a73a44a5f8efac238d6"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.formCustom.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Add Further Properties"
+				text="You can add further properties to your form by using the FormElement macro. The placement and anchor attributes define where the new element will be added."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="form/formCustom/Sample.fragment.xml" codeType="view" start="formElementMacroID" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Add Custom Form Elements"
+				text="You can also add custom form elements to your form. In this example, a slider is added as a custom field."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="form/formCustom/Sample.fragment.xml" codeType="view" start="customSlider" end="6" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Add Elements through Manifest"
+				text="If you want to add elements to your object page form rendered through UI.Facet annotations, you can use the 'fields' property in the controlConfiguration section of the respective UI.FieldGroup."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="form/formCustom/code/FormElements.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

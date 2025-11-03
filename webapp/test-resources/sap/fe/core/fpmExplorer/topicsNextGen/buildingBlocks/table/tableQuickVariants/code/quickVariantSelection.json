@@ -1,0 +1,27 @@
+{
+	"sample": {
+		"type": "Component",
+		"id": "sample",
+		"name": "sap.fe.templates.ObjectPage",
+		"options": {
+			"settings": {
+				"contextPath": "/Travel",
+				"controlConfiguration": {
+					"to_Booking/@com.sap.vocabularies.UI.v1.LineItem": {
+						"quickVariantSelection": {
+							"paths": [
+								{
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#All"
+								},
+								{
+									"annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#Approved"
+								}
+							],
+							"showCounts": true
+						}
+					}
+				}
+			}
+		}
+	}
+}

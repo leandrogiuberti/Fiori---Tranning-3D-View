@@ -1,0 +1,13 @@
+<Annotation Term="UI.LineItem">
+	<Collection>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="ID" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="Title" />
+		</Record>
+		<Record Type="UI.DataField">
+			<PropertyValue Property="Value" Path="Description" />
+		</Record>
+	</Collection>
+</Annotation>

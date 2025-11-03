@@ -1,0 +1,38 @@
+<mvc:View
+	id="application-product"
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	xmlns:l="sap.ui.layout"
+>
+	<macros:Page title="Page title" description="Page description" avatarSrc="sap-icon://page">
+		<Panel headerText="First content" id="firstContent">
+			<l:HorizontalLayout
+				id="TileContainerExpanded"
+				allowWrapping="true"
+				content="{
+        			path : '/Travel',
+        			filters : [
+            			{ path : 'TravelStatus_code', operator : 'EQ', value1 : 'O'}
+        			]
+    			}"
+			>
+				<GenericTile
+					header="{Description}"
+					subheader="{BeginDate}"
+					press="onPressed"
+					class="sapUiTinyMarginEnd sapUiTinyMarginTop tileLayout"
+				>
+					<TileContent unit="{CurrencyCode_code}">
+						<NumericContent withMargin="false" value="{TotalPrice}" truncateValueTo="6" />
+					</TileContent>
+				</GenericTile>
+			</l:HorizontalLayout>
+		</Panel>
+		<Panel headerText="Second content" id="secondContent">
+			<macros:Table metaPath="/Travel/@com.sap.vocabularies.UI.v1.LineItem" />
+		</Panel>
+	</macros:Page>
+</mvc:View>

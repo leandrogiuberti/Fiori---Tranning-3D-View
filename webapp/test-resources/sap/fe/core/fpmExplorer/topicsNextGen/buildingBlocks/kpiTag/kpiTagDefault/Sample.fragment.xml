@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<FlexBox direction="Column" gap="1rem" binding="{path:'/Travel(\'52657221A8E4645C17002DF03754AB66\')'}">
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Success" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="mySuccessKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Success" />
+		</FlexBox>
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Error" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="myErrorKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Error" />
+		</FlexBox>
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Warning" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="myWarningKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Warning" />
+		</FlexBox>
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Information" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="myInformationKPI" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Information" />
+		</FlexBox>
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Showing icon" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="myWarningKPIWithIcon" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Warning" showIcon="true" />
+		</FlexBox>
+		<FlexBox alignItems="Center" justifyContent="Start">
+			<Label text="Handling press event" class="sapUiSmallMarginEnd" />
+			<macros:KPITag id="myErrorWithPress" number="{TotalPrice}" unit="{CurrencyCode_code}" status="Error" press=".onKPIPressed" />
+		</FlexBox>
+	</FlexBox>
+</core:FragmentDefinition>

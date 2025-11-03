@@ -1,0 +1,19 @@
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<Annotation Term="Analytics.AggregatedProperty" Qualifier="min">
+		<Record Type="Analytics.AggregatedPropertyType">
+			<PropertyValue Property="Name" String="minPricing" />
+			<PropertyValue Property="AggregationMethod" String="min" />
+			<PropertyValue Property="AggregatableProperty" PropertyPath="ChildPrice" />
+			<Annotation Term="Common.Label" String="Minimum child Price" />
+		</Record>
+	</Annotation>
+
+	<Annotation Term="Analytics.AggregatedProperty" Qualifier="max">
+		<Record Type="Analytics.AggregatedPropertyType">
+			<PropertyValue Property="Name" String="maxPricing" />
+			<PropertyValue Property="AggregationMethod" String="max" />
+			<PropertyValue Property="AggregatableProperty" PropertyPath="ChildPrice" />
+			<Annotation Term="Common.Label" String="Maximum Child Price" />
+		</Record>
+	</Annotation>
+</Schema>

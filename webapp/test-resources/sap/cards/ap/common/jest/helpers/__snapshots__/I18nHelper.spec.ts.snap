@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolvei18nTextsForIntegrationCard resolvei18nTextsForIntegrationCard: return updated value of manifest with resolved i18n texts  1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "description": "Description of an Object Card",
+    "i18n": "",
+    "id": "objectCard",
+    "subTitle": "Display Settlement Dates",
+    "title": "Display Settlement Dates",
+    "type": "card",
+  },
+  "sap.card": {
+    "configuration": {
+      "parameters": {
+        "_adaptiveFooterActionParameters": {
+          "C_PerformRenewal": {
+            "actionParameters": [
+              {
+                "configuration": {
+                  "entitySet": "ContractTermRenewals",
+                  "serviceUrl": "/sap/opu/odata/sap/SD_SALESPLAN/ContractTermRenewals?$select=REContractRenewalDecision,REContractRenewalDecision_Text",
+                  "title": "\${REContractRenewalDecision}",
+                  "value": "\${REContractRenewalDecision_Text}",
+                },
+                "errorMessage": "This field is required",
+                "id": "REContractRenewalDecision",
+                "isRequired": true,
+                "label": "Approved/Rejected",
+                "placeholder": "Please enter a value",
+              },
+              {
+                "errorMessage": "This field is required",
+                "id": "REContractRenewalDecisionDate",
+                "isRequired": true,
+                "label": "Decided On",
+                "placeholder": "",
+              },
+              {
+                "errorMessage": "",
+                "id": "REContractRenewalIsActive",
+                "isRequired": false,
+                "label": "Renewal Active",
+                "placeholder": "",
+              },
+            ],
+            "data": {
+              "actionParams": {
+                "keys": [
+                  "REContractRenewalDecision",
+                  "REContractRenewalDecisionDate",
+                  "REContractRenewalIsActive",
+                ],
+              },
+              "contextURL": "http://localhost:8080/sap/opu/odata/sap/SD_SALESPLAN/C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "",
+            "label": "Perform Renewal",
+            "parameters": {},
+            "style": "default",
+            "triggerActionText": "OK",
+            "verb": "C_PerformRenewal",
+          },
+          "C_SalesPlanTPCopy": {
+            "actionParameters": [],
+            "data": {
+              "actionParams": {
+                "keys": [
+                  "SalesPlanUUID",
+                  "IsActiveEntity",
+                ],
+              },
+              "contextURL": "http://localhost:8080/sap/opu/odata/sap/SD_SALESPLAN/C_SalesPlanTP(SalesPlanUUID=guid'42f2e9af-c3df-1ee9-a0bb-0d6579917880',IsActiveEntity=true)",
+              "isConfirmationRequired": false,
+            },
+            "enablePath": "Copy_ac",
+            "label": "Copy to New Version",
+            "parameters": {
+              "IsActiveEntity": true,
+              "SalesPlanUUID": "42f2e9af-c3df-1ee9-a0bb-0d6579917880",
+            },
+            "style": "default",
+            "triggerActionText": "OK",
+            "verb": "C_SalesPlanTPCopy",
+          },
+        },
+        "_noText": {
+          "type": "string",
+          "value": "No",
+        },
+        "_yesText": {
+          "type": "string",
+          "value": "Yes",
+        },
+        "footerActionParameters": {
+          "C_PerformRenewal": {},
+          "C_SalesPlanTPCopy": {
+            "IsActiveEntity": true,
+            "SalesPlanUUID": "42f2e9af-c3df-1ee9-a0bb-0d6579917880",
+          },
+        },
+      },
+    },
+    "content": {
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "Activation Status",
+              "name": "CndnContrActvtnStatusName",
+              "value": "Condition Control Activation Status",
+            },
+            {
+              "label": "Process Category",
+              "name": "CndnContrProcessCategoryDesc",
+              "value": "Condition Control Process Category Description",
+            },
+          ],
+          "title": "Group 1",
+        },
+        {
+          "items": [
+            {
+              "label": "Sales Organization Description",
+              "name": "SalesOrganizationName",
+              "value": "Sales Organization Name",
+            },
+            {
+              "label": "Short Description",
+              "name": "CndnContrPrtlSettlmtCatName",
+              "value": "Condition Control Settlement Category Name",
+            },
+          ],
+          "title": "Group 2",
+        },
+      ],
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "footer": {
+      "actionsStrip": [
+        {
+          "actions": [
+            {
+              "enabled": "\${Copy_ac}",
+              "parameters": "{{parameters.footerActionParameters.C_SalesPlanTPCopy}}",
+              "type": "custom",
+            },
+          ],
+          "buttonType": "Default",
+          "text": "Copy to New Version",
+          "type": "Button",
+          "visible": false,
+        },
+        {
+          "actions": [
+            {
+              "enabled": "true",
+              "parameters": "{{parameters.footerActionParameters.C_PerformRenewal}}",
+              "type": "custom",
+            },
+          ],
+          "buttonType": "Default",
+          "text": "Perform Renewal",
+          "type": "Button",
+          "visible": false,
+        },
+      ],
+    },
+    "header": {
+      "data": {
+        "path": "/content/",
+      },
+      "mainIndicator": {
+        "number": "500",
+        "unit": "USD",
+      },
+      "subTitle": "Header Subtitle",
+      "title": "Header Title",
+      "type": "Numeric",
+      "unitOfMeasurement": "{CndnContrTypeDesc}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "objectCard",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "",
+    },
+  },
+}
+`;
+
+exports[`resolvei18nTextsForIntegrationCard resolvei18nTextsForIntegrationCard: return updated value of manifest without resolving i18n texts  1`] = `
+{
+  "_version": "1.15.0",
+  "sap.app": {
+    "applicationVersion": {
+      "version": "1.0.0",
+    },
+    "description": "Description of an Object Card",
+    "i18n": "",
+    "id": "objectCard",
+    "subTitle": "APP_SUBTITLE",
+    "title": "APP_TITLE",
+    "type": "card",
+  },
+  "sap.card": {
+    "content": {
+      "groups": [
+        {
+          "items": [
+            {
+              "label": "{GROUP_1_LABEL_1}",
+              "name": "CndnContrActvtnStatusName",
+              "value": "{GROUP_1_VALUE_1}",
+            },
+            {
+              "label": "{GROUP_1_LABEL_2}",
+              "name": "CndnContrProcessCategoryDesc",
+              "value": "{GROUP_1_VALUE_2}",
+            },
+          ],
+          "title": "{GROUP_TITLE_1}",
+        },
+        {
+          "items": [
+            {
+              "label": "{GROUP_2_LABEL_1}",
+              "name": "SalesOrganizationName",
+              "value": "{GROUP_2_VALUE_1}",
+            },
+            {
+              "label": "{GROUP_2_LABEL_2}",
+              "name": "CndnContrPrtlSettlmtCatName",
+              "value": "{GROUP_2_VALUE_2}",
+            },
+          ],
+          "title": "{GROUP_TITLE_2}",
+        },
+      ],
+    },
+    "extension": "module:sap/cards/ap/common/extensions/BaseIntegrationCardExtension",
+    "header": {
+      "data": {
+        "path": "/content/",
+      },
+      "mainIndicator": {
+        "number": "NUMBER",
+        "unit": "UNIT",
+      },
+      "subTitle": "HEADER_SUBTITLE",
+      "title": "HEADER_TITLE",
+      "type": "Numeric",
+      "unitOfMeasurement": "{CndnContrTypeDesc}",
+    },
+    "type": "Object",
+  },
+  "sap.insights": {
+    "cardType": "LEAN_DT",
+    "parentAppId": "objectCard",
+    "templateName": "ObjectPage",
+    "versions": {
+      "ui5": "",
+    },
+  },
+}
+`;

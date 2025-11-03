@@ -1,0 +1,4 @@
+<Annotations Target="TravelService.Travel/FlightPrice">
+	<Annotation Term="Measures.ISOCurrency" Path="CurrencyCode" />
+	<Annotation Term="Common.Label" String="Flight Price" />
+</Annotations>

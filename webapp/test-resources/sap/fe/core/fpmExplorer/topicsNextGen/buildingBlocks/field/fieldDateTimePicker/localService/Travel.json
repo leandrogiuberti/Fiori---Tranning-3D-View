@@ -1,0 +1,17 @@
+[
+	{
+		"TravelUUID": "52657221A8E4645C17002DF03754AB66",
+		"TravelID": "00000001",
+		"BeginDate": "2023-08-04",
+		"EndDate": "2023-08-04",
+		"BookingFee": "20.00",
+		"TotalPrice": "900.00",
+		"CurrencyCode_code": "USD",
+		"Description": "Business Trip for Christine, Pierre",
+		"FlightRoute": "2.3522219;48.856614;0; -74.0059731;40.7143528;0",
+		"CityFrom": "Paris",
+		"CityTo": "New York",
+		"TravelStatus_code": "O",
+		"ReminderTime": "2023-08-02T21:45:0Z"
+	}
+]

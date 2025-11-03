@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1" />
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/sap/STTA_PROD_MAN/$metadata">
+		<edmx:Include Alias="STTA_PROD_MAN" Namespace="STTA_PROD_MAN" />
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			
+			<Annotations Target="STTA_PROD_MAN.STTA_C_MP_ProductTextType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Language" />
+							<PropertyValue Property="Value" Path="LanguageForEdit" />
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Name" />
+							<PropertyValue Property="Value" Path="Name" />
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Description" />
+							<PropertyValue Property="Value" Path="Description" />
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium" />
+							<Annotation Term="UI.Hidden" Path="to_Product/TableColumnHidden"/>
+						</Record>
+						<Record Type="UI.DataFieldForAction">
+							<Annotation Term="UI.Hidden" Path="to_Product/TableColumnHidden"/>
+							<PropertyValue Property="Label" String="Copy Text" />
+							<PropertyValue Property="IconUrl" String="sap-icon://copy" />
+							<PropertyValue Property="Action" String="STTA_PROD_MAN.STTA_PROD_MAN_Entities/STTA_C_MP_ProductCopyText" />
+							<PropertyValue Property="Inline" Bool="true" />
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated" />
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High" />
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

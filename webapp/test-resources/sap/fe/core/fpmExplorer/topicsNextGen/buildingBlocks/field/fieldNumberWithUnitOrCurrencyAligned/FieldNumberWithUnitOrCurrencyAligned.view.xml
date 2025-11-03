@@ -1,0 +1,43 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.PageController"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	xmlns:core="sap.ui.core"
+>
+	<fpmExplorer:Page
+		title="Number with Currency or Unit of Measure"
+		introduction="The Field building block enables you to render fields for numbers with a currency or a unit of measure."
+		documentation="c18ada4bc56e427a9a2df2d1898f28a5"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.fieldNumberWithUnitOrCurrencyAligned.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Field with Currency"
+				text="To connect a property with a currency property, define a Measures.ISOCurrency annotation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="../../service/service.cds" start="FlightPrice" />
+					<fpmExplorer:CodeLink file="field/fieldNumberWithUnitOrCurrencyAligned/code/currency.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Field with Unit of Measure"
+				text="To connect a property with a unit property, define a Measures.Unit annotation."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="field/fieldNumberWithUnitOrCurrencyAligned/localService/service.cds"
+						start="Distance"
+						fileName="fieldWithUnitOrCurrency.cds"
+					/>
+					<fpmExplorer:CodeLink file="field/fieldNumberWithUnitOrCurrencyAligned/code/unit.xml" codeType="xml" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

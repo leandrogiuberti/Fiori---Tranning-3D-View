@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`onEntitySetPathChange, onContextPathChange and applyServiceDetails functions of the controller Save and Reopen Scenario and should open the existing entity related data 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": false,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`onEntitySetPathChange, onContextPathChange and applyServiceDetails functions of the controller should apply all the changes 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": false,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": false,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`onEntitySetPathChange, onContextPathChange and applyServiceDetails functions of the controller should change the context path 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+  ],
+  "entitySet": "C_SalesPlanTP",
+  "entitySetWithObjectContext": "C_SalesPlanTP(SalesPlanUUID=guid'fa163e3c-f83d-1ee9-a0a1-8f912f73bf72',IsActiveEntity=false)",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": true,
+  "isContextPathChanged": true,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`onEntitySetPathChange, onContextPathChange and applyServiceDetails functions of the controller should change the entity set path 1`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+  ],
+  "entitySet": "",
+  "entitySetWithObjectContext": "",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": false,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": false,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;
+
+exports[`onEntitySetPathChange, onContextPathChange and applyServiceDetails functions of the controller should change the entity set path 2`] = `
+{
+  "currentService": "/sap/opu/odata/sap/SD_SALESPLAN/",
+  "entities": [
+    {
+      "labelWithValue": "C_SalesPlanTP",
+      "name": "C_SalesPlanTP",
+    },
+    {
+      "labelWithValue": "C_SalesPlanDimnSelectionTP",
+      "name": "C_SalesPlanDimnSelectionTP",
+    },
+  ],
+  "entitySet": "C_SalesOrder",
+  "entitySetWithObjectContext": "",
+  "entitySetWithObjectContextList": [],
+  "isApplyServiceDetailsEnabled": false,
+  "isContextPathChanged": false,
+  "isEntityPathChanged": true,
+  "isServiceDetailsView": true,
+  "serviceDetails": [
+    {
+      "labelWithValue": "/sap/opu/odata/sap/SD_SALESPLAN/",
+      "name": "/sap/opu/odata/sap/SD_SALESPLAN/",
+    },
+  ],
+}
+`;

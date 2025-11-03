@@ -1,0 +1,84 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.fpmExplorer.filterBarPublicAPIs.Sample"
+>
+	<fpmExplorer:Page
+		title="FilterBar APIs"
+		introduction="The FilterBar building block enables you to extend the filter bar using APIs. This includes managing selection variants and controlling the filter field visibility and state."
+		documentation="78386110817d43978ffd6988d1704e38"
+		editMode="true"
+	>
+		<fpmExplorer:sample>
+			<core:Fragment fragmentName="sap.fe.core.fpmExplorer.filterBarPublicAPIs.Sample" type="XML" />
+		</fpmExplorer:sample>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Selection Variant Management"
+				text="You can get and set the selection variant of a filter bar using the APIs provided by the FilterBar building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start="filterBar.getSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start=".setSelectionVariant("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Filter Field Visibility"
+				text="You can show and hide filter fields using the APIs provided by the FilterBar building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start=".getFilterFieldVisible("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start="filterBar.setFilterFieldVisible("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+			<fpmExplorer:ImplementationStep
+				title="Filter Field State"
+				text="You can enable and disable filter fields using the APIs provided by the FilterBar building block."
+			>
+				<VBox>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start="filterBar.setFilterFieldEnabled("
+						/>
+					</fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeBlock>
+						<fpmExplorer:CodeLink
+							file="filterBar/filterBarPublicAPIs/Sample.controller.js"
+							codeType="ts"
+							start="filterBar.getFilterFieldEnabled("
+						/>
+					</fpmExplorer:CodeBlock>
+				</VBox>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

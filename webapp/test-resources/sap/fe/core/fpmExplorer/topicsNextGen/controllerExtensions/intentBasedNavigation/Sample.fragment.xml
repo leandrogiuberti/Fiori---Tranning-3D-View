@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox binding="{path:'/Travel(TravelUUID=\'52657221A8E4645C17002DF03754AB66\',IsActiveEntity=true)'}">
+		<Label text="Using Semantic Object Navigation:" />
+		<!-- Form building block referencing the SemanticObjectNavigation field group -->
+		<macros:Form id="semanticObjectNavigationForm" metaPath="@UI.FieldGroup#SemanticObjectNavigation" />
+
+		<Label text="Using UI.DataFieldWithIntentBasedNavigation:" class="sapUiMediumMarginTop" />
+		<!-- Form building block referencing the IntentBasedNavigation field group -->
+		<macros:Form id="intentBasedNavigationForm" metaPath="@UI.FieldGroup#IntentBasedNavigation" />
+
+		<Label text="Using IntentBasedNavigation Controller Extension:" class="sapUiMediumMarginTop" />
+		<Button text="Navigate to Intent" press=".navigateExternal" />
+	</VBox>
+</core:FragmentDefinition>

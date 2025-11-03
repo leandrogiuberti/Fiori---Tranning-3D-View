@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
+	<VBox fitContainer="true" alignItems="Stretch" alignContent="Stretch" justifyContent="Start" renderType="Div">
+		<macros:Chart
+			id="chartControlLevelVariant"
+			metaPath="/RootEntity/@com.sap.vocabularies.UI.v1.Chart"
+			personalization="Sort,Type,Item"
+			variantManagement="Control"
+		/>
+		<Text text="NOTE: Sorting doesn't work here, since we're using a mock service" />
+	</VBox>
+</core:FragmentDefinition>

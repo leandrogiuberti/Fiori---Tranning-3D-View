@@ -1,0 +1,91 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.fe.core.fpmExplorer.customPage",
+		"type": "application",
+		"i18n": {
+			"bundleUrl": "i18n/i18n.properties",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		},
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/fe/core/mock/service/",
+				"type": "OData",
+				"settings": {
+					"annotations": [],
+					"odataVersion": "4.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.111.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.fe.templates": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"operationMode": "Server",
+					"autoExpandSelect": true,
+					"earlyRequests": true
+				}
+			}
+		},
+		"rootView": {
+			"viewName": "sap.fe.core.fpmExplorer.customPage.CustomPage"
+		},
+		"routing": {
+			"config": {
+				"controlId": "customPage"
+			},
+			"routes": [
+				{
+					"pattern": ":?query:",
+					"name": "customPage",
+					"target": "customPage"
+				},
+				{
+					"pattern": "/Travel({key}):?query:",
+					"name": "objectPage",
+					"target": "objectPage"
+				}
+			],
+			"targets": {
+				"customPage": {
+					"type": "Component",
+					"id": "Default",
+					"name": "sap.fe.core.fpm",
+					"options": {
+						"settings": {
+							"viewName": "sap.fe.core.fpmExplorer.customPage.CustomPageSample",
+							"contextPath": "/Travel"
+						}
+					}
+				},
+				"objectPage": {
+					"type": "Component",
+					"id": "objectPage",
+					"name": "sap.fe.templates.ObjectPage",
+					"options": {
+						"settings": {
+							"contextPath": "/Travel"
+						}
+					}
+				}
+			}
+		}
+	}
+}

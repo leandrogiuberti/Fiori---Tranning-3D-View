@@ -1,0 +1,25 @@
+{
+	"sap.ui5": {
+		"routing": {
+			"targets": {
+				"sample": {
+					"options": {
+						"settings": {
+							"controlConfiguration": {
+								"@com.sap.vocabularies.UI.v1.SelectionFields": {
+									"filterFields": {
+										"TotalPrice": {
+											"label": "{i18n>customFilter_label}",
+											"property": "TotalPrice",
+											"template": "sap.fe.core.fpmExplorer.filterBarCustom.code.CustomRangeFilter"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

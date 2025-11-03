@@ -1,0 +1,69 @@
+<mvc:View
+	height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+	controllerName="sap.fe.core.PageController"
+>
+	<fpmExplorer:Page
+		title="Guidance Controller Extensions"
+		documentation="358cf2598d71462b8ac2bd8c944efbfd"
+		introduction="SAP Fiori elements provides a set of controller building blocks. They are implemented as controller extensions and can be used in your custom code and provide hooks that allow you to implement custom logic in your application. In addition, you can also load custom controllers in your XML fragments and use them as event handlers or formatters, and use the ExtensionAPI to access the SAP Fiori elements building blocks."
+	>
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				title="Load Custom Controller in XML"
+				text="A simple way to make use of custom coding as event handlers or formatters is to require a controller within your XML and give it a name. You can then use this controller coding with the given name as shown in the following code block:"
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/load.xml" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Accessing ExtensionAPI"
+				text="The controller is automatically scoped with the SAP Fiori elements ExtensionAPI. You can access the ExtensionAPI via 'this'."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/extensionAPI.js" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Implementing a Controller Extension"
+				text="The following code block shows an example controller extension. You can extend lifecycle hooks or hooks provided by SAP Fiori elements in a controller extension. You can also add your own methods that can be used as formatters and event handlers. Note: You can't bundle formatter and event handler methods into an object of methods. Instead, define the methods at the top level of the controller extension."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/implementCE.js" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Defining a Controller Extension"
+				text="Define the controller extensions in the manifest.json, as shown in the following code block. The first entry extends the list report controller with one controller extension. The second entry overrides one specific instance of the object page controller (the ID is constructed by using the pattern YourApplicationID::ComponentID) with multiple controller extensions. In case of multiple controller extensions you have to use 'controllerNames' instead of 'controllerName'."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/defineCE.json" codeType="manifest" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Using Event Handlers and Formatters"
+				text="You can use the event handlers and formatters that were added to the controller extension within XML fragments using the following syntax: .extension.yourExtension.method:"
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/eventHandlers.xml" codeType="view" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+
+			<fpmExplorer:ImplementationStep
+				title="Using Building Blocks in XML Fragment"
+				text="You can use building blocks in an XML fragment using the loadFragment method from the SAP Fiori elements ExtensionAPI. You can access the extensionAPI via 'this.base.getExtensionAPI' on the controller extension as shown in the following code block:"
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink file="guidanceControllerExtensions/code/loadFragment.js" codeType="ts" />
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>

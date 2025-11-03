@@ -1,0 +1,55 @@
+<mvc:View
+	height="100%"
+	controllerName="sap.fe.core.rootView.NavContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fpmExplorer="sap.fe.core.fpmExplorer.controls"
+>
+	<fpmExplorer:Page title="Custom Header Facet in Object Page" documentation="61cf0ee828824903907464c80dd0d88c">
+		<fpmExplorer:introductionContent>
+			<VBox class="sapUiTinyMarginTop">
+				<Text
+					text="You can include Custom Header Facets next to existing annotation-based header facets in the Object Page header area. Custom Header Facets provide flexibility when creating your own XML fragment and controller implementation."
+				/>
+				<Text
+					text="Custom Header Facets support adding free-style headers via XML fragment definitions, positioning relative to existing header elements, and using localized titles and subtitles. You can define Custom Header Facets using content-based or annotation-based configuration in the manifest.json file."
+				/>
+			</VBox>
+		</fpmExplorer:introductionContent>
+
+		<fpmExplorer:sample>
+			<NavContainer id="customHeaderFacet" autoFocus="false" height="600px" />
+		</fpmExplorer:sample>
+
+		<fpmExplorer:implementation>
+			<fpmExplorer:ImplementationStep
+				text="Define Custom Header Facets by establishing basic annotations in your service definition serving as the foundation, and override and enhance them with detailed configuration in the manifest.json file where the manifest settings take precedence over service annotations.
+                        For the example 'Custom Building Block Micro Chart' a Chart and a DataPoint are annotated in a CAP service (file service.cds).
+                        The visual representation of the Chart is defined in two custom XML fragments (CustomHeaderFacetBuildingBlockMicroChart.fragment.xml and CustomHeaderFacetBuildingBlockMicroChartEdit.fragment.xml) that are shown on the UI depending on whether the user is in display or edit mode.
+                        This behavior is controlled by the 'content' section in the manifest.json file under the corresponding object page setting 'customBuildingBlockMicroChart' with its properties 'template' and 'templateEdit'.
+                        The other files listed in the coding area show similar examples for Custom Header Facet implementations."
+			>
+				<fpmExplorer:CodeBlock>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customHeaderFacet/CustomHeaderFacetBuildingBlockMicroChart.fragment.xml"
+						start="macros:MicroChart"
+						end="/>"
+						codeType="view"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customHeaderFacet/manifest.json"
+						start="customBuildingBlockMicroChart"
+						end="CustomHeaderFacetBuildingBlockMicroChartEdit"
+						codeType="manifest"
+					/>
+					<fpmExplorer:CodeLink
+						file="floorplanObjectPage/customHeaderFacet/localService/service.cds"
+						start="Chart #MicroChart"
+						end="Criticality  : Criticality,"
+						codeType="cds"
+					/>
+				</fpmExplorer:CodeBlock>
+			</fpmExplorer:ImplementationStep>
+		</fpmExplorer:implementation>
+	</fpmExplorer:Page>
+</mvc:View>
