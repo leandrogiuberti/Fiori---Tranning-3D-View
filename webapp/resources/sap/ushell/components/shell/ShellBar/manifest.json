@@ -1,0 +1,101 @@
+{
+  "_version": "1.70.0",
+  "sap.app": {
+    "id": "sap.ushell.components.shell.ShellBar",
+    "applicationVersion": {
+      "version": "1.141.0"
+    },
+    "type": "component",
+    "ach": "CA-FLP-FE-COR",
+    "title": "",
+    "resources": "resources.json"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "phone": true,
+      "tablet": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.135",
+      "libs": {
+        "sap.m": {},
+        "sap.tnt": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "rootView": {
+      "viewName": "sap.ushell.components.shell.ShellBar.view.ShellBar",
+      "type": "XML",
+      "id": "ShellBarView"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ushell.components.shell.ShellBar.resources.resources",
+          "async": true,
+          "supportedLocales": [
+            "",
+            "ar",
+            "bg",
+            "ca",
+            "cnr",
+            "cs",
+            "cy",
+            "da",
+            "de",
+            "el",
+            "en",
+            "en-GB",
+            "en-US-x-saprigi",
+            "es",
+            "es-MX",
+            "et",
+            "fi",
+            "fr",
+            "fr-CA",
+            "hi",
+            "hr",
+            "hu",
+            "id",
+            "it",
+            "iw",
+            "ja",
+            "kk",
+            "ko",
+            "lt",
+            "lv",
+            "mk",
+            "ms",
+            "nl",
+            "no",
+            "pl",
+            "pt",
+            "pt-PT",
+            "ro",
+            "ru",
+            "sh",
+            "sk",
+            "sl",
+            "sr",
+            "sv",
+            "th",
+            "tr",
+            "uk",
+            "vi",
+            "zh-CN",
+            "zh-TW"
+          ]
+        }
+      }
+    }
+  }
+}

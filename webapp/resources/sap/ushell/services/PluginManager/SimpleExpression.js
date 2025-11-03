@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";const e={};e.parseAndEvaluate=function(t,p){const s=p.split(" ");return e.evaluate(t,s)};e.evaluate=function(e,t){const p=[];let s;while(t.length){switch(s=t.shift()){case"includes":p.push(e.includes(p.pop()));break;case"not":p.push(!p.pop());break;case"and":p.push(p.pop()&&p.pop());break;case"or":p.push(p.pop()||p.pop());break;default:p.push(s)}}return p.pop()};e.filterByExpression=function(t,p){return t.filter(t=>e.parseAndEvaluate(t,p))};return e});
+//# sourceMappingURL=SimpleExpression.js.map

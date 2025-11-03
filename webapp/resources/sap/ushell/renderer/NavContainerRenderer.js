@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/resources"],e=>{"use strict";const r={apiVersion:2};r.render=function(r,t){if(!t.getVisible()){return}r.openStart("main",t);r.attr("role","main");r.attr("aria-label",e.i18n.getText("ShellContent.AriaLabel"));r.openEnd();t.getPages().forEach(e=>{r.renderControl(e)});r.close("main")};return r},true);
+//# sourceMappingURL=NavContainerRenderer.js.map

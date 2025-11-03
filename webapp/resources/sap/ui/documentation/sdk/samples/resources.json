@@ -1,0 +1,74 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ui/documentation/sdk/samples/Component.js",
+			"size": 5140,
+			"isDebug": true,
+			"required": [
+				"sap/m/Page.js",
+				"sap/m/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Manifest.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ui/documentation/sdk/samples/Component.js",
+			"size": 1764,
+			"required": [
+				"sap/m/Page.js",
+				"sap/m/library.js",
+				"sap/ui/core/Component.js",
+				"sap/ui/core/ComponentContainer.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Manifest.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 2221,
+			"isDebug": true
+		},
+		{
+			"name": "Page-dbg.designtime.js",
+			"module": "sap/ui/documentation/sdk/samples/Page.designtime.js",
+			"size": 1628,
+			"isDebug": true,
+			"designtime": true,
+			"required": [
+				"sap/m/designtime/Page.designtime.js"
+			]
+		},
+		{
+			"name": "Page.designtime.js",
+			"module": "sap/ui/documentation/sdk/samples/Page.designtime.js",
+			"size": 587,
+			"designtime": true,
+			"required": [
+				"sap/m/designtime/Page.designtime.js"
+			]
+		},
+		{
+			"name": "Page.designtime.js.map",
+			"size": 724,
+			"isDebug": true
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ui/documentation/sdk/samples/manifest.json",
+			"size": 424
+		},
+		{
+			"name": "resources.json",
+			"size": 1608
+		}
+	]
+}

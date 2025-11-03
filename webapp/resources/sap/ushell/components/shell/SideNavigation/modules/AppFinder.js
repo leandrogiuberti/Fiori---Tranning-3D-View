@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/tnt/NavigationListItem","sap/ui/core/CustomData"],(e,t)=>{"use strict";class i{constructor(){this.oRootItem=new e({text:"{i18n>SideNavigation.Item.AppFinder.Title}",enabled:"{viewConfiguration>/enableSideNavigation}",customData:[new t({key:"help-id",value:"MenuEntry-AppFinder",writeToDom:true})],href:"#Shell-appfinder",icon:"sap-icon://display"})}async getRootItem(){return this.oRootItem}}return i},false);
+//# sourceMappingURL=AppFinder.js.map

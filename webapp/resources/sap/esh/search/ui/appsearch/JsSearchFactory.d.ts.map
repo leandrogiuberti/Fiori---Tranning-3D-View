@@ -1,0 +1,1 @@
+{"version":3,"file":"JsSearchFactory.d.ts","sourceRoot":"../../../../../../..","sources":["src/sap/esh/search/ui/appsearch/JsSearchFactory.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,6CAA6C,CAAC;IAC7D;;;;OAIG;IACH,OAAO,QAAQ,EAAE,EAAE,eAAe,EAAE,MAAM,sCAAsC,CAAC;IAEjF,MAAM,eAAe;kCACkB,eAAe,KAAG,QAAQ;KAGhE,CAAC;IAEF,eAAe,eAAe,CAAC;CAE9B"}

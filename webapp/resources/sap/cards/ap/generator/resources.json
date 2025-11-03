@@ -1,0 +1,2970 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library",
+			"size": 1525
+		},
+		{
+			"name": ".theming",
+			"size": 105
+		},
+		{
+			"name": "CardGenerator-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/CardGenerator.js",
+			"size": 9425,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+				"sap/cards/ap/generator/config/PreviewOptions.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/pages/FreeStyle.js",
+				"sap/cards/ap/generator/pages/ObjectPage.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "CardGenerator-dbg-dbg.js.map",
+			"size": 14326,
+			"isDebug": true
+		},
+		{
+			"name": "CardGenerator-dbg.js",
+			"module": "sap/cards/ap/generator/CardGenerator.js",
+			"size": 3530,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+				"sap/cards/ap/generator/config/PreviewOptions.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/pages/FreeStyle.js",
+				"sap/cards/ap/generator/pages/ObjectPage.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "CardGenerator-dbg.js.map",
+			"size": 12024,
+			"isDebug": true
+		},
+		{
+			"name": "CardGenerator.d.ts",
+			"size": 2613
+		},
+		{
+			"name": "CardGenerator.d.ts.map",
+			"size": 736
+		},
+		{
+			"name": "CardGenerator.js",
+			"module": "sap/cards/ap/generator/CardGenerator.js",
+			"size": 3526,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+				"sap/cards/ap/generator/config/PreviewOptions.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/pages/FreeStyle.js",
+				"sap/cards/ap/generator/pages/ObjectPage.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "CardGenerator.js.map",
+			"size": 12020,
+			"isDebug": true
+		},
+		{
+			"name": "CardGenerator.ts",
+			"size": 6747
+		},
+		{
+			"name": "app/CardGeneratorDialog.fragment.xml",
+			"module": "sap/cards/ap/generator/app/CardGeneratorDialog.fragment.xml",
+			"size": 5766,
+			"required": [
+				"sap/cards/ap/generator/app/fragments/CardPreview.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Footer.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Header.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/ObjectGroup.fragment.xml",
+				"sap/m/Bar.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/Label.js",
+				"sap/m/Page.js",
+				"sap/m/Panel.js",
+				"sap/m/Text.js",
+				"sap/m/ToggleButton.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/ResponsiveGridLayout.js"
+			]
+		},
+		{
+			"name": "app/CardGeneratorDialogController-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+			"size": 92981,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/base/util/merge.js",
+				"sap/cards/ap/generator/app/handlers/CardActions.js",
+				"sap/cards/ap/generator/app/handlers/FreeStyle.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Popup.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "app/CardGeneratorDialogController-dbg-dbg.js.map",
+			"size": 177014,
+			"isDebug": true
+		},
+		{
+			"name": "app/CardGeneratorDialogController-dbg.js",
+			"module": "sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+			"size": 44224,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/base/util/merge.js",
+				"sap/cards/ap/generator/app/handlers/CardActions.js",
+				"sap/cards/ap/generator/app/handlers/FreeStyle.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Popup.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "app/CardGeneratorDialogController-dbg.js.map",
+			"size": 144076,
+			"isDebug": true
+		},
+		{
+			"name": "app/CardGeneratorDialogController.d.ts",
+			"size": 13715
+		},
+		{
+			"name": "app/CardGeneratorDialogController.d.ts.map",
+			"size": 4710
+		},
+		{
+			"name": "app/CardGeneratorDialogController.js",
+			"module": "sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+			"size": 44220,
+			"required": [
+				"sap/base/Log.js",
+				"sap/base/util/merge.js",
+				"sap/cards/ap/generator/app/handlers/CardActions.js",
+				"sap/cards/ap/generator/app/handlers/FreeStyle.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Popup.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "app/CardGeneratorDialogController.js.map",
+			"size": 144062,
+			"isDebug": true
+		},
+		{
+			"name": "app/CardGeneratorDialogController.ts",
+			"size": 87868
+		},
+		{
+			"name": "app/controls/ArrangementsEditor-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+			"size": 22551,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/config/TextArrangementOptions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/ArrangementsEditor-dbg-dbg.js.map",
+			"size": 45655,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/ArrangementsEditor-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+			"size": 10563,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/config/TextArrangementOptions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/ArrangementsEditor-dbg.js.map",
+			"size": 37838,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.d.ts",
+			"size": 7354
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.d.ts.map",
+			"size": 3587
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.gen.d.ts",
+			"size": 9765
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.js",
+			"module": "sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+			"size": 10559,
+			"required": [
+				"sap/cards/ap/generator/config/TextArrangementOptions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.js.map",
+			"size": 37834,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/ArrangementsEditor.ts",
+			"size": 23127
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+			"size": 16283,
+			"isDebug": true,
+			"required": [
+				"sap/base/util/deepClone.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Select.js",
+				"sap/m/StepInput.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection-dbg-dbg.js.map",
+			"size": 31014,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+			"size": 6707,
+			"isDebug": true,
+			"required": [
+				"sap/base/util/deepClone.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Select.js",
+				"sap/m/StepInput.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection-dbg.js.map",
+			"size": 25926,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.d.ts",
+			"size": 5094
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.d.ts.map",
+			"size": 1975
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.gen.d.ts",
+			"size": 5022
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.js",
+			"module": "sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+			"size": 6703,
+			"required": [
+				"sap/base/util/deepClone.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Select.js",
+				"sap/m/StepInput.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.js.map",
+			"size": 25922,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CompactFormatterSelection.ts",
+			"size": 15657
+		},
+		{
+			"name": "app/controls/CriticalityEditor-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+			"size": 24298,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CriticalityEditor-dbg-dbg.js.map",
+			"size": 47889,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CriticalityEditor-dbg.js",
+			"module": "sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+			"size": 12313,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CriticalityEditor-dbg.js.map",
+			"size": 39799,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CriticalityEditor.d.ts",
+			"size": 6671
+		},
+		{
+			"name": "app/controls/CriticalityEditor.d.ts.map",
+			"size": 3162
+		},
+		{
+			"name": "app/controls/CriticalityEditor.gen.d.ts",
+			"size": 9889
+		},
+		{
+			"name": "app/controls/CriticalityEditor.js",
+			"module": "sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+			"size": 12309,
+			"required": [
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "app/controls/CriticalityEditor.js.map",
+			"size": 39795,
+			"isDebug": true
+		},
+		{
+			"name": "app/controls/CriticalityEditor.ts",
+			"size": 24081
+		},
+		{
+			"name": "app/fragments/AdvancedSettings.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/AdvancedSettings.fragment.xml",
+			"size": 2508,
+			"required": [
+				"sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+				"sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+				"sap/m/Panel.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js"
+			]
+		},
+		{
+			"name": "app/fragments/CardPreview.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/CardPreview.fragment.xml",
+			"size": 1807,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/integration/widgets/Card.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/AdvancedFormattingConfiguration.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingConfiguration.fragment.xml",
+			"size": 9892,
+			"required": [
+				"sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+				"sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+				"sap/m/Bar.js",
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/Label.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/Select.js",
+				"sap/m/Title.js",
+				"sap/m/VBox.js",
+				"sap/tnt/InfoLabel.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/ListItem.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/AdvancedFormattingOptions.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingOptions.fragment.xml",
+			"size": 1700,
+			"required": [
+				"sap/m/ResponsivePopover.js",
+				"sap/m/SelectList.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/Footer.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/Footer.fragment.xml",
+			"size": 2238,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/HBox.js",
+				"sap/m/InputListItem.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/Select.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/Header.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/Header.fragment.xml",
+			"size": 3721,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/Label.js",
+				"sap/ui/core/Item.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/ItemActions.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/ItemActions.fragment.xml",
+			"size": 1783,
+			"required": [
+				"sap/ui/unified/Menu.js",
+				"sap/ui/unified/MenuItem.js"
+			]
+		},
+		{
+			"name": "app/fragments/configuration/ObjectGroup.fragment.xml",
+			"module": "sap/cards/ap/generator/app/fragments/configuration/ObjectGroup.fragment.xml",
+			"size": 3779,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/ComboBox.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/InputListItem.js",
+				"sap/m/List.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/dnd/DragDropInfo.js",
+				"sap/ui/core/dnd/DragInfo.js",
+				"sap/ui/core/dnd/DropInfo.js"
+			]
+		},
+		{
+			"name": "app/handlers/CardActions-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/handlers/CardActions.js",
+			"size": 14480,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js"
+			]
+		},
+		{
+			"name": "app/handlers/CardActions-dbg-dbg.js.map",
+			"size": 23659,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/CardActions-dbg.js",
+			"module": "sap/cards/ap/generator/app/handlers/CardActions.js",
+			"size": 5568,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js"
+			]
+		},
+		{
+			"name": "app/handlers/CardActions-dbg.js.map",
+			"size": 18071,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/CardActions.d.ts",
+			"size": 2926
+		},
+		{
+			"name": "app/handlers/CardActions.d.ts.map",
+			"size": 957
+		},
+		{
+			"name": "app/handlers/CardActions.js",
+			"module": "sap/cards/ap/generator/app/handlers/CardActions.js",
+			"size": 5564,
+			"required": [
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/Filter.js"
+			]
+		},
+		{
+			"name": "app/handlers/CardActions.js.map",
+			"size": 18067,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/CardActions.ts",
+			"size": 9097
+		},
+		{
+			"name": "app/handlers/FreeStyle-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/app/handlers/FreeStyle.js",
+			"size": 6234,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "app/handlers/FreeStyle-dbg-dbg.js.map",
+			"size": 10734,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/FreeStyle-dbg.js",
+			"module": "sap/cards/ap/generator/app/handlers/FreeStyle.js",
+			"size": 2888,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "app/handlers/FreeStyle-dbg.js.map",
+			"size": 8838,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/FreeStyle.d.ts",
+			"size": 950
+		},
+		{
+			"name": "app/handlers/FreeStyle.d.ts.map",
+			"size": 546
+		},
+		{
+			"name": "app/handlers/FreeStyle.js",
+			"module": "sap/cards/ap/generator/app/handlers/FreeStyle.js",
+			"size": 2884,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "app/handlers/FreeStyle.js.map",
+			"size": 8834,
+			"isDebug": true
+		},
+		{
+			"name": "app/handlers/FreeStyle.ts",
+			"size": 5129
+		},
+		{
+			"name": "config/FormatterOptions-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/config/FormatterOptions.js",
+			"size": 18031,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "config/FormatterOptions-dbg-dbg.js.map",
+			"size": 34446,
+			"isDebug": true
+		},
+		{
+			"name": "config/FormatterOptions-dbg.js",
+			"module": "sap/cards/ap/generator/config/FormatterOptions.js",
+			"size": 11437,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "config/FormatterOptions-dbg.js.map",
+			"size": 27662,
+			"isDebug": true
+		},
+		{
+			"name": "config/FormatterOptions.d.ts",
+			"size": 279
+		},
+		{
+			"name": "config/FormatterOptions.d.ts.map",
+			"size": 286
+		},
+		{
+			"name": "config/FormatterOptions.js",
+			"module": "sap/cards/ap/generator/config/FormatterOptions.js",
+			"size": 11433,
+			"required": [
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js"
+			]
+		},
+		{
+			"name": "config/FormatterOptions.js.map",
+			"size": 27658,
+			"isDebug": true
+		},
+		{
+			"name": "config/FormatterOptions.ts",
+			"size": 16094
+		},
+		{
+			"name": "config/PreviewOptions-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/config/PreviewOptions.js",
+			"size": 1105,
+			"isDebug": true
+		},
+		{
+			"name": "config/PreviewOptions-dbg-dbg.js.map",
+			"size": 2187,
+			"isDebug": true
+		},
+		{
+			"name": "config/PreviewOptions-dbg.js",
+			"module": "sap/cards/ap/generator/config/PreviewOptions.js",
+			"size": 788,
+			"isDebug": true
+		},
+		{
+			"name": "config/PreviewOptions-dbg.js.map",
+			"size": 1828,
+			"isDebug": true
+		},
+		{
+			"name": "config/PreviewOptions.d.ts",
+			"size": 864
+		},
+		{
+			"name": "config/PreviewOptions.d.ts.map",
+			"size": 465
+		},
+		{
+			"name": "config/PreviewOptions.js",
+			"module": "sap/cards/ap/generator/config/PreviewOptions.js",
+			"size": 784
+		},
+		{
+			"name": "config/PreviewOptions.js.map",
+			"size": 1824,
+			"isDebug": true
+		},
+		{
+			"name": "config/PreviewOptions.ts",
+			"size": 967
+		},
+		{
+			"name": "config/TextArrangementOptions-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/config/TextArrangementOptions.js",
+			"size": 625,
+			"isDebug": true
+		},
+		{
+			"name": "config/TextArrangementOptions-dbg-dbg.js.map",
+			"size": 1059,
+			"isDebug": true
+		},
+		{
+			"name": "config/TextArrangementOptions-dbg.js",
+			"module": "sap/cards/ap/generator/config/TextArrangementOptions.js",
+			"size": 451,
+			"isDebug": true
+		},
+		{
+			"name": "config/TextArrangementOptions-dbg.js.map",
+			"size": 877,
+			"isDebug": true
+		},
+		{
+			"name": "config/TextArrangementOptions.d.ts",
+			"size": 348
+		},
+		{
+			"name": "config/TextArrangementOptions.d.ts.map",
+			"size": 260
+		},
+		{
+			"name": "config/TextArrangementOptions.js",
+			"module": "sap/cards/ap/generator/config/TextArrangementOptions.js",
+			"size": 447
+		},
+		{
+			"name": "config/TextArrangementOptions.js.map",
+			"size": 873,
+			"isDebug": true
+		},
+		{
+			"name": "config/TextArrangementOptions.ts",
+			"size": 360
+		},
+		{
+			"name": "helpers/Batch-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Batch.js",
+			"size": 5770,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/IntegrationCardManifestParser.js"
+			]
+		},
+		{
+			"name": "helpers/Batch-dbg-dbg.js.map",
+			"size": 10880,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Batch-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Batch.js",
+			"size": 1957,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/IntegrationCardManifestParser.js"
+			]
+		},
+		{
+			"name": "helpers/Batch-dbg.js.map",
+			"size": 9200,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Batch.d.ts",
+			"size": 2337
+		},
+		{
+			"name": "helpers/Batch.d.ts.map",
+			"size": 1201
+		},
+		{
+			"name": "helpers/Batch.js",
+			"module": "sap/cards/ap/generator/helpers/Batch.js",
+			"size": 1952,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/IntegrationCardManifestParser.js"
+			]
+		},
+		{
+			"name": "helpers/Batch.js.map",
+			"size": 9196,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Batch.ts",
+			"size": 5659
+		},
+		{
+			"name": "helpers/CardGeneratorModel-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+			"size": 27324,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helpers/CardGeneratorModel-dbg-dbg.js.map",
+			"size": 43831,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/CardGeneratorModel-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+			"size": 7628,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helpers/CardGeneratorModel-dbg.js.map",
+			"size": 36618,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/CardGeneratorModel.d.ts",
+			"size": 12061
+		},
+		{
+			"name": "helpers/CardGeneratorModel.d.ts.map",
+			"size": 4628
+		},
+		{
+			"name": "helpers/CardGeneratorModel.js",
+			"module": "sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+			"size": 7624,
+			"required": [
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helpers/CardGeneratorModel.js.map",
+			"size": 36614,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/CardGeneratorModel.ts",
+			"size": 22183
+		},
+		{
+			"name": "helpers/FooterActions-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/FooterActions.js",
+			"size": 50861,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/library.js",
+				"sap/ui/core/Lib.js"
+			]
+		},
+		{
+			"name": "helpers/FooterActions-dbg-dbg.js.map",
+			"size": 87125,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/FooterActions-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/FooterActions.js",
+			"size": 18134,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/library.js",
+				"sap/ui/core/Lib.js"
+			]
+		},
+		{
+			"name": "helpers/FooterActions-dbg.js.map",
+			"size": 70532,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/FooterActions.d.ts",
+			"size": 15670
+		},
+		{
+			"name": "helpers/FooterActions.d.ts.map",
+			"size": 5020
+		},
+		{
+			"name": "helpers/FooterActions.js",
+			"module": "sap/cards/ap/generator/helpers/FooterActions.js",
+			"size": 18130,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/m/library.js",
+				"sap/ui/core/Lib.js"
+			]
+		},
+		{
+			"name": "helpers/FooterActions.js.map",
+			"size": 70528,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/FooterActions.ts",
+			"size": 41683
+		},
+		{
+			"name": "helpers/Formatter-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Formatter.js",
+			"size": 10326,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/integration/formatters/DateTimeFormatter.js"
+			]
+		},
+		{
+			"name": "helpers/Formatter-dbg-dbg.js.map",
+			"size": 18884,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Formatter-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Formatter.js",
+			"size": 3206,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/integration/formatters/DateTimeFormatter.js"
+			]
+		},
+		{
+			"name": "helpers/Formatter-dbg.js.map",
+			"size": 16021,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Formatter.d.ts",
+			"size": 5494
+		},
+		{
+			"name": "helpers/Formatter.d.ts.map",
+			"size": 2158
+		},
+		{
+			"name": "helpers/Formatter.js",
+			"module": "sap/cards/ap/generator/helpers/Formatter.js",
+			"size": 3202,
+			"required": [
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/integration/formatters/DateTimeFormatter.js"
+			]
+		},
+		{
+			"name": "helpers/Formatter.js.map",
+			"size": 16017,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Formatter.ts",
+			"size": 10405
+		},
+		{
+			"name": "helpers/I18nHelper-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/I18nHelper.js",
+			"size": 16753,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "helpers/I18nHelper-dbg-dbg.js.map",
+			"size": 30249,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/I18nHelper-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/I18nHelper.js",
+			"size": 5461,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "helpers/I18nHelper-dbg.js.map",
+			"size": 25252,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/I18nHelper.d.ts",
+			"size": 6867
+		},
+		{
+			"name": "helpers/I18nHelper.d.ts.map",
+			"size": 2119
+		},
+		{
+			"name": "helpers/I18nHelper.js",
+			"module": "sap/cards/ap/generator/helpers/I18nHelper.js",
+			"size": 5457,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/jquery.js"
+			]
+		},
+		{
+			"name": "helpers/I18nHelper.js.map",
+			"size": 25248,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/I18nHelper.ts",
+			"size": 16187
+		},
+		{
+			"name": "helpers/IntegrationCardHelper-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+			"size": 51422,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/VersionInfo.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ui/model/odata/v4/ODataUtils.js"
+			]
+		},
+		{
+			"name": "helpers/IntegrationCardHelper-dbg-dbg.js.map",
+			"size": 88647,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/IntegrationCardHelper-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+			"size": 18346,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/VersionInfo.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ui/model/odata/v4/ODataUtils.js"
+			]
+		},
+		{
+			"name": "helpers/IntegrationCardHelper-dbg.js.map",
+			"size": 71974,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/IntegrationCardHelper.d.ts",
+			"size": 11921
+		},
+		{
+			"name": "helpers/IntegrationCardHelper.d.ts.map",
+			"size": 3202
+		},
+		{
+			"name": "helpers/IntegrationCardHelper.js",
+			"module": "sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+			"size": 18342,
+			"required": [
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/VersionInfo.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ui/model/odata/v4/ODataUtils.js"
+			]
+		},
+		{
+			"name": "helpers/IntegrationCardHelper.js.map",
+			"size": 71966,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/IntegrationCardHelper.ts",
+			"size": 41222
+		},
+		{
+			"name": "helpers/NavigationProperty-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/NavigationProperty.js",
+			"size": 7694,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "helpers/NavigationProperty-dbg-dbg.js.map",
+			"size": 12779,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/NavigationProperty-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/NavigationProperty.js",
+			"size": 3009,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "helpers/NavigationProperty-dbg.js.map",
+			"size": 10757,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/NavigationProperty.d.ts",
+			"size": 2137
+		},
+		{
+			"name": "helpers/NavigationProperty.d.ts.map",
+			"size": 880
+		},
+		{
+			"name": "helpers/NavigationProperty.js",
+			"module": "sap/cards/ap/generator/helpers/NavigationProperty.js",
+			"size": 3005,
+			"required": [
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "helpers/NavigationProperty.js.map",
+			"size": 10753,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/NavigationProperty.ts",
+			"size": 6115
+		},
+		{
+			"name": "helpers/PropertyExpression-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/PropertyExpression.js",
+			"size": 25082,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/base/BindingParser.js"
+			]
+		},
+		{
+			"name": "helpers/PropertyExpression-dbg-dbg.js.map",
+			"size": 47164,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/PropertyExpression-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/PropertyExpression.js",
+			"size": 7896,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/base/BindingParser.js"
+			]
+		},
+		{
+			"name": "helpers/PropertyExpression-dbg.js.map",
+			"size": 38411,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/PropertyExpression.d.ts",
+			"size": 6306
+		},
+		{
+			"name": "helpers/PropertyExpression.d.ts.map",
+			"size": 2087
+		},
+		{
+			"name": "helpers/PropertyExpression.js",
+			"module": "sap/cards/ap/generator/helpers/PropertyExpression.js",
+			"size": 7892,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/ui/base/BindingParser.js"
+			]
+		},
+		{
+			"name": "helpers/PropertyExpression.js.map",
+			"size": 38407,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/PropertyExpression.ts",
+			"size": 23332
+		},
+		{
+			"name": "helpers/Transpiler-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Transpiler.js",
+			"size": 5472,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/adaptiveCards/AdaptiveCardRenderer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "helpers/Transpiler-dbg-dbg.js.map",
+			"size": 9835,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Transpiler-dbg.js",
+			"module": "sap/cards/ap/generator/helpers/Transpiler.js",
+			"size": 1987,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/adaptiveCards/AdaptiveCardRenderer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "helpers/Transpiler-dbg.js.map",
+			"size": 8280,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Transpiler.d.ts",
+			"size": 1988
+		},
+		{
+			"name": "helpers/Transpiler.d.ts.map",
+			"size": 760
+		},
+		{
+			"name": "helpers/Transpiler.js",
+			"module": "sap/cards/ap/generator/helpers/Transpiler.js",
+			"size": 1983,
+			"required": [
+				"sap/cards/ap/common/adaptiveCards/AdaptiveCardRenderer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "helpers/Transpiler.js.map",
+			"size": 8276,
+			"isDebug": true
+		},
+		{
+			"name": "helpers/Transpiler.ts",
+			"size": 5052
+		},
+		{
+			"name": "i18n/messagebundle.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle.properties",
+			"size": 15050,
+			"locale": "",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ar.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ar.properties",
+			"size": 19711,
+			"locale": "ar",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_bg.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_bg.properties",
+			"size": 26680,
+			"locale": "bg",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ca.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ca.properties",
+			"size": 8759,
+			"locale": "ca",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_cnr.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_cnr.properties",
+			"size": 8109
+		},
+		{
+			"name": "i18n/messagebundle_cs.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_cs.properties",
+			"size": 9017,
+			"locale": "cs",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_cy.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_cy.properties",
+			"size": 7757,
+			"locale": "cy",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_da.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_da.properties",
+			"size": 7887,
+			"locale": "da",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_de.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_de.properties",
+			"size": 8195,
+			"locale": "de",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_el.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_el.properties",
+			"size": 24212,
+			"locale": "el",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_en.properties",
+			"size": 7320,
+			"locale": "en",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_GB.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_en_GB.properties",
+			"size": 7327,
+			"locale": "en_GB",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_US_sappsd.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_en_US_sappsd.properties",
+			"size": 29270,
+			"locale": "en_US_sappsd",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_US_saprigi.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_en_US_saprigi.properties",
+			"size": 58170,
+			"locale": "en_US_saprigi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_en_US_saptrc.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_en_US_saptrc.properties",
+			"size": 11552,
+			"locale": "en_US_saptrc",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_es.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_es.properties",
+			"size": 8471,
+			"locale": "es",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_es_MX.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_es_MX.properties",
+			"size": 8543,
+			"locale": "es_MX",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_et.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_et.properties",
+			"size": 8085,
+			"locale": "et",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_fi.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_fi.properties",
+			"size": 8222,
+			"locale": "fi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_fr.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_fr.properties",
+			"size": 9105,
+			"locale": "fr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_fr_CA.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_fr_CA.properties",
+			"size": 9305,
+			"locale": "fr_CA",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hi.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_hi.properties",
+			"size": 20556,
+			"locale": "hi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hr.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_hr.properties",
+			"size": 8165,
+			"locale": "hr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_hu.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_hu.properties",
+			"size": 10573,
+			"locale": "hu",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_id.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_id.properties",
+			"size": 7649,
+			"locale": "id",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_it.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_it.properties",
+			"size": 8169,
+			"locale": "it",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_iw.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_iw.properties",
+			"size": 17235,
+			"locale": "iw",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ja.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ja.properties",
+			"size": 12296,
+			"locale": "ja",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_kk.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_kk.properties",
+			"size": 22183,
+			"locale": "kk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ko.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ko.properties",
+			"size": 10504,
+			"locale": "ko",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_lt.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_lt.properties",
+			"size": 9217,
+			"locale": "lt",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_lv.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_lv.properties",
+			"size": 9482,
+			"locale": "lv",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_mk.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_mk.properties",
+			"size": 25266,
+			"locale": "mk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ms.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ms.properties",
+			"size": 7467,
+			"locale": "ms",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_nl.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_nl.properties",
+			"size": 7728,
+			"locale": "nl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_no.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_no.properties",
+			"size": 7520,
+			"locale": "no",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_pl.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_pl.properties",
+			"size": 9164,
+			"locale": "pl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_pt.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_pt.properties",
+			"size": 8847,
+			"locale": "pt",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_pt_PT.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_pt_PT.properties",
+			"size": 8825,
+			"locale": "pt_PT",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ro.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ro.properties",
+			"size": 9028,
+			"locale": "ro",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_ru.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_ru.properties",
+			"size": 24533,
+			"locale": "ru",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sh.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_sh.properties",
+			"size": 8001,
+			"locale": "sh",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sk.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_sk.properties",
+			"size": 9191,
+			"locale": "sk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sl.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_sl.properties",
+			"size": 8003,
+			"locale": "sl",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sr.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_sr.properties",
+			"size": 22667,
+			"locale": "sr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_sv.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_sv.properties",
+			"size": 8292,
+			"locale": "sv",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_th.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_th.properties",
+			"size": 21866,
+			"locale": "th",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_tr.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_tr.properties",
+			"size": 9100,
+			"locale": "tr",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_uk.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_uk.properties",
+			"size": 24813,
+			"locale": "uk",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_vi.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_vi.properties",
+			"size": 12166,
+			"locale": "vi",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_zh_CN.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_zh_CN.properties",
+			"size": 9632,
+			"locale": "zh_CN",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "i18n/messagebundle_zh_TW.properties",
+			"module": "sap/cards/ap/generator/i18n/messagebundle_zh_TW.properties",
+			"size": 9637,
+			"locale": "zh_TW",
+			"raw": "i18n/messagebundle.properties"
+		},
+		{
+			"name": "library-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/library.js",
+			"size": 927,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/library.js",
+				"sap/cards/ap/generator/manifest.json",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/integration/library.js",
+				"sap/ui/layout/library.js"
+			]
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/cards/ap/generator/library.js",
+			"size": 701,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/common/library.js",
+				"sap/cards/ap/generator/manifest.json",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/integration/library.js",
+				"sap/ui/layout/library.js"
+			]
+		},
+		{
+			"name": "library-dbg.js.map",
+			"size": 773,
+			"isDebug": true
+		},
+		{
+			"name": "library-preload-dbg.js",
+			"module": "sap/cards/ap/generator/library-preload.js",
+			"size": 225769,
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"exports.js",
+				"sap/base/Log.js",
+				"sap/base/security/encodeURLParameters.js",
+				"sap/base/util/deepClone.js",
+				"sap/base/util/merge.js",
+				"sap/cards/ap/common/adaptiveCards/AdaptiveCardRenderer.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/library.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/m/Bar.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/InputListItem.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/Page.js",
+				"sap/m/Panel.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/Select.js",
+				"sap/m/SelectList.js",
+				"sap/m/StepInput.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/ToggleButton.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/tnt/InfoLabel.js",
+				"sap/tnt/library.js",
+				"sap/ui/VersionInfo.js",
+				"sap/ui/base/BindingParser.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Popup.js",
+				"sap/ui/core/dnd/DragDropInfo.js",
+				"sap/ui/core/dnd/DragInfo.js",
+				"sap/ui/core/dnd/DropInfo.js",
+				"sap/ui/core/library.js",
+				"sap/ui/integration/formatters/DateTimeFormatter.js",
+				"sap/ui/integration/library.js",
+				"sap/ui/integration/widgets/Card.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/ResponsiveGridLayout.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ui/model/odata/v2/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataUtils.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ui/unified/Menu.js",
+				"sap/ui/unified/MenuItem.js"
+			],
+			"included": [
+				"sap/cards/ap/generator/thirdparty/path.js",
+				"sap/cards/ap/generator/CardGenerator.js",
+				"sap/cards/ap/generator/app/CardGeneratorDialog.fragment.xml",
+				"sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+				"sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+				"sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+				"sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+				"sap/cards/ap/generator/app/fragments/AdvancedSettings.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/CardPreview.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingConfiguration.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingOptions.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Footer.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Header.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/ItemActions.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/ObjectGroup.fragment.xml",
+				"sap/cards/ap/generator/app/handlers/CardActions.js",
+				"sap/cards/ap/generator/app/handlers/FreeStyle.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/config/PreviewOptions.js",
+				"sap/cards/ap/generator/config/TextArrangementOptions.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/library.js",
+				"sap/cards/ap/generator/manifest.json",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/pages/FreeStyle.js",
+				"sap/cards/ap/generator/pages/ObjectPage.js",
+				"sap/cards/ap/generator/types/ActionTypes.js",
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/cards/ap/generator/types/PropertyTypes.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/cards/ap/generator/utils/IntegrationCardManifestParser.js"
+			]
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/cards/ap/generator/library-preload.js",
+			"size": 225813,
+			"merged": true,
+			"required": [
+				"exports.js",
+				"sap/base/Log.js",
+				"sap/base/security/encodeURLParameters.js",
+				"sap/base/util/deepClone.js",
+				"sap/base/util/merge.js",
+				"sap/cards/ap/common/adaptiveCards/AdaptiveCardRenderer.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/library.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/common/services/RetrieveCard.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/m/Bar.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/ComboBox.js",
+				"sap/m/CustomListItem.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexBox.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Input.js",
+				"sap/m/InputListItem.js",
+				"sap/m/Label.js",
+				"sap/m/List.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageToast.js",
+				"sap/m/Page.js",
+				"sap/m/Panel.js",
+				"sap/m/ResponsivePopover.js",
+				"sap/m/Select.js",
+				"sap/m/SelectList.js",
+				"sap/m/StepInput.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/ToggleButton.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/library.js",
+				"sap/tnt/InfoLabel.js",
+				"sap/tnt/library.js",
+				"sap/ui/VersionInfo.js",
+				"sap/ui/base/BindingParser.js",
+				"sap/ui/base/Event.js",
+				"sap/ui/core/Control.js",
+				"sap/ui/core/Element.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/HTML.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/Item.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/Popup.js",
+				"sap/ui/core/dnd/DragDropInfo.js",
+				"sap/ui/core/dnd/DragInfo.js",
+				"sap/ui/core/dnd/DropInfo.js",
+				"sap/ui/core/library.js",
+				"sap/ui/integration/formatters/DateTimeFormatter.js",
+				"sap/ui/integration/library.js",
+				"sap/ui/integration/widgets/Card.js",
+				"sap/ui/layout/GridData.js",
+				"sap/ui/layout/Splitter.js",
+				"sap/ui/layout/form/Form.js",
+				"sap/ui/layout/form/FormContainer.js",
+				"sap/ui/layout/form/FormElement.js",
+				"sap/ui/layout/form/ResponsiveGridLayout.js",
+				"sap/ui/layout/library.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/ODataUtils.js",
+				"sap/ui/model/odata/v2/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataUtils.js",
+				"sap/ui/model/resource/ResourceModel.js",
+				"sap/ui/thirdparty/jquery.js",
+				"sap/ui/unified/Menu.js",
+				"sap/ui/unified/MenuItem.js"
+			],
+			"included": [
+				"sap/cards/ap/generator/thirdparty/path.js",
+				"sap/cards/ap/generator/CardGenerator.js",
+				"sap/cards/ap/generator/app/CardGeneratorDialog.fragment.xml",
+				"sap/cards/ap/generator/app/CardGeneratorDialogController.js",
+				"sap/cards/ap/generator/app/controls/ArrangementsEditor.js",
+				"sap/cards/ap/generator/app/controls/CompactFormatterSelection.js",
+				"sap/cards/ap/generator/app/controls/CriticalityEditor.js",
+				"sap/cards/ap/generator/app/fragments/AdvancedSettings.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/CardPreview.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingConfiguration.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/AdvancedFormattingOptions.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Footer.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/Header.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/ItemActions.fragment.xml",
+				"sap/cards/ap/generator/app/fragments/configuration/ObjectGroup.fragment.xml",
+				"sap/cards/ap/generator/app/handlers/CardActions.js",
+				"sap/cards/ap/generator/app/handlers/FreeStyle.js",
+				"sap/cards/ap/generator/config/FormatterOptions.js",
+				"sap/cards/ap/generator/config/PreviewOptions.js",
+				"sap/cards/ap/generator/config/TextArrangementOptions.js",
+				"sap/cards/ap/generator/helpers/Batch.js",
+				"sap/cards/ap/generator/helpers/CardGeneratorModel.js",
+				"sap/cards/ap/generator/helpers/FooterActions.js",
+				"sap/cards/ap/generator/helpers/Formatter.js",
+				"sap/cards/ap/generator/helpers/I18nHelper.js",
+				"sap/cards/ap/generator/helpers/IntegrationCardHelper.js",
+				"sap/cards/ap/generator/helpers/NavigationProperty.js",
+				"sap/cards/ap/generator/helpers/PropertyExpression.js",
+				"sap/cards/ap/generator/helpers/Transpiler.js",
+				"sap/cards/ap/generator/library.js",
+				"sap/cards/ap/generator/manifest.json",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/cards/ap/generator/pages/FreeStyle.js",
+				"sap/cards/ap/generator/pages/ObjectPage.js",
+				"sap/cards/ap/generator/types/ActionTypes.js",
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/cards/ap/generator/types/PropertyTypes.js",
+				"sap/cards/ap/generator/utils/CommonUtils.js",
+				"sap/cards/ap/generator/utils/IntegrationCardManifestParser.js"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"size": 690648,
+			"isDebug": true
+		},
+		{
+			"name": "library.d.ts",
+			"size": 532
+		},
+		{
+			"name": "library.d.ts.map",
+			"size": 395
+		},
+		{
+			"name": "library.js",
+			"module": "sap/cards/ap/generator/library.js",
+			"size": 697,
+			"required": [
+				"sap/cards/ap/common/library.js",
+				"sap/cards/ap/generator/manifest.json",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js",
+				"sap/ui/integration/library.js",
+				"sap/ui/layout/library.js"
+			]
+		},
+		{
+			"name": "library.js.map",
+			"size": 601,
+			"isDebug": true
+		},
+		{
+			"name": "library.ts",
+			"size": 754
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/cards/ap/generator/manifest.json",
+			"size": 907
+		},
+		{
+			"name": "odata/ODataTypes-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/odata/ODataTypes.js",
+			"size": 585,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataTypes-dbg-dbg.js.map",
+			"size": 1225,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataTypes-dbg.js",
+			"module": "sap/cards/ap/generator/odata/ODataTypes.js",
+			"size": 373,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataTypes-dbg.js.map",
+			"size": 1119,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataTypes.d.ts",
+			"size": 977
+		},
+		{
+			"name": "odata/ODataTypes.d.ts.map",
+			"size": 838
+		},
+		{
+			"name": "odata/ODataTypes.js",
+			"module": "sap/cards/ap/generator/odata/ODataTypes.js",
+			"size": 369
+		},
+		{
+			"name": "odata/ODataTypes.js.map",
+			"size": 1115,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataTypes.ts",
+			"size": 721
+		},
+		{
+			"name": "odata/ODataUtils-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/odata/ODataUtils.js",
+			"size": 7654,
+			"isDebug": true,
+			"required": [
+				"sap/base/security/encodeURLParameters.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/ui/model/odata/v2/ODataModel.js"
+			]
+		},
+		{
+			"name": "odata/ODataUtils-dbg-dbg.js.map",
+			"size": 15446,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataUtils-dbg.js",
+			"module": "sap/cards/ap/generator/odata/ODataUtils.js",
+			"size": 3288,
+			"isDebug": true,
+			"required": [
+				"sap/base/security/encodeURLParameters.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/ui/model/odata/v2/ODataModel.js"
+			]
+		},
+		{
+			"name": "odata/ODataUtils-dbg.js.map",
+			"size": 12718,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataUtils.d.ts",
+			"size": 4021
+		},
+		{
+			"name": "odata/ODataUtils.d.ts.map",
+			"size": 1681
+		},
+		{
+			"name": "odata/ODataUtils.js",
+			"module": "sap/cards/ap/generator/odata/ODataUtils.js",
+			"size": 3284,
+			"required": [
+				"sap/base/security/encodeURLParameters.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataTypes.js",
+				"sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+				"sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+				"sap/ui/model/odata/v2/ODataModel.js"
+			]
+		},
+		{
+			"name": "odata/ODataUtils.js.map",
+			"size": 12714,
+			"isDebug": true
+		},
+		{
+			"name": "odata/ODataUtils.ts",
+			"size": 6966
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+			"size": 6946,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer-dbg-dbg.js.map",
+			"size": 15325,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer-dbg.js",
+			"module": "sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+			"size": 3126,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer-dbg.js.map",
+			"size": 12630,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer.d.ts",
+			"size": 2215
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer.d.ts.map",
+			"size": 1487
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer.js",
+			"module": "sap/cards/ap/generator/odata/v2/MetadataAnalyzer.js",
+			"size": 3122,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer.js.map",
+			"size": 12611,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v2/MetadataAnalyzer.ts",
+			"size": 7520
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+			"size": 9112,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer-dbg-dbg.js.map",
+			"size": 18988,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer-dbg.js",
+			"module": "sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+			"size": 3765,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer-dbg.js.map",
+			"size": 15403,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer.d.ts",
+			"size": 1869
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer.d.ts.map",
+			"size": 1208
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer.js",
+			"module": "sap/cards/ap/generator/odata/v4/MetadataAnalyzer.js",
+			"size": 3760,
+			"required": [
+				"sap/cards/ap/generator/utils/CommonUtils.js"
+			]
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer.js.map",
+			"size": 15399,
+			"isDebug": true
+		},
+		{
+			"name": "odata/v4/MetadataAnalyzer.ts",
+			"size": 8951
+		},
+		{
+			"name": "pages/Application-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/pages/Application.js",
+			"size": 3251,
+			"isDebug": true
+		},
+		{
+			"name": "pages/Application-dbg-dbg.js.map",
+			"size": 6913,
+			"isDebug": true
+		},
+		{
+			"name": "pages/Application-dbg.js",
+			"module": "sap/cards/ap/generator/pages/Application.js",
+			"size": 1413,
+			"isDebug": true
+		},
+		{
+			"name": "pages/Application-dbg.js.map",
+			"size": 5868,
+			"isDebug": true
+		},
+		{
+			"name": "pages/Application.d.ts",
+			"size": 2576
+		},
+		{
+			"name": "pages/Application.d.ts.map",
+			"size": 1298
+		},
+		{
+			"name": "pages/Application.js",
+			"module": "sap/cards/ap/generator/pages/Application.js",
+			"size": 1409
+		},
+		{
+			"name": "pages/Application.js.map",
+			"size": 5864,
+			"isDebug": true
+		},
+		{
+			"name": "pages/Application.ts",
+			"size": 3676
+		},
+		{
+			"name": "pages/FreeStyle-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/pages/FreeStyle.js",
+			"size": 9111,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/v2/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataModel.js"
+			]
+		},
+		{
+			"name": "pages/FreeStyle-dbg-dbg.js.map",
+			"size": 14611,
+			"isDebug": true
+		},
+		{
+			"name": "pages/FreeStyle-dbg.js",
+			"module": "sap/cards/ap/generator/pages/FreeStyle.js",
+			"size": 3759,
+			"isDebug": true,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/v2/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataModel.js"
+			]
+		},
+		{
+			"name": "pages/FreeStyle-dbg.js.map",
+			"size": 12118,
+			"isDebug": true
+		},
+		{
+			"name": "pages/FreeStyle.d.ts",
+			"size": 3290
+		},
+		{
+			"name": "pages/FreeStyle.d.ts.map",
+			"size": 997
+		},
+		{
+			"name": "pages/FreeStyle.js",
+			"module": "sap/cards/ap/generator/pages/FreeStyle.js",
+			"size": 3755,
+			"required": [
+				"sap/base/Log.js",
+				"sap/cards/ap/common/helpers/ApplicationInfo.js",
+				"sap/cards/ap/common/odata/ODataUtils.js",
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/model/odata/v2/ODataModel.js",
+				"sap/ui/model/odata/v4/ODataModel.js"
+			]
+		},
+		{
+			"name": "pages/FreeStyle.js.map",
+			"size": 12110,
+			"isDebug": true
+		},
+		{
+			"name": "pages/FreeStyle.ts",
+			"size": 7025
+		},
+		{
+			"name": "pages/ObjectPage-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/pages/ObjectPage.js",
+			"size": 2663,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "pages/ObjectPage-dbg-dbg.js.map",
+			"size": 4890,
+			"isDebug": true
+		},
+		{
+			"name": "pages/ObjectPage-dbg.js",
+			"module": "sap/cards/ap/generator/pages/ObjectPage.js",
+			"size": 1023,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "pages/ObjectPage-dbg.js.map",
+			"size": 4000,
+			"isDebug": true
+		},
+		{
+			"name": "pages/ObjectPage.d.ts",
+			"size": 1556
+		},
+		{
+			"name": "pages/ObjectPage.d.ts.map",
+			"size": 482
+		},
+		{
+			"name": "pages/ObjectPage.js",
+			"module": "sap/cards/ap/generator/pages/ObjectPage.js",
+			"size": 1019,
+			"required": [
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "pages/ObjectPage.js.map",
+			"size": 3997,
+			"isDebug": true
+		},
+		{
+			"name": "pages/ObjectPage.ts",
+			"size": 2254
+		},
+		{
+			"name": "resources.json",
+			"size": 81794
+		},
+		{
+			"name": "thirdparty/path-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/thirdparty/path.js",
+			"size": 7226,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/path-dbg.js",
+			"module": "sap/cards/ap/generator/thirdparty/path.js",
+			"size": 2675,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/path-dbg.js.map",
+			"size": 4348,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/path.js",
+			"module": "sap/cards/ap/generator/thirdparty/path.js",
+			"size": 2671
+		},
+		{
+			"name": "thirdparty/path.js.map",
+			"size": 4335,
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/types/ActionTypes.js",
+			"size": 128,
+			"format": "raw",
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes-dbg-dbg.js.map",
+			"size": 2320,
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes-dbg.js",
+			"module": "sap/cards/ap/generator/types/ActionTypes.js",
+			"size": 114,
+			"format": "raw",
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes-dbg.js.map",
+			"size": 95,
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes.d.ts",
+			"size": 2567
+		},
+		{
+			"name": "types/ActionTypes.d.ts.map",
+			"size": 2108
+		},
+		{
+			"name": "types/ActionTypes.js",
+			"module": "sap/cards/ap/generator/types/ActionTypes.js",
+			"size": 110,
+			"format": "raw"
+		},
+		{
+			"name": "types/ActionTypes.js.map",
+			"size": 91,
+			"isDebug": true
+		},
+		{
+			"name": "types/ActionTypes.ts",
+			"size": 1990
+		},
+		{
+			"name": "types/CommonTypes-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/types/CommonTypes.js",
+			"size": 747,
+			"isDebug": true
+		},
+		{
+			"name": "types/CommonTypes-dbg-dbg.js.map",
+			"size": 1074,
+			"isDebug": true
+		},
+		{
+			"name": "types/CommonTypes-dbg.js",
+			"module": "sap/cards/ap/generator/types/CommonTypes.js",
+			"size": 449,
+			"isDebug": true
+		},
+		{
+			"name": "types/CommonTypes-dbg.js.map",
+			"size": 983,
+			"isDebug": true
+		},
+		{
+			"name": "types/CommonTypes.d.ts",
+			"size": 756
+		},
+		{
+			"name": "types/CommonTypes.d.ts.map",
+			"size": 599
+		},
+		{
+			"name": "types/CommonTypes.js",
+			"module": "sap/cards/ap/generator/types/CommonTypes.js",
+			"size": 445
+		},
+		{
+			"name": "types/CommonTypes.js.map",
+			"size": 979,
+			"isDebug": true
+		},
+		{
+			"name": "types/CommonTypes.ts",
+			"size": 538
+		},
+		{
+			"name": "types/PropertyTypes-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/types/PropertyTypes.js",
+			"size": 130,
+			"format": "raw",
+			"isDebug": true
+		},
+		{
+			"name": "types/PropertyTypes-dbg-dbg.js.map",
+			"size": 1584,
+			"isDebug": true
+		},
+		{
+			"name": "types/PropertyTypes-dbg.js",
+			"module": "sap/cards/ap/generator/types/PropertyTypes.js",
+			"size": 116,
+			"format": "raw",
+			"isDebug": true
+		},
+		{
+			"name": "types/PropertyTypes-dbg.js.map",
+			"size": 97,
+			"isDebug": true
+		},
+		{
+			"name": "types/PropertyTypes.d.ts",
+			"size": 1765
+		},
+		{
+			"name": "types/PropertyTypes.d.ts.map",
+			"size": 1594
+		},
+		{
+			"name": "types/PropertyTypes.js",
+			"module": "sap/cards/ap/generator/types/PropertyTypes.js",
+			"size": 112,
+			"format": "raw"
+		},
+		{
+			"name": "types/PropertyTypes.js.map",
+			"size": 93,
+			"isDebug": true
+		},
+		{
+			"name": "types/PropertyTypes.ts",
+			"size": 1345
+		},
+		{
+			"name": "utils/CommonUtils-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/utils/CommonUtils.js",
+			"size": 5034,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "utils/CommonUtils-dbg-dbg.js.map",
+			"size": 8317,
+			"isDebug": true
+		},
+		{
+			"name": "utils/CommonUtils-dbg.js",
+			"module": "sap/cards/ap/generator/utils/CommonUtils.js",
+			"size": 1652,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "utils/CommonUtils-dbg.js.map",
+			"size": 7038,
+			"isDebug": true
+		},
+		{
+			"name": "utils/CommonUtils.d.ts",
+			"size": 3020
+		},
+		{
+			"name": "utils/CommonUtils.d.ts.map",
+			"size": 898
+		},
+		{
+			"name": "utils/CommonUtils.js",
+			"module": "sap/cards/ap/generator/utils/CommonUtils.js",
+			"size": 1648,
+			"required": [
+				"sap/cards/ap/generator/types/CommonTypes.js",
+				"sap/ui/core/Element.js"
+			]
+		},
+		{
+			"name": "utils/CommonUtils.js.map",
+			"size": 7034,
+			"isDebug": true
+		},
+		{
+			"name": "utils/CommonUtils.ts",
+			"size": 4528
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser-dbg-dbg.js",
+			"module": "sap/cards/ap/generator/utils/IntegrationCardManifestParser.js",
+			"size": 4268,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser-dbg-dbg.js.map",
+			"size": 9066,
+			"isDebug": true
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser-dbg.js",
+			"module": "sap/cards/ap/generator/utils/IntegrationCardManifestParser.js",
+			"size": 1763,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser-dbg.js.map",
+			"size": 7340,
+			"isDebug": true
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser.d.ts",
+			"size": 810
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser.d.ts.map",
+			"size": 599
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser.js",
+			"module": "sap/cards/ap/generator/utils/IntegrationCardManifestParser.js",
+			"size": 1759,
+			"required": [
+				"sap/cards/ap/generator/odata/ODataUtils.js",
+				"sap/cards/ap/generator/pages/Application.js"
+			]
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser.js.map",
+			"size": 7336,
+			"isDebug": true
+		},
+		{
+			"name": "utils/IntegrationCardManifestParser.ts",
+			"size": 4098
+		}
+	]
+}

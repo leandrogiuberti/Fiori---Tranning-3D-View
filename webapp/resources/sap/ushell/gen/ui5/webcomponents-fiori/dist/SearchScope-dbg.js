@@ -1,0 +1,54 @@
+/*!
+ * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+ */
+sap.ui.define(
+  [
+    "sap/ui/core/webc/WebComponent",
+    "sap/ushell/gen/ui5/webcomponents-fiori",
+    "sap/ushell/thirdparty/SearchScope",
+  ],
+  function (WebComponentBaseClass) {
+    "use strict"
+
+    const WrapperClass = WebComponentBaseClass.extend(
+      "sap.ushell.gen.ui5.webcomponents-fiori.dist.SearchScope",
+      {
+        metadata: {
+          namespace: "sap/ushell/gen/ui5/webcomponents-fiori",
+          qualifiedNamespace: "sap.ushell.gen.ui5.webcomponents-fiori",
+          tag: "ui5-search-scope-16d3c820",
+          interfaces: ["sap.ushell.gen.ui5.webcomponents-fiori.ISearchScope"],
+          properties: {
+            text: {
+              type: "string",
+              mapping: "property",
+              defaultValue: "",
+            },
+            selected: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            width: {
+              type: "sap.ui.core.CSSSize",
+              mapping: "style",
+            },
+            height: {
+              type: "sap.ui.core.CSSSize",
+              mapping: "style",
+            },
+          },
+          aggregations: {},
+          associations: {},
+          events: {},
+          getters: [],
+          methods: [],
+          designtime:
+            "sap/ushell/gen/ui5/webcomponents-fiori/designtime/SearchScope.designtime",
+        },
+      },
+    )
+
+    return WrapperClass
+  },
+)

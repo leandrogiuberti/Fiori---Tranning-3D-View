@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/Log"],e=>{"use strict";function a(e,a,r){if(!r||!Array.isArray(r)){return e}if(a&&a.parameters&&a.parameters[e]&&a.parameters[e].renameTo){return a.parameters[e].renameTo}return e}function r(r){const t={};const s=r.intentParamsPlusAllDefaults;Object.keys(s).sort().forEach(n=>{const i=a(n,r.inbound.signature,s[n]);if(Array.isArray(r.intentParamsPlusAllDefaults[n])){if(t[i]){e.error(`collision of values during parameter mapping : "${n}" -> "${i}"`)}else{t[i]=r.intentParamsPlusAllDefaults[n]}}});r.mappedIntentParamsPlusSimpleDefaults=t}return{mapParameterNamesAndRemoveObjects:r,getRenameParameterName:a}});
+//# sourceMappingURL=ParameterMapping.js.map

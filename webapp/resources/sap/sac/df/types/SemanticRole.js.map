@@ -1,0 +1,1 @@
+{"version":3,"file":"SemanticRole.js","names":["sap","ui","define","SemanticRole","Actual","Previous","Budget","Forecast","AbsoluteVariance","PercentageVariance"],"sources":["SemanticRole-dbg.js"],"mappings":";;;;;AAMAA,IAAIC,GAAGC,OACL,gCACA,GACA,WASE,IAAIC,EAAe,CAKjBC,OAAQ,SAKRC,SAAU,WAKVC,OAAQ,SAKRC,SAAU,WAKVC,iBAAkB,mBAKlBC,mBAAoB,sBAEtB,OAAON,CACT","ignoreList":[]}

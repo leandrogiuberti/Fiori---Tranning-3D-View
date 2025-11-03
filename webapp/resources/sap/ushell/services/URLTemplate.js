@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";function e(){this._init.apply(this,arguments)}e.prototype._init=function(e){this.oAdapter=e};e.prototype.handlePostTemplateProcessing=function(e,t,s){if(this.oAdapter&&this.oAdapter.handlePostTemplateProcessing){return this.oAdapter.handlePostTemplateProcessing(e,t,s)}return Promise.resolve(e)};e.hasNoAdapter=false;e.useConfiguredAdapterOnly=true;return e});
+//# sourceMappingURL=URLTemplate.js.map

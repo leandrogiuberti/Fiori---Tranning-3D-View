@@ -1,0 +1,255 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/Component.js",
+			"size": 1525,
+			"isDebug": true,
+			"required": [
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ushell/library.js",
+				"sap/ushell/resources.js"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/Component-preload.js",
+			"size": 17635,
+			"merged": true,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CustomTreeItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/m/Popover.js",
+				"sap/m/Text.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/Tree.js",
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleMessage.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/dnd/DragDropInfo.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ui/unified/Menu.js",
+				"sap/ui/unified/MenuItem.js",
+				"sap/ui/unified/MenuItemGroup.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/library.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils/WindowUtils.js"
+			],
+			"included": [
+				"sap/ushell/components/shell/NavigationBarMenu/Component.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenuButton.controller.js",
+				"sap/ushell/components/shell/NavigationBarMenu/manifest.json",
+				"sap/ushell/components/shell/NavigationBarMenu/view/ContextMenu.fragment.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/CustomTreeItem.fragment.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.fragment.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.view.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenuButton.view.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenuPopover.fragment.xml"
+			]
+		},
+		{
+			"name": "Component-preload.js.map",
+			"size": 12716,
+			"isDebug": true
+		},
+		{
+			"name": "Component.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/Component.js",
+			"size": 938,
+			"required": [
+				"sap/m/library.js",
+				"sap/tnt/library.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ushell/library.js",
+				"sap/ushell/resources.js"
+			]
+		},
+		{
+			"name": "Component.js.map",
+			"size": 1029,
+			"isDebug": true
+		},
+		{
+			"name": "controller/NavigationBarMenu-dbg.controller.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js",
+			"size": 22763,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleMessage.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "controller/NavigationBarMenu.controller.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js",
+			"size": 7068,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleMessage.js",
+				"sap/ui/core/library.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/Sorter.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Config.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/resources.js",
+				"sap/ushell/utils/WindowUtils.js"
+			]
+		},
+		{
+			"name": "controller/NavigationBarMenu.controller.js.map",
+			"size": 9336,
+			"isDebug": true
+		},
+		{
+			"name": "controller/NavigationBarMenuButton-dbg.controller.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenuButton.controller.js",
+			"size": 4548,
+			"isDebug": true,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleMessage.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js"
+			]
+		},
+		{
+			"name": "controller/NavigationBarMenuButton.controller.js",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenuButton.controller.js",
+			"size": 1664,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleMessage.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/ushell/Container.js",
+				"sap/ushell/EventHub.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js"
+			]
+		},
+		{
+			"name": "controller/NavigationBarMenuButton.controller.js.map",
+			"size": 2002,
+			"isDebug": true
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/manifest.json",
+			"size": 970
+		},
+		{
+			"name": "resources.json",
+			"size": 8093
+		},
+		{
+			"name": "view/ContextMenu.fragment.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/ContextMenu.fragment.xml",
+			"size": 1551,
+			"required": [
+				"sap/ui/unified/Menu.js",
+				"sap/ui/unified/MenuItem.js",
+				"sap/ui/unified/MenuItemGroup.js"
+			]
+		},
+		{
+			"name": "view/CustomTreeItem.fragment.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/CustomTreeItem.fragment.xml",
+			"size": 1139,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CustomTreeItem.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Text.js"
+			]
+		},
+		{
+			"name": "view/NavigationBarMenu.fragment.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.fragment.xml",
+			"size": 2802,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Title.js",
+				"sap/m/Toolbar.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/Tree.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/dnd/DragDropInfo.js",
+				"sap/ushell/components/shell/NavigationBarMenu/view/ContextMenu.fragment.xml",
+				"sap/ushell/components/shell/NavigationBarMenu/view/CustomTreeItem.fragment.xml"
+			]
+		},
+		{
+			"name": "view/NavigationBarMenu.view.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.view.xml",
+			"size": 363,
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenu.controller.js",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.fragment.xml"
+			]
+		},
+		{
+			"name": "view/NavigationBarMenuButton.view.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenuButton.view.xml",
+			"size": 855,
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/OverflowToolbarLayoutData.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ushell/components/shell/NavigationBarMenu/controller/NavigationBarMenuButton.controller.js"
+			]
+		},
+		{
+			"name": "view/NavigationBarMenuPopover.fragment.xml",
+			"module": "sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenuPopover.fragment.xml",
+			"size": 551,
+			"required": [
+				"sap/m/Popover.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ushell/components/shell/NavigationBarMenu/view/NavigationBarMenu.fragment.xml"
+			]
+		}
+	]
+}

@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *      (c) Copyright 2009-2025 SAP SE. All rights reserved
+ */
+sap.ui.define(["sap/base/util/ObjectPath","sap/fe/core/library","sap/fe/tools/Inspector","sap/fe/tools/ODataTracer","sap/fe/tools/SupportPopup","sap/fe/tools/XMLSerializer","sap/ui/base/BindingParser","sap/ui/core/Element","sap/ui/core/Lib","sap/ui/core/library","sap/ui/model/json/JSONModel"],function(e,o,t,s,r,a,n,p,i,l,c){"use strict";var u=a.serializeControlAsXML;var d=r.openPopup;var f=s.addODataTrace;var m=t.toggleElementInspector;const S=i.init({name:"sap.fe.tools",apiVersion:2,dependencies:["sap.ui.core","sap.fe.core"],types:[],interfaces:[],controls:[],elements:[],version:"1.141.0",noLibraryCSS:true});e.set("$fe",S);S.serializeXML=u;S.byId=p.getElementById;S.toggleElementInspector=m;S.storeAppComponent=function(e){S.appComponent=e};S.controlIndex=0;S.supportModel=new c({data:[],cachedSupportLinks:{},supportLinksStateText:"Select control to retrieve support links"});f(S);n._keepBindingStrings=true;d();return S},false);
+//# sourceMappingURL=library.js.map

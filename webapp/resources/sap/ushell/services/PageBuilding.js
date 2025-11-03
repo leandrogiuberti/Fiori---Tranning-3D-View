@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/thirdparty/jquery"],jQuery=>{"use strict";function e(e,t){this.getFactory=function(){return e.getFactory()};this.getPage=function(t){return e.getFactory().createPage(t)};this.getPageSet=function(t){const r=new jQuery.Deferred;e.getFactory().createPageSet(t,r.resolve.bind(r),e=>{r.reject(new Error(e))});return r.promise()}}e.hasNoAdapter=false;return e},true);
+//# sourceMappingURL=PageBuilding.js.map

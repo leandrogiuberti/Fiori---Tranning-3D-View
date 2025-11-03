@@ -1,0 +1,7 @@
+{
+    "id": "emptyDataSource",
+    "label": "emptyDataSource",
+    "type": "BusinessObject",
+    "defaultNavigationTarget": {},
+    "attributes": []
+}

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/Control","sap/ushell/library"],(e,n)=>{"use strict";const r=e.extend("sap.ushell.ui.shell.SubHeader",{metadata:{library:"sap.ushell",aggregations:{content:{type:"sap.ui.core.Control",multiple:true,singularName:"content"}}},renderer:{apiVersion:2,render:function(e,n){e.openStart("div",n);e.class("sapUshellSubHeader");e.openEnd();const r=n.getContent();if(r.length){e.renderControl(r[0])}e.close("div")}}});return r});
+//# sourceMappingURL=SubHeader.js.map

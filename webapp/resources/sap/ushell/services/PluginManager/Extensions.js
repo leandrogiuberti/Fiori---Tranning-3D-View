@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/services/PluginManager/HeaderExtensions","sap/ushell/services/PluginManager/MenuExtensions"],(e,n)=>{"use strict";function r(e){return Promise.resolve(n(e))}function s(){return Promise.resolve(e)}const i={Header:s,Menu:r};async function t(e,n){const r=i[n];if(!r){throw new Error(`Unsupported extension: '${n}'`)}return r(e)}return t});
+//# sourceMappingURL=Extensions.js.map

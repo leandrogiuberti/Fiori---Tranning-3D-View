@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/EventHub","sap/ushell/bootstrap/common/common.create.configcontract.core","sap/ushell/Config/utils"],(e,t,n)=>{"use strict";let r=t.createConfigContract(window["sap-ushell-config"]);let o=e.createChannel(r);const c=Object.keys(o).reduce((t,n)=>{t[n]=function(){if(!o){o=e.createChannel(r)}return o[n].apply(o,arguments)};return t},{_reset:function(){o=null},_resetContract:function(){r=t.createConfigContract(window["sap-ushell-config"]);this._reset()},registerConfiguration:function(e,t){r=t},createModel:function(t,c){if(!o){o=e.createChannel(r)}return n.createModel(o,r,t,c)}});return c},false);
+//# sourceMappingURL=Config.js.map

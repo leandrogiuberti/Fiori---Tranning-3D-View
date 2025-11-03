@@ -1,0 +1,192 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".library",
+			"size": 537
+		},
+		{
+			"name": ".theming",
+			"size": 106
+		},
+		{
+			"name": "cardTranspiler/Transpile-dbg-dbg.js",
+			"module": "sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+			"size": 970,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js"
+			]
+		},
+		{
+			"name": "cardTranspiler/Transpile-dbg.js",
+			"module": "sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+			"size": 445,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js"
+			]
+		},
+		{
+			"name": "cardTranspiler/Transpile-dbg.js.map",
+			"size": 807,
+			"isDebug": true
+		},
+		{
+			"name": "cardTranspiler/Transpile.d.ts",
+			"size": 822
+		},
+		{
+			"name": "cardTranspiler/Transpile.d.ts.map",
+			"size": 294
+		},
+		{
+			"name": "cardTranspiler/Transpile.js",
+			"module": "sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+			"size": 441,
+			"required": [
+				"sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js"
+			]
+		},
+		{
+			"name": "cardTranspiler/Transpile.js.map",
+			"size": 799,
+			"isDebug": true
+		},
+		{
+			"name": "cardTranspiler/Transpile.ts",
+			"size": 1312
+		},
+		{
+			"name": "library-dbg-dbg.js",
+			"module": "sap/cards/ap/transpiler/library.js",
+			"size": 517,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/transpiler/manifest.json",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "library-dbg.js",
+			"module": "sap/cards/ap/transpiler/library.js",
+			"size": 436,
+			"isDebug": true,
+			"required": [
+				"sap/cards/ap/transpiler/manifest.json",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "library-dbg.js.map",
+			"size": 501,
+			"isDebug": true
+		},
+		{
+			"name": "library-preload-dbg.js",
+			"module": "sap/cards/ap/transpiler/library-preload.js",
+			"size": 45337,
+			"isDebug": true,
+			"merged": true,
+			"required": [
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js"
+			],
+			"included": [
+				"sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/cards/ap/transpiler/manifest.json"
+			]
+		},
+		{
+			"name": "library-preload.js",
+			"module": "sap/cards/ap/transpiler/library-preload.js",
+			"size": 45381,
+			"merged": true,
+			"required": [
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js"
+			],
+			"included": [
+				"sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js",
+				"sap/cards/ap/transpiler/cardTranspiler/Transpile.js",
+				"sap/cards/ap/transpiler/library.js",
+				"sap/cards/ap/transpiler/manifest.json"
+			]
+		},
+		{
+			"name": "library-preload.js.map",
+			"size": 57676,
+			"isDebug": true
+		},
+		{
+			"name": "library.d.ts",
+			"size": 179
+		},
+		{
+			"name": "library.d.ts.map",
+			"size": 247
+		},
+		{
+			"name": "library.js",
+			"module": "sap/cards/ap/transpiler/library.js",
+			"size": 432,
+			"required": [
+				"sap/cards/ap/transpiler/manifest.json",
+				"sap/ui/core/Lib.js",
+				"sap/ui/core/library.js"
+			]
+		},
+		{
+			"name": "library.js.map",
+			"size": 461,
+			"isDebug": true
+		},
+		{
+			"name": "library.ts",
+			"size": 430
+		},
+		{
+			"name": "manifest.json",
+			"module": "sap/cards/ap/transpiler/manifest.json",
+			"size": 696
+		},
+		{
+			"name": "resources.json",
+			"size": 4271
+		},
+		{
+			"name": "thirdparty/sap-ux/integration-card-converter-dbg-dbg.js",
+			"size": 141897,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/sap-ux/integration-card-converter-dbg.js",
+			"module": "sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js",
+			"size": 43788,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/sap-ux/integration-card-converter-dbg.js.map",
+			"size": 56112,
+			"isDebug": true
+		},
+		{
+			"name": "thirdparty/sap-ux/integration-card-converter.js",
+			"module": "sap/cards/ap/transpiler/thirdparty/sap-ux/integration-card-converter.js",
+			"size": 43783
+		},
+		{
+			"name": "thirdparty/sap-ux/integration-card-converter.js.map",
+			"size": 55999,
+			"isDebug": true
+		},
+		{
+			"name": "ui5.d.ts",
+			"size": 1356
+		}
+	]
+}

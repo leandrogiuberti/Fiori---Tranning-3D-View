@@ -1,0 +1,155 @@
+/*!
+ * ${copyright}
+ */
+sap.ui.define(
+  [
+    "sap/ui/core/webc/WebComponent",
+    "sap/esh/search/ui/gen/ui5/webcomponents_fiori",
+    "sap/esh/search/ui/thirdparty/Search",
+  ],
+  function (WebComponentBaseClass) {
+    "use strict"
+
+    const WrapperClass = WebComponentBaseClass.extend(
+      "sap.esh.search.ui.gen.ui5.webcomponents_fiori.dist.Search",
+      {
+        metadata: {
+          namespace: "sap/esh/search/ui/gen/ui5/webcomponents_fiori",
+          qualifiedNamespace: "sap.esh.search.ui.gen.ui5.webcomponents_fiori",
+          tag: "ui5-search-7c6aa654",
+          interfaces: [],
+          properties: {
+            loading: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            noTypeahead: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            open: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            showClearIcon: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            value: {
+              type: "string",
+              mapping: "property",
+              defaultValue: "",
+            },
+            placeholder: {
+              type: "string",
+              mapping: "property",
+            },
+            accessibleName: {
+              type: "string",
+              mapping: "property",
+            },
+            accessibleDescription: {
+              type: "string",
+              mapping: "property",
+            },
+            text: {
+              type: "string",
+              mapping: "textContent",
+            },
+            width: {
+              type: "sap.ui.core.CSSSize",
+              mapping: "style",
+            },
+            height: {
+              type: "sap.ui.core.CSSSize",
+              mapping: "style",
+            },
+          },
+          aggregations: {
+            items: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents_fiori.dist.SearchItem",
+              multiple: true,
+            },
+            action: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents.dist.Button",
+              multiple: true,
+              slot: "action",
+            },
+            illustration: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents_fiori.dist.IllustratedMessage",
+              multiple: true,
+              slot: "illustration",
+            },
+            messageArea: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents_fiori.dist.SearchMessageArea",
+              multiple: true,
+              slot: "messageArea",
+            },
+            scopes: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents_fiori.ISearchScope",
+              multiple: true,
+              slot: "scopes",
+            },
+            filterButton: {
+              type: "sap.esh.search.ui.gen.ui5.webcomponents.dist.Button",
+              multiple: true,
+              slot: "filterButton",
+            },
+          },
+          associations: {},
+          events: {
+            open: {
+              allowPreventDefault: false,
+              enableEventBubbling: false,
+              parameters: {},
+            },
+            close: {
+              allowPreventDefault: false,
+              enableEventBubbling: false,
+              parameters: {},
+            },
+            input: {
+              allowPreventDefault: false,
+              enableEventBubbling: true,
+              parameters: {},
+            },
+            scopeChange: {
+              allowPreventDefault: false,
+              enableEventBubbling: true,
+              parameters: {
+                scope: {
+                  type: "sap.ui.core.Control",
+                  types: [
+                    {
+                      dtsType: "Control",
+                      packageName: "sap/ui/core/Control",
+                      moduleType: "module:sap/ui/core/Control",
+                      ui5Type: "sap.ui.core.Control",
+                      isClass: true,
+                    },
+                  ],
+                  dtsParamDescription: "The newly selected scope",
+                },
+              },
+            },
+            search: {
+              allowPreventDefault: true,
+              enableEventBubbling: true,
+              parameters: {},
+            },
+          },
+          getters: [],
+          methods: [],
+          defaultAggregation: "items",
+          designtime: "sap/esh/search/ui/gen/ui5/webcomponents_fiori/designtime/Search.designtime",
+        },
+      },
+    )
+
+    return WrapperClass
+  },
+)

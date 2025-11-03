@@ -1,0 +1,303 @@
+{
+    "type": "BusinessObject",
+    "id": "employees",
+    "label": "Employee (EPM-CDS)",
+    "labelPlural": "Employees (EPM-CDS)",
+    "defaultNavigationTarget": {
+        "text": "Show Detail",
+        "targetUrl": "#mandant={MANDT}&id={EMPLOYEE_ID}",
+        "target": "_blank"
+    },
+    "attributes": [
+        {
+            "id": "PR_ADDRESS_GUID",
+            "label": "Node Key",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "NODE_KEY",
+            "label": "Node Key",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "INITIALS",
+            "label": "Initials",
+            "type": "String",
+            "isSortable": false,
+            "usage": { "AdvancedSearch": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "LANGUAGE",
+            "label": "Language",
+            "type": "String",
+            "isSortable": false,
+            "usage": { "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "MANDT",
+            "label": "Client",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": true,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "LOGIN_NAME",
+            "label": "Login Name",
+            "type": "String",
+            "isSortable": false,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "EMPLOYEE_ID",
+            "label": "Employee ID",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 0 } },
+            "isKey": true,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "GENDER",
+            "label": "Gender",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 1 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "EMAIL_ADDRESS",
+            "label": "Email",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 2 } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "COUNTRY",
+            "label": "Country",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "PHONE_NUMBER",
+            "label": "Phone number",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 4 } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "SALARY_AMOUNT",
+            "label": "Salary Amount",
+            "type": "Double",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "FIRST_NAME",
+            "label": "First Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 7 }, "AdvancedSearch": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "MIDDLE_NAME",
+            "label": "Middle Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 8 }, "AdvancedSearch": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "LAST_NAME",
+            "label": "Last Name",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Detail": { "displayOrder": 9 }, "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "EMPLOYEE_PIC_URL",
+            "label": "Pic URI",
+            "type": "ImageUrl",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 10 } },
+            "isKey": false,
+            "matchingStrategy": "Exact",
+            "format": "round"
+        },
+        {
+            "id": "LATITUDE",
+            "label": "Latitude",
+            "type": "Double",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 11 } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "LONGITUDE",
+            "label": "Longitude",
+            "type": "Double",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 12 } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "BUILDING",
+            "label": "House Number",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "CITY",
+            "label": "City",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "CURRENCY_CODE",
+            "label": "Currency Code",
+            "type": "String",
+            "isSortable": true,
+            "usage": {},
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "POSTAL_CODE",
+            "label": "Postal Code",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "AdvancedSearch": {} },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "STREET",
+            "label": "Street",
+            "type": "String",
+            "isSortable": true,
+            "usage": { "Facet": {} },
+            "isKey": false,
+            "matchingStrategy": "Text"
+        },
+        {
+            "id": "TITLE_URL",
+            "label": "TITLE_URL",
+            "type": "String",
+            "isSortable": false,
+            "usage": { "Navigation": { "mainNavigation": true } },
+            "isKey": false,
+            "matchingStrategy": "Exact"
+        },
+        {
+            "id": "grp_address",
+            "label": "Address",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 3 } },
+            "groups": [],
+            "template": "{street} {building}, {postal_code} {city}",
+            "attributes": [
+                {
+                    "attribute": { "id": "COUNTRY" },
+                    "group": { "id": "grp_address" },
+                    "nameInGroup": "country"
+                },
+                {
+                    "attribute": { "id": "BUILDING" },
+                    "group": { "id": "grp_address" },
+                    "nameInGroup": "building"
+                },
+                { "attribute": { "id": "CITY" }, "group": { "id": "grp_address" }, "nameInGroup": "city" },
+                {
+                    "attribute": { "id": "POSTAL_CODE" },
+                    "group": { "id": "grp_address" },
+                    "nameInGroup": "postal_code"
+                },
+                { "attribute": { "id": "STREET" }, "group": { "id": "grp_address" }, "nameInGroup": "street" }
+            ],
+            "displayAttributes": []
+        },
+        {
+            "id": "SALARY_AMOUNT____CurrencyGroup",
+            "label": "Salary Amount",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Detail": { "displayOrder": 6 } },
+            "groups": [],
+            "template": "{SALARY_AMOUNT} {CURRENCY_CODE}",
+            "attributes": [
+                {
+                    "attribute": { "id": "SALARY_AMOUNT" },
+                    "group": { "id": "SALARY_AMOUNT____CurrencyGroup" },
+                    "nameInGroup": "SALARY_AMOUNT"
+                },
+                {
+                    "attribute": { "id": "CURRENCY_CODE" },
+                    "group": { "id": "SALARY_AMOUNT____CurrencyGroup" },
+                    "nameInGroup": "CURRENCY_CODE"
+                }
+            ],
+            "displayAttributes": ["SALARY_AMOUNT", "CURRENCY_CODE"]
+        },
+        {
+            "id": "grp_name",
+            "label": "Name",
+            "type": "Group",
+            "isSortable": false,
+            "usage": { "Title": { "displayOrder": 1 } },
+            "groups": [],
+            "template": "{first_name} {last_name}",
+            "attributes": [
+                {
+                    "attribute": { "id": "FIRST_NAME" },
+                    "group": { "id": "grp_name" },
+                    "nameInGroup": "first_name"
+                },
+                {
+                    "attribute": { "id": "LAST_NAME" },
+                    "group": { "id": "grp_name" },
+                    "nameInGroup": "last_name"
+                }
+            ],
+            "displayAttributes": []
+        }
+    ]
+}

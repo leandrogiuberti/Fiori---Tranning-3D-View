@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/ControlBehavior","sap/ui/core/CustomData"],(e,t)=>{"use strict";const i=t.extend("sap.ushell.ui.launchpad.AccessibilityCustomData",{metadata:{library:"sap.ushell"}});i.prototype._checkWriteToDom=function(){if(!e.isAccessibilityEnabled()){return null}const i=this.getKey();const a=t.prototype._checkWriteToDom.apply(this,arguments);if(a&&(i.indexOf("aria-")===0||i==="role"||i==="tabindex")){a.key=a.key.replace(/^data-/,"")}return a};return i});
+//# sourceMappingURL=AccessibilityCustomData.js.map

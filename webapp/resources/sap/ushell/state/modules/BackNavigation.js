@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/library","sap/ui/core/routing/History"],(t,i)=>{"use strict";const n=t.routing.HistoryDirection;function e(){let t;this.isBackNavigation=function(){return i.getInstance().getDirection()===n.Backwards};this.navigateBack=async function(){if(t){t();return}window.history.back()};this.setNavigateBack=function(i){t=i};this.resetNavigateBack=function(){t=undefined};this.restore=function(i){t=i.fnCustomBackNavigation};this.store=function(i){i.fnCustomBackNavigation=t};this.reset=function(){t=undefined}}return new e});
+//# sourceMappingURL=BackNavigation.js.map

@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    core:require="{
+        Device: 'sap/ui/Device'
+    }">
+    <ResponsivePopover
+        id="sideNavigationPopover"
+        verticalScrolling="false"
+        showHeader="{= Device.system.phone}"
+        placement="Bottom"
+        ariaLabelledBy="sideNavigationLabel">
+		<core:InvisibleText id="sideNavigationLabel" text="{i18n>SideNavigation.PopoverLabel}"/>
+    </ResponsivePopover>
+
+</core:FragmentDefinition>

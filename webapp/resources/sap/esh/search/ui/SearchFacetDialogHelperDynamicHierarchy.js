@@ -1,0 +1,7 @@
+/*!
+ * SAPUI5
+ * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
+ * 
+ */
+sap.ui.define(["./FacetItem"],function(e){"use strict";function t(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const a=t(e);async function i(e,t,a){function i(t,a,i){const o=t.getData().facet;const n=r(o,i);if(a){e.addFilter(n)}else{e.removeFilter(n)}}const o=t.sina.createFilter({dataSource:e.getDataSource()});const n=e.getStaticHierarchyFilterConditions();if(n.length>0){for(const e of n){o.autoInsertCondition(e)}}for(const e of a){o.autoInsertCondition(e.filterCondition)}t.setFilter(o);t.setHandleSetFilter(i);await t.treeNodeFactory.updateRecursively();t.updateNodesFromHierarchyNodePaths(e.getProperty("/hierarchyNodePaths"));t.mixinFilterNodes();t.treeNodeFactory.updateUI()}function r(e,t){return new a({selected:false,level:0,filterCondition:t,value:t.value,valueLabel:t.valueLabel,label:e.title,facetTitle:e.title,facetAttribute:e.attributeId,advanced:true,listed:true,icon:null,visible:true})}var o={__esModule:true};o.updateDetailPageforDynamicHierarchy=i;o.createFilterFacetItemForDynamicHierarchy=r;return o});
+//# sourceMappingURL=SearchFacetDialogHelperDynamicHierarchy.js.map

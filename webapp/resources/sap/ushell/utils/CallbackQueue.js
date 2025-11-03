@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/Log","sap/base/util/Deferred","sap/ushell/utils"],(e,s,t)=>{"use strict";class r{#e=Promise.resolve();#s=1;async push(r,i){const a=this.#e;const o=new s;this.#e=a.then(()=>o.promise);this.#e.index=this.#s++;await a;let l=false;let c;try{c=await t.promisify(r())}catch(s){e.error("Error occurred in CallbackQueue:",s);l=true;c=s;if(i){try{c=await t.promisify(i(s));l=false}catch(s){e.error("Error occurred in CallbackQueue:",s);l=true;c=s}}}o.resolve();if(l){throw c}return c}async waitAllSettled(){const e=this.#e;await e;if(e!==this.#e){return this.waitAllSettled()}}}return r});
+//# sourceMappingURL=CallbackQueue.js.map

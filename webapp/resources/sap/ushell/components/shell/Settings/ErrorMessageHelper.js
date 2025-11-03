@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/Messaging"],e=>{"use strict";const s="sapUshellSettingsDialog/";function t(t){t.setTargets([s]);e.addMessages(t)}function a(){return e.getMessageModel().getData().filter(e=>e.getTargets()&&e.getTargets().indexOf(s)===0)}function g(){e.getMessageModel().getData().forEach(t=>{if(t.getTargets()&&t.getTargets().indexOf(s)===0){e.removeMessages(t)}})}return{addMessage:t,filterMessagesToDisplay:a,removeErrorMessages:g}});
+//# sourceMappingURL=ErrorMessageHelper.js.map

@@ -1,0 +1,74 @@
+/*!
+ * SAPUI5
+ * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
+ * 
+ */
+declare global {
+    interface Document {
+        documentMode: string;
+    }
+}
+
+declare global {
+    interface Navigator {
+        browserLanguage: string;
+    }
+}
+
+declare global {
+    interface Window {
+        chrome: { webstore?: unknown };
+        InstallTrigger: unknown;
+        StyleMedia: unknown;
+    }
+}
+
+export function getLanguagePreferences(): Array<LanguagePreference> {
+    const isFirefox = typeof window.InstallTrigger !== "undefined";
+    // eslint-disable-next-line no-constant-binary-expression
+    const isIE = false || !!document.documentMode;
+    const isEdge = !isIE && !!window.StyleMedia;
+    const isChrome = !!window.chrome && !!window.chrome.webstore;
+    const languagePreferences = [];
+    if (isIE || isEdge) {
+        const ieLang = window.navigator.browserLanguage || window.navigator.language;
+        languagePreferences.splice(0, 0, this._getLanguageCountryObject(ieLang));
+    } else if (isFirefox || isChrome) {
+        const language = window.navigator.language;
+        const languages = window.navigator.languages.slice();
+        const index = languages.indexOf(language);
+        if (index > -1) {
+            languages.splice(index, 1);
+        }
+        languagePreferences.splice(0, 0, this._getLanguageCountryObject(language));
+        for (let i = 0; i < languages.length; i++) {
+            const languagePreference = this._getLanguageCountryObject(languages[i]);
+            if (languagePreference) {
+                languagePreferences.splice(languagePreferences.length, 0, languagePreference);
+            }
+        }
+    } else {
+        languagePreferences.splice(0, 0, this._getLanguageCountryObject(window.navigator.language));
+    }
+    return languagePreferences;
+}
+
+export interface LanguagePreference {
+    Language: string;
+    Country: string;
+}
+
+export function _getLanguageCountryObject(l: string): LanguagePreference {
+    let language: string;
+    let country: string;
+    if (l.length === 2) {
+        language = l;
+        country = "";
+    } else if (l.length === 5 && l.indexOf("-") === 2) {
+        language = l.substr(0, 2);
+        country = l.substr(3);
+    } else {
+        return undefined;
+    }
+    return { Language: language, Country: country };
+}

@@ -1,0 +1,8 @@
+/*!
+ * 
+		SAP UI development toolkit for HTML5 (SAPUI5)
+        (c) Copyright 2009-2021 SAP SE. All rights reserved
+	
+ */
+sap.ui.define(["./HeaderLR","sap/fe/test/Utils","sap/ui/test/OpaBuilder","sap/fe/test/builder/FEBuilder","sap/fe/test/builder/MdcFieldBuilder","./APIHelper"],function(e,t,s,r,a,i){"use strict";var o=function(t,s){return e.call(this,t,s)};o.prototype=Object.create(e.prototype);o.prototype.constructor=o;o.prototype.isAction=false;o.prototype.iCheckAction=function(e,s){var r=t.parseArguments([[Object,String],Object],arguments),a=this.createOverflowToolbarBuilder(this._sPageId);return this.prepareResult(a.hasContent(this.createActionMatcher(e),s).description(t.formatMessage("Checking custom header action '{0}' with state='{1}'",r[0],r[1])).execute())};o.prototype.iCheckSaveAsTile=function(e){var a={icon:"sap-icon://action"};var o=r.create(this.getOpaInstance());return this.prepareResult(o.hasType("sap.m.Button").hasProperties(a).do(s.Actions.press()).description(t.formatMessage("Open share menu")).success(i.createSaveAsTileCheckBuilder(e)).success(r.create().hasType("sap.m.Button").hasProperties(a).do(s.Actions.press()).description("Close the popup menu")).execute())};o.prototype.iCheckSendEmail=function(e){var a={icon:"sap-icon://action"};var o=r.create(this.getOpaInstance());return this.prepareResult(o.hasType("sap.m.Button").hasProperties(a).do(s.Actions.press()).description(t.formatMessage("Open share menu")).success(i.createSendEmailCheckBuilder(e)).success(r.create().hasType("sap.m.Button").hasProperties(a).do(s.Actions.press()).description("Close the popup menu")).execute())};return o});
+//# sourceMappingURL=HeaderAssertionsLR.js.map

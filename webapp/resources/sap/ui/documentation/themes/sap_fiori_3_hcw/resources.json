@@ -1,0 +1,31 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "library-RTL.css",
+			"size": 58041,
+			"theme": "sap_fiori_3_hcw"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/ui/documentation/themes/sap_fiori_3_hcw/library-parameters.json",
+			"size": 1138,
+			"theme": "sap_fiori_3_hcw"
+		},
+		{
+			"name": "library.css",
+			"size": 58029,
+			"theme": "sap_fiori_3_hcw"
+		},
+		{
+			"name": "library.source.less",
+			"size": 329,
+			"designtime": true,
+			"theme": "sap_fiori_3_hcw"
+		},
+		{
+			"name": "resources.json",
+			"size": 556
+		}
+	]
+}

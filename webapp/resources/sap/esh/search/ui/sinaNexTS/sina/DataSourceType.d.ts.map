@@ -1,0 +1,1 @@
+{"version":3,"file":"DataSourceType.d.ts","sourceRoot":"../../../../../../../..","sources":["src/sap/esh/search/ui/sinaNexTS/sina/DataSourceType.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,iDAAiD,CAAC;IACjE;;;;OAIG;IACH,KAAY,cAAc;QACtB,cAAc,mBAAmB;QACjC,QAAQ,aAAa;QACrB,YAAY,iBAAiB;KAChC;IAED,KAAY,iBAAiB;QAIzB,QAAQ,aAAa;KACxB;CAEA"}

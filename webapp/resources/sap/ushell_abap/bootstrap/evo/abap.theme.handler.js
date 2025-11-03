@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/thirdparty/URI","sap/base/Log","sap/ushell/bootstrap/common/common.read.metatags"],(e,t,o)=>{"use strict";const i={};function a(e){const i=o.readMetaTags("sap-allowed-theme-origins",e=>e.trim());let a="";if(i.length>0){a=i[0]}else{t.debug('No meta tag "sap-allowed-theme-origins" was found. No allowed origin for "theme-url" was applied.')}return!!a&&a.split(",").some(t=>t==="*"||e===t.trim())}i.isThemeRootSafe=function(t){const o=new e(t).search("");const i=o.origin().toString();if(i===""||a(i)||o.origin()===window.location.origin){return true}return false};return i});
+//# sourceMappingURL=abap.theme.handler.js.map

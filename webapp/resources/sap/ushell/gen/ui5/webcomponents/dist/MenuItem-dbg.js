@@ -1,0 +1,193 @@
+/*!
+ * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+ */
+sap.ui.define(
+  [
+    "sap/ushell/gen/ui5/webcomponents/dist/ListItem",
+    "sap/ui/core/EnabledPropagator",
+    "sap/ushell/gen/ui5/webcomponents",
+    "sap/ushell/thirdparty/UserMenuItem",
+  ],
+  function (WebComponentBaseClass, EnabledPropagator) {
+    "use strict"
+
+    const WrapperClass = WebComponentBaseClass.extend(
+      "sap.ushell.gen.ui5.webcomponents.dist.MenuItem",
+      {
+        metadata: {
+          namespace: "sap/ushell/gen/ui5/webcomponents",
+          qualifiedNamespace: "sap.ushell.gen.ui5.webcomponents",
+          tag: "ui5-menu-item-16d3c820",
+          interfaces: ["sap.ushell.gen.ui5.webcomponents.IMenuItem"],
+          properties: {
+            text: {
+              type: "string",
+              mapping: "property",
+            },
+            additionalText: {
+              type: "string",
+              mapping: "property",
+            },
+            icon: {
+              type: "string",
+              mapping: "property",
+            },
+            enabled: {
+              type: "boolean",
+              defaultValue: "true",
+              mapping: {
+                type: "property",
+                to: "disabled",
+                formatter: "_mapEnabled",
+              },
+            },
+            loading: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            loadingDelay: {
+              type: "float",
+              mapping: "property",
+              defaultValue: 1000,
+            },
+            accessibleName: {
+              type: "string",
+              mapping: "property",
+            },
+            tooltip: {
+              type: "string",
+              mapping: "property",
+            },
+            checked: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            accessibilityAttributes: {
+              type: "any",
+              mapping: "property",
+              defaultValue: "{}",
+            },
+            type: {
+              type: "sap.ushell.gen.ui5.webcomponents.ListItemType",
+              mapping: "property",
+              defaultValue: "Active",
+            },
+            navigated: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+            highlight: {
+              type: "sap.ushell.gen.ui5.webcomponents.Highlight",
+              mapping: "property",
+              defaultValue: "None",
+            },
+            selected: {
+              type: "boolean",
+              mapping: "property",
+              defaultValue: false,
+            },
+          },
+          aggregations: {
+            items: {
+              type: "sap.ushell.gen.ui5.webcomponents.IMenuItem",
+              multiple: true,
+            },
+            endContent: {
+              type: "sap.ui.core.Control",
+              multiple: true,
+              slot: "endContent",
+            },
+            deleteButton: {
+              type: "sap.ushell.gen.ui5.webcomponents.IButton",
+              multiple: true,
+              slot: "deleteButton",
+            },
+          },
+          associations: {},
+          events: {
+            beforeOpen: {
+              allowPreventDefault: true,
+              enableEventBubbling: false,
+              parameters: {
+                item: {
+                  type: "sap.ui.core.Control",
+                  types: [
+                    {
+                      origType: "HTMLElement",
+                      multiple: false,
+                      dedicatedTypes: [
+                        {
+                          dtsType: "Control",
+                          packageName: "sap/ui/core/Control",
+                          moduleType: "module:sap/ui/core/Control",
+                          ui5Type: "sap.ui.core.Control",
+                          isClass: true,
+                        },
+                      ],
+                    },
+                  ],
+                  dtsParamDescription:
+                    "The menu item that triggers opening of the sub-menu or undefined when fired upon root menu opening.",
+                },
+              },
+            },
+            open: {
+              allowPreventDefault: false,
+              enableEventBubbling: false,
+              parameters: {},
+            },
+            beforeClose: {
+              allowPreventDefault: true,
+              enableEventBubbling: false,
+              parameters: {
+                escPressed: {
+                  type: "boolean",
+                  types: [
+                    {
+                      origType: "boolean",
+                      multiple: false,
+                      dedicatedTypes: [
+                        {
+                          dtsType: "boolean",
+                          ui5Type: "boolean",
+                        },
+                      ],
+                    },
+                  ],
+                  dtsParamDescription:
+                    "Indicates that `ESC` key has triggered the event.",
+                },
+              },
+            },
+            close: {
+              allowPreventDefault: false,
+              enableEventBubbling: false,
+              parameters: {},
+            },
+            check: {
+              allowPreventDefault: false,
+              enableEventBubbling: true,
+              parameters: {},
+            },
+            detailClick: {
+              allowPreventDefault: false,
+              enableEventBubbling: true,
+              parameters: {},
+            },
+          },
+          getters: [],
+          methods: [],
+          defaultAggregation: "items",
+          designtime: "sap/ushell/gen/ui5/webcomponents/designtime/MenuItem.designtime",
+        },
+      },
+    )
+
+    EnabledPropagator.call(WrapperClass.prototype)
+
+    return WrapperClass
+  },
+)

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/appIntegration/ApplicationContainerCache","sap/ushell/appIntegration/AppLifeCycle"],(e,t)=>{"use strict";const r={};r.getCurrentApplicationIframe=function(){const e=t.getCurrentApplication()?.container;if(!e){return null}const r=e.getPostMessageTarget();if(!r){return null}return{iframe:r,origin:e.getPostMessageTargetOrigin()}};r.getAllApplicationIframes=function(){const t=e.getAll();return t.filter(e=>{if(!e){return false}if(!e.isA("sap.ushell.appIntegration.IframeApplicationContainer")){return false}if(!e.getPostMessageTarget()){return false}return true}).map(e=>({iframe:e.getPostMessageTarget(),origin:e.getPostMessageTargetOrigin()}))};return r});
+//# sourceMappingURL=DWS.js.map

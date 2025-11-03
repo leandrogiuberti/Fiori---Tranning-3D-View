@@ -1,0 +1,6 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+ *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
+ */
+"use strict";sap.ui.define(["./Application"],function(t){"use strict";const e=t["Application"];class n extends e{constructor(t){super(t);e.floorplan="ObjectPage"}validateCardGeneration(){const{serviceUrl:t,entitySet:e,entitySetWithObjectContext:n}=this.fetchDetails();if(!t||!e||!n){return false}if(n.indexOf("(")>-1){const t=n.indexOf("(");const e=n.indexOf(")");const s=n.substring(t+1,e);if(!s){return false}}else{return false}return true}getEntityRelatedInfo(){const t=window.hasher.getHash();let e=t.split("&/")[1]||"";e=e.includes("/")?e.split("/")[0]:e;if(e.startsWith("/")){e=e.replace("/","")}e=e.includes("?")?e.split("?")[0]:e;const n=e.indexOf("(");const s=e.substring(0,n);return{entitySet:s,entitySetWithObjectContext:e}}static createInstance(t){if(!e.instance){e.instance=new n(t)}return e.instance}}var s={__esModule:true};s.ObjectPage=n;return s});
+//# sourceMappingURL=ObjectPage-dbg.js.map

@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/EventBus","sap/ui/core/mvc/Controller"],(e,n)=>{"use strict";return n.extend("sap.ushell.renderer.rendererTargetWrapper.RendererTarget",{onInit:function(){const e=this.byId("appContainer");e.loadChild()},reloadApp:function(){const e=this.byId("appContainer");e.destroyChild();return e.loadChild()},getComponentInstance:async function(){const e=this.byId("appContainer");const n=await e.getChild();if(typeof n.getComponentInstance==="function"){return n.getComponentInstance()}},onChildDestroy:function(){e.getInstance().publish("sap.ushell.renderer.Renderer","appClosed",{})}})});
+//# sourceMappingURL=RendererTarget.controller.js.map

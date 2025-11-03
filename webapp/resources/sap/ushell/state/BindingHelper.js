@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ui/core/Element"],t=>{"use strict";class e{overrideUpdateAggregation(t){t.updateAggregation=this.#t}#t(t){const g=this.getBindingInfo(t).model;const i=[...this.getAggregation(t)||[]];i.forEach(e=>{this.removeAggregation(t,e,true)});this.getBinding(t).getCurrentContexts().forEach(i=>{const n=e.prototype.factory("",i);if(!n){return}n.setBindingContext(i,g);this.addAggregation(t,n,true)});this.invalidate()}factory(e,g){return t.getElementById(g.getObject())}}return new e});
+//# sourceMappingURL=BindingHelper.js.map

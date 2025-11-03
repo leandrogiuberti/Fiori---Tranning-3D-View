@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/util/deepExtend","sap/ushell/Container","sap/ushell/services/NavTargetResolutionInternal","sap/ushell/state/ShellModel","sap/ushell/utils","sap/ushell/utils/UrlParsing"],(e,t,s,a,r,l)=>{"use strict";class n{getTheme(){const e=t.getUser();return e.getTheme(e.constants.themeFormat.THEME_NAME_PLUS_URL)}async resolveNavigationTarget(s){const a=e({},s);const n=l.constructShellHash(a);const o=await t.getServiceAsync("NavTargetResolutionInternal");const u=await r.promisify(o.resolveHashFragment(`#${n}`));return{url:u.url,text:u.text}}getLogo(){return a.getModel().getProperty("/header/logo/src")}}return new n});
+//# sourceMappingURL=SAPBusinessClient.js.map

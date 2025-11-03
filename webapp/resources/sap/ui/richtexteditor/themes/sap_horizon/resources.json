@@ -1,0 +1,48 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": ".theming",
+			"size": 90,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "RichTextEditor.less",
+			"size": 958,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library-RTL.css",
+			"size": 3467,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library-parameters.json",
+			"module": "sap/ui/richtexteditor/themes/sap_horizon/library-parameters.json",
+			"size": 2,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.css",
+			"size": 3469,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.less",
+			"size": 1462,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "library.source.less",
+			"size": 280,
+			"designtime": true,
+			"theme": "sap_horizon"
+		},
+		{
+			"name": "resources.json",
+			"size": 815
+		}
+	]
+}

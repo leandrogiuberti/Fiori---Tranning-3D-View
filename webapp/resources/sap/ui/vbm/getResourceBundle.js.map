@@ -1,0 +1,1 @@
+{"version":3,"file":"getResourceBundle.js","names":["sap","ui","define","Library","getResourceBundleFor","bind"],"sources":["getResourceBundle-dbg.js"],"mappings":";;;AAKAA,IAAIC,GAAGC,OAAO,CACb,mBACE,SAAUC,GACZ,aACA,OAAOA,EAAQC,qBAAqBC,KAAKF,EAAS,aACnD,EAAkB","ignoreList":[]}

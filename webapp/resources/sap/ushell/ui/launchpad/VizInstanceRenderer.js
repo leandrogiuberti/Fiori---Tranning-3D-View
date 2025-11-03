@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define([],()=>{"use strict";const e={apiVersion:2};e.render=function(e,n){const t=this._prepareControlsToBeRendered(n);e.openStart("div",n);e.class("sapUshellVizInstance");if(n.getEditable()){e.class("sapUshellVizInstanceEdit")}e.openEnd();t.forEach(n=>{e.renderControl(n)});e.close("div")};e._prepareControlsToBeRendered=function(e){const n=[e.getContent()];if(e.getEditable()){if(e.getRemovable()){const t=e._getRemoveIconVBox();n.unshift(t)}const t=e._getActionModeButtonIconVBox();n.push(t)}return n};return e});
+//# sourceMappingURL=VizInstanceRenderer.js.map

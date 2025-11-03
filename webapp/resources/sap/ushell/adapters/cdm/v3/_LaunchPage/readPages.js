@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/base/util/ObjectPath","sap/base/util/values"],(e,t)=>{"use strict";const s={};s.getVisualizationReferences=function(s){let a;const i=[];const n=e.get("payload.sections",s)||{};t(n).forEach(t=>{a=e.get("layout.vizOrder",t)||[];a.forEach(e=>{if(t.viz[e]){i.push(t.viz[e])}})});return i};return s});
+//# sourceMappingURL=readPages.js.map

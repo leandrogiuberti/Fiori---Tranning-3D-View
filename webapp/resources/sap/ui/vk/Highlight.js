@@ -1,0 +1,8 @@
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5)
+
+        (c) Copyright 2009-2015 SAP SE. All rights reserved
+    
+ */
+sap.ui.define(["sap/ui/base/Object"],function(t){"use strict";var i=t.extend("sap.ui.vk.Highlight",{constructor:function(t,i){this._id=t;this._name=i&&i.name?i.name:"";this._duration=i&&i.duration?i.duration:0;this._cycles=i&&i.cycles?i.cycles:0;this._colours=i?.colours??[];this._opacities=i?.opacities??[];this._type=i?.type}});function s(t,i){const s=t%i/i;return s<.5?s*2:2-s*2}i.prototype.evaluate=function(t){const i={isCompleted:true};let o=1;if(this._duration>0){if(this._cycles>0&&t>=this._duration*this._cycles){o=s(this._duration*this._cycles,this._duration)}else{o=s(t,this._duration);i.isCompleted=false}}if(this._opacities?.length>0){if(o>=1||this._opacities.length<2){i.opacity=this._opacities[0]}else if(o<=0){i.opacity=this._opacities[1]}else{i.opacity=this._opacities[0]*o+this._opacities[1]*(1-o)}}if(this._colours?.length>0){if(o>=1||this._colours.length<2){i.color=this._colours[0]}else if(o<=0){i.color=this._colours[1]}else{i.color=[this._colours[0][0]*o+this._colours[1][0]*(1-o),this._colours[0][1]*o+this._colours[1][1]*(1-o),this._colours[0][2]*o+this._colours[1][2]*(1-o),this._colours[0][3]*o+this._colours[1][3]*(1-o)]}}return i};i.prototype.isFadeInOut=function(){return this._type?.startsWith("Fade")===true};i.prototype.isFadeOut=function(){return this._type==="FadeOut"};return i});
+//# sourceMappingURL=Highlight.js.map

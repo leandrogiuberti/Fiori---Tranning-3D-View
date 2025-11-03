@@ -1,0 +1,630 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+
+/**
+ * @fileOverview Cross Application Navigation utility functions
+ *
+ * @version 1.141.0
+ * @deprecated since 1.120
+ */
+sap.ui.define([
+    "sap/base/util/isPlainObject",
+    "sap/base/util/ObjectPath",
+    "sap/base/Log",
+    "sap/ushell/utils/UrlParsing"
+], (isPlainObject, ObjectPath, Log, UrlParsing) => {
+    "use strict";
+
+    const Utils = {};
+
+    /**
+     * Returns the options (i.e., parameter name and elements other than
+     * values) from a given <code>CrossApplicationNavigation#getLinks</code>
+     * 'params' argument - which may or may not have been expressed in extended
+     * format.
+     *
+     * @param {object} oGetLinksParams
+     *  <code>#getLinks</code> parameters, for example like:
+     *  <pre>
+     *  {
+     *      p1: "v1",     // single value
+     *      p2: ["v2"],   // array-wrapped value
+     *      p3: {         // "extended" format
+     *          value: ["v3", "v4"],
+     *          required: true
+     *      }
+     *  }
+     *  </pre>
+     *
+     * @returns {object[]}
+     *  Just parameter name and options (without value fields). Only parameters
+     *  with at least one option will appear in this array. If the caller
+     *  specified empty options for a given parameter, the parameter will not
+     *  be extracted into the array.
+     *
+     *  This is an array like:
+     * <pre>
+     *  [{
+     *      name: "p1",
+     *      options: {
+     *          required: true
+     *      }
+     *   },
+     *   ...
+     *  ]
+     * </pre>
+     *
+     * @private
+     */
+    Utils.extractGetLinksParameterOptions = function (oGetLinksParams) {
+        return Utils.parseGetLinksParameters(oGetLinksParams)
+            .filter((oParsedParam) => {
+                return Object.keys(oParsedParam.options).length > 0;
+            })
+            .map((oParsedParamWithOptions) => {
+                return {
+                    name: oParsedParamWithOptions.name,
+                    options: oParsedParamWithOptions.options
+                };
+            });
+    };
+
+    /**
+     * Returns the definition (i.e., parameter name and values only) from a
+     * given <code>CrossApplicationNavigation#getLinks</code> 'params' argument
+     * - which may or may not have been expressed in extended format.
+     *
+     * @param {object} oGetLinksParams
+     *  <code>#getLinks</code> parameters, for example like:
+     *  <pre>
+     *  {
+     *      p1: "v1",     // single value
+     *      p2: ["v2"],   // array-wrapped value
+     *      p3: {         // "extended" format
+     *          value: ["v3", "v4"],
+     *          required: true
+     *      }
+     *  }
+     *  </pre>
+     *
+     * @returns {object}
+     *
+     * Just parameter name and values (without other option fields) in compact
+     * format, suitable for use in combination with <code>URLParsing</code>
+     * methods (e.g., <code>URLParsing#paramsToString</code>).
+     *
+     * <pre>
+     *  {
+     *      p1: "v1",
+     *      p2: ["v2"],
+     *      p3: ["v3", "v4"]
+     *  }
+     * </pre>
+     *
+     * @private
+     */
+    Utils.extractGetLinksParameterDefinition = function (oGetLinksParams) {
+        return Utils.parseGetLinksParameters(oGetLinksParams)
+            .reduce((oResultDefinition, oParsedParam) => {
+                oResultDefinition[oParsedParam.name] = oParsedParam.value;
+                return oResultDefinition;
+            }, {} /* oResultDefinition */);
+    };
+
+    /**
+     * Recognize the different parts of the
+     * <code>CrossApplicationNavigation#getLinks</code> 'params' argument.
+     *
+     * @param {object} oGetLinksParams
+     *  <code>#getLinks</code> parameters, for example like:
+     *  <pre>
+     *  {
+     *      p1: "v1",     // single value
+     *      p2: ["v2"],   // array-wrapped value
+     *      p3: {         // "extended" format
+     *          value: ["v3", "v4"],
+     *          required: true
+     *      }
+     *  }
+     *  </pre>
+     *
+     * @returns {object[]}
+     *
+     * Parsed parameters conveniently returned in an array like:
+     * <pre>
+     * [
+     *    { name: "p1", value: "v1"  , options: {} },
+     *    { name: "p2", value: ["v2"], options: {} },
+     *    {
+     *      name: "p3",
+     *      value: ["v3", "v4"],
+     *      options: { required: true }
+     *    },
+     * ]
+     * </pre>
+     *
+     * Note:
+     * <ul>
+     * <li>Parameters returned by this method are not sorted, and caller should
+     * assume no particular order when iterating through the results.</li>
+     * <li>The name/value/options structure is consistently always returned for
+     * each item of the array.</li>
+     * <li>The method is pure, does not alter the input object.</li>
+     * </ul>
+     *
+     * @private
+     */
+    Utils.parseGetLinksParameters = function (oGetLinksParams) {
+        if (Object.prototype.toString.apply(oGetLinksParams) !== "[object Object]") {
+            return [];
+        }
+
+        const oParamsCopy = JSON.parse(JSON.stringify(oGetLinksParams));
+
+        return Object.keys(oParamsCopy).map((sParamName) => {
+            let vParamValue = oParamsCopy[sParamName];
+            let oParamOptions = {};
+
+            if (Object.prototype.toString.apply(vParamValue) === "[object Object]") {
+                vParamValue = vParamValue.value; // take the value...
+                delete oParamsCopy[sParamName].value;
+                oParamOptions = oParamsCopy[sParamName]; // ... leave the rest
+            }
+
+            return {
+                name: sParamName,
+                value: vParamValue,
+                options: oParamOptions
+            };
+        });
+    };
+
+    /**
+     * Parses a string to an object safely.
+     *
+     * @param {string} sObject
+     *   The string representing the object
+     *
+     * @returns {object}
+     *   The parsed object. Logs an error message and returns null when the
+     *   given string could not be parsed to an object.
+     *
+     * @private
+     */
+    Utils.safeParseToObject = function (sObject) {
+        try {
+            return JSON.parse(sObject);
+        } catch (oError) {
+            Log.error(
+                "Cannot parse the given string to object",
+                oError
+            );
+        }
+
+        return null;
+    };
+
+    /**
+     * Creates an app state from the given data, returning its key. Whether
+     * the created appstate is transient or not, is decided by the FLP
+     * settings for the appstate service.
+     *
+     * @param {object} oData
+     *   The data to put into the app state.
+     *
+     * @returns {string}
+     *   The AppStateKey
+     *
+     * @private
+     * @deprecated since 1.94. Please use {@link #createAppStateFromDataAsync} instead.
+     */
+    Utils.createAppStateFromData = function (oData) {
+        Log.error("Deprecated API call of '_CrossApplicationNavigation.utils.createAppStateFromData'. Please use 'createAppStateFromDataAsync' instead",
+            null,
+            "sap.ushell.services._CrossApplicationNavigation.utils"
+        );
+
+        const oAppStateService = sap.ushell.Container.getService("AppState"); // LEGACY API (deprecated)
+        const oAppState = oAppStateService.createEmptyAppState(null /* use default bTransient settings */);
+        oAppState.setData(oData);
+        oAppState.save();
+
+        return oAppState.getKey();
+    };
+
+    /**
+     * Creates an app state from the given data, returning its key. Whether
+     * the created appstate is transient or not, is decided by the FLP
+     * settings for the appstate service.
+     *
+     * @param {object} oData
+     *   The data to put into the app state.
+     *
+     * @returns {Promise<string>}
+     *   A Promise which resolves the AppStateKey
+     *
+     * @private
+     * @since 1.94.0
+     */
+    Utils.createAppStateFromDataAsync = function (oData) {
+        return sap.ushell.Container.getServiceAsync("AppState")
+            .then((AppStateService) => {
+                const oAppState = AppStateService.createEmptyAppState(null /* use default bTransient settings */);
+                oAppState.setData(oData);
+                oAppState.save();
+
+                return oAppState.getKey();
+            });
+    };
+
+    /**
+     * Extracts a parameter from the given intent
+     *
+     * @param {variant} vIntent
+     *  The input intent. It can be an object or a string in the format:
+     *
+     *  <pre>
+     *  {
+     *     target : { semanticObject : "AnObject", action: "action" },
+     *     params : { "paramA": "valueA" }
+     *  }
+     *  </pre>
+     *
+     *  or
+     *
+     *  <pre>
+     *  {
+     *     target : { shellHash : "SO-36?paramA=valueA" }
+     *  }
+     *  </pre>
+     *
+     * @param {string} sParameterName
+     *   The name of the parameter to extract.
+     *
+     * @returns {object}
+     *   An object like:
+     *   {
+     *      intent: <input intent without the parameter>,
+     *      data: [<value of the parameter in the input intent>]
+     *   }
+     *
+     * @private
+     */
+    Utils.extractParameter = function (vIntent, sParameterName) {
+        let sIntentWithoutParameter;
+        let aParameterValue = null;
+
+        if (typeof vIntent === "string") {
+            // Avoid using URLParsing unnecessarily.
+            if (vIntent.indexOf(`${sParameterName}=`) === -1) {
+                return { intent: vIntent, data: null };
+            }
+
+            const oParsedIntent = UrlParsing.parseShellHash(vIntent);
+            if (!oParsedIntent) {
+                return { intent: vIntent, data: null };
+            }
+
+            aParameterValue = oParsedIntent.params[sParameterName];
+            delete oParsedIntent.params[sParameterName];
+            sIntentWithoutParameter = UrlParsing.constructShellHash(oParsedIntent);
+
+            return {
+                intent: sIntentWithoutParameter,
+                data: aParameterValue
+            };
+        }
+
+        if (isPlainObject(vIntent)) {
+            const sShellHash = ObjectPath.get("target.shellHash", vIntent);
+            if (typeof sShellHash === "string") {
+                const oResult = Utils.extractParameter(sShellHash, sParameterName);
+
+                // modify the source object
+                vIntent.target.shellHash = oResult.intent;
+
+                return {
+                    intent: vIntent,
+                    data: oResult.data
+                };
+            }
+
+            const oParameters = vIntent.params;
+            if (oParameters && oParameters[sParameterName]) {
+                const vParameterValue = oParameters[sParameterName];
+                aParameterValue = typeof vParameterValue === "string" ? [vParameterValue] : vParameterValue;
+
+                delete oParameters[sParameterName];
+            }
+
+            return {
+                intent: vIntent,
+                data: aParameterValue
+            };
+        }
+
+        Log.error("Invalid input parameter", "expected string or object");
+
+        return { intent: vIntent };
+    };
+
+    /**
+     * Adds an sap-xapp-state parameter to the given intent.
+     *
+     * @param {object} vIntent
+     *   The intent to add the sap-xapp-state parameter to.
+     *
+     * @param {string} sSourceParameter
+     *   The name of the parameter that contains the sap-xapp-state data.
+     */
+    Utils.addXAppStateFromParameter = function (vIntent, sSourceParameter) {
+        const oXAppStateDataExtraction = Utils.extractParameter(vIntent, sSourceParameter);
+        const vIntentNoXAppStateData = oXAppStateDataExtraction.intent;
+        const sXAppStateData = oXAppStateDataExtraction.data && oXAppStateDataExtraction.data[0];
+        if (!sXAppStateData) {
+            return;
+        }
+
+        const oAppStateData = Utils.safeParseToObject(sXAppStateData);
+        if (!oAppStateData) {
+            return;
+        }
+
+        const sAppStateKey = Utils.createAppStateFromData(oAppStateData);
+
+        Utils.injectParameter(vIntentNoXAppStateData, "sap-xapp-state", sAppStateKey);
+    };
+
+    /**
+     * Adds an sap-xapp-state parameter to the given intent.
+     *
+     * @param {object} vIntent
+     *   The intent to add the sap-xapp-state parameter to.
+     *
+     * @param {string} sSourceParameter
+     *   The name of the parameter that contains the sap-xapp-state data.
+     * @returns {Promise<undefined>}
+     *   A Promise which resolves once the AppState was created
+     *
+     * @private
+     * @since 1.94.0
+     */
+    Utils.addXAppStateFromParameterAsync = function (vIntent, sSourceParameter) {
+        const oXAppStateDataExtraction = Utils.extractParameter(vIntent, sSourceParameter);
+        const vIntentNoXAppStateData = oXAppStateDataExtraction.intent;
+
+        const sXAppStateData = oXAppStateDataExtraction.data && oXAppStateDataExtraction.data[0];
+        if (!sXAppStateData) {
+            return Promise.resolve();
+        }
+
+        const oAppStateData = Utils.safeParseToObject(sXAppStateData);
+        if (!oAppStateData) {
+            return Promise.resolve();
+        }
+
+        return Utils.createAppStateFromDataAsync(oAppStateData)
+            .then((sAppStateKey) => {
+                Utils.injectParameter(vIntentNoXAppStateData, "sap-xapp-state", sAppStateKey);
+            });
+    };
+
+    /**
+     * Inject a parameter into the given intent.
+     *
+     * @param {variant} vIntent
+     *   The intent
+     * @param {string} sParameterName
+     *   The parameter name
+     * @param {variant} vParameterValue
+     *   The parameter value
+     *
+     * @returns {variant}
+     *   The input intent with the added parameter
+     *
+     * @private
+     */
+    Utils.injectParameter = function (vIntent, sParameterName, vParameterValue) {
+        if (typeof vIntent === "string") {
+            const oParsedIntent = UrlParsing.parseShellHash(vIntent);
+            oParsedIntent.params[sParameterName] = vParameterValue;
+
+            return UrlParsing.constructShellHash(oParsedIntent);
+        }
+
+        if (Object.prototype.toString.apply(vIntent) === "[object Object]") {
+            const sShellHash = ObjectPath.get("target.shellHash", vIntent);
+            if (typeof sShellHash === "string") {
+                vIntent.target.shellHash = Utils.injectParameter(
+                    sShellHash, sParameterName, vParameterValue
+                );
+
+                return vIntent;
+            }
+
+            if (!vIntent.params) {
+                vIntent.params = {};
+            }
+
+            vIntent.params[sParameterName] = vParameterValue;
+        }
+
+        return vIntent;
+    };
+
+    /**
+     *
+     * @param {object} oParams
+     * @param {object} oParams.type The sap.ushell.utils.type object
+     * @param {object} oParams.inject The parameters to be injected
+     * @param {any} oParams.args The arguments, depending on the context where the function is called, please see
+     * the JSDoc of the caller functions
+     *
+     * @returns The oParams.args with parameters from oParams.inject appended
+     * @private
+     */
+
+    Utils._injectParameters = function (oParams) {
+        const oParametersToInject = oParams.inject;
+        const oInjectEmptyStringNames = (oParams.injectEmptyString || {});
+        const oType = oParams.type;
+        const vArgs = oParams.args;
+
+        function shouldInjectValue (sVal, bInjectWhenEmptyString) {
+            return (sVal || (sVal === "" && bInjectWhenEmptyString));
+        }
+
+        if (oType.isPlainObject(vArgs)) {
+            // Arguments like .target.shellHash
+            if (vArgs.target && vArgs.target.shellHash) {
+                if (typeof vArgs.target.shellHash === "string") {
+                    vArgs.target.shellHash = Utils._injectParameters({
+                        inject: oParametersToInject,
+                        injectEmptyString: oInjectEmptyStringNames,
+                        type: oParams.type,
+                        args: vArgs.target.shellHash
+                    });
+                }
+                return vArgs;
+            }
+
+            // Arguments like {semanticObject: ..., action: ..., params: { ... } }
+            const oNewParameterObject = Object.keys(oParametersToInject).reduce((oInjectedParameters, sParameterToInject) => {
+                const sValueToInject = oParametersToInject[sParameterToInject];
+                const bInjectWhenEmptyString = (oInjectEmptyStringNames[sParameterToInject] === true);
+                // when params is a string
+                if (shouldInjectValue(sValueToInject, bInjectWhenEmptyString) && typeof oInjectedParameters === "string") {
+                    const reUrlParameter = new RegExp(`[&]${sParameterToInject}`);
+                    const bHasNoParameterAlready = !reUrlParameter.test(oInjectedParameters);
+                    if (bHasNoParameterAlready) {
+                        // When oInjectedParameters is an empty string, no separator needs to be added.
+                        const sSeparator = oInjectedParameters ? "&" : "";
+                        oInjectedParameters += `${sSeparator + sParameterToInject}=${sValueToInject}`;
+                    }
+                } else if (shouldInjectValue(sValueToInject, bInjectWhenEmptyString) && !oInjectedParameters.hasOwnProperty(sParameterToInject)) {
+                    oInjectedParameters[sParameterToInject] = sValueToInject;
+                }
+                return oInjectedParameters;
+            }, vArgs.params || {});
+
+            if (oNewParameterObject && Object.keys(oNewParameterObject).length > 0) {
+                vArgs.params = oNewParameterObject;
+            }
+
+            return vArgs;
+        }
+
+        // Arguments like #Hash-fragment?with=parameters
+        let sShellHash = vArgs;
+        if (sShellHash) {
+            Object.keys(oParametersToInject).forEach((sParameterToInject) => {
+                const sValueToInject = oParametersToInject[sParameterToInject];
+                const bInjectWhenEmptyString = (oInjectEmptyStringNames[sParameterToInject] === true);
+                const reUrlParameter = new RegExp(`[?&]${sParameterToInject}`);
+                const bHasNoParameterAlready = !reUrlParameter.test(sShellHash);
+                if (shouldInjectValue(sValueToInject, bInjectWhenEmptyString) && bHasNoParameterAlready) {
+                    const sSeparator = sShellHash.indexOf("?") > -1 ? "&" : "?";
+                    sShellHash += `${sSeparator + sParameterToInject}=${sValueToInject}`;
+                }
+            });
+        }
+
+        return sShellHash;
+    };
+
+    /**
+     * Injects sticky parameters into the arguments of the API call.
+     *
+     * @param {object} oParams A parameter bag containing the following properties
+     * @param {any} oParams.args The arguments, depending on the context where the function is called, please see
+     * the JSDoc of the caller functions
+     * @param {object} oParams.appLifeCycle App life cycle of application integration
+     * @param {object} oParams.technicalParameters The technical parameter object
+     * @param {object} oParams.type The object sap.ushell.utils.type object
+     *
+     * @returns {any} Arguments with sticky parameters
+     * @private
+     * @deprecated since 1.94. Please use {@link #injectStickyParametersAsync} instead.
+     */
+    Utils.injectStickyParameters = function (oParams) {
+        Log.error("Deprecated API call of '_CrossApplicationNavigation.utils.injectStickyParameters'. Please use 'injectStickyParametersAsync' instead",
+            null,
+            "sap.ushell.services._CrossApplicationNavigation.utils"
+        );
+
+        const oAppLifeCycleService = sap.ushell.Container.getService("AppLifeCycle"); // LEGACY API (deprecated)
+        return Utils._injectStickyParameters(oParams, oAppLifeCycleService);
+    };
+
+    /**
+     * Injects sticky parameters into the arguments of the API call.
+     *
+     * @param {object} oParams A parameter bag containing the following properties
+     * @param {any} oParams.args The arguments, depending on the context where the function is called, please see
+     * the JSDoc of the caller functions
+     * @param {object} oParams.appLifeCycle App life cycle of application integration
+     * @param {object} oParams.technicalParameters The technical parameter object
+     * @param {object} oParams.type The object sap.ushell.utils.type object
+     *
+     * @returns {Promise<any>} A Promise which resolves the arguments with sticky parameters
+     * @private
+     */
+    Utils.injectStickyParametersAsync = function (oParams) {
+        return sap.ushell.Container.getServiceAsync("AppLifeCycle")
+            .then((oAppLifeCycleService) => {
+                return Utils._injectStickyParameters(oParams, oAppLifeCycleService);
+            });
+    };
+
+    /**
+     * Injects sticky parameters into the arguments of the API call.
+     *
+     * @param {object} oParams A parameter bag containing the following properties
+     * @param {any} oParams.args The arguments, depending on the context where the function is called, please see
+     * the JSDoc of the caller functions
+     * @param {object} oParams.appLifeCycle App life cycle of application integration
+     * @param {object} oParams.technicalParameters The technical parameter object
+     * @param {object} oParams.type The object sap.ushell.utils.type object
+     * @param {object} oAppLifeCycleService The AppLifeCycle Service
+     *
+     * @returns {any} Arguments with sticky parameters
+     * @private
+     */
+    Utils._injectStickyParameters = function (oParams, oAppLifeCycleService) {
+        if (!oAppLifeCycleService || Object.keys(oAppLifeCycleService).length <= 0) {
+            return oParams.args;
+        }
+        const oCurrentApplication = oAppLifeCycleService.getCurrentApplication();
+        if (!oCurrentApplication || Object.keys(oCurrentApplication).length <= 0) {
+            return oParams.args;
+        }
+        const oAppIntegrationAppLifeCycle = oParams.appLifeCycle;
+        const oTechnicalParameters = oParams.technicalParameters;
+        const oStickyParametersToInject = oTechnicalParameters.getParameters({
+            sticky: true
+        })
+            .reduce((oStickyParameters, oNextParameter) => {
+                const sNextParameterName = oNextParameter.name;
+                const oComponentInstance = oCurrentApplication.componentInstance;
+                const sApplicationType = oCurrentApplication.applicationType;
+                let oApplicationContainer;
+                if (sApplicationType === "UI5") {
+                    oApplicationContainer = {};
+                } else {
+                    oApplicationContainer = oAppIntegrationAppLifeCycle.getCurrentApplication().container;
+                }
+                const sStickyParameterValue = oTechnicalParameters.getParameterValueSync(sNextParameterName, oComponentInstance, oApplicationContainer, sApplicationType);
+                const sStickyParameterName = oNextParameter.stickyName || sNextParameterName;
+                oStickyParameters[sStickyParameterName] = sStickyParameterValue;
+                return oStickyParameters;
+            }, {});
+        const oArgs = {
+            type: oParams.type,
+            inject: oStickyParametersToInject,
+            args: oParams.args
+        };
+
+        return Utils._injectParameters(oArgs);
+    };
+
+    return Utils;
+});
