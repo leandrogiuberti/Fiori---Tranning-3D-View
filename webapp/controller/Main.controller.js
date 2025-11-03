@@ -22,7 +22,7 @@ sap.ui.define([
             const oCtx = oEvent.getSource().getBindingContext();
             const oObject = oCtx.getObject();
 
-            const oPanel = this.getView().byid("viewerPanel");
+            const oPanel = this.getView().byId("viewerPanel");
             oPanel.setVisible(true);
 
             this._load3D(oObject.modelUrl);
@@ -34,14 +34,14 @@ sap.ui.define([
                     width: "100%",
                     heigth: "400px"
                 });
-                this.getView().byid("viewportContainer").addItem(this._viewport);
+                this.getView().byId("viewportContainer").addItem(this._viewport);
             }
 
             //Aqui sera carregado o modelo gltf
             console.log("carregando modelo 3D", sUrl);
 
             // Placeholder: ate o viewer real ser configurado 
-            this._viewport.placeAt(this.getView().byid("viewportContainer".getId()));
+            this._viewport.placeAt(this.getView().byId("viewportContainer").getId());
         }
     });
 });
