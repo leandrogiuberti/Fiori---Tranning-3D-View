@@ -170,6 +170,13 @@ sap.ui.define([
                 applicationType: "URL",
                 url: "../../../../../test-resources/sap/ushell/demoapps/BookmarkSample",
                 description: "Bookmark Sample"
+            },
+
+            "Action-myapp": {
+                additionalInformation: "App teste LGF",
+                applicationType: "URL",
+                url: "http://localhost:8080/myApps/3D view/webapp/index.html",
+                description: "items List"
             }
         }
     };

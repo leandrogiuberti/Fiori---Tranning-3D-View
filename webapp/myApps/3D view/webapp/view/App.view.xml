@@ -1,0 +1,9 @@
+<mvc:View
+    controllerName="com.example.fiorilist.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns="sap.m">
+
+    <f:FlexibleColumnLayout id="flexibleColumnLayout" />
+
+</mvc:View>

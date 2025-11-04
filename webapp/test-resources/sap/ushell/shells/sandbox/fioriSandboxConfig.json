@@ -5,9 +5,27 @@
                 "config": {
                     "catalogs": [
                         {
+                            "id": "My Apps",
+                            "title": "My Apps",
+                            "tiles": [
+                                {
+                                    "id": "List Itens",
+                                    "title": "Default Application",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "List Items",
+                                        "info": "Exemplo de app SAPUI5 local",
+                                        "icon": "sap-icon://customer",
+                                        "targetURL": "http://localhost:8080/myApps/3D view/webapp/index.html"
+                                    } 
+                                }
+                            ]
+                        },
+                        {
                             "id": "sample_catalog",
                             "title": "Sample Application Catalog",
-                            "tiles": [
+                            "tiles": [                               
                                 {
                                     "id": "todefaultapp",
                                     "title": "Default Application",
@@ -262,6 +280,27 @@
                         }
                     ],
                     "groups": [
+                                                {
+                            "id": "My_Apps",
+                            "title": "My Apps",
+                            "isPreset": true,
+                            "isVisible": true,
+                            "isGroupLocked": false,
+                            "tiles": [
+                                {
+                                    "id": "List Itens",
+                                    "title": "Default Application",
+                                    "size": "1x1",
+                                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                                    "properties": {
+                                        "title": "List Items",
+                                        "info": "Exemplo de app SAPUI5 local",
+                                        "icon": "sap-icon://Fiori2/F0003",
+                                        "targetURL": "http://localhost:8080/myApps/3D view/webapp/index.html"
+                                    }
+                                } 
+                            ]                            
+                        },
                         {
                             "id": "sample_group",
                             "title": "Sample Applications",
@@ -586,7 +625,7 @@
         "ClientSideTargetResolution": {
             "adapter": {
                 "config": {
-                    "inbounds": {
+                    "inbounds": {                        
                         "actionTodefaultapp": {
                             "semanticObject": "Action",
                             "action": "todefaultapp",
@@ -1024,6 +1063,20 @@
                                 "additionalInformation": "SAPUI5.Component=sap.ui.demoapps.rta.freestyle",
                                 "applicationType": "SAPUI5",
                                 "url": "test-resources/sap/ui/demoapps/demokit/rta/freestyle"
+                            }
+                        },
+                        "zappDisplay": {
+                            "semanticObject": "zapp",
+                            "action": "display",
+                            "title": "List Items",
+                            "signature": {
+                                "parameters": {},
+                                "additionalParameters": "allowed"
+                            },
+                            "resolutionResult": {
+                                "applicationType": "SAPUI5",
+                                "additionalInformation": "SAPUI5.Component=com.example.fiorilist",
+                                "url": "myApps/3D view/webapp/index.html"
                             }
                         }
                     }

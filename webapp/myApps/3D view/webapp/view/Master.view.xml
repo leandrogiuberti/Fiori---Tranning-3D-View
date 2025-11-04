@@ -1,0 +1,87 @@
+<mvc:View displayBlock="true" controllerName="com.example.fiorilist.controller.App" height="100%"
+	  xmlns="sap.m"
+	  xmlns:f="sap.f"
+	  xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId"
+				   toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Products ({products>/ProductCollectionStats/Counts/Total})"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<Table
+                id="objectsTable"
+                mode="SingleSelectMaster"
+                itemPress="onListItemPress"
+                inset="false"
+                items="{
+                    path: '/Objects',
+                    sorter: {
+                        path: 'ObjectID'
+                    }
+                }"
+                class="sapFDynamicPageAlignContent"
+				width="auto">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>title}" level="H2" />
+                        <ToolbarSpacer />
+                        <SearchField
+                            id="searchField"
+                            width="200px"
+                            search="onSearch"
+                            placeholder="Pesquisar..." />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="15%" minScreenWidth="Tablet">
+                        <Text text="{i18n>columnObjectID}" />
+                    </Column>
+                    <Column width="20%" minScreenWidth="Tablet">
+                        <Text text="{i18n>columnName}" />
+                    </Column>
+                    <Column width="15%" minScreenWidth="Tablet">
+                        <Text text="{i18n>columnAttribute1}" />
+                    </Column>
+                    <Column width="15%" minScreenWidth="Tablet">
+                        <Text text="{i18n>columnAttribute2}" />
+                    </Column>
+                    <Column width="15%" minScreenWidth="Tablet">
+                        <Text text="{i18n>columnUnitOfMeasure}" />
+                    </Column>
+                    <Column width="20%" minScreenWidth="Tablet" hAlign="Right">
+                        <Text text="{i18n>columnUnitNumber}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <cells>
+                            <Text text="{ObjectID}" />
+                            <Text text="{Name}" />
+                            <Text text="{Attribute1}" />
+                            <Text text="{Attribute2}" />
+                            <Text text="{UnitOfMeasure}" />
+                            <Text text="{UnitNumber}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Accept"/>
+				<Button type="Reject" text="Reject"/>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

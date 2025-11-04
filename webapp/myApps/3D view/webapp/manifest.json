@@ -1,0 +1,126 @@
+{
+  "_version": "1.0.0",
+  "sap.app": {
+    "id": "com.example.fiorilist",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "sourceTemplate": {
+      "id": "ui5template.basicSAPUI5ApplicationProject"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/WORKLIST_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phoneHighDpi": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_horizon"
+    ]
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "com.example.fiorilist.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.m": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.example.fiorilist.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "preload": true,
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultCountMode": "Request",
+          "defaultBindingMode": "TwoWay",
+          "metadataUrlParams": {},
+          "json": true,
+          "loadMetadataAsync": true,
+          "useBatch": false
+        },
+        "dataSource": "mainService"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.example.fiorilist.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": ["master"]
+        },
+        {
+          "pattern": "detail/{objectId}",
+          "name": "detail",
+          "target": ["detail"]
+        }
+      ],
+
+      "targets": {
+        "TargetMain": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Main",
+          "viewName": "Main"
+        }
+      }
+    }
+  },
+  "sap.platform.abap": {
+    "uri": ""
+  },
+  "sap.platform.hcp": {
+    "uri": ""
+  }
+}
