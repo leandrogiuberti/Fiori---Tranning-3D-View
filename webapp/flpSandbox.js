@@ -1,4 +1,6 @@
-sap.ui.define([], function () {
+sap.ui.define([
+  "sap/ushell/services/Container"
+], function (Container) {
   "use strict";
 
   var oSandbox = {
@@ -15,14 +17,8 @@ sap.ui.define([], function () {
                     id: "tile_myapp",
                     title: "Treinamento 3D",
                     size: "1x1",
-                    // targetURL CORRIGIDO para o ID COMPLETO do seu app
-                    targetURL: "#leandrogiuberti.FioriTranning3DView-display" 
-                  },
-                  {
-                    id: "tile_App1ContentProviderA",
-                    title: "App1ContentProviderA",
-                    size: "1x1",
-                    targetURL: "sap.ushell.demo.app1ContentProviderA-display" 
+                    // Intent corrigido para o namespace do seu app
+                    targetURL: "#FioriTranning3DView-display" 
                   }
                 ]
               }
@@ -36,9 +32,9 @@ sap.ui.define([], function () {
 
   return {
     init: function () {
-      // Bootstrap do Launchpad Sandbox usando a chamada global padrão
-      sap.ushell.bootstrap("sandbox").then(function () {
-        sap.ushell.Container.createRenderer().placeAt("content");
+      // Bootstrap do Launchpad Sandbox usando o objeto Container importado
+      Container.bootstrap("sandbox").then(function () {
+        Container.getRenderer().placeAt("content");
       });
     }
   };
