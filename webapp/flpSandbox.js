@@ -15,7 +15,14 @@ sap.ui.define([], function () {
                     id: "tile_myapp",
                     title: "Treinamento 3D",
                     size: "1x1",
-                    targetURL: "#myapp-display"
+                    // targetURL CORRIGIDO para o ID COMPLETO do seu app
+                    targetURL: "#leandrogiuberti.FioriTranning3DView-display" 
+                  },
+                  {
+                    id: "tile_App1ContentProviderA",
+                    title: "App1ContentProviderA",
+                    size: "1x1",
+                    targetURL: "sap.ushell.demo.app1ContentProviderA-display" 
                   }
                 ]
               }
@@ -27,10 +34,9 @@ sap.ui.define([], function () {
     }
   };
 
-  // ESTA PARTE É CRUCIAL: O módulo deve retornar o objeto com a função init
   return {
     init: function () {
-      // Bootstrap do Launchpad Sandbox
+      // Bootstrap do Launchpad Sandbox usando a chamada global padrão
       sap.ushell.bootstrap("sandbox").then(function () {
         sap.ushell.Container.createRenderer().placeAt("content");
       });
